@@ -39,30 +39,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg4ml` | `plpgsql`, `tablefunc`, `cube`, `plpython3u` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "pg4ml_18" "green" >}} {{< bg "17" "pg4ml_17" "green" >}} {{< bg "16" "pg4ml_16" "green" >}} {{< bg "15" "pg4ml_15" "green" >}} {{< bg "14" "pg4ml_14" "green" >}} | `pg4ml_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "postgresql-18-pg4ml" "green" >}} {{< bg "17" "postgresql-17-pg4ml" "green" >}} {{< bg "16" "postgresql-16-pg4ml" "green" >}} {{< bg "15" "postgresql-15-pg4ml" "green" >}} {{< bg "14" "postgresql-14-pg4ml" "green" >}} | `postgresql-$v-pg4ml` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg4ml` | `plpgsql`, `tablefunc`, `cube`, `plpython3u` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "19" "pg4ml_19" "green" >}} {{< bg "18" "pg4ml_18" "green" >}} {{< bg "17" "pg4ml_17" "green" >}} {{< bg "16" "pg4ml_16" "green" >}} {{< bg "15" "pg4ml_15" "green" >}} | `pg4ml_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "19" "postgresql-19-pg4ml" "green" >}} {{< bg "18" "postgresql-18-pg4ml" "green" >}} {{< bg "17" "postgresql-17-pg4ml" "green" >}} {{< bg "16" "postgresql-16-pg4ml" "green" >}} {{< bg "15" "postgresql-15-pg4ml" "green" >}} | `postgresql-$v-pg4ml` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg4ml : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg4ml : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg4ml : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg4ml : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg4ml : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg4ml : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg4ml : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg4ml : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg4ml : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg4ml : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg4ml_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg4ml_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pg4ml_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pg4ml_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pg4ml_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pg4ml_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg4ml : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg4ml : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg4ml : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg4ml : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg4ml : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg4ml : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg4ml : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg4ml : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg4ml : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg4ml : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -158,29 +158,6 @@ page_width: full
 | `postgresql-15-pg4ml` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 316.5 KiB | [postgresql-15-pg4ml_2.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg4ml/postgresql-15-pg4ml_2.0-2PIGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg4ml_14` | `2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 341.2 KiB | [pg4ml_14-2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg4ml_14-2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg4ml_14` | `2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 341.1 KiB | [pg4ml_14-2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg4ml_14-2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg4ml_14` | `2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 294.8 KiB | [pg4ml_14-2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg4ml_14-2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg4ml_14` | `2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 294.8 KiB | [pg4ml_14-2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg4ml_14-2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg4ml_14` | `2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 294.9 KiB | [pg4ml_14-2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg4ml_14-2.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg4ml_14` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 294.9 KiB | [pg4ml_14-2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg4ml_14-2.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pg4ml` | `2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 316.3 KiB | [postgresql-14-pg4ml_2.0-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg4ml/postgresql-14-pg4ml_2.0-2PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pg4ml` | `2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 316.3 KiB | [postgresql-14-pg4ml_2.0-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg4ml/postgresql-14-pg4ml_2.0-2PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pg4ml` | `2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 317.5 KiB | [postgresql-14-pg4ml_2.0-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg4ml/postgresql-14-pg4ml_2.0-2PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-pg4ml` | `2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 317.5 KiB | [postgresql-14-pg4ml_2.0-2PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg4ml/postgresql-14-pg4ml_2.0-2PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-pg4ml` | `2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 317.1 KiB | [postgresql-14-pg4ml_2.0-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg4ml/postgresql-14-pg4ml_2.0-2PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-pg4ml` | `2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 317.1 KiB | [postgresql-14-pg4ml_2.0-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg4ml/postgresql-14-pg4ml_2.0-2PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pg4ml` | `2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 316.9 KiB | [postgresql-14-pg4ml_2.0-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg4ml/postgresql-14-pg4ml_2.0-2PIGSTY~noble_amd64.deb) |
-| `postgresql-14-pg4ml` | `2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 316.9 KiB | [postgresql-14-pg4ml_2.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg4ml/postgresql-14-pg4ml_2.0-2PIGSTY~noble_arm64.deb) |
-| `postgresql-14-pg4ml` | `2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 316.5 KiB | [postgresql-14-pg4ml_2.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg4ml/postgresql-14-pg4ml_2.0-2PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-pg4ml` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 316.5 KiB | [postgresql-14-pg4ml_2.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg4ml/postgresql-14-pg4ml_2.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -209,11 +186,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pg4ml;		# install via package name, for the active PG version
 
+pig install pg4ml -v 19;   # install for PG 19
 pig install pg4ml -v 18;   # install for PG 18
 pig install pg4ml -v 17;   # install for PG 17
 pig install pg4ml -v 16;   # install for PG 16
 pig install pg4ml -v 15;   # install for PG 15
-pig install pg4ml -v 14;   # install for PG 14
 
 ```
 

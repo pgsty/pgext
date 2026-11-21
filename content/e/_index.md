@@ -7,635 +7,637 @@ comments: false
 weight: 900
 ---
 
-There are 625 packaged PostgreSQL extensions:
+There are 627 packaged PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Category | Description |
 |:----------|:------------|:---------:|:--------:|:--------------|
-| {{< ext "timescaledb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "TIME" >}} | Enables scalable inserts and complex queries for time-series data |
-| {{< ext "timescaledb_toolkit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "TIME" >}} | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
-| {{< ext "timeseries" "pg_timeseries" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TIME" >}} | Convenience API for time series stack |
-| {{< ext "periods" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TIME" >}} | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
-| {{< ext "temporal_tables" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TIME" >}} | temporal tables |
-| {{< ext "emaj" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-b--d--" color="blue" >}} | {{< category "TIME" >}} | Enables fine-grained write logging and time travel on subsets of the database. |
-| {{< ext "table_version" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-b--d--" color="blue" >}} | {{< category "TIME" >}} | PostgreSQL table versioning extension |
-| {{< ext "pg_cron" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "TIME" >}} | Job scheduler for PostgreSQL |
-| {{< ext "pg_task" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "TIME" >}} | execute any sql command at any specific time at background |
-| {{< ext "pg_later" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "TIME" >}} | Run queries now and get results later |
-| {{< ext "pg_dispatch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TIME" >}} | Asynchronous SQL dispatcher built on pg_cron |
-| {{< ext "pg_background" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TIME" >}} | Run SQL queries in the background |
-| {{< ext "pg_when" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TIME" >}} | Natural language time parsing for PostgreSQL |
-| {{< ext "edtf_postgres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "TIME" >}} | EDTF validation, normalization, date bounds, and temporal relations |
-| {{< ext "pg_stl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TIME" >}} | Time series analysis functions for PostgreSQL |
-| {{< ext "cron_utils" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "TIME" >}} | Parse cron expressions and compute previous or next trigger times |
-| {{< ext "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS geometry and geography spatial types and functions |
-| {{< ext "postgis_topology" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS topology spatial types and functions |
-| {{< ext "postgis_raster" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS raster types and functions |
-| {{< ext "postgis_sfcgal" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | PostGIS SFCGAL functions |
-| {{< ext "postgis_tiger_geocoder" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "GIS" >}} | PostGIS tiger geocoder and reverse geocoder |
-| {{< ext "address_standardizer" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | Used to parse an address into constituent elements. Generally used to support geocoding address norm |
-| {{< ext "address_standardizer_data_us" "address_standardizer" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "GIS" >}} | Address Standardizer US dataset example |
-| {{< ext "pgrouting" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | pgRouting Extension |
-| {{< ext "pointcloud" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | data type for lidar point clouds |
-| {{< ext "pointcloud_postgis" "pointcloud" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "GIS" >}} | integration for pointcloud LIDAR data and PostGIS geometry data |
-| {{< ext "h3" "pg_h3" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | H3 bindings for PostgreSQL |
-| {{< ext "h3_postgis" "pg_h3" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | H3 PostGIS integration |
-| {{< ext "q3c" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | q3c sky indexing plugin |
-| {{< ext "ogr_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bs-d-r" color="blue" >}} | {{< category "GIS" >}} | foreign-data wrapper for GIS data access |
-| {{< ext "geoip" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | IP-based geolocation query |
-| {{< ext "pg_polyline" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | Fast Google Encoded Polyline encoding & decoding for postgres |
-| {{< ext "pg_eviltransform" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | Coordinate transforms for BD09/GCJ02 via PostGIS ST_Transform |
-| {{< ext "pg_geohash" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | Handle geohash based functionality for spatial coordinates |
-| {{< ext "pghydro" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Drainage network analysis core for PostgreSQL and PostGIS |
-| {{< ext "pgh_raster" "pghydro" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Raster hydrology extension for PgHydro |
-| {{< ext "pgh_hgm" "pghydro" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Hydrogeomorphological analysis extension for PgHydro |
-| {{< ext "pgh_output" "pghydro" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Output and reporting objects for PgHydro |
-| {{< ext "pgh_output_en_au" "pghydro" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Australian English output pack for PgHydro |
-| {{< ext "pgh_output_pt_br" "pghydro" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Brazilian Portuguese output pack for PgHydro |
-| {{< ext "pgh_consistency" "pghydro" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Pfafstetter consistency checks for PgHydro |
-| {{< ext "mobilitydb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "GIS" >}} | MobilityDB geospatial trajectory data management & analysis platform |
-| {{< ext "mobilitydb_datagen" "mobilitydb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "GIS" >}} | MobilityDB random data generator functions |
-| {{< ext "tzf" "pg_tzf" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | Fast lookup timezone name by GPS coordinates |
-| {{< ext "earthdistance" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "GIS" >}} | calculate great-circle distances on the surface of the Earth |
-| {{< ext "qdgc" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dtr" color="blue" >}} | {{< category "GIS" >}} | Encode, decode, navigate, and fill Extended Quarter Degree Grid Cell codes in pure SQL. |
-| {{< ext "qdgc_postgis" "qdgc" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "GIS" >}} | Add PostGIS geometry and geography bindings plus area-to-cell fills for QDGC. |
-| {{< ext "vector" "pgvector" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "RAG" >}} | vector data type and ivfflat and hnsw access methods |
-| {{< ext "vchord" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "RAG" >}} | Vector database plugin for Postgres, written in Rust |
-| {{< ext "vectorscale" "pgvectorscale" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Advanced indexing for vector data with DiskANN |
-| {{< ext "vectorize" "pg_vectorize" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "RAG" >}} | The simplest way to do vector search on Postgres |
-| {{< ext "pg_similarity" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "RAG" >}} | support similarity queries |
-| {{< ext "pg_rrf" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Reciprocal rank fusion functions for hybrid search |
-| {{< ext "smlar" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "RAG" >}} | Effective similarity search |
-| {{< ext "pg_summarize" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Text Summarization using LLMs. Built using pgrx |
-| {{< ext "pg_tiktoken" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
-| {{< ext "pg_tiktoken_c" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Fast tiktoken BPE tokenizer for PostgreSQL implemented in C |
-| {{< ext "pg_grammar_guard" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "RAG" >}} | Catalog-derived grammars and approved grammar drift checks |
-| {{< ext "jev" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "RAG" >}} | Natural-language row filtering, ranking and classification through a Jev-compatible API |
-| {{< ext "pg4ml" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "RAG" >}} | Machine learning framework for PostgreSQL |
-| {{< ext "pgml" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "RAG" >}} | Run AI/ML workloads with SQL interface |
-| {{< ext "pgmnemo" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "RAG" >}} | Single-plan multimodal agent memory for PostgreSQL |
-| {{< ext "pgcontext" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
-| {{< ext "pg_turbovec" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
-| {{< ext "pg_vectorsearch" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Approximate vector search with PRISM indexes and RaBitQ quantization |
-| {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | Full text search for PostgreSQL using BM25 |
-| {{< ext "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "FTS" >}} | Use Groonga as index, fast full text search platform for all languages! |
-| {{< ext "pgroonga_database" "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | Recovery helper for removing a damaged PGroonga internal database |
-| {{< ext "pg_bigm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FTS" >}} | create 2-gram (bigram) index for faster full text search. |
-| {{< ext "vgram" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Variable-length gram GIN indexes and statistics for LIKE/ILIKE search |
-| {{< ext "zhparser" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | a parser for full-text search of Chinese |
-| {{< ext "pg_bestmatch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | Generate BM25 sparse vector inside PostgreSQL |
-| {{< ext "vchord_bm25" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FTS" >}} | A postgresql extension for bm25 ranking algorithm |
-| {{< ext "pg_tokenizer" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | Tokenizers for full-text search |
-| {{< ext "biscuit" "pg_biscuit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | IAM-LIKE pattern matching with bitmap indexing |
-| {{< ext "pg_textsearch" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | Full-text search with BM25 ranking |
-| {{< ext "pg_pinyin" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Pinyin romanization and search helpers for PostgreSQL |
-| {{< ext "pg_kazsearch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | Kazakh full-text search extension for PostgreSQL |
-| {{< ext "psql_bm25s" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | PostgreSQL extension for BM25-family lexical retrieval |
-| {{< ext "pg_fts" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FTS" >}} | Full-text search with BM25 and BM25F ranking |
-| {{< ext "pg_cjk_parser" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | CJK bigram parser derived from PostgreSQL full-text search |
-| {{< ext "pg_jieba" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Chinese full-text search parser based on cppjieba |
-| {{< ext "acdat" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | Compiled Aho-Corasick double-array machines for exact multi-pattern matching and replacement in Post |
-| {{< ext "addressing_dictionary" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Address-aware text search dictionaries and configurations |
-| {{< ext "hunspell_cs_cz" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Czech Hunspell Dictionary |
-| {{< ext "hunspell_de_de" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | German Hunspell Dictionary |
-| {{< ext "hunspell_en_us" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | en_US Hunspell Dictionary |
-| {{< ext "hunspell_fr" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | French Hunspell Dictionary |
-| {{< ext "hunspell_ne_np" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Nepali Hunspell Dictionary |
-| {{< ext "hunspell_nl_nl" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Dutch Hunspell Dictionary |
-| {{< ext "hunspell_nn_no" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Norwegian (norsk) Hunspell Dictionary |
-| {{< ext "hunspell_pt_pt" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Portuguese Hunspell Dictionary |
-| {{< ext "hunspell_ru_ru" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Russian Hunspell Dictionary |
-| {{< ext "hunspell_ru_ru_aot" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Russian Hunspell Dictionary (from AOT.ru group) |
-| {{< ext "textsearch_intl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Multilingual full text search with ICU segmentation, normalization and n-gram matching |
-| {{< ext "pg_icu_parser" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Full text search parser using ICU boundary analysis |
-| {{< ext "tin" "lead" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | TIN-compatible text search for development and testing |
-| {{< ext "stannum" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | Experimental TINQL text search with BM25 and segmented indexes |
-| {{< ext "pg_tre" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | Native PostgreSQL index access method for approximate regular-expression matching |
-| {{< ext "fuzzystrmatch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FTS" >}} | determine similarities and distance between strings |
-| {{< ext "pg_trgm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FTS" >}} | text similarity measurement and index searching based on trigrams |
-| {{< ext "citus" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Distributed PostgreSQL as an extension |
-| {{< ext "citus_columnar" "citus" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Citus columnar storage engine |
-| {{< ext "columnar" "hydra" >}} | {{< pgver "18,17,16,15,14" "r,r,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Hydra Columnar extension |
-| {{< ext "pg_duckdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | DuckDB Embedded in Postgres |
-| {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Columnstore Table in Postgres |
-| {{< ext "storage_engine" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | colcompress and rowcompress Table Access Methods with vectorized execution |
-| {{< ext "pg_clickhouse" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "OLAP" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
-| {{< ext "duckdb_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "OLAP" >}} | DuckDB Foreign Data Wrapper |
-| {{< ext "pg_parquet" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | copy data between Postgres and Parquet |
-| {{< ext "pg_ducklake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | DuckLake lakehouse extension for PostgreSQL, backed by DuckDB and Parquet |
-| {{< ext "pg_fkpart" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "OLAP" >}} | Table partitioning by foreign key utility |
-| {{< ext "pg_partman" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "OLAP" >}} | Extension to manage partitioned tables by time or ID |
-| {{< ext "plproxy" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Database partitioning implemented as procedural language |
-| {{< ext "pg_strom" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "OLAP" >}} | PG-Strom - big-data processing acceleration using GPU and NVME |
-| {{< ext "pg_orca" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | ORCA query optimizer as a PostgreSQL extension |
-| {{< ext "pg_sorted_heap" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Sorted heap table AM with zone map scan pruning and built-in vector search |
-| {{< ext "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "OLAP" >}} | Data lake extension by Snowflake |
-| {{< ext "pg_extension_base" "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Extension development kit by Snowflake |
-| {{< ext "pg_extension_updater" "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Automatic extension updater |
-| {{< ext "pg_map" "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Map type for PostgreSQL, bundled as a required pg_lake component. |
-| {{< ext "pg_lake_engine" "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Query engine for data lake queries |
-| {{< ext "pg_lake_iceberg" "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Iceberg implementation in Postgres |
-| {{< ext "pg_lake_table" "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Data lake tables and Iceberg tables |
-| {{< ext "pg_lake_copy" "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Copy to/from data lake files |
-| {{< ext "pg_table_range" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Planning-time partition pruning by per-partition data ranges, including non-key columns. |
-| {{< ext "pg_improv" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Incremental multidimensional models and formula functions over PostgreSQL tables. |
-| {{< ext "tablefunc" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "OLAP" >}} | functions that manipulate whole tables, including crosstab |
-| {{< ext "age" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | AGE graph database extension |
-| {{< ext "pg_liquid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Liquid-inspired Datalog graph query extension for PostgreSQL |
-| {{< ext "onesparse" "one_sparse" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Sparse linear algebra and graph extension for PostgreSQL 18 |
-| {{< ext "graph" "pggraph" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Graph database capabilities for PostgreSQL |
-| {{< ext "pgrdf" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
-| {{< ext "pg_warren" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "FEAT" >}} | Versioned graph traversal and computation over PostgreSQL tables |
-| {{< ext "pgq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Generic queue for PostgreSQL |
-| {{< ext "pgmq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
-| {{< ext "pgmb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | A simple PostgreSQL Message Broker system |
-| {{< ext "ulak" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Transactional Outbox extension for PostgreSQL with reliable asynchronous delivery |
-| {{< ext "fsm_core" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Finite state machine toolkit for PostgreSQL |
-| {{< ext "pg_statecharts" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Hierarchical state machines and transactional event handling |
-| {{< ext "pg_statecharts_dev" "pg_statecharts" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | SCXML import and migration tooling for pg_statecharts |
-| {{< ext "hll" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | type for storing hyperloglog data |
-| {{< ext "rum" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | RUM index access method |
-| {{< ext "pg_lion" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Roaring bitmap inverted indexes for filtering, counts and aggregates |
-| {{< ext "pg_lion_citext" "pg_lion" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FEAT" >}} | Case-insensitive citext operator class for lion indexes |
-| {{< ext "pg_lion_vector" "pg_lion" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Filtered nearest-neighbor indexes for pgvector vector and halfvec |
-| {{< ext "pg_ai_query" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | AI-powered SQL query generation for PostgreSQL |
-| {{< ext "pg_ttl_index" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FEAT" >}} | Automatic data expiration with TTL indexes |
-| {{< ext "pg_graphql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Add in-database GraphQL support |
-| {{< ext "pg_jsonschema" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | PostgreSQL extension providing JSON Schema validation |
-| {{< ext "jsonschema" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | JSON Schema validation functions for PostgreSQL |
-| {{< ext "is_jsonb_valid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Native JSONB validation against JSON Schema drafts 4 and 7 |
-| {{< ext "jsquery" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | data type for jsonb inspection |
-| {{< ext "pg_hint_plan" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Give PostgreSQL ability to manually force some decisions in execution plans. |
-| {{< ext "hypopg" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Hypothetical indexes for PostgreSQL |
-| {{< ext "index_advisor" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FEAT" >}} | Query index advisor |
-| {{< ext "plan_filter" "pg_plan_filter" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "FEAT" >}} | Cooperative statement and transaction guards based on estimated plan cost |
-| {{< ext "pg_variables" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Session-scoped variables with scalar, array, and record types |
-| {{< ext "imgsmlr" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Image similarity with haar |
-| {{< ext "pg_ivm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "FEAT" >}} | incremental view maintenance on PostgreSQL |
-| {{< ext "pg_incremental" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Incremental Processing by Crunchy Data |
-| {{< ext "pg_trickle" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "FEAT" >}} | Streaming tables and differential view maintenance for PostgreSQL 18 |
-| {{< ext "pg_durable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | SQL-native durable orchestrations for PostgreSQL |
-| {{< ext "pg_disorder" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "FEAT" >}} | Perturb unordered SELECT row order to expose order-dependent tests |
-| {{< ext "pg_local_cache" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Transaction-aware shared-memory cache serving PostgreSQL primary-key rows over RESP2 MGET |
-| {{< ext "pg_kv" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Shared-memory key/value cache, token-bucket rate limits and sorted sets. |
-| {{< ext "provsql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "FEAT" >}} | Semiring provenance and probability management for PostgreSQL |
-| {{< ext "orioledb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FEAT" >}} | OrioleDB, the next generation transactional engine |
-| {{< ext "pg_cardano" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | A suite of Cardano-related tools |
-| {{< ext "rdkit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Cheminformatics functionality for PostgreSQL. |
-| {{< ext "omni" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Advanced adapter for Postgres extensions |
-| {{< ext "omni_auth" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Basic session management |
-| {{< ext "omni_aws" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "FEAT" >}} | Amazon Web Services APIs (S3) |
-| {{< ext "omni_cloudevents" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "FEAT" >}} | CloudEvents support |
-| {{< ext "omni_containers" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Docker container management |
-| {{< ext "omni_credentials" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Application credential management |
-| {{< ext "omni_csv" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | CSV toolkit |
-| {{< ext "omni_datasets" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Dataset provisioning |
-| {{< ext "omni_email" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | E-mail framework |
-| {{< ext "omni_http" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Basic HTTP types |
-| {{< ext "omni_httpc" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | HTTP client |
-| {{< ext "omni_httpd" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | HTTP server |
-| {{< ext "omni_id" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Identity types |
-| {{< ext "omni_json" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "FEAT" >}} | JSON toolkit |
-| {{< ext "omni_kube" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Kubernetes (k8s) integration |
-| {{< ext "omni_ledger" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Financial ledger |
-| {{< ext "omni_manifest" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Package installation manifests |
-| {{< ext "omni_mimetypes" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | MIME types |
-| {{< ext "omni_os" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Operating system integration |
-| {{< ext "omni_polyfill" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Postgres API polyfills |
-| {{< ext "omni_python" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | First-class Python support |
-| {{< ext "omni_regex" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | PCRE-compatible regular expressions |
-| {{< ext "omni_rest" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | REST API toolkit (with PostgREST support) |
-| {{< ext "omni_schema" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Advanced schema management tooling |
-| {{< ext "omni_seq" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Distributed integer sequences |
-| {{< ext "omni_service" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Service management |
-| {{< ext "omni_session" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Session management |
-| {{< ext "omni_shmem" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Shared Memory Management |
-| {{< ext "omni_sql" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Programmatic SQL manipulation |
-| {{< ext "omni_sqlite" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Embedded SQLite |
-| {{< ext "omni_test" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Testing framework |
-| {{< ext "omni_txn" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Transaction management |
-| {{< ext "omni_types" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Advanced types |
-| {{< ext "omni_var" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Scoped variables |
-| {{< ext "omni_vfs" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Virtual File System |
-| {{< ext "omni_vfs_types_v1" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Virtual File System types (v1) |
-| {{< ext "omni_web" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Common web stack primitives |
-| {{< ext "omni_worker" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Generalized worker pool |
-| {{< ext "omni_xml" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | XML toolkit |
-| {{< ext "omni_yaml" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | YAML toolkit |
-| {{< ext "pg_mentat" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "FEAT" >}} | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
-| {{< ext "bloom" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FEAT" >}} | bloom access method - signature file based index |
-| {{< ext "pg_tle" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "LANG" >}} | Trusted Language Extensions for PostgreSQL |
-| {{< ext "plv8" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/JavaScript (v8) trusted procedural language |
-| {{< ext "pljs" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/JS trusted procedural language |
-| {{< ext "pllua" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Lua as a procedural language |
-| {{< ext "hstore_pllua" "pllua" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Hstore transform for Lua |
-| {{< ext "plluau" "pllua" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Lua as an untrusted procedural language |
-| {{< ext "hstore_plluau" "pllua" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Hstore transform for untrusted Lua |
-| {{< ext "plprql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
-| {{< ext "pldbgapi" "pldebugger" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "LANG" >}} | server-side support for debugging PL/pgSQL functions |
-| {{< ext "plpgsql_check" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Additional validation, profiling, and diagnostics for PL/pgSQL functions |
-| {{< ext "plprofiler" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "LANG" >}} | server-side support for profiling PL/pgSQL functions |
-| {{< ext "plsh" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | PL/sh procedural language |
-| {{< ext "pljava" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/Java procedural language |
-| {{< ext "plr" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | load R interpreter and execute R script from within a database |
-| {{< ext "plxslt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | XSLT procedural language for PostgreSQL |
-| {{< ext "pg_mockable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "LANG" >}} | Create mockable wrappers for PostgreSQL functions in tests |
-| {{< ext "pgsqlmock" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "LANG" >}} | Mocking and faking helpers for PostgreSQL unit tests |
-| {{< ext "plx" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Transpile multiple procedural dialects to PL/pgSQL |
-| {{< ext "pgwasm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Run sandboxed WebAssembly components as strongly typed PostgreSQL SQL functions. |
-| {{< ext "plruby" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Embed MRI Ruby as an untrusted PostgreSQL procedural language |
-| {{< ext "jsonb_plruby" "plruby" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Transform between jsonb and native Ruby data for PL/Ruby |
-| {{< ext "hstore_plruby" "plruby" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Transform between hstore and Ruby Hashes for PL/Ruby |
-| {{< ext "ltree_plruby" "plruby" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Transform between ltree and Ruby Arrays for PL/Ruby |
-| {{< ext "plphp" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Embed PHP 8 as an untrusted PostgreSQL procedural language |
-| {{< ext "pgtap" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-b--d-r" color="blue" >}} | {{< category "LANG" >}} | Unit testing for PostgreSQL |
-| {{< ext "faker" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Wrapper for the Faker Python library |
-| {{< ext "dbt2" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | OSDL-DBT-2 test kit |
-| {{< ext "pg_regresql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "LANG" >}} | Trust pg_class statistics for planning instead of physical relation size |
-| {{< ext "pltcl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "LANG" >}} | PL/Tcl procedural language |
-| {{< ext "pltclu" "pltcl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/TclU untrusted procedural language |
-| {{< ext "plperl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "LANG" >}} | PL/Perl procedural language |
-| {{< ext "bool_plperl" "plperl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "LANG" >}} | transform between bool and plperl |
-| {{< ext "hstore_plperl" "plperl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between hstore and plperl |
-| {{< ext "jsonb_plperl" "plperl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "LANG" >}} | transform between jsonb and plperl |
-| {{< ext "plperlu" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/PerlU untrusted procedural language |
-| {{< ext "bool_plperlu" "plperlu" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between bool and plperlu |
-| {{< ext "jsonb_plperlu" "plperlu" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between jsonb and plperlu |
-| {{< ext "hstore_plperlu" "plperlu" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between hstore and plperlu |
-| {{< ext "plpgsql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "LANG" >}} | PL/pgSQL procedural language |
-| {{< ext "plpython3u" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/Python3U untrusted procedural language |
-| {{< ext "jsonb_plpython3u" "plpython3u" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between jsonb and plpython3u |
-| {{< ext "ltree_plpython3u" "plpython3u" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between ltree and plpython3u |
-| {{< ext "hstore_plpython3u" "plpython3u" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between hstore and plpython3u |
-| {{< ext "prefix" "pg_prefix" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Prefix Range module for PostgreSQL |
-| {{< ext "semver" "pg_semver" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Semantic version data type |
-| {{< ext "pg_text_semver" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "TYPE" >}} | Semantic version domain and comparison operators for PostgreSQL |
-| {{< ext "pg_lexo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TYPE" >}} | Lexicographic position type for inserting and reordering list items |
-| {{< ext "codesystem" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Hierarchical classification code types with validation and revision tracking |
-| {{< ext "unit" "pgunit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TYPE" >}} | SI units extension |
-| {{< ext "pgpdf" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | PDF type with meta admin & Full-Text Search |
-| {{< ext "pglite_fusion" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "TYPE" >}} | Embed an SQLite database in your PostgreSQL table |
-| {{< ext "md5hash" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | type for storing 128-bit binary data inline |
-| {{< ext "asn1oid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | asn1oid extension |
-| {{< ext "roaringbitmap" "pg_roaringbitmap" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | support for Roaring Bitmaps |
-| {{< ext "pgfaceting" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TYPE" >}} | fast faceting queries using an inverted index |
-| {{< ext "pg_sphere" "pgsphere" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | spherical objects with useful functions, operators and index support |
-| {{< ext "country" "pg_country" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Country data type, ISO 3166-1 |
-| {{< ext "pg_xenophile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TYPE" >}} | More than the bare necessities for PostgreSQL i18n and l10n. |
-| {{< ext "l10n_table_dependent_extension" "pg_xenophile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "TYPE" >}} | PostgreSQL l10n toolbox |
-| {{< ext "currency" "pg_currency" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Custom PostgreSQL currency type in 1Byte |
-| {{< ext "pg_money" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Exact currency-aware monetary types, arithmetic, and allocation |
-| {{< ext "collection" "pgcollection" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Associative-array data types for high-performance PL/pgSQL workflows |
-| {{< ext "istore" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Integer key/value types with arithmetic, aggregation, and GIN indexing |
-| {{< ext "pgmp" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Multiple Precision Arithmetic extension |
-| {{< ext "numeral" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | numeral datatypes extension |
-| {{< ext "pg_rational" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TYPE" >}} | Precise fractions stored as two 32-bit integers |
-| {{< ext "uint" "pguint" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | unsigned integer types |
-| {{< ext "uint128" "pg_uint128" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Native uint128 type |
-| {{< ext "hashtypes" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TYPE" >}} | sha1, md5 and other data types for PostgreSQL |
-| {{< ext "postbis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Adds compressed DNA, RNA, amino-acid, and aligned sequence types with casts, operators, indexes, and |
-| {{< ext "ip4r" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
-| {{< ext "uri" "pg_uri" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | URI Data type for PostgreSQL |
-| {{< ext "emailaddr" "pg_emailaddr" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Email address type for PostgreSQL |
-| {{< ext "acl" "pg_acl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | ACL Data type |
-| {{< ext "debversion" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Debian version number data type |
-| {{< ext "pg_duration" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | data type for representing durations |
-| {{< ext "pg_bikram_sambat" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Bikram Sambat date type and AD/BS conversion functions |
-| {{< ext "pg_nanotime" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Nanosecond timestamp and fixed-duration interval types |
-| {{< ext "pg_rrule" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | RRULE field type for PostgreSQL |
-| {{< ext "pgcalendar" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TYPE" >}} | Recurring calendar, schedule, and exception management for PostgreSQL |
-| {{< ext "timestamp9" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | timestamp nanosecond resolution |
-| {{< ext "pgbson" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | BSON data type and accessor functions for PostgreSQL |
-| {{< ext "chkpass" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | data type for auto-encrypted passwords |
-| {{< ext "isn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "TYPE" >}} | data types for international product numbering standards |
-| {{< ext "seg" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "TYPE" >}} | data type for representing line segments or floating-point intervals |
-| {{< ext "cube" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "TYPE" >}} | data type for multidimensional cubes |
-| {{< ext "ltree" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "TYPE" >}} | data type for hierarchical tree-like structures |
-| {{< ext "hstore" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "TYPE" >}} | data type for storing sets of (key, value) pairs |
-| {{< ext "citext" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "TYPE" >}} | data type for case-insensitive character strings |
-| {{< ext "xml2" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "TYPE" >}} | XPath querying and XSLT |
-| {{< ext "gzip" "pg_gzip" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | gzip and gunzip functions. |
-| {{< ext "bzip" "pg_bzip" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | Bzip compression and decompression |
-| {{< ext "zstd" "pg_zstd" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Zstandard compression algorithm implementation in PostgreSQL |
-| {{< ext "http" "pg_http" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | HTTP client for PostgreSQL, allows web page retrieval inside the database. |
-| {{< ext "pg_net" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "UTIL" >}} | Async HTTP Requests |
-| {{< ext "pg_curl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Run curl actions for data transfer in URL syntax |
-| {{< ext "pg_retry" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Retry SQL statements on transient errors with exponential backoff |
-| {{< ext "pg_fsql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | Recursive SQL template engine with JSONB-driven execution |
-| {{< ext "pg_protobuf" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Protobuf support for PostgreSQL |
-| {{< ext "pgproto" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Native Protobuf parsing, mutation, indexing, and JSON conversion support |
-| {{< ext "pglock" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | Lightweight distributed lock service inside PostgreSQL |
-| {{< ext "pg_lease" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "UTIL" >}} | SQL leases with TTL expiry and monotonically increasing fencing epochs |
-| {{< ext "pgjq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Use jq in Postgres |
-| {{< ext "pg_json_diff" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | JSONB diff, JSON Patch, and JSON Merge Patch functions |
-| {{< ext "pgjwt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | JSON Web Token API for Postgresql |
-| {{< ext "pg_smtp_client" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | PostgreSQL extension to send email using SMTP |
-| {{< ext "pg_html5_email_address" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "UTIL" >}} | PostgreSQL email validation that is consistent with the HTML5 spec |
-| {{< ext "url_encode" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | url_encode, url_decode functions |
-| {{< ext "pgsql_tweaks" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "UTIL" >}} | Some functions and views for daily usage |
-| {{< ext "pg_relation_sql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-------" color="blue" >}} | {{< category "UTIL" >}} | Generate inlinable SQL functions for navigating PostgreSQL foreign-key relations |
-| {{< ext "pg_extra_time" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "UTIL" >}} | Some date time functions and operators that, |
-| {{< ext "pgpcre" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Perl Compatible Regular Expression functions |
-| {{< ext "re2" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "UTIL" >}} | ClickHouse-compatible regex functions using RE2 |
-| {{< ext "icu_ext" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Access ICU functions |
-| {{< ext "pgqr" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | QR Code generator from PostgreSQL |
-| {{< ext "envvar" "pg_envvar" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Fetch the value of an environment variable |
-| {{< ext "byteamagic" "pg_byteamagic" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Detect MIME types and file formats from PostgreSQL bytea values |
-| {{< ext "floatfile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Simple file storage for arrays of floats |
-| {{< ext "external_file" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | Access external server-side files through PostgreSQL functions |
-| {{< ext "pg_render" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | Render HTML in SQL |
-| {{< ext "pg_readme" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "UTIL" >}} | Generate a Markdown README from PostgreSQL COMMENT objects |
-| {{< ext "pg_readme_test_extension" "pg_readme" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "UTIL" >}} | Fixture extension used to test pg_readme document generation |
-| {{< ext "ddl_historization" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | Historize the ddl changes inside PostgreSQL database |
-| {{< ext "data_historization" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "UTIL" >}} | PLPGSQL Script to historize data in partitionned table |
-| {{< ext "schedoc" "pg_schedoc" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | Cross documentation between Django and DBT projects |
-| {{< ext "pg_isok" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | Query-based data integrity management and soft alerting for PostgreSQL |
-| {{< ext "pg_describe" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Report a query's parameters and result columns without executing it |
-| {{< ext "colnames" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Return column names of a record or composite value |
-| {{< ext "hashlib" "pg_hashlib" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Stable hash functions for Postgres |
-| {{< ext "xxhash" "pg_xxhash" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | xxhash functions for PostgreSQL |
-| {{< ext "shacrypt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes |
-| {{< ext "cryptint" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Encryption functions for int and bigint values |
-| {{< ext "pguecc" "pg_ecdsa" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | uECC bindings for Postgres |
-| {{< ext "sparql" "pgsparql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | Query SPARQL datasource with SQL |
-| {{< ext "opencc" "pg_opencc" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "UTIL" >}} | OpenCC conversion between Simplified Chinese, Traditional Chinese, regional variants and Japanese Sh |
-| {{< ext "pg_idkit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, ULID, KSUID) |
-| {{< ext "pgx_ulid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FUNC" >}} | ulid type and methods |
-| {{< ext "pg_uuidv7" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Create UUIDv7 values in postgres |
-| {{< ext "pg_uuid_v8" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | UUID v8 generator with embedded timestamps for PostgreSQL |
-| {{< ext "permuteseq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Pseudo-randomly permute sequences with a format-preserving encryption on elements |
-| {{< ext "pg_hashids" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Short unique id generator for PostgreSQL, using hashids |
-| {{< ext "pg_slug_gen" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Generate cryptographically secure timestamp-based slugs |
-| {{< ext "sequential_uuids" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | generator of sequential UUIDs |
-| {{< ext "typeid" "pg_typeid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Allows to use TypeIDs in Postgres natively |
-| {{< ext "snowflake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
-| {{< ext "topn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | type for top-n JSONB |
-| {{< ext "quantile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Quantile aggregation function |
-| {{< ext "lower_quantile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Lower quantile aggregate function |
-| {{< ext "count_distinct" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | An alternative to COUNT(DISTINCT …) aggregate, usable with HashAggregate |
-| {{< ext "omnisketch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | data structure for on-line agg of data into approximate sketch |
-| {{< ext "ddsketch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Provides ddsketch aggregate function |
-| {{< ext "vasco" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | discover hidden correlations in your data with MIC |
-| {{< ext "xicor" "pgxicor" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | XI Correlation Coefficient in Postgres |
-| {{< ext "weighted_statistics" "pg_weighted_statistics" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | High-performance weighted statistics functions for sparse data |
-| {{< ext "pg_statkit" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Descriptive statistics and clinical effect-size functions over arrays |
-| {{< ext "datasketches" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Approximate analytics sketches and aggregates for PostgreSQL |
-| {{< ext "fbsql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FUNC" >}} | Closure-preserving formula-based statistical modeling in SQL |
-| {{< ext "tdigest" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Provides tdigest aggregate function. |
-| {{< ext "hdr_histogram" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FUNC" >}} | HDR histogram type, percentile queries and mergeable aggregation. |
-| {{< ext "first_last_agg" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | first() and last() aggregate functions |
-| {{< ext "extra_window_functions" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Extra Window Functions for PostgreSQL |
-| {{< ext "floatvec" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Math for vectors (arrays) of numbers |
-| {{< ext "aggs_for_vecs" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Aggregate functions for array inputs |
-| {{< ext "aggs_for_arrays" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Various functions for computing statistics on arrays of numbers |
-| {{< ext "argm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | argmax, argmin, and anyold aggregate functions |
-| {{< ext "pg_csv" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Flexible CSV processing for Postgres |
-| {{< ext "arraymath" "pg_arraymath" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Array math and operators that work element by element on the contents of arrays |
-| {{< ext "pg_math" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | GSL statistical functions for postgresql |
-| {{< ext "random" "pg_random" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | random data generator |
-| {{< ext "base36" "pg_base36" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Integer Base36 types |
-| {{< ext "base62" "pg_base62" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Base62 extension for PostgreSQL |
-| {{< ext "pg_base58" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Base58 Encoder/Decoder Extension for PostgreSQL |
-| {{< ext "financial" "pg_financial" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Financial aggregate functions |
-| {{< ext "pg_accumulator" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Accumulation registers for balance and turnover tracking in PostgreSQL |
-| {{< ext "convert" "pg_convert" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | conversion functions for spatial, routing and other specialized uses |
-| {{< ext "pg_try_cast" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FUNC" >}} | Text conversion with NULL or a typed fallback on conversion errors. |
-| {{< ext "parray_gin" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | GIN index operator class and partial-match operators for text arrays |
-| {{< ext "refint" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FUNC" >}} | functions for implementing referential integrity (obsolete) |
-| {{< ext "autoinc" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FUNC" >}} | functions for autoincrementing fields |
-| {{< ext "insert_username" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FUNC" >}} | functions for tracking who changed a table |
-| {{< ext "moddatetime" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FUNC" >}} | functions for tracking last modification time |
-| {{< ext "tsm_system_time" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | TABLESAMPLE method which accepts time in milliseconds as a limit |
-| {{< ext "dict_xsyn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FUNC" >}} | text search dictionary template for extended synonym processing |
-| {{< ext "tsm_system_rows" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | TABLESAMPLE method which accepts number of rows as a limit |
-| {{< ext "tcn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | Triggered change notifications |
-| {{< ext "uuid-ossp" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | generate universally unique identifiers (UUIDs) |
-| {{< ext "btree_gist" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | support for indexing common datatypes in GiST |
-| {{< ext "btree_gin" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | support for indexing common datatypes in GIN |
-| {{< ext "intarray" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | functions, operators, and index support for 1-D arrays of integers |
-| {{< ext "intagg" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c---d-r" color="blue" >}} | {{< category "FUNC" >}} | integer aggregator and enumerator (obsolete) |
-| {{< ext "dict_int" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | text search dictionary template for integers |
-| {{< ext "unaccent" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | text search dictionary that removes accents |
-| {{< ext "pg_repack" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "ADMIN" >}} | Reorganize tables in PostgreSQL databases with minimal locks |
-| {{< ext "pg_rewrite" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "ADMIN" >}} | Tool allows read write to the table during the rewriting |
-| {{< ext "pg_query_rewrite" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | Translate a given SQL statement into another predefined SQL statement |
-| {{< ext "pg_squeeze" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | A tool to remove unused space from a relation. |
-| {{< ext "pg_dirtyread" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Read dead but unvacuumed rows from table |
-| {{< ext "pgfincore" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | examine and manage the os buffer cache |
-| {{< ext "pg_cooldown" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | remove buffered pages for specific relations |
-| {{< ext "ddlx" "pg_ddlx" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | DDL eXtractor functions |
-| {{< ext "pglinter" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ADMIN" >}} | PostgreSQL Linting and Analysis Extension |
-| {{< ext "prioritize" "pg_prioritize" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | get and set the priority of PostgreSQL backends |
-| {{< ext "pg_checksums" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-b-----" color="blue" >}} | {{< category "ADMIN" >}} | Enable/disable checksums offline and verify them online or offline |
-| {{< ext "pg_integrity_checksums" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Physical and logical checksums for PostgreSQL pages, rows, tables, indexes and databases. |
-| {{< ext "pg_readonly" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | cluster database read only |
-| {{< ext "pgdd" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | Introspect pg data dictionary via standard SQL |
-| {{< ext "pg_permissions" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | view object permissions and compare them with the desired state |
-| {{< ext "pgautofailover" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ADMIN" >}} | pg_auto_failover |
-| {{< ext "pg_catcheck" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-b-----" color="blue" >}} | {{< category "ADMIN" >}} | Diagnosing system catalog corruption |
-| {{< ext "pre_prepare" "preprepare" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Pre Prepare your Statement server side |
-| {{< ext "pg_upless" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "ADMIN" >}} | Detect Useless UPDATE |
-| {{< ext "pgcozy" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | Pre-warming shared buffers according to previous pg_buffercache snapshots for PostgreSQL. |
-| {{< ext "pg_orphaned" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Deal with orphaned files |
-| {{< ext "pg_crash" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "ADMIN" >}} | Send random signals to random processes |
-| {{< ext "macavity" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Deterministic session-local fault injection for PostgreSQL test clusters |
-| {{< ext "pg_cheat_funcs" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Provides cheat (but useful) functions |
-| {{< ext "fio" "pg_fio" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | PostgreSQL File I/O Functions |
-| {{< ext "qos" "pg_qos" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | QoS resource governor extension for PostgreSQL sessions and queries |
-| {{< ext "pg_pathcheck" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "ADMIN" >}} | Validate planner Path trees for freed or corrupt memory |
-| {{< ext "pgdisablelogerror" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "ADMIN" >}} | Disable selected SQLSTATE error codes from PostgreSQL server logging. |
-| {{< ext "online_advisor" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "ADMIN" >}} | Suggest missing indexes and extended statistics online |
-| {{< ext "pg_column_tetris" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | Enforce optimal column alignment to minimize row padding |
-| {{< ext "cat_tools" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | Tools for interfacing with the PostgreSQL catalog |
-| {{< ext "pg_living_assertions" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | Executable SQL checks with verdict dates and assertion history |
-| {{< ext "pg_savior" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "ADMIN" >}} | Prevent accidental data loss and risky schema changes |
-| {{< ext "pg_circuit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | Runtime observation, warnings and blocking for dangerous SQL statements |
-| {{< ext "safeupdate" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "ADMIN" >}} | Require criteria for UPDATE and DELETE |
-| {{< ext "pg_strict" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | Prevent dangerous UPDATE and DELETE without WHERE clause |
-| {{< ext "pg_drop_events" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | logs transaction ids of drop table, drop column, drop materialized view statements |
-| {{< ext "table_log" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | record table modification logs and PITR for table/row |
-| {{< ext "pgelog" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | Extended logging via pseudo-autonomous transactions |
-| {{< ext "pgagent" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-b--d--" color="blue" >}} | {{< category "ADMIN" >}} | A PostgreSQL job scheduler |
-| {{< ext "pg_prewarm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sLd-r" color="blue" >}} | {{< category "ADMIN" >}} | prewarm relation data |
-| {{< ext "pgpool_adm" "pgpool" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Administrative functions for pgPool |
-| {{< ext "pgpool_recovery" "pgpool" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | recovery functions for pgpool-II for V4.3 |
-| {{< ext "pgpool_regclass" "pgpool" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | replacement for regclass |
-| {{< ext "lo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "ADMIN" >}} | Large Object maintenance |
-| {{< ext "basic_archive" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="c-s----" color="blue" >}} | {{< category "ADMIN" >}} | an example of an archive module |
-| {{< ext "basebackup_to_shell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="c-s----" color="blue" >}} | {{< category "ADMIN" >}} | adds a custom basebackup target called shell |
-| {{< ext "old_snapshot" >}} | {{< pgver "18,17,16,15,14" "r,r,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | utilities in support of old_snapshot_threshold |
-| {{< ext "adminpack" >}} | {{< pgver "18,17,16,15,14" "r,r,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "ADMIN" >}} | administrative functions for PostgreSQL |
-| {{< ext "amcheck" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | functions for verifying relation integrity |
-| {{< ext "pg_surgery" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | extension to perform surgery on a damaged relation |
-| {{< ext "pg_profile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | PostgreSQL load profile repository and report builder |
-| {{< ext "pg_tracing" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | Distributed Tracing for PostgreSQL |
-| {{< ext "pg_stat_ch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "STAT" >}} | Export PostgreSQL query telemetry to ClickHouse |
-| {{< ext "pg_stat_backtrace" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | Capture or log C-level stack backtraces of PostgreSQL processes |
-| {{< ext "pg_stat_log" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | Track cumulative PostgreSQL log message statistics by backend, database, user, level, and SQLSTATE. |
-| {{< ext "pg_stat_plans" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | Track per-plan call counts, execution times, and example EXPLAIN texts. |
-| {{< ext "pgfr_record" "pg_flight_recorder" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | Server-side PostgreSQL performance flight recorder |
-| {{< ext "pgfr_analyze" "pg_flight_recorder" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | Reporting and analysis functions for pgfr_record |
-| {{< ext "pgmonitor" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "STAT" >}} | Collector-friendly metric views and background refresh worker |
-| {{< ext "pgtelemetry" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | SQL monitoring views for database activity, WAL, replication, and storage |
-| {{< ext "pg_statviz" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | Capture PostgreSQL statistics snapshots for time-series analysis and visualization |
-| {{< ext "pg_show_plans" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | show query plans of all currently running SQL statements |
-| {{< ext "pg_stat_kcache" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | Kernel statistics gathering |
-| {{< ext "pg_rusage" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | Measure backend CPU usage between explicit reset and print calls |
-| {{< ext "pg_stat_monitor" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib m |
-| {{< ext "pg_qualstats" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "STAT" >}} | An extension collecting statistics about quals |
-| {{< ext "pg_store_plans" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | track plan statistics of all SQL statements executed |
-| {{< ext "pg_track_settings" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | Track settings changes |
-| {{< ext "pg_track_optimizer" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | Track planning decisions in comparison with execution reality |
-| {{< ext "pg_wait_sampling" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | sampling based statistics of wait events |
-| {{< ext "pg_datasentinel" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "STAT" >}} | Observability and activity monitoring extension for PostgreSQL |
-| {{< ext "pgsentinel" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | active session history |
-| {{< ext "system_stats" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | EnterpriseDB system statistics for PostgreSQL |
-| {{< ext "pgexporter_ext" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | Operating-system and host metrics for pgexporter |
-| {{< ext "meta" "pg_meta" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | Normalized, friendlier system catalog for PostgreSQL |
-| {{< ext "pgnodemx" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | Capture node OS metrics via SQL queries |
-| {{< ext "pg_proctab" "pgnodemx" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "STAT" >}} | PostgreSQL extension to access the OS process table |
-| {{< ext "pg_statvfs" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | Server filesystem capacity and inode statistics through statvfs |
-| {{< ext "pg_stat_tcpinfo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | Linux TCP connection statistics, latency and retransmissions |
-| {{< ext "pg_sqlog" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | Provide SQL interface to logs |
-| {{< ext "bgw_replstatus" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "STAT" >}} | Small PostgreSQL background worker to report whether a node is a replication master or standby |
-| {{< ext "pgmeminfo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "STAT" >}} | show memory usage |
-| {{< ext "toastinfo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | show details on toasted datums |
-| {{< ext "explain_ui" "pg_explain_ui" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "STAT" >}} | easily jump into a visual plan UI for any SQL query |
-| {{< ext "pg_relusage" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "STAT" >}} | Log the relations actually used by each SQL statement |
-| {{< ext "pagevis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "STAT" >}} | Visualise database pages in ascii code |
-| {{< ext "powa" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "STAT" >}} | PostgreSQL Workload Analyser-core |
-| {{< ext "pg_overexplain" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "STAT" >}} | Allow EXPLAIN to dump even more details |
-| {{< ext "pg_logicalinspect" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | Logical decoding components inspection |
-| {{< ext "pageinspect" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | inspect the contents of database pages at a low level |
-| {{< ext "pgrowlocks" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | show row-level locking information |
-| {{< ext "sslinfo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | information about SSL certificates |
-| {{< ext "pg_buffercache" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | examine the shared buffer cache |
-| {{< ext "pg_walinspect" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | functions to inspect contents of PostgreSQL Write-Ahead Log |
-| {{< ext "pg_freespacemap" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | examine the free space map (FSM) |
-| {{< ext "pg_visibility" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | examine the visibility map (VM) and page-level visibility info |
-| {{< ext "pgstattuple" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | show tuple-level statistics |
-| {{< ext "auto_explain" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "STAT" >}} | Provides a means for logging execution plans of slow statements automatically |
-| {{< ext "pg_stat_statements" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sLd-r" color="blue" >}} | {{< category "STAT" >}} | track planning and execution statistics of all SQL statements executed |
-| {{< ext "passwordcheck_cracklib" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | Strengthen PostgreSQL user password checks with cracklib |
-| {{< ext "supautils" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | Extension that secures a cluster on a cloud environment |
-| {{< ext "pgsodium" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Postgres extension for libsodium functions |
-| {{< ext "column_encrypt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Transparent column-level encryption with encrypted_text and encrypted_bytea types |
-| {{< ext "encsearch" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Experimental encrypted text search using AEAD ciphers and keyed blind indexes |
-| {{< ext "passwordpolicy" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | Dynamically configurable PostgreSQL password complexity checks. |
-| {{< ext "supabase_vault" "pg_vault" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | Supabase Vault Extension |
-| {{< ext "pg_session_jwt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SEC" >}} | Manage authentication sessions using JWTs |
-| {{< ext "anon" "pg_anon" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL Anonymizer (anon) extension |
-| {{< ext "pgsmcrypto" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL SM Algorithm Extension |
-| {{< ext "pg_enigma" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | Encrypted postgres data type |
-| {{< ext "pgaudit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | provides auditing functionality |
-| {{< ext "pgauditlogtofile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | pgAudit addon to redirect audit log to an independent file |
-| {{< ext "pg_roast" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Opinionated PostgreSQL database auditor |
-| {{< ext "pg_auditor" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SEC" >}} | Audit data changes and provide flashback ability |
-| {{< ext "logerrors" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | Function for collecting statistics about messages in logfile |
-| {{< ext "pg_auth_mon" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | monitor connection attempts per user |
-| {{< ext "pg_jobmon" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SEC" >}} | Extension for logging and monitoring functions in PostgreSQL |
-| {{< ext "pg_oidc_validator" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | OAuth and OIDC token validator for PostgreSQL 18 |
-| {{< ext "oidc_validator" "pg_oidc_validator_rust" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL 18 OIDC bearer-token validator plugin written in Rust |
-| {{< ext "pgmemento" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SEC" >}} | Transaction-based audit trail with schema versioning |
-| {{< ext "credcheck" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | credcheck - postgresql plain text credential checker |
-| {{< ext "pgcryptokey" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | cryptographic key management |
-| {{< ext "pg_pwhash" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | Advanced password hashing methods for PostgreSQL |
-| {{< ext "login_hook" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | login_hook - hook to execute login_hook.login() at login time |
-| {{< ext "set_user" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | similar to SET ROLE but with added logging |
-| {{< ext "pg_snakeoil" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | The PostgreSQL Antivirus |
-| {{< ext "pgextwlist" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL Extension Whitelisting |
-| {{< ext "pg_command_fw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | DDL and utility command firewall for PostgreSQL |
-| {{< ext "sslutils" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | A Postgres extension for managing SSL certificates through SQL |
-| {{< ext "libx509pq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | X.509 certificate parsing and inspection through OpenSSL |
-| {{< ext "noset" "pg_noset" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Module for blocking SET variables for non-super users. |
-| {{< ext "block_copy_command" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Block COPY commands via a configurable ProcessUtility hook |
-| {{< ext "pg_policy" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SEC" >}} | Agentic policy language for PostgreSQL with guardrails, guidance, and session-aware controls |
-| {{< ext "pg_kpart" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "SEC" >}} | Reject full partition scans that omit the partition key |
-| {{< ext "pg_agent_gate" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | SQL proposal, verification and execution gate with human approval for agent roles. |
-| {{< ext "pg_tde" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Percona pg_tde access method |
-| {{< ext "pg_vault_tde" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "SEC" >}} | Transparent Data Encryption for PostgreSQL through custom table and index access methods |
-| {{< ext "sepgsql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | label-based mandatory access control (MAC) based on SELinux security policy. |
-| {{< ext "auth_delay" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | pause briefly before reporting authentication failure |
-| {{< ext "pgcrypto" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "SEC" >}} | cryptographic functions |
-| {{< ext "passwordcheck" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | checks user passwords and reject weak password |
-| {{< ext "wrappers" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrappers developed by Supabase |
-| {{< ext "multicorn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Fetch foreign data in Python in your PostgreSQL server. |
-| {{< ext "odbc_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for accessing remote databases using ODBC |
-| {{< ext "jdbc_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for remote servers available over JDBC |
-| {{< ext "pgspider_ext" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for remote PGSpider servers |
-| {{< ext "mysql_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for querying a MySQL server |
-| {{< ext "oracle_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign data wrapper for Oracle access |
-| {{< ext "tds_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server) |
-| {{< ext "db2_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign data wrapper for DB2 access |
-| {{< ext "sqlite_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | SQLite Foreign Data Wrapper |
-| {{< ext "pgbouncer_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FDW" >}} | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from norma |
-| {{< ext "etcd_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for etcd |
-| {{< ext "informix_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for Informix access |
-| {{< ext "nominatim_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Nominatim Foreign Data Wrapper for PostgreSQL |
-| {{< ext "mongo_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign data wrapper for MongoDB access |
-| {{< ext "redis_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for querying a Redis server |
-| {{< ext "redis" "pg_redis_pubsub" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Send redis pub/sub messages to Redis from PostgreSQL Directly |
-| {{< ext "kafka_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | kafka Foreign Data Wrapper for CSV formatted messages |
-| {{< ext "hdfs_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for remote hdfs servers |
-| {{< ext "firebird_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for Firebird |
-| {{< ext "rdf_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
-| {{< ext "oai_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Read-only OAI-PMH foreign data wrapper for metadata harvesting over HTTP/HTTPS. |
-| {{< ext "aws_s3" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FDW" >}} | aws_s3 postgres extension to import/export data from/to s3 |
-| {{< ext "log_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for Postgres log file access |
-| {{< ext "dblink" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FDW" >}} | connect to other PostgreSQL databases from within a database |
-| {{< ext "file_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for flat file access |
-| {{< ext "postgres_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for remote PostgreSQL servers |
-| {{< ext "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | API surface for DocumentDB for PostgreSQL |
-| {{< ext "documentdb_core" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Core API surface for DocumentDB on PostgreSQL |
-| {{< ext "documentdb_extended_rum" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | DocumentDB Extended RUM index access method |
-| {{< ext "pg_projection" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "SIM" >}} | MongoDB-like read projections for JSONB in PostgreSQL |
-| {{< ext "orafce" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
-| {{< ext "pgtt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |
-| {{< ext "session_variable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Registration and manipulation of session variables and constants |
-| {{< ext "pg_statement_rollback" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SIM" >}} | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
-| {{< ext "ivorysql_ora" "ivorysql" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Oracle Compatible extension on Postgres Database |
-| {{< ext "ora_btree_gin" "ivorysql" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Support for indexing oracle datatypes in GIN |
-| {{< ext "ora_btree_gist" "ivorysql" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Support for oracle indexing common datatypes in GiST |
-| {{< ext "pg_get_functiondef" "ivorysql" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Get function's definition |
-| {{< ext "plisql" "ivorysql" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | PL/iSQL procedural language |
-| {{< ext "gb18030_2022" "ivorysql" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Support GB18030-2022 and UTF-8 conversion |
-| {{< ext "db2fce" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SIM" >}} | DB2 compatibility functions, types, operators, and SYSIBM.SYSDUMMY1 for PostgreSQL. |
-| {{< ext "plpgsql_wrap" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Oracle WRAP-equivalent PL/pgSQL language handler storing AES-256-GCM encrypted procedure source. |
-| {{< ext "pg_synonym" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Table and view aliases synchronized with target DDL. |
-| {{< ext "pg_dbms_metadata" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
-| {{< ext "pg_dbms_lock" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
-| {{< ext "pg_dbms_job" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
-| {{< ext "pg_dbms_errlog" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
-| {{< ext "pg_utl_smtp" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SIM" >}} | Oracle UTL_SMTP compatibility extension for PostgreSQL |
-| {{< ext "babelfishpg_common" "babelfish" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server Transact SQL Datatype Support |
-| {{< ext "babelfishpg_tsql" "babelfish" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server Transact SQL compatibility |
-| {{< ext "babelfishpg_tds" "babelfish" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server TDS protocol extension |
-| {{< ext "babelfishpg_money" "babelfish" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | SQL Server Money Data Type |
-| {{< ext "pgmemcache" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | memcached interface |
-| {{< ext "aux_mysql" "openhalo" >}} | {{< pgver "18,17,16,15,14" "r,r,r,r,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | MySQL Supplementary Extension |
-| {{< ext "pgs3" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | S3-compatible object storage endpoint implemented inside PostgreSQL |
-| {{< ext "kafgres" >}} | {{< pgver "18,17,16,15,14" "r,r,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Kafka protocol broker embedded in PostgreSQL |
-| {{< ext "pglogical" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | PostgreSQL Logical Replication |
-| {{< ext "pglogical_origin" "pglogical" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ETL" >}} | Dummy extension for compatibility when upgrading from Postgres 9.4 |
-| {{< ext "pglogical_ticker" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ETL" >}} | Have an accurate view on pglogical replication delay |
-| {{< ext "pgl_ddl_deploy" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ETL" >}} | automated ddl deployment using pglogical |
-| {{< ext "logical_ddl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ETL" >}} | Replicate supported DDL changes over PostgreSQL logical replication |
-| {{< ext "pg_failover_slots" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "ETL" >}} | PG Failover Slots extension |
-| {{< ext "db_migrator" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "ETL" >}} | Tools to migrate other databases to PostgreSQL |
-| {{< ext "pgactive" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | Active-Active Replication Extension for PostgreSQL |
-| {{< ext "spock" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | Multi-master logical replication extension for PostgreSQL |
-| {{< ext "lolor" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ETL" >}} | Logical-replication-friendly replacement for PostgreSQL large objects |
-| {{< ext "pgclone" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ETL" >}} | Clone PostgreSQL databases, schemas, tables, and functions across environments |
-| {{< ext "pgmqtt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ETL" >}} | CDC-to-MQTT broker for PostgreSQL |
-| {{< ext "wal2json" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | Changing data capture in JSON format |
-| {{< ext "wal2mongo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | PostgreSQL logical decoding output plugin for MongoDB |
-| {{< ext "decoderbufs" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "ETL" >}} | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
-| {{< ext "decoder_raw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | Output plugin for logical replication in Raw SQL format |
-| {{< ext "mimeo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-b--d--" color="blue" >}} | {{< category "ETL" >}} | Extension for specialized, per-table replication between PostgreSQL instances |
-| {{< ext "repmgr" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | Replication manager for PostgreSQL |
-| {{< ext "pg_fact_loader" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ETL" >}} | build fact tables with Postgres |
-| {{< ext "pg_bulkload" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "ETL" >}} | pg_bulkload is a high speed data loading utility for PostgreSQL |
-| {{< ext "test_decoding" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | {{< category "ETL" >}} | SQL-based test/example module for WAL logical decoding |
-| {{< ext "pgoutput" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | {{< category "ETL" >}} | Logical Replication output plugin |
+| {{< ext "timescaledb" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,r" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "TIME" >}} | Enables scalable inserts and complex queries for time-series data |
+| {{< ext "timescaledb_toolkit" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "TIME" >}} | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
+| {{< ext "timeseries" "pg_timeseries" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TIME" >}} | Convenience API for time series stack |
+| {{< ext "periods" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TIME" >}} | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
+| {{< ext "temporal_tables" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TIME" >}} | temporal tables |
+| {{< ext "emaj" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-b--d--" color="blue" >}} | {{< category "TIME" >}} | Enables fine-grained write logging and time travel on subsets of the database. |
+| {{< ext "table_version" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-b--d--" color="blue" >}} | {{< category "TIME" >}} | PostgreSQL table versioning extension |
+| {{< ext "pg_cron" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "TIME" >}} | Job scheduler for PostgreSQL |
+| {{< ext "pg_task" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "TIME" >}} | execute any sql command at any specific time at background |
+| {{< ext "pg_later" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "TIME" >}} | Run queries now and get results later |
+| {{< ext "pg_dispatch" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TIME" >}} | Asynchronous SQL dispatcher built on pg_cron |
+| {{< ext "pg_background" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TIME" >}} | Run SQL queries in the background |
+| {{< ext "pg_when" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TIME" >}} | Natural language time parsing for PostgreSQL |
+| {{< ext "edtf_postgres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "TIME" >}} | EDTF validation, normalization, date bounds, and temporal relations |
+| {{< ext "pg_stl" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TIME" >}} | Time series analysis functions for PostgreSQL |
+| {{< ext "cron_utils" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "TIME" >}} | Parse cron expressions and compute previous or next trigger times |
+| {{< ext "postgis" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS geometry and geography spatial types and functions |
+| {{< ext "postgis_topology" "postgis" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS topology spatial types and functions |
+| {{< ext "postgis_raster" "postgis" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS raster types and functions |
+| {{< ext "postgis_sfcgal" "postgis" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | PostGIS SFCGAL functions |
+| {{< ext "postgis_tiger_geocoder" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "GIS" >}} | PostGIS tiger geocoder and reverse geocoder |
+| {{< ext "address_standardizer" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | Used to parse an address into constituent elements. Generally used to support geocoding address norm |
+| {{< ext "address_standardizer_data_us" "address_standardizer" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "GIS" >}} | Address Standardizer US dataset example |
+| {{< ext "pgrouting" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | pgRouting Extension |
+| {{< ext "pointcloud" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | data type for lidar point clouds |
+| {{< ext "pointcloud_postgis" "pointcloud" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "GIS" >}} | integration for pointcloud LIDAR data and PostGIS geometry data |
+| {{< ext "h3" "pg_h3" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | H3 bindings for PostgreSQL |
+| {{< ext "h3_postgis" "pg_h3" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | H3 PostGIS integration |
+| {{< ext "q3c" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | q3c sky indexing plugin |
+| {{< ext "ogr_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-bs-d-r" color="blue" >}} | {{< category "GIS" >}} | foreign-data wrapper for GIS data access |
+| {{< ext "geoip" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | IP-based geolocation query |
+| {{< ext "pg_polyline" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | Fast Google Encoded Polyline encoding & decoding for postgres |
+| {{< ext "pg_eviltransform" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | Coordinate transforms for BD09/GCJ02 via PostGIS ST_Transform |
+| {{< ext "pg_geohash" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | Handle geohash based functionality for spatial coordinates |
+| {{< ext "pghydro" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Drainage network analysis core for PostgreSQL and PostGIS |
+| {{< ext "pgh_raster" "pghydro" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Raster hydrology extension for PgHydro |
+| {{< ext "pgh_hgm" "pghydro" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Hydrogeomorphological analysis extension for PgHydro |
+| {{< ext "pgh_output" "pghydro" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Output and reporting objects for PgHydro |
+| {{< ext "pgh_output_en_au" "pghydro" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Australian English output pack for PgHydro |
+| {{< ext "pgh_output_pt_br" "pghydro" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Brazilian Portuguese output pack for PgHydro |
+| {{< ext "pgh_consistency" "pghydro" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | Pfafstetter consistency checks for PgHydro |
+| {{< ext "mobilitydb" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "GIS" >}} | MobilityDB geospatial trajectory data management & analysis platform |
+| {{< ext "mobilitydb_datagen" "mobilitydb" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "GIS" >}} | MobilityDB random data generator functions |
+| {{< ext "tzf" "pg_tzf" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | Fast lookup timezone name by GPS coordinates |
+| {{< ext "earthdistance" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "GIS" >}} | calculate great-circle distances on the surface of the Earth |
+| {{< ext "qdgc" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----dtr" color="blue" >}} | {{< category "GIS" >}} | Encode, decode, navigate, and fill Extended Quarter Degree Grid Cell codes in pure SQL. |
+| {{< ext "qdgc_postgis" "qdgc" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "GIS" >}} | Add PostGIS geometry and geography bindings plus area-to-cell fills for QDGC. |
+| {{< ext "vector" "pgvector" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "RAG" >}} | vector data type and ivfflat and hnsw access methods |
+| {{< ext "vchord" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "RAG" >}} | Vector database plugin for Postgres, written in Rust |
+| {{< ext "vectorscale" "pgvectorscale" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Advanced indexing for vector data with DiskANN |
+| {{< ext "vectorize" "pg_vectorize" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "RAG" >}} | The simplest way to do vector search on Postgres |
+| {{< ext "pg_similarity" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "RAG" >}} | support similarity queries |
+| {{< ext "pg_rrf" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Reciprocal rank fusion functions for hybrid search |
+| {{< ext "smlar" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "RAG" >}} | Effective similarity search |
+| {{< ext "pg_summarize" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Text Summarization using LLMs. Built using pgrx |
+| {{< ext "pg_tiktoken" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
+| {{< ext "pg_tiktoken_c" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Fast tiktoken BPE tokenizer for PostgreSQL implemented in C |
+| {{< ext "pg_grammar_guard" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "RAG" >}} | Catalog-derived grammars and approved grammar drift checks |
+| {{< ext "jev" >}} | {{< pgver "19,18,17,16,15" "g,r,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "RAG" >}} | Natural-language row filtering, ranking and classification through a Jev-compatible API |
+| {{< ext "pg4ml" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "RAG" >}} | Machine learning framework for PostgreSQL |
+| {{< ext "pgml" >}} | {{< pgver "19,18,17,16,15" "r,r,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "RAG" >}} | Run AI/ML workloads with SQL interface |
+| {{< ext "pgmnemo" >}} | {{< pgver "19,18,17,16,15" "g,g,g,r,r" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "RAG" >}} | Single-plan multimodal agent memory for PostgreSQL |
+| {{< ext "pgcontext" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
+| {{< ext "pg_turbovec" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
+| {{< ext "pg_vectorsearch" >}} | {{< pgver "19,18,17,16,15" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Approximate vector search with PRISM indexes and RaBitQ quantization |
+| {{< ext "pg_search" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | Full text search for PostgreSQL using BM25 |
+| {{< ext "pgroonga" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "FTS" >}} | Use Groonga as index, fast full text search platform for all languages! |
+| {{< ext "pgroonga_database" "pgroonga" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | Recovery helper for removing a damaged PGroonga internal database |
+| {{< ext "pg_bigm" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FTS" >}} | create 2-gram (bigram) index for faster full text search. |
+| {{< ext "vgram" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Variable-length gram GIN indexes and statistics for LIKE/ILIKE search |
+| {{< ext "zhparser" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | a parser for full-text search of Chinese |
+| {{< ext "pg_bestmatch" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | Generate BM25 sparse vector inside PostgreSQL |
+| {{< ext "vchord_bm25" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FTS" >}} | A postgresql extension for bm25 ranking algorithm |
+| {{< ext "pg_tokenizer" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | Tokenizers for full-text search |
+| {{< ext "biscuit" "pg_biscuit" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | IAM-LIKE pattern matching with bitmap indexing |
+| {{< ext "pg_textsearch" >}} | {{< pgver "19,18,17,16,15" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | Full-text search with BM25 ranking |
+| {{< ext "pg_pinyin" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Pinyin romanization and search helpers for PostgreSQL |
+| {{< ext "pg_kazsearch" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | Kazakh full-text search extension for PostgreSQL |
+| {{< ext "psql_bm25s" >}} | {{< pgver "19,18,17,16,15" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | PostgreSQL extension for BM25-family lexical retrieval |
+| {{< ext "pg_fts" >}} | {{< pgver "19,18,17,16,15" "g,g,g,r,r" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FTS" >}} | Full-text search with BM25 and BM25F ranking |
+| {{< ext "pg_cjk_parser" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | CJK bigram parser derived from PostgreSQL full-text search |
+| {{< ext "pg_jieba" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Chinese full-text search parser based on cppjieba |
+| {{< ext "acdat" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | Compiled Aho-Corasick double-array machines for exact multi-pattern matching and replacement in Post |
+| {{< ext "addressing_dictionary" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Address-aware text search dictionaries and configurations |
+| {{< ext "hunspell_cs_cz" "hunspell" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Czech Hunspell Dictionary |
+| {{< ext "hunspell_de_de" "hunspell" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | German Hunspell Dictionary |
+| {{< ext "hunspell_en_us" "hunspell" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | en_US Hunspell Dictionary |
+| {{< ext "hunspell_fr" "hunspell" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | French Hunspell Dictionary |
+| {{< ext "hunspell_ne_np" "hunspell" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Nepali Hunspell Dictionary |
+| {{< ext "hunspell_nl_nl" "hunspell" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Dutch Hunspell Dictionary |
+| {{< ext "hunspell_nn_no" "hunspell" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Norwegian (norsk) Hunspell Dictionary |
+| {{< ext "hunspell_pt_pt" "hunspell" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Portuguese Hunspell Dictionary |
+| {{< ext "hunspell_ru_ru" "hunspell" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Russian Hunspell Dictionary |
+| {{< ext "hunspell_ru_ru_aot" "hunspell" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Russian Hunspell Dictionary (from AOT.ru group) |
+| {{< ext "textsearch_intl" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Multilingual full text search with ICU segmentation, normalization and n-gram matching |
+| {{< ext "pg_icu_parser" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Full text search parser using ICU boundary analysis |
+| {{< ext "tin" "lead" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | TIN-compatible text search for development and testing |
+| {{< ext "stannum" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | Experimental TINQL text search with BM25 and segmented indexes |
+| {{< ext "pg_tre" >}} | {{< pgver "19,18,17,16,15" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | Native PostgreSQL index access method for approximate regular-expression matching |
+| {{< ext "fuzzystrmatch" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FTS" >}} | determine similarities and distance between strings |
+| {{< ext "pg_trgm" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FTS" >}} | text similarity measurement and index searching based on trigrams |
+| {{< ext "citus" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Distributed PostgreSQL as an extension |
+| {{< ext "citus_columnar" "citus" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Citus columnar storage engine |
+| {{< ext "columnar" "hydra" >}} | {{< pgver "19,18,17,16,15" "r,r,r,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Hydra Columnar extension |
+| {{< ext "pg_duckdb" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | DuckDB Embedded in Postgres |
+| {{< ext "pg_mooncake" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Columnstore Table in Postgres |
+| {{< ext "storage_engine" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | colcompress and rowcompress Table Access Methods with vectorized execution |
+| {{< ext "pg_clickhouse" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "OLAP" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
+| {{< ext "duckdb_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "OLAP" >}} | DuckDB Foreign Data Wrapper |
+| {{< ext "pg_parquet" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | copy data between Postgres and Parquet |
+| {{< ext "pg_ducklake" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | DuckLake lakehouse extension for PostgreSQL, backed by DuckDB and Parquet |
+| {{< ext "pg_fkpart" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "OLAP" >}} | Table partitioning by foreign key utility |
+| {{< ext "pg_partman" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "OLAP" >}} | Extension to manage partitioned tables by time or ID |
+| {{< ext "plproxy" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Database partitioning implemented as procedural language |
+| {{< ext "pg_strom" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "OLAP" >}} | PG-Strom - big-data processing acceleration using GPU and NVME |
+| {{< ext "pg_orca" >}} | {{< pgver "19,18,17,16,15" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | ORCA query optimizer as a PostgreSQL extension |
+| {{< ext "pg_sorted_heap" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Sorted heap table AM with zone map scan pruning and built-in vector search |
+| {{< ext "pg_lake" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "OLAP" >}} | Data lake extension by Snowflake |
+| {{< ext "pg_extension_base" "pg_lake" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Extension development kit by Snowflake |
+| {{< ext "pg_extension_updater" "pg_lake" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Automatic extension updater |
+| {{< ext "pg_map" "pg_lake" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Map type for PostgreSQL, bundled as a required pg_lake component. |
+| {{< ext "pg_lake_engine" "pg_lake" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Query engine for data lake queries |
+| {{< ext "pg_lake_iceberg" "pg_lake" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Iceberg implementation in Postgres |
+| {{< ext "pg_lake_table" "pg_lake" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Data lake tables and Iceberg tables |
+| {{< ext "pg_lake_copy" "pg_lake" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Copy to/from data lake files |
+| {{< ext "pg_table_range" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Planning-time partition pruning by per-partition data ranges, including non-key columns. |
+| {{< ext "pg_improv" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Incremental multidimensional models and formula functions over PostgreSQL tables. |
+| {{< ext "tablefunc" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "OLAP" >}} | functions that manipulate whole tables, including crosstab |
+| {{< ext "age" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | AGE graph database extension |
+| {{< ext "pg_liquid" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Liquid-inspired Datalog graph query extension for PostgreSQL |
+| {{< ext "onesparse" "one_sparse" >}} | {{< pgver "19,18,17,16,15" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Sparse linear algebra and graph extension for PostgreSQL 18 |
+| {{< ext "graph" "pggraph" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Graph database capabilities for PostgreSQL |
+| {{< ext "pgrdf" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
+| {{< ext "pg_warren" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "FEAT" >}} | Versioned graph traversal and computation over PostgreSQL tables |
+| {{< ext "pgq" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Generic queue for PostgreSQL |
+| {{< ext "pgmq" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
+| {{< ext "pgmb" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | A simple PostgreSQL Message Broker system |
+| {{< ext "ulak" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Transactional Outbox extension for PostgreSQL with reliable asynchronous delivery |
+| {{< ext "fsm_core" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Finite state machine toolkit for PostgreSQL |
+| {{< ext "pg_statecharts" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Hierarchical state machines and transactional event handling |
+| {{< ext "pg_statecharts_dev" "pg_statecharts" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | SCXML import and migration tooling for pg_statecharts |
+| {{< ext "hll" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | type for storing hyperloglog data |
+| {{< ext "rum" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | RUM index access method |
+| {{< ext "pg_lion" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Roaring bitmap inverted indexes for filtering, counts and aggregates |
+| {{< ext "pg_lion_citext" "pg_lion" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FEAT" >}} | Case-insensitive citext operator class for lion indexes |
+| {{< ext "pg_lion_vector" "pg_lion" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Filtered nearest-neighbor indexes for pgvector vector and halfvec |
+| {{< ext "pg_ai_query" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | AI-powered SQL query generation for PostgreSQL |
+| {{< ext "pg_ttl_index" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FEAT" >}} | Automatic data expiration with TTL indexes |
+| {{< ext "pg_graphql" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Add in-database GraphQL support |
+| {{< ext "pg_jsonschema" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | PostgreSQL extension providing JSON Schema validation |
+| {{< ext "jsonschema" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | JSON Schema validation functions for PostgreSQL |
+| {{< ext "is_jsonb_valid" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Native JSONB validation against JSON Schema drafts 4 and 7 |
+| {{< ext "jsquery" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | data type for jsonb inspection |
+| {{< ext "pg_hint_plan" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Give PostgreSQL ability to manually force some decisions in execution plans. |
+| {{< ext "hypopg" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Hypothetical indexes for PostgreSQL |
+| {{< ext "index_advisor" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FEAT" >}} | Query index advisor |
+| {{< ext "plan_filter" "pg_plan_filter" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "FEAT" >}} | Cooperative statement and transaction guards based on estimated plan cost |
+| {{< ext "pg_variables" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Session-scoped variables with scalar, array, and record types |
+| {{< ext "imgsmlr" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Image similarity with haar |
+| {{< ext "pg_ivm" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "FEAT" >}} | incremental view maintenance on PostgreSQL |
+| {{< ext "pg_incremental" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Incremental Processing by Crunchy Data |
+| {{< ext "pg_trickle" >}} | {{< pgver "19,18,17,16,15" "r,g,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "FEAT" >}} | Streaming tables and differential view maintenance for PostgreSQL 18 |
+| {{< ext "pg_durable" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | SQL-native durable orchestrations for PostgreSQL |
+| {{< ext "pg_disorder" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "FEAT" >}} | Perturb unordered SELECT row order to expose order-dependent tests |
+| {{< ext "pg_local_cache" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Transaction-aware shared-memory cache serving PostgreSQL primary-key rows over RESP2 MGET |
+| {{< ext "pg_kv" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Shared-memory key/value cache, token-bucket rate limits and sorted sets. |
+| {{< ext "provsql" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "FEAT" >}} | Semiring provenance and probability management for PostgreSQL |
+| {{< ext "orioledb" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FEAT" >}} | OrioleDB, the next generation transactional engine |
+| {{< ext "pg_cardano" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | A suite of Cardano-related tools |
+| {{< ext "rdkit" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Cheminformatics functionality for PostgreSQL. |
+| {{< ext "omni" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Advanced adapter for Postgres extensions |
+| {{< ext "omni_auth" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Basic session management |
+| {{< ext "omni_aws" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "FEAT" >}} | Amazon Web Services APIs (S3) |
+| {{< ext "omni_cloudevents" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "FEAT" >}} | CloudEvents support |
+| {{< ext "omni_containers" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Docker container management |
+| {{< ext "omni_credentials" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Application credential management |
+| {{< ext "omni_csv" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | CSV toolkit |
+| {{< ext "omni_datasets" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Dataset provisioning |
+| {{< ext "omni_email" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | E-mail framework |
+| {{< ext "omni_http" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Basic HTTP types |
+| {{< ext "omni_httpc" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | HTTP client |
+| {{< ext "omni_httpd" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | HTTP server |
+| {{< ext "omni_id" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Identity types |
+| {{< ext "omni_json" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "FEAT" >}} | JSON toolkit |
+| {{< ext "omni_kube" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Kubernetes (k8s) integration |
+| {{< ext "omni_ledger" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Financial ledger |
+| {{< ext "omni_manifest" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Package installation manifests |
+| {{< ext "omni_mimetypes" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | MIME types |
+| {{< ext "omni_os" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Operating system integration |
+| {{< ext "omni_polyfill" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Postgres API polyfills |
+| {{< ext "omni_python" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | First-class Python support |
+| {{< ext "omni_regex" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | PCRE-compatible regular expressions |
+| {{< ext "omni_rest" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | REST API toolkit (with PostgREST support) |
+| {{< ext "omni_schema" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Advanced schema management tooling |
+| {{< ext "omni_seq" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Distributed integer sequences |
+| {{< ext "omni_service" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Service management |
+| {{< ext "omni_session" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Session management |
+| {{< ext "omni_shmem" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Shared Memory Management |
+| {{< ext "omni_sql" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Programmatic SQL manipulation |
+| {{< ext "omni_sqlite" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Embedded SQLite |
+| {{< ext "omni_test" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Testing framework |
+| {{< ext "omni_txn" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Transaction management |
+| {{< ext "omni_types" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Advanced types |
+| {{< ext "omni_var" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Scoped variables |
+| {{< ext "omni_vfs" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Virtual File System |
+| {{< ext "omni_vfs_types_v1" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Virtual File System types (v1) |
+| {{< ext "omni_web" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Common web stack primitives |
+| {{< ext "omni_worker" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Generalized worker pool |
+| {{< ext "omni_xml" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | XML toolkit |
+| {{< ext "omni_yaml" "omnigres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | YAML toolkit |
+| {{< ext "pg_mentat" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "FEAT" >}} | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
+| {{< ext "pg_plan_advice" >}} | {{< pgver "19,18,17,16,15" "g,r,r,r,r" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "FEAT" >}} | Describe, reproduce, and constrain query plans with plan advice |
+| {{< ext "pg_stash_advice" >}} | {{< pgver "19,18,17,16,15" "g,r,r,r,r" >}} | {{< badge content="c-sLd-r" color="blue" >}} | {{< category "FEAT" >}} | Store and automatically apply plan advice by query ID |
+| {{< ext "bloom" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FEAT" >}} | bloom access method - signature file based index |
+| {{< ext "pg_tle" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "LANG" >}} | Trusted Language Extensions for PostgreSQL |
+| {{< ext "plv8" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/JavaScript (v8) trusted procedural language |
+| {{< ext "pljs" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/JS trusted procedural language |
+| {{< ext "pllua" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Lua as a procedural language |
+| {{< ext "hstore_pllua" "pllua" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Hstore transform for Lua |
+| {{< ext "plluau" "pllua" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Lua as an untrusted procedural language |
+| {{< ext "hstore_plluau" "pllua" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Hstore transform for untrusted Lua |
+| {{< ext "plprql" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
+| {{< ext "pldbgapi" "pldebugger" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "LANG" >}} | server-side support for debugging PL/pgSQL functions |
+| {{< ext "plpgsql_check" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Additional validation, profiling, and diagnostics for PL/pgSQL functions |
+| {{< ext "plprofiler" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "LANG" >}} | server-side support for profiling PL/pgSQL functions |
+| {{< ext "plsh" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | PL/sh procedural language |
+| {{< ext "pljava" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/Java procedural language |
+| {{< ext "plr" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | load R interpreter and execute R script from within a database |
+| {{< ext "plxslt" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | XSLT procedural language for PostgreSQL |
+| {{< ext "pg_mockable" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "LANG" >}} | Create mockable wrappers for PostgreSQL functions in tests |
+| {{< ext "pgsqlmock" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "LANG" >}} | Mocking and faking helpers for PostgreSQL unit tests |
+| {{< ext "plx" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Transpile multiple procedural dialects to PL/pgSQL |
+| {{< ext "pgwasm" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Run sandboxed WebAssembly components as strongly typed PostgreSQL SQL functions. |
+| {{< ext "plruby" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Embed MRI Ruby as an untrusted PostgreSQL procedural language |
+| {{< ext "jsonb_plruby" "plruby" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Transform between jsonb and native Ruby data for PL/Ruby |
+| {{< ext "hstore_plruby" "plruby" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Transform between hstore and Ruby Hashes for PL/Ruby |
+| {{< ext "ltree_plruby" "plruby" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Transform between ltree and Ruby Arrays for PL/Ruby |
+| {{< ext "plphp" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Embed PHP 8 as an untrusted PostgreSQL procedural language |
+| {{< ext "pgtap" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-b--d-r" color="blue" >}} | {{< category "LANG" >}} | Unit testing for PostgreSQL |
+| {{< ext "faker" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Wrapper for the Faker Python library |
+| {{< ext "dbt2" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | OSDL-DBT-2 test kit |
+| {{< ext "pg_regresql" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "LANG" >}} | Trust pg_class statistics for planning instead of physical relation size |
+| {{< ext "pltcl" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "LANG" >}} | PL/Tcl procedural language |
+| {{< ext "pltclu" "pltcl" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/TclU untrusted procedural language |
+| {{< ext "plperl" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "LANG" >}} | PL/Perl procedural language |
+| {{< ext "bool_plperl" "plperl" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "LANG" >}} | transform between bool and plperl |
+| {{< ext "hstore_plperl" "plperl" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between hstore and plperl |
+| {{< ext "jsonb_plperl" "plperl" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "LANG" >}} | transform between jsonb and plperl |
+| {{< ext "plperlu" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/PerlU untrusted procedural language |
+| {{< ext "bool_plperlu" "plperlu" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between bool and plperlu |
+| {{< ext "jsonb_plperlu" "plperlu" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between jsonb and plperlu |
+| {{< ext "hstore_plperlu" "plperlu" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between hstore and plperlu |
+| {{< ext "plpgsql" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "LANG" >}} | PL/pgSQL procedural language |
+| {{< ext "plpython3u" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/Python3U untrusted procedural language |
+| {{< ext "jsonb_plpython3u" "plpython3u" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between jsonb and plpython3u |
+| {{< ext "ltree_plpython3u" "plpython3u" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between ltree and plpython3u |
+| {{< ext "hstore_plpython3u" "plpython3u" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "LANG" >}} | transform between hstore and plpython3u |
+| {{< ext "prefix" "pg_prefix" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Prefix Range module for PostgreSQL |
+| {{< ext "semver" "pg_semver" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Semantic version data type |
+| {{< ext "pg_text_semver" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "TYPE" >}} | Semantic version domain and comparison operators for PostgreSQL |
+| {{< ext "pg_lexo" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TYPE" >}} | Lexicographic position type for inserting and reordering list items |
+| {{< ext "codesystem" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Hierarchical classification code types with validation and revision tracking |
+| {{< ext "unit" "pgunit" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TYPE" >}} | SI units extension |
+| {{< ext "pgpdf" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | PDF type with meta admin & Full-Text Search |
+| {{< ext "pglite_fusion" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "TYPE" >}} | Embed an SQLite database in your PostgreSQL table |
+| {{< ext "md5hash" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | type for storing 128-bit binary data inline |
+| {{< ext "asn1oid" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | asn1oid extension |
+| {{< ext "roaringbitmap" "pg_roaringbitmap" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | support for Roaring Bitmaps |
+| {{< ext "pgfaceting" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TYPE" >}} | fast faceting queries using an inverted index |
+| {{< ext "pg_sphere" "pgsphere" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | spherical objects with useful functions, operators and index support |
+| {{< ext "country" "pg_country" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Country data type, ISO 3166-1 |
+| {{< ext "pg_xenophile" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TYPE" >}} | More than the bare necessities for PostgreSQL i18n and l10n. |
+| {{< ext "l10n_table_dependent_extension" "pg_xenophile" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "TYPE" >}} | PostgreSQL l10n toolbox |
+| {{< ext "currency" "pg_currency" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Custom PostgreSQL currency type in 1Byte |
+| {{< ext "pg_money" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Exact currency-aware monetary types, arithmetic, and allocation |
+| {{< ext "collection" "pgcollection" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Associative-array data types for high-performance PL/pgSQL workflows |
+| {{< ext "istore" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Integer key/value types with arithmetic, aggregation, and GIN indexing |
+| {{< ext "pgmp" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Multiple Precision Arithmetic extension |
+| {{< ext "numeral" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | numeral datatypes extension |
+| {{< ext "pg_rational" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TYPE" >}} | Precise fractions stored as two 32-bit integers |
+| {{< ext "uint" "pguint" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | unsigned integer types |
+| {{< ext "uint128" "pg_uint128" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Native uint128 type |
+| {{< ext "hashtypes" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TYPE" >}} | sha1, md5 and other data types for PostgreSQL |
+| {{< ext "postbis" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Adds compressed DNA, RNA, amino-acid, and aligned sequence types with casts, operators, indexes, and |
+| {{< ext "ip4r" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
+| {{< ext "uri" "pg_uri" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | URI Data type for PostgreSQL |
+| {{< ext "emailaddr" "pg_emailaddr" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Email address type for PostgreSQL |
+| {{< ext "acl" "pg_acl" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | ACL Data type |
+| {{< ext "debversion" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Debian version number data type |
+| {{< ext "pg_duration" >}} | {{< pgver "19,18,17,16,15" "g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | data type for representing durations |
+| {{< ext "pg_bikram_sambat" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Bikram Sambat date type and AD/BS conversion functions |
+| {{< ext "pg_nanotime" >}} | {{< pgver "19,18,17,16,15" "g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Nanosecond timestamp and fixed-duration interval types |
+| {{< ext "pg_rrule" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | RRULE field type for PostgreSQL |
+| {{< ext "pgcalendar" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TYPE" >}} | Recurring calendar, schedule, and exception management for PostgreSQL |
+| {{< ext "timestamp9" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | timestamp nanosecond resolution |
+| {{< ext "pgbson" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | BSON data type and accessor functions for PostgreSQL |
+| {{< ext "chkpass" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | data type for auto-encrypted passwords |
+| {{< ext "isn" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "TYPE" >}} | data types for international product numbering standards |
+| {{< ext "seg" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "TYPE" >}} | data type for representing line segments or floating-point intervals |
+| {{< ext "cube" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "TYPE" >}} | data type for multidimensional cubes |
+| {{< ext "ltree" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "TYPE" >}} | data type for hierarchical tree-like structures |
+| {{< ext "hstore" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "TYPE" >}} | data type for storing sets of (key, value) pairs |
+| {{< ext "citext" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "TYPE" >}} | data type for case-insensitive character strings |
+| {{< ext "xml2" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "TYPE" >}} | XPath querying and XSLT |
+| {{< ext "gzip" "pg_gzip" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | gzip and gunzip functions. |
+| {{< ext "bzip" "pg_bzip" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | Bzip compression and decompression |
+| {{< ext "zstd" "pg_zstd" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Zstandard compression algorithm implementation in PostgreSQL |
+| {{< ext "http" "pg_http" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | HTTP client for PostgreSQL, allows web page retrieval inside the database. |
+| {{< ext "pg_net" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "UTIL" >}} | Async HTTP Requests |
+| {{< ext "pg_curl" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Run curl actions for data transfer in URL syntax |
+| {{< ext "pg_retry" >}} | {{< pgver "19,18,17,16,15" "g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Retry SQL statements on transient errors with exponential backoff |
+| {{< ext "pg_fsql" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | Recursive SQL template engine with JSONB-driven execution |
+| {{< ext "pg_protobuf" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Protobuf support for PostgreSQL |
+| {{< ext "pgproto" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Native Protobuf parsing, mutation, indexing, and JSON conversion support |
+| {{< ext "pglock" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | Lightweight distributed lock service inside PostgreSQL |
+| {{< ext "pg_lease" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "UTIL" >}} | SQL leases with TTL expiry and monotonically increasing fencing epochs |
+| {{< ext "pgjq" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Use jq in Postgres |
+| {{< ext "pg_json_diff" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | JSONB diff, JSON Patch, and JSON Merge Patch functions |
+| {{< ext "pgjwt" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | JSON Web Token API for Postgresql |
+| {{< ext "pg_smtp_client" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | PostgreSQL extension to send email using SMTP |
+| {{< ext "pg_html5_email_address" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "UTIL" >}} | PostgreSQL email validation that is consistent with the HTML5 spec |
+| {{< ext "url_encode" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | url_encode, url_decode functions |
+| {{< ext "pgsql_tweaks" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "UTIL" >}} | Some functions and views for daily usage |
+| {{< ext "pg_relation_sql" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-------" color="blue" >}} | {{< category "UTIL" >}} | Generate inlinable SQL functions for navigating PostgreSQL foreign-key relations |
+| {{< ext "pg_extra_time" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "UTIL" >}} | Some date time functions and operators that, |
+| {{< ext "pgpcre" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Perl Compatible Regular Expression functions |
+| {{< ext "re2" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "UTIL" >}} | ClickHouse-compatible regex functions using RE2 |
+| {{< ext "icu_ext" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Access ICU functions |
+| {{< ext "pgqr" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | QR Code generator from PostgreSQL |
+| {{< ext "envvar" "pg_envvar" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Fetch the value of an environment variable |
+| {{< ext "byteamagic" "pg_byteamagic" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Detect MIME types and file formats from PostgreSQL bytea values |
+| {{< ext "floatfile" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Simple file storage for arrays of floats |
+| {{< ext "external_file" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | Access external server-side files through PostgreSQL functions |
+| {{< ext "pg_render" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | Render HTML in SQL |
+| {{< ext "pg_readme" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "UTIL" >}} | Generate a Markdown README from PostgreSQL COMMENT objects |
+| {{< ext "pg_readme_test_extension" "pg_readme" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "UTIL" >}} | Fixture extension used to test pg_readme document generation |
+| {{< ext "ddl_historization" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | Historize the ddl changes inside PostgreSQL database |
+| {{< ext "data_historization" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "UTIL" >}} | PLPGSQL Script to historize data in partitionned table |
+| {{< ext "schedoc" "pg_schedoc" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | Cross documentation between Django and DBT projects |
+| {{< ext "pg_isok" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | Query-based data integrity management and soft alerting for PostgreSQL |
+| {{< ext "pg_describe" >}} | {{< pgver "19,18,17,16,15" "g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Report a query's parameters and result columns without executing it |
+| {{< ext "colnames" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Return column names of a record or composite value |
+| {{< ext "hashlib" "pg_hashlib" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Stable hash functions for Postgres |
+| {{< ext "xxhash" "pg_xxhash" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | xxhash functions for PostgreSQL |
+| {{< ext "shacrypt" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes |
+| {{< ext "cryptint" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Encryption functions for int and bigint values |
+| {{< ext "pguecc" "pg_ecdsa" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | uECC bindings for Postgres |
+| {{< ext "sparql" "pgsparql" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | Query SPARQL datasource with SQL |
+| {{< ext "opencc" "pg_opencc" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "UTIL" >}} | OpenCC conversion between Simplified Chinese, Traditional Chinese, regional variants and Japanese Sh |
+| {{< ext "pg_idkit" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, ULID, KSUID) |
+| {{< ext "pgx_ulid" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FUNC" >}} | ulid type and methods |
+| {{< ext "pg_uuidv7" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Create UUIDv7 values in postgres |
+| {{< ext "pg_uuid_v8" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | UUID v8 generator with embedded timestamps for PostgreSQL |
+| {{< ext "permuteseq" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Pseudo-randomly permute sequences with a format-preserving encryption on elements |
+| {{< ext "pg_hashids" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Short unique id generator for PostgreSQL, using hashids |
+| {{< ext "pg_slug_gen" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Generate cryptographically secure timestamp-based slugs |
+| {{< ext "sequential_uuids" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | generator of sequential UUIDs |
+| {{< ext "typeid" "pg_typeid" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Allows to use TypeIDs in Postgres natively |
+| {{< ext "snowflake" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
+| {{< ext "topn" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | type for top-n JSONB |
+| {{< ext "quantile" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Quantile aggregation function |
+| {{< ext "lower_quantile" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Lower quantile aggregate function |
+| {{< ext "count_distinct" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | An alternative to COUNT(DISTINCT …) aggregate, usable with HashAggregate |
+| {{< ext "omnisketch" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | data structure for on-line agg of data into approximate sketch |
+| {{< ext "ddsketch" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Provides ddsketch aggregate function |
+| {{< ext "vasco" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | discover hidden correlations in your data with MIC |
+| {{< ext "xicor" "pgxicor" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | XI Correlation Coefficient in Postgres |
+| {{< ext "weighted_statistics" "pg_weighted_statistics" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | High-performance weighted statistics functions for sparse data |
+| {{< ext "pg_statkit" >}} | {{< pgver "19,18,17,16,15" "r,r,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Descriptive statistics and clinical effect-size functions over arrays |
+| {{< ext "datasketches" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Approximate analytics sketches and aggregates for PostgreSQL |
+| {{< ext "fbsql" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FUNC" >}} | Closure-preserving formula-based statistical modeling in SQL |
+| {{< ext "tdigest" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Provides tdigest aggregate function. |
+| {{< ext "hdr_histogram" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FUNC" >}} | HDR histogram type, percentile queries and mergeable aggregation. |
+| {{< ext "first_last_agg" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | first() and last() aggregate functions |
+| {{< ext "extra_window_functions" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Extra Window Functions for PostgreSQL |
+| {{< ext "floatvec" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Math for vectors (arrays) of numbers |
+| {{< ext "aggs_for_vecs" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Aggregate functions for array inputs |
+| {{< ext "aggs_for_arrays" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Various functions for computing statistics on arrays of numbers |
+| {{< ext "argm" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | argmax, argmin, and anyold aggregate functions |
+| {{< ext "pg_csv" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Flexible CSV processing for Postgres |
+| {{< ext "arraymath" "pg_arraymath" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Array math and operators that work element by element on the contents of arrays |
+| {{< ext "pg_math" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | GSL statistical functions for postgresql |
+| {{< ext "random" "pg_random" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | random data generator |
+| {{< ext "base36" "pg_base36" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Integer Base36 types |
+| {{< ext "base62" "pg_base62" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Base62 extension for PostgreSQL |
+| {{< ext "pg_base58" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Base58 Encoder/Decoder Extension for PostgreSQL |
+| {{< ext "financial" "pg_financial" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Financial aggregate functions |
+| {{< ext "pg_accumulator" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Accumulation registers for balance and turnover tracking in PostgreSQL |
+| {{< ext "convert" "pg_convert" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | conversion functions for spatial, routing and other specialized uses |
+| {{< ext "pg_try_cast" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FUNC" >}} | Text conversion with NULL or a typed fallback on conversion errors. |
+| {{< ext "parray_gin" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | GIN index operator class and partial-match operators for text arrays |
+| {{< ext "refint" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FUNC" >}} | functions for implementing referential integrity (obsolete) |
+| {{< ext "autoinc" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FUNC" >}} | functions for autoincrementing fields |
+| {{< ext "insert_username" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FUNC" >}} | functions for tracking who changed a table |
+| {{< ext "moddatetime" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FUNC" >}} | functions for tracking last modification time |
+| {{< ext "tsm_system_time" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | TABLESAMPLE method which accepts time in milliseconds as a limit |
+| {{< ext "dict_xsyn" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FUNC" >}} | text search dictionary template for extended synonym processing |
+| {{< ext "tsm_system_rows" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | TABLESAMPLE method which accepts number of rows as a limit |
+| {{< ext "tcn" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | Triggered change notifications |
+| {{< ext "uuid-ossp" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | generate universally unique identifiers (UUIDs) |
+| {{< ext "btree_gist" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | support for indexing common datatypes in GiST |
+| {{< ext "btree_gin" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | support for indexing common datatypes in GIN |
+| {{< ext "intarray" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | functions, operators, and index support for 1-D arrays of integers |
+| {{< ext "intagg" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c---d-r" color="blue" >}} | {{< category "FUNC" >}} | integer aggregator and enumerator (obsolete) |
+| {{< ext "dict_int" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | text search dictionary template for integers |
+| {{< ext "unaccent" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "FUNC" >}} | text search dictionary that removes accents |
+| {{< ext "pg_repack" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "ADMIN" >}} | Reorganize tables in PostgreSQL databases with minimal locks |
+| {{< ext "pg_rewrite" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "ADMIN" >}} | Tool allows read write to the table during the rewriting |
+| {{< ext "pg_query_rewrite" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | Translate a given SQL statement into another predefined SQL statement |
+| {{< ext "pg_squeeze" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | A tool to remove unused space from a relation. |
+| {{< ext "pg_dirtyread" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Read dead but unvacuumed rows from table |
+| {{< ext "pgfincore" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | examine and manage the os buffer cache |
+| {{< ext "pg_cooldown" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | remove buffered pages for specific relations |
+| {{< ext "ddlx" "pg_ddlx" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | DDL eXtractor functions |
+| {{< ext "pglinter" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ADMIN" >}} | PostgreSQL Linting and Analysis Extension |
+| {{< ext "prioritize" "pg_prioritize" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | get and set the priority of PostgreSQL backends |
+| {{< ext "pg_checksums" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-b-----" color="blue" >}} | {{< category "ADMIN" >}} | Enable/disable checksums offline and verify them online or offline |
+| {{< ext "pg_integrity_checksums" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Physical and logical checksums for PostgreSQL pages, rows, tables, indexes and databases. |
+| {{< ext "pg_readonly" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | cluster database read only |
+| {{< ext "pgdd" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | Introspect pg data dictionary via standard SQL |
+| {{< ext "pg_permissions" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | view object permissions and compare them with the desired state |
+| {{< ext "pgautofailover" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ADMIN" >}} | pg_auto_failover |
+| {{< ext "pg_catcheck" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-b-----" color="blue" >}} | {{< category "ADMIN" >}} | Diagnosing system catalog corruption |
+| {{< ext "pre_prepare" "preprepare" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Pre Prepare your Statement server side |
+| {{< ext "pg_upless" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "ADMIN" >}} | Detect Useless UPDATE |
+| {{< ext "pgcozy" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | Pre-warming shared buffers according to previous pg_buffercache snapshots for PostgreSQL. |
+| {{< ext "pg_orphaned" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Deal with orphaned files |
+| {{< ext "pg_crash" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "ADMIN" >}} | Send random signals to random processes |
+| {{< ext "macavity" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Deterministic session-local fault injection for PostgreSQL test clusters |
+| {{< ext "pg_cheat_funcs" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Provides cheat (but useful) functions |
+| {{< ext "fio" "pg_fio" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | PostgreSQL File I/O Functions |
+| {{< ext "qos" "pg_qos" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | QoS resource governor extension for PostgreSQL sessions and queries |
+| {{< ext "pg_pathcheck" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "ADMIN" >}} | Validate planner Path trees for freed or corrupt memory |
+| {{< ext "pgdisablelogerror" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "ADMIN" >}} | Disable selected SQLSTATE error codes from PostgreSQL server logging. |
+| {{< ext "online_advisor" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "ADMIN" >}} | Suggest missing indexes and extended statistics online |
+| {{< ext "pg_column_tetris" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | Enforce optimal column alignment to minimize row padding |
+| {{< ext "cat_tools" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | Tools for interfacing with the PostgreSQL catalog |
+| {{< ext "pg_living_assertions" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | Executable SQL checks with verdict dates and assertion history |
+| {{< ext "pg_savior" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "ADMIN" >}} | Prevent accidental data loss and risky schema changes |
+| {{< ext "pg_circuit" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | Runtime observation, warnings and blocking for dangerous SQL statements |
+| {{< ext "safeupdate" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "ADMIN" >}} | Require criteria for UPDATE and DELETE |
+| {{< ext "pg_strict" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | Prevent dangerous UPDATE and DELETE without WHERE clause |
+| {{< ext "pg_drop_events" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | logs transaction ids of drop table, drop column, drop materialized view statements |
+| {{< ext "table_log" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | record table modification logs and PITR for table/row |
+| {{< ext "pgelog" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | Extended logging via pseudo-autonomous transactions |
+| {{< ext "pgagent" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="-b--d--" color="blue" >}} | {{< category "ADMIN" >}} | A PostgreSQL job scheduler |
+| {{< ext "pg_prewarm" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-sLd-r" color="blue" >}} | {{< category "ADMIN" >}} | prewarm relation data |
+| {{< ext "pgpool_adm" "pgpool" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Administrative functions for pgPool |
+| {{< ext "pgpool_recovery" "pgpool" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | recovery functions for pgpool-II for V4.3 |
+| {{< ext "pgpool_regclass" "pgpool" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | replacement for regclass |
+| {{< ext "lo" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "ADMIN" >}} | Large Object maintenance |
+| {{< ext "basic_archive" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | {{< category "ADMIN" >}} | an example of an archive module |
+| {{< ext "basebackup_to_shell" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | {{< category "ADMIN" >}} | adds a custom basebackup target called shell |
+| {{< ext "old_snapshot" >}} | {{< pgver "19,18,17,16,15" "r,r,r,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | utilities in support of old_snapshot_threshold |
+| {{< ext "adminpack" >}} | {{< pgver "19,18,17,16,15" "r,r,r,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "ADMIN" >}} | administrative functions for PostgreSQL |
+| {{< ext "amcheck" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | functions for verifying relation integrity |
+| {{< ext "pg_surgery" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | extension to perform surgery on a damaged relation |
+| {{< ext "pg_profile" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | PostgreSQL load profile repository and report builder |
+| {{< ext "pg_tracing" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | Distributed Tracing for PostgreSQL |
+| {{< ext "pg_stat_ch" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "STAT" >}} | Export PostgreSQL query telemetry to ClickHouse |
+| {{< ext "pg_stat_backtrace" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | Capture or log C-level stack backtraces of PostgreSQL processes |
+| {{< ext "pg_stat_log" >}} | {{< pgver "19,18,17,16,15" "g,g,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | Track cumulative PostgreSQL log message statistics by backend, database, user, level, and SQLSTATE. |
+| {{< ext "pg_stat_plans" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | Track per-plan call counts, execution times, and example EXPLAIN texts. |
+| {{< ext "pgfr_record" "pg_flight_recorder" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | Server-side PostgreSQL performance flight recorder |
+| {{< ext "pgfr_analyze" "pg_flight_recorder" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | Reporting and analysis functions for pgfr_record |
+| {{< ext "pgmonitor" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "STAT" >}} | Collector-friendly metric views and background refresh worker |
+| {{< ext "pgtelemetry" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | SQL monitoring views for database activity, WAL, replication, and storage |
+| {{< ext "pg_statviz" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | Capture PostgreSQL statistics snapshots for time-series analysis and visualization |
+| {{< ext "pg_show_plans" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | show query plans of all currently running SQL statements |
+| {{< ext "pg_stat_kcache" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | Kernel statistics gathering |
+| {{< ext "pg_rusage" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | Measure backend CPU usage between explicit reset and print calls |
+| {{< ext "pg_stat_monitor" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib m |
+| {{< ext "pg_qualstats" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "STAT" >}} | An extension collecting statistics about quals |
+| {{< ext "pg_store_plans" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | track plan statistics of all SQL statements executed |
+| {{< ext "pg_track_settings" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | Track settings changes |
+| {{< ext "pg_track_optimizer" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | Track planning decisions in comparison with execution reality |
+| {{< ext "pg_wait_sampling" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | sampling based statistics of wait events |
+| {{< ext "pg_datasentinel" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "STAT" >}} | Observability and activity monitoring extension for PostgreSQL |
+| {{< ext "pgsentinel" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | active session history |
+| {{< ext "system_stats" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | EnterpriseDB system statistics for PostgreSQL |
+| {{< ext "pgexporter_ext" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | Operating-system and host metrics for pgexporter |
+| {{< ext "meta" "pg_meta" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | Normalized, friendlier system catalog for PostgreSQL |
+| {{< ext "pgnodemx" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | Capture node OS metrics via SQL queries |
+| {{< ext "pg_proctab" "pgnodemx" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "STAT" >}} | PostgreSQL extension to access the OS process table |
+| {{< ext "pg_statvfs" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | Server filesystem capacity and inode statistics through statvfs |
+| {{< ext "pg_stat_tcpinfo" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | Linux TCP connection statistics, latency and retransmissions |
+| {{< ext "pg_sqlog" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | Provide SQL interface to logs |
+| {{< ext "bgw_replstatus" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "STAT" >}} | Small PostgreSQL background worker to report whether a node is a replication master or standby |
+| {{< ext "pgmeminfo" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "STAT" >}} | show memory usage |
+| {{< ext "toastinfo" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | show details on toasted datums |
+| {{< ext "explain_ui" "pg_explain_ui" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "STAT" >}} | easily jump into a visual plan UI for any SQL query |
+| {{< ext "pg_relusage" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "STAT" >}} | Log the relations actually used by each SQL statement |
+| {{< ext "pagevis" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "STAT" >}} | Visualise database pages in ascii code |
+| {{< ext "powa" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "STAT" >}} | PostgreSQL Workload Analyser-core |
+| {{< ext "pg_overexplain" >}} | {{< pgver "19,18,17,16,15" "g,g,r,r,r" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "STAT" >}} | Allow EXPLAIN to dump even more details |
+| {{< ext "pg_logicalinspect" >}} | {{< pgver "19,18,17,16,15" "g,g,r,r,r" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | Logical decoding components inspection |
+| {{< ext "pageinspect" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | inspect the contents of database pages at a low level |
+| {{< ext "pgrowlocks" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | show row-level locking information |
+| {{< ext "sslinfo" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | information about SSL certificates |
+| {{< ext "pg_buffercache" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | examine the shared buffer cache |
+| {{< ext "pg_walinspect" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | functions to inspect contents of PostgreSQL Write-Ahead Log |
+| {{< ext "pg_freespacemap" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | examine the free space map (FSM) |
+| {{< ext "pg_visibility" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | examine the visibility map (VM) and page-level visibility info |
+| {{< ext "pgstattuple" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "STAT" >}} | show tuple-level statistics |
+| {{< ext "auto_explain" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "STAT" >}} | Provides a means for logging execution plans of slow statements automatically |
+| {{< ext "pg_stat_statements" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-sLd-r" color="blue" >}} | {{< category "STAT" >}} | track planning and execution statistics of all SQL statements executed |
+| {{< ext "passwordcheck_cracklib" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | Strengthen PostgreSQL user password checks with cracklib |
+| {{< ext "supautils" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | Extension that secures a cluster on a cloud environment |
+| {{< ext "pgsodium" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Postgres extension for libsodium functions |
+| {{< ext "column_encrypt" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Transparent column-level encryption with encrypted_text and encrypted_bytea types |
+| {{< ext "encsearch" >}} | {{< pgver "19,18,17,16,15" "r,r,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Experimental encrypted text search using AEAD ciphers and keyed blind indexes |
+| {{< ext "passwordpolicy" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | Dynamically configurable PostgreSQL password complexity checks. |
+| {{< ext "supabase_vault" "pg_vault" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | Supabase Vault Extension |
+| {{< ext "pg_session_jwt" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SEC" >}} | Manage authentication sessions using JWTs |
+| {{< ext "anon" "pg_anon" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL Anonymizer (anon) extension |
+| {{< ext "pgsmcrypto" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL SM Algorithm Extension |
+| {{< ext "pg_enigma" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | Encrypted postgres data type |
+| {{< ext "pgaudit" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | provides auditing functionality |
+| {{< ext "pgauditlogtofile" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | pgAudit addon to redirect audit log to an independent file |
+| {{< ext "pg_roast" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Opinionated PostgreSQL database auditor |
+| {{< ext "pg_auditor" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SEC" >}} | Audit data changes and provide flashback ability |
+| {{< ext "logerrors" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | Function for collecting statistics about messages in logfile |
+| {{< ext "pg_auth_mon" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | monitor connection attempts per user |
+| {{< ext "pg_jobmon" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SEC" >}} | Extension for logging and monitoring functions in PostgreSQL |
+| {{< ext "pg_oidc_validator" >}} | {{< pgver "19,18,17,16,15" "g,g,r,r,r" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | OAuth and OIDC token validator for PostgreSQL 18 |
+| {{< ext "oidc_validator" "pg_oidc_validator_rust" >}} | {{< pgver "19,18,17,16,15" "r,g,r,r,r" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL 18 OIDC bearer-token validator plugin written in Rust |
+| {{< ext "pgmemento" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SEC" >}} | Transaction-based audit trail with schema versioning |
+| {{< ext "credcheck" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | credcheck - postgresql plain text credential checker |
+| {{< ext "pgcryptokey" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | cryptographic key management |
+| {{< ext "pg_pwhash" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | Advanced password hashing methods for PostgreSQL |
+| {{< ext "login_hook" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | login_hook - hook to execute login_hook.login() at login time |
+| {{< ext "set_user" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | similar to SET ROLE but with added logging |
+| {{< ext "pg_snakeoil" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | The PostgreSQL Antivirus |
+| {{< ext "pgextwlist" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL Extension Whitelisting |
+| {{< ext "pg_command_fw" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | DDL and utility command firewall for PostgreSQL |
+| {{< ext "sslutils" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | A Postgres extension for managing SSL certificates through SQL |
+| {{< ext "libx509pq" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | X.509 certificate parsing and inspection through OpenSSL |
+| {{< ext "noset" "pg_noset" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Module for blocking SET variables for non-super users. |
+| {{< ext "block_copy_command" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Block COPY commands via a configurable ProcessUtility hook |
+| {{< ext "pg_policy" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SEC" >}} | Agentic policy language for PostgreSQL with guardrails, guidance, and session-aware controls |
+| {{< ext "pg_kpart" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "SEC" >}} | Reject full partition scans that omit the partition key |
+| {{< ext "pg_agent_gate" >}} | {{< pgver "19,18,17,16,15" "r,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | SQL proposal, verification and execution gate with human approval for agent roles. |
+| {{< ext "pg_tde" >}} | {{< pgver "19,18,17,16,15" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Percona pg_tde access method |
+| {{< ext "pg_vault_tde" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "SEC" >}} | Transparent Data Encryption for PostgreSQL through custom table and index access methods |
+| {{< ext "sepgsql" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | label-based mandatory access control (MAC) based on SELinux security policy. |
+| {{< ext "auth_delay" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | pause briefly before reporting authentication failure |
+| {{< ext "pgcrypto" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | {{< category "SEC" >}} | cryptographic functions |
+| {{< ext "passwordcheck" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | checks user passwords and reject weak password |
+| {{< ext "wrappers" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrappers developed by Supabase |
+| {{< ext "multicorn" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Fetch foreign data in Python in your PostgreSQL server. |
+| {{< ext "odbc_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for accessing remote databases using ODBC |
+| {{< ext "jdbc_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for remote servers available over JDBC |
+| {{< ext "pgspider_ext" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for remote PGSpider servers |
+| {{< ext "mysql_fdw" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for querying a MySQL server |
+| {{< ext "oracle_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign data wrapper for Oracle access |
+| {{< ext "tds_fdw" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server) |
+| {{< ext "db2_fdw" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign data wrapper for DB2 access |
+| {{< ext "sqlite_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | SQLite Foreign Data Wrapper |
+| {{< ext "pgbouncer_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FDW" >}} | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from norma |
+| {{< ext "etcd_fdw" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for etcd |
+| {{< ext "informix_fdw" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for Informix access |
+| {{< ext "nominatim_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Nominatim Foreign Data Wrapper for PostgreSQL |
+| {{< ext "mongo_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign data wrapper for MongoDB access |
+| {{< ext "redis_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for querying a Redis server |
+| {{< ext "redis" "pg_redis_pubsub" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Send redis pub/sub messages to Redis from PostgreSQL Directly |
+| {{< ext "kafka_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | kafka Foreign Data Wrapper for CSV formatted messages |
+| {{< ext "hdfs_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for remote hdfs servers |
+| {{< ext "firebird_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for Firebird |
+| {{< ext "rdf_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
+| {{< ext "oai_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Read-only OAI-PMH foreign data wrapper for metadata harvesting over HTTP/HTTPS. |
+| {{< ext "aws_s3" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FDW" >}} | aws_s3 postgres extension to import/export data from/to s3 |
+| {{< ext "log_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for Postgres log file access |
+| {{< ext "dblink" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FDW" >}} | connect to other PostgreSQL databases from within a database |
+| {{< ext "file_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for flat file access |
+| {{< ext "postgres_fdw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for remote PostgreSQL servers |
+| {{< ext "documentdb" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | API surface for DocumentDB for PostgreSQL |
+| {{< ext "documentdb_core" "documentdb" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Core API surface for DocumentDB on PostgreSQL |
+| {{< ext "documentdb_extended_rum" "documentdb" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | DocumentDB Extended RUM index access method |
+| {{< ext "pg_projection" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "SIM" >}} | MongoDB-like read projections for JSONB in PostgreSQL |
+| {{< ext "orafce" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
+| {{< ext "pgtt" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |
+| {{< ext "session_variable" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Registration and manipulation of session variables and constants |
+| {{< ext "pg_statement_rollback" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SIM" >}} | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
+| {{< ext "ivorysql_ora" "ivorysql" >}} | {{< pgver "19,18,17,16,15" "r,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Oracle Compatible extension on Postgres Database |
+| {{< ext "ora_btree_gin" "ivorysql" >}} | {{< pgver "19,18,17,16,15" "r,g,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Support for indexing oracle datatypes in GIN |
+| {{< ext "ora_btree_gist" "ivorysql" >}} | {{< pgver "19,18,17,16,15" "r,g,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Support for oracle indexing common datatypes in GiST |
+| {{< ext "pg_get_functiondef" "ivorysql" >}} | {{< pgver "19,18,17,16,15" "r,g,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Get function's definition |
+| {{< ext "plisql" "ivorysql" >}} | {{< pgver "19,18,17,16,15" "r,g,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | PL/iSQL procedural language |
+| {{< ext "gb18030_2022" "ivorysql" >}} | {{< pgver "19,18,17,16,15" "r,g,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Support GB18030-2022 and UTF-8 conversion |
+| {{< ext "db2fce" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SIM" >}} | DB2 compatibility functions, types, operators, and SYSIBM.SYSDUMMY1 for PostgreSQL. |
+| {{< ext "plpgsql_wrap" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Oracle WRAP-equivalent PL/pgSQL language handler storing AES-256-GCM encrypted procedure source. |
+| {{< ext "pg_synonym" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Table and view aliases synchronized with target DDL. |
+| {{< ext "pg_dbms_metadata" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
+| {{< ext "pg_dbms_lock" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
+| {{< ext "pg_dbms_job" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
+| {{< ext "pg_dbms_errlog" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
+| {{< ext "pg_utl_smtp" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SIM" >}} | Oracle UTL_SMTP compatibility extension for PostgreSQL |
+| {{< ext "babelfishpg_common" "babelfish" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server Transact SQL Datatype Support |
+| {{< ext "babelfishpg_tsql" "babelfish" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server Transact SQL compatibility |
+| {{< ext "babelfishpg_tds" "babelfish" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server TDS protocol extension |
+| {{< ext "babelfishpg_money" "babelfish" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | SQL Server Money Data Type |
+| {{< ext "pgmemcache" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | memcached interface |
+| {{< ext "aux_mysql" "openhalo" >}} | {{< pgver "19,18,17,16,15" "r,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | MySQL Supplementary Extension |
+| {{< ext "pgs3" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | S3-compatible object storage endpoint implemented inside PostgreSQL |
+| {{< ext "kafgres" >}} | {{< pgver "19,18,17,16,15" "r,r,r,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Kafka protocol broker embedded in PostgreSQL |
+| {{< ext "pglogical" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | PostgreSQL Logical Replication |
+| {{< ext "pglogical_origin" "pglogical" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ETL" >}} | Dummy extension for compatibility when upgrading from Postgres 9.4 |
+| {{< ext "pglogical_ticker" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ETL" >}} | Have an accurate view on pglogical replication delay |
+| {{< ext "pgl_ddl_deploy" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ETL" >}} | automated ddl deployment using pglogical |
+| {{< ext "logical_ddl" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ETL" >}} | Replicate supported DDL changes over PostgreSQL logical replication |
+| {{< ext "pg_failover_slots" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "ETL" >}} | PG Failover Slots extension |
+| {{< ext "db_migrator" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "ETL" >}} | Tools to migrate other databases to PostgreSQL |
+| {{< ext "pgactive" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | Active-Active Replication Extension for PostgreSQL |
+| {{< ext "spock" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | Multi-master logical replication extension for PostgreSQL |
+| {{< ext "lolor" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ETL" >}} | Logical-replication-friendly replacement for PostgreSQL large objects |
+| {{< ext "pgclone" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ETL" >}} | Clone PostgreSQL databases, schemas, tables, and functions across environments |
+| {{< ext "pgmqtt" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ETL" >}} | CDC-to-MQTT broker for PostgreSQL |
+| {{< ext "wal2json" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | Changing data capture in JSON format |
+| {{< ext "wal2mongo" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | PostgreSQL logical decoding output plugin for MongoDB |
+| {{< ext "decoderbufs" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "ETL" >}} | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
+| {{< ext "decoder_raw" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | Output plugin for logical replication in Raw SQL format |
+| {{< ext "mimeo" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-b--d--" color="blue" >}} | {{< category "ETL" >}} | Extension for specialized, per-table replication between PostgreSQL instances |
+| {{< ext "repmgr" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | Replication manager for PostgreSQL |
+| {{< ext "pg_fact_loader" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ETL" >}} | build fact tables with Postgres |
+| {{< ext "pg_bulkload" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "ETL" >}} | pg_bulkload is a high speed data loading utility for PostgreSQL |
+| {{< ext "test_decoding" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | {{< category "ETL" >}} | SQL-based test/example module for WAL logical decoding |
+| {{< ext "pgoutput" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | {{< category "ETL" >}} | Logical Replication output plugin |
 {.wide .expand}
 
 **Attribute Legend**: `c`:contrib `b`:bin `s`:lib `l`:load `d`:ddl `t`:trusted `r`:relocatable

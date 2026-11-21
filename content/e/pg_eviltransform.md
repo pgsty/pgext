@@ -40,30 +40,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_eviltransform` | `postgis` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.7` | {{< bg "18" "pg_eviltransform_18" "green" >}} {{< bg "17" "pg_eviltransform_17" "green" >}} {{< bg "16" "pg_eviltransform_16" "green" >}} {{< bg "15" "pg_eviltransform_15" "green" >}} {{< bg "14" "pg_eviltransform_14" "green" >}} | `pg_eviltransform_$v` | `postgis37_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.7` | {{< bg "18" "postgresql-18-eviltransform" "green" >}} {{< bg "17" "postgresql-17-eviltransform" "green" >}} {{< bg "16" "postgresql-16-eviltransform" "green" >}} {{< bg "15" "postgresql-15-eviltransform" "green" >}} {{< bg "14" "postgresql-14-eviltransform" "green" >}} | `postgresql-$v-eviltransform` | `postgresql-$v-postgis-3` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.7` | {{< bg "19" "" "red" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_eviltransform` | `postgis` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.7` | {{< bg "19" "pg_eviltransform_19" "red" >}} {{< bg "18" "pg_eviltransform_18" "green" >}} {{< bg "17" "pg_eviltransform_17" "green" >}} {{< bg "16" "pg_eviltransform_16" "green" >}} {{< bg "15" "pg_eviltransform_15" "green" >}} | `pg_eviltransform_$v` | `postgis37_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.7` | {{< bg "19" "postgresql-19-eviltransform" "red" >}} {{< bg "18" "postgresql-18-eviltransform" "green" >}} {{< bg "17" "postgresql-17-eviltransform" "green" >}} {{< bg "16" "postgresql-16-eviltransform" "green" >}} {{< bg "15" "postgresql-15-eviltransform" "green" >}} | `postgresql-$v-eviltransform` | `postgresql-$v-postgis-3` |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_eviltransform_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_eviltransform_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "N/A" "pg_eviltransform_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "N/A" "pg_eviltransform_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "N/A" "pg_eviltransform_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "N/A" "pg_eviltransform_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "pg_eviltransform_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-19-eviltransform : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-19-eviltransform : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "N/A" "postgresql-19-eviltransform : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "N/A" "postgresql-19-eviltransform : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-19-eviltransform : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-19-eviltransform : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "N/A" "postgresql-19-eviltransform : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-19-eviltransform : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-19-eviltransform : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-19-eviltransform : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.7" "postgresql-15-eviltransform : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -159,29 +159,6 @@ page_width: full
 | `postgresql-15-eviltransform` | `0.0.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 708.2 KiB | [postgresql-15-eviltransform_0.0.7-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-eviltransform/postgresql-15-eviltransform_0.0.7-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_eviltransform_14` | `0.0.7` | [el8.x86_64](/os/el8.x86_64) | pigsty | 879.4 KiB | [pg_eviltransform_14-0.0.7-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_eviltransform_14-0.0.7-1PGSTY.el8.x86_64.rpm) |
-| `pg_eviltransform_14` | `0.0.7` | [el8.aarch64](/os/el8.aarch64) | pigsty | 752.1 KiB | [pg_eviltransform_14-0.0.7-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_eviltransform_14-0.0.7-1PGSTY.el8.aarch64.rpm) |
-| `pg_eviltransform_14` | `0.0.7` | [el9.x86_64](/os/el9.x86_64) | pigsty | 895.6 KiB | [pg_eviltransform_14-0.0.7-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_eviltransform_14-0.0.7-1PGSTY.el9.x86_64.rpm) |
-| `pg_eviltransform_14` | `0.0.7` | [el9.aarch64](/os/el9.aarch64) | pigsty | 805.5 KiB | [pg_eviltransform_14-0.0.7-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_eviltransform_14-0.0.7-1PGSTY.el9.aarch64.rpm) |
-| `pg_eviltransform_14` | `0.0.7` | [el10.x86_64](/os/el10.x86_64) | pigsty | 893.6 KiB | [pg_eviltransform_14-0.0.7-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_eviltransform_14-0.0.7-1PGSTY.el10.x86_64.rpm) |
-| `pg_eviltransform_14` | `0.0.7` | [el10.aarch64](/os/el10.aarch64) | pigsty | 793.7 KiB | [pg_eviltransform_14-0.0.7-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_eviltransform_14-0.0.7-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-eviltransform` | `0.0.7` | [d12.x86_64](/os/d12.x86_64) | pigsty | 733.8 KiB | [postgresql-14-eviltransform_0.0.7-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.7-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-eviltransform` | `0.0.7` | [d12.aarch64](/os/d12.aarch64) | pigsty | 607.4 KiB | [postgresql-14-eviltransform_0.0.7-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.7-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-eviltransform` | `0.0.7` | [d13.x86_64](/os/d13.x86_64) | pigsty | 734.3 KiB | [postgresql-14-eviltransform_0.0.7-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.7-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-eviltransform` | `0.0.7` | [d13.aarch64](/os/d13.aarch64) | pigsty | 607.3 KiB | [postgresql-14-eviltransform_0.0.7-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.7-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-eviltransform` | `0.0.7` | [u22.x86_64](/os/u22.x86_64) | pigsty | 812.8 KiB | [postgresql-14-eviltransform_0.0.7-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.7-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-eviltransform` | `0.0.7` | [u22.aarch64](/os/u22.aarch64) | pigsty | 715.9 KiB | [postgresql-14-eviltransform_0.0.7-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.7-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-eviltransform` | `0.0.7` | [u24.x86_64](/os/u24.x86_64) | pigsty | 807.0 KiB | [postgresql-14-eviltransform_0.0.7-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.7-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-eviltransform` | `0.0.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 708.1 KiB | [postgresql-14-eviltransform_0.0.7-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.7-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-eviltransform` | `0.0.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 804.1 KiB | [postgresql-14-eviltransform_0.0.7-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.7-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-eviltransform` | `0.0.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 706.7 KiB | [postgresql-14-eviltransform_0.0.7-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.7-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -214,7 +191,6 @@ pig install pg_eviltransform -v 18;   # install for PG 18
 pig install pg_eviltransform -v 17;   # install for PG 17
 pig install pg_eviltransform -v 16;   # install for PG 16
 pig install pg_eviltransform -v 15;   # install for PG 15
-pig install pg_eviltransform -v 14;   # install for PG 14
 
 ```
 
@@ -228,6 +204,10 @@ CREATE EXTENSION pg_eviltransform CASCADE; -- requires postgis
 ## Usage
 
 Sources:
+
+- [Upstream source](https://github.com/aiyou178/pg_eviltransform/releases/tag/v0.0.8)
+- [Upstream source](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.8/README.md)
+- [Upstream source](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.8/pg_eviltransform--0.0.7--0.0.8.sql)
 
 - [Official v0.0.7 README](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.7/README.md)
 - [v0.0.7 release notes](https://github.com/aiyou178/pg_eviltransform/releases/tag/v0.0.7)
@@ -294,3 +274,13 @@ Array inputs support `numeric`, `double precision`, `real`, `bigint`, `integer`,
 ### 0.0.7 Compatibility
 
 The 0.0.6-to-0.0.7 upgrade SQL updates the coordinate-name resolution functions. Upstream supports PostgreSQL 14-18 and PostgreSQL 19 beta4 with pgrx 0.19.3. The `ST_JenksBins` interface remains unchanged; package/build metadata is maintained separately from the upstream release.
+
+### 0.0.8 compatibility and safety
+
+Current pgrx 0.20.0 binaries and build headers require at least PostgreSQL 15.20, 16.16, 17.12 or 18.7. PostgreSQL 14 is no longer supported; 19 RC2 support is experimental. This supersedes the older compatibility paragraph above.
+
+Invalid non-geometry transformation input now raises an SQL error instead of crashing. PostGIS functions/types resolve independently of the caller's search_path. Install matching files, reconnect, and migrate each existing database:
+
+```sql
+ALTER EXTENSION pg_eviltransform UPDATE TO '0.0.8';
+```

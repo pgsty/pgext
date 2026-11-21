@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2690** | {{< badge content="fsm_core" link="https://github.com/pgfsm/fsm/tree/main/packages/database-src-extension/fsm_core" >}} | {{< ext "fsm_core" >}} | `1.1.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
+| **2690** | {{< badge content="fsm_core" link="https://github.com/pgfsm/fsm/tree/main/packages/database-src-extension/fsm_core" >}} | {{< ext "fsm_core" >}} | `1.2.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
 {.wide .expand}
 
 
@@ -40,30 +40,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `fsm_core` | `ltree`, `pgmq` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "fsm_core_18" "green" >}} {{< bg "17" "fsm_core_17" "green" >}} {{< bg "16" "fsm_core_16" "green" >}} {{< bg "15" "fsm_core_15" "green" >}} {{< bg "14" "fsm_core_14" "red" >}} | `fsm_core_$v` | `pgmq_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-fsm-core" "green" >}} {{< bg "17" "postgresql-17-fsm-core" "green" >}} {{< bg "16" "postgresql-16-fsm-core" "green" >}} {{< bg "15" "postgresql-15-fsm-core" "green" >}} {{< bg "14" "postgresql-14-fsm-core" "red" >}} | `postgresql-$v-fsm-core` | `postgresql-$v-pgmq`, `postgresql-$v-pg-jsonschema` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `fsm_core` | `ltree`, `pgmq` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "19" "fsm_core_19" "green" >}} {{< bg "18" "fsm_core_18" "green" >}} {{< bg "17" "fsm_core_17" "green" >}} {{< bg "16" "fsm_core_16" "green" >}} {{< bg "15" "fsm_core_15" "green" >}} | `fsm_core_$v` | `pgmq_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "19" "postgresql-19-fsm-core" "green" >}} {{< bg "18" "postgresql-18-fsm-core" "green" >}} {{< bg "17" "postgresql-17-fsm-core" "green" >}} {{< bg "16" "postgresql-16-fsm-core" "green" >}} {{< bg "15" "postgresql-15-fsm-core" "green" >}} | `postgresql-$v-fsm-core` | `postgresql-$v-pgmq`, `postgresql-$v-pg-jsonschema` |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "fsm_core_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "fsm_core_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "fsm_core_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "fsm_core_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "fsm_core_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "fsm_core_14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-fsm-core : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-fsm-core : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-fsm-core : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-fsm-core : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-fsm-core : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-fsm-core : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-fsm-core : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-fsm-core : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-fsm-core : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-fsm-core : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "fsm_core_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "fsm_core_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "fsm_core_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "fsm_core_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "fsm_core_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "fsm_core_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "fsm_core_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-fsm-core : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-fsm-core : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-fsm-core : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-fsm-core : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-fsm-core : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-fsm-core : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-fsm-core : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-fsm-core : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-fsm-core : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-fsm-core : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -165,7 +165,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgfsm/fsm/tree/main/packages/database-src-extension/fsm_core" title="Repository" icon="github" subtitle="github.com/pgfsm/fsm/tree/main/packages/database-src-extension/fsm_core" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="fsm_core-1.1.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="fsm_core-1.2.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -187,6 +187,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install fsm_core;		# install via package name, for the active PG version
 
+pig install fsm_core -v 19;   # install for PG 19
 pig install fsm_core -v 18;   # install for PG 18
 pig install fsm_core -v 17;   # install for PG 17
 pig install fsm_core -v 16;   # install for PG 16
@@ -205,49 +206,49 @@ CREATE EXTENSION fsm_core CASCADE; -- requires ltree, pgmq
 
 Sources:
 
-- [Official PGXN1.1.0 distribution](https://pgxn.org/dist/fsm_core/1.1.0/)
-- [1.1.0 README](https://api.pgxn.org/src/fsm_core/fsm_core-1.1.0/README.md)
-- [1.1.0 control](https://api.pgxn.org/src/fsm_core/fsm_core-1.1.0/fsm_core.control)
-- [1.1.0 SQL](https://api.pgxn.org/src/fsm_core/fsm_core-1.1.0/fsm_core--1.1.0.sql)
-- [1.1.0 metadata](https://api.pgxn.org/src/fsm_core/fsm_core-1.1.0/META.json)
+- [fsm_core-v1.2.0](https://github.com/pgfsm/fsm/releases/tag/fsm_core-v1.2.0)
+- [README.md](https://github.com/pgfsm/fsm/blob/fsm_core-v1.2.0/packages/database-src/README.md)
+- [fsm_core-1.2.0.zip](https://github.com/pgfsm/fsm/releases/download/fsm_core-v1.2.0/fsm_core-1.2.0.zip)
 
-`fsm_core` is a finite-state-machine toolkit that stores FSM definitions, instances, transitions, and event logs inside PostgreSQL. A machine definition is loaded from JSON, instances are created by name and version, and events are sent through SQL functions with optional `pgmq` queues.
 
-This document describes the PGXN 1.1.0 distribution, which requires PostgreSQL 15 or later, `ltree` 1.2 or later and `pgmq` 1.4.4 or later. The fixed schema is `fsm_core`; installation requires a superuser. No preload or restart is required by this SQL extension. Current repository migrations are a separate source and may expose a different API.
+`fsm_core` 1.2.0 stores finite-state-machine definitions, instances, transitions and event history in PostgreSQL. Its SQL interface loads validated JSON, creates instances by name and version, and submits events through `pgmq` queues.
 
-### Core Tables and Types
+### Install and Configure
 
-`fsm_core` creates an enum `fsm_state_type` with `atomic`, `compound`, `parallel`, `final`, and `history`, plus tables including:
+The release requires PostgreSQL 15 or later and was tested on 15–18. Required extensions are `ltree` 1.2+, `pgmq` 1.4.4+ and `pg_cron` 1.5+. Add `pg_cron` to the existing `shared_preload_libraries`, restart PostgreSQL if that setting changes, and install into the database selected by `cron.database_name`.
 
-- `fsm_core.fsm_json` for loaded FSM definitions.
-- `fsm_core.fsm_states` for expanded state nodes and ltree paths.
-- `fsm_core.fsm_transitions` for transition rules.
-- `fsm_core.fsm_instance` for running instances.
-- `fsm_core.fsm_instance_lock` for advisory/concurrency state.
-- `fsm_core.fsm_instance_queue_event_logs` and `fsm_core.fsm_promise_queue_event_logs` for queued event history.
+After installing the matching extension files, a superuser can enable the fixed, nonrelocatable `fsm_core` schema:
 
-### Load a Machine Definition
+```sql
+CREATE EXTENSION fsm_core CASCADE;
+SELECT fsm_core.version();
+```
+
+Installation creates `fsm_*` roles and the `fsm_schedule_all_pending` scheduler job, which runs every five seconds. Inspect role memberships, queue permissions and the scheduler before granting application access. `pg_jsonschema` is optional: if its validation helper exists in `fsm_core`, the loader reports schema problems but does not reject a definition on that check alone.
+
+### Load a Definition
+
+Validate the machine with the upstream compiler and set the psql variable fsm_json to that JSON before this call. The 1.2.0 signature has no input_fsm_type argument:
 
 ```sql
 SELECT fsm_core.load_fsm_from_json_v2(
   json_input        := :'fsm_json'::jsonb,
   root_node_text    := 'root',
-  input_fsm_type    := 'workflow',
   input_fsm_name    := 'creditCheck',
   input_fsm_version := 'v01'
 );
 ```
 
-`load_fsm_from_json_v2()` checks JSON against `fsm_core.fsm_json_schema()`, expands states and transitions, then caches the raw definition in `fsm_json`. In 1.1.0, JSON-schema violations produce a NOTICE and loading continues; the schema-validation exception is commented out. Validate definitions before loading rather than relying on this check to reject every invalid definition. Keep deployed definitions and version identifiers stable so existing instances continue against their original definition. Set the psql variable fsm_json to your validated machine JSON before running the example.
+Concurrent loads of the same name and version are serialized by an advisory transaction lock. Identical JSON returns the cached definition; different JSON under an existing name and version raises an error. Use a new version for a changed machine. The optional input_dependent_children argument records child-machine dependencies.
 
-### Create an Instance
+### Create an Instance and Send Events
 
 ```sql
 SELECT fsm_core.create_fsm_instance_from_name_v2(
-  input_fsm_name     := 'creditCheck',
-  input_fsm_version  := 'v01',
-  input_fsm_context  := '{"applicant_id":"a-42"}'::jsonb,
-  create_pgmq_queue  := true
+  input_fsm_name    := 'creditCheck',
+  input_fsm_version := 'v01',
+  input_fsm_context := '{"applicant_id":"a-42"}'::jsonb,
+  create_pgmq_queue := true
 ) AS creation_result
 \gset
 SELECT :'creation_result'::jsonb AS creation_status;
@@ -255,50 +256,26 @@ SELECT :'creation_result'::jsonb ->> 'fsm_instance_id' AS fsm_instance_id
 \gset
 ```
 
-The PGXN 1.1.0 function checks that the named FSM exists, inserts an `fsm_instance`, and copies transition authorization rows. When `create_pgmq_queue` is true, it attempts to create a `pgmq` queue named by the instance UUID and send `initialTransition_event`. Queue creation and initial-event failures are caught and reported in the returned JSON. Before sending further events, require `queue_created` to be true and inspect `send_event_result`, `message` and `extra_message` to confirm the initial event succeeded. The psql example retains the returned `fsm_instance_id` for the next call.
+The returned JSON includes `fsm_instance_id`, `queue_created`, `send_event_result`, `message` and `extra_message`. Check these before submitting work: queue creation and initial-event failures can be reported in the result. Initial context is shallow-merged with the definition's static context, with supplied object keys taking precedence.
 
-### Send Events
+For this top-level machine, submit an event declared by its definition:
 
 ```sql
 SELECT fsm_core.send_event_to_fsm_queue_with_event_logs_v2(
-  input_fsm_instance_id                 := :'fsm_instance_id'::uuid,
-  input_fsm_instance_id_fsm_type         := 'workflow',
-  input_fsm_instance_id_fsm_version      := 'v01',
-  input_send_to_parent_queue_id          := fsm_core.pg_system_queue_uuid(),
-  input_send_to_parent_queue_type        := fsm_core.pg_system_queue_type(),
-  input_send_to_parent_queue_id_event_name := fsm_core.pg_system_event_name(),
-  input_event_name                       := 'APPROVE',
-  input_event_action_type                := 'user',
-  input_event_data                       := '{"approved_by":"manager"}'::jsonb,
-  input_event_delay                      := 0
+  input_fsm_instance_id            := :'fsm_instance_id'::uuid,
+  input_fsm_instance_id_fsm_type   := 'fsm',
+  input_fsm_instance_id_fsm_version := 'v01',
+  input_event_name                 := 'APPROVE',
+  input_event_action_type          := 'user',
+  input_event_data                 := '{"approved_by":"manager"}'::jsonb,
+  input_event_delay                := 0
 );
 ```
 
-This helper writes to the instance queue with `pgmq.send()` and records the event in `fsm_instance_queue_event_logs`. For nested FSM and promise flows, `send_event_to_queue_from_fsm_instance_id_v2()` dispatches to the child-FSM or promise queue helper based on `fsmtype`.
+The helper queues the event and writes event history. The old parent-queue parameters are absent from this release's signature. Queuing an event is not proof that a worker has processed it; monitor scheduler activity, queue backlog and instance state.
 
-### Resolve and Step State
+### Objects and Upgrade Boundaries
 
-```sql
-SELECT fsm_core.resolve_state_value_v2(
-  input_json        := '{"value":"pending"}'::jsonb,
-  input_fsm_name    := 'creditCheck',
-  input_fsm_version := 'v01'
-);
+`fsm_json`, `fsm_states` and `fsm_transitions` hold definitions; `fsm_instance` holds instances; `fsm_instance_queue_event_logs` records queue events. `resolve_state_value_v2` and `macrostep_v2` expose lower-level state resolution and transition logic. Prefer the verified v2 entry points and restrict access to security-definer functions and underlying tables.
 
-SELECT fsm_core.macrostep_v2(
-  event_name        := 'APPROVE',
-  input_state_value := ARRAY['pending']::text[],
-  fsm_name_param    := 'creditCheck',
-  fsm_version_param := 'v01'
-);
-```
-
-The SQL surface also includes lower-level `microstep_v2()`, `fsm_worker_v2()`, lock helpers, archive helpers, and v1 compatibility functions. Prefer v2 entry points for new usage when both versions are present.
-
-### Dependencies and Operation
-
-Enable `ltree` and `pgmq` before installing `fsm_core`. The release README also requires `pg_jsonschema` 0.3.3 or later, although the control and META dependency lists omit it. The JSON loader calls `fsm_core.jsonschema_validation_errors`, which is not defined by the distribution's SQL script; verify that the documented JSON-schema helper is available in that schema before loading definitions. Installing a dependency into a different schema alone does not provide that qualified function.
-
-Queued events persist as application data. Supplying `create_pgmq_queue => true` requests the per-instance queue and its initial event; check the returned status before proceeding. A consumer still needs to process queued work. Sending an event does not by itself guarantee that an asynchronous worker has executed the transition. Review queue retention, consumers and permissions together.
-
-Inspect function and table grants before exposing machine creation or arbitrary event submission to application roles. The SQL surface also contains legacy v1 and lower-level helpers; use the verified v2 entry points for this release.
+The release notes describe sequential upgrade scripts guarded by `require_version`, but the reviewed 1.2.0 ZIP contains the full install script and no version-to-version upgrade scripts. Preserve populated databases and obtain a verified upgrade artifact before upgrading an existing installation. Do not rerun the full install or assume `ALTER EXTENSION ... UPDATE` has an available upgrade path.

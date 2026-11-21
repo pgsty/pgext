@@ -37,30 +37,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgcozy` | `pg_buffercache`, `pg_prewarm` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pgcozy_18" "green" >}} {{< bg "17" "pgcozy_17" "green" >}} {{< bg "16" "pgcozy_16" "green" >}} {{< bg "15" "pgcozy_15" "green" >}} {{< bg "14" "pgcozy_14" "green" >}} | `pgcozy_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-pgcozy" "green" >}} {{< bg "17" "postgresql-17-pgcozy" "green" >}} {{< bg "16" "postgresql-16-pgcozy" "green" >}} {{< bg "15" "postgresql-15-pgcozy" "green" >}} {{< bg "14" "postgresql-14-pgcozy" "green" >}} | `postgresql-$v-pgcozy` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pgcozy` | `pg_buffercache`, `pg_prewarm` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "pgcozy_19" "green" >}} {{< bg "18" "pgcozy_18" "green" >}} {{< bg "17" "pgcozy_17" "green" >}} {{< bg "16" "pgcozy_16" "green" >}} {{< bg "15" "pgcozy_15" "green" >}} | `pgcozy_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "postgresql-19-pgcozy" "green" >}} {{< bg "18" "postgresql-18-pgcozy" "green" >}} {{< bg "17" "postgresql-17-pgcozy" "green" >}} {{< bg "16" "postgresql-16-pgcozy" "green" >}} {{< bg "15" "postgresql-15-pgcozy" "green" >}} | `postgresql-$v-pgcozy` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.0" "pgcozy_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.0" "pgcozy_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.0" "pgcozy_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.0" "pgcozy_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.0" "pgcozy_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.0" "pgcozy_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pgcozy_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "pgcozy_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pgcozy_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "pgcozy_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pgcozy_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "pgcozy_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pgcozy_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "pgcozy_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pgcozy_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "pgcozy_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pgcozy_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "pgcozy_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgcozy : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgcozy : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgcozy : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgcozy : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgcozy : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgcozy : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgcozy : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgcozy : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgcozy : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgcozy : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -156,29 +156,6 @@ page_width: full
 | `postgresql-15-pgcozy` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.5 KiB | [postgresql-15-pgcozy_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgcozy_14` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.7 KiB | [pgcozy_14-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcozy_14-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgcozy_14` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 10.7 KiB | [pgcozy_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcozy_14-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgcozy_14` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.7 KiB | [pgcozy_14-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcozy_14-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgcozy_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.7 KiB | [pgcozy_14-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcozy_14-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgcozy_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.8 KiB | [pgcozy_14-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgcozy_14-1.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgcozy_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.8 KiB | [pgcozy_14-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgcozy_14-1.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pgcozy` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.2 KiB | [postgresql-14-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pgcozy` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.2 KiB | [postgresql-14-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pgcozy` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.2 KiB | [postgresql-14-pgcozy_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-pgcozy` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 8.2 KiB | [postgresql-14-pgcozy_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-pgcozy` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 8.2 KiB | [postgresql-14-pgcozy_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-pgcozy` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 8.2 KiB | [postgresql-14-pgcozy_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pgcozy` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 8.2 KiB | [postgresql-14-pgcozy_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-pgcozy` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.2 KiB | [postgresql-14-pgcozy_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-pgcozy` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 7.5 KiB | [postgresql-14-pgcozy_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-pgcozy` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.5 KiB | [postgresql-14-pgcozy_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -207,11 +184,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pgcozy;		# install via package name, for the active PG version
 
+pig install pgcozy -v 19;   # install for PG 19
 pig install pgcozy -v 18;   # install for PG 18
 pig install pgcozy -v 17;   # install for PG 17
 pig install pgcozy -v 16;   # install for PG 16
 pig install pgcozy -v 15;   # install for PG 15
-pig install pgcozy -v 14;   # install for PG 14
 
 ```
 

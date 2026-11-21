@@ -39,30 +39,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_pinyin` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.8` | {{< bg "18" "pg_pinyin_18" "green" >}} {{< bg "17" "pg_pinyin_17" "green" >}} {{< bg "16" "pg_pinyin_16" "green" >}} {{< bg "15" "pg_pinyin_15" "green" >}} {{< bg "14" "pg_pinyin_14" "green" >}} | `pg_pinyin_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.8` | {{< bg "18" "postgresql-18-pinyin" "green" >}} {{< bg "17" "postgresql-17-pinyin" "green" >}} {{< bg "16" "postgresql-16-pinyin" "green" >}} {{< bg "15" "postgresql-15-pinyin" "green" >}} {{< bg "14" "postgresql-14-pinyin" "green" >}} | `postgresql-$v-pinyin` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.8` | {{< bg "19" "" "red" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_pinyin` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.8` | {{< bg "19" "pg_pinyin_19" "red" >}} {{< bg "18" "pg_pinyin_18" "green" >}} {{< bg "17" "pg_pinyin_17" "green" >}} {{< bg "16" "pg_pinyin_16" "green" >}} {{< bg "15" "pg_pinyin_15" "green" >}} | `pg_pinyin_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.8` | {{< bg "19" "postgresql-19-pinyin" "red" >}} {{< bg "18" "postgresql-18-pinyin" "green" >}} {{< bg "17" "postgresql-17-pinyin" "green" >}} {{< bg "16" "postgresql-16-pinyin" "green" >}} {{< bg "15" "postgresql-15-pinyin" "green" >}} | `postgresql-$v-pinyin` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_pinyin_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_pinyin_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "N/A" "pg_pinyin_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "N/A" "pg_pinyin_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "N/A" "pg_pinyin_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "N/A" "pg_pinyin_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "pg_pinyin_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-19-pinyin : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-19-pinyin : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "N/A" "postgresql-19-pinyin : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "N/A" "postgresql-19-pinyin : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-19-pinyin : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-19-pinyin : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "N/A" "postgresql-19-pinyin : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-19-pinyin : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-19-pinyin : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-19-pinyin : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -158,29 +158,6 @@ page_width: full
 | `postgresql-15-pinyin` | `0.0.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.5 MiB | [postgresql-15-pinyin_0.0.8-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pinyin/postgresql-15-pinyin_0.0.8-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_pinyin_14` | `0.0.8` | [el8.x86_64](/os/el8.x86_64) | pigsty | 2.9 MiB | [pg_pinyin_14-0.0.8-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_pinyin_14-0.0.8-1PGSTY.el8.x86_64.rpm) |
-| `pg_pinyin_14` | `0.0.8` | [el8.aarch64](/os/el8.aarch64) | pigsty | 2.7 MiB | [pg_pinyin_14-0.0.8-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_pinyin_14-0.0.8-1PGSTY.el8.aarch64.rpm) |
-| `pg_pinyin_14` | `0.0.8` | [el9.x86_64](/os/el9.x86_64) | pigsty | 2.9 MiB | [pg_pinyin_14-0.0.8-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_pinyin_14-0.0.8-1PGSTY.el9.x86_64.rpm) |
-| `pg_pinyin_14` | `0.0.8` | [el9.aarch64](/os/el9.aarch64) | pigsty | 2.7 MiB | [pg_pinyin_14-0.0.8-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_pinyin_14-0.0.8-1PGSTY.el9.aarch64.rpm) |
-| `pg_pinyin_14` | `0.0.8` | [el10.x86_64](/os/el10.x86_64) | pigsty | 2.9 MiB | [pg_pinyin_14-0.0.8-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_pinyin_14-0.0.8-1PGSTY.el10.x86_64.rpm) |
-| `pg_pinyin_14` | `0.0.8` | [el10.aarch64](/os/el10.aarch64) | pigsty | 2.7 MiB | [pg_pinyin_14-0.0.8-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_pinyin_14-0.0.8-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pinyin` | `0.0.8` | [d12.x86_64](/os/d12.x86_64) | pigsty | 2.5 MiB | [postgresql-14-pinyin_0.0.8-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.8-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pinyin` | `0.0.8` | [d12.aarch64](/os/d12.aarch64) | pigsty | 2.2 MiB | [postgresql-14-pinyin_0.0.8-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.8-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pinyin` | `0.0.8` | [d13.x86_64](/os/d13.x86_64) | pigsty | 2.5 MiB | [postgresql-14-pinyin_0.0.8-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.8-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-pinyin` | `0.0.8` | [d13.aarch64](/os/d13.aarch64) | pigsty | 2.2 MiB | [postgresql-14-pinyin_0.0.8-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.8-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-pinyin` | `0.0.8` | [u22.x86_64](/os/u22.x86_64) | pigsty | 2.7 MiB | [postgresql-14-pinyin_0.0.8-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.8-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-pinyin` | `0.0.8` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.6 MiB | [postgresql-14-pinyin_0.0.8-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.8-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-pinyin` | `0.0.8` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.7 MiB | [postgresql-14-pinyin_0.0.8-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.8-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-pinyin` | `0.0.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.6 MiB | [postgresql-14-pinyin_0.0.8-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.8-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-pinyin` | `0.0.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.7 MiB | [postgresql-14-pinyin_0.0.8-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.8-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-pinyin` | `0.0.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.5 MiB | [postgresql-14-pinyin_0.0.8-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.8-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -213,7 +190,6 @@ pig install pg_pinyin -v 18;   # install for PG 18
 pig install pg_pinyin -v 17;   # install for PG 17
 pig install pg_pinyin -v 16;   # install for PG 16
 pig install pg_pinyin -v 15;   # install for PG 15
-pig install pg_pinyin -v 14;   # install for PG 14
 
 ```
 
@@ -227,6 +203,10 @@ CREATE EXTENSION pg_pinyin;
 ## Usage
 
 Sources:
+
+- [Upstream source](https://github.com/aiyou178/pg_pinyin/releases/tag/v0.0.9)
+- [Upstream source](https://github.com/aiyou178/pg_pinyin/blob/v0.0.9/readme.md)
+- [Upstream source](https://github.com/aiyou178/pg_pinyin/blob/v0.0.9/pg_pinyin--0.0.8--0.0.9.sql)
 
 - [pg_pinyin v0.0.8 README](https://github.com/aiyou178/pg_pinyin/blob/v0.0.8/readme.md)
 - [pg_pinyin v0.0.8 control file](https://github.com/aiyou178/pg_pinyin/blob/v0.0.8/pg_pinyin.control)
@@ -291,3 +271,11 @@ If pg_search is absent, the same entry point is installed as an error-reporting 
 ### Operational Notes
 
 The extension ships generated character and word dictionaries in its pinyin schema. Treat those tables as extension-managed data rather than application tables. Romanization is normalization, not translation, and ambiguous or domain-specific readings may require application-side review.
+
+### 0.0.9 query modes and batch input
+
+The current release requires pgrx 0.20.0-compatible servers and headers: PostgreSQL 15.20, 16.16, 17.12 or 18.7 and later minors. PostgreSQL 14 is removed; 19 RC2 is experimental. Reconnect after replacing the library and run ALTER EXTENSION pg_pinyin UPDATE TO '0.0.9'. This supersedes the older compatibility paragraph.
+
+Explicit apostrophes preserve syllable boundaries such as xi'an. pinyin_regex_phrase_mode adds opt-in full, initials, autocomplete and auto modes; pinyin_phrase provides exact native term/phrase queries for plain syllable fields. Use a mode matching the field encoding and user intent. pg_search remains optional and its native phrase APIs must be available for that integration.
+
+pinyin_word_romanize_batch(text[]) accepts independent plain-text documents with NULL and optional suffix handling. Use the documented COPY staging/batch workflow for imports. Embedded Rust pattern parsers are immutable and parallel safe without runtime SPI; this does not imply every dictionary-dependent romanization function has the same contract. Existing defaults remain available; malformed explicit-mode input raises errors rather than searching a silently truncated prefix.

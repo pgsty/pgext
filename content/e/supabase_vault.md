@@ -39,30 +39,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_vault` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.2` | {{< bg "18" "vault_18" "green" >}} {{< bg "17" "vault_17" "green" >}} {{< bg "16" "vault_16" "green" >}} {{< bg "15" "vault_15" "green" >}} {{< bg "14" "vault_14" "green" >}} | `vault_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.2` | {{< bg "18" "postgresql-18-vault" "green" >}} {{< bg "17" "postgresql-17-vault" "green" >}} {{< bg "16" "postgresql-16-vault" "green" >}} {{< bg "15" "postgresql-15-vault" "green" >}} {{< bg "14" "postgresql-14-vault" "green" >}} | `postgresql-$v-vault` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.2` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_vault` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.2` | {{< bg "19" "vault_19" "green" >}} {{< bg "18" "vault_18" "green" >}} {{< bg "17" "vault_17" "green" >}} {{< bg "16" "vault_16" "green" >}} {{< bg "15" "vault_15" "green" >}} | `vault_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.2` | {{< bg "19" "postgresql-19-vault" "green" >}} {{< bg "18" "postgresql-18-vault" "green" >}} {{< bg "17" "postgresql-17-vault" "green" >}} {{< bg "16" "postgresql-16-vault" "green" >}} {{< bg "15" "postgresql-15-vault" "green" >}} | `postgresql-$v-vault` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.3.2" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.3.2" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.3.2" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.3.2" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.3.2" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.3.2" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-14-vault : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-14-vault : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-14-vault : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-14-vault : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-14-vault : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-14-vault : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-14-vault : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-14-vault : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-14-vault : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-14-vault : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "vault_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "vault_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "vault_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "vault_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "vault_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "vault_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "vault_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-vault : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-vault : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-vault : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-vault : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-vault : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-vault : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-vault : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-vault : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-vault : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-vault : MISS 0" "red" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-18-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-15-vault : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -158,29 +158,6 @@ page_width: full
 | `postgresql-15-vault` | `0.3.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 32.2 KiB | [postgresql-15-vault_0.3.2-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vault/postgresql-15-vault_0.3.2-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vault_14` | `0.3.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 41.6 KiB | [vault_14-0.3.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vault_14-0.3.2-1PGSTY.el8.x86_64.rpm) |
-| `vault_14` | `0.3.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 41.5 KiB | [vault_14-0.3.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vault_14-0.3.2-1PGSTY.el8.aarch64.rpm) |
-| `vault_14` | `0.3.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 42.1 KiB | [vault_14-0.3.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vault_14-0.3.2-1PGSTY.el9.x86_64.rpm) |
-| `vault_14` | `0.3.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 42.1 KiB | [vault_14-0.3.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vault_14-0.3.2-1PGSTY.el9.aarch64.rpm) |
-| `vault_14` | `0.3.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 42.1 KiB | [vault_14-0.3.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vault_14-0.3.2-1PGSTY.el10.x86_64.rpm) |
-| `vault_14` | `0.3.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 42.2 KiB | [vault_14-0.3.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vault_14-0.3.2-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-vault` | `0.3.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 30.4 KiB | [postgresql-14-vault_0.3.2-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vault/postgresql-14-vault_0.3.2-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-vault` | `0.3.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 30.4 KiB | [postgresql-14-vault_0.3.2-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vault/postgresql-14-vault_0.3.2-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-vault` | `0.3.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 30.5 KiB | [postgresql-14-vault_0.3.2-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/v/vault/postgresql-14-vault_0.3.2-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-vault` | `0.3.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 30.4 KiB | [postgresql-14-vault_0.3.2-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/v/vault/postgresql-14-vault_0.3.2-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-vault` | `0.3.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 33.5 KiB | [postgresql-14-vault_0.3.2-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vault/postgresql-14-vault_0.3.2-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-vault` | `0.3.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 33.3 KiB | [postgresql-14-vault_0.3.2-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vault/postgresql-14-vault_0.3.2-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-vault` | `0.3.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 31.6 KiB | [postgresql-14-vault_0.3.2-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vault/postgresql-14-vault_0.3.2-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-vault` | `0.3.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.6 KiB | [postgresql-14-vault_0.3.2-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vault/postgresql-14-vault_0.3.2-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-vault` | `0.3.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 31.6 KiB | [postgresql-14-vault_0.3.2-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vault/postgresql-14-vault_0.3.2-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-vault` | `0.3.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 32.2 KiB | [postgresql-14-vault_0.3.2-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vault/postgresql-14-vault_0.3.2-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -210,11 +187,11 @@ pig repo add pgsql -u   # add both repo and update cache
 pig install pg_vault;		# install via package name, for the active PG version
 pig install supabase_vault;		# install by extension name, for the current active PG version
 
+pig install supabase_vault -v 19;   # install for PG 19
 pig install supabase_vault -v 18;   # install for PG 18
 pig install supabase_vault -v 17;   # install for PG 17
 pig install supabase_vault -v 16;   # install for PG 16
 pig install supabase_vault -v 15;   # install for PG 15
-pig install supabase_vault -v 14;   # install for PG 14
 
 ```
 

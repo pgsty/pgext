@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2540** | {{< badge content="pg_orca" link="https://github.com/quantumiodb/pgorca" >}} | {{< ext "pg_orca" >}} | `1.0.0` | {{< category "OLAP" >}} | {{< license "Apache-2.0" >}} | {{< language "C++" >}} |
+| **2540** | {{< badge content="pg_orca" link="https://github.com/quantumiodb/pgorca" >}} | {{< ext "pg_orca" >}} | `1.1.0` | {{< category "OLAP" >}} | {{< license "Apache-2.0" >}} | {{< language "C++" >}} |
 {.wide .expand}
 
 
@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_orca` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_orca_18" "green" >}} {{< bg "17" "pg_orca_17" "red" >}} {{< bg "16" "pg_orca_16" "red" >}} {{< bg "15" "pg_orca_15" "red" >}} {{< bg "14" "pg_orca_14" "red" >}} | `pg_orca_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pg-orca" "green" >}} {{< bg "17" "postgresql-17-pg-orca" "red" >}} {{< bg "16" "postgresql-16-pg-orca" "red" >}} {{< bg "15" "postgresql-15-pg-orca" "red" >}} {{< bg "14" "postgresql-14-pg-orca" "red" >}} | `postgresql-$v-pg-orca` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} | `pg_orca` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "19" "pg_orca_19" "green" >}} {{< bg "18" "pg_orca_18" "green" >}} {{< bg "17" "pg_orca_17" "red" >}} {{< bg "16" "pg_orca_16" "red" >}} {{< bg "15" "pg_orca_15" "red" >}} | `pg_orca_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "19" "postgresql-19-pg-orca" "green" >}} {{< bg "18" "postgresql-18-pg-orca" "green" >}} {{< bg "17" "postgresql-17-pg-orca" "red" >}} {{< bg "16" "postgresql-16-pg-orca" "red" >}} {{< bg "15" "postgresql-15-pg-orca" "red" >}} | `postgresql-$v-pg-orca` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "pg_orca_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_orca_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "pg_orca_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_orca_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "pg_orca_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_orca_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "pg_orca_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_orca_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "pg_orca_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_orca_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "pg_orca_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_orca_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-orca : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-orca : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-orca : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-orca : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-orca : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-orca : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-orca : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-orca : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-orca : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-orca : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_orca_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0.0" "pg_orca_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_orca_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_15 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_orca_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0.0" "pg_orca_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_orca_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_15 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pg_orca_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "pg_orca_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_orca_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_15 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pg_orca_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "pg_orca_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_orca_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_15 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pg_orca_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "pg_orca_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_orca_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_15 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pg_orca_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "pg_orca_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_orca_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_orca_15 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-orca : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-orca : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-orca : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-orca : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-orca : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-orca : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-orca : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-orca : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-orca : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-orca : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} |
 {.matrix .wide .expand}
 
 
@@ -94,7 +94,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/quantumiodb/pgorca" title="Repository" icon="github" subtitle="github.com/quantumiodb/pgorca" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_orca-1.0.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_orca-1.1.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -116,6 +116,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pg_orca;		# install via package name, for the active PG version
 
+pig install pg_orca -v 19;   # install for PG 19
 pig install pg_orca -v 18;   # install for PG 18
 
 ```

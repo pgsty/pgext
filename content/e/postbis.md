@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `postbis` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postbis_18" "green" >}} {{< bg "17" "postbis_17" "green" >}} {{< bg "16" "postbis_16" "green" >}} {{< bg "15" "postbis_15" "green" >}} {{< bg "14" "postbis_14" "green" >}} | `postbis_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-postbis" "green" >}} {{< bg "17" "postgresql-17-postbis" "green" >}} {{< bg "16" "postgresql-16-postbis" "green" >}} {{< bg "15" "postgresql-15-postbis" "green" >}} {{< bg "14" "postgresql-14-postbis" "green" >}} | `postgresql-$v-postbis` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `postbis` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "postbis_19" "green" >}} {{< bg "18" "postbis_18" "green" >}} {{< bg "17" "postbis_17" "green" >}} {{< bg "16" "postbis_16" "green" >}} {{< bg "15" "postbis_15" "green" >}} | `postbis_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "postgresql-19-postbis" "green" >}} {{< bg "18" "postgresql-18-postbis" "green" >}} {{< bg "17" "postgresql-17-postbis" "green" >}} {{< bg "16" "postgresql-16-postbis" "green" >}} {{< bg "15" "postgresql-15-postbis" "green" >}} | `postgresql-$v-postbis` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.0" "postbis_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.0" "postbis_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.0" "postbis_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.0" "postbis_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.0" "postbis_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.0" "postbis_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-postbis : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-postbis : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-postbis : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-postbis : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-postbis : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-postbis : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-postbis : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-postbis : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-postbis : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-postbis : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "postbis_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "postbis_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "postbis_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "postbis_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "postbis_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postbis_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "postbis_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postbis_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "postbis_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postbis_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "postbis_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postbis_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postbis_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-postbis : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-postbis : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-postbis : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-postbis : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-postbis : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-postbis : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-postbis : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-postbis : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-postbis : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-postbis : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-postbis : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-postbis : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -157,29 +157,6 @@ page_width: full
 | `postgresql-15-postbis` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 158.2 KiB | [postgresql-15-postbis_1.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postbis/postgresql-15-postbis_1.0-2PIGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `postbis_14` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 66.4 KiB | [postbis_14-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postbis_14-1.0-2PIGSTY.el8.x86_64.rpm) |
-| `postbis_14` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 62.5 KiB | [postbis_14-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postbis_14-1.0-2PIGSTY.el8.aarch64.rpm) |
-| `postbis_14` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 63.7 KiB | [postbis_14-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/postbis_14-1.0-2PIGSTY.el9.x86_64.rpm) |
-| `postbis_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 61.4 KiB | [postbis_14-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/postbis_14-1.0-2PIGSTY.el9.aarch64.rpm) |
-| `postbis_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 64.5 KiB | [postbis_14-1.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/postbis_14-1.0-2PIGSTY.el10.x86_64.rpm) |
-| `postbis_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 61.7 KiB | [postbis_14-1.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/postbis_14-1.0-2PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-postbis` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 153.7 KiB | [postgresql-14-postbis_1.0-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postbis/postgresql-14-postbis_1.0-2PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-postbis` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 148.3 KiB | [postgresql-14-postbis_1.0-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postbis/postgresql-14-postbis_1.0-2PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-postbis` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 154.5 KiB | [postgresql-14-postbis_1.0-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postbis/postgresql-14-postbis_1.0-2PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-postbis` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 149.2 KiB | [postgresql-14-postbis_1.0-2PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postbis/postgresql-14-postbis_1.0-2PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-postbis` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 170.5 KiB | [postgresql-14-postbis_1.0-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postbis/postgresql-14-postbis_1.0-2PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-postbis` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 168.0 KiB | [postgresql-14-postbis_1.0-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postbis/postgresql-14-postbis_1.0-2PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-postbis` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 161.3 KiB | [postgresql-14-postbis_1.0-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postbis/postgresql-14-postbis_1.0-2PIGSTY~noble_amd64.deb) |
-| `postgresql-14-postbis` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 158.6 KiB | [postgresql-14-postbis_1.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postbis/postgresql-14-postbis_1.0-2PIGSTY~noble_arm64.deb) |
-| `postgresql-14-postbis` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 161.7 KiB | [postgresql-14-postbis_1.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postbis/postgresql-14-postbis_1.0-2PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-postbis` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 158.2 KiB | [postgresql-14-postbis_1.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postbis/postgresql-14-postbis_1.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -208,11 +185,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install postbis;		# install via package name, for the active PG version
 
+pig install postbis -v 19;   # install for PG 19
 pig install postbis -v 18;   # install for PG 18
 pig install postbis -v 17;   # install for PG 17
 pig install postbis -v 16;   # install for PG 16
 pig install postbis -v 15;   # install for PG 15
-pig install postbis -v 14;   # install for PG 14
 
 ```
 

@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9590** | {{< badge content="pgclone" link="https://github.com/valehdba/pgclone" >}} | {{< ext "pgclone" >}} | `4.4.2` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **9590** | {{< badge content="pgclone" link="https://github.com/valehdba/pgclone" >}} | {{< ext "pgclone" >}} | `4.9.0` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.4.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgclone` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.4.2` | {{< bg "18" "pgclone_18" "green" >}} {{< bg "17" "pgclone_17" "green" >}} {{< bg "16" "pgclone_16" "green" >}} {{< bg "15" "pgclone_15" "green" >}} {{< bg "14" "pgclone_14" "green" >}} | `pgclone_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.4.2` | {{< bg "18" "postgresql-18-pgclone" "green" >}} {{< bg "17" "postgresql-17-pgclone" "green" >}} {{< bg "16" "postgresql-16-pgclone" "green" >}} {{< bg "15" "postgresql-15-pgclone" "green" >}} {{< bg "14" "postgresql-14-pgclone" "green" >}} | `postgresql-$v-pgclone` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.9.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pgclone` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.9.0` | {{< bg "19" "pgclone_19" "green" >}} {{< bg "18" "pgclone_18" "green" >}} {{< bg "17" "pgclone_17" "green" >}} {{< bg "16" "pgclone_16" "green" >}} {{< bg "15" "pgclone_15" "green" >}} | `pgclone_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.9.0` | {{< bg "19" "postgresql-19-pgclone" "green" >}} {{< bg "18" "postgresql-18-pgclone" "green" >}} {{< bg "17" "postgresql-17-pgclone" "green" >}} {{< bg "16" "postgresql-16-pgclone" "green" >}} {{< bg "15" "postgresql-15-pgclone" "green" >}} | `postgresql-$v-pgclone` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-14-pgclone : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-14-pgclone : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-14-pgclone : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-14-pgclone : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-14-pgclone : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-14-pgclone : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-14-pgclone : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-14-pgclone : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-14-pgclone : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-14-pgclone : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pgclone_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pgclone_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pgclone_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pgclone_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pgclone_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pgclone_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "pgclone_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgclone : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgclone : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgclone : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgclone : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgclone : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgclone : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgclone : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgclone : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgclone : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgclone : MISS 0" "red" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -157,36 +157,13 @@ page_width: full
 | `postgresql-15-pgclone` | `4.4.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 212.2 KiB | [postgresql-15-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgclone/postgresql-15-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgclone_14` | `4.4.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 97.9 KiB | [pgclone_14-4.4.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgclone_14-4.4.2-1PIGSTY.el8.x86_64.rpm) |
-| `pgclone_14` | `4.4.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 95.4 KiB | [pgclone_14-4.4.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgclone_14-4.4.2-1PIGSTY.el8.aarch64.rpm) |
-| `pgclone_14` | `4.4.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 96.1 KiB | [pgclone_14-4.4.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgclone_14-4.4.2-1PIGSTY.el9.x86_64.rpm) |
-| `pgclone_14` | `4.4.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 96.1 KiB | [pgclone_14-4.4.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgclone_14-4.4.2-1PIGSTY.el9.aarch64.rpm) |
-| `pgclone_14` | `4.4.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 97.5 KiB | [pgclone_14-4.4.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgclone_14-4.4.2-1PIGSTY.el10.x86_64.rpm) |
-| `pgclone_14` | `4.4.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 96.0 KiB | [pgclone_14-4.4.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgclone_14-4.4.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pgclone` | `4.4.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 221.3 KiB | [postgresql-14-pgclone_4.4.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgclone/postgresql-14-pgclone_4.4.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pgclone` | `4.4.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 216.2 KiB | [postgresql-14-pgclone_4.4.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgclone/postgresql-14-pgclone_4.4.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pgclone` | `4.4.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 221.7 KiB | [postgresql-14-pgclone_4.4.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgclone/postgresql-14-pgclone_4.4.2-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-pgclone` | `4.4.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 215.9 KiB | [postgresql-14-pgclone_4.4.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgclone/postgresql-14-pgclone_4.4.2-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-pgclone` | `4.4.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 234.1 KiB | [postgresql-14-pgclone_4.4.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgclone/postgresql-14-pgclone_4.4.2-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-pgclone` | `4.4.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 233.5 KiB | [postgresql-14-pgclone_4.4.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgclone/postgresql-14-pgclone_4.4.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pgclone` | `4.4.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 215.1 KiB | [postgresql-14-pgclone_4.4.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgclone/postgresql-14-pgclone_4.4.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-pgclone` | `4.4.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 213.5 KiB | [postgresql-14-pgclone_4.4.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgclone/postgresql-14-pgclone_4.4.2-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-pgclone` | `4.4.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 213.2 KiB | [postgresql-14-pgclone_4.4.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgclone/postgresql-14-pgclone_4.4.2-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-pgclone` | `4.4.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 211.8 KiB | [postgresql-14-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgclone/postgresql-14-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/valehdba/pgclone" title="Repository" icon="github" subtitle="github.com/valehdba/pgclone" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgclone-4.4.2.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgclone-4.9.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -208,11 +185,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pgclone;		# install via package name, for the active PG version
 
+pig install pgclone -v 19;   # install for PG 19
 pig install pgclone -v 18;   # install for PG 18
 pig install pgclone -v 17;   # install for PG 17
 pig install pgclone -v 16;   # install for PG 16
 pig install pgclone -v 15;   # install for PG 15
-pig install pgclone -v 14;   # install for PG 14
 
 ```
 
@@ -234,10 +211,23 @@ CREATE EXTENSION pgclone;
 
 Sources:
 
-- [pgclone v4.4.2 README](https://github.com/valehdba/pgclone/blob/v4.4.2/README.md)
-- [pgclone v4.4.2 usage guide](https://github.com/valehdba/pgclone/blob/v4.4.2/docs/USAGE.md)
-- [Async cloning guide](https://github.com/valehdba/pgclone/blob/v4.4.2/docs/ASYNC.md)
-- [pgclone v4.4.2 release notes](https://github.com/valehdba/pgclone/releases/tag/v4.4.2)
+- [Current version source](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/README.md)
+- [Current version source](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/pgclone.control)
+- [Current version source](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/CHANGELOG.md)
+- [Current version source](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/sql/pgclone--4.8.0--4.9.0.sql)
+
+- [pgclone 4.8.0 changelog](https://api.pgxn.org/src/pgclone/pgclone-4.8.0/CHANGELOG.md)
+- [4.7.0 to 4.8.0 SQL](https://api.pgxn.org/src/pgclone/pgclone-4.8.0/sql/pgclone--4.7.0--4.8.0.sql)
+- [pgclone 4.8.0 control](https://api.pgxn.org/src/pgclone/pgclone-4.8.0/pgclone.control)
+- [pgclone 4.8.0 README](https://api.pgxn.org/src/pgclone/pgclone-4.8.0/README.md)
+- [Upstream source](https://api.pgxn.org/src/pgclone/pgclone-4.7.0/README.md)
+- [Upstream source](https://api.pgxn.org/src/pgclone/pgclone-4.7.0/docs/USAGE.md)
+- [Upstream source](https://api.pgxn.org/src/pgclone/pgclone-4.7.0/pgclone.control)
+
+- [pgclone v4.5.0 README](https://github.com/valehdba/pgclone/blob/v4.5.0/README.md)
+- [pgclone v4.5.0 usage guide](https://github.com/valehdba/pgclone/blob/v4.5.0/docs/USAGE.md)
+- [Async cloning guide](https://github.com/valehdba/pgclone/blob/v4.5.0/docs/ASYNC.md)
+- [pgclone v4.5.0 release notes](https://github.com/valehdba/pgclone/releases/tag/v4.5.0)
 
 pgclone clones tables, schemas, functions, roles, or whole databases over a PostgreSQL connection. It also provides preflight checks, structural diffs, masking, consistent snapshots, and optional background jobs. Use it for controlled database copies, not as an unattended substitute for backup and recovery.
 
@@ -285,6 +275,35 @@ Version 4.4 adds schema- and database-level masks, table inclusion patterns, and
 
 The 4.4.2 mask validator skips unsafe or incompatible masks: constant values that cannot cast to the column, NULL for NOT NULL columns, non-hash masks on unique or primary-key columns, and masks on foreign-key columns. A skipped mask leaves that column unmasked. Treat warnings as a failed privacy gate and inspect the result before distributing a clone.
 
+### Conflict Handling and Remote Mask Reports
+
+From 4.4.3 onward, synchronous table/schema/database clones honor an explicitly supplied `conflict` option. `replace` drops the existing object with cascading dependencies before rebuilding it; `skip`, `error` and `rename` select the other documented behaviors. A caller that previously supplied this ignored option can now perform a destructive operation, so review options before upgrading.
+
+Version 4.4.4 adds bank-account and IBAN discovery and a remote report overload:
+
+```sql
+SELECT * FROM pgclone.masking_report(
+    'host=source.example dbname=app user=clone_user', 'public');
+```
+
+### Oracle Sources in 4.5.0
+
+`pgclone.table_from_oracle()` requires a library compiled with optional Oracle OCI support and a loadable Oracle client on the database host. An ordinary build exposes the function but rejects the operation. The separate `pgclone.oracle_type_to_pg()` helper works without an Oracle client.
+
+```sql
+SELECT pgclone.table_from_oracle(
+    'dsn=ORACLE_SOURCE user=clone_user',
+    'HR', 'EMPLOYEES', dry_run => true);
+```
+
+An omitted Oracle password is read from the server process's `PGCLONE_ORACLE_PASSWORD` environment variable. The dry run returns DDL without creating the target. Actual cloning requires an existing target schema and an absent target table; it never replaces that table. DDL and copied rows share one PostgreSQL transaction, with a read-only Oracle snapshot.
+
+Unsupported Oracle column types are skipped with warnings, so validate the resulting column set. Defaults, foreign/check constraints, non-unique indexes, triggers, partitioning, identity properties and masking/filtering are not cloned. Replace the library and update the extension to install the new SQL functions:
+
+```sql
+ALTER EXTENSION pgclone UPDATE TO '4.5.0';
+```
+
 ### Preflight, Diff, and Consistency
 
     SELECT pgclone.preflight(
@@ -323,6 +342,29 @@ pgclone also exposes progress_detail, resume, and clear_jobs for job administrat
 ### Important Boundaries
 
 - The upstream usage guide requires superuser privileges to install and use pgclone.
-- Async schema/database/parallel paths do not honor masks, tables, or exclude_tables in v4.4.2. Use the documented synchronous path when those controls are a security requirement.
+- Async schema/database/parallel paths do not honor masks, tables, or exclude_tables in v4.5.0. Use the documented synchronous path when those controls are a security requirement.
 - Keep passwords out of stored SQL and logs; prefer libpq service files, passfiles, or another controlled credential mechanism.
 - Version 4.4.2 improves sequence-state copying and protects PostgreSQL 17 source sessions from transaction_timeout, but callers must still validate object ownership, extensions, roles, large objects, and post-clone application behavior.
+
+### SQL Server and MySQL sources in 4.7.0
+
+The 4.6 SQL Server interface requires optional FreeTDS support; 4.7 adds MySQL/MariaDB through an optional client library. The public entry points are pgclone.table_from_sqlserver() and pgclone.table_from_mysql(), with corresponding type-mapping helpers. Builds without the client support reject cloning while retaining the SQL interface. An omitted password uses the server's PGCLONE_SQLSERVER_PASSWORD or PGCLONE_MYSQL_PASSWORD environment variable.
+
+Use dry_run to inspect generated DDL first. Actual imports require an existing target schema and an absent target table, and never overwrite the table. Inspect skipped/unsupported source column types and the documented mapping of keys and indexes; defaults, triggers and full source-database semantics are not reproduced. PostgreSQL DDL and copied rows are transactional, but source snapshot guarantees depend on the selected external engine and table type. Do not assume nontransactional MySQL tables share an InnoDB snapshot.
+
+Install the matching library and optional clients, reconnect sessions, and update the SQL extension to 4.7.0. The older Oracle example above describes that interface's introduction; this is the current SQL upgrade:
+
+```sql
+ALTER EXTENSION pgclone UPDATE TO '4.7.0';
+```
+
+### 4.8.0 Partition Cloning and Restart Boundary
+
+Version 4.8.0 has no SQL-level object changes, but after `make install` PostgreSQL must be restarted before `ALTER EXTENSION pgclone UPDATE`; a stale preloaded library can otherwise fail to find updated functions. The update adds `"conflict": "ignore"`: when the target table already exists, pgclone keeps its definition and still loads data in both sync and async paths.
+
+Partitioned schema and async clones now create parents before partitions, copy rows once from leaf partitions, and propagate parent primary keys, indexes and triggers rather than duplicating them. Generated columns remain generated and are omitted from COPY so the target recomputes them; PostgreSQL 18 virtual generated columns require PostgreSQL 18 on the target. Async single-table cloning pre-creates serial/bigserial sequences and replays their values, and background workers honour SIGTERM.
+
+
+### 4.9.0 Partial Clone Failures
+
+Synchronous schema and database clones accept `on_error: continue`. Each failed table rolls back in its own subtransaction, emits its message and SQLSTATE, and is excluded from later foreign-key and trigger passes. The result reports `COMPLETED WITH ERRORS: N table(s) failed: ...`; it is not a fully successful clone. The default remains abort, and cancellation/shutdown errors are not swallowed. Async schema clones already continued after individual table errors. This release adds no SQL objects: install matching files, restart PostgreSQL as directed upstream, then run `ALTER EXTENSION pgclone UPDATE TO '4.9.0'`.

@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4940** | {{< badge content="btree_gist" link="https://www.postgresql.org/docs/current/btree-gist.html" >}} | {{< ext "btree_gist" >}} | `1.8` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4940** | {{< badge content="btree_gist" link="https://www.postgresql.org/docs/current/btree-gist.html" >}} | {{< ext "btree_gist" >}} | `1.9` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -32,14 +32,14 @@ page_width: full
 |    **Need By**    | {{< ext "emaj" >}} {{< ext "omni_auth" >}} {{< ext "periods" >}} {{< ext "pg_lake_table" >}} {{< ext "pgautofailover" >}} {{< ext "powa" >}} |
 |   **See Also**    | {{< ext "ora_btree_gist" >}} {{< ext "btree_gin" >}} {{< ext "parray_gin" >}} {{< ext "intarray" >}} {{< ext "rum" >}} {{< ext "bloom" >}} {{< ext "db2fce" >}} {{< ext "orafce" >}} |
 
-> [!Note] PG18 SQL/control baseline 1.8; older PostgreSQL majors may differ.
+> [!Note] SQL version varies by PG major.
 
 
 ## Packages
 
-| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
+| **PG19** | **PG18** | **PG17** | **PG16** | **PG15** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< bg "1.8" "PostgreSQL 18: version 1.8" "green" >}} | {{< bg "1.8" "PostgreSQL 17: version 1.8" "green" >}} | {{< bg "1.8" "PostgreSQL 16: version 1.8" "green" >}} | {{< bg "1.8" "PostgreSQL 15: version 1.8" "green" >}} | {{< bg "1.8" "PostgreSQL 14: version 1.8" "green" >}} |
+| {{< bg "1.9" "PostgreSQL 19: version 1.9" "green" >}} | {{< bg "1.9" "PostgreSQL 18: version 1.9" "green" >}} | {{< bg "1.9" "PostgreSQL 17: version 1.9" "green" >}} | {{< bg "1.9" "PostgreSQL 16: version 1.9" "green" >}} | {{< bg "1.9" "PostgreSQL 15: version 1.9" "green" >}} |
 {.wide .expand}
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel

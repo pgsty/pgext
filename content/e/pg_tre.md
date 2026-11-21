@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2330** | {{< badge content="pg_tre" link="https://codeberg.org/gregburd/pg_tre" >}} | {{< ext "pg_tre" >}} | `4.6.2` | {{< category "FTS" >}} | {{< license "MIT AND BSD-2-Clause" >}} | {{< language "C" >}} |
+| **2330** | {{< badge content="pg_tre" link="https://codeberg.org/gregburd/pg_tre" >}} | {{< ext "pg_tre" >}} | `4.6.5` | {{< category "FTS" >}} | {{< license "MIT AND BSD-2-Clause" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tre` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.2` | {{< bg "18" "pg_tre_18" "green" >}} {{< bg "17" "pg_tre_17" "green" >}} {{< bg "16" "pg_tre_16" "red" >}} {{< bg "15" "pg_tre_15" "red" >}} {{< bg "14" "pg_tre_14" "red" >}} | `pg_tre_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.2` | {{< bg "18" "postgresql-18-pg-tre" "green" >}} {{< bg "17" "postgresql-17-pg-tre" "green" >}} {{< bg "16" "postgresql-16-pg-tre" "red" >}} {{< bg "15" "postgresql-15-pg-tre" "red" >}} {{< bg "14" "postgresql-14-pg-tre" "red" >}} | `postgresql-$v-pg-tre` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.5` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} | `pg_tre` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.4` | {{< bg "19" "pg_tre_19" "green" >}} {{< bg "18" "pg_tre_18" "green" >}} {{< bg "17" "pg_tre_17" "green" >}} {{< bg "16" "pg_tre_16" "red" >}} {{< bg "15" "pg_tre_15" "red" >}} | `pg_tre_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.4` | {{< bg "19" "postgresql-19-pg-tre" "green" >}} {{< bg "18" "postgresql-18-pg-tre" "green" >}} {{< bg "17" "postgresql-17-pg-tre" "green" >}} {{< bg "16" "postgresql-16-pg-tre" "red" >}} {{< bg "15" "postgresql-15-pg-tre" "red" >}} | `postgresql-$v-pg-tre` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_tre_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_tre_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pg_tre_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pg_tre_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pg_tre_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pg_tre_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-tre : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-tre : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-tre : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-tre : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-tre : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-tre : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-tre : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-tre : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-tre : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-tre : MISS 0" "red" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.2" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} |
 {.matrix .wide .expand}
 
 
@@ -117,7 +117,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://codeberg.org/gregburd/pg_tre" title="Repository" icon="link" subtitle="codeberg.org/gregburd/pg_tre" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tre-4.6.2.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tre-4.6.4.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -139,6 +139,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pg_tre;		# install via package name, for the active PG version
 
+pig install pg_tre -v 19;   # install for PG 19
 pig install pg_tre -v 18;   # install for PG 18
 pig install pg_tre -v 17;   # install for PG 17
 
@@ -155,6 +156,11 @@ CREATE EXTENSION pg_tre;
 
 Sources:
 
+- [Current version source](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/README.md)
+- [Current version source](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/pg_tre.control)
+- [Current version source](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/CHANGELOG.md)
+- [Current version source](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/sql/pg_tre--4.6.3.sql)
+
 - [README.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/README.md)
 - [pg_tre.control](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/pg_tre.control)
 - [sql/pg_tre--4.6.2.sql](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/sql/pg_tre--4.6.2.sql)
@@ -164,7 +170,7 @@ Sources:
 - [.github/workflows/ci.yml](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/.github/workflows/ci.yml)
 - [Library initialization](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/src/module.c)
 
-`pg_tre` 4.6.2 provides the `tre` native index access method for approximate regular-expression matching over text. Upstream supports PostgreSQL 17–19. It narrows candidates with codepoint trigrams and postings, then checks matches against the heap. Use it for typo-tolerant identifiers, log messages and lexical patterns with explicit edit costs.
+`pg_tre` 4.6.3 provides the `tre` native index access method for approximate regular-expression matching over text. Upstream supports PostgreSQL 17–19. It narrows candidates with codepoint trigrams and postings, then checks matches against the heap. Use it for typo-tolerant identifiers, log messages and lexical patterns with explicit edit costs.
 
 ### Enable and Search
 
@@ -216,7 +222,7 @@ SELECT * FROM pg_tre_index_check('documents_body_tre'::regclass, 2);
 Install matching files, ensure sessions use the new library, and update each database:
 
 ```sql
-ALTER EXTENSION pg_tre UPDATE TO '4.6.2';
+ALTER EXTENSION pg_tre UPDATE TO '4.6.3';
 ```
 
 Crossing from 3.x to 4.x changes WAL record types even though the index page format is unchanged. Shut down cleanly before replacing the library; a physical standby cannot run a different major extension version from its primary and must be rebuilt from a fresh base backup after the primary upgrade. There is no rolling upgrade across this boundary. Remove any old `wal_consistency_checking = 'pg_tre'` setting; it prevents startup in 4.x. Upstream recommends `wal_consistency_checking = 'all'` when consistency checking is needed.
@@ -244,3 +250,8 @@ An approximate pattern with many reachable states could overflow TRE's fixed wor
 ### 4.6 Corrections
 
 4.6.0 corrects trigram candidate extraction for fixed repetitions and character classes; 4.6.1 improves early termination for zero-edit-cost matching. 4.6.2 updates sparsemap to fix validation of cached read-cursor offsets. These releases change no on-disk format and add no REINDEX requirement. Install matching library and SQL files and replace sessions still using the old library; the earlier WAL-transition and omitted-posting rebuild requirements still apply.
+
+
+### 4.6.3 Sparsemap Correction
+
+Version 4.6.3 updates the vendored sparsemap to 5.9.0, fixing data-loss and wrong-answer paths. It changes no wire or on-disk format and adds no REINDEX requirement. Install the matching files, replace sessions using the old library, and run `ALTER EXTENSION pg_tre UPDATE`. The earlier WAL-transition and omitted-posting rebuild requirements still apply.

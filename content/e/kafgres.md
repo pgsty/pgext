@@ -33,30 +33,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.2` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `kafgres` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.2` | {{< bg "18" "kafgres_18" "red" >}} {{< bg "17" "kafgres_17" "red" >}} {{< bg "16" "kafgres_16" "green" >}} {{< bg "15" "kafgres_15" "red" >}} {{< bg "14" "kafgres_14" "red" >}} | `kafgres_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.2` | {{< bg "18" "postgresql-18-kafgres" "red" >}} {{< bg "17" "postgresql-17-kafgres" "red" >}} {{< bg "16" "postgresql-16-kafgres" "green" >}} {{< bg "15" "postgresql-15-kafgres" "red" >}} {{< bg "14" "postgresql-14-kafgres" "red" >}} | `postgresql-$v-kafgres` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.2` | {{< bg "19" "" "red" >}} {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} | `kafgres` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.2` | {{< bg "19" "kafgres_19" "red" >}} {{< bg "18" "kafgres_18" "red" >}} {{< bg "17" "kafgres_17" "red" >}} {{< bg "16" "kafgres_16" "green" >}} {{< bg "15" "kafgres_15" "red" >}} | `kafgres_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.2` | {{< bg "19" "postgresql-19-kafgres" "red" >}} {{< bg "18" "postgresql-18-kafgres" "red" >}} {{< bg "17" "postgresql-17-kafgres" "red" >}} {{< bg "16" "postgresql-16-kafgres" "green" >}} {{< bg "15" "postgresql-15-kafgres" "red" >}} | `postgresql-$v-kafgres` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "N/A" "kafgres_18 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "kafgres_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "kafgres_15 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "N/A" "kafgres_18 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "kafgres_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "kafgres_15 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "N/A" "kafgres_18 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "kafgres_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "kafgres_15 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "N/A" "kafgres_18 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "kafgres_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "kafgres_15 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "N/A" "kafgres_18 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "kafgres_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "kafgres_15 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "N/A" "kafgres_18 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "kafgres_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "kafgres_15 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-kafgres : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-kafgres : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-kafgres : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-kafgres : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-kafgres : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-kafgres : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-kafgres : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-kafgres : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-kafgres : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-kafgres : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "kafgres_19 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_18 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "kafgres_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "kafgres_15 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "kafgres_19 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_18 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "kafgres_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "kafgres_15 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "N/A" "kafgres_19 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_18 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "kafgres_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "kafgres_15 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "N/A" "kafgres_19 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_18 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "kafgres_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "kafgres_15 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "N/A" "kafgres_19 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_18 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "kafgres_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "kafgres_15 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "N/A" "kafgres_19 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_18 : N/A 0" "gray" >}} | {{< bg "N/A" "kafgres_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "kafgres_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "kafgres_15 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-19-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-19-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "N/A" "postgresql-19-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "N/A" "postgresql-19-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-19-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-19-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "N/A" "postgresql-19-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-19-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-19-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-19-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.2" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} |
 {.matrix .wide .expand}
 
 
@@ -133,6 +133,7 @@ CREATE EXTENSION kafgres;
 
 Sources:
 
+- [Current release](https://github.com/RayElg/kafgres/releases/tag/0.3.3)
 - [extension/sql/kafgres--0.2.0--0.3.0.sql](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/extension/sql/kafgres--0.2.0--0.3.0.sql)
 - [.github/workflows/ci.yml](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/.github/workflows/ci.yml)
 - [README 0.3.2](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/README.md)
@@ -141,12 +142,13 @@ Sources:
 - [0.3.1 to 0.3.2 SQL](https://github.com/RayElg/kafgres/blob/0.3.2/extension/sql/kafgres--0.3.1--0.3.2.sql)
 - [0.3.1 to 0.3.2 changes](https://github.com/RayElg/kafgres/compare/0.3.1...0.3.2)
 
-`kafgres` embeds a Kafka protocol broker in PostgreSQL. Upstream release 0.3.2 builds and tests PostgreSQL 13–18. It needs superuser installation, shared preload and a restart. Its license is Elastic License 2.0.
+`kafgres` embeds a Kafka protocol broker in PostgreSQL. Upstream release 0.3.3 builds and tests PostgreSQL 13–18. It needs superuser installation, shared preload and a restart. Its license is Elastic License 2.0.
 
 ### Enable the broker
 
 ```ini
 shared_preload_libraries = 'kafgres'
+wal_level = logical
 kafgres.database = 'postgres'
 kafgres.bind_host = '127.0.0.1'
 kafgres.advertised_host = '127.0.0.1'
@@ -191,3 +193,7 @@ ALTER EXTENSION kafgres UPDATE TO '0.3.2';
 ```
 
 The 0.3.1-to-0.3.2 SQL script advances the extension version without changing SQL objects. When upgrading from 0.3.0, account for old transaction markers: Sarama cannot decode markers lacking an EndTransactionMarker value, and they remain until retention removes their segments. Follow the upstream guidance for the consumer start position or topic recreation.
+
+### 0.3.3 configuration
+
+The 0.3.3 release artifacts cover PostgreSQL 13–18. Its documented broker configuration requires logical WAL and a client-reachable advertised host. On builds enforcing output-plugin allowlists, add kafgres to output_plugin_libraries while preserving existing entries, then reload if the broker reports the plugin is forbidden. Shared preload still requires a restart; a configuration reload does not replace it.

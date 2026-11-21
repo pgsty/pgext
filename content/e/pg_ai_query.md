@@ -36,30 +36,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_ai_query` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "pg_ai_query_18" "green" >}} {{< bg "17" "pg_ai_query_17" "green" >}} {{< bg "16" "pg_ai_query_16" "green" >}} {{< bg "15" "pg_ai_query_15" "green" >}} {{< bg "14" "pg_ai_query_14" "green" >}} | `pg_ai_query_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "postgresql-18-ai-query" "green" >}} {{< bg "17" "postgresql-17-ai-query" "green" >}} {{< bg "16" "postgresql-16-ai-query" "green" >}} {{< bg "15" "postgresql-15-ai-query" "green" >}} {{< bg "14" "postgresql-14-ai-query" "green" >}} | `postgresql-$v-ai-query` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_ai_query` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "19" "pg_ai_query_19" "green" >}} {{< bg "18" "pg_ai_query_18" "green" >}} {{< bg "17" "pg_ai_query_17" "green" >}} {{< bg "16" "pg_ai_query_16" "green" >}} {{< bg "15" "pg_ai_query_15" "green" >}} | `pg_ai_query_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "19" "postgresql-19-ai-query" "green" >}} {{< bg "18" "postgresql-18-ai-query" "green" >}} {{< bg "17" "postgresql-17-ai-query" "green" >}} {{< bg "16" "postgresql-16-ai-query" "green" >}} {{< bg "15" "postgresql-15-ai-query" "green" >}} | `postgresql-$v-ai-query` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_ai_query_18 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_ai_query_18 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-18-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-ai-query : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-18-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-ai-query : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-ai-query : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-ai-query : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-18-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-ai-query : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-18-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-ai-query : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-ai-query : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-ai-query : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-ai-query : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-ai-query : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_ai_query_19 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_18 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_15 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_ai_query_19 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_18 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_ai_query_15 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pg_ai_query_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pg_ai_query_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pg_ai_query_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pg_ai_query_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "pg_ai_query_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-19-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-ai-query : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-19-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-ai-query : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-ai-query : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-ai-query : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-19-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-ai-query : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-19-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-ai-query : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-ai-query : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-ai-query : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-ai-query : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-ai-query : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-ai-query : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -131,23 +131,6 @@ page_width: full
 | `postgresql-15-ai-query` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 874.1 KiB | [postgresql-15-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ai-query/postgresql-15-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_ai_query_14` | `0.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 967.8 KiB | [pg_ai_query_14-0.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_ai_query_14-0.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_ai_query_14` | `0.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 881.0 KiB | [pg_ai_query_14-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_ai_query_14-0.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_ai_query_14` | `0.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 899.3 KiB | [pg_ai_query_14-0.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_ai_query_14-0.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `pg_ai_query_14` | `0.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 846.4 KiB | [pg_ai_query_14-0.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_ai_query_14-0.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-ai-query` | `0.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 841.6 KiB | [postgresql-14-ai-query_0.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-ai-query/postgresql-14-ai-query_0.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-ai-query` | `0.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 760.7 KiB | [postgresql-14-ai-query_0.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-ai-query/postgresql-14-ai-query_0.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-ai-query` | `0.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 795.2 KiB | [postgresql-14-ai-query_0.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-ai-query/postgresql-14-ai-query_0.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-ai-query` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 771.7 KiB | [postgresql-14-ai-query_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-ai-query/postgresql-14-ai-query_0.1.1-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-ai-query` | `0.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 846.4 KiB | [postgresql-14-ai-query_0.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ai-query/postgresql-14-ai-query_0.1.1-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-ai-query` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 873.7 KiB | [postgresql-14-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ai-query/postgresql-14-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -176,11 +159,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pg_ai_query;		# install via package name, for the active PG version
 
+pig install pg_ai_query -v 19;   # install for PG 19
 pig install pg_ai_query -v 18;   # install for PG 18
 pig install pg_ai_query -v 17;   # install for PG 17
 pig install pg_ai_query -v 16;   # install for PG 16
 pig install pg_ai_query -v 15;   # install for PG 15
-pig install pg_ai_query -v 14;   # install for PG 14
 
 ```
 

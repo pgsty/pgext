@@ -19,7 +19,7 @@ page_width: full
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 278 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 280 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 114 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 113 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 28 | [许可证文本](#) | Unknown license |
@@ -53,7 +53,7 @@ page_width: full
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="278 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="280 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -118,6 +118,8 @@ page_width: full
 | 2870 | {{< alias "pg_durable" >}} | PostgreSQL 内的 SQL 原生持久化工作流编排扩展 |
 | 2880 | {{< alias "pg_disorder" >}} | 扰动无 ORDER BY 查询的行序以暴露依赖隐式顺序的测试 |
 | 2895 | {{< alias "pg_kv" >}} | 共享内存键值缓存、令牌桶限流与有序集合。 |
+| 2988 | {{< alias "pg_plan_advice" >}} | 使用计划建议描述、复现并约束查询执行计划 |
+| 2989 | {{< alias "pg_stash_advice" >}} | 按查询 ID 存储并自动应用执行计划建议 |
 | 2990 | {{< alias "bloom" >}} | bloom 索引-基于指纹的索引 |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) 可信过程程序语言 |
 | 3011 | {{< alias "pljs" >}} | PL/JS 可信过程程序语言 |

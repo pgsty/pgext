@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tde` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} {{< bg "14" "pgtde-14" "red" >}} | `pgtde-$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} {{< bg "14" "pgtde-14" "red" >}} | `pgtde-$v` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.2` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} | `pg_tde` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "19" "pgtde-19" "red" >}} {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} | `pgtde-$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "19" "pgtde-19" "red" >}} {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} | `pgtde-$v` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "N/A" "pgtde-19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} |
 {.matrix .wide .expand}
 
 
@@ -116,6 +116,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pg_tde;		# install via package name, for the active PG version
 
+pig install pg_tde -v 19;   # install for PG 19
 pig install pg_tde -v 18;   # install for PG 18
 
 ```
@@ -138,12 +139,12 @@ CREATE EXTENSION pg_tde;
 
 Sources:
 
-- [pg_tde 2.2 setup](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/setup.md)
-- [Key-provider and key-management functions](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/functions.md)
-- [pg_tde 2.2.0 release notes](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/release-notes/release-notes-v2.2.0.md)
-- [Transparent data encryption limitations](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/index/tde-limitations.md)
-- [TDE table access method](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/index/table-access-method.md)
-- [WAL encryption](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/wal-encryption.md)
+- [pg_tde 2.3 setup](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/setup.md)
+- [Key-provider and key-management functions](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/functions.md)
+- [pg_tde 2.3.0 release notes](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/release-notes/release-notes-v2.3.0.md)
+- [Transparent data encryption limitations](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/index/tde-limitations.md)
+- [TDE table access method](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/index/table-access-method.md)
+- [WAL encryption](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/wal-encryption.md)
 
 pg_tde provides transparent data encryption for Percona Server for PostgreSQL. It encrypts table data through the tde_heap access method and can encrypt WAL, with keys managed by file, HashiCorp Vault, or KMIP providers. It is not a drop-in extension for community PostgreSQL.
 
@@ -157,7 +158,7 @@ Then enable pg_tde in every database that will use encrypted tables:
 
     CREATE EXTENSION pg_tde;
 
-Run setup as a superuser or suitably privileged database owner. Upstream pg_tde 2.2 is tied to compatible Percona Server for PostgreSQL 17 or 18 builds; the 2.2.0 release notes warn that it is incompatible with Percona Distribution releases older than 17.10 and 18.4.
+Run setup as a superuser or suitably privileged database owner. Use a matching Percona Server build. Release 2.3.0 adds PostgreSQL 19 support and retains SQL extension version 2.3. Its `pg_tde_waldump` understands the custom resource manager and its `--rmgr` filter. This source support does not establish package availability for a new PostgreSQL major.
 
 ### Configure a Key Provider
 

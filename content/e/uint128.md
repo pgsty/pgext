@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3760** | {{< badge content="uint128" link="https://github.com/pg-uint/pg-uint128" >}} | {{< ext "uint128" "pg_uint128" >}} | `1.2.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3760** | {{< badge content="uint128" link="https://github.com/pg-uint/pg-uint128" >}} | {{< ext "uint128" "pg_uint128" >}} | `1.3.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_uint128` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "pg_uint128_18" "green" >}} {{< bg "17" "pg_uint128_17" "green" >}} {{< bg "16" "pg_uint128_16" "green" >}} {{< bg "15" "pg_uint128_15" "green" >}} {{< bg "14" "pg_uint128_14" "green" >}} | `pg_uint128_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "postgresql-18-pg-uint128" "green" >}} {{< bg "17" "postgresql-17-pg-uint128" "green" >}} {{< bg "16" "postgresql-16-pg-uint128" "green" >}} {{< bg "15" "postgresql-15-pg-uint128" "green" >}} {{< bg "14" "postgresql-14-pg-uint128" "green" >}} | `postgresql-$v-pg-uint128` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_uint128` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.0` | {{< bg "19" "pg_uint128_19" "green" >}} {{< bg "18" "pg_uint128_18" "green" >}} {{< bg "17" "pg_uint128_17" "green" >}} {{< bg "16" "pg_uint128_16" "green" >}} {{< bg "15" "pg_uint128_15" "green" >}} | `pg_uint128_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.0` | {{< bg "19" "postgresql-19-pg-uint128" "green" >}} {{< bg "18" "postgresql-18-pg-uint128" "green" >}} {{< bg "17" "postgresql-17-pg-uint128" "green" >}} {{< bg "16" "postgresql-16-pg-uint128" "green" >}} {{< bg "15" "postgresql-15-pg-uint128" "green" >}} | `postgresql-$v-pg-uint128` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-uint128 : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-uint128 : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-uint128 : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-uint128 : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-uint128 : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-uint128 : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-uint128 : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-uint128 : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-uint128 : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-uint128 : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_uint128_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_uint128_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pg_uint128_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pg_uint128_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pg_uint128_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pg_uint128_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_uint128_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-uint128 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-uint128 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-uint128 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-uint128 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-uint128 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-uint128 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-uint128 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-uint128 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-uint128 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-uint128 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-uint128 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-uint128 : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -157,36 +157,13 @@ page_width: full
 | `postgresql-15-pg-uint128` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 351.7 KiB | [postgresql-15-pg-uint128_1.2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uint128/postgresql-15-pg-uint128_1.2.0-1PIGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_uint128_14` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 189.7 KiB | [pg_uint128_14-1.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_uint128_14-1.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_uint128_14` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 176.7 KiB | [pg_uint128_14-1.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_uint128_14-1.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_uint128_14` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 171.5 KiB | [pg_uint128_14-1.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_uint128_14-1.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_uint128_14` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 161.7 KiB | [pg_uint128_14-1.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_uint128_14-1.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_uint128_14` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 171.8 KiB | [pg_uint128_14-1.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_uint128_14-1.2.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_uint128_14` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 165.1 KiB | [pg_uint128_14-1.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_uint128_14-1.2.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pg-uint128` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 331.7 KiB | [postgresql-14-pg-uint128_1.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-uint128/postgresql-14-pg-uint128_1.2.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pg-uint128` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 322.1 KiB | [postgresql-14-pg-uint128_1.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-uint128/postgresql-14-pg-uint128_1.2.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pg-uint128` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 331.0 KiB | [postgresql-14-pg-uint128_1.2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-uint128/postgresql-14-pg-uint128_1.2.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-pg-uint128` | `1.2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 324.1 KiB | [postgresql-14-pg-uint128_1.2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-uint128/postgresql-14-pg-uint128_1.2.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-pg-uint128` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 383.7 KiB | [postgresql-14-pg-uint128_1.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-uint128/postgresql-14-pg-uint128_1.2.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-pg-uint128` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 374.0 KiB | [postgresql-14-pg-uint128_1.2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-uint128/postgresql-14-pg-uint128_1.2.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pg-uint128` | `1.2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 359.4 KiB | [postgresql-14-pg-uint128_1.2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-uint128/postgresql-14-pg-uint128_1.2.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-pg-uint128` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 356.3 KiB | [postgresql-14-pg-uint128_1.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-uint128/postgresql-14-pg-uint128_1.2.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-pg-uint128` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 358.7 KiB | [postgresql-14-pg-uint128_1.2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uint128/postgresql-14-pg-uint128_1.2.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-pg-uint128` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 351.6 KiB | [postgresql-14-pg-uint128_1.2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uint128/postgresql-14-pg-uint128_1.2.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pg-uint/pg-uint128" title="Repository" icon="github" subtitle="github.com/pg-uint/pg-uint128" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-uint128-1.2.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-uint128-1.3.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -209,11 +186,11 @@ pig repo add pgsql -u   # add both repo and update cache
 pig install pg_uint128;		# install via package name, for the active PG version
 pig install uint128;		# install by extension name, for the current active PG version
 
+pig install uint128 -v 19;   # install for PG 19
 pig install uint128 -v 18;   # install for PG 18
 pig install uint128 -v 17;   # install for PG 17
 pig install uint128 -v 16;   # install for PG 16
 pig install uint128 -v 15;   # install for PG 15
-pig install uint128 -v 14;   # install for PG 14
 
 ```
 
@@ -224,45 +201,44 @@ pig install uint128 -v 14;   # install for PG 14
 CREATE EXTENSION uint128;
 ```
 
-
-
-
 ## Usage
 
-> [uint128: unsigned 128-bit integer type for PostgreSQL](https://github.com/pg-uint/pg-uint128)
+Sources:
 
-The `uint128` extension provides comprehensive unsigned and 128-bit integer types with full operator and index support.
+- [README.md](https://api.pgxn.org/src/uint128/uint128-1.3.0/README.md)
+- [uint128.control](https://api.pgxn.org/src/uint128/uint128-1.3.0/uint128.control)
+- [uint128--1.2.0--1.3.0.sql](https://api.pgxn.org/src/uint128/uint128-1.3.0/uint128--1.2.0--1.3.0.sql)
+- [1.3.0](https://github.com/pg-uint/pg-uint128/releases/tag/1.3.0)
+
+
+`uint128` adds unsigned integers and signed 8-bit and 128-bit integer types. Version 1.3.0 supports PostgreSQL 12–18 and fixes operator metadata that could make indexed comparisons return incorrect results.
+
+### Store and Query Integers
+
+Installation requires a superuser; the control file does not mark the extension trusted. It is relocatable and requires no preload.
 
 ```sql
 CREATE EXTENSION uint128;
+CREATE TABLE ids (id uint16 PRIMARY KEY);
+INSERT INTO ids VALUES ('340282366920938463463374607431768211455'::uint16);
+SELECT * FROM ids WHERE id > '18446744073709551615'::uint16;
+SELECT * FROM generate_series(1::uint4, 3::uint4);
 ```
 
-### Data Types
+The unsigned types `uint1`, `uint2`, `uint4`, `uint8` and `uint16` occupy 1, 2, 4, 8 and 16 bytes. Their range is zero through 2 raised to the bit width minus one. `int1` and `int16` are signed 1-byte and 16-byte types.
 
-| Type | Size | Range |
-|------|------|-------|
-| `uint1` | 8-bit | 0 to 255 |
-| `uint2` | 16-bit | 0 to 65535 |
-| `uint4` | 32-bit | 0 to 4294967295 |
-| `uint8` | 64-bit | 0 to 18446744073709551615 |
-| `uint16` | 128-bit | 0 to 340282366920938463463374607431768211455 |
-| `int1` | 8-bit | -128 to 127 |
-| `int16` | 128-bit | -170141183460469231731687303715884105728 to 170141183460469231731687303715884105727 |
-{.wide .expand}
+### Operators and Indexes
 
-### Operators
+The types provide arithmetic, comparisons, bitwise operations, B-tree and hash indexes, binary I/O, casts and `generate_series`. Corresponding range types, including `uint1range` and `uint16range`, support GiST indexes; multiranges depend on server support. `SUM` and `AVG` use `numeric` internally; `MIN` and `MAX` are also available.
 
-- **Arithmetic**: `+`, `-`, `*`, `/`, `%`
-- **Bitwise**: `#` (XOR), `&` (AND), `|` (OR), `~` (NOT), `<<` (left shift), `>>` (right shift)
-- **Comparison**: `=`, `<>`, `>`, `<`, `>=`, `<=`
+Mixed signed/unsigned arithmetic is sensitive to operand order and result type. Cast explicitly when a negative result is possible: an unsigned result cannot represent it. Conversions and arithmetic may raise range errors; do not assume wraparound.
 
-Mixed-type arithmetic between signed and unsigned types is supported.
+### Upgrade to 1.3.0
 
-### Features
+Install the matching files, then run as a superuser:
 
-- Range types for all integer types (`uint1range`, `uint16range`, etc.) with GiST indexing
-- Casts to/from `numeric`, `real`, `double`, `uuid` (uint16 only), `json`, `jsonb`
-- Aggregate functions: `SUM`, `AVG`, `MIN`, `MAX`
-- `generate_series()` support for all types
-- Btree and hash index support
-- Binary send/receive protocol support
+```sql
+ALTER EXTENSION uint128 UPDATE TO '1.3.0';
+```
+
+This corrects comparison commutators and removes invalid mixed-type addition/subtraction commutators. It also fixes installation with the stricter operator checks in PostgreSQL 17.12. The supplied SQL updates operator metadata in place while preserving data, indexes, views and materialized views. Check the installed version and representative indexed comparisons after upgrading.

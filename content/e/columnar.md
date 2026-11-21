@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hydra` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "hydra_18" "red" >}} {{< bg "17" "hydra_17" "red" >}} {{< bg "16" "hydra_16" "green" >}} {{< bg "15" "hydra_15" "green" >}} {{< bg "14" "hydra_14" "green" >}} | `hydra_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "postgresql-18-hydra" "red" >}} {{< bg "17" "postgresql-17-hydra" "red" >}} {{< bg "16" "postgresql-16-hydra" "green" >}} {{< bg "15" "postgresql-15-hydra" "green" >}} {{< bg "14" "postgresql-14-hydra" "green" >}} | `postgresql-$v-hydra` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "19" "" "red" >}} {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `hydra` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "19" "hydra_19" "red" >}} {{< bg "18" "hydra_18" "red" >}} {{< bg "17" "hydra_17" "red" >}} {{< bg "16" "hydra_16" "green" >}} {{< bg "15" "hydra_15" "green" >}} | `hydra_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "19" "postgresql-19-hydra" "red" >}} {{< bg "18" "postgresql-18-hydra" "red" >}} {{< bg "17" "postgresql-17-hydra" "red" >}} {{< bg "16" "postgresql-16-hydra" "green" >}} {{< bg "15" "postgresql-15-hydra" "green" >}} | `postgresql-$v-hydra` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "N/A" "hydra_18 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "hydra_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "N/A" "hydra_18 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "hydra_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "N/A" "hydra_18 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "hydra_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "N/A" "hydra_18 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "hydra_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "N/A" "hydra_18 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "hydra_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "N/A" "hydra_18 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "hydra_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "hydra_19 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_18 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "hydra_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "hydra_19 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_18 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "hydra_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "N/A" "hydra_19 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_18 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "hydra_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "N/A" "hydra_19 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_18 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "hydra_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "N/A" "hydra_19 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_18 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "hydra_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "N/A" "hydra_19 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_18 : N/A 0" "gray" >}} | {{< bg "N/A" "hydra_17 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "hydra_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "hydra_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-19-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-19-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "N/A" "postgresql-19-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "N/A" "postgresql-19-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-19-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-19-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "N/A" "postgresql-19-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-19-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-19-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-19-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -111,29 +111,6 @@ page_width: full
 | `postgresql-15-hydra` | `1.1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 371.3 KiB | [postgresql-15-hydra_1.1.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hydra/postgresql-15-hydra_1.1.2-1PIGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `hydra_14` | `1.1.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 146.8 KiB | [hydra_14-1.1.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hydra_14-1.1.2-1PIGSTY.el8.x86_64.rpm) |
-| `hydra_14` | `1.1.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 140.2 KiB | [hydra_14-1.1.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hydra_14-1.1.2-1PIGSTY.el8.aarch64.rpm) |
-| `hydra_14` | `1.1.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 137.1 KiB | [hydra_14-1.1.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hydra_14-1.1.2-1PIGSTY.el9.x86_64.rpm) |
-| `hydra_14` | `1.1.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 131.5 KiB | [hydra_14-1.1.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hydra_14-1.1.2-1PIGSTY.el9.aarch64.rpm) |
-| `hydra_14` | `1.1.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 138.2 KiB | [hydra_14-1.1.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/hydra_14-1.1.2-1PIGSTY.el10.x86_64.rpm) |
-| `hydra_14` | `1.1.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 133.0 KiB | [hydra_14-1.1.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/hydra_14-1.1.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-hydra` | `1.1.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 359.9 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-hydra` | `1.1.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 414.1 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-hydra` | `1.1.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 360.6 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-hydra` | `1.1.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 350.6 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-hydra` | `1.1.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 451.4 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-hydra` | `1.1.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 444.9 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-hydra` | `1.1.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 378.5 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-hydra` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 382.5 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-hydra` | `1.1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 376.6 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-hydra` | `1.1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 372.3 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -165,7 +142,6 @@ pig install columnar;		# install by extension name, for the current active PG ve
 
 pig install columnar -v 16;   # install for PG 16
 pig install columnar -v 15;   # install for PG 15
-pig install columnar -v 14;   # install for PG 14
 
 ```
 

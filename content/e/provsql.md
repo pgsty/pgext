@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2900** | {{< badge content="provsql" link="https://github.com/PierreSenellart/provsql" >}} | {{< ext "provsql" >}} | `1.13.1` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
+| **2900** | {{< badge content="provsql" link="https://github.com/PierreSenellart/provsql" >}} | {{< ext "provsql" >}} | `1.14.0` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
 {.wide .expand}
 
 
@@ -40,30 +40,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.13.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `provsql` | `uuid-ossp` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.13.1` | {{< bg "18" "provsql_18" "green" >}} {{< bg "17" "provsql_17" "green" >}} {{< bg "16" "provsql_16" "green" >}} {{< bg "15" "provsql_15" "green" >}} {{< bg "14" "provsql_14" "green" >}} | `provsql_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.13.1` | {{< bg "18" "postgresql-18-provsql" "green" >}} {{< bg "17" "postgresql-17-provsql" "green" >}} {{< bg "16" "postgresql-16-provsql" "green" >}} {{< bg "15" "postgresql-15-provsql" "green" >}} {{< bg "14" "postgresql-14-provsql" "green" >}} | `postgresql-$v-provsql` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.14.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `provsql` | `uuid-ossp` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.14.0` | {{< bg "19" "provsql_19" "green" >}} {{< bg "18" "provsql_18" "green" >}} {{< bg "17" "provsql_17" "green" >}} {{< bg "16" "provsql_16" "green" >}} {{< bg "15" "provsql_15" "green" >}} | `provsql_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.14.0` | {{< bg "19" "postgresql-19-provsql" "green" >}} {{< bg "18" "postgresql-18-provsql" "green" >}} {{< bg "17" "postgresql-17-provsql" "green" >}} {{< bg "16" "postgresql-16-provsql" "green" >}} {{< bg "15" "postgresql-15-provsql" "green" >}} | `postgresql-$v-provsql` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-provsql : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "provsql_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.13.1" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "provsql_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.13.1" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "provsql_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "provsql_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "provsql_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "provsql_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "provsql_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-provsql : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-provsql : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-provsql : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-provsql : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-provsql : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-provsql : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-provsql : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-provsql : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-provsql : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-provsql : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-provsql : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -159,36 +159,13 @@ page_width: full
 | `postgresql-15-provsql` | `1.13.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.0 MiB | [postgresql-15-provsql_1.13.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-15-provsql_1.13.1-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `provsql_14` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 7.4 MiB | [provsql_14-1.13.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/provsql_14-1.13.1-1PGSTY.el8.x86_64.rpm) |
-| `provsql_14` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 7.0 MiB | [provsql_14-1.13.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/provsql_14-1.13.1-1PGSTY.el8.aarch64.rpm) |
-| `provsql_14` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 7.1 MiB | [provsql_14-1.13.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/provsql_14-1.13.1-1PGSTY.el9.x86_64.rpm) |
-| `provsql_14` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 6.9 MiB | [provsql_14-1.13.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/provsql_14-1.13.1-1PGSTY.el9.aarch64.rpm) |
-| `provsql_14` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 7.2 MiB | [provsql_14-1.13.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/provsql_14-1.13.1-1PGSTY.el10.x86_64.rpm) |
-| `provsql_14` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 7.0 MiB | [provsql_14-1.13.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/provsql_14-1.13.1-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-provsql` | `1.13.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 6.5 MiB | [postgresql-14-provsql_1.13.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-14-provsql_1.13.1-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-provsql` | `1.13.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 6.4 MiB | [postgresql-14-provsql_1.13.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-14-provsql_1.13.1-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-provsql` | `1.13.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 6.7 MiB | [postgresql-14-provsql_1.13.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-14-provsql_1.13.1-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-provsql` | `1.13.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 6.5 MiB | [postgresql-14-provsql_1.13.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-14-provsql_1.13.1-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-provsql` | `1.13.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 8.0 MiB | [postgresql-14-provsql_1.13.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-14-provsql_1.13.1-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-provsql` | `1.13.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 7.9 MiB | [postgresql-14-provsql_1.13.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-14-provsql_1.13.1-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-provsql` | `1.13.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 7.0 MiB | [postgresql-14-provsql_1.13.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-14-provsql_1.13.1-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-provsql` | `1.13.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.9 MiB | [postgresql-14-provsql_1.13.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-14-provsql_1.13.1-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-provsql` | `1.13.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 7.2 MiB | [postgresql-14-provsql_1.13.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-14-provsql_1.13.1-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-provsql` | `1.13.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.0 MiB | [postgresql-14-provsql_1.13.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-14-provsql_1.13.1-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/PierreSenellart/provsql" title="Repository" icon="github" subtitle="github.com/PierreSenellart/provsql" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="provsql-1.13.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="provsql-1.14.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -210,11 +187,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install provsql;		# install via package name, for the active PG version
 
+pig install provsql -v 19;   # install for PG 19
 pig install provsql -v 18;   # install for PG 18
 pig install provsql -v 17;   # install for PG 17
 pig install provsql -v 16;   # install for PG 16
 pig install provsql -v 15;   # install for PG 15
-pig install provsql -v 14;   # install for PG 14
 
 ```
 
@@ -236,6 +213,10 @@ CREATE EXTENSION provsql CASCADE; -- requires uuid-ossp
 
 Sources:
 
+- [ProvSQL 1.14.0 changelog](https://github.com/PierreSenellart/provsql/blob/v1.14.0/CHANGELOG.md)
+- [1.13.1 to 1.14.0 SQL](https://api.pgxn.org/src/provsql/provsql-1.14.0/sql/upgrades/provsql--1.13.1--1.14.0.sql)
+- [ProvSQL 1.14.0 control](https://api.pgxn.org/src/provsql/provsql-1.14.0/provsql.common.control)
+- [ProvSQL 1.14.0 README](https://api.pgxn.org/src/provsql/provsql-1.14.0/README.md)
 - [ProvSQL 1.13.0 documentation](https://github.com/PierreSenellart/provsql/blob/v1.13.0/doc/provsql.md)
 - [ProvSQL 1.13.0 release](https://github.com/PierreSenellart/provsql/releases/tag/v1.13.0)
 - [ProvSQL 1.13.0 changelog](https://github.com/PierreSenellart/provsql/blob/v1.13.0/CHANGELOG.md)
@@ -396,3 +377,13 @@ Long evaluations honor cancellation and statement timeouts. `provsql.max_memory`
 The circuit is stored outside ordinary SQL tables. `pg_dump` and logical replication carry tokens but do not preserve the circuit. A consistent physical backup must include all four store files, taken with the server stopped or through a whole-data-directory filesystem snapshot. Machine crashes can lose recently committed gates unless `provsql.store_synchronous_commit` is enabled; missing gates can be read as independent inputs with probability 1. Queries can write circuit gates even inside read-only transactions, and the store is not fully transaction-isolated.
 
 On PostgreSQL 15+, `provsql.store_wal_logging` requires synchronous store commits and a fresh base backup for existing replicas. Standbys then refuse circuit-writing provenance queries. Keep this option off on storage-layer WAL forks listed by upstream, including Aurora, Neon, AlloyDB and HorizonDB. Major-version PostgreSQL upgrades need separate store-file migration. `provsql.check_store()` checks consistency; `provsql.circuit_cleanup()` needs exclusive use of the database and retains only tokens reachable from the documented table-column types.
+
+### 1.14.0 Exact Probability Performance
+
+```sql
+ALTER EXTENSION provsql UPDATE;
+```
+
+Version 1.14.0 evaluates independent lineage parts separately and reuses d-DNNFs with the same canonical circuit structure within a session. New settings are `provsql.idp_fold`, `provsql.prob_cache`, and `provsql.prob_cache_size`. Probability results are unchanged, but `provsql.last_eval_method` can now report `fold` or `cache:<method>`.
+
+A method that exceeds its expected budget may be retried with a larger budget. An automatically selected external compiler that runs far too long is stopped and reconsidered; a compiler named explicitly, or the last remaining method, still runs until `statement_timeout`. Reconnect sessions after replacing the preloaded library, then apply the SQL upgrade.

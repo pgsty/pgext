@@ -34,9 +34,9 @@ page_width: full
 
 ## Packages
 
-| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
+| **PG19** | **PG18** | **PG17** | **PG16** | **PG15** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< bg "1.0" "PostgreSQL 18: version 1.0" "green" >}} | {{< bg "N/A" "PostgreSQL 17: not available" "red" >}} | {{< bg "N/A" "PostgreSQL 16: not available" "red" >}} | {{< bg "N/A" "PostgreSQL 15: not available" "red" >}} | {{< bg "N/A" "PostgreSQL 14: not available" "red" >}} |
+| {{< bg "1.0" "PostgreSQL 19: version 1.0" "green" >}} | {{< bg "1.0" "PostgreSQL 18: version 1.0" "green" >}} | {{< bg "N/A" "PostgreSQL 17: not available" "red" >}} | {{< bg "N/A" "PostgreSQL 16: not available" "red" >}} | {{< bg "N/A" "PostgreSQL 15: not available" "red" >}} |
 {.wide .expand}
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel

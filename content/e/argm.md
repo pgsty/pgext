@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `argm` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "argm_18" "green" >}} {{< bg "17" "argm_17" "green" >}} {{< bg "16" "argm_16" "green" >}} {{< bg "15" "argm_15" "green" >}} {{< bg "14" "argm_14" "green" >}} | `argm_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "postgresql-18-argm" "green" >}} {{< bg "17" "postgresql-17-argm" "green" >}} {{< bg "16" "postgresql-16-argm" "green" >}} {{< bg "15" "postgresql-15-argm" "green" >}} {{< bg "14" "postgresql-14-argm" "green" >}} | `postgresql-$v-argm` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `argm` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "19" "argm_19" "green" >}} {{< bg "18" "argm_18" "green" >}} {{< bg "17" "argm_17" "green" >}} {{< bg "16" "argm_16" "green" >}} {{< bg "15" "argm_15" "green" >}} | `argm_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "19" "postgresql-19-argm" "green" >}} {{< bg "18" "postgresql-18-argm" "green" >}} {{< bg "17" "postgresql-17-argm" "green" >}} {{< bg "16" "postgresql-16-argm" "green" >}} {{< bg "15" "postgresql-15-argm" "green" >}} | `postgresql-$v-argm` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.1.1" "argm_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.1.1" "argm_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.1.1" "argm_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.1.1" "argm_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.1.1" "argm_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.1.1" "argm_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-argm : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-argm : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-argm : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-argm : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-argm : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-argm : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-argm : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-argm : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-argm : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-argm : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "argm_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.1" "argm_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "argm_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.1" "argm_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "argm_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "argm_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "argm_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "argm_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "argm_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "argm_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "argm_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "argm_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "argm_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-argm : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-argm : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-argm : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-argm : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-argm : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-argm : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-argm : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-argm : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-argm : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-argm : MISS 0" "red" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-argm : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-argm : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -157,29 +157,6 @@ page_width: full
 | `postgresql-15-argm` | `1.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.1 KiB | [postgresql-15-argm_1.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/argm/postgresql-15-argm_1.1.1-1PIGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `argm_14` | `1.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 18.3 KiB | [argm_14-1.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/argm_14-1.1.1-1PIGSTY.el8.x86_64.rpm) |
-| `argm_14` | `1.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 18.4 KiB | [argm_14-1.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/argm_14-1.1.1-1PIGSTY.el8.aarch64.rpm) |
-| `argm_14` | `1.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 18.1 KiB | [argm_14-1.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/argm_14-1.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `argm_14` | `1.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 18.2 KiB | [argm_14-1.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/argm_14-1.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `argm_14` | `1.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 18.1 KiB | [argm_14-1.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/argm_14-1.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `argm_14` | `1.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 18.4 KiB | [argm_14-1.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/argm_14-1.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-argm` | `1.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 19.0 KiB | [postgresql-14-argm_1.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/argm/postgresql-14-argm_1.1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-argm` | `1.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 19.3 KiB | [postgresql-14-argm_1.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/argm/postgresql-14-argm_1.1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-argm` | `1.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 19.0 KiB | [postgresql-14-argm_1.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/argm/postgresql-14-argm_1.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-argm` | `1.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 19.3 KiB | [postgresql-14-argm_1.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/argm/postgresql-14-argm_1.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-argm` | `1.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 20.9 KiB | [postgresql-14-argm_1.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/argm/postgresql-14-argm_1.1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-argm` | `1.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 21.1 KiB | [postgresql-14-argm_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/argm/postgresql-14-argm_1.1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-argm` | `1.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 20.0 KiB | [postgresql-14-argm_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/argm/postgresql-14-argm_1.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-argm` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.2 KiB | [postgresql-14-argm_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/argm/postgresql-14-argm_1.1.1-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-argm` | `1.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.0 KiB | [postgresql-14-argm_1.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/argm/postgresql-14-argm_1.1.1-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-argm` | `1.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.0 KiB | [postgresql-14-argm_1.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/argm/postgresql-14-argm_1.1.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -208,11 +185,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install argm;		# install via package name, for the active PG version
 
+pig install argm -v 19;   # install for PG 19
 pig install argm -v 18;   # install for PG 18
 pig install argm -v 17;   # install for PG 17
 pig install argm -v 16;   # install for PG 16
 pig install argm -v 15;   # install for PG 15
-pig install argm -v 14;   # install for PG 14
 
 ```
 

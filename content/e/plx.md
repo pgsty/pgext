@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3140** | {{< badge content="plx" link="https://github.com/commandprompt/plx" >}} | {{< ext "plx" >}} | `2.0.1` | {{< category "LANG" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **3140** | {{< badge content="plx" link="https://github.com/commandprompt/plx" >}} | {{< ext "plx" >}} | `3.0.0` | {{< category "LANG" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `plx` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "plx_18" "green" >}} {{< bg "17" "plx_17" "green" >}} {{< bg "16" "plx_16" "green" >}} {{< bg "15" "plx_15" "green" >}} {{< bg "14" "plx_14" "green" >}} | `plx_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "postgresql-18-plx" "green" >}} {{< bg "17" "postgresql-17-plx" "green" >}} {{< bg "16" "postgresql-16-plx" "green" >}} {{< bg "15" "postgresql-15-plx" "green" >}} {{< bg "14" "postgresql-14-plx" "green" >}} | `postgresql-$v-plx` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `plx` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "19" "plx_19" "green" >}} {{< bg "18" "plx_18" "green" >}} {{< bg "17" "plx_17" "green" >}} {{< bg "16" "plx_16" "green" >}} {{< bg "15" "plx_15" "green" >}} | `plx_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "19" "postgresql-19-plx" "green" >}} {{< bg "18" "postgresql-18-plx" "green" >}} {{< bg "17" "postgresql-17-plx" "green" >}} {{< bg "16" "postgresql-16-plx" "green" >}} {{< bg "15" "postgresql-15-plx" "green" >}} | `postgresql-$v-plx` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.0.1" "plx_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.0.1" "plx_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.0.1" "plx_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.0.1" "plx_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.0.1" "plx_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.0.1" "plx_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-14-plx : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-14-plx : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-14-plx : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-14-plx : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-14-plx : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-14-plx : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-14-plx : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-14-plx : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-14-plx : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-14-plx : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "plx_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.0.1" "plx_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "plx_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.0.1" "plx_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "plx_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "plx_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "plx_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "plx_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "plx_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "plx_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "plx_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "plx_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "plx_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-plx : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-plx : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-plx : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-plx : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-plx : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-plx : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-plx : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-plx : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-plx : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-plx : MISS 0" "red" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-plx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-plx : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -157,29 +157,6 @@ page_width: full
 | `postgresql-15-plx` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 315.1 KiB | [postgresql-15-plx_2.0.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/plx/postgresql-15-plx_2.0.1-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `plx_14` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 315.8 KiB | [plx_14-2.0.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plx_14-2.0.1-1PGSTY.el8.x86_64.rpm) |
-| `plx_14` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 311.1 KiB | [plx_14-2.0.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plx_14-2.0.1-1PGSTY.el8.aarch64.rpm) |
-| `plx_14` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 326.4 KiB | [plx_14-2.0.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plx_14-2.0.1-1PGSTY.el9.x86_64.rpm) |
-| `plx_14` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 323.9 KiB | [plx_14-2.0.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plx_14-2.0.1-1PGSTY.el9.aarch64.rpm) |
-| `plx_14` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 330.1 KiB | [plx_14-2.0.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/plx_14-2.0.1-1PGSTY.el10.x86_64.rpm) |
-| `plx_14` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 326.8 KiB | [plx_14-2.0.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/plx_14-2.0.1-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-plx` | `2.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 308.5 KiB | [postgresql-14-plx_2.0.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plx/postgresql-14-plx_2.0.1-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-plx` | `2.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 298.5 KiB | [postgresql-14-plx_2.0.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plx/postgresql-14-plx_2.0.1-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-plx` | `2.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 309.3 KiB | [postgresql-14-plx_2.0.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/plx/postgresql-14-plx_2.0.1-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-plx` | `2.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 299.8 KiB | [postgresql-14-plx_2.0.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/plx/postgresql-14-plx_2.0.1-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-plx` | `2.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 343.3 KiB | [postgresql-14-plx_2.0.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/plx/postgresql-14-plx_2.0.1-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-plx` | `2.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 340.9 KiB | [postgresql-14-plx_2.0.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/plx/postgresql-14-plx_2.0.1-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-plx` | `2.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 321.8 KiB | [postgresql-14-plx_2.0.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/plx/postgresql-14-plx_2.0.1-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-plx` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 319.5 KiB | [postgresql-14-plx_2.0.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/plx/postgresql-14-plx_2.0.1-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-plx` | `2.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 318.3 KiB | [postgresql-14-plx_2.0.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/plx/postgresql-14-plx_2.0.1-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-plx` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 315.0 KiB | [postgresql-14-plx_2.0.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/plx/postgresql-14-plx_2.0.1-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -208,11 +185,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install plx;		# install via package name, for the active PG version
 
+pig install plx -v 19;   # install for PG 19
 pig install plx -v 18;   # install for PG 18
 pig install plx -v 17;   # install for PG 17
 pig install plx -v 16;   # install for PG 16
 pig install plx -v 15;   # install for PG 15
-pig install plx -v 14;   # install for PG 14
 
 ```
 
@@ -227,11 +204,11 @@ CREATE EXTENSION plx;
 
 Sources:
 
-- [PGXN plx 2.0.1 README](https://pgxn.org/dist/plx/2.0.1/README.html)
-- [plx 2.0.1 user guide](https://api.pgxn.org/src/plx/plx-2.0.1/doc/USERGUIDE.md)
-- [plx 2.0.1 compatibility notes](https://api.pgxn.org/src/plx/plx-2.0.1/doc/COMPATIBILITY.md)
-- [plx 2.0.1 changelog](https://api.pgxn.org/src/plx/plx-2.0.1/CHANGELOG.md)
-- [plx control file](https://api.pgxn.org/src/plx/plx-2.0.1/plx.control)
+- [PGXN plx 3.0.0 README](https://pgxn.org/dist/plx/3.0.0/README.html)
+- [plx 3.0.0 user guide](https://api.pgxn.org/src/plx/plx-3.0.0/doc/USERGUIDE.md)
+- [plx 3.0.0 compatibility notes](https://api.pgxn.org/src/plx/plx-3.0.0/doc/COMPATIBILITY.md)
+- [plx 3.0.0 changelog](https://api.pgxn.org/src/plx/plx-3.0.0/CHANGELOG.md)
+- [plx control file](https://api.pgxn.org/src/plx/plx-3.0.0/plx.control)
 
 `plx` provides familiar procedural-language dialects that transpile to ordinary PL/pgSQL when `CREATE FUNCTION` runs. PostgreSQL stores and executes the generated PL/pgSQL with its built-in trusted handler; no Ruby, PHP, JavaScript, Python, Go, COBOL, Oracle, or SQL Server runtime is loaded into the backend.
 
@@ -319,4 +296,11 @@ The builder remains correct on PostgreSQL 13-17, but its in-place optimization r
 - Parameters and return types must be PostgreSQL types. Type inference for locals is limited; explicitly declare types for calls and compound expressions.
 - SQL uses three-valued logic and PostgreSQL numeric/string semantics. Source-language truthiness and string concatenation with `+` are not reproduced.
 - Locals are hoisted into one PL/pgSQL `DECLARE` block, so block-local scope and redeclaration with a different type are unavailable.
-- Distribution 2.0.1 installs extension version 2.0.0; 2.0.1 changes PGXN packaging only and has no SQL upgrade of its own. Version 2.0.0 changes interpolation in `plxruby`, `plxphp`, `plxjs`, `plxts`, `plxpython3`, and `plxgo`: a NULL operand now makes the whole interpolated string NULL instead of silently becoming an empty string. Run `ALTER EXTENSION plx UPDATE TO '2.0.0'`, then redeploy affected functions because existing generated PL/pgSQL in `pg_proc.prosrc` is not rewritten by the extension update.
+
+### Version 3.0.0 Upgrade
+
+Install the new library and run `ALTER EXTENSION plx UPDATE TO '3.0.0'`, then recreate affected functions from their original dialect DDL. Existing generated PL/pgSQL is not rewritten by the extension update. Keep that source before migration; review functions whose results depend on interpolation, NULL handling or exception exits.
+
+The extension is no longer relocatable. Choose its schema at installation and retain the same schema on restore, or regenerate functions that embed helper names. Creating dialect functions or DO blocks requires USAGE on plpgsql. With function-body checks enabled, creation validates generated PL/pgSQL and rejects unsupported argument/result types and malformed declared types.
+
+Interpolated SQL values are bound as parameters; use `ident()` for names and restrict deliberate `raw()` SQL fragments to trusted input. NULL string appends now propagate NULL; use `coalesce(x, '')` when an empty string is intended. Most dialects now run finally/ensure on return, break and continue, but query cancellation and assertion failures remain outside that handling. Read the dialect-specific breaking changes before redeploying functions.

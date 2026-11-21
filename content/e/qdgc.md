@@ -40,30 +40,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `qdgc` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "qdgc_18" "green" >}} {{< bg "17" "qdgc_17" "green" >}} {{< bg "16" "qdgc_16" "green" >}} {{< bg "15" "qdgc_15" "green" >}} {{< bg "14" "qdgc_14" "green" >}} | `qdgc_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-qdgc" "green" >}} {{< bg "17" "postgresql-17-qdgc" "green" >}} {{< bg "16" "postgresql-16-qdgc" "green" >}} {{< bg "15" "postgresql-15-qdgc" "green" >}} {{< bg "14" "postgresql-14-qdgc" "green" >}} | `postgresql-$v-qdgc` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `qdgc` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "19" "qdgc_19" "green" >}} {{< bg "18" "qdgc_18" "green" >}} {{< bg "17" "qdgc_17" "green" >}} {{< bg "16" "qdgc_16" "green" >}} {{< bg "15" "qdgc_15" "green" >}} | `qdgc_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "19" "postgresql-19-qdgc" "green" >}} {{< bg "18" "postgresql-18-qdgc" "green" >}} {{< bg "17" "postgresql-17-qdgc" "green" >}} {{< bg "16" "postgresql-16-qdgc" "green" >}} {{< bg "15" "postgresql-15-qdgc" "green" >}} | `postgresql-$v-qdgc` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "qdgc_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "qdgc_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "qdgc_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "qdgc_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "qdgc_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "qdgc_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "qdgc_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-qdgc : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-qdgc : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-qdgc : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-qdgc : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-qdgc : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-qdgc : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-qdgc : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-qdgc : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-qdgc : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-qdgc : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -159,29 +159,6 @@ page_width: full
 | `postgresql-15-qdgc` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.5 KiB | [postgresql-15-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-15-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `qdgc_14` | `0.1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 25.0 KiB | [qdgc_14-0.1.0-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/qdgc_14-0.1.0-1PIGSTY.el8.noarch.rpm) |
-| `qdgc_14` | `0.1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 24.9 KiB | [qdgc_14-0.1.0-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/qdgc_14-0.1.0-1PIGSTY.el8.noarch.rpm) |
-| `qdgc_14` | `0.1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 24.5 KiB | [qdgc_14-0.1.0-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/qdgc_14-0.1.0-1PIGSTY.el9.noarch.rpm) |
-| `qdgc_14` | `0.1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 24.5 KiB | [qdgc_14-0.1.0-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/qdgc_14-0.1.0-1PIGSTY.el9.noarch.rpm) |
-| `qdgc_14` | `0.1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 24.7 KiB | [qdgc_14-0.1.0-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/qdgc_14-0.1.0-1PIGSTY.el10.noarch.rpm) |
-| `qdgc_14` | `0.1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 24.6 KiB | [qdgc_14-0.1.0-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/qdgc_14-0.1.0-1PIGSTY.el10.noarch.rpm) |
-| `postgresql-14-qdgc` | `0.1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 16.1 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~bookworm_all.deb) |
-| `postgresql-14-qdgc` | `0.1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 16.1 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~bookworm_all.deb) |
-| `postgresql-14-qdgc` | `0.1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 16.1 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~trixie_all.deb) |
-| `postgresql-14-qdgc` | `0.1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 16.1 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~trixie_all.deb) |
-| `postgresql-14-qdgc` | `0.1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 16.5 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~jammy_all.deb) |
-| `postgresql-14-qdgc` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 16.5 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~jammy_all.deb) |
-| `postgresql-14-qdgc` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 16.5 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~noble_all.deb) |
-| `postgresql-14-qdgc` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~noble_all.deb) |
-| `postgresql-14-qdgc` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.5 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
-| `postgresql-14-qdgc` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.5 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -210,11 +187,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install qdgc;		# install via package name, for the active PG version
 
+pig install qdgc -v 19;   # install for PG 19
 pig install qdgc -v 18;   # install for PG 18
 pig install qdgc -v 17;   # install for PG 17
 pig install qdgc -v 16;   # install for PG 16
 pig install qdgc -v 15;   # install for PG 15
-pig install qdgc -v 14;   # install for PG 14
 
 ```
 

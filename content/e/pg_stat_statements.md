@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6990** | {{< badge content="pg_stat_statements" link="https://www.postgresql.org/docs/current/pgstatstatements.html" >}} | {{< ext "pg_stat_statements" >}} | `1.12` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6990** | {{< badge content="pg_stat_statements" link="https://www.postgresql.org/docs/current/pgstatstatements.html" >}} | {{< ext "pg_stat_statements" >}} | `1.13` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -32,14 +32,14 @@ page_width: full
 |    **Need By**    | {{< ext "pg_stat_kcache" >}} {{< ext "pgtelemetry" >}} {{< ext "powa" >}} |
 |   **See Also**    | {{< ext "pg_stat_plans" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_store_plans" >}} {{< ext "auto_explain" >}} {{< ext "pg_show_plans" >}} {{< ext "powa" >}} {{< ext "explain_ui" >}} {{< ext "pg_qualstats" >}} {{< ext "online_advisor" >}} {{< ext "pg_relusage" >}} {{< ext "pg_wait_sampling" >}} |
 
-> [!Note] PG18 SQL/control baseline 1.12; older PostgreSQL majors may differ.
+> [!Note] SQL version varies by PG major.
 
 
 ## Packages
 
-| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
+| **PG19** | **PG18** | **PG17** | **PG16** | **PG15** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< bg "1.12" "PostgreSQL 18: version 1.12" "green" >}} | {{< bg "1.12" "PostgreSQL 17: version 1.12" "green" >}} | {{< bg "1.12" "PostgreSQL 16: version 1.12" "green" >}} | {{< bg "1.12" "PostgreSQL 15: version 1.12" "green" >}} | {{< bg "1.12" "PostgreSQL 14: version 1.12" "green" >}} |
+| {{< bg "1.13" "PostgreSQL 19: version 1.13" "green" >}} | {{< bg "1.13" "PostgreSQL 18: version 1.13" "green" >}} | {{< bg "1.13" "PostgreSQL 17: version 1.13" "green" >}} | {{< bg "1.13" "PostgreSQL 16: version 1.13" "green" >}} | {{< bg "1.13" "PostgreSQL 15: version 1.13" "green" >}} |
 {.wide .expand}
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel

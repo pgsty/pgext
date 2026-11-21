@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3230** | {{< badge content="pg_regresql" link="https://github.com/boringsql/regresql" >}} | {{< ext "pg_regresql" >}} | `2.1.0` | {{< category "LANG" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
+| **3230** | {{< badge content="pg_regresql" link="https://github.com/boringsql/regresql" >}} | {{< ext "pg_regresql" >}} | `2.2.0` | {{< category "LANG" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_regresql` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.0` | {{< bg "18" "pg_regresql_18" "green" >}} {{< bg "17" "pg_regresql_17" "green" >}} {{< bg "16" "pg_regresql_16" "green" >}} {{< bg "15" "pg_regresql_15" "green" >}} {{< bg "14" "pg_regresql_14" "green" >}} | `pg_regresql_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.0` | {{< bg "18" "postgresql-18-pg-regresql" "green" >}} {{< bg "17" "postgresql-17-pg-regresql" "green" >}} {{< bg "16" "postgresql-16-pg-regresql" "green" >}} {{< bg "15" "postgresql-15-pg-regresql" "green" >}} {{< bg "14" "postgresql-14-pg-regresql" "green" >}} | `postgresql-$v-pg-regresql` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.0` | {{< bg "19" "" "red" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_regresql` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.0` | {{< bg "19" "pg_regresql_19" "red" >}} {{< bg "18" "pg_regresql_18" "green" >}} {{< bg "17" "pg_regresql_17" "green" >}} {{< bg "16" "pg_regresql_16" "green" >}} {{< bg "15" "pg_regresql_15" "green" >}} | `pg_regresql_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.0` | {{< bg "19" "postgresql-19-pg-regresql" "red" >}} {{< bg "18" "postgresql-18-pg-regresql" "green" >}} {{< bg "17" "postgresql-17-pg-regresql" "green" >}} {{< bg "16" "postgresql-16-pg-regresql" "green" >}} {{< bg "15" "postgresql-15-pg-regresql" "green" >}} | `postgresql-$v-pg-regresql` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-14-pg-regresql : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-14-pg-regresql : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-14-pg-regresql : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-14-pg-regresql : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-14-pg-regresql : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-14-pg-regresql : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-14-pg-regresql : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-14-pg-regresql : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-14-pg-regresql : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-14-pg-regresql : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_regresql_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_regresql_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "N/A" "pg_regresql_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "N/A" "pg_regresql_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "N/A" "pg_regresql_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "N/A" "pg_regresql_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "pg_regresql_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-regresql : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-regresql : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-regresql : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-regresql : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-regresql : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-regresql : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-regresql : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-regresql : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-regresql : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-regresql : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-18-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-17-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-16-pg-regresql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.0" "postgresql-15-pg-regresql : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -157,29 +157,6 @@ page_width: full
 | `postgresql-15-pg-regresql` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.1 KiB | [postgresql-15-pg-regresql_2.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-regresql/postgresql-15-pg-regresql_2.1.0-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_regresql_14` | `2.1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 15.3 KiB | [pg_regresql_14-2.1.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_regresql_14-2.1.0-1PGSTY.el8.x86_64.rpm) |
-| `pg_regresql_14` | `2.1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 15.4 KiB | [pg_regresql_14-2.1.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_regresql_14-2.1.0-1PGSTY.el8.aarch64.rpm) |
-| `pg_regresql_14` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 15.2 KiB | [pg_regresql_14-2.1.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_regresql_14-2.1.0-1PGSTY.el9.x86_64.rpm) |
-| `pg_regresql_14` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 15.1 KiB | [pg_regresql_14-2.1.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_regresql_14-2.1.0-1PGSTY.el9.aarch64.rpm) |
-| `pg_regresql_14` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 15.3 KiB | [pg_regresql_14-2.1.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_regresql_14-2.1.0-1PGSTY.el10.x86_64.rpm) |
-| `pg_regresql_14` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 15.4 KiB | [pg_regresql_14-2.1.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_regresql_14-2.1.0-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pg-regresql` | `2.1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.6 KiB | [postgresql-14-pg-regresql_2.1.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-regresql/postgresql-14-pg-regresql_2.1.0-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pg-regresql` | `2.1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.6 KiB | [postgresql-14-pg-regresql_2.1.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-regresql/postgresql-14-pg-regresql_2.1.0-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pg-regresql` | `2.1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.5 KiB | [postgresql-14-pg-regresql_2.1.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-regresql/postgresql-14-pg-regresql_2.1.0-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-pg-regresql` | `2.1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 8.7 KiB | [postgresql-14-pg-regresql_2.1.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-regresql/postgresql-14-pg-regresql_2.1.0-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-pg-regresql` | `2.1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 9.6 KiB | [postgresql-14-pg-regresql_2.1.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-regresql/postgresql-14-pg-regresql_2.1.0-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-pg-regresql` | `2.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.5 KiB | [postgresql-14-pg-regresql_2.1.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-regresql/postgresql-14-pg-regresql_2.1.0-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-pg-regresql` | `2.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 8.8 KiB | [postgresql-14-pg-regresql_2.1.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-regresql/postgresql-14-pg-regresql_2.1.0-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-pg-regresql` | `2.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.7 KiB | [postgresql-14-pg-regresql_2.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-regresql/postgresql-14-pg-regresql_2.1.0-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-pg-regresql` | `2.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.9 KiB | [postgresql-14-pg-regresql_2.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-regresql/postgresql-14-pg-regresql_2.1.0-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-pg-regresql` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.0 KiB | [postgresql-14-pg-regresql_2.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-regresql/postgresql-14-pg-regresql_2.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -212,7 +189,6 @@ pig install pg_regresql -v 18;   # install for PG 18
 pig install pg_regresql -v 17;   # install for PG 17
 pig install pg_regresql -v 16;   # install for PG 16
 pig install pg_regresql -v 15;   # install for PG 15
-pig install pg_regresql -v 14;   # install for PG 14
 
 ```
 
@@ -230,59 +206,51 @@ shared_preload_libraries = 'pg_regresql';
 CREATE EXTENSION pg_regresql;
 ```
 
-
-
-
 ## Usage
 
-Sources: [extension README](https://github.com/boringSQL/regresql/blob/master/pg_ext/README.md), [control file](https://github.com/boringSQL/regresql/blob/master/pg_ext/pg_regresql.control), [portable stats article](https://boringsql.com/posts/portable-stats/)
+Sources:
 
-`pg_regresql` is the PostgreSQL planner-hook part of RegreSQL. It makes the planner trust `pg_class` statistics instead of rescaling estimates from the physical file size, which is useful for plan regression testing with injected production statistics.
+- [README.md](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/README.md)
+- [pg_regresql.control](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/pg_regresql.control)
+- [pg_regresql--2.2.sql](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/pg_regresql--2.2.sql)
 
-### Activate the hook
+`pg_regresql` makes query planning use catalog statistics instead of rescaling them from physical file size. This supports plan regression tests in databases with representative statistics but little data. Distribution 2.2.0 installs SQL version 2.2 in the fixed `pg_catalog` schema.
+
+### Activate the Planner Hook
+
+The hook supports PostgreSQL 15 or later. Load it as a superuser in the test session:
 
 ```sql
 LOAD 'pg_regresql';
-
-EXPLAIN SELECT ...;
+CREATE TABLE test_orders (created_at date);
+EXPLAIN SELECT * FROM test_orders WHERE created_at > DATE '2024-06-01';
 ```
 
-For a whole test instance, upstream recommends:
+For new sessions on a test instance, add the library to the existing session preload list:
 
-```conf
+```ini
 session_preload_libraries = 'pg_regresql'
 ```
 
-### What it overrides
+The hook replaces table and index page/tuple estimates with `pg_class` values and computes visibility from catalog statistics. Inject useful statistics before comparing plans; an empty table alone is not a production workload.
 
-The upstream README says the hook runs after `estimate_rel_size()` and replaces planner estimates with catalog values:
+### Restore Statistics
 
-- `rel->pages` from `pg_class.relpages`
-- `rel->tuples` from `pg_class.reltuples`
-- `rel->allvisfrac` from `pg_class.relallvisible / relpages`
-- `IndexOptInfo->pages` from index `pg_class.relpages`
-- `IndexOptInfo->tuples` from index `pg_class.reltuples`
-
-### Typical workflow
+On PostgreSQL 16 and 17, create the extension before loading statistics emitted by a recent pg_dump:
 
 ```sql
+CREATE EXTENSION pg_regresql;
 SELECT pg_restore_relation_stats(
-    'schemaname', 'public',
-    'relname', 'test_orders',
-    'relpages', 123513::integer,
-    'reltuples', 50000000::real,
+    'schemaname', 'public', 'relname', 'test_orders',
+    'relpages', 123513::integer, 'reltuples', 50000000::real,
     'relallvisible', 123513::integer
 );
-
-LOAD 'pg_regresql';
-
-EXPLAIN SELECT * FROM test_orders WHERE created_at > '2024-06-01';
 ```
 
-This is meant for reproducing production plans locally and for migration or upgrade plan-regression tests.
+Version 2.2 adds `pg_restore_extended_stats()` and `pg_clear_extended_stats()` for those servers, and supports the JSON input emitted by pg_dump 19 for `pg_ndistinct` and `pg_dependencies`. On PostgreSQL 16 remove the dump's unsupported transaction_timeout setting. PostgreSQL 18 already supplies relation/attribute restoration in core; extended restoration is in core from 19. The extension does not install these backports on 18 or later.
 
-### Notes
+### Upgrade and Cleanup
 
-- The control file currently declares `default_version = '2.0'`.
-- The public repository tags visible upstream are still `v2.0.0-alpha*`, so the packaged `2.0.0` target is ahead of a clearly tagged final GitHub release.
-- Upstream documents PostgreSQL 14+ compatibility for the extension.
+From SQL version 2.0, upstream requires dropping and recreating the extension. From 2.1, use `ALTER EXTENSION pg_regresql UPDATE`. Review dependencies before removing it. The extension is not relocatable and its install requires a superuser.
+
+The replacement input functions named `regresql_pg_*_in` are deliberately detached from the extension on 16/17. `DROP EXTENSION` leaves them behind so the installed casts keep working; dropping the extension is therefore not a complete return to the original catalog state. Use this tool in controlled planning tests, and do not assume compatibility with other planner hooks has been tested.

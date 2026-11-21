@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7010** | {{< badge content="supautils" link="https://github.com/supabase/supautils" >}} | {{< ext "supautils" >}} | `4.0.0` | {{< category "SEC" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **7010** | {{< badge content="supautils" link="https://github.com/supabase/supautils" >}} | {{< ext "supautils" >}} | `4.0.1` | {{< category "SEC" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `supautils` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.0.0` | {{< bg "18" "supautils_18" "green" >}} {{< bg "17" "supautils_17" "green" >}} {{< bg "16" "supautils_16" "green" >}} {{< bg "15" "supautils_15" "green" >}} {{< bg "14" "supautils_14" "green" >}} | `supautils_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.0.0` | {{< bg "18" "postgresql-18-supautils" "green" >}} {{< bg "17" "postgresql-17-supautils" "green" >}} {{< bg "16" "postgresql-16-supautils" "green" >}} {{< bg "15" "postgresql-15-supautils" "green" >}} {{< bg "14" "postgresql-14-supautils" "green" >}} | `postgresql-$v-supautils` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.0.1` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `supautils` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.0.1` | {{< bg "19" "supautils_19" "green" >}} {{< bg "18" "supautils_18" "green" >}} {{< bg "17" "supautils_17" "green" >}} {{< bg "16" "supautils_16" "green" >}} {{< bg "15" "supautils_15" "green" >}} | `supautils_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.0.1` | {{< bg "19" "postgresql-19-supautils" "green" >}} {{< bg "18" "postgresql-18-supautils" "green" >}} {{< bg "17" "postgresql-17-supautils" "green" >}} {{< bg "16" "postgresql-16-supautils" "green" >}} {{< bg "15" "postgresql-15-supautils" "green" >}} | `postgresql-$v-supautils` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "supautils_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "supautils_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "supautils_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "supautils_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "supautils_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "supautils_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-supautils : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-supautils : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-supautils : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-supautils : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-supautils : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-supautils : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-supautils : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-supautils : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-supautils : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-supautils : MISS 0" "red" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -157,36 +157,13 @@ page_width: full
 | `postgresql-15-supautils` | `4.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 94.1 KiB | [postgresql-15-supautils_4.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-15-supautils_4.0.0-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `supautils_14` | `4.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 97.7 KiB | [supautils_14-4.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/supautils_14-4.0.0-1PGSTY.el8.x86_64.rpm) |
-| `supautils_14` | `4.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 95.4 KiB | [supautils_14-4.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/supautils_14-4.0.0-1PGSTY.el8.aarch64.rpm) |
-| `supautils_14` | `4.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 99.3 KiB | [supautils_14-4.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/supautils_14-4.0.0-1PGSTY.el9.x86_64.rpm) |
-| `supautils_14` | `4.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 97.1 KiB | [supautils_14-4.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/supautils_14-4.0.0-1PGSTY.el9.aarch64.rpm) |
-| `supautils_14` | `4.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 99.8 KiB | [supautils_14-4.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/supautils_14-4.0.0-1PGSTY.el10.x86_64.rpm) |
-| `supautils_14` | `4.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 97.8 KiB | [supautils_14-4.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/supautils_14-4.0.0-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-supautils` | `4.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 91.5 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-supautils` | `4.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 89.1 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-supautils` | `4.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 91.6 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-supautils` | `4.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 89.4 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-supautils` | `4.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 114.4 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-supautils` | `4.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 112.4 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-supautils` | `4.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 95.3 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-supautils` | `4.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 94.0 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-supautils` | `4.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 95.2 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-supautils` | `4.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 94.1 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/supabase/supautils" title="Repository" icon="github" subtitle="github.com/supabase/supautils" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="supautils-4.0.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="supautils-4.0.1.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -208,11 +185,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install supautils;		# install via package name, for the active PG version
 
+pig install supautils -v 19;   # install for PG 19
 pig install supautils -v 18;   # install for PG 18
 pig install supautils -v 17;   # install for PG 17
 pig install supautils -v 16;   # install for PG 16
 pig install supautils -v 15;   # install for PG 15
-pig install supautils -v 14;   # install for PG 14
 
 ```
 
@@ -232,6 +209,7 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 Sources:
 
+- [Current release](https://github.com/supabase/supautils/releases/tag/v4.0.1)
 - [v4.0.0 README](https://github.com/supabase/supautils/blob/v4.0.0/README.md)
 - [v4.0.0 release](https://github.com/supabase/supautils/releases/tag/v4.0.0)
 - [Version restriction implementation](https://github.com/supabase/supautils/blob/v4.0.0/src/extensions.c)
@@ -318,3 +296,7 @@ Review allowed extensions and custom scripts as trusted code because their opera
 ### 4.0 Migration
 
 Version 4.0.0 removes constrained-extension functionality; remove the old constrained_extensions configuration rather than relying on that mechanism. Global and per-extension custom scripts run in this order: global before-create, extension before-create, extension after-create, global after-create. The default_extension_install_schema setting prepends a default schema when no explicit SCHEMA or parameter override wins. The read-only supautils.version setting identifies the loaded library. These are library changes; restart or reconnect the processes that preload it, without CREATE EXTENSION for supautils itself.
+
+### 4.0.1 fixes
+
+Version 4.0.1 guards role lookups for statements without a role, corrects extension authorization, and runs dependent custom scripts when no dependency cycle exists. It remains a preloaded module with no CREATE EXTENSION command. Replace the matching library and restart processes using it; verify delegated administration and custom-script policy after upgrade.

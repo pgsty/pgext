@@ -36,30 +36,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `vasco` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "vasco_18" "green" >}} {{< bg "17" "vasco_17" "green" >}} {{< bg "16" "vasco_16" "green" >}} {{< bg "15" "vasco_15" "green" >}} {{< bg "14" "vasco_14" "green" >}} | `vasco_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-vasco" "green" >}} {{< bg "17" "postgresql-17-vasco" "green" >}} {{< bg "16" "postgresql-16-vasco" "green" >}} {{< bg "15" "postgresql-15-vasco" "green" >}} {{< bg "14" "postgresql-14-vasco" "green" >}} | `postgresql-$v-vasco` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `vasco` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "19" "vasco_19" "green" >}} {{< bg "18" "vasco_18" "green" >}} {{< bg "17" "vasco_17" "green" >}} {{< bg "16" "vasco_16" "green" >}} {{< bg "15" "vasco_15" "green" >}} | `vasco_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "19" "postgresql-19-vasco" "green" >}} {{< bg "18" "postgresql-18-vasco" "green" >}} {{< bg "17" "postgresql-17-vasco" "green" >}} {{< bg "16" "postgresql-16-vasco" "green" >}} {{< bg "15" "postgresql-15-vasco" "green" >}} | `postgresql-$v-vasco` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "vasco_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "vasco_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "vasco_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "vasco_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "vasco_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "vasco_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-vasco : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-vasco : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-vasco : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-vasco : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-vasco : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-vasco : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-vasco : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-vasco : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-vasco : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-vasco : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -155,29 +155,6 @@ page_width: full
 | `postgresql-15-vasco` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 55.4 KiB | [postgresql-15-vasco_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vasco/postgresql-15-vasco_0.1.0-1PIGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vasco_14` | `0.1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 41.0 KiB | [vasco_14-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vasco_14-0.1.0-1PIGSTY.el8.x86_64.rpm) |
-| `vasco_14` | `0.1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 39.9 KiB | [vasco_14-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vasco_14-0.1.0-1PIGSTY.el8.aarch64.rpm) |
-| `vasco_14` | `0.1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 40.1 KiB | [vasco_14-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vasco_14-0.1.0-1PIGSTY.el9.x86_64.rpm) |
-| `vasco_14` | `0.1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 39.7 KiB | [vasco_14-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vasco_14-0.1.0-1PIGSTY.el9.aarch64.rpm) |
-| `vasco_14` | `0.1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 40.5 KiB | [vasco_14-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vasco_14-0.1.0-1PIGSTY.el10.x86_64.rpm) |
-| `vasco_14` | `0.1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 40.1 KiB | [vasco_14-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vasco_14-0.1.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-vasco` | `0.1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 54.3 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-vasco` | `0.1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 53.4 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-vasco` | `0.1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 54.4 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-vasco` | `0.1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 53.6 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-vasco` | `0.1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 59.4 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-vasco` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 58.5 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-vasco` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 56.0 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-vasco` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 55.6 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-vasco` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 56.0 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-vasco` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 55.4 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -206,11 +183,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install vasco;		# install via package name, for the active PG version
 
+pig install vasco -v 19;   # install for PG 19
 pig install vasco -v 18;   # install for PG 18
 pig install vasco -v 17;   # install for PG 17
 pig install vasco -v 16;   # install for PG 16
 pig install vasco -v 15;   # install for PG 15
-pig install vasco -v 14;   # install for PG 14
 
 ```
 

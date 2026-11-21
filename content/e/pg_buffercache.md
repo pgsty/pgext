@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6930** | {{< badge content="pg_buffercache" link="https://www.postgresql.org/docs/current/pgbuffercache.html" >}} | {{< ext "pg_buffercache" >}} | `1.6` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6930** | {{< badge content="pg_buffercache" link="https://www.postgresql.org/docs/current/pgbuffercache.html" >}} | {{< ext "pg_buffercache" >}} | `1.7` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -32,14 +32,14 @@ page_width: full
 |    **Need By**    | {{< ext "pgcozy" >}} |
 |   **See Also**    | {{< ext "pgfincore" >}} {{< ext "pgcozy" >}} {{< ext "pg_prewarm" >}} {{< ext "pg_cooldown" >}} {{< ext "toastinfo" >}} {{< ext "pagevis" >}} {{< ext "pageinspect" >}} {{< ext "pg_freespacemap" >}} {{< ext "pg_visibility" >}} {{< ext "pgstattuple" >}} |
 
-> [!Note] PG18 SQL/control baseline 1.6; older PostgreSQL majors may differ.
+> [!Note] SQL version varies by PG major.
 
 
 ## Packages
 
-| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
+| **PG19** | **PG18** | **PG17** | **PG16** | **PG15** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< bg "1.6" "PostgreSQL 18: version 1.6" "green" >}} | {{< bg "1.6" "PostgreSQL 17: version 1.6" "green" >}} | {{< bg "1.6" "PostgreSQL 16: version 1.6" "green" >}} | {{< bg "1.6" "PostgreSQL 15: version 1.6" "green" >}} | {{< bg "1.6" "PostgreSQL 14: version 1.6" "green" >}} |
+| {{< bg "1.7" "PostgreSQL 19: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 18: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 17: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 16: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 15: version 1.7" "green" >}} |
 {.wide .expand}
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel

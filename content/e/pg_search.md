@@ -40,30 +40,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_search` | `vector` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.6` | {{< bg "18" "pg_search_18" "green" >}} {{< bg "17" "pg_search_17" "green" >}} {{< bg "16" "pg_search_16" "green" >}} {{< bg "15" "pg_search_15" "green" >}} {{< bg "14" "pg_search_14" "red" >}} | `pg_search_$v` | `pgvector_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.6` | {{< bg "18" "postgresql-18-pg-search" "green" >}} {{< bg "17" "postgresql-17-pg-search" "green" >}} {{< bg "16" "postgresql-16-pg-search" "green" >}} {{< bg "15" "postgresql-15-pg-search" "green" >}} {{< bg "14" "postgresql-14-pg-search" "red" >}} | `postgresql-$v-pg-search` | `postgresql-$v-pgvector` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.6` | {{< bg "19" "" "red" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_search` | `vector` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.6` | {{< bg "19" "pg_search_19" "red" >}} {{< bg "18" "pg_search_18" "green" >}} {{< bg "17" "pg_search_17" "green" >}} {{< bg "16" "pg_search_16" "green" >}} {{< bg "15" "pg_search_15" "green" >}} | `pg_search_$v` | `pgvector_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.6` | {{< bg "19" "postgresql-19-pg-search" "red" >}} {{< bg "18" "postgresql-18-pg-search" "green" >}} {{< bg "17" "postgresql-17-pg-search" "green" >}} {{< bg "16" "postgresql-16-pg-search" "green" >}} {{< bg "15" "postgresql-15-pg-search" "green" >}} | `postgresql-$v-pg-search` | `postgresql-$v-pgvector` |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-search : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-search : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-search : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-search : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-search : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-search : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-search : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-search : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-search : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-search : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_search_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_search_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "N/A" "pg_search_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "N/A" "pg_search_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "N/A" "pg_search_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "N/A" "pg_search_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "pg_search_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-search : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-search : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-search : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-search : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-search : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-search : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-search : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-search : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-search : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-search : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.6" "postgresql-15-pg-search : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -212,6 +212,17 @@ CREATE EXTENSION pg_search CASCADE; -- requires vector
 
 Sources:
 
+- [Official source](https://www.paradedb.com/docs/project/changelog/0.27.0.md)
+- [Official source](https://api.pgxn.org/src/pg_search/pg_search-0.27.0/pg_search/pg_search.control)
+- [Official source](https://api.pgxn.org/src/pg_search/pg_search-0.27.0/Cargo.toml)
+
+- [0.26.8 changelog](https://www.paradedb.com/docs/project/changelog/0.26.8.md)
+- [pg_search 0.26.8 README](https://api.pgxn.org/src/pg_search/pg_search-0.26.8/pg_search/README.md)
+- [pg_search 0.26.8 control](https://api.pgxn.org/src/pg_search/pg_search-0.26.8/pg_search/pg_search.control)
+- [0.26.7 to 0.26.8 SQL](https://api.pgxn.org/src/pg_search/pg_search-0.26.8/pg_search/sql/pg_search--0.26.7--0.26.8.sql)
+- [Upstream source](https://api.pgxn.org/src/pg_search/pg_search-0.26.7/docs/project/changelog/0.26.7.mdx)
+- [Upstream source](https://api.pgxn.org/src/pg_search/pg_search-0.26.7/pg_search/pg_search.control)
+
 - [0.26.6 changelog](https://github.com/paradedb/paradedb/blob/v0.26.6/docs/project/changelog/0.26.6.mdx)
 - [pg_search 0.26.6 control](https://github.com/paradedb/paradedb/blob/v0.26.6/pg_search/pg_search.control)
 - [pg_search 0.26.6 Cargo.toml](https://github.com/paradedb/paradedb/blob/v0.26.6/pg_search/Cargo.toml)
@@ -237,7 +248,7 @@ Sources:
 - [Query vectors](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [Hybrid-search overview](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.26.6 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
+`pg_search` 0.27.0 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
 
 ### Install and Build an Index
 
@@ -358,3 +369,25 @@ Version 0.26.5 enforces table permissions on standalone index-reading functions 
 ### Version 0.26.6
 
 Join Scan now supports top-K `ORDER BY` on the vector distance operators `<->`, `<=>`, and `<#>` for `INNER` and `SEMI` (`IN` / `EXISTS`) joins. Rank join also applies when a leaf has a single-table filter answered by the index, including row-level security policies, equality, `= ANY`, and range conditions. The release fixes a crash when `pdb.score()` appears with a scalar subquery or query parameter in a Join Scan select list, and `EXPLAIN` now warns when `RankJoinExec` is not used. Validate plans and top-K results after upgrading; package coordinates must be checked separately from upstream.
+
+### 0.26.7 partitioning and scores
+
+Skewed partition_by indexes now use heap ctid as a fallback to divide otherwise unsplittable partitions. Existing indexes need REINDEX to benefit. Explicitly including ctid in partition_by retains the old competing-column behavior and does not enable this fallback.
+
+Row-level security filters now contribute 0.0 consistently to pdb.score; an earlier plan-dependent constant is removed. This can change reported scores. Merge backpressure counts all visible segments, and builds/merges with more than 4 GiB of distinct string values in a segment are fixed. These changes do not remove the earlier 0.26 vector-format rebuild requirements.
+
+### 0.26.8 Foreground Merge Behaviour
+
+After a write successfully launches a background merger, the foreground write path now skips its own foreground merge. If the background merger cannot be launched, foreground merging remains the fallback. Apply the normal matching library, SQL-extension update and preload maintenance procedure; this release adds no new index-format migration.
+
+### Version 0.27.0: Upgrade and Query Changes
+
+Upgrade standbys before the primary. Community physical replicas can replay WAL, but queries using ParadeDB indexes on a read replica fail. After promotion, or restoration from a base backup taken on a standby, replicated ParadeDB indexes require `REINDEX INDEX`. Backups taken on the primary are unaffected. Earlier standby libraries cannot replay the new ParadeDB WAL records.
+
+Rebuild every existing vector index: 0.27.0 uses vector format 6 and refuses older formats. Replace the `vector_fields` index option with `quantization`; recreate indexes explicitly storing the removed option. Rename `max_leaf_size` to `target_leaf_size` using ALTER INDEX or recreation. Quantization defaults to `[1,1]`; zero disables it. The new default `replication = 2` assigns vectors to a second cluster and affects storage/build work; `replication = 1` disables that assignment.
+
+Whole-row bare searches now cover indexed fields rather than implicitly targeting the key. Field-specific builders need an indexed column; use `body @@@ pdb.term('postgres')`, not a whole-row term builder. Direct ltree indexing is deprecated; the documented alternative is a separate GiST index with bitmap intersection.
+
+`paradedb.mpp_queue_size` is now a byte budget, default 8MB, and `paradedb.mpp_request_timeout` is removed. `paradedb.vector_cluster_max_probe` is an absolute work budget, default 100. `paradedb.max_term_set_size` defaults to 262144; excessive term sets error. Review saved settings before rollout.
+
+New `pdb.expand` synonym rules apply at query time, and `pdb.explain_score` returns a JSONB score explanation. L2 and inner-product vectors above approximately 6.5e18 magnitude are rejected, including during REINDEX; finite cosine vectors remain accepted. Prebuilt upstream binaries require PostgreSQL 15.20, 16.16, 17.12 or 18.7 or later within those majors. These upstream requirements do not imply that the catalog's RPM/DEB packages have already been updated.

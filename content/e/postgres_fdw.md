@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8990** | {{< badge content="postgres_fdw" link="https://www.postgresql.org/docs/current/postgres-fdw.html" >}} | {{< ext "postgres_fdw" >}} | `1.2` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **8990** | {{< badge content="postgres_fdw" link="https://www.postgresql.org/docs/current/postgres-fdw.html" >}} | {{< ext "postgres_fdw" >}} | `1.3` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -32,14 +32,14 @@ page_width: full
 |    **Need By**    | {{< ext "omni_schema" >}} |
 |   **See Also**    | {{< ext "db_migrator" >}} {{< ext "pgspider_ext" >}} {{< ext "dblink" >}} {{< ext "mimeo" >}} {{< ext "pgclone" >}} {{< ext "pglogical" >}} {{< ext "mysql_fdw" >}} {{< ext "citus" >}} {{< ext "plproxy" >}} {{< ext "db2_fdw" >}} |
 
-> [!Note] PG18 SQL/control baseline 1.2; older PostgreSQL majors may differ.
+> [!Note] SQL version varies by PG major.
 
 
 ## Packages
 
-| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
+| **PG19** | **PG18** | **PG17** | **PG16** | **PG15** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< bg "1.2" "PostgreSQL 18: version 1.2" "green" >}} | {{< bg "1.2" "PostgreSQL 17: version 1.2" "green" >}} | {{< bg "1.2" "PostgreSQL 16: version 1.2" "green" >}} | {{< bg "1.2" "PostgreSQL 15: version 1.2" "green" >}} | {{< bg "1.2" "PostgreSQL 14: version 1.2" "green" >}} |
+| {{< bg "1.3" "PostgreSQL 19: version 1.3" "green" >}} | {{< bg "1.3" "PostgreSQL 18: version 1.3" "green" >}} | {{< bg "1.3" "PostgreSQL 17: version 1.3" "green" >}} | {{< bg "1.3" "PostgreSQL 16: version 1.3" "green" >}} | {{< bg "1.3" "PostgreSQL 15: version 1.3" "green" >}} |
 {.wide .expand}
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel

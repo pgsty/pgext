@@ -39,57 +39,32 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "green" >}} | `openhalo` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "openhalodb-18" "red" >}} {{< bg "17" "openhalodb-17" "red" >}} {{< bg "16" "openhalodb-16" "red" >}} {{< bg "15" "openhalodb-15" "red" >}} {{< bg "14" "openhalodb-14" "green" >}} | `openhalodb-$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "openhalodb-18" "red" >}} {{< bg "17" "openhalodb-17" "red" >}} {{< bg "16" "openhalodb-16" "red" >}} {{< bg "15" "openhalodb-15" "red" >}} {{< bg "14" "openhalodb-14" "green" >}} | `openhalodb-$v` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "19" "" "red" >}} {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} | `openhalo` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "openhalodb-19" "red" >}} {{< bg "18" "openhalodb-18" "red" >}} {{< bg "17" "openhalodb-17" "red" >}} {{< bg "16" "openhalodb-16" "red" >}} {{< bg "15" "openhalodb-15" "red" >}} | `openhalodb-$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "openhalodb-19" "red" >}} {{< bg "18" "openhalodb-18" "red" >}} {{< bg "17" "openhalodb-17" "red" >}} {{< bg "16" "openhalodb-16" "red" >}} {{< bg "15" "openhalodb-15" "red" >}} | `openhalodb-$v` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "N/A" "openhalodb-19 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} |
 {.matrix .wide .expand}
 
-
-{{< tabs group="pgmajor" >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `openhalodb-14` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.2 MiB | [openhalodb-14-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/openhalodb-14-1.0-2PIGSTY.el8.x86_64.rpm) |
-| `openhalodb-14` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.8 MiB | [openhalodb-14-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/openhalodb-14-1.0-2PIGSTY.el8.aarch64.rpm) |
-| `openhalodb-14` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 9.9 MiB | [openhalodb-14-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/openhalodb-14-1.0-2PIGSTY.el9.x86_64.rpm) |
-| `openhalodb-14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 9.7 MiB | [openhalodb-14-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/openhalodb-14-1.0-2PIGSTY.el9.aarch64.rpm) |
-| `openhalodb-14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.0 MiB | [openhalodb-14-1.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/openhalodb-14-1.0-2PIGSTY.el10.x86_64.rpm) |
-| `openhalodb-14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 9.8 MiB | [openhalodb-14-1.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/openhalodb-14-1.0-2PIGSTY.el10.aarch64.rpm) |
-| `openhalodb-14` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.5 MiB | [openhalodb-14_1.0-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~bookworm_amd64.deb) |
-| `openhalodb-14` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.1 MiB | [openhalodb-14_1.0-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~bookworm_arm64.deb) |
-| `openhalodb-14` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.6 MiB | [openhalodb-14_1.0-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~trixie_amd64.deb) |
-| `openhalodb-14` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 8.1 MiB | [openhalodb-14_1.0-2PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~trixie_arm64.deb) |
-| `openhalodb-14` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 9.8 MiB | [openhalodb-14_1.0-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~jammy_amd64.deb) |
-| `openhalodb-14` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.6 MiB | [openhalodb-14_1.0-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~jammy_arm64.deb) |
-| `openhalodb-14` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 9.7 MiB | [openhalodb-14_1.0-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~noble_amd64.deb) |
-| `openhalodb-14` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.5 MiB | [openhalodb-14_1.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~noble_arm64.deb) |
-| `openhalodb-14` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.7 MiB | [openhalodb-14_1.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~resolute_amd64.deb) |
-| `openhalodb-14` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.5 MiB | [openhalodb-14_1.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
-{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
@@ -117,8 +92,6 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install openhalo;		# install via package name, for the active PG version
 pig install aux_mysql;		# install by extension name, for the current active PG version
-
-pig install aux_mysql -v 14;   # install for PG 14
 
 ```
 

@@ -33,19 +33,19 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `codesystem` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "18" "codesystem_18" "green" >}} {{< bg "17" "codesystem_17" "green" >}} {{< bg "16" "codesystem_16" "green" >}} {{< bg "15" "codesystem_15" "green" >}} {{< bg "14" "codesystem_14" "green" >}} | `codesystem_$v` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `codesystem` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "19" "codesystem_19" "green" >}} {{< bg "18" "codesystem_18" "green" >}} {{< bg "17" "codesystem_17" "green" >}} {{< bg "16" "codesystem_16" "green" >}} {{< bg "15" "codesystem_15" "green" >}} | `codesystem_$v` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "codesystem_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "codesystem_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "codesystem_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "codesystem_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "codesystem_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "codesystem_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "codesystem_15 : AVAIL 1" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} |
@@ -111,19 +111,6 @@ page_width: full
 | `codesystem_15` | `0.2.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 123.8 KiB | [codesystem_15-0.2.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/codesystem_15-0.2.1-1PGSTY.el10.aarch64.rpm) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `codesystem_14` | `0.2.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 122.5 KiB | [codesystem_14-0.2.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/codesystem_14-0.2.1-1PGSTY.el8.x86_64.rpm) |
-| `codesystem_14` | `0.2.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 120.4 KiB | [codesystem_14-0.2.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/codesystem_14-0.2.1-1PGSTY.el8.aarch64.rpm) |
-| `codesystem_14` | `0.2.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 124.0 KiB | [codesystem_14-0.2.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/codesystem_14-0.2.1-1PGSTY.el9.x86_64.rpm) |
-| `codesystem_14` | `0.2.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 123.1 KiB | [codesystem_14-0.2.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/codesystem_14-0.2.1-1PGSTY.el9.aarch64.rpm) |
-| `codesystem_14` | `0.2.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 124.5 KiB | [codesystem_14-0.2.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/codesystem_14-0.2.1-1PGSTY.el10.x86_64.rpm) |
-| `codesystem_14` | `0.2.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 123.8 KiB | [codesystem_14-0.2.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/codesystem_14-0.2.1-1PGSTY.el10.aarch64.rpm) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -152,11 +139,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install codesystem;		# install via package name, for the active PG version
 
+pig install codesystem -v 19;   # install for PG 19
 pig install codesystem -v 18;   # install for PG 18
 pig install codesystem -v 17;   # install for PG 17
 pig install codesystem -v 16;   # install for PG 16
 pig install codesystem -v 15;   # install for PG 15
-pig install codesystem -v 14;   # install for PG 14
 
 ```
 

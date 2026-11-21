@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `log_fdw` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "log_fdw_18" "green" >}} {{< bg "17" "log_fdw_17" "green" >}} {{< bg "16" "log_fdw_16" "green" >}} {{< bg "15" "log_fdw_15" "green" >}} {{< bg "14" "log_fdw_14" "green" >}} | `log_fdw_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "postgresql-18-log-fdw" "green" >}} {{< bg "17" "postgresql-17-log-fdw" "green" >}} {{< bg "16" "postgresql-16-log-fdw" "green" >}} {{< bg "15" "postgresql-15-log-fdw" "green" >}} {{< bg "14" "postgresql-14-log-fdw" "green" >}} | `postgresql-$v-log-fdw` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `log_fdw` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "19" "log_fdw_19" "green" >}} {{< bg "18" "log_fdw_18" "green" >}} {{< bg "17" "log_fdw_17" "green" >}} {{< bg "16" "log_fdw_16" "green" >}} {{< bg "15" "log_fdw_15" "green" >}} | `log_fdw_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "19" "postgresql-19-log-fdw" "green" >}} {{< bg "18" "postgresql-18-log-fdw" "green" >}} {{< bg "17" "postgresql-17-log-fdw" "green" >}} {{< bg "16" "postgresql-16-log-fdw" "green" >}} {{< bg "15" "postgresql-15-log-fdw" "green" >}} | `postgresql-$v-log-fdw` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.5" "log_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.5" "log_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.5" "log_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.5" "log_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.5" "log_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.5" "log_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-14-log-fdw : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-14-log-fdw : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-14-log-fdw : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-14-log-fdw : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-14-log-fdw : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-14-log-fdw : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-14-log-fdw : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-14-log-fdw : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-14-log-fdw : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-14-log-fdw : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "log_fdw_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.5" "log_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "log_fdw_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.5" "log_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "log_fdw_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "log_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "log_fdw_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "log_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "log_fdw_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "log_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "log_fdw_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "log_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "log_fdw_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-log-fdw : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-log-fdw : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-log-fdw : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-log-fdw : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-log-fdw : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-log-fdw : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-log-fdw : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-log-fdw : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-log-fdw : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-log-fdw : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-log-fdw : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -157,29 +157,6 @@ page_width: full
 | `postgresql-15-log-fdw` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 30.3 KiB | [postgresql-15-log-fdw_1.5-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/log-fdw/postgresql-15-log-fdw_1.5-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `log_fdw_14` | `1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 38.5 KiB | [log_fdw_14-1.5-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/log_fdw_14-1.5-1PGSTY.el8.x86_64.rpm) |
-| `log_fdw_14` | `1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 38.1 KiB | [log_fdw_14-1.5-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/log_fdw_14-1.5-1PGSTY.el8.aarch64.rpm) |
-| `log_fdw_14` | `1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 39.0 KiB | [log_fdw_14-1.5-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/log_fdw_14-1.5-1PGSTY.el9.x86_64.rpm) |
-| `log_fdw_14` | `1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 38.6 KiB | [log_fdw_14-1.5-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/log_fdw_14-1.5-1PGSTY.el9.aarch64.rpm) |
-| `log_fdw_14` | `1.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 39.2 KiB | [log_fdw_14-1.5-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/log_fdw_14-1.5-1PGSTY.el10.x86_64.rpm) |
-| `log_fdw_14` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 38.9 KiB | [log_fdw_14-1.5-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/log_fdw_14-1.5-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-log-fdw` | `1.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 30.3 KiB | [postgresql-14-log-fdw_1.5-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/l/log-fdw/postgresql-14-log-fdw_1.5-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-log-fdw` | `1.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 29.8 KiB | [postgresql-14-log-fdw_1.5-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/l/log-fdw/postgresql-14-log-fdw_1.5-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-log-fdw` | `1.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 30.4 KiB | [postgresql-14-log-fdw_1.5-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/l/log-fdw/postgresql-14-log-fdw_1.5-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-log-fdw` | `1.5` | [d13.aarch64](/os/d13.aarch64) | pigsty | 29.8 KiB | [postgresql-14-log-fdw_1.5-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/l/log-fdw/postgresql-14-log-fdw_1.5-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-log-fdw` | `1.5` | [u22.x86_64](/os/u22.x86_64) | pigsty | 36.7 KiB | [postgresql-14-log-fdw_1.5-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/l/log-fdw/postgresql-14-log-fdw_1.5-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-log-fdw` | `1.5` | [u22.aarch64](/os/u22.aarch64) | pigsty | 36.3 KiB | [postgresql-14-log-fdw_1.5-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/l/log-fdw/postgresql-14-log-fdw_1.5-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-log-fdw` | `1.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 30.7 KiB | [postgresql-14-log-fdw_1.5-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/log-fdw/postgresql-14-log-fdw_1.5-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-log-fdw` | `1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 30.4 KiB | [postgresql-14-log-fdw_1.5-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/log-fdw/postgresql-14-log-fdw_1.5-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-log-fdw` | `1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 30.5 KiB | [postgresql-14-log-fdw_1.5-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/log-fdw/postgresql-14-log-fdw_1.5-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-log-fdw` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 30.2 KiB | [postgresql-14-log-fdw_1.5-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/log-fdw/postgresql-14-log-fdw_1.5-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -208,11 +185,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install log_fdw;		# install via package name, for the active PG version
 
+pig install log_fdw -v 19;   # install for PG 19
 pig install log_fdw -v 18;   # install for PG 18
 pig install log_fdw -v 17;   # install for PG 17
 pig install log_fdw -v 16;   # install for PG 16
 pig install log_fdw -v 15;   # install for PG 15
-pig install log_fdw -v 14;   # install for PG 14
 
 ```
 

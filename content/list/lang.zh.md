@@ -16,7 +16,7 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 437 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 439 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 84 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 70 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "C++" >}} | 17 | 使用 C++ 特性和库的扩展 |
@@ -28,7 +28,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="437 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="439 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -157,6 +157,8 @@ weight: 200
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | Omnigres 通用Worker池 |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | Omnigres XML工具包 |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | Omnigres YAML工具包 |
+| 2988 | {{< alias "pg_plan_advice" >}} | 使用计划建议描述、复现并约束查询执行计划 |
+| 2989 | {{< alias "pg_stash_advice" >}} | 按查询 ID 存储并自动应用执行计划建议 |
 | 2990 | {{< alias "bloom" >}} | bloom 索引-基于指纹的索引 |
 | 3000 | {{< alias "pg_tle" >}} | AWS 可信语言扩展 |
 | 3011 | {{< alias "pljs" >}} | PL/JS 可信过程程序语言 |

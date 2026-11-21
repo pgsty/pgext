@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2430** | {{< badge content="pg_duckdb" link="https://github.com/duckdb/pg_duckdb" >}} | {{< ext "pg_duckdb" >}} | `1.2.0` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
+| **2430** | {{< badge content="pg_duckdb" link="https://github.com/duckdb/pg_duckdb" >}} | {{< ext "pg_duckdb" >}} | `1.2.1` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
 {.wide .expand}
 
 
@@ -40,30 +40,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_duckdb` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "pg_duckdb_18" "green" >}} {{< bg "17" "pg_duckdb_17" "green" >}} {{< bg "16" "pg_duckdb_16" "green" >}} {{< bg "15" "pg_duckdb_15" "green" >}} {{< bg "14" "pg_duckdb_14" "green" >}} | `pg_duckdb_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "postgresql-18-pg-duckdb" "green" >}} {{< bg "17" "postgresql-17-pg-duckdb" "green" >}} {{< bg "16" "postgresql-16-pg-duckdb" "green" >}} {{< bg "15" "postgresql-15-pg-duckdb" "green" >}} {{< bg "14" "postgresql-14-pg-duckdb" "green" >}} | `postgresql-$v-pg-duckdb` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.1` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_duckdb` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.1` | {{< bg "19" "pg_duckdb_19" "green" >}} {{< bg "18" "pg_duckdb_18" "green" >}} {{< bg "17" "pg_duckdb_17" "green" >}} {{< bg "16" "pg_duckdb_16" "green" >}} {{< bg "15" "pg_duckdb_15" "green" >}} | `pg_duckdb_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.1` | {{< bg "19" "postgresql-19-pg-duckdb" "green" >}} {{< bg "18" "postgresql-18-pg-duckdb" "green" >}} {{< bg "17" "postgresql-17-pg-duckdb" "green" >}} {{< bg "16" "postgresql-16-pg-duckdb" "green" >}} {{< bg "15" "postgresql-15-pg-duckdb" "green" >}} | `postgresql-$v-pg-duckdb` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_duckdb_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_duckdb_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "N/A" "pg_duckdb_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "N/A" "pg_duckdb_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "N/A" "pg_duckdb_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "N/A" "pg_duckdb_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_duckdb_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-duckdb : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-duckdb : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-duckdb : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-duckdb : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-duckdb : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-duckdb : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-duckdb : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-duckdb : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-duckdb : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-duckdb : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -159,36 +159,13 @@ page_width: full
 | `postgresql-15-pg-duckdb` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.2 MiB | [postgresql-15-pg-duckdb_1.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duckdb/postgresql-15-pg-duckdb_1.2.0-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_duckdb_14` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 24.7 MiB | [pg_duckdb_14-1.2.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_duckdb_14-1.2.0-1PGSTY.el8.x86_64.rpm) |
-| `pg_duckdb_14` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.2 MiB | [pg_duckdb_14-1.2.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_duckdb_14-1.2.0-1PGSTY.el8.aarch64.rpm) |
-| `pg_duckdb_14` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 25.2 MiB | [pg_duckdb_14-1.2.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_14-1.2.0-1PGSTY.el9.x86_64.rpm) |
-| `pg_duckdb_14` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.8 MiB | [pg_duckdb_14-1.2.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_14-1.2.0-1PGSTY.el9.aarch64.rpm) |
-| `pg_duckdb_14` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 26.2 MiB | [pg_duckdb_14-1.2.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_duckdb_14-1.2.0-1PGSTY.el10.x86_64.rpm) |
-| `pg_duckdb_14` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 23.8 MiB | [pg_duckdb_14-1.2.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_duckdb_14-1.2.0-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pg-duckdb` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 20.2 MiB | [postgresql-14-pg-duckdb_1.2.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_1.2.0-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pg-duckdb` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 17.6 MiB | [postgresql-14-pg-duckdb_1.2.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_1.2.0-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pg-duckdb` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 21.2 MiB | [postgresql-14-pg-duckdb_1.2.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_1.2.0-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-pg-duckdb` | `1.2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 18.5 MiB | [postgresql-14-pg-duckdb_1.2.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_1.2.0-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-pg-duckdb` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 22.4 MiB | [postgresql-14-pg-duckdb_1.2.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_1.2.0-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-pg-duckdb` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 20.5 MiB | [postgresql-14-pg-duckdb_1.2.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_1.2.0-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-pg-duckdb` | `1.2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.1 MiB | [postgresql-14-pg-duckdb_1.2.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_1.2.0-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-pg-duckdb` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.5 MiB | [postgresql-14-pg-duckdb_1.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_1.2.0-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-pg-duckdb` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 23.0 MiB | [postgresql-14-pg-duckdb_1.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_1.2.0-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-pg-duckdb` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.2 MiB | [postgresql-14-pg-duckdb_1.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_1.2.0-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/duckdb/pg_duckdb" title="Repository" icon="github" subtitle="github.com/duckdb/pg_duckdb" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_duckdb-1.2.0.tar.gz curl-8.23.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_duckdb-1.2.1.tar.gz curl-8.23.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -210,11 +187,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pg_duckdb;		# install via package name, for the active PG version
 
+pig install pg_duckdb -v 19;   # install for PG 19
 pig install pg_duckdb -v 18;   # install for PG 18
 pig install pg_duckdb -v 17;   # install for PG 17
 pig install pg_duckdb -v 16;   # install for PG 16
 pig install pg_duckdb -v 15;   # install for PG 15
-pig install pg_duckdb -v 14;   # install for PG 14
 
 ```
 
@@ -232,119 +209,48 @@ shared_preload_libraries = 'pg_duckdb';
 CREATE EXTENSION pg_duckdb;
 ```
 
-
-
-
 ## Usage
 
-[pg_duckdb docs](https://github.com/duckdb/pg_duckdb/tree/main/docs)
+Sources:
 
-| Topic                                                                                                  | Description                                                |
-|:-------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
-| [**Functions**](https://github.com/duckdb/pg_duckdb/blob/main/docs/functions.md)                       | Complete reference for all available functions             |
-| [**Syntax Guide & Gotchas**](https://github.com/duckdb/pg_duckdb/blob/main/docs/gotchas_and_syntax.md) | Quick reference for common SQL patterns and things to know |
-| [**Types**](https://github.com/duckdb/pg_duckdb/blob/main/docs/types.md)                               | Supported data types and type mappings                     |
-| [**Extensions**](https://github.com/duckdb/pg_duckdb/blob/main/docs/extensions.md)                     | DuckDB extension installation and usage                    |
-| [**Settings**](https://github.com/duckdb/pg_duckdb/blob/main/docs/settings.md)                         | Configuration options and parameters                       |
-| [**Transactions**](https://github.com/duckdb/pg_duckdb/blob/main/docs/transactions.md)                 | Transaction behavior and limitations                       |
+- [README.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/README.md)
+- [pg_duckdb.control](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/pg_duckdb.control)
+- [settings.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/settings.md)
+- [functions.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/functions.md)
+- [transactions.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/transactions.md)
+- [gotchas_and_syntax.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/gotchas_and_syntax.md)
+- [v1.2.1](https://github.com/duckdb/pg_duckdb/releases/tag/v1.2.1)
 
+`pg_duckdb` embeds DuckDB's analytical engine in PostgreSQL and can query ordinary PostgreSQL tables and external files. Release 1.2.1 embeds DuckDB 2.0.1; upstream lists PostgreSQL 14–18. It is not relocatable and needs cluster preload.
 
+### Enable and Compare a Query
 
-### Quick Setup
-
-Install pg_duckdb with pig:
-
-```bash
-pig repo set
-pig install pg_duckdb
-```
-
-Edit `postgresql.conf`, then restart to take effect
+Add the library to the existing setting, then restart PostgreSQL:
 
 ```ini
 shared_preload_libraries = 'pg_duckdb'
-duckdb.allow_community_extensions = true
 ```
 
-
-### Accelerate Query
-
-You can use DuckDB to query existing PostgreSQL table without modifying them:
+As a superuser, install it and inspect an analytical query:
 
 ```sql
--- pgbench -is 1000  # init some test workloads with pgbench
 CREATE EXTENSION pg_duckdb;
-
--- default behavior, common postgres engine
-SET duckdb.force_execution = false;
-EXPLAIN ANALYZE SELECT count(*) FROM pgbench_accounts;
-
--- now the query goes to pg_duckdb
+CREATE TABLE orders (category text, amount numeric);
+INSERT INTO orders VALUES ('a', 10), ('a', 20), ('b', 5);
 SET duckdb.force_execution = true;
-EXPLAIN ANALYZE SELECT count(*) FROM pgbench_accounts;
+EXPLAIN SELECT category, sum(amount) FROM orders GROUP BY category;
+SELECT category, sum(amount) FROM orders GROUP BY category;
+SET duckdb.force_execution = false;
 ```
 
-The result would be 8s -> 4s on 4c VM on local laptop) :
+Ordinary queries use PostgreSQL unless forced; DuckDB-only functions or remote storage operations choose DuckDB automatically. Inspect the plan and benchmark representative data. `read_parquet`, `read_csv` and `read_json` read external data, while `duckdb.create_simple_secret` configures storage credentials. Keep secrets out of shared SQL history and verify the access boundary before granting execution.
 
-```text
-postgres@el9:5432/postgres=# SET duckdb.force_execution = true;
-EXPLAIN ANALYZE SELECT count(*) FROM pgbench_accounts;
-SET
-Time: 0.206 ms
-                                              QUERY PLAN
-------------------------------------------------------------------------------------------------------
- Custom Scan (DuckDBScan)  (cost=0.00..0.00 rows=0 width=0) (actual time=0.001..0.001 rows=0 loops=1)
-   DuckDB Execution Plan:
+### Privileges and Configuration
 
- ┌─────────────────────────────────────┐
- │┌───────────────────────────────────┐│
- ││    Query Profiling Information    ││
- │└───────────────────────────────────┘│
- └─────────────────────────────────────┘
- EXPLAIN ANALYZE  SELECT count(*) AS count FROM pgduckdb.public.pgbench_accounts
- ┌────────────────────────────────────────────────┐
- │┌──────────────────────────────────────────────┐│
- ││               Total Time: 3.89s              ││
- │└──────────────────────────────────────────────┘│
- └────────────────────────────────────────────────┘
- ┌───────────────────────────┐
- │           QUERY           │
- └─────────────┬─────────────┘
- ┌─────────────┴─────────────┐
- │      EXPLAIN_ANALYZE      │
- │    ────────────────────   │
- │           0 rows          │
- │          (0.00s)          │
- └─────────────┬─────────────┘
- ┌─────────────┴─────────────┐
- │    UNGROUPED_AGGREGATE    │
- │    ────────────────────   │
- │        Aggregates:        │
- │        count_star()       │
- │                           │
- │           1 row           │
- │          (0.00s)          │
- └─────────────┬─────────────┘
- ┌─────────────┴─────────────┐
- │         TABLE_SCAN        │
- │    ────────────────────   │
- │           Table:          │
- │      pgbench_accounts     │
- │                           │
- │      100,000,000 rows     │
- │          (3.88s)          │
- └───────────────────────────┘
-```
+`duckdb.postgres_role` selects the role allowed to execute DuckDB, manage secrets and use MotherDuck data; by default only superusers may do so. A configured role can be created during installation. Grant membership deliberately because it exposes shared DuckDB secrets and data. Local filesystem access is restricted separately through PostgreSQL server-file roles and DuckDB filesystem settings. Community extension loading is an explicit administrator choice.
 
+### Transaction and Compatibility Limits
 
+A transaction may not write both PostgreSQL and DuckDB tables, or mix DDL for both engines. Keep `duckdb.unsafe_allow_mixed_transactions` disabled: bypassing the rule can commit one side only and lose consistency. Execution inside PostgreSQL functions is also disabled by default; the unsafe setting for it has known crash risks.
 
-### Data Lake
-
-Let's play with a local minio instance:
-
-```sql
-SELECT duckdb.create_simple_secret(
-    type := 'S3', key_id := 's3user_data', secret := 'S3User.Data',
-    endpoint := 'https://sss.pigsty:9000', url_style := 'path' 
-);
-```
+Version 1.2.1 supports nested fixed-length arrays and improves numeric and floating conversions. It fixes parallel-worker memory reads, cancellation cleanup and secret-bearing log/statistics handling. These fixes do not remove the need to restrict credentials and review type/query compatibility. Install matching libraries, follow preload restart requirements, and update the SQL extension in each database before relying on new behavior.

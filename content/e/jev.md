@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `jev` | `plpython3u` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "18" "jev_18" "red" >}} {{< bg "17" "jev_17" "green" >}} {{< bg "16" "jev_16" "green" >}} {{< bg "15" "jev_15" "green" >}} {{< bg "14" "jev_14" "green" >}} | `jev_$v` | `postgresql$v-plpython3` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "18" "postgresql-18-jev" "red" >}} {{< bg "17" "postgresql-17-jev" "green" >}} {{< bg "16" "postgresql-16-jev" "green" >}} {{< bg "15" "postgresql-15-jev" "green" >}} {{< bg "14" "postgresql-14-jev" "green" >}} | `postgresql-$v-jev` | `postgresql-plpython3-$v` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "19" "" "green" >}} {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `jev` | `plpython3u` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "19" "jev_19" "green" >}} {{< bg "18" "jev_18" "red" >}} {{< bg "17" "jev_17" "green" >}} {{< bg "16" "jev_16" "green" >}} {{< bg "15" "jev_15" "green" >}} | `jev_$v` | `postgresql$v-plpython3` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "19" "postgresql-19-jev" "green" >}} {{< bg "18" "postgresql-18-jev" "red" >}} {{< bg "17" "postgresql-17-jev" "green" >}} {{< bg "16" "postgresql-16-jev" "green" >}} {{< bg "15" "postgresql-15-jev" "green" >}} | `postgresql-$v-jev` | `postgresql-plpython3-$v` |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "N/A" "jev_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "jev_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "N/A" "jev_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "jev_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "N/A" "jev_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "jev_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "N/A" "jev_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "jev_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "N/A" "jev_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "jev_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "N/A" "jev_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "jev_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-14-jev : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-14-jev : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-14-jev : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-14-jev : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-14-jev : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-14-jev : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-14-jev : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-14-jev : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-14-jev : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-14-jev : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "jev_19 : N/A 0" "gray" >}} | {{< bg "N/A" "jev_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "jev_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "jev_19 : N/A 0" "gray" >}} | {{< bg "N/A" "jev_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "jev_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "jev_19 : MISS 0" "red" >}} | {{< bg "N/A" "jev_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "jev_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "jev_19 : MISS 0" "red" >}} | {{< bg "N/A" "jev_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "jev_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "jev_19 : MISS 0" "red" >}} | {{< bg "N/A" "jev_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "jev_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "jev_19 : MISS 0" "red" >}} | {{< bg "N/A" "jev_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "jev_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "jev_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-jev : MISS 0" "red" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-jev : MISS 0" "red" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-jev : MISS 0" "red" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-jev : MISS 0" "red" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-jev : MISS 0" "red" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-jev : MISS 0" "red" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-jev : MISS 0" "red" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-jev : MISS 0" "red" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-jev : MISS 0" "red" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-jev : MISS 0" "red" >}} | {{< bg "N/A" "postgresql-18-jev : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-jev : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-jev : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -134,29 +134,6 @@ page_width: full
 | `postgresql-15-jev` | `0.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 18.8 KiB | [postgresql-15-jev_0.2.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jev/postgresql-15-jev_0.2.1-1PGSTY~resolute_all.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `jev_14` | `0.2.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 24.5 KiB | [jev_14-0.2.1-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/jev_14-0.2.1-1PGSTY.el8.noarch.rpm) |
-| `jev_14` | `0.2.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 24.5 KiB | [jev_14-0.2.1-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/jev_14-0.2.1-1PGSTY.el8.noarch.rpm) |
-| `jev_14` | `0.2.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 24.2 KiB | [jev_14-0.2.1-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/jev_14-0.2.1-1PGSTY.el9.noarch.rpm) |
-| `jev_14` | `0.2.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 24.2 KiB | [jev_14-0.2.1-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/jev_14-0.2.1-1PGSTY.el9.noarch.rpm) |
-| `jev_14` | `0.2.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 24.3 KiB | [jev_14-0.2.1-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/jev_14-0.2.1-1PGSTY.el10.noarch.rpm) |
-| `jev_14` | `0.2.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 24.3 KiB | [jev_14-0.2.1-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/jev_14-0.2.1-1PGSTY.el10.noarch.rpm) |
-| `postgresql-14-jev` | `0.2.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 21.0 KiB | [postgresql-14-jev_0.2.1-1PGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/j/jev/postgresql-14-jev_0.2.1-1PGSTY~bookworm_all.deb) |
-| `postgresql-14-jev` | `0.2.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 21.0 KiB | [postgresql-14-jev_0.2.1-1PGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/j/jev/postgresql-14-jev_0.2.1-1PGSTY~bookworm_all.deb) |
-| `postgresql-14-jev` | `0.2.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 21.0 KiB | [postgresql-14-jev_0.2.1-1PGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/j/jev/postgresql-14-jev_0.2.1-1PGSTY~trixie_all.deb) |
-| `postgresql-14-jev` | `0.2.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 21.0 KiB | [postgresql-14-jev_0.2.1-1PGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/j/jev/postgresql-14-jev_0.2.1-1PGSTY~trixie_all.deb) |
-| `postgresql-14-jev` | `0.2.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 19.0 KiB | [postgresql-14-jev_0.2.1-1PGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/j/jev/postgresql-14-jev_0.2.1-1PGSTY~jammy_all.deb) |
-| `postgresql-14-jev` | `0.2.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 19.0 KiB | [postgresql-14-jev_0.2.1-1PGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/j/jev/postgresql-14-jev_0.2.1-1PGSTY~jammy_all.deb) |
-| `postgresql-14-jev` | `0.2.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 18.8 KiB | [postgresql-14-jev_0.2.1-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jev/postgresql-14-jev_0.2.1-1PGSTY~noble_all.deb) |
-| `postgresql-14-jev` | `0.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 18.8 KiB | [postgresql-14-jev_0.2.1-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jev/postgresql-14-jev_0.2.1-1PGSTY~noble_all.deb) |
-| `postgresql-14-jev` | `0.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 18.8 KiB | [postgresql-14-jev_0.2.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jev/postgresql-14-jev_0.2.1-1PGSTY~resolute_all.deb) |
-| `postgresql-14-jev` | `0.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 18.8 KiB | [postgresql-14-jev_0.2.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jev/postgresql-14-jev_0.2.1-1PGSTY~resolute_all.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -185,10 +162,10 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install jev;		# install via package name, for the active PG version
 
+pig install jev -v 19;   # install for PG 19
 pig install jev -v 17;   # install for PG 17
 pig install jev -v 16;   # install for PG 16
 pig install jev -v 15;   # install for PG 15
-pig install jev -v 14;   # install for PG 14
 
 ```
 

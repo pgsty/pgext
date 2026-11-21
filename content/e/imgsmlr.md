@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `imgsmlr` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "imgsmlr_18" "green" >}} {{< bg "17" "imgsmlr_17" "green" >}} {{< bg "16" "imgsmlr_16" "green" >}} {{< bg "15" "imgsmlr_15" "green" >}} {{< bg "14" "imgsmlr_14" "green" >}} | `imgsmlr_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-imgsmlr" "green" >}} {{< bg "17" "postgresql-17-imgsmlr" "green" >}} {{< bg "16" "postgresql-16-imgsmlr" "green" >}} {{< bg "15" "postgresql-15-imgsmlr" "green" >}} {{< bg "14" "postgresql-14-imgsmlr" "green" >}} | `postgresql-$v-imgsmlr` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `imgsmlr` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "imgsmlr_19" "green" >}} {{< bg "18" "imgsmlr_18" "green" >}} {{< bg "17" "imgsmlr_17" "green" >}} {{< bg "16" "imgsmlr_16" "green" >}} {{< bg "15" "imgsmlr_15" "green" >}} | `imgsmlr_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "postgresql-19-imgsmlr" "green" >}} {{< bg "18" "postgresql-18-imgsmlr" "green" >}} {{< bg "17" "postgresql-17-imgsmlr" "green" >}} {{< bg "16" "postgresql-16-imgsmlr" "green" >}} {{< bg "15" "postgresql-15-imgsmlr" "green" >}} | `postgresql-$v-imgsmlr` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-imgsmlr : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-imgsmlr : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-imgsmlr : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-imgsmlr : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-imgsmlr : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-imgsmlr : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-imgsmlr : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-imgsmlr : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-imgsmlr : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-imgsmlr : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "imgsmlr_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "imgsmlr_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "imgsmlr_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "imgsmlr_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "imgsmlr_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "imgsmlr_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "imgsmlr_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-imgsmlr : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-imgsmlr : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-imgsmlr : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-imgsmlr : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-imgsmlr : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-imgsmlr : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-imgsmlr : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-imgsmlr : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-imgsmlr : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-imgsmlr : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -157,29 +157,6 @@ page_width: full
 | `postgresql-15-imgsmlr` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.8 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `imgsmlr_14` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 21.6 KiB | [imgsmlr_14-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/imgsmlr_14-1.0-2PIGSTY.el8.x86_64.rpm) |
-| `imgsmlr_14` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.2 KiB | [imgsmlr_14-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/imgsmlr_14-1.0-2PIGSTY.el8.aarch64.rpm) |
-| `imgsmlr_14` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 21.2 KiB | [imgsmlr_14-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/imgsmlr_14-1.0-2PIGSTY.el9.x86_64.rpm) |
-| `imgsmlr_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.9 KiB | [imgsmlr_14-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/imgsmlr_14-1.0-2PIGSTY.el9.aarch64.rpm) |
-| `imgsmlr_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 21.8 KiB | [imgsmlr_14-1.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/imgsmlr_14-1.0-2PIGSTY.el10.x86_64.rpm) |
-| `imgsmlr_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 21.4 KiB | [imgsmlr_14-1.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/imgsmlr_14-1.0-2PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-imgsmlr` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 30.9 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-imgsmlr` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 30.2 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-imgsmlr` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 30.9 KiB | [postgresql-14-imgsmlr_1.0-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-2PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-imgsmlr` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 30.3 KiB | [postgresql-14-imgsmlr_1.0-2PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-2PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-imgsmlr` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 34.1 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-imgsmlr` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 33.3 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-imgsmlr` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 32.3 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-imgsmlr` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.6 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-imgsmlr` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 32.7 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-imgsmlr` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.8 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -208,11 +185,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install imgsmlr;		# install via package name, for the active PG version
 
+pig install imgsmlr -v 19;   # install for PG 19
 pig install imgsmlr -v 18;   # install for PG 18
 pig install imgsmlr -v 17;   # install for PG 17
 pig install imgsmlr -v 16;   # install for PG 16
 pig install imgsmlr -v 15;   # install for PG 15
-pig install imgsmlr -v 14;   # install for PG 14
 
 ```
 

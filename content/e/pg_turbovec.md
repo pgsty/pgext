@@ -39,30 +39,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.15.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_turbovec` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.15.0` | {{< bg "18" "pg_turbovec_18" "green" >}} {{< bg "17" "pg_turbovec_17" "green" >}} {{< bg "16" "pg_turbovec_16" "green" >}} {{< bg "15" "pg_turbovec_15" "green" >}} {{< bg "14" "pg_turbovec_14" "green" >}} | `pg_turbovec_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.15.0` | {{< bg "18" "postgresql-18-pg-turbovec" "green" >}} {{< bg "17" "postgresql-17-pg-turbovec" "green" >}} {{< bg "16" "postgresql-16-pg-turbovec" "green" >}} {{< bg "15" "postgresql-15-pg-turbovec" "green" >}} {{< bg "14" "postgresql-14-pg-turbovec" "green" >}} | `postgresql-$v-pg-turbovec` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.15.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_turbovec` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.15.0` | {{< bg "19" "pg_turbovec_19" "red" >}} {{< bg "18" "pg_turbovec_18" "green" >}} {{< bg "17" "pg_turbovec_17" "green" >}} {{< bg "16" "pg_turbovec_16" "green" >}} {{< bg "15" "pg_turbovec_15" "green" >}} | `pg_turbovec_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.15.0` | {{< bg "19" "postgresql-19-pg-turbovec" "red" >}} {{< bg "18" "postgresql-18-pg-turbovec" "green" >}} {{< bg "17" "postgresql-17-pg-turbovec" "green" >}} {{< bg "16" "postgresql-16-pg-turbovec" "green" >}} {{< bg "15" "postgresql-15-pg-turbovec" "green" >}} | `postgresql-$v-pg-turbovec` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-14-pg-turbovec : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-14-pg-turbovec : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-14-pg-turbovec : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-14-pg-turbovec : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-14-pg-turbovec : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-14-pg-turbovec : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-14-pg-turbovec : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-14-pg-turbovec : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-14-pg-turbovec : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-14-pg-turbovec : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_turbovec_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_turbovec_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pg_turbovec_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pg_turbovec_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pg_turbovec_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pg_turbovec_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "pg_turbovec_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-turbovec : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-turbovec : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-turbovec : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-turbovec : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-turbovec : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-turbovec : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-turbovec : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-turbovec : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-turbovec : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-turbovec : MISS 0" "red" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-18-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-17-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-16-pg-turbovec : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.15.0" "postgresql-15-pg-turbovec : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -158,29 +158,6 @@ page_width: full
 | `postgresql-15-pg-turbovec` | `2.15.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.6 MiB | [postgresql-15-pg-turbovec_2.15.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-turbovec/postgresql-15-pg-turbovec_2.15.0-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_turbovec_14` | `2.15.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 2.1 MiB | [pg_turbovec_14-2.15.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_turbovec_14-2.15.0-1PGSTY.el8.x86_64.rpm) |
-| `pg_turbovec_14` | `2.15.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 1.7 MiB | [pg_turbovec_14-2.15.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_turbovec_14-2.15.0-1PGSTY.el8.aarch64.rpm) |
-| `pg_turbovec_14` | `2.15.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 2.1 MiB | [pg_turbovec_14-2.15.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_turbovec_14-2.15.0-1PGSTY.el9.x86_64.rpm) |
-| `pg_turbovec_14` | `2.15.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 1.8 MiB | [pg_turbovec_14-2.15.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_turbovec_14-2.15.0-1PGSTY.el9.aarch64.rpm) |
-| `pg_turbovec_14` | `2.15.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 2.1 MiB | [pg_turbovec_14-2.15.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_turbovec_14-2.15.0-1PGSTY.el10.x86_64.rpm) |
-| `pg_turbovec_14` | `2.15.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 1.8 MiB | [pg_turbovec_14-2.15.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_turbovec_14-2.15.0-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pg-turbovec` | `2.15.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 1.9 MiB | [postgresql-14-pg-turbovec_2.15.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-turbovec/postgresql-14-pg-turbovec_2.15.0-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pg-turbovec` | `2.15.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.5 MiB | [postgresql-14-pg-turbovec_2.15.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-turbovec/postgresql-14-pg-turbovec_2.15.0-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pg-turbovec` | `2.15.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 1.9 MiB | [postgresql-14-pg-turbovec_2.15.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-turbovec/postgresql-14-pg-turbovec_2.15.0-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-pg-turbovec` | `2.15.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.5 MiB | [postgresql-14-pg-turbovec_2.15.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-turbovec/postgresql-14-pg-turbovec_2.15.0-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-pg-turbovec` | `2.15.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 2.0 MiB | [postgresql-14-pg-turbovec_2.15.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-turbovec/postgresql-14-pg-turbovec_2.15.0-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-pg-turbovec` | `2.15.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.6 MiB | [postgresql-14-pg-turbovec_2.15.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-turbovec/postgresql-14-pg-turbovec_2.15.0-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-pg-turbovec` | `2.15.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1.9 MiB | [postgresql-14-pg-turbovec_2.15.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-turbovec/postgresql-14-pg-turbovec_2.15.0-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-pg-turbovec` | `2.15.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.6 MiB | [postgresql-14-pg-turbovec_2.15.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-turbovec/postgresql-14-pg-turbovec_2.15.0-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-pg-turbovec` | `2.15.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.9 MiB | [postgresql-14-pg-turbovec_2.15.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-turbovec/postgresql-14-pg-turbovec_2.15.0-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-pg-turbovec` | `2.15.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.6 MiB | [postgresql-14-pg-turbovec_2.15.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-turbovec/postgresql-14-pg-turbovec_2.15.0-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -209,11 +186,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pg_turbovec;		# install via package name, for the active PG version
 
+pig install pg_turbovec -v 19;   # install for PG 19
 pig install pg_turbovec -v 18;   # install for PG 18
 pig install pg_turbovec -v 17;   # install for PG 17
 pig install pg_turbovec -v 16;   # install for PG 16
 pig install pg_turbovec -v 15;   # install for PG 15
-pig install pg_turbovec -v 14;   # install for PG 14
 
 ```
 
@@ -228,14 +205,17 @@ CREATE EXTENSION pg_turbovec;
 
 Sources:
 
-- [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/docs/PRODUCTION.md)
-- [v2.15.0 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/README.md)
-- [v2.15.0 changelog](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/CHANGELOG.md)
-- [Upgrade matrix](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/docs/UPGRADING.md)
-- [Control file](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/pg_turbovec.control)
-- [Filtering guide](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/docs/FILTERING.md)
+- [2.16.2 changelog](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.2/CHANGELOG.md)
+- [2.16.2 control](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.2/pg_turbovec.control)
+- [2.16.2 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.2/README.md)
+- [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/docs/PRODUCTION.md)
+- [v2.16.0 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/README.md)
+- [v2.16.0 changelog](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/CHANGELOG.md)
+- [Upgrade matrix](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/docs/UPGRADING.md)
+- [Control file](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/pg_turbovec.control)
+- [Filtering guide](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/docs/FILTERING.md)
 
-`pg_turbovec` 2.15.0 provides the `turbovec.vector` type and compact vector indexes with candidate reranking against the original heap vectors. Flat search scans quantized codes; IVF additionally searches selected cells. Both are approximate unless the candidate set contains every true neighbour. **Upgrading any 1.x index to 2.x requires rebuilding it.**
+`pg_turbovec` 2.16.2 provides the `turbovec.vector` type and compact vector indexes with candidate reranking against the original heap vectors. Flat search scans quantized codes; IVF additionally searches selected cells. Both are approximate unless the candidate set contains every true neighbour. **Upgrading any 1.x index to 2.x requires rebuilding it.**
 
 ### Create and Query Vectors
 
@@ -309,7 +289,7 @@ The 2.10.2-to-2.10.3 patch preserves format 8 and does not itself require reinde
 
 ### Compatibility and Maintenance
 
-The control file fixes objects in schema `turbovec`, sets `superuser = false`, and is not relocatable. Upstream covers PostgreSQL 13–18 and labels PostgreSQL 19 experimental in this release; current Pigsty packages cover 14–18. Binary replacement, tuning preload and major-format migration have separate restart/rebuild requirements. Version 2.10.3 parallelizes cold-backend code repacking; it does not change existing index bytes. Budget index-build memory, temporary space, WAL and vacuum work from the actual corpus, rather than treating upstream benchmark numbers as guarantees.
+The control file fixes objects in schema `turbovec`, sets `superuser = false`, and is not relocatable. Upstream 2.16.2 supports PostgreSQL 13–19; package availability must be checked separately. Binary replacement, tuning preload and major-format migration have separate restart/rebuild requirements. Version 2.10.3 parallelizes cold-backend code repacking; it does not change existing index bytes. Budget index-build memory, temporary space, WAL and vacuum work from the actual corpus, rather than treating upstream benchmark numbers as guarantees.
 
 ### 2.11.0 Upgrade
 
@@ -343,6 +323,22 @@ Version 2.14.1 fixes stale backend caches after overlapping commits, loss of IVF
 
 Two histories require a one-time REINDEX: an IVF index that received inserts after VACUUM on an earlier release, and any index emptied by VACUUM while a writer transaction remained open. On a quiet table, `VACUUM (INDEX_CLEANUP ON)` followed by `turbovec.turbovec_check(regclass)` can help compare the estimated live index entries with the covered heap rows. Include the non-null vector condition and any partial-index predicate; excess index entries require REINDEX. Other healthy 2.x indexes need no routine rebuild. This does not remove the mandatory 1.x rebuild or repair of existing corruption.
 
+### 2.15.2 REINDEX and VACUUM Fixes
+
+Version 2.15.2 drops a dirty per-backend mutation cache entry when a `REINDEX` keeps the relation OID but changes its relfilenode, then reloads the rebuilt file. It also keeps the flat-index vector count and moved slot in one WAL record, so a cancelled VACUUM cannot leave duplicate IDs. The wire format, SQL surface and scores remain unchanged; healthy 2.x indexes need no REINDEX. Reconnect long-lived writers after replacing the library; repair an index already corrupted by the older VACUUM bug with a plain `REINDEX INDEX`.
+
 ### 2.15.0 Empty IVF and Scan Caches
 
 An IVF index built empty is now reported as degraded, and scanning it after loading rows correctly falls back to a flat scan instead of failing when the rotation dimension is uninitialized. Query vectors stored out of line are decoded once per expression, and IVF rotation matrices are cached. Format 8, scoring and SQL objects remain unchanged. Install matching files, update to 2.15.0 and recycle old-library connections; healthy 2.x indexes need no routine REINDEX. Rebuild an empty-built IVF after loading if trained cells are wanted; adding only the new degraded-report flag to an existing empty build is optional. Earlier 1.x migration and corruption-repair requirements remain.
+
+### 2.16.0 IVF E-means Trainer
+
+Version 2.16.0 trains IVF coarse centroids with e-means by default, replacing the previous Lloyd trainer. The new `turbovec.ivf_use_emeans` boolean GUC defaults to `on`; set it to `off` before `CREATE INDEX` or `REINDEX` to retain Lloyd. `turbovec.ivf_emeans_epochs` defaults to 4 and accepts 1 through 64. This is a build-time choice: the SQL surface and wire format remain unchanged, existing indexes continue to read, and no forced REINDEX is required. Reindex an IVF index only when adopting centroids trained by the new method, and reconnect long-lived sessions after replacing the library.
+
+### 2.16.1 Locked Build Fix
+
+Version 2.16.1 commits the `Cargo.lock` matching the turbovec dependency required by 2.16.0, so locked, offline and Nix builds work from the release tag. Runtime behavior, wire format, SQL surface and scores are unchanged; healthy 2.x indexes do not need REINDEX. The normal update is `ALTER EXTENSION pg_turbovec UPDATE TO '2.16.1';`, followed by reconnecting sessions so they load the replacement library.
+
+### Version 2.16.2
+
+Version 2.16.2 promotes PostgreSQL 19 to supported status and updates the upstream pgrx dependency to 0.19.4. It preserves the SQL surface and index format, so this upgrade introduces no REINDEX requirement. Install matching library files and apply `ALTER EXTENSION pg_turbovec UPDATE TO '2.16.2';`. Earlier repair requirements still apply to indexes written by affected older versions.

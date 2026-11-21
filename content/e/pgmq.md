@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2660** | {{< badge content="pgmq" link="https://github.com/pgmq/pgmq" >}} | {{< ext "pgmq" >}} | `1.13.1` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **2660** | {{< badge content="pgmq" link="https://github.com/pgmq/pgmq" >}} | {{< ext "pgmq" >}} | `1.13.2` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 {.wide .expand}
 
 
@@ -40,38 +40,55 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.13.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgmq` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.13.1` | {{< bg "18" "pgmq_18" "green" >}} {{< bg "17" "pgmq_17" "green" >}} {{< bg "16" "pgmq_16" "green" >}} {{< bg "15" "pgmq_15" "green" >}} {{< bg "14" "pgmq_14" "green" >}} | `pgmq_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.13.1` | {{< bg "18" "postgresql-18-pgmq" "green" >}} {{< bg "17" "postgresql-17-pgmq" "green" >}} {{< bg "16" "postgresql-16-pgmq" "green" >}} {{< bg "15" "postgresql-15-pgmq" "green" >}} {{< bg "14" "postgresql-14-pgmq" "green" >}} | `postgresql-$v-pgmq` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.13.2` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pgmq` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.13.2` | {{< bg "19" "pgmq_19" "green" >}} {{< bg "18" "pgmq_18" "green" >}} {{< bg "17" "pgmq_17" "green" >}} {{< bg "16" "pgmq_16" "green" >}} {{< bg "15" "pgmq_15" "green" >}} | `pgmq_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.13.2` | {{< bg "19" "postgresql-19-pgmq" "green" >}} {{< bg "18" "postgresql-18-pgmq" "green" >}} {{< bg "17" "postgresql-17-pgmq" "green" >}} {{< bg "16" "postgresql-16-pgmq" "green" >}} {{< bg "15" "postgresql-15-pgmq" "green" >}} | `postgresql-$v-pgmq` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_18 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_17 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_16 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_15 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_14 : AVAIL 7" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_18 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_17 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_16 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_15 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_14 : AVAIL 7" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_18 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_17 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_16 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_15 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_14 : AVAIL 10" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_18 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_17 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_16 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_15 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_14 : AVAIL 10" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_18 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_17 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_16 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_15 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_14 : AVAIL 10" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_18 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_17 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_16 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_15 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 1.13.1" "pgmq_14 : AVAIL 10" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-pgmq : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-pgmq : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-pgmq : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-pgmq : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-pgmq : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-pgmq : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-pgmq : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-pgmq : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-pgmq : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-14-pgmq : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pgmq_19 : N/A 0" "gray" >}} | {{< bg "PGDG 1.13.2" "pgmq_18 : AVAIL 9" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_17 : AVAIL 9" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_16 : AVAIL 9" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_15 : AVAIL 9" "blue" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pgmq_19 : N/A 0" "gray" >}} | {{< bg "PGDG 1.13.2" "pgmq_18 : AVAIL 9" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_17 : AVAIL 9" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_16 : AVAIL 9" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_15 : AVAIL 9" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 1.13.2" "pgmq_19 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_15 : AVAIL 4" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.13.2" "pgmq_19 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_15 : AVAIL 4" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.13.2" "pgmq_19 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_15 : AVAIL 4" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 1.13.2" "pgmq_19 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_18 : AVAIL 14" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_17 : AVAIL 14" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_16 : AVAIL 14" "blue" >}} | {{< bg "PGDG 1.13.2" "pgmq_15 : AVAIL 14" "blue" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgmq : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgmq : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgmq : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgmq : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgmq : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgmq : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgmq : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgmq : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgmq : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgmq : MISS 0" "red" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.13.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
+{{< tab label="PG19" value="pg19" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgmq_19` | `1.13.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.8 KiB | [pgmq_19-1.13.2-1PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-9-x86_64/pgmq_19-1.13.2-1PGDG.rhel9.9.noarch.rpm) |
+| `pgmq_19` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.2 KiB | [pgmq_19-1.13.1-2PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-9-x86_64/pgmq_19-1.13.1-2PGDG.rhel9.9.noarch.rpm) |
+| `pgmq_19` | `1.13.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.8 KiB | [pgmq_19-1.13.2-1PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-9-aarch64/pgmq_19-1.13.2-1PGDG.rhel9.9.noarch.rpm) |
+| `pgmq_19` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.1 KiB | [pgmq_19-1.13.1-2PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-9-aarch64/pgmq_19-1.13.1-2PGDG.rhel9.9.noarch.rpm) |
+| `pgmq_19` | `1.13.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 62.0 KiB | [pgmq_19-1.13.2-1PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-10-x86_64/pgmq_19-1.13.2-1PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_19` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 61.3 KiB | [pgmq_19-1.13.1-2PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-10-x86_64/pgmq_19-1.13.1-2PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_19` | `1.13.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 62.0 KiB | [pgmq_19-1.13.2-1PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-10-aarch64/pgmq_19-1.13.2-1PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_19` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.3 KiB | [pgmq_19-1.13.1-2PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-10-aarch64/pgmq_19-1.13.1-2PGDG.rhel10.3.noarch.rpm) |
+{.downloads .wide .expand}
+
+{{< /tab >}}
 {{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgmq_18` | `1.13.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 65.5 KiB | [pgmq_18-1.13.2-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgmq_18-1.13.2-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_18` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 64.7 KiB | [pgmq_18-1.13.1-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgmq_18-1.13.1-2PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_18` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 51.1 KiB | [pgmq_18-1.13.1-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_18-1.13.1-1PGSTY.el8.noarch.rpm) |
 | `pgmq_18` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 64.6 KiB | [pgmq_18-1.13.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgmq_18-1.13.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_18` | `1.13.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 58.1 KiB | [pgmq_18-1.13.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgmq_18-1.13.0-1PGDG.rhel8.10.noarch.rpm) |
@@ -79,6 +96,8 @@ page_width: full
 | `pgmq_18` | `1.12.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.8 KiB | [pgmq_18-1.12.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgmq_18-1.12.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_18` | `1.11.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 54.0 KiB | [pgmq_18-1.11.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgmq_18-1.11.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_18` | `1.10.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 44.5 KiB | [pgmq_18-1.10.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgmq_18-1.10.1-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_18` | `1.13.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 65.5 KiB | [pgmq_18-1.13.2-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgmq_18-1.13.2-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_18` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 64.7 KiB | [pgmq_18-1.13.1-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgmq_18-1.13.1-2PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_18` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 51.1 KiB | [pgmq_18-1.13.1-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_18-1.13.1-1PGSTY.el8.noarch.rpm) |
 | `pgmq_18` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 64.6 KiB | [pgmq_18-1.13.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgmq_18-1.13.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_18` | `1.13.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 58.0 KiB | [pgmq_18-1.13.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgmq_18-1.13.0-1PGDG.rhel8.10.noarch.rpm) |
@@ -86,36 +105,22 @@ page_width: full
 | `pgmq_18` | `1.12.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 55.8 KiB | [pgmq_18-1.12.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgmq_18-1.12.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_18` | `1.11.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 53.9 KiB | [pgmq_18-1.11.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgmq_18-1.11.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_18` | `1.10.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 44.4 KiB | [pgmq_18-1.10.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgmq_18-1.10.1-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_18` | `1.13.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.8 KiB | [pgmq_18-1.13.2-1PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmq_18-1.13.2-1PGDG.rhel9.9.noarch.rpm) |
+| `pgmq_18` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.2 KiB | [pgmq_18-1.13.1-2PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmq_18-1.13.1-2PGDG.rhel9.9.noarch.rpm) |
 | `pgmq_18` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 48.2 KiB | [pgmq_18-1.13.1-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_18-1.13.1-1PGSTY.el9.noarch.rpm) |
-| `pgmq_18` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.0 KiB | [pgmq_18-1.13.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmq_18-1.13.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_18` | `1.13.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 55.3 KiB | [pgmq_18-1.13.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmq_18-1.13.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pgmq_18` | `1.12.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 41.0 KiB | [pgmq_18-1.12.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_18-1.12.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgmq_18` | `1.12.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 53.2 KiB | [pgmq_18-1.12.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmq_18-1.12.0-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_18` | `1.11.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.6 KiB | [pgmq_18-1.11.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmq_18-1.11.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_18` | `1.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 51.4 KiB | [pgmq_18-1.11.0-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmq_18-1.11.0-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_18` | `1.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 51.4 KiB | [pgmq_18-1.11.0-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmq_18-1.11.0-1PGDG.rhel9.6.noarch.rpm) |
-| `pgmq_18` | `1.10.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 42.7 KiB | [pgmq_18-1.10.1-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmq_18-1.10.1-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_18` | `1.10.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 42.7 KiB | [pgmq_18-1.10.1-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmq_18-1.10.1-1PGDG.rhel9.6.noarch.rpm) |
+| `pgmq_18` | `1.13.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.8 KiB | [pgmq_18-1.13.2-1PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmq_18-1.13.2-1PGDG.rhel9.9.noarch.rpm) |
+| `pgmq_18` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.1 KiB | [pgmq_18-1.13.1-2PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmq_18-1.13.1-2PGDG.rhel9.9.noarch.rpm) |
 | `pgmq_18` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 48.2 KiB | [pgmq_18-1.13.1-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_18-1.13.1-1PGSTY.el9.noarch.rpm) |
-| `pgmq_18` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.0 KiB | [pgmq_18-1.13.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmq_18-1.13.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_18` | `1.13.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 55.2 KiB | [pgmq_18-1.13.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmq_18-1.13.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pgmq_18` | `1.12.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 41.0 KiB | [pgmq_18-1.12.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_18-1.12.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_18` | `1.12.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.1 KiB | [pgmq_18-1.12.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmq_18-1.12.0-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_18` | `1.11.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 52.6 KiB | [pgmq_18-1.11.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmq_18-1.11.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_18` | `1.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 51.3 KiB | [pgmq_18-1.11.0-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmq_18-1.11.0-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_18` | `1.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 51.3 KiB | [pgmq_18-1.11.0-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmq_18-1.11.0-1PGDG.rhel9.6.noarch.rpm) |
-| `pgmq_18` | `1.10.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 42.6 KiB | [pgmq_18-1.10.1-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmq_18-1.10.1-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_18` | `1.10.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 42.6 KiB | [pgmq_18-1.10.1-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmq_18-1.10.1-1PGDG.rhel9.6.noarch.rpm) |
+| `pgmq_18` | `1.13.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 62.0 KiB | [pgmq_18-1.13.2-1PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmq_18-1.13.2-1PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_18` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 61.3 KiB | [pgmq_18-1.13.1-2PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmq_18-1.13.1-2PGDG.rhel10.3.noarch.rpm) |
 | `pgmq_18` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 48.4 KiB | [pgmq_18-1.13.1-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_18-1.13.1-1PGSTY.el10.noarch.rpm) |
-| `pgmq_18` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 61.3 KiB | [pgmq_18-1.13.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmq_18-1.13.1-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_18` | `1.13.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 55.4 KiB | [pgmq_18-1.13.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmq_18-1.13.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pgmq_18` | `1.12.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 41.1 KiB | [pgmq_18-1.12.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_18-1.12.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgmq_18` | `1.12.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 53.3 KiB | [pgmq_18-1.12.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmq_18-1.12.0-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_18` | `1.11.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 52.8 KiB | [pgmq_18-1.11.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmq_18-1.11.1-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_18` | `1.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 51.6 KiB | [pgmq_18-1.11.0-1PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmq_18-1.11.0-1PGDG.rhel10.1.noarch.rpm) |
-| `pgmq_18` | `1.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 51.9 KiB | [pgmq_18-1.11.0-1PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmq_18-1.11.0-1PGDG.rhel10.0.noarch.rpm) |
-| `pgmq_18` | `1.10.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 42.8 KiB | [pgmq_18-1.10.1-1PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmq_18-1.10.1-1PGDG.rhel10.1.noarch.rpm) |
-| `pgmq_18` | `1.10.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 43.2 KiB | [pgmq_18-1.10.1-1PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmq_18-1.10.1-1PGDG.rhel10.0.noarch.rpm) |
+| `pgmq_18` | `1.13.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 62.0 KiB | [pgmq_18-1.13.2-1PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgmq_18-1.13.2-1PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_18` | `1.13.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 62.0 KiB | [pgmq_18-1.13.2-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgmq_18-1.13.2-1PGDG.rhel10.2.noarch.rpm) |
+| `pgmq_18` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.3 KiB | [pgmq_18-1.13.1-2PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgmq_18-1.13.1-2PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_18` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.3 KiB | [pgmq_18-1.13.1-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgmq_18-1.13.1-2PGDG.rhel10.2.noarch.rpm) |
 | `pgmq_18` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 48.4 KiB | [pgmq_18-1.13.1-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_18-1.13.1-1PGSTY.el10.noarch.rpm) |
 | `pgmq_18` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.2 KiB | [pgmq_18-1.13.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgmq_18-1.13.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pgmq_18` | `1.13.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 55.4 KiB | [pgmq_18-1.13.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgmq_18-1.13.0-1PGDG.rhel10.2.noarch.rpm) |
@@ -143,6 +148,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgmq_17` | `1.13.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 65.5 KiB | [pgmq_17-1.13.2-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgmq_17-1.13.2-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_17` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 64.7 KiB | [pgmq_17-1.13.1-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgmq_17-1.13.1-2PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_17` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 51.1 KiB | [pgmq_17-1.13.1-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_17-1.13.1-1PGSTY.el8.noarch.rpm) |
 | `pgmq_17` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 64.6 KiB | [pgmq_17-1.13.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgmq_17-1.13.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_17` | `1.13.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 58.1 KiB | [pgmq_17-1.13.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgmq_17-1.13.0-1PGDG.rhel8.10.noarch.rpm) |
@@ -150,6 +157,8 @@ page_width: full
 | `pgmq_17` | `1.12.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.8 KiB | [pgmq_17-1.12.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgmq_17-1.12.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_17` | `1.11.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 54.0 KiB | [pgmq_17-1.11.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgmq_17-1.11.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_17` | `1.10.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 44.5 KiB | [pgmq_17-1.10.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgmq_17-1.10.1-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_17` | `1.13.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 65.5 KiB | [pgmq_17-1.13.2-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgmq_17-1.13.2-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_17` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 64.7 KiB | [pgmq_17-1.13.1-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgmq_17-1.13.1-2PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_17` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 51.1 KiB | [pgmq_17-1.13.1-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_17-1.13.1-1PGSTY.el8.noarch.rpm) |
 | `pgmq_17` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 64.6 KiB | [pgmq_17-1.13.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgmq_17-1.13.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_17` | `1.13.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 58.0 KiB | [pgmq_17-1.13.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgmq_17-1.13.0-1PGDG.rhel8.10.noarch.rpm) |
@@ -157,36 +166,22 @@ page_width: full
 | `pgmq_17` | `1.12.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 55.8 KiB | [pgmq_17-1.12.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgmq_17-1.12.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_17` | `1.11.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 53.9 KiB | [pgmq_17-1.11.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgmq_17-1.11.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_17` | `1.10.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 44.4 KiB | [pgmq_17-1.10.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgmq_17-1.10.1-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_17` | `1.13.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.8 KiB | [pgmq_17-1.13.2-1PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmq_17-1.13.2-1PGDG.rhel9.9.noarch.rpm) |
+| `pgmq_17` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.2 KiB | [pgmq_17-1.13.1-2PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmq_17-1.13.1-2PGDG.rhel9.9.noarch.rpm) |
 | `pgmq_17` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 48.2 KiB | [pgmq_17-1.13.1-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_17-1.13.1-1PGSTY.el9.noarch.rpm) |
-| `pgmq_17` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.1 KiB | [pgmq_17-1.13.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmq_17-1.13.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_17` | `1.13.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 55.3 KiB | [pgmq_17-1.13.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmq_17-1.13.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pgmq_17` | `1.12.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 41.0 KiB | [pgmq_17-1.12.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_17-1.12.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgmq_17` | `1.12.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 53.2 KiB | [pgmq_17-1.12.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmq_17-1.12.0-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_17` | `1.11.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.6 KiB | [pgmq_17-1.11.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmq_17-1.11.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_17` | `1.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 51.4 KiB | [pgmq_17-1.11.0-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmq_17-1.11.0-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_17` | `1.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 51.4 KiB | [pgmq_17-1.11.0-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmq_17-1.11.0-1PGDG.rhel9.6.noarch.rpm) |
-| `pgmq_17` | `1.10.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 42.7 KiB | [pgmq_17-1.10.1-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmq_17-1.10.1-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_17` | `1.10.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 42.7 KiB | [pgmq_17-1.10.1-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmq_17-1.10.1-1PGDG.rhel9.6.noarch.rpm) |
+| `pgmq_17` | `1.13.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.8 KiB | [pgmq_17-1.13.2-1PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmq_17-1.13.2-1PGDG.rhel9.9.noarch.rpm) |
+| `pgmq_17` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.1 KiB | [pgmq_17-1.13.1-2PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmq_17-1.13.1-2PGDG.rhel9.9.noarch.rpm) |
 | `pgmq_17` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 48.2 KiB | [pgmq_17-1.13.1-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_17-1.13.1-1PGSTY.el9.noarch.rpm) |
-| `pgmq_17` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.0 KiB | [pgmq_17-1.13.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmq_17-1.13.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_17` | `1.13.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 55.2 KiB | [pgmq_17-1.13.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmq_17-1.13.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pgmq_17` | `1.12.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 41.0 KiB | [pgmq_17-1.12.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_17-1.12.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_17` | `1.12.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.1 KiB | [pgmq_17-1.12.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmq_17-1.12.0-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_17` | `1.11.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 52.6 KiB | [pgmq_17-1.11.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmq_17-1.11.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_17` | `1.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 51.3 KiB | [pgmq_17-1.11.0-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmq_17-1.11.0-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_17` | `1.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 51.3 KiB | [pgmq_17-1.11.0-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmq_17-1.11.0-1PGDG.rhel9.6.noarch.rpm) |
-| `pgmq_17` | `1.10.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 42.6 KiB | [pgmq_17-1.10.1-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmq_17-1.10.1-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_17` | `1.10.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 42.6 KiB | [pgmq_17-1.10.1-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmq_17-1.10.1-1PGDG.rhel9.6.noarch.rpm) |
+| `pgmq_17` | `1.13.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 62.0 KiB | [pgmq_17-1.13.2-1PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmq_17-1.13.2-1PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_17` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 61.3 KiB | [pgmq_17-1.13.1-2PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmq_17-1.13.1-2PGDG.rhel10.3.noarch.rpm) |
 | `pgmq_17` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 48.4 KiB | [pgmq_17-1.13.1-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_17-1.13.1-1PGSTY.el10.noarch.rpm) |
-| `pgmq_17` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 61.3 KiB | [pgmq_17-1.13.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmq_17-1.13.1-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_17` | `1.13.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 55.5 KiB | [pgmq_17-1.13.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmq_17-1.13.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pgmq_17` | `1.12.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 41.1 KiB | [pgmq_17-1.12.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_17-1.12.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgmq_17` | `1.12.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 53.3 KiB | [pgmq_17-1.12.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmq_17-1.12.0-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_17` | `1.11.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 52.8 KiB | [pgmq_17-1.11.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmq_17-1.11.1-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_17` | `1.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 51.6 KiB | [pgmq_17-1.11.0-1PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmq_17-1.11.0-1PGDG.rhel10.1.noarch.rpm) |
-| `pgmq_17` | `1.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 51.9 KiB | [pgmq_17-1.11.0-1PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmq_17-1.11.0-1PGDG.rhel10.0.noarch.rpm) |
-| `pgmq_17` | `1.10.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 42.8 KiB | [pgmq_17-1.10.1-1PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmq_17-1.10.1-1PGDG.rhel10.1.noarch.rpm) |
-| `pgmq_17` | `1.10.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 43.2 KiB | [pgmq_17-1.10.1-1PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmq_17-1.10.1-1PGDG.rhel10.0.noarch.rpm) |
+| `pgmq_17` | `1.13.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 62.0 KiB | [pgmq_17-1.13.2-1PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgmq_17-1.13.2-1PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_17` | `1.13.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 62.0 KiB | [pgmq_17-1.13.2-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgmq_17-1.13.2-1PGDG.rhel10.2.noarch.rpm) |
+| `pgmq_17` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.3 KiB | [pgmq_17-1.13.1-2PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgmq_17-1.13.1-2PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_17` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.3 KiB | [pgmq_17-1.13.1-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgmq_17-1.13.1-2PGDG.rhel10.2.noarch.rpm) |
 | `pgmq_17` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 48.4 KiB | [pgmq_17-1.13.1-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_17-1.13.1-1PGSTY.el10.noarch.rpm) |
 | `pgmq_17` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.2 KiB | [pgmq_17-1.13.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgmq_17-1.13.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pgmq_17` | `1.13.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 55.4 KiB | [pgmq_17-1.13.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgmq_17-1.13.0-1PGDG.rhel10.2.noarch.rpm) |
@@ -214,6 +209,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgmq_16` | `1.13.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 65.5 KiB | [pgmq_16-1.13.2-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgmq_16-1.13.2-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_16` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 64.7 KiB | [pgmq_16-1.13.1-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgmq_16-1.13.1-2PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_16` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 51.1 KiB | [pgmq_16-1.13.1-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_16-1.13.1-1PGSTY.el8.noarch.rpm) |
 | `pgmq_16` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 64.6 KiB | [pgmq_16-1.13.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgmq_16-1.13.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_16` | `1.13.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 58.1 KiB | [pgmq_16-1.13.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgmq_16-1.13.0-1PGDG.rhel8.10.noarch.rpm) |
@@ -221,6 +218,8 @@ page_width: full
 | `pgmq_16` | `1.12.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.8 KiB | [pgmq_16-1.12.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgmq_16-1.12.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_16` | `1.11.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 54.0 KiB | [pgmq_16-1.11.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgmq_16-1.11.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_16` | `1.10.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 44.5 KiB | [pgmq_16-1.10.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgmq_16-1.10.1-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_16` | `1.13.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 65.5 KiB | [pgmq_16-1.13.2-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgmq_16-1.13.2-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_16` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 64.7 KiB | [pgmq_16-1.13.1-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgmq_16-1.13.1-2PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_16` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 51.1 KiB | [pgmq_16-1.13.1-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_16-1.13.1-1PGSTY.el8.noarch.rpm) |
 | `pgmq_16` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 64.6 KiB | [pgmq_16-1.13.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgmq_16-1.13.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_16` | `1.13.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 58.0 KiB | [pgmq_16-1.13.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgmq_16-1.13.0-1PGDG.rhel8.10.noarch.rpm) |
@@ -228,36 +227,22 @@ page_width: full
 | `pgmq_16` | `1.12.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 55.8 KiB | [pgmq_16-1.12.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgmq_16-1.12.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_16` | `1.11.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 53.9 KiB | [pgmq_16-1.11.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgmq_16-1.11.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_16` | `1.10.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 44.4 KiB | [pgmq_16-1.10.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgmq_16-1.10.1-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_16` | `1.13.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.8 KiB | [pgmq_16-1.13.2-1PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmq_16-1.13.2-1PGDG.rhel9.9.noarch.rpm) |
+| `pgmq_16` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.2 KiB | [pgmq_16-1.13.1-2PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmq_16-1.13.1-2PGDG.rhel9.9.noarch.rpm) |
 | `pgmq_16` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 48.2 KiB | [pgmq_16-1.13.1-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_16-1.13.1-1PGSTY.el9.noarch.rpm) |
-| `pgmq_16` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.1 KiB | [pgmq_16-1.13.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmq_16-1.13.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_16` | `1.13.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 55.3 KiB | [pgmq_16-1.13.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmq_16-1.13.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pgmq_16` | `1.12.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 41.0 KiB | [pgmq_16-1.12.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_16-1.12.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgmq_16` | `1.12.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 53.2 KiB | [pgmq_16-1.12.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmq_16-1.12.0-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_16` | `1.11.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.6 KiB | [pgmq_16-1.11.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmq_16-1.11.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_16` | `1.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 51.4 KiB | [pgmq_16-1.11.0-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmq_16-1.11.0-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_16` | `1.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 51.4 KiB | [pgmq_16-1.11.0-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmq_16-1.11.0-1PGDG.rhel9.6.noarch.rpm) |
-| `pgmq_16` | `1.10.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 42.7 KiB | [pgmq_16-1.10.1-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmq_16-1.10.1-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_16` | `1.10.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 42.7 KiB | [pgmq_16-1.10.1-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmq_16-1.10.1-1PGDG.rhel9.6.noarch.rpm) |
+| `pgmq_16` | `1.13.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.8 KiB | [pgmq_16-1.13.2-1PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmq_16-1.13.2-1PGDG.rhel9.9.noarch.rpm) |
+| `pgmq_16` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.1 KiB | [pgmq_16-1.13.1-2PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmq_16-1.13.1-2PGDG.rhel9.9.noarch.rpm) |
 | `pgmq_16` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 48.2 KiB | [pgmq_16-1.13.1-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_16-1.13.1-1PGSTY.el9.noarch.rpm) |
-| `pgmq_16` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.0 KiB | [pgmq_16-1.13.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmq_16-1.13.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_16` | `1.13.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 55.2 KiB | [pgmq_16-1.13.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmq_16-1.13.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pgmq_16` | `1.12.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 41.0 KiB | [pgmq_16-1.12.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_16-1.12.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_16` | `1.12.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.1 KiB | [pgmq_16-1.12.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmq_16-1.12.0-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_16` | `1.11.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 52.6 KiB | [pgmq_16-1.11.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmq_16-1.11.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_16` | `1.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 51.3 KiB | [pgmq_16-1.11.0-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmq_16-1.11.0-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_16` | `1.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 51.3 KiB | [pgmq_16-1.11.0-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmq_16-1.11.0-1PGDG.rhel9.6.noarch.rpm) |
-| `pgmq_16` | `1.10.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 42.6 KiB | [pgmq_16-1.10.1-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmq_16-1.10.1-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_16` | `1.10.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 42.6 KiB | [pgmq_16-1.10.1-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmq_16-1.10.1-1PGDG.rhel9.6.noarch.rpm) |
+| `pgmq_16` | `1.13.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 62.0 KiB | [pgmq_16-1.13.2-1PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmq_16-1.13.2-1PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_16` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 61.3 KiB | [pgmq_16-1.13.1-2PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmq_16-1.13.1-2PGDG.rhel10.3.noarch.rpm) |
 | `pgmq_16` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 48.4 KiB | [pgmq_16-1.13.1-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_16-1.13.1-1PGSTY.el10.noarch.rpm) |
-| `pgmq_16` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 61.2 KiB | [pgmq_16-1.13.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmq_16-1.13.1-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_16` | `1.13.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 55.5 KiB | [pgmq_16-1.13.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmq_16-1.13.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pgmq_16` | `1.12.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 41.1 KiB | [pgmq_16-1.12.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_16-1.12.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgmq_16` | `1.12.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 53.3 KiB | [pgmq_16-1.12.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmq_16-1.12.0-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_16` | `1.11.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 52.8 KiB | [pgmq_16-1.11.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmq_16-1.11.1-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_16` | `1.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 51.6 KiB | [pgmq_16-1.11.0-1PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmq_16-1.11.0-1PGDG.rhel10.1.noarch.rpm) |
-| `pgmq_16` | `1.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 51.9 KiB | [pgmq_16-1.11.0-1PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmq_16-1.11.0-1PGDG.rhel10.0.noarch.rpm) |
-| `pgmq_16` | `1.10.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 42.8 KiB | [pgmq_16-1.10.1-1PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmq_16-1.10.1-1PGDG.rhel10.1.noarch.rpm) |
-| `pgmq_16` | `1.10.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 43.2 KiB | [pgmq_16-1.10.1-1PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmq_16-1.10.1-1PGDG.rhel10.0.noarch.rpm) |
+| `pgmq_16` | `1.13.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 62.0 KiB | [pgmq_16-1.13.2-1PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgmq_16-1.13.2-1PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_16` | `1.13.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 62.0 KiB | [pgmq_16-1.13.2-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgmq_16-1.13.2-1PGDG.rhel10.2.noarch.rpm) |
+| `pgmq_16` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.3 KiB | [pgmq_16-1.13.1-2PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgmq_16-1.13.1-2PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_16` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.3 KiB | [pgmq_16-1.13.1-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgmq_16-1.13.1-2PGDG.rhel10.2.noarch.rpm) |
 | `pgmq_16` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 48.4 KiB | [pgmq_16-1.13.1-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_16-1.13.1-1PGSTY.el10.noarch.rpm) |
 | `pgmq_16` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.2 KiB | [pgmq_16-1.13.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgmq_16-1.13.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pgmq_16` | `1.13.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 55.4 KiB | [pgmq_16-1.13.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgmq_16-1.13.0-1PGDG.rhel10.2.noarch.rpm) |
@@ -285,6 +270,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgmq_15` | `1.13.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 65.5 KiB | [pgmq_15-1.13.2-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgmq_15-1.13.2-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_15` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 64.7 KiB | [pgmq_15-1.13.1-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgmq_15-1.13.1-2PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_15` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 51.1 KiB | [pgmq_15-1.13.1-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_15-1.13.1-1PGSTY.el8.noarch.rpm) |
 | `pgmq_15` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 64.6 KiB | [pgmq_15-1.13.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgmq_15-1.13.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_15` | `1.13.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 58.1 KiB | [pgmq_15-1.13.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgmq_15-1.13.0-1PGDG.rhel8.10.noarch.rpm) |
@@ -292,6 +279,8 @@ page_width: full
 | `pgmq_15` | `1.12.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.8 KiB | [pgmq_15-1.12.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgmq_15-1.12.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_15` | `1.11.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 54.0 KiB | [pgmq_15-1.11.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgmq_15-1.11.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_15` | `1.10.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 44.5 KiB | [pgmq_15-1.10.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgmq_15-1.10.1-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_15` | `1.13.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 65.5 KiB | [pgmq_15-1.13.2-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgmq_15-1.13.2-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_15` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 64.7 KiB | [pgmq_15-1.13.1-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgmq_15-1.13.1-2PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_15` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 51.1 KiB | [pgmq_15-1.13.1-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_15-1.13.1-1PGSTY.el8.noarch.rpm) |
 | `pgmq_15` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 64.6 KiB | [pgmq_15-1.13.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgmq_15-1.13.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_15` | `1.13.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 58.0 KiB | [pgmq_15-1.13.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgmq_15-1.13.0-1PGDG.rhel8.10.noarch.rpm) |
@@ -299,36 +288,22 @@ page_width: full
 | `pgmq_15` | `1.12.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 55.8 KiB | [pgmq_15-1.12.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgmq_15-1.12.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_15` | `1.11.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 53.9 KiB | [pgmq_15-1.11.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgmq_15-1.11.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pgmq_15` | `1.10.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 44.4 KiB | [pgmq_15-1.10.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgmq_15-1.10.1-1PGDG.rhel8.10.noarch.rpm) |
+| `pgmq_15` | `1.13.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.8 KiB | [pgmq_15-1.13.2-1PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmq_15-1.13.2-1PGDG.rhel9.9.noarch.rpm) |
+| `pgmq_15` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.2 KiB | [pgmq_15-1.13.1-2PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmq_15-1.13.1-2PGDG.rhel9.9.noarch.rpm) |
 | `pgmq_15` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 48.2 KiB | [pgmq_15-1.13.1-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_15-1.13.1-1PGSTY.el9.noarch.rpm) |
-| `pgmq_15` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.1 KiB | [pgmq_15-1.13.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmq_15-1.13.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_15` | `1.13.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 55.3 KiB | [pgmq_15-1.13.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmq_15-1.13.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pgmq_15` | `1.12.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 41.0 KiB | [pgmq_15-1.12.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_15-1.12.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgmq_15` | `1.12.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 53.2 KiB | [pgmq_15-1.12.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmq_15-1.12.0-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_15` | `1.11.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.6 KiB | [pgmq_15-1.11.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmq_15-1.11.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_15` | `1.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 51.4 KiB | [pgmq_15-1.11.0-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmq_15-1.11.0-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_15` | `1.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 51.4 KiB | [pgmq_15-1.11.0-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmq_15-1.11.0-1PGDG.rhel9.6.noarch.rpm) |
-| `pgmq_15` | `1.10.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 42.7 KiB | [pgmq_15-1.10.1-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmq_15-1.10.1-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_15` | `1.10.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 42.7 KiB | [pgmq_15-1.10.1-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmq_15-1.10.1-1PGDG.rhel9.6.noarch.rpm) |
+| `pgmq_15` | `1.13.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.8 KiB | [pgmq_15-1.13.2-1PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgmq_15-1.13.2-1PGDG.rhel9.9.noarch.rpm) |
+| `pgmq_15` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.1 KiB | [pgmq_15-1.13.1-2PGDG.rhel9.9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgmq_15-1.13.1-2PGDG.rhel9.9.noarch.rpm) |
 | `pgmq_15` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 48.2 KiB | [pgmq_15-1.13.1-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_15-1.13.1-1PGSTY.el9.noarch.rpm) |
-| `pgmq_15` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.0 KiB | [pgmq_15-1.13.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgmq_15-1.13.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_15` | `1.13.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 55.2 KiB | [pgmq_15-1.13.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgmq_15-1.13.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pgmq_15` | `1.12.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 41.0 KiB | [pgmq_15-1.12.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_15-1.12.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_15` | `1.12.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.1 KiB | [pgmq_15-1.12.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgmq_15-1.12.0-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_15` | `1.11.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 52.6 KiB | [pgmq_15-1.11.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgmq_15-1.11.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_15` | `1.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 51.3 KiB | [pgmq_15-1.11.0-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgmq_15-1.11.0-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_15` | `1.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 51.3 KiB | [pgmq_15-1.11.0-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgmq_15-1.11.0-1PGDG.rhel9.6.noarch.rpm) |
-| `pgmq_15` | `1.10.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 42.6 KiB | [pgmq_15-1.10.1-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgmq_15-1.10.1-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_15` | `1.10.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 42.6 KiB | [pgmq_15-1.10.1-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgmq_15-1.10.1-1PGDG.rhel9.6.noarch.rpm) |
+| `pgmq_15` | `1.13.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 62.0 KiB | [pgmq_15-1.13.2-1PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmq_15-1.13.2-1PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_15` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 61.3 KiB | [pgmq_15-1.13.1-2PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmq_15-1.13.1-2PGDG.rhel10.3.noarch.rpm) |
 | `pgmq_15` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 48.4 KiB | [pgmq_15-1.13.1-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_15-1.13.1-1PGSTY.el10.noarch.rpm) |
-| `pgmq_15` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 61.2 KiB | [pgmq_15-1.13.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmq_15-1.13.1-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_15` | `1.13.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 55.5 KiB | [pgmq_15-1.13.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmq_15-1.13.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pgmq_15` | `1.12.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 41.1 KiB | [pgmq_15-1.12.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_15-1.12.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgmq_15` | `1.12.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 53.3 KiB | [pgmq_15-1.12.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmq_15-1.12.0-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_15` | `1.11.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 52.8 KiB | [pgmq_15-1.11.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmq_15-1.11.1-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_15` | `1.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 51.6 KiB | [pgmq_15-1.11.0-1PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmq_15-1.11.0-1PGDG.rhel10.1.noarch.rpm) |
-| `pgmq_15` | `1.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 51.9 KiB | [pgmq_15-1.11.0-1PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmq_15-1.11.0-1PGDG.rhel10.0.noarch.rpm) |
-| `pgmq_15` | `1.10.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 42.8 KiB | [pgmq_15-1.10.1-1PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmq_15-1.10.1-1PGDG.rhel10.1.noarch.rpm) |
-| `pgmq_15` | `1.10.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 43.2 KiB | [pgmq_15-1.10.1-1PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmq_15-1.10.1-1PGDG.rhel10.0.noarch.rpm) |
+| `pgmq_15` | `1.13.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 62.0 KiB | [pgmq_15-1.13.2-1PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgmq_15-1.13.2-1PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_15` | `1.13.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 62.0 KiB | [pgmq_15-1.13.2-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgmq_15-1.13.2-1PGDG.rhel10.2.noarch.rpm) |
+| `pgmq_15` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.3 KiB | [pgmq_15-1.13.1-2PGDG.rhel10.3.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgmq_15-1.13.1-2PGDG.rhel10.3.noarch.rpm) |
+| `pgmq_15` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.3 KiB | [pgmq_15-1.13.1-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgmq_15-1.13.1-2PGDG.rhel10.2.noarch.rpm) |
 | `pgmq_15` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 48.4 KiB | [pgmq_15-1.13.1-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_15-1.13.1-1PGSTY.el10.noarch.rpm) |
 | `pgmq_15` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.2 KiB | [pgmq_15-1.13.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgmq_15-1.13.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pgmq_15` | `1.13.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 55.4 KiB | [pgmq_15-1.13.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgmq_15-1.13.0-1PGDG.rhel10.2.noarch.rpm) |
@@ -351,84 +326,13 @@ page_width: full
 | `postgresql-15-pgmq` | `1.13.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 33.2 KiB | [postgresql-15-pgmq_1.13.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmq/postgresql-15-pgmq_1.13.1-1PGSTY~resolute_all.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmq_14` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 51.1 KiB | [pgmq_14-1.13.1-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_14-1.13.1-1PGSTY.el8.noarch.rpm) |
-| `pgmq_14` | `1.13.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 64.6 KiB | [pgmq_14-1.13.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgmq_14-1.13.1-1PGDG.rhel8.10.noarch.rpm) |
-| `pgmq_14` | `1.13.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 58.1 KiB | [pgmq_14-1.13.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgmq_14-1.13.0-1PGDG.rhel8.10.noarch.rpm) |
-| `pgmq_14` | `1.12.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 43.0 KiB | [pgmq_14-1.12.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_14-1.12.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgmq_14` | `1.12.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.8 KiB | [pgmq_14-1.12.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgmq_14-1.12.0-1PGDG.rhel8.10.noarch.rpm) |
-| `pgmq_14` | `1.11.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 54.0 KiB | [pgmq_14-1.11.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgmq_14-1.11.0-1PGDG.rhel8.10.noarch.rpm) |
-| `pgmq_14` | `1.10.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 44.5 KiB | [pgmq_14-1.10.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgmq_14-1.10.1-1PGDG.rhel8.10.noarch.rpm) |
-| `pgmq_14` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 51.1 KiB | [pgmq_14-1.13.1-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_14-1.13.1-1PGSTY.el8.noarch.rpm) |
-| `pgmq_14` | `1.13.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 64.6 KiB | [pgmq_14-1.13.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgmq_14-1.13.1-1PGDG.rhel8.10.noarch.rpm) |
-| `pgmq_14` | `1.13.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 58.0 KiB | [pgmq_14-1.13.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgmq_14-1.13.0-1PGDG.rhel8.10.noarch.rpm) |
-| `pgmq_14` | `1.12.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 43.0 KiB | [pgmq_14-1.12.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_14-1.12.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmq_14` | `1.12.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 55.8 KiB | [pgmq_14-1.12.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgmq_14-1.12.0-1PGDG.rhel8.10.noarch.rpm) |
-| `pgmq_14` | `1.11.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 53.9 KiB | [pgmq_14-1.11.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgmq_14-1.11.0-1PGDG.rhel8.10.noarch.rpm) |
-| `pgmq_14` | `1.10.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 44.4 KiB | [pgmq_14-1.10.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgmq_14-1.10.1-1PGDG.rhel8.10.noarch.rpm) |
-| `pgmq_14` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 48.2 KiB | [pgmq_14-1.13.1-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_14-1.13.1-1PGSTY.el9.noarch.rpm) |
-| `pgmq_14` | `1.13.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.1 KiB | [pgmq_14-1.13.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgmq_14-1.13.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_14` | `1.13.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 55.3 KiB | [pgmq_14-1.13.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgmq_14-1.13.0-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_14` | `1.12.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 41.0 KiB | [pgmq_14-1.12.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_14-1.12.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgmq_14` | `1.12.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 53.2 KiB | [pgmq_14-1.12.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgmq_14-1.12.0-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_14` | `1.11.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.6 KiB | [pgmq_14-1.11.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgmq_14-1.11.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_14` | `1.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 51.4 KiB | [pgmq_14-1.11.0-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgmq_14-1.11.0-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_14` | `1.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 51.4 KiB | [pgmq_14-1.11.0-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgmq_14-1.11.0-1PGDG.rhel9.6.noarch.rpm) |
-| `pgmq_14` | `1.10.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 42.7 KiB | [pgmq_14-1.10.1-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgmq_14-1.10.1-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_14` | `1.10.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 42.7 KiB | [pgmq_14-1.10.1-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgmq_14-1.10.1-1PGDG.rhel9.6.noarch.rpm) |
-| `pgmq_14` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 48.2 KiB | [pgmq_14-1.13.1-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_14-1.13.1-1PGSTY.el9.noarch.rpm) |
-| `pgmq_14` | `1.13.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.0 KiB | [pgmq_14-1.13.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgmq_14-1.13.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_14` | `1.13.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 55.2 KiB | [pgmq_14-1.13.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgmq_14-1.13.0-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_14` | `1.12.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 41.0 KiB | [pgmq_14-1.12.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_14-1.12.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_14` | `1.12.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.1 KiB | [pgmq_14-1.12.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgmq_14-1.12.0-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_14` | `1.11.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 52.6 KiB | [pgmq_14-1.11.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgmq_14-1.11.1-1PGDG.rhel9.8.noarch.rpm) |
-| `pgmq_14` | `1.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 51.3 KiB | [pgmq_14-1.11.0-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgmq_14-1.11.0-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_14` | `1.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 51.3 KiB | [pgmq_14-1.11.0-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgmq_14-1.11.0-1PGDG.rhel9.6.noarch.rpm) |
-| `pgmq_14` | `1.10.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 42.6 KiB | [pgmq_14-1.10.1-1PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgmq_14-1.10.1-1PGDG.rhel9.7.noarch.rpm) |
-| `pgmq_14` | `1.10.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 42.6 KiB | [pgmq_14-1.10.1-1PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgmq_14-1.10.1-1PGDG.rhel9.6.noarch.rpm) |
-| `pgmq_14` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 48.4 KiB | [pgmq_14-1.13.1-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_14-1.13.1-1PGSTY.el10.noarch.rpm) |
-| `pgmq_14` | `1.13.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 61.2 KiB | [pgmq_14-1.13.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgmq_14-1.13.1-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_14` | `1.13.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 55.5 KiB | [pgmq_14-1.13.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgmq_14-1.13.0-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_14` | `1.12.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 41.1 KiB | [pgmq_14-1.12.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_14-1.12.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgmq_14` | `1.12.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 53.3 KiB | [pgmq_14-1.12.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgmq_14-1.12.0-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_14` | `1.11.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 52.8 KiB | [pgmq_14-1.11.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgmq_14-1.11.1-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_14` | `1.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 51.6 KiB | [pgmq_14-1.11.0-1PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgmq_14-1.11.0-1PGDG.rhel10.1.noarch.rpm) |
-| `pgmq_14` | `1.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 51.9 KiB | [pgmq_14-1.11.0-1PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgmq_14-1.11.0-1PGDG.rhel10.0.noarch.rpm) |
-| `pgmq_14` | `1.10.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 42.8 KiB | [pgmq_14-1.10.1-1PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgmq_14-1.10.1-1PGDG.rhel10.1.noarch.rpm) |
-| `pgmq_14` | `1.10.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 43.2 KiB | [pgmq_14-1.10.1-1PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgmq_14-1.10.1-1PGDG.rhel10.0.noarch.rpm) |
-| `pgmq_14` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 48.4 KiB | [pgmq_14-1.13.1-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_14-1.13.1-1PGSTY.el10.noarch.rpm) |
-| `pgmq_14` | `1.13.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 61.2 KiB | [pgmq_14-1.13.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgmq_14-1.13.1-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_14` | `1.13.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 55.4 KiB | [pgmq_14-1.13.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgmq_14-1.13.0-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_14` | `1.12.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 41.1 KiB | [pgmq_14-1.12.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_14-1.12.0-1PIGSTY.el10.aarch64.rpm) |
-| `pgmq_14` | `1.12.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 53.3 KiB | [pgmq_14-1.12.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgmq_14-1.12.0-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_14` | `1.11.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 52.7 KiB | [pgmq_14-1.11.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgmq_14-1.11.1-1PGDG.rhel10.2.noarch.rpm) |
-| `pgmq_14` | `1.11.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 51.5 KiB | [pgmq_14-1.11.0-1PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgmq_14-1.11.0-1PGDG.rhel10.1.noarch.rpm) |
-| `pgmq_14` | `1.11.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 51.5 KiB | [pgmq_14-1.11.0-1PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgmq_14-1.11.0-1PGDG.rhel10.0.noarch.rpm) |
-| `pgmq_14` | `1.10.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 42.8 KiB | [pgmq_14-1.10.1-1PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgmq_14-1.10.1-1PGDG.rhel10.1.noarch.rpm) |
-| `pgmq_14` | `1.10.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 42.8 KiB | [pgmq_14-1.10.1-1PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgmq_14-1.10.1-1PGDG.rhel10.0.noarch.rpm) |
-| `postgresql-14-pgmq` | `1.13.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 32.9 KiB | [postgresql-14-pgmq_1.13.1-1PGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmq/postgresql-14-pgmq_1.13.1-1PGSTY~bookworm_all.deb) |
-| `postgresql-14-pgmq` | `1.13.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 32.9 KiB | [postgresql-14-pgmq_1.13.1-1PGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmq/postgresql-14-pgmq_1.13.1-1PGSTY~bookworm_all.deb) |
-| `postgresql-14-pgmq` | `1.13.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 32.9 KiB | [postgresql-14-pgmq_1.13.1-1PGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmq/postgresql-14-pgmq_1.13.1-1PGSTY~trixie_all.deb) |
-| `postgresql-14-pgmq` | `1.13.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 32.9 KiB | [postgresql-14-pgmq_1.13.1-1PGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmq/postgresql-14-pgmq_1.13.1-1PGSTY~trixie_all.deb) |
-| `postgresql-14-pgmq` | `1.13.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 33.3 KiB | [postgresql-14-pgmq_1.13.1-1PGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmq/postgresql-14-pgmq_1.13.1-1PGSTY~jammy_all.deb) |
-| `postgresql-14-pgmq` | `1.13.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 33.3 KiB | [postgresql-14-pgmq_1.13.1-1PGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmq/postgresql-14-pgmq_1.13.1-1PGSTY~jammy_all.deb) |
-| `postgresql-14-pgmq` | `1.13.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 33.2 KiB | [postgresql-14-pgmq_1.13.1-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmq/postgresql-14-pgmq_1.13.1-1PGSTY~noble_all.deb) |
-| `postgresql-14-pgmq` | `1.13.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 33.2 KiB | [postgresql-14-pgmq_1.13.1-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmq/postgresql-14-pgmq_1.13.1-1PGSTY~noble_all.deb) |
-| `postgresql-14-pgmq` | `1.13.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 33.2 KiB | [postgresql-14-pgmq_1.13.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmq/postgresql-14-pgmq_1.13.1-1PGSTY~resolute_all.deb) |
-| `postgresql-14-pgmq` | `1.13.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 33.2 KiB | [postgresql-14-pgmq_1.13.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmq/postgresql-14-pgmq_1.13.1-1PGSTY~resolute_all.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgmq/pgmq" title="Repository" icon="github" subtitle="github.com/pgmq/pgmq" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmq-1.13.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmq-1.13.2.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -450,11 +354,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pgmq;		# install via package name, for the active PG version
 
+pig install pgmq -v 19;   # install for PG 19
 pig install pgmq -v 18;   # install for PG 18
 pig install pgmq -v 17;   # install for PG 17
 pig install pgmq -v 16;   # install for PG 16
 pig install pgmq -v 15;   # install for PG 15
-pig install pgmq -v 14;   # install for PG 14
 
 ```
 
@@ -468,6 +372,10 @@ CREATE EXTENSION pgmq;
 ## Usage
 
 Sources:
+
+- [Current version source](https://github.com/pgmq/pgmq/releases/tag/v1.13.2)
+- [Current version source](https://api.pgxn.org/src/pgmq/pgmq-1.13.2/pgmq.control)
+- [Current version source](https://api.pgxn.org/src/pgmq/pgmq-1.13.2/sql/pgmq--1.13.1--1.13.2.sql)
 
 - [Official source](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/README.md)
 - [Official source](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/pgmq-extension/pgmq.control)
@@ -556,3 +464,8 @@ ALTER EXTENSION pgmq UPDATE TO '1.13.1';
 Version 1.13.1 fixes function `search_path` and qualifies internal objects to prevent same-name objects from influencing execution. `pg_monitor` no longer gets whole-message-table reads; monitoring access is limited to metadata, visibility/enqueue timestamps and message-id sequences. The upgrade also cleans existing and default grants. Revocation failures can be warnings rather than fatal errors, so inspect the upgrade log and verify the resulting grants. Mixed-case queue names also receive an insert-notification fix.
 
 The extension is implemented in SQL and needs no preload; PostgreSQL privileges still govern queue creation and management. An upstream version update does not establish availability of updated Pigsty packages.
+
+
+### 1.13.2 Queue Creation
+
+`pgmq.create()` checking an existing queue no longer waits for transactions using that queue. Release builds dropped PostgreSQL 13/14; select a build for a supported major. Install matching files and run `ALTER EXTENSION pgmq UPDATE TO '1.13.2'`; the 1.13.1 grant cleanup and upgrade-log checks above still apply.

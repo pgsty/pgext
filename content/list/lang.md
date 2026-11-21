@@ -16,7 +16,7 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 437 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 439 | The traditional PostgreSQL extension language |
 | {{< language "SQL" >}} | 84 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 70 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 17 | Extensions leveraging C++ features and libraries |
@@ -28,7 +28,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="437 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="439 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -157,6 +157,8 @@ The traditional PostgreSQL extension language
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | Generalized worker pool |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | XML toolkit |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | YAML toolkit |
+| 2988 | {{< alias "pg_plan_advice" >}} | Describe, reproduce, and constrain query plans with plan advice |
+| 2989 | {{< alias "pg_stash_advice" >}} | Store and automatically apply plan advice by query ID |
 | 2990 | {{< alias "bloom" >}} | bloom access method - signature file based index |
 | 3000 | {{< alias "pg_tle" >}} | Trusted Language Extensions for PostgreSQL |
 | 3011 | {{< alias "pljs" >}} | PL/JS trusted procedural language |

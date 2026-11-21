@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7410** | {{< badge content="sslutils" link="https://github.com/EnterpriseDB/sslutils" >}} | {{< ext "sslutils" >}} | `1.4.1` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **7410** | {{< badge content="sslutils" link="https://github.com/EnterpriseDB/sslutils" >}} | {{< ext "sslutils" >}} | `1.4.2` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -36,49 +36,72 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `sslutils` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.1` | {{< bg "18" "sslutils_18" "green" >}} {{< bg "17" "sslutils_17" "green" >}} {{< bg "16" "sslutils_16" "green" >}} {{< bg "15" "sslutils_15" "green" >}} {{< bg "14" "sslutils_14" "green" >}} | `sslutils_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.1` | {{< bg "18" "postgresql-18-sslutils" "green" >}} {{< bg "17" "postgresql-17-sslutils" "green" >}} {{< bg "16" "postgresql-16-sslutils" "green" >}} {{< bg "15" "postgresql-15-sslutils" "green" >}} {{< bg "14" "postgresql-14-sslutils" "green" >}} | `postgresql-$v-sslutils` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.2` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `sslutils` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.2` | {{< bg "19" "sslutils_19" "green" >}} {{< bg "18" "sslutils_18" "green" >}} {{< bg "17" "sslutils_17" "green" >}} {{< bg "16" "sslutils_16" "green" >}} {{< bg "15" "sslutils_15" "green" >}} | `sslutils_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.2` | {{< bg "19" "postgresql-19-sslutils" "green" >}} {{< bg "18" "postgresql-18-sslutils" "green" >}} {{< bg "17" "postgresql-17-sslutils" "green" >}} {{< bg "16" "postgresql-16-sslutils" "green" >}} {{< bg "15" "postgresql-15-sslutils" "green" >}} | `postgresql-$v-sslutils` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_14 : AVAIL 2" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_14 : AVAIL 2" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_14 : AVAIL 2" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_14 : AVAIL 3" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.1" "sslutils_14 : AVAIL 3" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-sslutils : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-sslutils : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-sslutils : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-sslutils : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-sslutils : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-sslutils : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-sslutils : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-sslutils : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-sslutils : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-sslutils : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "sslutils_19 : N/A 0" "gray" >}} | {{< bg "PGDG 1.4.2" "sslutils_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_15 : AVAIL 4" "blue" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "sslutils_19 : N/A 0" "gray" >}} | {{< bg "PGDG 1.4.2" "sslutils_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_15 : AVAIL 3" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 1.4.2" "sslutils_19 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_15 : AVAIL 3" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.4.2" "sslutils_19 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_15 : AVAIL 3" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.4.2" "sslutils_19 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_15 : AVAIL 3" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 1.4.2" "sslutils_19 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_18 : AVAIL 7" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_17 : AVAIL 7" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_16 : AVAIL 7" "blue" >}} | {{< bg "PGDG 1.4.2" "sslutils_15 : AVAIL 7" "blue" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-sslutils : MISS 0" "red" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-sslutils : MISS 0" "red" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-sslutils : MISS 0" "red" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-sslutils : MISS 0" "red" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-sslutils : MISS 0" "red" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-sslutils : MISS 0" "red" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-sslutils : MISS 0" "red" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-sslutils : MISS 0" "red" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-sslutils : MISS 0" "red" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-sslutils : MISS 0" "red" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-sslutils : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
+{{< tab label="PG19" value="pg19" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `sslutils_19` | `1.4.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.3 KiB | [sslutils_19-1.4.2-1PGDG.rhel9.9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-9-x86_64/sslutils_19-1.4.2-1PGDG.rhel9.9.x86_64.rpm) |
+| `sslutils_19` | `1.4.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 27.7 KiB | [sslutils_19-1.4.1-4PGDG.rhel9.9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-9-x86_64/sslutils_19-1.4.1-4PGDG.rhel9.9.x86_64.rpm) |
+| `sslutils_19` | `1.4.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 29.1 KiB | [sslutils_19-1.4.2-1PGDG.rhel9.9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-9-aarch64/sslutils_19-1.4.2-1PGDG.rhel9.9.aarch64.rpm) |
+| `sslutils_19` | `1.4.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 26.3 KiB | [sslutils_19-1.4.1-4PGDG.rhel9.9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-9-aarch64/sslutils_19-1.4.1-4PGDG.rhel9.9.aarch64.rpm) |
+| `sslutils_19` | `1.4.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.5 KiB | [sslutils_19-1.4.2-1PGDG.rhel10.3.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-10-x86_64/sslutils_19-1.4.2-1PGDG.rhel10.3.x86_64.rpm) |
+| `sslutils_19` | `1.4.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 29.0 KiB | [sslutils_19-1.4.1-4PGDG.rhel10.3.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-10-x86_64/sslutils_19-1.4.1-4PGDG.rhel10.3.x86_64.rpm) |
+| `sslutils_19` | `1.4.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.0 KiB | [sslutils_19-1.4.2-1PGDG.rhel10.3.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-10-aarch64/sslutils_19-1.4.2-1PGDG.rhel10.3.aarch64.rpm) |
+| `sslutils_19` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.3 KiB | [sslutils_19-1.4.1-4PGDG.rhel10.3.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/19/redhat/rhel-10-aarch64/sslutils_19-1.4.1-4PGDG.rhel10.3.aarch64.rpm) |
+{.downloads .wide .expand}
+
+{{< /tab >}}
 {{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `sslutils_18` | `1.4.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 30.7 KiB | [sslutils_18-1.4.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/sslutils_18-1.4.2-1PGDG.rhel8.10.x86_64.rpm) |
+| `sslutils_18` | `1.4.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 28.0 KiB | [sslutils_18-1.4.1-4PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/sslutils_18-1.4.1-4PGDG.rhel8.10.x86_64.rpm) |
 | `sslutils_18` | `1.4.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 53.2 KiB | [sslutils_18-1.4.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/sslutils_18-1.4.1-1PGSTY.el8.x86_64.rpm) |
+| `sslutils_18` | `1.4.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 29.6 KiB | [sslutils_18-1.4.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/sslutils_18-1.4.2-1PGDG.rhel8.10.aarch64.rpm) |
+| `sslutils_18` | `1.4.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 26.9 KiB | [sslutils_18-1.4.1-4PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/sslutils_18-1.4.1-4PGDG.rhel8.10.aarch64.rpm) |
 | `sslutils_18` | `1.4.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 52.3 KiB | [sslutils_18-1.4.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/sslutils_18-1.4.1-1PGSTY.el8.aarch64.rpm) |
+| `sslutils_18` | `1.4.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.3 KiB | [sslutils_18-1.4.2-1PGDG.rhel9.9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/sslutils_18-1.4.2-1PGDG.rhel9.9.x86_64.rpm) |
+| `sslutils_18` | `1.4.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 27.7 KiB | [sslutils_18-1.4.1-4PGDG.rhel9.9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/sslutils_18-1.4.1-4PGDG.rhel9.9.x86_64.rpm) |
 | `sslutils_18` | `1.4.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 55.1 KiB | [sslutils_18-1.4.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/sslutils_18-1.4.1-1PGSTY.el9.x86_64.rpm) |
-| `sslutils_18` | `1.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.4 KiB | [sslutils_18-1.4-4PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/sslutils_18-1.4-4PGDG.rhel9.8.x86_64.rpm) |
-| `sslutils_18` | `1.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.5 KiB | [sslutils_18-1.4-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/sslutils_18-1.4-2PGDG.rhel9.x86_64.rpm) |
+| `sslutils_18` | `1.4.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 29.0 KiB | [sslutils_18-1.4.2-1PGDG.rhel9.9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/sslutils_18-1.4.2-1PGDG.rhel9.9.aarch64.rpm) |
+| `sslutils_18` | `1.4.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 26.2 KiB | [sslutils_18-1.4.1-4PGDG.rhel9.9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/sslutils_18-1.4.1-4PGDG.rhel9.9.aarch64.rpm) |
 | `sslutils_18` | `1.4.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 54.0 KiB | [sslutils_18-1.4.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/sslutils_18-1.4.1-1PGSTY.el9.aarch64.rpm) |
-| `sslutils_18` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.3 KiB | [sslutils_18-1.4-4PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/sslutils_18-1.4-4PGDG.rhel9.8.aarch64.rpm) |
-| `sslutils_18` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.2 KiB | [sslutils_18-1.4-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/sslutils_18-1.4-2PGDG.rhel9.aarch64.rpm) |
+| `sslutils_18` | `1.4.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.5 KiB | [sslutils_18-1.4.2-1PGDG.rhel10.3.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/sslutils_18-1.4.2-1PGDG.rhel10.3.x86_64.rpm) |
+| `sslutils_18` | `1.4.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 29.0 KiB | [sslutils_18-1.4.1-4PGDG.rhel10.3.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/sslutils_18-1.4.1-4PGDG.rhel10.3.x86_64.rpm) |
 | `sslutils_18` | `1.4.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 56.4 KiB | [sslutils_18-1.4.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/sslutils_18-1.4.1-1PGSTY.el10.x86_64.rpm) |
-| `sslutils_18` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.3 KiB | [sslutils_18-1.4-4PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/sslutils_18-1.4-4PGDG.rhel10.2.x86_64.rpm) |
-| `sslutils_18` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.6 KiB | [sslutils_18-1.4-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/sslutils_18-1.4-2PGDG.rhel10.x86_64.rpm) |
+| `sslutils_18` | `1.4.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 29.9 KiB | [sslutils_18-1.4.2-1PGDG.rhel10.3.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/sslutils_18-1.4.2-1PGDG.rhel10.3.aarch64.rpm) |
+| `sslutils_18` | `1.4.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.0 KiB | [sslutils_18-1.4.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/sslutils_18-1.4.2-1PGDG.rhel10.2.aarch64.rpm) |
+| `sslutils_18` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.3 KiB | [sslutils_18-1.4.1-4PGDG.rhel10.3.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/sslutils_18-1.4.1-4PGDG.rhel10.3.aarch64.rpm) |
+| `sslutils_18` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.2 KiB | [sslutils_18-1.4.1-4PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/sslutils_18-1.4.1-4PGDG.rhel10.2.aarch64.rpm) |
 | `sslutils_18` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 54.9 KiB | [sslutils_18-1.4.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/sslutils_18-1.4.1-1PGSTY.el10.aarch64.rpm) |
 | `sslutils_18` | `1.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 24.1 KiB | [sslutils_18-1.4-4PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/sslutils_18-1.4-4PGDG.rhel10.2.aarch64.rpm) |
 | `sslutils_18` | `1.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 24.4 KiB | [sslutils_18-1.4-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/sslutils_18-1.4-2PGDG.rhel10.aarch64.rpm) |
@@ -99,19 +122,27 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `sslutils_17` | `1.4.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 30.7 KiB | [sslutils_17-1.4.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/sslutils_17-1.4.2-1PGDG.rhel8.10.x86_64.rpm) |
+| `sslutils_17` | `1.4.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 28.0 KiB | [sslutils_17-1.4.1-4PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/sslutils_17-1.4.1-4PGDG.rhel8.10.x86_64.rpm) |
 | `sslutils_17` | `1.4.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 53.2 KiB | [sslutils_17-1.4.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/sslutils_17-1.4.1-1PGSTY.el8.x86_64.rpm) |
 | `sslutils_17` | `1.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 24.5 KiB | [sslutils_17-1.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/sslutils_17-1.4-1PGDG.rhel8.x86_64.rpm) |
+| `sslutils_17` | `1.4.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 29.6 KiB | [sslutils_17-1.4.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/sslutils_17-1.4.2-1PGDG.rhel8.10.aarch64.rpm) |
+| `sslutils_17` | `1.4.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 26.9 KiB | [sslutils_17-1.4.1-4PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/sslutils_17-1.4.1-4PGDG.rhel8.10.aarch64.rpm) |
 | `sslutils_17` | `1.4.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 52.2 KiB | [sslutils_17-1.4.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/sslutils_17-1.4.1-1PGSTY.el8.aarch64.rpm) |
 | `sslutils_17` | `1.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 23.4 KiB | [sslutils_17-1.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/sslutils_17-1.4-1PGDG.rhel8.aarch64.rpm) |
+| `sslutils_17` | `1.4.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.3 KiB | [sslutils_17-1.4.2-1PGDG.rhel9.9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/sslutils_17-1.4.2-1PGDG.rhel9.9.x86_64.rpm) |
+| `sslutils_17` | `1.4.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 27.7 KiB | [sslutils_17-1.4.1-4PGDG.rhel9.9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/sslutils_17-1.4.1-4PGDG.rhel9.9.x86_64.rpm) |
 | `sslutils_17` | `1.4.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 55.1 KiB | [sslutils_17-1.4.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/sslutils_17-1.4.1-1PGSTY.el9.x86_64.rpm) |
-| `sslutils_17` | `1.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.4 KiB | [sslutils_17-1.4-4PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/sslutils_17-1.4-4PGDG.rhel9.8.x86_64.rpm) |
-| `sslutils_17` | `1.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.4 KiB | [sslutils_17-1.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/sslutils_17-1.4-1PGDG.rhel9.x86_64.rpm) |
+| `sslutils_17` | `1.4.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 29.0 KiB | [sslutils_17-1.4.2-1PGDG.rhel9.9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/sslutils_17-1.4.2-1PGDG.rhel9.9.aarch64.rpm) |
+| `sslutils_17` | `1.4.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 26.3 KiB | [sslutils_17-1.4.1-4PGDG.rhel9.9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/sslutils_17-1.4.1-4PGDG.rhel9.9.aarch64.rpm) |
 | `sslutils_17` | `1.4.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 54.0 KiB | [sslutils_17-1.4.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/sslutils_17-1.4.1-1PGSTY.el9.aarch64.rpm) |
-| `sslutils_17` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.3 KiB | [sslutils_17-1.4-4PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/sslutils_17-1.4-4PGDG.rhel9.8.aarch64.rpm) |
-| `sslutils_17` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.3 KiB | [sslutils_17-1.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/sslutils_17-1.4-1PGDG.rhel9.aarch64.rpm) |
+| `sslutils_17` | `1.4.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.5 KiB | [sslutils_17-1.4.2-1PGDG.rhel10.3.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/sslutils_17-1.4.2-1PGDG.rhel10.3.x86_64.rpm) |
+| `sslutils_17` | `1.4.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 29.0 KiB | [sslutils_17-1.4.1-4PGDG.rhel10.3.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/sslutils_17-1.4.1-4PGDG.rhel10.3.x86_64.rpm) |
 | `sslutils_17` | `1.4.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 56.4 KiB | [sslutils_17-1.4.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/sslutils_17-1.4.1-1PGSTY.el10.x86_64.rpm) |
-| `sslutils_17` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.3 KiB | [sslutils_17-1.4-4PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/sslutils_17-1.4-4PGDG.rhel10.2.x86_64.rpm) |
-| `sslutils_17` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.6 KiB | [sslutils_17-1.4-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/sslutils_17-1.4-2PGDG.rhel10.x86_64.rpm) |
+| `sslutils_17` | `1.4.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 29.9 KiB | [sslutils_17-1.4.2-1PGDG.rhel10.3.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/sslutils_17-1.4.2-1PGDG.rhel10.3.aarch64.rpm) |
+| `sslutils_17` | `1.4.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 29.9 KiB | [sslutils_17-1.4.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/sslutils_17-1.4.2-1PGDG.rhel10.2.aarch64.rpm) |
+| `sslutils_17` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.2 KiB | [sslutils_17-1.4.1-4PGDG.rhel10.3.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/sslutils_17-1.4.1-4PGDG.rhel10.3.aarch64.rpm) |
+| `sslutils_17` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.3 KiB | [sslutils_17-1.4.1-4PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/sslutils_17-1.4.1-4PGDG.rhel10.2.aarch64.rpm) |
 | `sslutils_17` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 54.9 KiB | [sslutils_17-1.4.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/sslutils_17-1.4.1-1PGSTY.el10.aarch64.rpm) |
 | `sslutils_17` | `1.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 24.1 KiB | [sslutils_17-1.4-4PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/sslutils_17-1.4-4PGDG.rhel10.2.aarch64.rpm) |
 | `sslutils_17` | `1.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 24.4 KiB | [sslutils_17-1.4-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/sslutils_17-1.4-2PGDG.rhel10.aarch64.rpm) |
@@ -132,19 +163,27 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `sslutils_16` | `1.4.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 30.7 KiB | [sslutils_16-1.4.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/sslutils_16-1.4.2-1PGDG.rhel8.10.x86_64.rpm) |
+| `sslutils_16` | `1.4.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 28.0 KiB | [sslutils_16-1.4.1-4PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/sslutils_16-1.4.1-4PGDG.rhel8.10.x86_64.rpm) |
 | `sslutils_16` | `1.4.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 53.2 KiB | [sslutils_16-1.4.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/sslutils_16-1.4.1-1PGSTY.el8.x86_64.rpm) |
 | `sslutils_16` | `1.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 24.5 KiB | [sslutils_16-1.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/sslutils_16-1.4-1PGDG.rhel8.x86_64.rpm) |
+| `sslutils_16` | `1.4.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 29.6 KiB | [sslutils_16-1.4.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/sslutils_16-1.4.2-1PGDG.rhel8.10.aarch64.rpm) |
+| `sslutils_16` | `1.4.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 26.9 KiB | [sslutils_16-1.4.1-4PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/sslutils_16-1.4.1-4PGDG.rhel8.10.aarch64.rpm) |
 | `sslutils_16` | `1.4.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 52.2 KiB | [sslutils_16-1.4.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/sslutils_16-1.4.1-1PGSTY.el8.aarch64.rpm) |
 | `sslutils_16` | `1.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 23.4 KiB | [sslutils_16-1.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/sslutils_16-1.4-1PGDG.rhel8.aarch64.rpm) |
+| `sslutils_16` | `1.4.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.3 KiB | [sslutils_16-1.4.2-1PGDG.rhel9.9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/sslutils_16-1.4.2-1PGDG.rhel9.9.x86_64.rpm) |
+| `sslutils_16` | `1.4.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 27.7 KiB | [sslutils_16-1.4.1-4PGDG.rhel9.9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/sslutils_16-1.4.1-4PGDG.rhel9.9.x86_64.rpm) |
 | `sslutils_16` | `1.4.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 55.1 KiB | [sslutils_16-1.4.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/sslutils_16-1.4.1-1PGSTY.el9.x86_64.rpm) |
-| `sslutils_16` | `1.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.4 KiB | [sslutils_16-1.4-4PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/sslutils_16-1.4-4PGDG.rhel9.8.x86_64.rpm) |
-| `sslutils_16` | `1.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.4 KiB | [sslutils_16-1.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/sslutils_16-1.4-1PGDG.rhel9.x86_64.rpm) |
+| `sslutils_16` | `1.4.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 29.0 KiB | [sslutils_16-1.4.2-1PGDG.rhel9.9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/sslutils_16-1.4.2-1PGDG.rhel9.9.aarch64.rpm) |
+| `sslutils_16` | `1.4.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 26.3 KiB | [sslutils_16-1.4.1-4PGDG.rhel9.9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/sslutils_16-1.4.1-4PGDG.rhel9.9.aarch64.rpm) |
 | `sslutils_16` | `1.4.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 54.0 KiB | [sslutils_16-1.4.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/sslutils_16-1.4.1-1PGSTY.el9.aarch64.rpm) |
-| `sslutils_16` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.3 KiB | [sslutils_16-1.4-4PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/sslutils_16-1.4-4PGDG.rhel9.8.aarch64.rpm) |
-| `sslutils_16` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.3 KiB | [sslutils_16-1.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/sslutils_16-1.4-1PGDG.rhel9.aarch64.rpm) |
+| `sslutils_16` | `1.4.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.5 KiB | [sslutils_16-1.4.2-1PGDG.rhel10.3.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/sslutils_16-1.4.2-1PGDG.rhel10.3.x86_64.rpm) |
+| `sslutils_16` | `1.4.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 29.0 KiB | [sslutils_16-1.4.1-4PGDG.rhel10.3.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/sslutils_16-1.4.1-4PGDG.rhel10.3.x86_64.rpm) |
 | `sslutils_16` | `1.4.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 56.4 KiB | [sslutils_16-1.4.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/sslutils_16-1.4.1-1PGSTY.el10.x86_64.rpm) |
-| `sslutils_16` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.3 KiB | [sslutils_16-1.4-4PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/sslutils_16-1.4-4PGDG.rhel10.2.x86_64.rpm) |
-| `sslutils_16` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.7 KiB | [sslutils_16-1.4-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/sslutils_16-1.4-2PGDG.rhel10.x86_64.rpm) |
+| `sslutils_16` | `1.4.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 29.9 KiB | [sslutils_16-1.4.2-1PGDG.rhel10.3.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/sslutils_16-1.4.2-1PGDG.rhel10.3.aarch64.rpm) |
+| `sslutils_16` | `1.4.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 29.9 KiB | [sslutils_16-1.4.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/sslutils_16-1.4.2-1PGDG.rhel10.2.aarch64.rpm) |
+| `sslutils_16` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.2 KiB | [sslutils_16-1.4.1-4PGDG.rhel10.3.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/sslutils_16-1.4.1-4PGDG.rhel10.3.aarch64.rpm) |
+| `sslutils_16` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.2 KiB | [sslutils_16-1.4.1-4PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/sslutils_16-1.4.1-4PGDG.rhel10.2.aarch64.rpm) |
 | `sslutils_16` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 54.9 KiB | [sslutils_16-1.4.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/sslutils_16-1.4.1-1PGSTY.el10.aarch64.rpm) |
 | `sslutils_16` | `1.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 24.1 KiB | [sslutils_16-1.4-4PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/sslutils_16-1.4-4PGDG.rhel10.2.aarch64.rpm) |
 | `sslutils_16` | `1.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 24.4 KiB | [sslutils_16-1.4-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/sslutils_16-1.4-2PGDG.rhel10.aarch64.rpm) |
@@ -165,16 +204,26 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `sslutils_15` | `1.4.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 30.8 KiB | [sslutils_15-1.4.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/sslutils_15-1.4.2-1PGDG.rhel8.10.x86_64.rpm) |
+| `sslutils_15` | `1.4.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 28.0 KiB | [sslutils_15-1.4.1-4PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/sslutils_15-1.4.1-4PGDG.rhel8.10.x86_64.rpm) |
 | `sslutils_15` | `1.4.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 53.2 KiB | [sslutils_15-1.4.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/sslutils_15-1.4.1-1PGSTY.el8.x86_64.rpm) |
 | `sslutils_15` | `1.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 49.4 KiB | [sslutils_15-1.3-4.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/sslutils_15-1.3-4.rhel8.x86_64.rpm) |
+| `sslutils_15` | `1.4.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 29.6 KiB | [sslutils_15-1.4.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/sslutils_15-1.4.2-1PGDG.rhel8.10.aarch64.rpm) |
+| `sslutils_15` | `1.4.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 26.9 KiB | [sslutils_15-1.4.1-4PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/sslutils_15-1.4.1-4PGDG.rhel8.10.aarch64.rpm) |
 | `sslutils_15` | `1.4.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 52.2 KiB | [sslutils_15-1.4.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/sslutils_15-1.4.1-1PGSTY.el8.aarch64.rpm) |
+| `sslutils_15` | `1.4.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.4 KiB | [sslutils_15-1.4.2-1PGDG.rhel9.9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/sslutils_15-1.4.2-1PGDG.rhel9.9.x86_64.rpm) |
+| `sslutils_15` | `1.4.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 27.8 KiB | [sslutils_15-1.4.1-4PGDG.rhel9.9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/sslutils_15-1.4.1-4PGDG.rhel9.9.x86_64.rpm) |
 | `sslutils_15` | `1.4.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 55.2 KiB | [sslutils_15-1.4.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/sslutils_15-1.4.1-1PGSTY.el9.x86_64.rpm) |
-| `sslutils_15` | `1.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.5 KiB | [sslutils_15-1.4-4PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/sslutils_15-1.4-4PGDG.rhel9.8.x86_64.rpm) |
+| `sslutils_15` | `1.4.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 29.1 KiB | [sslutils_15-1.4.2-1PGDG.rhel9.9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/sslutils_15-1.4.2-1PGDG.rhel9.9.aarch64.rpm) |
+| `sslutils_15` | `1.4.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 26.4 KiB | [sslutils_15-1.4.1-4PGDG.rhel9.9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/sslutils_15-1.4.1-4PGDG.rhel9.9.aarch64.rpm) |
 | `sslutils_15` | `1.4.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 54.0 KiB | [sslutils_15-1.4.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/sslutils_15-1.4.1-1PGSTY.el9.aarch64.rpm) |
-| `sslutils_15` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.4 KiB | [sslutils_15-1.4-4PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/sslutils_15-1.4-4PGDG.rhel9.8.aarch64.rpm) |
+| `sslutils_15` | `1.4.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.5 KiB | [sslutils_15-1.4.2-1PGDG.rhel10.3.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/sslutils_15-1.4.2-1PGDG.rhel10.3.x86_64.rpm) |
+| `sslutils_15` | `1.4.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 29.0 KiB | [sslutils_15-1.4.1-4PGDG.rhel10.3.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/sslutils_15-1.4.1-4PGDG.rhel10.3.x86_64.rpm) |
 | `sslutils_15` | `1.4.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 56.4 KiB | [sslutils_15-1.4.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/sslutils_15-1.4.1-1PGSTY.el10.x86_64.rpm) |
-| `sslutils_15` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.4 KiB | [sslutils_15-1.4-4PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/sslutils_15-1.4-4PGDG.rhel10.2.x86_64.rpm) |
-| `sslutils_15` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.7 KiB | [sslutils_15-1.4-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/sslutils_15-1.4-2PGDG.rhel10.x86_64.rpm) |
+| `sslutils_15` | `1.4.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.0 KiB | [sslutils_15-1.4.2-1PGDG.rhel10.3.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/sslutils_15-1.4.2-1PGDG.rhel10.3.aarch64.rpm) |
+| `sslutils_15` | `1.4.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.1 KiB | [sslutils_15-1.4.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/sslutils_15-1.4.2-1PGDG.rhel10.2.aarch64.rpm) |
+| `sslutils_15` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.4 KiB | [sslutils_15-1.4.1-4PGDG.rhel10.3.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/sslutils_15-1.4.1-4PGDG.rhel10.3.aarch64.rpm) |
+| `sslutils_15` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.4 KiB | [sslutils_15-1.4.1-4PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/sslutils_15-1.4.1-4PGDG.rhel10.2.aarch64.rpm) |
 | `sslutils_15` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 54.9 KiB | [sslutils_15-1.4.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/sslutils_15-1.4.1-1PGSTY.el10.aarch64.rpm) |
 | `sslutils_15` | `1.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 24.2 KiB | [sslutils_15-1.4-4PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/sslutils_15-1.4-4PGDG.rhel10.2.aarch64.rpm) |
 | `sslutils_15` | `1.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 24.5 KiB | [sslutils_15-1.4-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/sslutils_15-1.4-2PGDG.rhel10.aarch64.rpm) |
@@ -190,43 +239,13 @@ page_width: full
 | `postgresql-15-sslutils` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 44.2 KiB | [postgresql-15-sslutils_1.4.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sslutils/postgresql-15-sslutils_1.4.1-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `sslutils_14` | `1.4.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 53.2 KiB | [sslutils_14-1.4.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/sslutils_14-1.4.1-1PGSTY.el8.x86_64.rpm) |
-| `sslutils_14` | `1.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 48.9 KiB | [sslutils_14-1.3-4.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/sslutils_14-1.3-4.rhel8.x86_64.rpm) |
-| `sslutils_14` | `1.4.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 52.2 KiB | [sslutils_14-1.4.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/sslutils_14-1.4.1-1PGSTY.el8.aarch64.rpm) |
-| `sslutils_14` | `1.4.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 55.2 KiB | [sslutils_14-1.4.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/sslutils_14-1.4.1-1PGSTY.el9.x86_64.rpm) |
-| `sslutils_14` | `1.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.5 KiB | [sslutils_14-1.4-4PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/sslutils_14-1.4-4PGDG.rhel9.8.x86_64.rpm) |
-| `sslutils_14` | `1.4.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 54.0 KiB | [sslutils_14-1.4.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/sslutils_14-1.4.1-1PGSTY.el9.aarch64.rpm) |
-| `sslutils_14` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.4 KiB | [sslutils_14-1.4-4PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/sslutils_14-1.4-4PGDG.rhel9.8.aarch64.rpm) |
-| `sslutils_14` | `1.4.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 56.4 KiB | [sslutils_14-1.4.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/sslutils_14-1.4.1-1PGSTY.el10.x86_64.rpm) |
-| `sslutils_14` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.4 KiB | [sslutils_14-1.4-4PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/sslutils_14-1.4-4PGDG.rhel10.2.x86_64.rpm) |
-| `sslutils_14` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.8 KiB | [sslutils_14-1.4-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/sslutils_14-1.4-2PGDG.rhel10.x86_64.rpm) |
-| `sslutils_14` | `1.4.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 54.9 KiB | [sslutils_14-1.4.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/sslutils_14-1.4.1-1PGSTY.el10.aarch64.rpm) |
-| `sslutils_14` | `1.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 24.2 KiB | [sslutils_14-1.4-4PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/sslutils_14-1.4-4PGDG.rhel10.2.aarch64.rpm) |
-| `sslutils_14` | `1.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 24.5 KiB | [sslutils_14-1.4-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/sslutils_14-1.4-2PGDG.rhel10.aarch64.rpm) |
-| `postgresql-14-sslutils` | `1.4.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 43.3 KiB | [postgresql-14-sslutils_1.4.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sslutils/postgresql-14-sslutils_1.4.1-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-sslutils` | `1.4.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 41.3 KiB | [postgresql-14-sslutils_1.4.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sslutils/postgresql-14-sslutils_1.4.1-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-sslutils` | `1.4.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 43.2 KiB | [postgresql-14-sslutils_1.4.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/sslutils/postgresql-14-sslutils_1.4.1-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-sslutils` | `1.4.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 41.5 KiB | [postgresql-14-sslutils_1.4.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/sslutils/postgresql-14-sslutils_1.4.1-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-sslutils` | `1.4.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 49.5 KiB | [postgresql-14-sslutils_1.4.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/sslutils/postgresql-14-sslutils_1.4.1-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-sslutils` | `1.4.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 48.2 KiB | [postgresql-14-sslutils_1.4.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/sslutils/postgresql-14-sslutils_1.4.1-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-sslutils` | `1.4.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 45.8 KiB | [postgresql-14-sslutils_1.4.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sslutils/postgresql-14-sslutils_1.4.1-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-sslutils` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 44.3 KiB | [postgresql-14-sslutils_1.4.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sslutils/postgresql-14-sslutils_1.4.1-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-sslutils` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 45.6 KiB | [postgresql-14-sslutils_1.4.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sslutils/postgresql-14-sslutils_1.4.1-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-sslutils` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 44.2 KiB | [postgresql-14-sslutils_1.4.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sslutils/postgresql-14-sslutils_1.4.1-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/EnterpriseDB/sslutils" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/sslutils" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="sslutils-1.4.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="sslutils-1.4.2.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -248,11 +267,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install sslutils;		# install via package name, for the active PG version
 
+pig install sslutils -v 19;   # install for PG 19
 pig install sslutils -v 18;   # install for PG 18
 pig install sslutils -v 17;   # install for PG 17
 pig install sslutils -v 16;   # install for PG 16
 pig install sslutils -v 15;   # install for PG 15
-pig install sslutils -v 14;   # install for PG 14
 
 ```
 
@@ -267,10 +286,12 @@ CREATE EXTENSION sslutils;
 
 Sources:
 
-- [1.4.1 README](https://github.com/EnterpriseDB/sslutils/blob/v1.4.1/README.sslutils)
-- [1.4.1 SQL API](https://github.com/EnterpriseDB/sslutils/blob/v1.4.1/sslutils--1.4.1.sql)
-- [1.4.1 control file](https://github.com/EnterpriseDB/sslutils/blob/v1.4.1/sslutils.control)
-- [File-access checks](https://github.com/EnterpriseDB/sslutils/blob/v1.4.1/sslutils.c)
+- [1.4.2 README](https://github.com/EnterpriseDB/sslutils/blob/v1.4.2/README.sslutils)
+- [1.4.2 SQL API](https://github.com/EnterpriseDB/sslutils/blob/v1.4.2/sslutils--1.4.2.sql)
+- [1.4.2 control file](https://github.com/EnterpriseDB/sslutils/blob/v1.4.2/sslutils.control)
+- [File-access checks](https://github.com/EnterpriseDB/sslutils/blob/v1.4.2/sslutils.c)
+- [1.4.1 to 1.4.2 upgrade](https://github.com/EnterpriseDB/sslutils/blob/v1.4.2/sslutils--1.4.1--1.4.2.sql)
+- [PEM agent grants](https://github.com/EnterpriseDB/sslutils/blob/v1.4.2/sslutils-pemagent.sql.in)
 
 `sslutils` provides SSL certificate-generation and revocation helpers for Postgres Enterprise Manager and other controlled administration workflows. Some functions read or modify files on the database server.
 
@@ -300,12 +321,34 @@ For self-signed generation, the certificate-path argument to the signing functio
 
 ### Protect Keys and Server Files
 
-Certificate-inspection functions require membership in `pg_read_server_files` on PostgreSQL 11 and later; revocation checks both that role and `pg_write_server_files`. These roles provide broad server-file access, so grant them only to trusted administrators and restrict function execution as needed.
+In 1.4.2, all seven `openssl_*` functions use `SECURITY DEFINER` with a fixed `search_path` of `pg_catalog, pg_temp`. Their owner, `sslutils_owner`, is a cluster-wide `INHERIT`, `NOLOGIN` role. It holds `pg_read_server_files` and `pg_write_server_files` on PostgreSQL 11 and later, but must have no members, administrative attributes or other role memberships. Installation rejects an unsafe existing owner role.
+
+`PUBLIC` has no execution privilege. Installation or upgrade grants `EXECUTE` to `pem_agent` if that role already exists; existing explicit function grants remain. For an agent created later, a superuser runs the installed `sslutils-pemagent.sql` in the extension's schema. An agent using a non-public schema also needs `USAGE` on that schema, without `CREATE`. Callers need the relevant function privileges, not direct server-file role membership; never grant them membership in `sslutils_owner`.
+
+Grant access only to callers trusted to inspect certificates and use CA keys within the permitted paths. Confinement to the data directory does not separate agents or CAs from each other.
 
 Private keys returned as SQL text can enter query results, logs, shell history or application traces. Protect their handling and storage. This extension does not provide SSL session-inspection getters or automatically configure PostgreSQL's TLS settings.
 
-### File-Access Changes in 1.4.1
+### Upgrade and Existing Grants
 
-Certificate inspection and CA signing paths are checked against the server data directory; place the input files there and use server-relative paths where suitable. Revocation requires `sslutils.revoke_certificate_crl_paths`, a comma-separated allowlist of CRL output path prefixes configured in postgresql.conf and activated by reload. The revocation check compares lexical string prefixes without resolving canonical directory containment; configure narrow prefixes and protect the output location.
+Upgrade an existing installation as a superuser:
+
+```sql
+ALTER EXTENSION sslutils UPDATE TO '1.4.2';
+```
+
+After migrating callers, remove obsolete broad file-role grants from agents:
+
+```sql
+REVOKE pg_read_server_files, pg_write_server_files FROM pem_agent;
+```
+
+Review direct and inherited grants to individual logins too, including `pg_execute_server_program` and superuser privileges. An extension upgrade within one database does not revoke these cluster-wide grants automatically. The shared `sslutils_owner` role also survives extension removal; remove it only after uninstalling from all databases and revoking its file-role memberships.
+
+### File-Access Boundaries
+
+Certificate inspection and CA signing paths must resolve within the server data directory. Revocation additionally requires `sslutils.revoke_certificate_crl_paths`, a comma-separated allowlist of CRL output directories configured by a superuser in postgresql.conf and activated by reload. In 1.4.2, checks resolve paths and enforce directory boundaries; a new output file is checked through its existing parent directory, and an existing output file is checked too.
+
+Use dedicated CRL output directories under administrator control. Do not allow the whole data directory or directories containing configuration files: an authorized caller chooses the output filename within an allowed directory. Keep certificate and private-key paths under administrator control as well.
 
 The revocation implementation accepts PEM certificate text as its first argument, despite older README and SQL comments describing a certificate path. It reads the server-side CA files `ca_certificate.crt` and `ca_key.key`, and creates or appends to `revoke_cert.db`. Prepare the CA files before using it. Do not infer that a broad server-file role bypasses these extension-specific checks.

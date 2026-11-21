@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `vgram` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "vgram_18" "green" >}} {{< bg "17" "vgram_17" "green" >}} {{< bg "16" "vgram_16" "green" >}} {{< bg "15" "vgram_15" "green" >}} {{< bg "14" "vgram_14" "green" >}} | `vgram_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-vgram" "green" >}} {{< bg "17" "postgresql-17-vgram" "green" >}} {{< bg "16" "postgresql-16-vgram" "green" >}} {{< bg "15" "postgresql-15-vgram" "green" >}} {{< bg "14" "postgresql-14-vgram" "green" >}} | `postgresql-$v-vgram` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `vgram` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "vgram_19" "green" >}} {{< bg "18" "vgram_18" "green" >}} {{< bg "17" "vgram_17" "green" >}} {{< bg "16" "vgram_16" "green" >}} {{< bg "15" "vgram_15" "green" >}} | `vgram_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "19" "postgresql-19-vgram" "green" >}} {{< bg "18" "postgresql-18-vgram" "green" >}} {{< bg "17" "postgresql-17-vgram" "green" >}} {{< bg "16" "postgresql-16-vgram" "green" >}} {{< bg "15" "postgresql-15-vgram" "green" >}} | `postgresql-$v-vgram` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.0" "vgram_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.0" "vgram_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.0" "vgram_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.0" "vgram_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.0" "vgram_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.0" "vgram_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-vgram : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-vgram : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-vgram : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-vgram : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-vgram : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-vgram : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-vgram : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-vgram : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-vgram : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-vgram : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "vgram_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "vgram_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "vgram_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "vgram_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "vgram_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "vgram_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "vgram_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "vgram_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "vgram_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "vgram_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "vgram_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "vgram_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "vgram_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-vgram : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-vgram : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-vgram : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-vgram : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-vgram : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-vgram : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-vgram : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-vgram : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-vgram : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-vgram : MISS 0" "red" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-vgram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-vgram : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -157,29 +157,6 @@ page_width: full
 | `postgresql-15-vgram` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 39.6 KiB | [postgresql-15-vgram_1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vgram/postgresql-15-vgram_1.0-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vgram_14` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 49.6 KiB | [vgram_14-1.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vgram_14-1.0-1PGSTY.el8.x86_64.rpm) |
-| `vgram_14` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 49.1 KiB | [vgram_14-1.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vgram_14-1.0-1PGSTY.el8.aarch64.rpm) |
-| `vgram_14` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 50.3 KiB | [vgram_14-1.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vgram_14-1.0-1PGSTY.el9.x86_64.rpm) |
-| `vgram_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 50.3 KiB | [vgram_14-1.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vgram_14-1.0-1PGSTY.el9.aarch64.rpm) |
-| `vgram_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 50.7 KiB | [vgram_14-1.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vgram_14-1.0-1PGSTY.el10.x86_64.rpm) |
-| `vgram_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 50.8 KiB | [vgram_14-1.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vgram_14-1.0-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-vgram` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 41.3 KiB | [postgresql-14-vgram_1.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vgram/postgresql-14-vgram_1.0-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-vgram` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 41.1 KiB | [postgresql-14-vgram_1.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vgram/postgresql-14-vgram_1.0-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-vgram` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 41.4 KiB | [postgresql-14-vgram_1.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/v/vgram/postgresql-14-vgram_1.0-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-vgram` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 41.4 KiB | [postgresql-14-vgram_1.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/v/vgram/postgresql-14-vgram_1.0-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-vgram` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 47.3 KiB | [postgresql-14-vgram_1.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vgram/postgresql-14-vgram_1.0-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-vgram` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 47.3 KiB | [postgresql-14-vgram_1.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vgram/postgresql-14-vgram_1.0-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-vgram` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 43.0 KiB | [postgresql-14-vgram_1.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vgram/postgresql-14-vgram_1.0-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-vgram` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 43.1 KiB | [postgresql-14-vgram_1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vgram/postgresql-14-vgram_1.0-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-vgram` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 42.7 KiB | [postgresql-14-vgram_1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vgram/postgresql-14-vgram_1.0-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-vgram` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 42.7 KiB | [postgresql-14-vgram_1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vgram/postgresql-14-vgram_1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -208,11 +185,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install vgram;		# install via package name, for the active PG version
 
+pig install vgram -v 19;   # install for PG 19
 pig install vgram -v 18;   # install for PG 18
 pig install vgram -v 17;   # install for PG 17
 pig install vgram -v 16;   # install for PG 16
 pig install vgram -v 15;   # install for PG 15
-pig install vgram -v 14;   # install for PG 14
 
 ```
 

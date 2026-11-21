@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1990** | {{< badge content="pg_vectorsearch" link="https://github.com/timescale/pg_vectorsearch" >}} | {{< ext "pg_vectorsearch" >}} | `0.1.0` | {{< category "RAG" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **1990** | {{< badge content="pg_vectorsearch" link="https://github.com/timescale/pg_vectorsearch" >}} | {{< ext "pg_vectorsearch" >}} | `0.2.0` | {{< category "RAG" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_vectorsearch` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pg_vectorsearch_18" "green" >}} {{< bg "17" "pg_vectorsearch_17" "red" >}} {{< bg "16" "pg_vectorsearch_16" "red" >}} {{< bg "15" "pg_vectorsearch_15" "red" >}} {{< bg "14" "pg_vectorsearch_14" "red" >}} | `pg_vectorsearch_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-vectorsearch" "green" >}} {{< bg "17" "postgresql-17-vectorsearch" "red" >}} {{< bg "16" "postgresql-16-vectorsearch" "red" >}} {{< bg "15" "postgresql-15-vectorsearch" "red" >}} {{< bg "14" "postgresql-14-vectorsearch" "red" >}} | `postgresql-$v-vectorsearch` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} | `pg_vectorsearch` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "19" "pg_vectorsearch_19" "green" >}} {{< bg "18" "pg_vectorsearch_18" "green" >}} {{< bg "17" "pg_vectorsearch_17" "red" >}} {{< bg "16" "pg_vectorsearch_16" "red" >}} {{< bg "15" "pg_vectorsearch_15" "red" >}} | `pg_vectorsearch_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "19" "postgresql-19-vectorsearch" "green" >}} {{< bg "18" "postgresql-18-vectorsearch" "green" >}} {{< bg "17" "postgresql-17-vectorsearch" "red" >}} {{< bg "16" "postgresql-16-vectorsearch" "red" >}} {{< bg "15" "postgresql-15-vectorsearch" "red" >}} | `postgresql-$v-vectorsearch` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "pg_vectorsearch_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_vectorsearch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "pg_vectorsearch_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_vectorsearch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "pg_vectorsearch_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_vectorsearch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "pg_vectorsearch_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_vectorsearch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "pg_vectorsearch_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_vectorsearch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "pg_vectorsearch_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_vectorsearch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-vectorsearch : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-vectorsearch : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-vectorsearch : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-vectorsearch : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-vectorsearch : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-vectorsearch : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-vectorsearch : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-vectorsearch : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-vectorsearch : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-vectorsearch : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_vectorsearch_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.0" "pg_vectorsearch_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_vectorsearch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_15 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_vectorsearch_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.0" "pg_vectorsearch_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_vectorsearch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_15 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pg_vectorsearch_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "pg_vectorsearch_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_vectorsearch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_15 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pg_vectorsearch_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "pg_vectorsearch_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_vectorsearch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_15 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pg_vectorsearch_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "pg_vectorsearch_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_vectorsearch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_15 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pg_vectorsearch_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "pg_vectorsearch_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_vectorsearch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_vectorsearch_15 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-vectorsearch : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-vectorsearch : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-vectorsearch : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-vectorsearch : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-vectorsearch : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-vectorsearch : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-vectorsearch : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-vectorsearch : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-vectorsearch : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-vectorsearch : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} |
 {.matrix .wide .expand}
 
 
@@ -116,6 +116,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pg_vectorsearch;		# install via package name, for the active PG version
 
+pig install pg_vectorsearch -v 19;   # install for PG 19
 pig install pg_vectorsearch -v 18;   # install for PG 18
 
 ```
@@ -131,16 +132,16 @@ CREATE EXTENSION pg_vectorsearch;
 
 Sources:
 
-- [README.md](https://github.com/timescale/pg_vectorsearch/blob/36b75d1cb56c12a380d600ef27217d88c9f419ec/README.md)
-- [sql/pg_vectorsearch.sql](https://github.com/timescale/pg_vectorsearch/blob/36b75d1cb56c12a380d600ef27217d88c9f419ec/sql/pg_vectorsearch.sql)
-- [docs/maintenance.md](https://github.com/timescale/pg_vectorsearch/blob/36b75d1cb56c12a380d600ef27217d88c9f419ec/docs/maintenance.md)
-- [docs/tuning.md](https://github.com/timescale/pg_vectorsearch/blob/36b75d1cb56c12a380d600ef27217d88c9f419ec/docs/tuning.md)
-- [CHANGELOG.md](https://github.com/timescale/pg_vectorsearch/blob/36b75d1cb56c12a380d600ef27217d88c9f419ec/CHANGELOG.md)
-- [VERSION](https://github.com/timescale/pg_vectorsearch/blob/36b75d1cb56c12a380d600ef27217d88c9f419ec/VERSION)
-- [meson.build](https://github.com/timescale/pg_vectorsearch/blob/36b75d1cb56c12a380d600ef27217d88c9f419ec/meson.build)
-- [pg_vectorsearch.control.in](https://github.com/timescale/pg_vectorsearch/blob/36b75d1cb56c12a380d600ef27217d88c9f419ec/pg_vectorsearch.control.in)
+- [README.md](https://github.com/timescale/pg_vectorsearch/blob/v0.2.0/README.md)
+- [sql/pg_vectorsearch.sql](https://github.com/timescale/pg_vectorsearch/blob/v0.2.0/sql/pg_vectorsearch.sql)
+- [docs/maintenance.md](https://github.com/timescale/pg_vectorsearch/blob/v0.2.0/docs/maintenance.md)
+- [docs/tuning.md](https://github.com/timescale/pg_vectorsearch/blob/v0.2.0/docs/tuning.md)
+- [CHANGELOG.md](https://github.com/timescale/pg_vectorsearch/blob/v0.2.0/CHANGELOG.md)
+- [VERSION](https://github.com/timescale/pg_vectorsearch/blob/v0.2.0/VERSION)
+- [meson.build](https://github.com/timescale/pg_vectorsearch/blob/v0.2.0/meson.build)
+- [pg_vectorsearch.control.in](https://github.com/timescale/pg_vectorsearch/blob/v0.2.0/pg_vectorsearch.control.in)
 
-`pg_vectorsearch` 0.1.0 is an alpha extension for approximate nearest-neighbor search with the PRISM index. It supports PostgreSQL 18 and 19, native `vec32` / `vec16` types and optional pgvector interoperability. It is intended for testing, with evolving behavior and maintenance requirements.
+`pg_vectorsearch` 0.2.0 is an alpha extension for approximate nearest-neighbor search with the PRISM index. It supports PostgreSQL 18 and 19, native `vec32` / `vec16` types and optional pgvector interoperability. It is intended for testing, with evolving behavior and maintenance requirements.
 
 ### Core Workflow
 
@@ -164,6 +165,19 @@ ORDER BY embedding <-> '[3,1,2]' LIMIT 5;
 
 Install as a superuser; no preload is required and the extension is not relocatable. The `prism` access method has `vec32_l2_ops`, `vec32_ip_ops`, `vec32_cosine_ops` and corresponding vec16 operator classes; `<->`, `<#>` and `<=>` express L2, negative inner product and cosine distance. `prism.nprobe` trades recall for query work; zero selects automatic tuning, not exact recall.
 
-Load representative data before building the index. Indexed dimensions are limited to 1968; expression and unlogged indexes are unsupported. Keep `prism.leaf_refine_threshold` at zero. Filtering can return fewer rows than LIMIT, and candidate buffers bounded by `work_mem` can truncate large or unbounded results. Measure against an exact baseline.
+Load representative data before building the index. L2 and cosine indexes support up to 8192 dimensions: any dimension through 1968, then a power of two times an odd factor at most eight. Inner-product indexes remain limited to 1968 for vec32 and 3584 for vec16. Expression and unlogged indexes are unsupported. Keep `prism.leaf_refine_threshold` at zero. Filtering can return fewer rows than LIMIT, and candidate buffers bounded by `work_mem` can truncate large or unbounded results. Measure against an exact baseline.
 
 Inspect `prism_index_settings` and follow the maintenance guide for churn. `prism_rebalance` supports only flat RaBitQ centroid-page indexes with `centroid_fastscan` off, not the default multilevel format. DELETE leaves tombstones, and retired pages are reclaimed only by REINDEX. There is no in-place upgrade from the earlier release candidates.
+
+### Upgrade to 0.2.0
+
+Install matching files, start a fresh session that has not loaded the old library, update the SQL extension and rebuild every PRISM index:
+
+```sql
+ALTER EXTENSION pg_vectorsearch UPDATE TO '0.2.0';
+REINDEX INDEX vectorsearch_items_prism;
+```
+
+Old index format 0x06 is rejected by the 0x07 reader. The two library versions cannot share one session. `vec32_norm` is renamed to `l2_norm`; the vec16 overload of `vec32_dims` becomes `vec16_dims`, while `vector_dims` provides the pgvector-compatible interface. Update direct callers of renamed functions; dependent views retain function OIDs.
+
+`posting_reference_format` defaults to float16. A reference element beyond ±65504 causes a build or split error; use float32 when needed. The vec16 type now rejects out-of-range input. Existing filter, buffer-size and maintenance limits still apply.

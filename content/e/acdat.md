@@ -39,30 +39,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `acdat` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "acdat_18" "green" >}} {{< bg "17" "acdat_17" "green" >}} {{< bg "16" "acdat_16" "green" >}} {{< bg "15" "acdat_15" "green" >}} {{< bg "14" "acdat_14" "green" >}} | `acdat_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "postgresql-18-acdat" "green" >}} {{< bg "17" "postgresql-17-acdat" "green" >}} {{< bg "16" "postgresql-16-acdat" "green" >}} {{< bg "15" "postgresql-15-acdat" "green" >}} {{< bg "14" "postgresql-14-acdat" "green" >}} | `postgresql-$v-acdat` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `acdat` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "19" "acdat_19" "green" >}} {{< bg "18" "acdat_18" "green" >}} {{< bg "17" "acdat_17" "green" >}} {{< bg "16" "acdat_16" "green" >}} {{< bg "15" "acdat_15" "green" >}} | `acdat_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "19" "postgresql-19-acdat" "green" >}} {{< bg "18" "postgresql-18-acdat" "green" >}} {{< bg "17" "postgresql-17-acdat" "green" >}} {{< bg "16" "postgresql-16-acdat" "green" >}} {{< bg "15" "postgresql-15-acdat" "green" >}} | `postgresql-$v-acdat` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "acdat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "acdat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "acdat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "acdat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "acdat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "acdat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-acdat : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-acdat : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-acdat : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-acdat : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-acdat : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-acdat : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-acdat : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-acdat : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-acdat : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-acdat : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "acdat_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.1" "acdat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "acdat_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.1" "acdat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "acdat_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "acdat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "acdat_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "acdat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "acdat_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "acdat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "acdat_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "acdat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "acdat_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-acdat : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-acdat : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-acdat : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-acdat : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-acdat : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-acdat : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-acdat : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-acdat : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-acdat : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-acdat : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-acdat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-acdat : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -158,29 +158,6 @@ page_width: full
 | `postgresql-15-acdat` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 113.5 KiB | [postgresql-15-acdat_0.1.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/acdat/postgresql-15-acdat_0.1.1-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `acdat_14` | `0.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 119.0 KiB | [acdat_14-0.1.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/acdat_14-0.1.1-1PGSTY.el8.x86_64.rpm) |
-| `acdat_14` | `0.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 117.1 KiB | [acdat_14-0.1.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/acdat_14-0.1.1-1PGSTY.el8.aarch64.rpm) |
-| `acdat_14` | `0.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 120.6 KiB | [acdat_14-0.1.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/acdat_14-0.1.1-1PGSTY.el9.x86_64.rpm) |
-| `acdat_14` | `0.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 119.1 KiB | [acdat_14-0.1.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/acdat_14-0.1.1-1PGSTY.el9.aarch64.rpm) |
-| `acdat_14` | `0.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 122.8 KiB | [acdat_14-0.1.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/acdat_14-0.1.1-1PGSTY.el10.x86_64.rpm) |
-| `acdat_14` | `0.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 121.5 KiB | [acdat_14-0.1.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/acdat_14-0.1.1-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-acdat` | `0.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 110.9 KiB | [postgresql-14-acdat_0.1.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/acdat/postgresql-14-acdat_0.1.1-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-acdat` | `0.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 108.1 KiB | [postgresql-14-acdat_0.1.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/acdat/postgresql-14-acdat_0.1.1-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-acdat` | `0.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 111.9 KiB | [postgresql-14-acdat_0.1.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/acdat/postgresql-14-acdat_0.1.1-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-acdat` | `0.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 109.7 KiB | [postgresql-14-acdat_0.1.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/acdat/postgresql-14-acdat_0.1.1-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-acdat` | `0.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 123.9 KiB | [postgresql-14-acdat_0.1.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/acdat/postgresql-14-acdat_0.1.1-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-acdat` | `0.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 122.7 KiB | [postgresql-14-acdat_0.1.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/acdat/postgresql-14-acdat_0.1.1-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-acdat` | `0.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 113.5 KiB | [postgresql-14-acdat_0.1.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/acdat/postgresql-14-acdat_0.1.1-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-acdat` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 112.6 KiB | [postgresql-14-acdat_0.1.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/acdat/postgresql-14-acdat_0.1.1-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-acdat` | `0.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 114.3 KiB | [postgresql-14-acdat_0.1.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/acdat/postgresql-14-acdat_0.1.1-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-acdat` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 113.6 KiB | [postgresql-14-acdat_0.1.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/acdat/postgresql-14-acdat_0.1.1-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -209,11 +186,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install acdat;		# install via package name, for the active PG version
 
+pig install acdat -v 19;   # install for PG 19
 pig install acdat -v 18;   # install for PG 18
 pig install acdat -v 17;   # install for PG 17
 pig install acdat -v 16;   # install for PG 16
 pig install acdat -v 15;   # install for PG 15
-pig install acdat -v 14;   # install for PG 14
 
 ```
 

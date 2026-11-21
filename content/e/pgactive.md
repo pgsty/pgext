@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9560** | {{< badge content="pgactive" link="https://github.com/aws/pgactive" >}} | {{< ext "pgactive" >}} | `2.1.9` | {{< category "ETL" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **9560** | {{< badge content="pgactive" link="https://github.com/aws/pgactive" >}} | {{< ext "pgactive" >}} | `2.1.10` | {{< category "ETL" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -39,30 +39,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.9` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgactive` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.9` | {{< bg "18" "pgactive_18" "green" >}} {{< bg "17" "pgactive_17" "green" >}} {{< bg "16" "pgactive_16" "green" >}} {{< bg "15" "pgactive_15" "green" >}} {{< bg "14" "pgactive_14" "green" >}} | `pgactive_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.9` | {{< bg "18" "postgresql-18-pgactive" "green" >}} {{< bg "17" "postgresql-17-pgactive" "green" >}} {{< bg "16" "postgresql-16-pgactive" "green" >}} {{< bg "15" "postgresql-15-pgactive" "green" >}} {{< bg "14" "postgresql-14-pgactive" "green" >}} | `postgresql-$v-pgactive` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.10` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pgactive` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.10` | {{< bg "19" "pgactive_19" "green" >}} {{< bg "18" "pgactive_18" "green" >}} {{< bg "17" "pgactive_17" "green" >}} {{< bg "16" "pgactive_16" "green" >}} {{< bg "15" "pgactive_15" "green" >}} | `pgactive_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.10` | {{< bg "19" "postgresql-19-pgactive" "green" >}} {{< bg "18" "postgresql-18-pgactive" "green" >}} {{< bg "17" "postgresql-17-pgactive" "green" >}} {{< bg "16" "postgresql-16-pgactive" "green" >}} {{< bg "15" "postgresql-15-pgactive" "green" >}} | `postgresql-$v-pgactive` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-14-pgactive : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-14-pgactive : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-14-pgactive : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-14-pgactive : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-14-pgactive : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-14-pgactive : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-14-pgactive : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-14-pgactive : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-14-pgactive : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-14-pgactive : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pgactive_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pgactive_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pgactive_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pgactive_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pgactive_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pgactive_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "pgactive_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgactive : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgactive : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgactive : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgactive : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgactive : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgactive : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgactive : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgactive : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgactive : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgactive : MISS 0" "red" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-18-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-17-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-16-pgactive : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.9" "postgresql-15-pgactive : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -158,36 +158,13 @@ page_width: full
 | `postgresql-15-pgactive` | `2.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 598.4 KiB | [postgresql-15-pgactive_2.1.9-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgactive/postgresql-15-pgactive_2.1.9-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
-{{< /tab >}}
-{{< tab label="PG14" value="pg14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgactive_14` | `2.1.9` | [el8.x86_64](/os/el8.x86_64) | pigsty | 622.5 KiB | [pgactive_14-2.1.9-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgactive_14-2.1.9-1PGSTY.el8.x86_64.rpm) |
-| `pgactive_14` | `2.1.9` | [el8.aarch64](/os/el8.aarch64) | pigsty | 603.3 KiB | [pgactive_14-2.1.9-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgactive_14-2.1.9-1PGSTY.el8.aarch64.rpm) |
-| `pgactive_14` | `2.1.9` | [el9.x86_64](/os/el9.x86_64) | pigsty | 621.5 KiB | [pgactive_14-2.1.9-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgactive_14-2.1.9-1PGSTY.el9.x86_64.rpm) |
-| `pgactive_14` | `2.1.9` | [el9.aarch64](/os/el9.aarch64) | pigsty | 609.1 KiB | [pgactive_14-2.1.9-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgactive_14-2.1.9-1PGSTY.el9.aarch64.rpm) |
-| `pgactive_14` | `2.1.9` | [el10.x86_64](/os/el10.x86_64) | pigsty | 627.3 KiB | [pgactive_14-2.1.9-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgactive_14-2.1.9-1PGSTY.el10.x86_64.rpm) |
-| `pgactive_14` | `2.1.9` | [el10.aarch64](/os/el10.aarch64) | pigsty | 614.3 KiB | [pgactive_14-2.1.9-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgactive_14-2.1.9-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pgactive` | `2.1.9` | [d12.x86_64](/os/d12.x86_64) | pigsty | 579.4 KiB | [postgresql-14-pgactive_2.1.9-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgactive/postgresql-14-pgactive_2.1.9-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pgactive` | `2.1.9` | [d12.aarch64](/os/d12.aarch64) | pigsty | 552.3 KiB | [postgresql-14-pgactive_2.1.9-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgactive/postgresql-14-pgactive_2.1.9-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pgactive` | `2.1.9` | [d13.x86_64](/os/d13.x86_64) | pigsty | 581.0 KiB | [postgresql-14-pgactive_2.1.9-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgactive/postgresql-14-pgactive_2.1.9-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-pgactive` | `2.1.9` | [d13.aarch64](/os/d13.aarch64) | pigsty | 554.0 KiB | [postgresql-14-pgactive_2.1.9-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgactive/postgresql-14-pgactive_2.1.9-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-pgactive` | `2.1.9` | [u22.x86_64](/os/u22.x86_64) | pigsty | 699.2 KiB | [postgresql-14-pgactive_2.1.9-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgactive/postgresql-14-pgactive_2.1.9-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-pgactive` | `2.1.9` | [u22.aarch64](/os/u22.aarch64) | pigsty | 691.3 KiB | [postgresql-14-pgactive_2.1.9-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgactive/postgresql-14-pgactive_2.1.9-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-pgactive` | `2.1.9` | [u24.x86_64](/os/u24.x86_64) | pigsty | 612.6 KiB | [postgresql-14-pgactive_2.1.9-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgactive/postgresql-14-pgactive_2.1.9-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-pgactive` | `2.1.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 605.4 KiB | [postgresql-14-pgactive_2.1.9-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgactive/postgresql-14-pgactive_2.1.9-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-pgactive` | `2.1.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 607.8 KiB | [postgresql-14-pgactive_2.1.9-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgactive/postgresql-14-pgactive_2.1.9-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-pgactive` | `2.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 599.5 KiB | [postgresql-14-pgactive_2.1.9-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgactive/postgresql-14-pgactive_2.1.9-1PGSTY~resolute_arm64.deb) |
-{.downloads .wide .expand}
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/aws/pgactive" title="Repository" icon="github" subtitle="github.com/aws/pgactive" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgactive-2.1.9.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgactive-2.1.10.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -209,11 +186,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pgactive;		# install via package name, for the active PG version
 
+pig install pgactive -v 19;   # install for PG 19
 pig install pgactive -v 18;   # install for PG 18
 pig install pgactive -v 17;   # install for PG 17
 pig install pgactive -v 16;   # install for PG 16
 pig install pgactive -v 15;   # install for PG 15
-pig install pgactive -v 14;   # install for PG 14
 
 ```
 
@@ -231,49 +208,43 @@ shared_preload_libraries = 'pgactive';
 CREATE EXTENSION pgactive;
 ```
 
-
-
-
 ## Usage
 
-> [pgactive: Active-Active Replication Extension for PostgreSQL](https://github.com/aws/pgactive)
+Sources:
 
-The `pgactive` extension provides active-active (multi-master) replication for PostgreSQL, where multiple database instances can accept writes and replicate changes to each other.
+- [Official source](https://github.com/aws/pgactive/blob/v2.1.10/README.md)
+- [Official source](https://github.com/aws/pgactive/blob/v2.1.10/docs/quickstart.md)
+- [Official source](https://github.com/aws/pgactive/blob/v2.1.10/docs/README.md)
+- [Official source](https://github.com/aws/pgactive/blob/v2.1.10/docs/referenceguide.md)
+- [Official source](https://github.com/aws/pgactive/blob/v2.1.10/pgactive.control.in)
+- [Official source](https://github.com/aws/pgactive/blob/v2.1.10/include/pgactive_version.h.in)
+- [Official source](https://github.com/aws/pgactive/blob/v2.1.10/pgactive--2.1.10.sql)
+- [Official source](https://github.com/aws/pgactive/releases/tag/v2.1.10)
 
-### Enabling
+`pgactive` 2.1.10 provides active-active logical replication between databases in a full mesh. Writes commit locally and replicate to peers; applications must handle lag, conflicts and node-local locking rather than assume global serializability.
+
+### Configure a group
+
+The release requires PostgreSQL 18.7, 17.12, 16.16, 15.20 or 14.25 and later minors in those branches; it also names upcoming PostgreSQL 19. Preload the library, configure logical WAL and sufficient replication slots/workers, then restart. Installation and management functions require superuser access.
+
+```ini
+shared_preload_libraries = 'pgactive'
+wal_level = logical
+```
 
 ```sql
 CREATE EXTENSION pgactive;
+SELECT pgactive.pgactive_create_group(
+  node_name := 'node1-app',
+  node_dsn := 'user_mapping=postgres pgactive_foreign_server=node1'
+);
+SELECT pgactive.pgactive_wait_for_node_ready();
 ```
 
-### Overview
+The example assumes an existing node1 foreign server using pgactive_fdw, a protected user mapping and working connections to the database itself and every peer. Configure actual credentials through protected mappings or password files. On a fresh joining database, create the extension and use pgactive.pgactive_join_group with its own node_dsn and the peer's join_using_dsn, then wait for readiness. The built-in join performs coordinated initialization; an arbitrary independent dump does not substitute for it.
 
-pgactive enables active-active replication using logical replication as its foundation. Multiple databases in a cluster can accept changes and replicate them bidirectionally.
+### Operations and upgrades
 
-### Key Concepts
+Every peer must be reachable when a node joins. Plan unique keys, sequence allocation, conflict handling and replication-slot retention. DDL replication is disabled by default; enabling it requires consistent policy on senders and receivers. Apply workers default to applying DML as the table owner, while replication connections and worker management remain privileged.
 
-- **Active-Active**: All nodes accept reads and writes simultaneously
-- **Asynchronous**: Changes are replicated asynchronously between nodes
-- **Conflict Resolution**: Applications must handle conflicting changes from multiple writers
-- **Logical Replication**: Uses PostgreSQL's logical decoding to interpret and apply changes
-
-### Use Cases
-
-- Multi-region high availability database clusters
-- Reducing write latency between applications and databases
-- Blue/green application updates
-- Data migration between systems that must both remain writable
-
-### Design Considerations
-
-Applications using pgactive must be designed to handle:
-
-- **Write conflicts**: Concurrent modifications to the same row on different nodes
-- **Replication lag**: Changes may not be immediately visible on all nodes
-- **Feature limitations**: Some features like auto-incrementing sequences require special handling across nodes
-
-### Notes
-
-- Built on PostgreSQL's native logical replication infrastructure
-- Requires PostgreSQL 10+ (native logical replication support)
-- Refer to the project documentation for detailed setup and conflict resolution strategies
+Version 2.1.10 hardens replication-name and tuple handling and fixes conflict-handler ABI and shared-memory lock offsets. A 2.1.10 node may join an older group, but a node on 2.1.9 or earlier cannot join a 2.1.10 node until upgraded. Install matching files and execute the supplied SQL upgrade in each database; coordinate restart/reconnection and join order across the group.

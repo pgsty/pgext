@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2230** | {{< badge content="pg_fts" link="https://codeberg.org/gregburd/pg_fts" >}} | {{< ext "pg_fts" >}} | `1.16.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2230** | {{< badge content="pg_fts" link="https://codeberg.org/gregburd/pg_fts" >}} | {{< ext "pg_fts" >}} | `1.18.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -38,30 +38,30 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.16.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_fts` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.16.0` | {{< bg "18" "pg_fts_18" "green" >}} {{< bg "17" "pg_fts_17" "green" >}} {{< bg "16" "pg_fts_16" "red" >}} {{< bg "15" "pg_fts_15" "red" >}} {{< bg "14" "pg_fts_14" "red" >}} | `pg_fts_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.16.0` | {{< bg "18" "postgresql-18-pg-fts" "green" >}} {{< bg "17" "postgresql-17-pg-fts" "green" >}} {{< bg "16" "postgresql-16-pg-fts" "red" >}} {{< bg "15" "postgresql-15-pg-fts" "red" >}} {{< bg "14" "postgresql-14-pg-fts" "red" >}} | `postgresql-$v-pg-fts` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.18.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} | `pg_fts` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.18.0` | {{< bg "19" "pg_fts_19" "green" >}} {{< bg "18" "pg_fts_18" "green" >}} {{< bg "17" "pg_fts_17" "green" >}} {{< bg "16" "pg_fts_16" "red" >}} {{< bg "15" "pg_fts_15" "red" >}} | `pg_fts_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.18.0` | {{< bg "19" "postgresql-19-pg-fts" "green" >}} {{< bg "18" "postgresql-18-pg-fts" "green" >}} {{< bg "17" "postgresql-17-pg-fts" "green" >}} {{< bg "16" "postgresql-16-pg-fts" "red" >}} {{< bg "15" "postgresql-15-pg-fts" "red" >}} | `postgresql-$v-pg-fts` | - |
 {.packages .wide .expand}
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+| **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_fts_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_fts_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_fts_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_fts_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_fts_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_fts_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-fts : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-fts : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-fts : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-fts : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-fts : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-fts : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-fts : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-fts : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-fts : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-fts : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_fts_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_fts_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_15 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_fts_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_fts_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_15 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pg_fts_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_fts_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_15 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pg_fts_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_fts_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_15 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pg_fts_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_fts_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_15 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pg_fts_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "pg_fts_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_fts_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_fts_15 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-fts : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-fts : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-fts : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-fts : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-fts : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-fts : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-fts : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-fts : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-fts : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-fts : MISS 0" "red" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.16.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} |
 {.matrix .wide .expand}
 
 
@@ -117,7 +117,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://codeberg.org/gregburd/pg_fts" title="Repository" icon="link" subtitle="codeberg.org/gregburd/pg_fts" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_fts-1.16.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_fts-1.18.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -139,6 +139,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pg_fts;		# install via package name, for the active PG version
 
+pig install pg_fts -v 19;   # install for PG 19
 pig install pg_fts -v 18;   # install for PG 18
 pig install pg_fts -v 17;   # install for PG 17
 
@@ -155,13 +156,13 @@ CREATE EXTENSION pg_fts;
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/README.md)
-- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/pg_fts.control)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/CHANGELOG.md)
-- [pg_fts--1.17.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/pg_fts--1.17.0.sql)
-- [pg_fts--1.16.0--1.17.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/pg_fts--1.16.0--1.17.0.sql)
+- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/README.md)
+- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/pg_fts.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/CHANGELOG.md)
+- [pg_fts--1.18.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/pg_fts--1.18.0.sql)
+- [pg_fts--1.16.0--1.17.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/pg_fts--1.16.0--1.17.0.sql)
 
-`pg_fts` 1.17.0 provides full-text search with BM25/BM25F ranking and the dedicated fts inverted index. PostgreSQL 17, 18 and 19 are supported; 19 is tested against the release candidate. The control is trusted and relocatable, and core use needs no shared preload.
+`pg_fts` 1.18.0 provides full-text search with BM25/BM25F ranking and the dedicated fts inverted index. PostgreSQL 17, 18 and 19 are supported; 19 is tested against the 19.0 release. The control is trusted and relocatable, and core use needs no shared preload.
 
 ### Search and Rank
 
@@ -234,3 +235,7 @@ Version 1.16.0 validates frame-of-reference decoding bounds and permits compacti
 ### 1.17.0 Delete Ranking and PostgreSQL 19
 
 Version 1.17.0 removes tombstoned rows from the document count and average length after VACUUM or a merge, so rankings converge toward a REINDEX of the live rows. Existing segments retain the old average until cleanup; `fts_index_segments()` reports tombstones. Replace the library and apply the versioned SQL upgrade. The index format is unchanged, but review indexes with deletes and recheck score baselines.
+
+### Version 1.18.0
+
+Version 1.18.0 validates PostgreSQL 19.0 support and fixes an autovacuum-worker assertion failure caused by using the wrong I/O buffer-ring context on assertion-enabled servers. It updates sparsemap without changing the index format or SQL objects. Deploy matching files, replace sessions using the old library and run `ALTER EXTENSION pg_fts UPDATE TO '1.18.0';`. This release adds no REINDEX requirement; the historical data and index repairs described above still apply.
