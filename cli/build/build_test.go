@@ -16,6 +16,8 @@ import (
 	"strings"
 	"testing"
 	"time"
+
+	"pgext/db"
 )
 
 type fakeExecutor struct {
@@ -100,7 +102,7 @@ func TestStageBoundariesAndFamilyDedup(t *testing.T) {
 	if _, err := e.Prepare("make", []string{"vector"}); err == nil {
 		t.Fatal("unsupported target accepted")
 	}
-	for _, pg := range []string{"19", "13", "18,", "17;touch /tmp/oops"} {
+	for _, pg := range []string{"20", "14", "13", "18,", "17;touch /tmp/oops"} {
 		if _, err := ParsePG(pg); err == nil {
 			t.Fatalf("accepted %s", pg)
 		}
@@ -112,7 +114,9 @@ func TestDebianSupportIsNotLimitedByMakeDefault(t *testing.T) {
 		name, versions, makeDefault, requested string
 		wantError                              bool
 	}{
-		{"explicit supported major", "14\n15\n16\n17\n18\n", "18", "14", false},
+		{"explicit supported major", "14\n15\n16\n17\n18\n", "18", "15", false},
+		{"PG19 with PG18 Make default", "14\n15\n16\n17\n18\n19\n", "18", "19", false},
+		{"undeclared PG19", "17\n18\n", "18", "19", true},
 		{"unsupported major", "17\n18\n", "14 15 16 17 18", "16", true},
 		{"missing file fallback", "", "17 18", "17", false},
 		{"fallback still constrains support", "", "17 18", "16", true},
@@ -249,7 +253,11 @@ func TestArchiveCannotEscapeOrInjectLinks(t *testing.T) {
 }
 
 func TestAllSupportedRepoAndToolPlans(t *testing.T) {
-	for code := range supportedOS {
+	for _, target := range db.SupportedOSPlatforms() {
+		code, archName, _ := strings.Cut(target, ".")
+		if archName != "x86_64" {
+			continue
+		}
 		for _, arch := range []string{"amd64", "arm64"} {
 			p, err := PlanPlatform(code + "." + arch)
 			if err != nil {
@@ -278,7 +286,7 @@ func TestAllSupportedRepoAndToolPlans(t *testing.T) {
 				t.Fatal(err)
 			}
 			if strings.Contains(strings.Join(cmd.Args, " "), "postgresql19") {
-				t.Fatal("implicit beta")
+				t.Fatal("tool installation must default to PostgreSQL 18")
 			}
 			if _, err := e.Repo(context.Background(), "add", []string{"unknown"}, true); err == nil {
 				t.Fatal("unknown module accepted")

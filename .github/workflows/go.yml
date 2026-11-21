@@ -59,6 +59,9 @@ jobs:
       - name: Test frontend behavior
         run: node --test server/*_test.cjs
 
+      - name: Check build targets and supplement policy
+        run: python3 -m unittest -v bin/test_rebuild_manifest.py
+
       - name: Check bilingual package changelog
         run: |
           python3 -m unittest -v bin/test_changelog.py

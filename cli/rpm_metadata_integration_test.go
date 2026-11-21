@@ -14,7 +14,7 @@ func TestRPMPrimaryCacheAndParseIntegration(t *testing.T) {
 	setupDisposableIntegrationDB(t)
 	ctx := context.Background()
 	var repoID string
-	if err := QueryRowContext(ctx, "SELECT id FROM pgext.repository WHERE type='rpm' ORDER BY id LIMIT 1").Scan(&repoID); err != nil {
+	if err := QueryRowContext(ctx, "SELECT r.id FROM pgext.repository r WHERE r.type='rpm' AND "+activeRepositoryPredicate+" ORDER BY r.id LIMIT 1").Scan(&repoID); err != nil {
 		t.Fatal(err)
 	}
 	if _, err := ExecSQLContext(ctx, `INSERT INTO pgext.repo_data (id,data,etag,extra) VALUES ($1,$2,'legacy','{"retained":"yes","compressed_size":123,"open_size":456}')`, repoID, []byte("old payload")); err != nil {
@@ -93,7 +93,7 @@ func TestInvalidPrimaryXMLPreservesCacheIntegration(t *testing.T) {
 	setupDisposableIntegrationDB(t)
 	ctx := context.Background()
 	var repoID string
-	if err := QueryRowContext(ctx, "SELECT id FROM pgext.repository WHERE type='rpm' ORDER BY id LIMIT 1").Scan(&repoID); err != nil {
+	if err := QueryRowContext(ctx, "SELECT r.id FROM pgext.repository r WHERE r.type='rpm' AND "+activeRepositoryPredicate+" ORDER BY r.id LIMIT 1").Scan(&repoID); err != nil {
 		t.Fatal(err)
 	}
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -139,7 +139,7 @@ func TestLegacyRPMCacheDoesNotPublishIntegration(t *testing.T) {
 	ctx := context.Background()
 	seedStagingIntegrationRows(t, ctx)
 	var repoID string
-	if err := QueryRowContext(ctx, "SELECT id FROM pgext.repository WHERE type='rpm' ORDER BY id LIMIT 1").Scan(&repoID); err != nil {
+	if err := QueryRowContext(ctx, "SELECT r.id FROM pgext.repository r WHERE r.type='rpm' AND "+activeRepositoryPredicate+" ORDER BY r.id LIMIT 1").Scan(&repoID); err != nil {
 		t.Fatal(err)
 	}
 	if _, err := ExecSQLContext(ctx, "INSERT INTO pgext.repo_data (id,data) VALUES ($1,$2)", repoID, []byte("legacy RPM cache")); err != nil {

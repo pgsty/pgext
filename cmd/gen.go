@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 	"pgext/cli"
+	"pgext/db"
 	"strings"
 	"sync"
 
@@ -644,16 +645,7 @@ based on the availability data in the pgext database.`,
 			osList = args
 		} else {
 			// Default: generate for all supported OS
-			osList = []string{
-				"el8.x86_64", "el8.aarch64",
-				"el9.x86_64", "el9.aarch64",
-				"el10.x86_64", "el10.aarch64",
-				"d12.x86_64", "d12.aarch64",
-				"d13.x86_64", "d13.aarch64",
-				"u22.x86_64", "u22.aarch64",
-				"u24.x86_64", "u24.aarch64",
-				"u26.x86_64", "u26.aarch64",
-			}
+			osList = db.SupportedOSPlatforms()
 			if !verbose {
 				fmt.Printf("Generating configuration for all %d supported OS...\n", len(osList))
 			}

@@ -2,6 +2,7 @@ package cli
 
 import (
 	"bytes"
+	"pgext/db"
 	"reflect"
 	"regexp"
 	"strings"
@@ -389,7 +390,8 @@ func TestRPMNodePackage1IncludesACL(t *testing.T) {
 		"TunedProfileDir": g.tunedProfileDir(),
 		"Constants":       g.constants,
 		"Extensions":      map[string]*ExtensionData{},
-		"PGVersions":      []int{18, 17, 16, 15, 14},
+		"PGVersions":      db.SupportedPGVersions(),
+		"DefaultPG":       db.DefaultPGVersion,
 		"CategoryExts":    map[string]CategoryPkgList{},
 		"Categories":      []string{},
 		"ExtMappings":     []ExtensionMapping{},
@@ -967,7 +969,8 @@ func TestDebTemplateRendersBind9DNSUtils(t *testing.T) {
 		"TunedProfileDir": g.tunedProfileDir(),
 		"Constants":       g.constants,
 		"Extensions":      map[string]*ExtensionData{},
-		"PGVersions":      []int{18, 17, 16, 15, 14},
+		"PGVersions":      db.SupportedPGVersions(),
+		"DefaultPG":       db.DefaultPGVersion,
 		"CategoryExts":    map[string]CategoryPkgList{},
 		"Categories":      []string{},
 		"ExtMappings":     []ExtensionMapping{},
@@ -1058,7 +1061,8 @@ func renderConfigTemplateForTest(t *testing.T, tmpl *template.Template, g *Pigst
 		"TunedProfileDir": g.tunedProfileDir(),
 		"Constants":       g.constants,
 		"Extensions":      map[string]*ExtensionData{},
-		"PGVersions":      []int{18, 17, 16, 15, 14},
+		"PGVersions":      db.SupportedPGVersions(),
+		"DefaultPG":       db.DefaultPGVersion,
 		"CategoryExts":    map[string]CategoryPkgList{},
 		"Categories":      []string{},
 		"ExtMappings":     []ExtensionMapping{},
@@ -1458,12 +1462,12 @@ func TestPGDGChinaMirrorContract(t *testing.T) {
 
 	deb := renderDEBTemplateForTest(t, "u24.x86_64", "u24")
 	stable := "china: 'https://mirrors.cloud.tencent.com/postgresql/repos/apt/ ${distro_codename}-pgdg main'"
-	beta := "china: 'https://mirrors.cloud.tencent.com/postgresql/repos/apt/ ${distro_codename}-pgdg-testing main 19'"
+
 	if !strings.Contains(deb, stable) {
 		t.Fatalf("rendered DEB config missing PGDG China mirror %q", stable)
 	}
-	if !strings.Contains(deb, beta) {
-		t.Fatalf("rendered DEB config missing PGDG beta China mirror %q", beta)
+	if strings.Contains(deb, "-pgdg-testing") || strings.Contains(rpm, "/testing/19/") {
+		t.Fatal("released PG19 must not retain beta repository definitions")
 	}
 }
 
@@ -1474,7 +1478,6 @@ func TestDebTemplateRepoReleaseCompatibility(t *testing.T) {
 		"name: base           ,description: 'Ubuntu Basic'       ,module: node    ,releases: [         22,24,26] ,arch: [x86_64",
 		"name: base           ,description: 'Ubuntu Basic'       ,module: node    ,releases: [         22,24,26] ,arch: [        aarch64]",
 		"name: pgdg           ,description: 'PGDG'               ,module: pgsql   ,releases: [11,12,13,22,24,26]",
-		"name: pgdg-beta      ,description: 'PGDG Beta'          ,module: beta    ,releases: [11,12,13,22,24,26]",
 		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [11,12,13,22,24,26]",
 		"name: citus          ,description: 'Citus'              ,module: extra   ,releases: [11,12,   22      ]",
 		"name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [   12,13,22,24,26]",
@@ -1634,5 +1637,49 @@ func TestDebTemplateDebianChinaComponents(t *testing.T) {
 		if strings.Contains(debTemplate, fragment) {
 			t.Fatalf("debTemplate still contains invalid Debian/Ubuntu mixed components: %q", fragment)
 		}
+	}
+}
+
+func TestPG19ConfigurationKeepsPG18DefaultGroups(t *testing.T) {
+	for _, tc := range []struct {
+		os, template, separator string
+		wantPG19                bool
+	}{
+		{"el8", rpmTemplate, "_", false},
+		{"el9", rpmTemplate, "_", true},
+		{"u24", debTemplate, "-", true},
+	} {
+		t.Run(tc.os, func(t *testing.T) {
+			g := &PigstyConfigGenerator{osName: tc.os + ".x86_64", osCode: tc.os, arch: "x86_64", constants: GetConfigConstants()}
+			tmpl := template.Must(template.New("config").Funcs(g.getFuncMap()).Parse(tc.template))
+			data := map[string]interface{}{
+				"OSName": g.osName, "OSCode": g.osCode, "Arch": g.arch,
+				"TunedProfileDir": g.tunedProfileDir(), "Constants": g.constants,
+				"PGVersions": db.SupportedPGVersionsForOS(g.osCode), "DefaultPG": db.DefaultPGVersion,
+				"Categories": []string{"gis"}, "ExtMappings": []ExtensionMapping{},
+				"CategoryExts": map[int]map[string]*CategoryPkgList{
+					18: {"gis": {Visible: "stable" + tc.separator + "18"}},
+					19: {"gis": {Visible: "new" + tc.separator + "19"}},
+				},
+			}
+			var out bytes.Buffer
+			if err := tmpl.Execute(&out, data); err != nil {
+				t.Fatal(err)
+			}
+			rendered := out.String()
+			if got := renderedPackageAliasValue(rendered, "pgsql-gis"); got != "stable"+tc.separator+"$v" {
+				t.Fatalf("default group switched away from PG18: %q", got)
+			}
+			if tc.wantPG19 {
+				if got := renderedPackageAliasValue(rendered, "pg19-gis"); got != "new"+tc.separator+"19" {
+					t.Fatalf("PG19 group missing: %q", got)
+				}
+			} else if renderedPackageAliasValue(rendered, "pg19") != "" || renderedPackageAliasValue(rendered, "pg19-gis") != "" {
+				t.Fatal("EL8 configuration must not generate PG19 aliases")
+			}
+			if renderedPackageAliasValue(rendered, "pg14") != "" {
+				t.Fatal("retired PG14 alias was generated")
+			}
+		})
 	}
 }

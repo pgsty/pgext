@@ -194,6 +194,7 @@ func (g *BinGenerator) collectDNF(pg int) ([]BinaryPackage, error) {
 		       d.size_package, d.size_installed
 		FROM %s d
 		JOIN pgext.repository r ON d.repo = r.id
+		JOIN pgext.active_os o ON o.os = r.os
 		WHERE d.name LIKE '%%_%d%%'
 		  AND d.name NOT LIKE '%%-llvmjit%%'
 		  AND d.name NOT LIKE '%%-devel%%'
@@ -236,6 +237,7 @@ func (g *BinGenerator) collectAPT(pg int) ([]BinaryPackage, error) {
 		       a.filename, a.sha256, a.size, a.size_install
 		FROM %s a
 		JOIN pgext.repository r ON a.repo = r.id
+		JOIN pgext.active_os o ON o.os = r.os
 		WHERE (a.package LIKE '%%-%d%%' OR a.package = 'pgagent')
 		  AND a.package NOT LIKE '%%-dbgsym%%'
 	`, g.aptTable, pg)

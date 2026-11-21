@@ -20,8 +20,8 @@ import subprocess
 from typing import Any
 
 
-PG_MIN = 14
-PG_MAX = 18
+PG_MIN = 15
+PG_MAX = 19
 
 RPM_PLATFORMS = [
     "el8.x86_64",
@@ -91,11 +91,10 @@ SUPPORT = {
             None,
             "libduckdb",
         ),
-        ("libpgfeutils14", "libpgfeutils14", [14], ["postgresql-14.23.tar.gz"], None, "libpgfeutils"),
-        ("libpgfeutils15", "libpgfeutils15", [15], ["postgresql-15.18.tar.gz"], None, "libpgfeutils"),
-        ("libpgfeutils16", "libpgfeutils16", [16], ["postgresql-16.14.tar.gz"], None, "libpgfeutils"),
-        ("libpgfeutils17", "libpgfeutils17", [17], ["postgresql-17.10.tar.gz"], None, "libpgfeutils"),
-        ("libpgfeutils18", "libpgfeutils18", [18], ["postgresql-18.4.tar.gz"], None, "libpgfeutils"),
+        ("libpgfeutils15", "libpgfeutils15", [15], ["postgresql-15.20.tar.gz"], None, "libpgfeutils"),
+        ("libpgfeutils16", "libpgfeutils16", [16], ["postgresql-16.16.tar.gz"], None, "libpgfeutils"),
+        ("libpgfeutils17", "libpgfeutils17", [17], ["postgresql-17.12.tar.gz"], None, "libpgfeutils"),
+        ("libpgfeutils18", "libpgfeutils18", [18], ["postgresql-18.7.tar.gz"], None, "libpgfeutils"),
         (
             "inchi",
             "inchi",
@@ -184,7 +183,6 @@ SUPPORT_RECIPES = {
     "libfq",
     "libduckdb",
     "firebird_fdw",
-    "libpgfeutils14",
     "libpgfeutils15",
     "libpgfeutils16",
     "libpgfeutils17",
@@ -444,6 +442,7 @@ LINUX_OWNED = {
 }
 
 EXPLICIT_EXCLUDE = {
+    "libpgfeutils14",
     "cri-dockerd",
     "hydra",
     "keepalived",
@@ -611,6 +610,10 @@ def pgdg_build_reasons(
     available: dict[tuple[str, str, str, int], set[str]],
 ) -> tuple[str, ...]:
     """Select package supplements using the members declared for this PG."""
+    if platform not in (RPM_PLATFORMS if fmt == "rpm" else DEB_PLATFORMS):
+        return ()
+    if platform.startswith("el8.") and pg >= 19:
+        return ()
     expected = [
         row for row in rows
         if pg in parse_pg_array(row.get(f"{fmt}_pg", ""))
@@ -831,8 +834,6 @@ def source_list(
     if recipe == "pg_net":
         legacy = platform.startswith(("el8.", "el9.")) if fmt == "rpm" else platform.startswith("u22.")
         return ["pg_net-0.9.2.tar.gz" if legacy else "pg_net-0.20.5.tar.gz"], conflicts
-    if recipe == "pg_search" and fmt == "rpm":
-        return ["pg_search-0.25.6.tar.gz", "pg_search_collect_third_party_licenses.py"], conflicts
     if recipe == "pgtde":
         return [
             "percona-postgresql-18.6.tar.gz",
@@ -1008,7 +1009,7 @@ def release_policy(
             return "202603.6-1PGSTY on EL9/EL10; excluded on EL8"
         if platform.startswith(("d12.", "u22.")):
             return "legacy 202303.3 cartridge gap for PG17-18"
-        return "202603.6-1PGSTY on Resolute PG14-17"
+        return "202603.6-1PGSTY on Resolute PG15-17"
     if recipe == "pg_statviz":
         return "PGDG-gap only; package version=1.2.1; extension version=1.2; current release must end PGSTY"
     versions = sorted({row.get(f"{fmt}_ver", "") for row in rows if row.get(f"{fmt}_ver", "")})
@@ -1098,6 +1099,14 @@ def main() -> int:
                 pgdg_gap = side_repo == "PGDG"
 
                 recipe, mapping_kind = map_recipe(fmt, template, rows, inventory)
+                # An empty intersection for a major-specific package is not
+                # an unversioned build. In particular, PG14-only packages
+                # must not invoke a recipe's default PostgreSQL major.
+                if "$v" in template and not pg_versions:
+                    if recipe is not None:
+                        catalog_recipes[fmt].add(recipe)
+                    rule_effects[f"{fmt}:no_active_pg_packages_removed"] += 1
+                    continue
                 if recipe is None:
                     # A fully covered PGDG coordinate does not need a local
                     # recipe.  A real metadata gap without a recipe is a gate
@@ -1149,7 +1158,11 @@ def main() -> int:
                         rule_effects[f"{fmt}:os_exclude_jobs"] += 1
                         rule_effects[f"{fmt}:os_exclude_pg_abi"] += len(pg_versions)
                         continue
-                    selected_pg = list(pg_versions)
+                    selected_pg = [
+                        pg
+                        for pg in pg_versions
+                        if not (platform.startswith("el8.") and pg >= 19)
+                    ]
                     names = {row["name"] for row in rows}
 
                     if recipe == "rdkit" and side_repo == "PIGSTY":
@@ -1158,13 +1171,14 @@ def main() -> int:
                                 rule_effects["rpm:rdkit_platform_jobs_removed"] += 1
                                 rule_effects["rpm:rdkit_pg_abi_removed"] += len(selected_pg)
                                 continue
-                            selected_pg = [14, 15, 16, 17, 18]
+                            selected_pg = [pg for pg in selected_pg if 15 <= pg <= 18]
                         else:
                             if platform.startswith(("d13.", "u24.")):
                                 rule_effects["deb:rdkit_pgdg_platform_jobs_removed"] += 1
                                 rule_effects["deb:rdkit_pgdg_pg_abi_removed"] += len(selected_pg)
                                 continue
-                            selected_pg = [17, 18] if platform.startswith(("d12.", "u22.")) else [14, 15, 16, 17]
+                            supported_pg = [17, 18] if platform.startswith(("d12.", "u22.")) else [15, 16, 17]
+                            selected_pg = [pg for pg in selected_pg if pg in supported_pg]
 
                     if pgdg_gap:
                         before_pgdg_filter = list(selected_pg)
@@ -1352,9 +1366,6 @@ def main() -> int:
     for source in selected_sources:
         path = args.source_root / source
         provenance = f"source-root:{source}"
-        if not path.is_file() and source == "pg_search_collect_third_party_licenses.py":
-            path = args.rpm_repo / "rpmbuild/SPECS" / source
-            provenance = f"rpm-repo:rpmbuild/SPECS/{source}"
         source_hashes[source] = sha256_file(path) if path.is_file() else None
         source_provenance[source] = provenance
     for row in manifests:
@@ -1501,12 +1512,12 @@ def main() -> int:
         "generator_sha256": sha256_file(pathlib.Path(__file__)),
         "pgdg_snapshot": repo_stamps,
         "rules": {
-            "pg_versions": [14, 15, 16, 17, 18],
+            "pg_versions": list(range(PG_MIN, PG_MAX + 1)),
             "dedupe_key": "format+platform+package-template+PG-major-set; expanded artifact coordinates remain unique",
             "canonical_noarch_arch": "aarch64",
             "standard_shard": "sha256(recipe UTF-8) mod 2; B30=0, B31=1",
-            "rdkit": "RPM EL9/10 202603.6; DEB D12/U22 legacy PG17-18, D13/U24 PGDG, U26 202603.6 PG14-17",
-            "pg_net": "DEB Jammy 0.9.2; D12/D13/U24/U26 0.20.5",
+            "rdkit": "RPM EL9/10 202603.6; DEB D12/U22 legacy PG17-18, D13/U24 PGDG, U26 202603.6 PG15-17",
+            "pg_net": "RPM EL8/EL9 & DEB Jammy 0.9.2; EL10 & D12/D13/U24/U26 0.20.5",
             "pg_strom": "current 6.1/PG15-18 is PGDG-covered; local 3.5/PG14 recipe is quarantined",
             "rpm_main_bitcode_recipes": sorted(RPM_MAIN_BITCODE_RECIPES),
             "rpm_main_bitcode_policy": "jobs default to LLVM enabled; rpmspec exact packages plus debug; bitcode in main; extension llvmjit RPM and runtime LLVM dependencies forbidden",

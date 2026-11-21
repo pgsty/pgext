@@ -566,7 +566,8 @@ func (a *api) handleMatrix(w http.ResponseWriter, r *http.Request) {
 	a.cached(w, r, snap.queryVersion(), func(ctx context.Context) (any, error) {
 		rows, _ := a.pool.Query(ctx, `
 			SELECT pg, os, coalesce(name,''), state::text, coalesce(org,''), coalesce(version,''), coalesce(count,0)
-			FROM pgext.pkg WHERE pkg = $1 ORDER BY pg DESC, os`, e.Pkg)
+			FROM pgext.pkg WHERE pkg = $1 AND pg = ANY($2::integer[]) AND os = ANY($3::text[])
+			ORDER BY pg DESC, os`, e.Pkg, snap.PGs, snap.OSs)
 		cells, err := pgx.CollectRows(rows, pgx.RowToStructByPos[MatrixCell])
 		if err != nil {
 			return nil, err

@@ -11,6 +11,8 @@ import (
 	"slices"
 	"strings"
 	"time"
+
+	"pgext/db"
 )
 
 type Options struct {
@@ -247,6 +249,9 @@ func (e *Engine) jobPG(j *Job, recipe []byte) ([]int, error) {
 	}
 	if len(requested) > 0 {
 		for _, pg := range requested {
+			if !db.SupportsOSPG(e.Platform.OS, pg) {
+				return nil, fmt.Errorf("%s does not support PG%d on %s", j.Package, pg, e.Platform.OS)
+			}
 			if len(supported) > 0 && !slices.Contains(supported, pg) {
 				return nil, fmt.Errorf("%s recipe does not support PG%d (declared: %v)", j.Package, pg, supported)
 			}
@@ -254,11 +259,11 @@ func (e *Engine) jobPG(j *Job, recipe []byte) ([]int, error) {
 		return requested, nil
 	}
 	if len(supported) == 0 {
-		supported = []int{14, 15, 16, 17, 18}
+		supported = db.SupportedPGVersionsForOS(e.Platform.OS)
 	}
 	var out []int
 	for _, pg := range supported {
-		if pg < 14 || pg > 18 {
+		if !db.SupportsOSPG(e.Platform.OS, pg) {
 			continue
 		}
 		if e.Options.Plan {

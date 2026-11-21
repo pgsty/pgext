@@ -78,7 +78,7 @@ da: dump dd d2
 # dump extension data to data dir
 dump:
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.pg         ORDER BY pg DESC)  TO STDOUT CSV HEADER;"  > db/pg.csv
-	psql $(PGURL) -c "COPY (SELECT * FROM pgext.os         ORDER BY os_major) TO STDOUT CSV HEADER;"  > db/os.csv
+	psql $(PGURL) -c "COPY (SELECT * FROM pgext.os         ORDER BY os_major, CASE WHEN os_code IN ('el10','d11','u22') THEN CASE os_arch WHEN 'aarch64' THEN 0 ELSE 1 END ELSE CASE os_arch WHEN 'x86_64' THEN 0 ELSE 1 END END) TO STDOUT CSV HEADER;"  > db/os.csv
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.category   ORDER BY id)       TO STDOUT CSV HEADER;"  > db/category.csv
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.repository ORDER BY id)       TO STDOUT CSV HEADER;"  > db/repository.csv
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.extension  ORDER BY id)       TO STDOUT CSV HEADER;"  > db/extension.csv

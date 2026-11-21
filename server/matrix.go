@@ -181,7 +181,9 @@ const matrixLeadJoin = `
 		JOIN (SELECT DISTINCT ON (pkg) pkg, id, name
 		      FROM pgext.extension
 		      WHERE lead AND (state IS NULL OR state <> 'not-ready')
-		      ORDER BY pkg, id) e ON e.pkg = p.pkg`
+		      ORDER BY pkg, id) e ON e.pkg = p.pkg
+		JOIN pgext.active_pg ap ON ap.pg = p.pg
+		JOIN pgext.active_os ao ON ao.os = p.os`
 
 // matrixCellAggKey is the jsonb_object_agg key expression, producing the same
 // "el8i.17"-style cell keys matrixColumnKeys lays out on the Go side.

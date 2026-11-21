@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/signal"
 	"pgext/cli/build"
+	"pgext/db"
 	"syscall"
 
 	"github.com/spf13/cobra"
@@ -63,7 +64,7 @@ func newBuildCommand(action string) *cobra.Command {
 
 func buildFlags(c *cobra.Command, o *build.Options, jsonOutput *bool) {
 	f := c.Flags()
-	f.StringVarP(&o.PG, "pg", "p", "", "PostgreSQL majors, comma-separated (default: installed recipe targets)")
+	f.StringVarP(&o.PG, "pg", "p", "", fmt.Sprintf("PostgreSQL majors %d–%d, comma-separated (default: installed recipe targets)", db.MinPGVersion, db.MaxPGVersion))
 	if c.Name() == "get" || c.Name() == "dep" || c.Name() == "make" || c.Name() == "pkg" {
 		f.StringVar(&o.CatalogFile, "catalog", "", "catalog CSV (default: XDG pgext/extension.csv, then embedded)")
 	}

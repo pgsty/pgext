@@ -53,11 +53,41 @@ pgext env pgrx --pgrx 0.19.3 --pg 17,18
 ```
 
 Omit `--mirror` to prefer the global source service. `env tool` defaults to
-PG14–18; `env tool mini` installs packaging tools without PG server/devel
-packages. `env pgrx` registers installed PG14–18 installations, or requires
+PG18; `env tool mini` installs packaging tools without PG server/devel
+packages. `env pgrx` registers installed PG15–19 installations, or requires
 every version explicitly selected by `--pg`. Choose the cargo-pgrx version
 required by the extension recipe. `env rust` preserves existing Cargo
 configuration; `--force` backs up and replaces a differing mirror config.
+
+Since 2026-11-21 the build policy is **PG15–19 × 16 Linux platforms**
+(8 distribution releases, each on x86_64 and aarch64): 80 matrix cells per
+package, with EL8 covering **PG15–18** (`PG19` is `N/A` on EL8) and the
+remaining 14 targets covering **PG15–19**. PG14 is retired.
+The builder rejects explicit PG14 targets (and explicit PG19 on EL8) and ignores
+retired installed majors when selecting targets automatically. A PG14-only recipe
+remains ineligible; it does not inherit newer majors from the catalog. PG19 still
+requires recipe support and installed PG19 development files.
+
+The Go policy lives in `db/postgres.go` and `db/platforms.go`; tests compare it
+and the Python rebuild manifest with the active rows of `db/pg.csv` and
+`db/os.csv`. Source and package compatibility arrays, old repository URLs, and
+historical binary records retain their original versions. Fetch/scan skip
+retired targets, and matrix consumers select active dimensions even before
+the next package recap. Homepage/platform tables use those same dimensions.
+
+For an existing local catalog, first back up `pgext.pg`, `pgext.os`, and
+`pgext.status`, confirm the database and reviewed PG19 metadata, then apply:
+
+```bash
+PGUSER=postgres psql -X -v ON_ERROR_STOP=1 -h /tmp -p 5432 -d data -f db/build-targets.sql
+```
+
+This transactional migration is idempotent, preserves historical package and
+extension rows, refreshes the materialized matrix, and invalidates cached
+summaries only when targets change. It checks the exact 5 × 16 dimensions.
+Do not use `pgext load pg/os` for this transition: that replacement operation
+uses `TRUNCATE ... CASCADE`. Regenerate site content into a staging directory
+and review it separately; the migration does not publish a site or packages.
 
 Use `pgext env` for the detected platform and configured paths. Environment
 commands accept `--plan` where shown by their help. Proxy client/server
@@ -142,7 +172,7 @@ pgext pkg pg_eviltransform --pg 18 --jobs 4
 ```
 
 Without `--pg`, builds select installed majors supported by the recipe,
-limited to PG14–18. An explicit target outside declared support fails before
+limited to PG15–19. An explicit target outside declared support fails before
 building. For DEB recipes, `debian/pgversions` declares support; a Makefile's
 `PG_VERSIONS` default is used only when that declaration is absent or empty.
 Packages independent of PostgreSQL majors do not accept `--pg`.

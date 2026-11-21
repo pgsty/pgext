@@ -18,20 +18,25 @@ with web assets embedded in the binary and data stored in PostgreSQL.
 
 ## The catalog today
 
-Local catalog snapshot, **2026-11-10**:
+Local catalog snapshot, **2026-11-21**:
 
 | Layer | Current scope |
 | --- | --- |
-| Extension directory | **2,733** entries, including packaged, source, and provider-specific extensions |
-| Packaged directory entries | **625** marked `packaged`, including PostgreSQL contrib and retained entries |
-| Package matrix | **457** distinct package families across **36,560** recorded target slots: 33,544 available and 3,016 not applicable |
+| Extension directory | **2,814** entries, including packaged, source, and provider-specific extensions |
+| Packaged directory entries | **627** marked `packaged`, including PostgreSQL contrib and retained entries |
+| Package matrix | **457** distinct package families across **36,560** recorded target slots: 28,608 available, 3,451 missing, and 4,501 not applicable |
 | Categories | **16**, covering spatial data, vectors, search, analytics, operations, security, and more |
-| PostgreSQL targets | **14, 15, 16, 17, 18** |
+| PostgreSQL targets | **15, 16, 17, 18, 19** |
 | Linux targets | **16** OS/architecture combinations: EL 8/9/10, Debian 12/13, Ubuntu 22.04/24.04/26.04; `x86_64` and `aarch64` |
+
+PostgreSQL 18 remains the default for generated configurations and build-tool
+installation. PG14 was retired from active build targets on 2026-11-21; EL8
+remains active for PostgreSQL 15–18, while PostgreSQL 19 on EL8 is marked `N/A`.
+Stable PGDG 19 APT and YUM (EL9/EL10) repositories are enabled by default.
 
 The broad directory lives in [`pgext.universe`](db/universe.csv); the packaged
 baseline lives in [`pgext.extension`](db/extension.csv). The latter has
-625 available records, grouped under 518 package names, including PostgreSQL
+627 available records, grouped under 520 package names, including PostgreSQL
 contrib modules. These are separate counts: the homepage
 uses Universe's `packaged` flag, while its package and slot totals come from
 the active `pgext.pkg` matrix. A package can provide several extensions;
@@ -78,7 +83,7 @@ For a source build, use `./pgext` in the examples below.
 ## Build extensions
 
 Build natively on EL 8/9/10, Debian 12/13, or Ubuntu 22.04/24.04/26.04,
-on `amd64` or `arm64`. Inside the Linux host or container, prepare the
+on `amd64` or `arm64` (EL 8 supports PG15–18; EL 9/10, Debian, and Ubuntu support PG15–19). Inside the Linux host or container, prepare the
 environment once (root or sudo is needed for system package operations):
 
 ```bash
@@ -106,7 +111,7 @@ pgext mak pgvector --pg 18
 `mak`. It builds and verifies packages from prepared inputs; `pkg` runs
 `get → dep → mak` and stops on failure. Both preserve debug packages by default.
 Use `--pg 17,18` for multiple majors; omitting it selects installed majors
-supported by the recipe within PG14–18. Extension names such as `vector`
+supported by the recipe within PG15–19. Extension names such as `vector`
 also resolve to their source package (`pgvector`).
 
 Build commands choose metadata from `--catalog`, then

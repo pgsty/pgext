@@ -245,7 +245,7 @@ func recognizedLegacyRepos(content, family string) bool {
 			if section != "" && !hasURL {
 				return false
 			}
-			if !regexp.MustCompile(`^\[(?:pigsty-(?:infra|pgsql)|pgdg(?:-common|1[4-8]))\]$`).MatchString(line) {
+			if !regexp.MustCompile(`^\[(?:pigsty-(?:infra|pgsql)|pgdg(?:-common|1[4-9]))\]$`).MatchString(line) {
 				return false
 			}
 			seen = true
@@ -284,7 +284,7 @@ func legacyRPMURL(section, value string) bool {
 		module := strings.TrimPrefix(section, "pigsty-")
 		return regexp.MustCompile(`^https?://repo\.pigsty\.(?:io|cc)/yum/` + module + `(?:/|$)`).MatchString(value)
 	}
-	return regexp.MustCompile(`^https?://(?:download\.postgresql\.org/pub/repos/yum|repo\.pigsty\.(?:cc|io)/yum/pgdg|mirrors\.(?:cloud\.tencent\.com|tuna\.tsinghua\.edu\.cn|ustc\.edu\.cn|xtom\.de)/postgresql/repos/yum)/(?:common|1[4-8])/redhat/rhel-[^\s]+$`).MatchString(value)
+	return regexp.MustCompile(`^https?://(?:download\.postgresql\.org/pub/repos/yum|repo\.pigsty\.(?:cc|io)/yum/pgdg|mirrors\.(?:cloud\.tencent\.com|tuna\.tsinghua\.edu\.cn|ustc\.edu\.cn|xtom\.de)/postgresql/repos/yum)/(?:common|1[4-9])/redhat/rhel-[^\s]+$`).MatchString(value)
 }
 
 func (e *Engine) repoContent(module string) (string, error) {
@@ -319,7 +319,11 @@ func (e *Engine) repoContent(module string) (string, error) {
 			base = "https://repo.pigsty.cc/yum/pgdg"
 		}
 		write("pgdg-common", base+"/common/redhat/rhel-"+release+"-"+p.NativeArch(), "pgdg", 10)
-		for _, pg := range []int{14, 15, 16, 17, 18} {
+		pgs := []int{15, 16, 17, 18, 19}
+		if p.OS == "el8" {
+			pgs = []int{15, 16, 17, 18}
+		}
+		for _, pg := range pgs {
 			write(fmt.Sprintf("pgdg%d", pg), fmt.Sprintf("%s/%d/redhat/rhel-%s-%s", base, pg, release, p.NativeArch()), "pgdg", 10)
 		}
 	}

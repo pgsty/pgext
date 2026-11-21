@@ -144,7 +144,7 @@ func (s *Scanner) ScanAll(ctx context.Context) error {
 func (s *Scanner) loadPigstyRepositories(ctx context.Context) ([]*RepoMetadata, error) {
 	query := `SELECT r.id, r.type, r.default_meta as url, d.etag, d.last_modified, d.size
 		FROM pgext.repository r LEFT JOIN pgext.repo_data d ON r.id = d.id
-		WHERE r.org = 'pigsty' AND r.default_meta IS NOT NULL
+		WHERE r.org = 'pigsty' AND r.default_meta IS NOT NULL AND ` + activeRepositoryPredicate + `
 		ORDER BY r.id`
 
 	rows, err := QueryContext(ctx, query)

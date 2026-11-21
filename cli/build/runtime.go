@@ -12,6 +12,8 @@ import (
 	"strings"
 	"syscall"
 	"time"
+
+	"pgext/db"
 )
 
 type Platform struct {
@@ -53,7 +55,7 @@ func ParsePlatform(release, arch string) (Platform, error) {
 	default:
 		return p, fmt.Errorf("unsupported Linux distribution %q", m["ID"])
 	}
-	if _, ok := supportedOS[p.OS]; !ok {
+	if _, ok := db.BuildOSCodename(p.OS); !ok {
 		return p, fmt.Errorf("unsupported build platform %s", p.OS)
 	}
 	if arch != "amd64" && arch != "arm64" {
@@ -62,14 +64,12 @@ func ParsePlatform(release, arch string) (Platform, error) {
 	return p, nil
 }
 
-var supportedOS = map[string]string{"el8": "", "el9": "", "el10": "", "d12": "bookworm", "d13": "trixie", "u22": "jammy", "u24": "noble", "u26": "resolute"}
-
 func PlanPlatform(value string) (Platform, error) {
 	parts := strings.Split(value, ".")
 	if len(parts) != 2 {
 		return Platform{}, fmt.Errorf("platform must be OS.ARCH, e.g. el9.arm64")
 	}
-	code, ok := supportedOS[parts[0]]
+	code, ok := db.BuildOSCodename(parts[0])
 	if !ok {
 		return Platform{}, fmt.Errorf("unsupported platform %s", value)
 	}

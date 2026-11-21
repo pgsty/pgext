@@ -27,9 +27,9 @@ inventory has moved to `pgext repo summary`.
 
 Selectors accept spaces or commas. They can name individual repositories
 (`pigsty-pgsql`, `pgdg18`, `docker-ce`) or modules (`node`, `pgsql`, `infra`,
-`extra`, `beta`, `docker`, `local`, and other modules shown by `list`).
+`extra`, `docker`, `local`, and other modules shown by `list`).
 
-- `all` means `node + pgsql + infra`, excluding optional, local and beta sources.
+- `all` means `node + pgsql + infra`, excluding optional and local sources.
 - `pgdg` selects stable PGDG repositories within the `pgsql` module.
 - `pigsty` selects Pigsty's `pgsql` and `infra` repositories, excluding `local`.
 - Selection is filtered by OS and architecture, then deduplicated in catalog
@@ -174,3 +174,15 @@ the recorded OS/version/architecture and the current content and permissions
 of each affected file. A subsequent edit blocks restore. Restoring also creates
 a backup, allowing the restore itself to be undone. Keep the same `--root`
 and `--platform`/`--os-version` settings when restoring a staged configuration.
+
+PostgreSQL 19 is an active catalog and repository target, while generated
+configurations keep PG18 as the default. PG19 beta definitions and PG14 RPM
+repository definitions (`pgdg14`, `pgdg14-nonfree`) have been retired.
+
+The current active targets are PG15–19 on EL9/10, Debian 12/13 and Ubuntu
+22.04/24.04/26.04, plus PG15–18 on EL8, across both `x86_64` and `aarch64`.
+`all`, `pgsql` and `pgdg` select stable PG15–19 repositories on EL9/10 (and
+PG15–18 on EL8), alongside the shared APT `main` component on Debian/Ubuntu.
+`pgext env repo`, `env tool`, `env pgrx` and build commands follow the active
+platform/major policy. The catalog fetch/scan pipeline skips retired PG/OS
+repositories.

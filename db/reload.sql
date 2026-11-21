@@ -13,6 +13,7 @@ SELECT pg,os,CASE os.os_type
                  WHEN 'deb' THEN replace(replace(ext.deb_pkg, '*', ''), '$v', pg::text) ELSE NULL END AS name,
        ext.pkg,ext.name,
        CASE
+           WHEN os.os_code = 'el8' AND pg.pg >= 19 THEN 'N/A'
            WHEN NOT coalesce(ext.pg_ver, ARRAY[]::text[]) @> ARRAY[pg.pg::text] THEN 'N/A'
            WHEN os.os_type = 'rpm' AND coalesce(ext.rpm_repo, '') = '' THEN 'N/A'
            WHEN os.os_type = 'deb' AND coalesce(ext.deb_repo, '') = '' THEN 'N/A'

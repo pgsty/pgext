@@ -6,10 +6,12 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"pgext/cli/repo"
 	"sort"
 	"strings"
 	"text/template"
+
+	"pgext/cli/repo"
+	"pgext/db"
 
 	"github.com/sirupsen/logrus"
 )
@@ -25,6 +27,9 @@ func el9ARMPatroniPackages(extra ...string) string {
 
 // GeneratePigstyConfig generates Pigsty configuration for a specific OS
 func GeneratePigstyConfig(osName string, outputDir string, dryRun bool, verbose bool) error {
+	if !db.SupportsOSPlatform(osName) {
+		return fmt.Errorf("unsupported configuration target %q", osName)
+	}
 	// Parse OS name (e.g., "el9.x86_64" -> osCode="el9", arch="x86_64")
 	parts := strings.Split(osName, ".")
 	if len(parts) != 2 {
@@ -328,7 +333,8 @@ func (g *PigstyConfigGenerator) prepareTemplateData(extensions map[string]*Exten
 		"TunedProfileDir": g.tunedProfileDir(),
 		"Constants":       g.constants,
 		"Extensions":      extensions,
-		"PGVersions":      []int{18, 17, 16, 15, 14},
+		"PGVersions":      db.SupportedPGVersionsForOS(g.osCode),
+		"DefaultPG":       db.DefaultPGVersion,
 		"CategoryExts":    catExts,
 		"Categories":      categories,
 		"ExtMappings":     g.generateExtensionMappings(extensions),
@@ -374,7 +380,7 @@ func (g *PigstyConfigGenerator) generateCategoryPackages(extensions map[string]*
 		// Fallback to default order if database query fails
 		categories = []string{"time", "gis", "rag", "fts", "olap", "feat", "lang", "type", "util", "func", "admin", "stat", "sec", "fdw", "sim", "etl"}
 	}
-	pgVersions := []int{18, 17, 16, 15, 14}
+	pgVersions := db.SupportedPGVersionsForOS(g.osCode)
 
 	// Convert extensions to sorted slice
 	sortedExtensions := sortExtensionsByID(extensions)
@@ -475,10 +481,20 @@ func (g *PigstyConfigGenerator) getExtensionMappingVersions(ext *ExtensionData) 
 	}
 
 	if g.isRPM() && len(ext.RPMPG) > 0 {
-		return append([]int(nil), ext.RPMPG...)
+		for _, pg := range ext.RPMPG {
+			if db.SupportsOSPG(g.osCode, pg) {
+				versions = append(versions, pg)
+			}
+		}
+		return versions
 	}
 	if !g.isRPM() && len(ext.DEBPG) > 0 {
-		return append([]int(nil), ext.DEBPG...)
+		for _, pg := range ext.DEBPG {
+			if db.SupportsOSPG(g.osCode, pg) {
+				versions = append(versions, pg)
+			}
+		}
+		return versions
 	}
 	return versions
 }
@@ -632,7 +648,7 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 		},
 		"formatPGVersions": func(versions []int) string {
 			var result []string
-			allVersions := []int{18, 17, 16, 15, 14}
+			allVersions := db.SupportedPGVersionsForOS(g.osCode)
 			for _, v := range allVersions {
 				found := false
 				for _, av := range versions {
@@ -976,9 +992,9 @@ package_map:
   {{ printf "%-24s" (printf "%s:" .Key) }} "{{ getUtilPkg .Key .RPM }}"{{ end }}
 
   #--------------------------------#
-  # PGSQL: extensions (default pg18)
+  # PGSQL: extensions (default pg{{ .DefaultPG }})
   #--------------------------------#
-{{ range $cat := .Categories }}{{ $pkgs := index $.CategoryExts 18 $cat }}{{ if $pkgs }}  {{ printf "%-24s" (printf "pgsql-%s:" $cat) }} "{{ replaceAll "_18" "_$v" $pkgs.Visible }}"{{ if $pkgs.Hidden }} # {{ $pkgs.Hidden }}{{ end }}
+{{ range $cat := .Categories }}{{ $pkgs := index $.CategoryExts $.DefaultPG $cat }}{{ if $pkgs }}  {{ printf "%-24s" (printf "pgsql-%s:" $cat) }} "{{ replaceAll (printf "_%d" $.DefaultPG) "_$v" $pkgs.Visible }}"{{ if $pkgs.Hidden }} # {{ $pkgs.Hidden }}{{ end }}
 {{ end }}{{ end }}
 
 {{ range $pgVer := .PGVersions }}
@@ -1091,9 +1107,9 @@ package_map:
   {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .DEB }}"{{ end }}
 
   #--------------------------------#
-  # PGSQL: extensions (default pg18)
+  # PGSQL: extensions (default pg{{ .DefaultPG }})
   #--------------------------------#
-{{ range $cat := .Categories }}{{ $pkgs := index $.CategoryExts 18 $cat }}{{ if $pkgs }}  {{ printf "%-24s" (printf "pgsql-%s:" $cat) }} "{{ replaceAll "-18" "-$v" $pkgs.Visible }}"{{ if $pkgs.Hidden }} # {{ $pkgs.Hidden }}{{ end }}
+{{ range $cat := .Categories }}{{ $pkgs := index $.CategoryExts $.DefaultPG $cat }}{{ if $pkgs }}  {{ printf "%-24s" (printf "pgsql-%s:" $cat) }} "{{ replaceAll (printf "-%d" $.DefaultPG) "-$v" $pkgs.Visible }}"{{ if $pkgs.Hidden }} # {{ $pkgs.Hidden }}{{ end }}
 {{ end }}{{ end }}
 
 {{ range $pgVer := .PGVersions }}

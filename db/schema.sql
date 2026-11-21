@@ -41,15 +41,15 @@ VALUES (0, now());
 -- Store PostgreSQL major version information and release details
 CREATE TABLE IF NOT EXISTS pgext.pg
 (
-    pg      INTEGER PRIMARY KEY,           -- PostgreSQL major version number (e.g., 14, 15, 16, 17, 18)
-    active  BOOLEAN NOT NULL DEFAULT true, -- Whether this major version is actively supported
+    pg      INTEGER PRIMARY KEY,           -- PostgreSQL major version number (e.g., 14, 15, 16, 17, 18, 19)
+    active  BOOLEAN NOT NULL DEFAULT true, -- Whether this major version is an active build target
     version TEXT,                          -- Latest full version string (e.g., '17.6', '16.10')
     minor   INTEGER,                       -- Latest minor version number (e.g., 6, 10)
     src_url TEXT                           -- Source code tarball download URL
 );
 COMMENT ON TABLE pgext.pg IS 'PostgreSQL Major Version Info';
-COMMENT ON COLUMN pgext.pg.pg IS 'PostgreSQL major version number (e.g., 14, 15, 16, 17, 18)';
-COMMENT ON COLUMN pgext.pg.active IS 'Whether this major version is actively supported and maintained';
+COMMENT ON COLUMN pgext.pg.pg IS 'PostgreSQL major version number (e.g., 14, 15, 16, 17, 18, 19)';
+COMMENT ON COLUMN pgext.pg.active IS 'Whether this major version is an active build and availability-matrix target; historical rows remain inactive';
 COMMENT ON COLUMN pgext.pg.version IS 'Latest full version string in format x.y (e.g., 17.6, 16.10)';
 COMMENT ON COLUMN pgext.pg.minor IS 'Latest minor version number as integer (e.g., 6 for 17.6, 10 for 16.10)';
 COMMENT ON COLUMN pgext.pg.src_url IS 'Official PostgreSQL source code tarball download URL';
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS pgext.os
 );
 COMMENT ON TABLE pgext.os IS 'Linux Distribution Major Version Info';
 COMMENT ON COLUMN pgext.os.os IS 'Unique OS identifier combining code and architecture (e.g., u24.x86_64, el9.aarch64)';
-COMMENT ON COLUMN pgext.os.active IS 'Whether this OS distribution is actively supported and receives updates';
+COMMENT ON COLUMN pgext.os.active IS 'Whether this OS/architecture is an active build and availability-matrix target; historical rows remain inactive';
 COMMENT ON COLUMN pgext.os.os_type IS 'Package manager type: rpm for RedHat/CentOS/Rocky, deb for Debian/Ubuntu';
 COMMENT ON COLUMN pgext.os.os_mark IS 'Short OS marker for identification (e.g., el9i for EL9 x86, u24a for Ubuntu 24 ARM)';
 COMMENT ON COLUMN pgext.os.os_code IS 'OS version code using 3-4 char format (el7/el8/el9/el10, u20/u22/u24/u26, d11/d12/d13)';
@@ -268,7 +268,7 @@ COMMENT ON COLUMN pgext.extension.need_load IS 'Whether requires explicit LOAD o
 COMMENT ON COLUMN pgext.extension.trusted IS 'Whether non-superuser can install this extension (trusted extension feature)';
 COMMENT ON COLUMN pgext.extension.relocatable IS 'Whether extension can be relocated to a different schema after installation';
 COMMENT ON COLUMN pgext.extension.schemas IS 'Fixed schema names if extension is not relocatable (must be installed in specific schema)';
-COMMENT ON COLUMN pgext.extension.pg_ver IS 'Array of supported PostgreSQL major versions (e.g., {14,15,16,17,18})';
+COMMENT ON COLUMN pgext.extension.pg_ver IS 'Array of supported PostgreSQL major versions (e.g., {14,15,16,17,18,19})';
 COMMENT ON COLUMN pgext.extension.requires IS 'Array of extension dependencies (other extensions that must be installed first)';
 COMMENT ON COLUMN pgext.extension.require_by IS 'Array of extensions that depend on this extension (reverse dependency list)';
 COMMENT ON COLUMN pgext.extension.see_also IS 'Array of related or similar extensions (for discovery and comparison)';
@@ -814,7 +814,7 @@ COMMENT ON COLUMN pgext.apt.extra IS 'Additional non-standard fields stored as J
 -- DROP TABLE IF EXISTS pgext.bin;
 CREATE TABLE IF NOT EXISTS pgext.bin
 (
-    pg         INTEGER REFERENCES pgext.pg (pg),                -- PostgreSQL major version (14-18)
+    pg         INTEGER REFERENCES pgext.pg (pg),                -- PostgreSQL major version; active build targets are 15-19
     os         TEXT REFERENCES pgext.os (os),                   -- OS identifier (e.g., 'el9.x86_64', 'u24.aarch64')
     name       TEXT,                                            -- Full package name with version
     repo       TEXT REFERENCES pgext.repository (id),           -- Source repository identifier
@@ -831,7 +831,7 @@ CREATE INDEX IF NOT EXISTS package_pg_os_idx ON pgext.bin USING BTREE (pg,os);
 CREATE INDEX IF NOT EXISTS package_name_ver_idx ON pgext.bin USING BTREE (name,pg,os);
 
 COMMENT ON TABLE pgext.bin IS 'Binary Packages (RPM/DEB) for PostgreSQL Extensions';
-COMMENT ON COLUMN pgext.bin.pg IS 'PostgreSQL major version this package is built for (14, 15, 16, 17, 18)';
+COMMENT ON COLUMN pgext.bin.pg IS 'PostgreSQL major version this package is built for (14, 15, 16, 17, 18, 19)';
 COMMENT ON COLUMN pgext.bin.os IS 'Operating system and architecture identifier (e.g., el9.x86_64, u24.aarch64)';
 COMMENT ON COLUMN pgext.bin.repo IS 'Source repository identifier this package was parsed from';
 COMMENT ON COLUMN pgext.bin.name IS 'Full package name including PostgreSQL version (e.g., postgresql-17-pgvector)';
@@ -854,7 +854,7 @@ CREATE TYPE pgext.pkg_state AS ENUM ('AVAIL', 'MISS', 'N/A');
 -- DROP TABLE IF EXISTS pgext.pkg CASCADE;
 CREATE TABLE IF NOT EXISTS pgext.pkg
 (
-    pg      INTEGER REFERENCES pgext.pg,            -- PostgreSQL major version (14-18)
+    pg      INTEGER REFERENCES pgext.pg,            -- PostgreSQL major version; active build targets are 15-19
     os      TEXT REFERENCES pgext.os,               -- OS identifier (e.g., 'el9.x86_64', 'u24.aarch64')
     name    TEXT,                                   -- Versioned package name (e.g., 'postgresql-17-pgvector')
     pkg     TEXT,                                   -- Normalized extension package name (like pgvector, postgis)
@@ -870,7 +870,7 @@ CREATE INDEX IF NOT EXISTS pkg_pg_os_name_idx ON pgext.pkg (pg, os, name);
 CREATE INDEX IF NOT EXISTS pkg_pkg_os_pg_idx ON pgext.pkg (pkg, os, pg);
 
 COMMENT ON TABLE pgext.pkg IS 'PostgreSQL Extension Package Availability Table';
-COMMENT ON COLUMN pgext.pkg.pg IS 'PostgreSQL major version number (18,17,16,...)';
+COMMENT ON COLUMN pgext.pkg.pg IS 'PostgreSQL major version number (19,18,17,...)';
 COMMENT ON COLUMN pgext.pkg.os IS 'OS and architecture identifier in format os_code.arch (e.g., el9.x86_64, u24.aarch64)';
 COMMENT ON COLUMN pgext.pkg.pkg IS 'Normalized extension package name like pgvector, postgis';
 COMMENT ON COLUMN pgext.pkg.ext IS 'Leading extension name within this package';
@@ -1176,32 +1176,32 @@ COMMENT ON VIEW pgext.pkg_pigsty IS 'pgext.pkg as if only Pigsty repositories ex
 CREATE OR REPLACE VIEW pgext.summary AS
 SELECT 1::INTEGER AS id, 'ALL Extensions' AS title, count(*) AS total,
        count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, 0 AS miss,
-       count(*) FILTER ( WHERE pg_ver @> '{18}') AS pg18,count(*) FILTER ( WHERE pg_ver @> '{17}') AS pg17,count(*) FILTER ( WHERE pg_ver @> '{16}') AS pg16,count(*) FILTER ( WHERE pg_ver @> '{15}') AS pg15,count(*) FILTER ( WHERE pg_ver @> '{14}') AS pg14
+       count(*) FILTER ( WHERE pg_ver @> '{19}') AS pg19, count(*) FILTER ( WHERE pg_ver @> '{18}') AS pg18,count(*) FILTER ( WHERE pg_ver @> '{17}') AS pg17,count(*) FILTER ( WHERE pg_ver @> '{16}') AS pg16,count(*) FILTER ( WHERE pg_ver @> '{15}') AS pg15,count(*) FILTER ( WHERE pg_ver @> '{14}') AS pg14
 FROM pgext.extension
 UNION ALL
 SELECT 2::INTEGER AS id, 'EL Extensions' AS title, count(*) AS total,
        count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension) - count(*) AS miss,
-       count(*) FILTER ( WHERE rpm_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE rpm_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE rpm_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE rpm_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE rpm_pg @> '{14}') AS pg14
+       count(*) FILTER ( WHERE rpm_pg @> '{19}') AS pg19, count(*) FILTER ( WHERE rpm_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE rpm_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE rpm_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE rpm_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE rpm_pg @> '{14}') AS pg14
 FROM pgext.extension WHERE rpm_repo IS NOT NULL
 UNION ALL
 SELECT 3::INTEGER AS id, 'Debian Extensions' AS title, count(*) AS total,
        count(*) FILTER ( WHERE deb_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE deb_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension) - count(*) AS miss,
-       count(*) FILTER ( WHERE deb_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE deb_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE deb_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE deb_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE deb_pg @> '{14}') AS pg14
+       count(*) FILTER ( WHERE deb_pg @> '{19}') AS pg19, count(*) FILTER ( WHERE deb_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE deb_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE deb_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE deb_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE deb_pg @> '{14}') AS pg14
 FROM pgext.extension WHERE deb_repo IS NOT NULL
 UNION ALL
 SELECT 4::INTEGER AS id, 'ALL Packages' AS title, count(*) AS total,
        count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, 0 AS miss,
-       count(*) FILTER ( WHERE pg_ver @> '{18}') AS pg18,count(*) FILTER ( WHERE pg_ver @> '{17}') AS pg17,count(*) FILTER ( WHERE pg_ver @> '{16}') AS pg16,count(*) FILTER ( WHERE pg_ver @> '{15}') AS pg15,count(*) FILTER ( WHERE pg_ver @> '{14}') AS pg14
+       count(*) FILTER ( WHERE pg_ver @> '{19}') AS pg19, count(*) FILTER ( WHERE pg_ver @> '{18}') AS pg18,count(*) FILTER ( WHERE pg_ver @> '{17}') AS pg17,count(*) FILTER ( WHERE pg_ver @> '{16}') AS pg16,count(*) FILTER ( WHERE pg_ver @> '{15}') AS pg15,count(*) FILTER ( WHERE pg_ver @> '{14}') AS pg14
 FROM pgext.extension WHERE lead AND NOT contrib
 UNION ALL
 SELECT 5::INTEGER AS id, 'EL Packages' AS title, count(*) AS total,
        count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension WHERE lead) - count(*) AS miss,
-       count(*) FILTER ( WHERE rpm_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE rpm_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE rpm_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE rpm_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE rpm_pg @> '{14}') AS pg14
+       count(*) FILTER ( WHERE rpm_pg @> '{19}') AS pg19, count(*) FILTER ( WHERE rpm_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE rpm_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE rpm_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE rpm_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE rpm_pg @> '{14}') AS pg14
 FROM pgext.extension WHERE rpm_repo IS NOT NULL AND lead AND NOT contrib
 UNION ALL
-SELECT 5::INTEGER AS id, 'Debian Packages' AS title, count(*) AS total,
+SELECT 6::INTEGER AS id, 'Debian Packages' AS title, count(*) AS total,
        count(*) FILTER ( WHERE deb_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE deb_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension WHERE lead) - count(*) AS miss,
-       count(*) FILTER ( WHERE deb_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE deb_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE deb_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE deb_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE deb_pg @> '{14}') AS pg14
+       count(*) FILTER ( WHERE deb_pg @> '{19}') AS pg19, count(*) FILTER ( WHERE deb_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE deb_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE deb_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE deb_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE deb_pg @> '{14}') AS pg14
 FROM pgext.extension WHERE deb_repo IS NOT NULL AND lead AND NOT contrib;
 
 

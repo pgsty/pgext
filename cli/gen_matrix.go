@@ -543,7 +543,9 @@ func (g *GlobalMatrixGenerator) renderStandaloneHTML(rows []*GlobalMatrixRow, os
 	b.WriteString(globalMatrixStandaloneCSS())
 	b.WriteString(`</head>
 <body data-view="pgdg">
-<main class="mx-page">
+`)
+	b.WriteString(fmt.Sprintf("<main class=\"mx-page\" style=\"--mx-columns: %d;\">\n", max(1, len(osVersions)*len(pgVersions))))
+	b.WriteString(`
   <header class="mx-hero">
     <h1>PG Extension Matrix</h1>
   </header>
@@ -714,7 +716,7 @@ a:hover { text-decoration: underline; }
 .mx-page {
   container-type: inline-size;
   --pkg-col: clamp(142px, 12cqw, 184px);
-  --cell-size: max(7px, calc((100cqw - var(--pkg-col)) / 80));
+  --cell-size: max(7px, calc((100cqw - var(--pkg-col)) / var(--mx-columns)));
   width: 100%;
   padding: 24px 32px 48px;
 }

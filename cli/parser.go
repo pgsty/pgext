@@ -197,7 +197,7 @@ func (p *Parser) loadRepositories() ([]RepositoryData, error) {
 		SELECT rd.id, r.type, rd.data
 		FROM pgext.repo_data rd
 		JOIN pgext.repository r ON rd.id = r.id
-		WHERE rd.data IS NOT NULL
+		WHERE rd.data IS NOT NULL AND ` + activeRepositoryPredicate + `
 		ORDER BY rd.id
 	`
 

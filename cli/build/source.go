@@ -12,6 +12,8 @@ import (
 	"regexp"
 	"strings"
 	"time"
+
+	"pgext/db"
 )
 
 var tarballPattern = regexp.MustCompile(`[A-Za-z0-9][A-Za-z0-9_.+~-]*\.(?:tar\.(?:gz|bz2|xz|zst)|tgz|zip)`)
@@ -152,7 +154,7 @@ func (e *Engine) get(ctx context.Context, j *Job, r *Result, w io.Writer) error 
 	if e.Platform.Family == "rpm" && j.Recipe != "" && !e.Options.Plan {
 		pgs := j.PG
 		if len(pgs) == 0 {
-			pgs = []int{18}
+			pgs = []int{db.DefaultPGVersion}
 		}
 		var actual []string
 		for _, pg := range pgs {

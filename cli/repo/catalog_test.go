@@ -35,7 +35,8 @@ func TestCatalogSelectionAndPlatformFiltering(t *testing.T) {
 		{"u24.arm64", []string{"node"}, []string{"base", "updates", "backports", "security"}, nil},
 		{"d12.amd64", []string{"node"}, []string{"base", "updates", "security"}, []string{"backports"}},
 		{"el8.x86_64", []string{"node"}, []string{"baseos", "appstream", "extras", "powertools", "epel"}, []string{"crb"}},
-		{"el9.aarch64", []string{"pgdg,pigsty", "pgdg18"}, []string{"pigsty-infra", "pigsty-pgsql", "pgdg-common", "pgdg14", "pgdg15", "pgdg16", "pgdg17", "pgdg18"}, []string{"pgdg-beta", "pgdg18-nonfree"}},
+		{"el8.x86_64", []string{"pgdg"}, []string{"pgdg-common", "pgdg15", "pgdg16", "pgdg17", "pgdg18"}, []string{"pgdg14", "pgdg19", "pgdg-beta"}},
+		{"el9.aarch64", []string{"pgdg,pigsty", "pgdg18"}, []string{"pigsty-infra", "pigsty-pgsql", "pgdg-common", "pgdg15", "pgdg16", "pgdg17", "pgdg18", "pgdg19"}, []string{"pgdg14", "pgdg-beta", "pgdg18-nonfree"}},
 		{"u24.amd64", []string{"all"}, []string{"pigsty-pgsql", "pigsty-infra", "base", "updates", "backports", "security", "pgdg"}, []string{"pigsty-local", "docker-ce", "pgdg-beta"}},
 	} {
 		t.Run(tt.platform+strings.Join(tt.selector, "-"), func(t *testing.T) {

@@ -176,7 +176,7 @@ func (f *Fetcher) loadRepositories(ctx context.Context) ([]*RepoMetadata, error)
 
 	query := fmt.Sprintf(`SELECT r.id,r.type,%s as url,COALESCE(%s, '') as mirror_url,d.etag,d.last_modified,d.size,d.extra,encode(sha256(d.data), 'hex')
 		FROM pgext.repository r LEFT JOIN pgext.repo_data d ON r.id = d.id
-		WHERE %s IS NOT NULL ORDER BY r.id `, urlColumn, fallbackColumn, urlColumn)
+		WHERE %s IS NOT NULL AND `+activeRepositoryPredicate+` ORDER BY r.id `, urlColumn, fallbackColumn, urlColumn)
 
 	rows, err := QueryContext(ctx, query)
 	if err != nil {

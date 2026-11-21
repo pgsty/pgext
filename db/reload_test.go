@@ -18,4 +18,7 @@ func TestPGNFHideExemptsTimescaleDB(t *testing.T) {
 	if !strings.Contains(reloadSQL, "hide = sub.hide AND p.pkg <> 'timescaledb'") {
 		t.Fatal("TimescaleDB must remain visible when the selected RPM comes from PGDG non-free")
 	}
+	if !strings.Contains(reloadSQL, "WHEN os.os_code = 'el8' AND pg.pg >= 19 THEN 'N/A'") {
+		t.Fatal("EL8 PG19+ matrix slots must initialize to N/A rather than MISS")
+	}
 }

@@ -17,21 +17,21 @@ PGEXT_RELOAD_TOKEN=secret pgext serve           # 可选：启用带认证的手
 
 ## 首页数字口径
 
-以下为本地 `data` 库在 **2026-11-10** 的核对值，线上与其他实例以各自快照为准：
+以下为本地 `data` 库在 **2026-11-21** 的核对值，线上与其他实例以各自快照为准：
 
 | 指标 | 当前值 | 计算口径 |
 | --- | ---: | --- |
-| 收录在册扩展 | 2,733 | `pgext.universe` 条目数 |
-| 已打包扩展 | 625 | Universe 中 `packaged = true` 的条目，包含 contrib 与保留条目 |
+| 收录在册扩展 | 2,814 | `pgext.universe` 条目数 |
+| 已打包扩展 | 627 | Universe 中 `packaged = true` 的条目，包含 contrib 与保留条目 |
 | 矩阵软件包 | 457 | `pgext.pkg` 中处于活跃 PG/OS 目标的 `DISTINCT pkg` |
-| Linux 目标 | 16 | `pgext.active_os` 条目；8 个系统版本 × 2 种架构 |
-| PG 大版本 | 5 | `pgext.active_pg` 条目；PG 14–18 |
+| Linux 目标 | 16 | `pgext.active_os` 条目；8 个系统版本 × 2 种架构（EL8 覆盖 PG 15–18） |
+| PG 大版本 | 5 | `pgext.active_pg` 条目；PG 15–19 |
 | 矩阵槽位 | 36,560 | `pgext.pkg` 中处于活跃 PG/OS 目标的记录数，包含 `AVAIL`、`MISS`、`N/A` |
 
-当前槽位为 33,544 个 `AVAIL`、0 个 `MISS`、3,016 个 `N/A`，不能作为成功构建数。
+当前槽位为 28,608 个 `AVAIL`、3,451 个 `MISS`、4,501 个 `N/A`，不能作为成功构建数。
 软件包族与扩展不是一一对应，contrib 随 PostgreSQL 交付，也不等于矩阵中的独立扩展包。
-首页“已打包”与筛选器使用同一 `packaged` 标记；基线 `pgext.extension` 的 625 个
-`available` 条目是另一口径，按包名归并后对应 518 个包族。
+首页“已打包”与筛选器使用同一 `packaged` 标记；基线 `pgext.extension` 的 627 个
+`available` 条目是另一口径，按包名归并后对应 520 个包族。
 
 前端从 bootstrap 行计算收录与已打包数，从 `pg/os` 数组计算目标数，软件包与槽位数
 直接读取服务端聚合，保留真实的零值。所有计数参与快照内容 ETag；仅矩阵统计变化也会
@@ -56,7 +56,7 @@ PGEXT_RELOAD_TOKEN=secret pgext serve           # 可选：启用带认证的手
    维度聚合及首页的 PG × OS 精确筛选均零 SQL 应答。内容 ETag 不包含加载时间，相同数据刷新后
    浏览器缓存仍然有效。按 `--cache-ttl`（默认 5m）后台自动刷新。
 2. **矩阵缓存（`matrix.go` / `pgext.matrix_cache`）**——`/api/v1/matrix` 的完整响应在写入侧预计算：
-   一条 `jsonb_object_agg` 聚合把 `pgext.pkg` 折叠成每包一行（键 `el8i.17`，值 `版本 + #/@ + G/P/M/N`），
+   一条 `jsonb_object_agg` 聚合把 `pgext.pkg` 折叠成每包一行（键 `el9i.17`，值 `版本 + #/@ + G/P/M/N`），
    Go 侧铺到规范 OS × PG 网格后连同统计一起序列化，落入 mtime 缓存表（每视图一行：1=全局、
    2=pgdg、3=pigsty what-if；旧库的单行 CHECK 约束在启动时自动放宽）。读路径是一次主键查询；
    缓存在早于 `pgext.status` 装载时间或超过 24h 时惰性重建，`POST /api/v1/reload` 与启动预热会

@@ -166,8 +166,8 @@ func ParsePG(s string) ([]int, error) {
 	seen := map[int]bool{}
 	for _, v := range strings.Split(s, ",") {
 		n, err := strconv.Atoi(strings.TrimSpace(v))
-		if err != nil || n < 14 || n > 18 {
-			return nil, fmt.Errorf("invalid PostgreSQL major %q (supported: 14–18)", v)
+		if err != nil || !db.SupportsPGVersion(n) {
+			return nil, fmt.Errorf("invalid PostgreSQL major %q (supported: %d–%d)", v, db.MinPGVersion, db.MaxPGVersion)
 		}
 		if !seen[n] {
 			out = append(out, n)

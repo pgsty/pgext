@@ -11,6 +11,8 @@ import (
 	"regexp"
 	"slices"
 	"strings"
+
+	"pgext/db"
 )
 
 const DefaultPgrxVersion = "0.19.3"
@@ -98,9 +100,12 @@ func (e *Engine) toolCommand(mode string) (Command, error) {
 			return Command{}, err
 		}
 		if len(pgs) == 0 {
-			pgs = []int{14, 15, 16, 17, 18}
+			pgs = []int{db.DefaultPGVersion}
 		}
 		for _, pg := range pgs {
+			if !db.SupportsOSPG(e.Platform.OS, pg) {
+				return Command{}, fmt.Errorf("PostgreSQL %d packages are unavailable on %s", pg, e.Platform.OS)
+			}
 			if e.Platform.Family == "rpm" {
 				common = append(common, fmt.Sprintf("postgresql%d-devel", pg), fmt.Sprintf("postgresql%d-server", pg))
 			} else {
@@ -328,10 +333,13 @@ func (e *Engine) pgrxCommands(ctx context.Context, version string) ([]Command, e
 	}
 	explicit := len(pgs) > 0
 	if !explicit {
-		pgs = []int{14, 15, 16, 17, 18}
+		pgs = db.SupportedPGVersionsForOS(e.Platform.OS)
 	}
 	args := []string{cargo, "pgrx", "init"}
 	for _, pg := range pgs {
+		if !db.SupportsOSPG(e.Platform.OS, pg) {
+			return nil, fmt.Errorf("PostgreSQL %d packages are unavailable on %s", pg, e.Platform.OS)
+		}
 		path := e.Platform.PGConfig(pg)
 		if _, err := os.Stat(path); err == nil || e.Options.Plan {
 			args = append(args, fmt.Sprintf("--pg%d=%s", pg, path))

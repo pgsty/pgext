@@ -10,6 +10,8 @@ import (
 	"slices"
 	"strconv"
 	"strings"
+
+	"pgext/db"
 )
 
 // A few catalog package identities differ from the native recipe names.
@@ -48,7 +50,7 @@ func recipePG(family, root, name string, recipe []byte) []int {
 			}
 		}
 		if raw == "" {
-			for pg := 14; pg <= 18; pg++ {
+			for pg := 1; pg <= db.MaxPGVersion; pg++ {
 				if makeHasTarget(string(recipe), fmt.Sprintf("build%d", pg)) {
 					raw += " " + strconv.Itoa(pg)
 				}
@@ -63,7 +65,9 @@ func recipePG(family, root, name string, recipe []byte) []int {
 	var out []int
 	for _, s := range strings.Fields(raw) {
 		n, err := strconv.Atoi(s)
-		if err == nil && n >= 14 && n <= 18 && !slices.Contains(out, n) {
+		// Preserve retired declarations: filtering them here would turn a
+		// PG14-only recipe into "unspecified" and enable the catalog fallback.
+		if err == nil && n > 0 && !slices.Contains(out, n) {
 			out = append(out, n)
 		}
 	}
