@@ -2,6 +2,10 @@
 
 来源：
 
+- [Official source](https://github.com/timescale/timescaledb/releases/tag/2.32.1)
+- [Official source](https://github.com/timescale/timescaledb/blob/2.32.1/version.config)
+- [Official source](https://github.com/timescale/timescaledb/blob/2.32.1/CHANGELOG.md)
+
 - [TimescaleDB v2.30.2 README](https://github.com/timescale/timescaledb/blob/2.30.2/README.md)
 - [TimescaleDB 2.29.0 发行说明](https://github.com/timescale/timescaledb/releases/tag/2.29.0)
 - [TimescaleDB 2.30.2 发布说明](https://github.com/timescale/timescaledb/releases/tag/2.30.2)
@@ -135,5 +139,18 @@ SELECT extversion FROM pg_extension WHERE extname = 'timescaledb';
 
 ```sql
 ALTER EXTENSION timescaledb UPDATE TO '2.32.0';
+SELECT extversion FROM pg_extension WHERE extname = 'timescaledb';
+```
+
+### 版本 2.32.1
+
+将 PostgreSQL 升级到 16.16、17.12 或 18.7 及后续小版本之前，应先升级 TimescaleDB 到 2.32.1。早期 TimescaleDB 补丁在这些服务器版本上可能导致全部调度任务失败。2.32.1 同时兼容之前的小版本，取代上文 2.32.0 的兼容性限制。
+
+本次修复任务崩溃后的退避以及 `run_job` 内提交，并让分块、索引及连续聚合操作使用相应调用者或所有者，减少不必要的目录所有者身份切换。验证压缩分块上的唯一索引前会检查所有权。升级后应核对应用角色权限和调度任务执行结果。
+
+安装匹配文件，按预加载库维护流程重启，并在各数据库中使用新的 `psql -X` 会话：
+
+```sql
+ALTER EXTENSION timescaledb UPDATE TO '2.32.1';
 SELECT extversion FROM pg_extension WHERE extname = 'timescaledb';
 ```

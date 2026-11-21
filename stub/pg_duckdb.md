@@ -1,116 +1,45 @@
-
-
-
 ## Usage
 
-[pg_duckdb docs](https://github.com/duckdb/pg_duckdb/tree/main/docs)
+Sources:
 
-| Topic                                                                                                  | Description                                                |
-|:-------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
-| [**Functions**](https://github.com/duckdb/pg_duckdb/blob/main/docs/functions.md)                       | Complete reference for all available functions             |
-| [**Syntax Guide & Gotchas**](https://github.com/duckdb/pg_duckdb/blob/main/docs/gotchas_and_syntax.md) | Quick reference for common SQL patterns and things to know |
-| [**Types**](https://github.com/duckdb/pg_duckdb/blob/main/docs/types.md)                               | Supported data types and type mappings                     |
-| [**Extensions**](https://github.com/duckdb/pg_duckdb/blob/main/docs/extensions.md)                     | DuckDB extension installation and usage                    |
-| [**Settings**](https://github.com/duckdb/pg_duckdb/blob/main/docs/settings.md)                         | Configuration options and parameters                       |
-| [**Transactions**](https://github.com/duckdb/pg_duckdb/blob/main/docs/transactions.md)                 | Transaction behavior and limitations                       |
+- [README.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/README.md)
+- [pg_duckdb.control](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/pg_duckdb.control)
+- [settings.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/settings.md)
+- [functions.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/functions.md)
+- [transactions.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/transactions.md)
+- [gotchas_and_syntax.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/gotchas_and_syntax.md)
+- [v1.2.1](https://github.com/duckdb/pg_duckdb/releases/tag/v1.2.1)
 
+`pg_duckdb` embeds DuckDB's analytical engine in PostgreSQL and can query ordinary PostgreSQL tables and external files. Release 1.2.1 embeds DuckDB 2.0.1; upstream lists PostgreSQL 14–18. It is not relocatable and needs cluster preload.
 
+### Enable and Compare a Query
 
-### Quick Setup
-
-Install pg_duckdb with pig:
-
-```bash
-pig repo set
-pig install pg_duckdb
-```
-
-Edit `postgresql.conf`, then restart to take effect
+Add the library to the existing setting, then restart PostgreSQL:
 
 ```ini
 shared_preload_libraries = 'pg_duckdb'
-duckdb.allow_community_extensions = true
 ```
 
-
-### Accelerate Query
-
-You can use DuckDB to query existing PostgreSQL table without modifying them:
+As a superuser, install it and inspect an analytical query:
 
 ```sql
--- pgbench -is 1000  # init some test workloads with pgbench
 CREATE EXTENSION pg_duckdb;
-
--- default behavior, common postgres engine
-SET duckdb.force_execution = false;
-EXPLAIN ANALYZE SELECT count(*) FROM pgbench_accounts;
-
--- now the query goes to pg_duckdb
+CREATE TABLE orders (category text, amount numeric);
+INSERT INTO orders VALUES ('a', 10), ('a', 20), ('b', 5);
 SET duckdb.force_execution = true;
-EXPLAIN ANALYZE SELECT count(*) FROM pgbench_accounts;
+EXPLAIN SELECT category, sum(amount) FROM orders GROUP BY category;
+SELECT category, sum(amount) FROM orders GROUP BY category;
+SET duckdb.force_execution = false;
 ```
 
-The result would be 8s -> 4s on 4c VM on local laptop) :
+Ordinary queries use PostgreSQL unless forced; DuckDB-only functions or remote storage operations choose DuckDB automatically. Inspect the plan and benchmark representative data. `read_parquet`, `read_csv` and `read_json` read external data, while `duckdb.create_simple_secret` configures storage credentials. Keep secrets out of shared SQL history and verify the access boundary before granting execution.
 
-```text
-postgres@el9:5432/postgres=# SET duckdb.force_execution = true;
-EXPLAIN ANALYZE SELECT count(*) FROM pgbench_accounts;
-SET
-Time: 0.206 ms
-                                              QUERY PLAN
-------------------------------------------------------------------------------------------------------
- Custom Scan (DuckDBScan)  (cost=0.00..0.00 rows=0 width=0) (actual time=0.001..0.001 rows=0 loops=1)
-   DuckDB Execution Plan:
+### Privileges and Configuration
 
- ┌─────────────────────────────────────┐
- │┌───────────────────────────────────┐│
- ││    Query Profiling Information    ││
- │└───────────────────────────────────┘│
- └─────────────────────────────────────┘
- EXPLAIN ANALYZE  SELECT count(*) AS count FROM pgduckdb.public.pgbench_accounts
- ┌────────────────────────────────────────────────┐
- │┌──────────────────────────────────────────────┐│
- ││               Total Time: 3.89s              ││
- │└──────────────────────────────────────────────┘│
- └────────────────────────────────────────────────┘
- ┌───────────────────────────┐
- │           QUERY           │
- └─────────────┬─────────────┘
- ┌─────────────┴─────────────┐
- │      EXPLAIN_ANALYZE      │
- │    ────────────────────   │
- │           0 rows          │
- │          (0.00s)          │
- └─────────────┬─────────────┘
- ┌─────────────┴─────────────┐
- │    UNGROUPED_AGGREGATE    │
- │    ────────────────────   │
- │        Aggregates:        │
- │        count_star()       │
- │                           │
- │           1 row           │
- │          (0.00s)          │
- └─────────────┬─────────────┘
- ┌─────────────┴─────────────┐
- │         TABLE_SCAN        │
- │    ────────────────────   │
- │           Table:          │
- │      pgbench_accounts     │
- │                           │
- │      100,000,000 rows     │
- │          (3.88s)          │
- └───────────────────────────┘
-```
+`duckdb.postgres_role` selects the role allowed to execute DuckDB, manage secrets and use MotherDuck data; by default only superusers may do so. A configured role can be created during installation. Grant membership deliberately because it exposes shared DuckDB secrets and data. Local filesystem access is restricted separately through PostgreSQL server-file roles and DuckDB filesystem settings. Community extension loading is an explicit administrator choice.
 
+### Transaction and Compatibility Limits
 
+A transaction may not write both PostgreSQL and DuckDB tables, or mix DDL for both engines. Keep `duckdb.unsafe_allow_mixed_transactions` disabled: bypassing the rule can commit one side only and lose consistency. Execution inside PostgreSQL functions is also disabled by default; the unsafe setting for it has known crash risks.
 
-### Data Lake
-
-Let's play with a local minio instance:
-
-```sql
-SELECT duckdb.create_simple_secret(
-    type := 'S3', key_id := 's3user_data', secret := 'S3User.Data',
-    endpoint := 'https://sss.pigsty:9000', url_style := 'path' 
-);
-```
+Version 1.2.1 supports nested fixed-length arrays and improves numeric and floating conversions. It fixes parallel-worker memory reads, cancellation cleanup and secret-bearing log/statistics handling. These fixes do not remove the need to restrict credentials and review type/query compatibility. Install matching libraries, follow preload restart requirements, and update the SQL extension in each database before relying on new behavior.

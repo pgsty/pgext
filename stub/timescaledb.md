@@ -2,6 +2,10 @@
 
 Sources:
 
+- [Official source](https://github.com/timescale/timescaledb/releases/tag/2.32.1)
+- [Official source](https://github.com/timescale/timescaledb/blob/2.32.1/version.config)
+- [Official source](https://github.com/timescale/timescaledb/blob/2.32.1/CHANGELOG.md)
+
 - [TimescaleDB v2.30.2 README](https://github.com/timescale/timescaledb/blob/2.30.2/README.md)
 - [TimescaleDB 2.29.0 release](https://github.com/timescale/timescaledb/releases/tag/2.29.0)
 - [TimescaleDB 2.30.2 release](https://github.com/timescale/timescaledb/releases/tag/2.30.2)
@@ -135,5 +139,18 @@ This release checks database ownership before stopping or restarting background 
 
 ```sql
 ALTER EXTENSION timescaledb UPDATE TO '2.32.0';
+SELECT extversion FROM pg_extension WHERE extname = 'timescaledb';
+```
+
+### Version 2.32.1
+
+Upgrade TimescaleDB to 2.32.1 before moving PostgreSQL to 16.16, 17.12 or 18.7 and later minor versions. Earlier TimescaleDB patches can fail every scheduler job on those server versions. Version 2.32.1 also remains compatible with the preceding minor releases; it supersedes the 2.32.0 restriction above.
+
+The release repairs job-crash backoff and commits inside `run_job`, and performs chunk/index/continuous-aggregate operations using the appropriate caller or owner instead of unnecessarily switching to the catalog owner. Ownership is checked before validating a unique index on a compressed chunk. Review application-role permissions and scheduled-job results after the upgrade.
+
+Install matching files, follow the preload-library restart procedure, and use a fresh `psql -X` session in each database:
+
+```sql
+ALTER EXTENSION timescaledb UPDATE TO '2.32.1';
 SELECT extversion FROM pg_extension WHERE extname = 'timescaledb';
 ```

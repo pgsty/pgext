@@ -2,20 +2,20 @@
 
 来源：
 
-- [本次分发的 README](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/README)
-- [扩展控制文件](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/pg_infer.control)
-- [Cargo 清单](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/Cargo.toml)
-- [扩展安装 SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/sql/pg_infer--0.1.4-alpha.sql)
-- [模型注册实现](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/src/model_mgmt.rs)
-- [索引访问方法实现](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/src/am.rs)
-- [官方回归 SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/sql/pg_infer.sql)
-- [Vindex 格式与模型数据](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/crates/infer-vindex/README.md)
+- [本次分发的 README](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/README)
+- [扩展控制文件](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/pg_infer.control)
+- [Cargo 清单](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/Cargo.toml)
+- [扩展安装 SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/sql/pg_infer--0.1.6-alpha.sql)
+- [模型注册实现](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/src/model_mgmt.rs)
+- [索引访问方法实现](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/src/am.rs)
+- [官方回归 SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/sql/pg_infer.sql)
+- [Vindex 格式与模型数据](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/crates/infer-vindex/README.md)
 
 `pg_infer` 是一个实验性 PostgreSQL 扩展，通过 SQL 暴露 Transformer 模型的特征、习得关联与相似度信号。它创建 `infer` 模式保存模型注册表，并提供 `infer` 索引访问方法，以便按模型语义对文本排序。它适合在 PostgreSQL 中检查外部准备的模型知识；扩展本身不包含模型或 vindex，其结果是随模型变化的信号，而非经过验证的事实。
 
 ### 版本与适用范围
 
-PGXN 测试分发 `0.1.4-alpha` 的 `pg_infer.control`、`Cargo.toml` 与 `sql/pg_infer--0.1.4-alpha.sql` 均使用 `0.1.4-alpha`。README 横幅和 SQL 文件头仍提及旧版本。早期源码标签 `v0.1.1-alpha` 安装的 SQL 版本为 `1.0.0`，本次没有从该版本升级的脚本，应使用新数据库或经过明确审查的迁移。SQL API 与 vindex 格式仍处于实验阶段。
+PGXN 测试分发 `0.1.6-alpha` 的 `pg_infer.control`、`Cargo.toml` 与 `sql/pg_infer--0.1.6-alpha.sql` 均使用 `0.1.6-alpha`。README 横幅和 SQL 文件头仍提及旧版本。早期源码标签 `v0.1.1-alpha` 安装的 SQL 版本为 `1.0.0`，本次没有从该版本升级的脚本，应使用新数据库或经过明确审查的迁移。SQL API 与 vindex 格式仍处于实验阶段。
 
 本次分发的 Cargo 清单声明 `pg18` 和 `pg19` PostgreSQL 特性，并默认选择 `pg18`。它们是源码功能目标，不代表已有二进制包；未声明更早的大版本。
 
@@ -117,3 +117,9 @@ LIMIT 5;
 ### 远程模型
 
 `infer_create_model_remote` 注册外部 larql 服务器已经提供的模型；`infer_create_models_remote` 批量注册模型，`infer_create_model_grid` 则通过 `infer.grid_url` 解析模型。远程可用性、访问控制和模型存储由扩展外部管理。允许数据库角色注册远程模型前，应审查网络目标与超时设置。注册表保存的是引用，并非远程模型备份。
+
+### 实验版本 0.1.6-alpha
+
+安装清单新增 `describe_many(entities text[], model text DEFAULT NULL, threshold float8 DEFAULT NULL)` 的批量描述说明。`walk` 返回 layer、feature、gate_score 和 concept；`nearest_to` 返回 feature、token、gate_score 和 also。`infer_diff` 除 layer 和 feature 外，还报告 token_a、token_b、score_a、score_b 和 status。
+
+门控分数是依赖模型的未归一化量值，不是概率，也不是可跨模型沿用的置信阈值。`similar_to` 可能返回共享门控激活值，也可能返回乘以十的嵌入余弦值，两者并非同一尺度。`infer` 的 `probability` 列来自词表 softmax，返回的 top-k 子集不一定合计为一。README 横幅版本已经过时；本次测试版应以 control、Cargo 和版本化 SQL 为依据。上游没有提供迁移脚本。

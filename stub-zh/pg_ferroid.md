@@ -2,13 +2,15 @@
 
 来源：
 
-- [3.0 changes](https://github.com/s0l0ist/ferroid/blob/3.0.0/CHANGELOG.md)
-- [PostgreSQL 扩展 README](https://github.com/s0l0ist/ferroid/blob/3.0.0/crates/pg-ferroid/README.md)
-- [扩展 control 文件](https://github.com/s0l0ist/ferroid/blob/3.0.0/crates/pg-ferroid/pg_ferroid.control)
-- [类型、转换与函数实现](https://github.com/s0l0ist/ferroid/blob/3.0.0/crates/pg-ferroid/src/lib.rs)
-- [包元数据](https://github.com/s0l0ist/ferroid/blob/3.0.0/crates/pg-ferroid/Cargo.toml)
+- [Official source](https://github.com/s0l0ist/ferroid/blob/3.1.0/Cargo.toml)
 
-`pg_ferroid` 3.0.0 是一个 pgrx 扩展，增加原生 16 字节 `ulid` 类型。ULID 编码一个毫秒时间戳和 80 位尾部，使用 26 字符 Base32 表示，并支持比较、B-tree 与哈希索引、验证和显式转换。
+- [3.0 changes](https://github.com/s0l0ist/ferroid/blob/3.1.0/CHANGELOG.md)
+- [PostgreSQL 扩展 README](https://github.com/s0l0ist/ferroid/blob/3.1.0/crates/pg-ferroid/README.md)
+- [扩展 control 文件](https://github.com/s0l0ist/ferroid/blob/3.1.0/crates/pg-ferroid/pg_ferroid.control)
+- [类型、转换与函数实现](https://github.com/s0l0ist/ferroid/blob/3.1.0/crates/pg-ferroid/src/lib.rs)
+- [包元数据](https://github.com/s0l0ist/ferroid/blob/3.1.0/crates/pg-ferroid/Cargo.toml)
+
+`pg_ferroid` 3.1.0 是一个 pgrx 扩展，增加原生 16 字节 `ulid` 类型。ULID 编码一个毫秒时间戳和 80 位尾部，使用 26 字符 Base32 表示，并支持比较、B-tree 与哈希索引、验证和显式转换。
 
 ### 生成并存储 ULID
 
@@ -46,3 +48,7 @@ SELECT (timestamp '2025-01-01 12:00:00' AT TIME ZONE 'UTC')::ulid;
 ```
 
 时间戳必须有限、不早于 Unix epoch，且在 ULID 的 48 位时间范围内。时钟回拨会延迟单调生成，但取消请求和语句超时仍有效。匹配的 Rust/pgrx 构建使用 pgrx 0.20.0。
+
+### 版本 3.1.0
+
+3.1.0 更新底层 ULID 生成及随机掩码实现。上文的 SQL 类型、函数和转换仍是扩展接口，Rust 泛型生成器的新功能不等于新增 SQL 对象。PostgreSQL 15–18 范围及 3.0 的时间戳转换限制继续适用。部署匹配文件，并在升级已有数据库前检查发行版提供的 SQL 更新路径。

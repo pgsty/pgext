@@ -2,14 +2,14 @@
 
 来源：
 
-- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/README.md)
-- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pure.control)
-- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pureu.control)
-- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pure--0.1.sql)
-- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pureu--0.1.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/README.md)
+- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pure.control)
+- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pureu.control)
+- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pure--0.1.sql)
+- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pureu--0.1.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/CHANGELOG.md)
 
-`pg_pureu` 在 PostgreSQL 中执行非受信任的 Pure 标量函数，并提供 SPI 数据库访问能力。它属于 `pg_pure` 0.7.0 分发，SQL 版本为 0.1。只有超级用户才能用该语言创建函数，因为 Pure 可以通过 `extern` 调用任意原生函数。
+`pg_pureu` 在 PostgreSQL 中执行非受信任的 Pure 标量函数，并提供 SPI 数据库访问能力。它属于 `pg_pure` 0.8.0 分发，SQL 版本为 0.1。只有超级用户才能用该语言创建函数，因为 Pure 可以通过 `extern` 调用任意原生函数。
 
 ### 核心流程
 
@@ -38,3 +38,11 @@ SELECT pure_factorial(30);
 ### 0.7.0 发行版
 
 `bytea` 映射为 Pure 整数行矩阵，可保留包括 NUL 字节在内的任意二进制数据；元素超出 0..255 时会报错。域类型参数与结果按基础类型转换，同时执行域约束。此前 0.6.1 修复 numeric 精度、符号和显示精度转换；0.6.2 拒绝受信任函数体及 DO 块逃出单表达式包装、向同一后端的其他函数泄露规则。应部署修正后的动态库并替换旧会话，SQL 版本仍为 0.1。
+
+### 分发版本 0.8.0
+
+分发版本 0.8.0 保留 SQL 版本 0.1，新增经过测试的 `mpfr`、`dict` 和 `rational` 模块。非受信任语言的函数体可使用 `using mpfr;`；受信任语言则必须由 DBA 通过 `pg_pure.using` 允许该模块。仍须安装匹配的上游库。本次发布未将 `csv`、`xml`、`stllib` 或 `glpk` 列入已测试集合。SQL 版本未变，无法据此判断当前实现，因此仍需替换库并回收旧会话。
+
+### 发行版 0.9.0
+
+SQL 版本仍为 0.1。参数化的 `sql::query` 与 `sql::exec` 现在透明缓存每后端最多 128 个计划，键由 SQL 文本及推断的参数类型组成。引用对象、搜索路径或角色变化时，PostgreSQL 会重新验证计划。API 不变，仍须按现有会话回收或重启流程替换已加载动态库。

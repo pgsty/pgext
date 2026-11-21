@@ -2,21 +2,21 @@
 
 来源：
 
-- [v1.20.0 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/README.md)
-- [v1.20.0 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/pg_mentat.control)
-- [v1.20.0 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/CHANGELOG.md)
-- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
-- [v1.20.0 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/sql/07_function_aliases.sql)
-- [v1.20.0 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/src/functions/time_travel.rs)
-- [v1.20.0 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/src/functions/excision.rs)
-- [v1.20.0 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/src/functions/transact.rs)
-- [v1.20.0 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/src/functions/subscriptions.rs)
-- [1.18.0 upgrade SQL](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/sql/pg_mentat--1.17.2--1.18.0.sql)
-- [1.18.0 命名存储指南](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/docs/src/multi-tenancy.md)
-- [1.18.0 查询函数](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/src/functions/query.rs)
-- [1.18.0 pull 函数](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/src/functions/pull.rs)
+- [v1.21.1 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/README.md)
+- [v1.21.1 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/pg_mentat.control)
+- [v1.21.1 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/CHANGELOG.md)
+- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
+- [v1.21.1 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/sql/07_function_aliases.sql)
+- [v1.21.1 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/src/functions/time_travel.rs)
+- [v1.21.1 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/src/functions/excision.rs)
+- [v1.21.1 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/src/functions/transact.rs)
+- [v1.21.1 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/src/functions/subscriptions.rs)
+- [1.18.0 upgrade SQL](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/sql/pg_mentat--1.17.2--1.18.0.sql)
+- [1.18.0 命名存储指南](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/docs/src/multi-tenancy.md)
+- [1.18.0 查询函数](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/src/functions/query.rs)
+- [1.18.0 pull 函数](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/src/functions/pull.rs)
 
-`pg_mentat` 1.20.0 在 PostgreSQL 内实现与 Datomic 兼容的数据模型和 Datalog 查询引擎。它将不可变事实存储为有类型的 datom，并通过 SQL 函数提供模式事务、Datalog 查询、pull 表达式、时间旅行、事务历史和永久切除功能。它适用于需要这种模型的应用；并非关系表或 SQL 的透明替代品。
+`pg_mentat` 1.21.1 在 PostgreSQL 内实现与 Datomic 兼容的数据模型和 Datalog 查询引擎。它将不可变事实存储为有类型的 datom，并通过 SQL 函数提供模式事务、Datalog 查询、pull 表达式、时间旅行、事务历史和永久切除功能。它适用于需要这种模型的应用；并非关系表或 SQL 的透明替代品。
 
 ### 安装并定义模式
 
@@ -107,7 +107,7 @@ SELECT public.mentat_excise(ARRAY[1000042]::bigint[], 'default', NULL);
 
 ### 要求与注意事项
 
-- 上游 v1.18.0 的 Cargo 特性覆盖 PostgreSQL 13-19，使用 pgrx 0.19.3。Pigsty 的 1.18.0 软件包面向 PostgreSQL 14-18。
+- 上游 v1.21.1 的 Cargo 特性覆盖 PostgreSQL 13-19，使用 pgrx 0.19.4。Pigsty 的 1.18.0 软件包面向 PostgreSQL 14-18。
 - 该扩展不可重定位，也不要求 `shared_preload_libraries`。
 - 可选的 `mentatd` HTTP/Datomic 线协议守护进程是上游配套程序，不包含在 Pigsty `pg_mentat` 软件包中。仅通过 SQL 使用扩展并不需要它。
 - Datalog 编译、递归 pull、全文属性、订阅和历史记录可能呈现截然不同的成本特征。请使用文档所述的 explain 辅助函数检查生成的 SQL，并在代表性数据上进行基准测试。
@@ -193,3 +193,9 @@ SELECT public.q(
 新库加载后、SQL 升级前，库行为变化就已生效：`"datomic.tx"` 现在标识事务本身，不再指向独立注解实体。应检查事务报告的消费者。命名存储的事务函数现读取自身存储，且不能在事务函数内再次提交事务。当前状态 RLS 还要求为租户角色授予 `mentat.current_<type>` 表权限。
 
 `mentat.moved_idents(store)` 检测旧版本移动过的 ident。实际修复前，先审阅 `mentat.repair_moved_idents(store, dry_run DEFAULT true)` 的预演结果：它可能合并实体历史，会跳过冲突；写入模式要求 READ COMMITTED，且会阻塞存储写入。升级不会自动修复这些旧数据变化。跨越相应历史版本时，上述 1.18.0 命名存储替换及逻辑备份要求仍适用。
+
+### 版本 1.21.1
+
+发行包通过 pgrx 0.19.4 使用 PostgreSQL 复合值安全检查。安装这些包前，先将 PostgreSQL 至少升级到 15.20、16.16、17.12、18.7 或 19.0；在较早次版本上加载可能因未定义的 DatumGetHeapTupleHeader 符号失败。PostgreSQL 14 的源码构建需要已修复的 14.25 头文件。1.21.1 的 Nix 构建也强制使用修复后的头文件；软件包兼容性须与未变化的 SQL API 分别核验。
+
+显式实体 ID 若断言另一实体已占用的唯一值，现在报 `:db.error/unique-conflict`，不再静默忽略。在同一事务中由原持有者释放该值后，可以转移；tempid 的 upsert 行为不变。应检查依赖旧版空操作的调用者。从 1.20.0 到 1.21.1 的 SQL 升级步骤均为空，此前的迁移与备份义务继续适用。

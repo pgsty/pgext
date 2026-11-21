@@ -2,14 +2,14 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/README.md)
-- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pure.control)
-- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pureu.control)
-- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pure--0.1.sql)
-- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pureu--0.1.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/README.md)
+- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pure.control)
+- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pureu.control)
+- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pure--0.1.sql)
+- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pureu--0.1.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/CHANGELOG.md)
 
-`pg_pureu` executes untrusted Pure scalar functions inside PostgreSQL and exposes SPI database access. It belongs to distribution `pg_pure` 0.7.0, with SQL version 0.1. Only superusers may create functions in this language: Pure can call arbitrary native functions through `extern`.
+`pg_pureu` executes untrusted Pure scalar functions inside PostgreSQL and exposes SPI database access. It belongs to distribution `pg_pure` 0.8.0, with SQL version 0.1. Only superusers may create functions in this language: Pure can call arbitrary native functions through `extern`.
 
 ### Core Workflow
 
@@ -38,3 +38,11 @@ The embeddable libpure fork at revision ab12de13 or later hides its LLVM symbols
 ### Distribution 0.7.0
 
 `bytea` maps to a Pure integer row matrix, preserving arbitrary binary data including NUL bytes; elements outside 0..255 raise an error. Domain arguments and results use their base types while enforcing domain constraints. The preceding 0.6.1 patch fixes numeric precision, sign and scale conversion. Version 0.6.2 rejects trusted bodies and DO blocks that escape their single-expression wrapper and leak rules into another function in the same backend. Deploy the corrected library and replace old sessions; SQL version remains 0.1.
+
+### Distribution 0.8.0
+
+Distribution 0.8.0 retains SQL version 0.1 and adds tested `mpfr`, `dict` and `rational` modules. In the untrusted language a body may use `using mpfr;`; in the trusted language the DBA must allow the module through `pg_pure.using`. Modules still require the matching upstream library installation. The release does not promote `csv`, `xml`, `stllib` or `glpk` to the tested set. Library replacement and session recycling remain necessary because the unchanged SQL version does not identify the loaded implementation.
+
+### Distribution 0.9.0
+
+SQL version remains 0.1. Parameterized `sql::query` and `sql::exec` now transparently cache up to 128 plans per backend, keyed by SQL text and inferred parameter types. PostgreSQL revalidates plans when referenced objects, search path or role change. The API is unchanged; replace loaded libraries through the existing session/restart procedure.

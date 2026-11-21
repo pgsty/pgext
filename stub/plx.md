@@ -2,11 +2,11 @@
 
 Sources:
 
-- [PGXN plx 2.0.1 README](https://pgxn.org/dist/plx/2.0.1/README.html)
-- [plx 2.0.1 user guide](https://api.pgxn.org/src/plx/plx-2.0.1/doc/USERGUIDE.md)
-- [plx 2.0.1 compatibility notes](https://api.pgxn.org/src/plx/plx-2.0.1/doc/COMPATIBILITY.md)
-- [plx 2.0.1 changelog](https://api.pgxn.org/src/plx/plx-2.0.1/CHANGELOG.md)
-- [plx control file](https://api.pgxn.org/src/plx/plx-2.0.1/plx.control)
+- [PGXN plx 3.0.0 README](https://pgxn.org/dist/plx/3.0.0/README.html)
+- [plx 3.0.0 user guide](https://api.pgxn.org/src/plx/plx-3.0.0/doc/USERGUIDE.md)
+- [plx 3.0.0 compatibility notes](https://api.pgxn.org/src/plx/plx-3.0.0/doc/COMPATIBILITY.md)
+- [plx 3.0.0 changelog](https://api.pgxn.org/src/plx/plx-3.0.0/CHANGELOG.md)
+- [plx control file](https://api.pgxn.org/src/plx/plx-3.0.0/plx.control)
 
 `plx` provides familiar procedural-language dialects that transpile to ordinary PL/pgSQL when `CREATE FUNCTION` runs. PostgreSQL stores and executes the generated PL/pgSQL with its built-in trusted handler; no Ruby, PHP, JavaScript, Python, Go, COBOL, Oracle, or SQL Server runtime is loaded into the backend.
 
@@ -94,4 +94,11 @@ The builder remains correct on PostgreSQL 13-17, but its in-place optimization r
 - Parameters and return types must be PostgreSQL types. Type inference for locals is limited; explicitly declare types for calls and compound expressions.
 - SQL uses three-valued logic and PostgreSQL numeric/string semantics. Source-language truthiness and string concatenation with `+` are not reproduced.
 - Locals are hoisted into one PL/pgSQL `DECLARE` block, so block-local scope and redeclaration with a different type are unavailable.
-- Distribution 2.0.1 installs extension version 2.0.0; 2.0.1 changes PGXN packaging only and has no SQL upgrade of its own. Version 2.0.0 changes interpolation in `plxruby`, `plxphp`, `plxjs`, `plxts`, `plxpython3`, and `plxgo`: a NULL operand now makes the whole interpolated string NULL instead of silently becoming an empty string. Run `ALTER EXTENSION plx UPDATE TO '2.0.0'`, then redeploy affected functions because existing generated PL/pgSQL in `pg_proc.prosrc` is not rewritten by the extension update.
+
+### Version 3.0.0 Upgrade
+
+Install the new library and run `ALTER EXTENSION plx UPDATE TO '3.0.0'`, then recreate affected functions from their original dialect DDL. Existing generated PL/pgSQL is not rewritten by the extension update. Keep that source before migration; review functions whose results depend on interpolation, NULL handling or exception exits.
+
+The extension is no longer relocatable. Choose its schema at installation and retain the same schema on restore, or regenerate functions that embed helper names. Creating dialect functions or DO blocks requires USAGE on plpgsql. With function-body checks enabled, creation validates generated PL/pgSQL and rejects unsupported argument/result types and malformed declared types.
+
+Interpolated SQL values are bound as parameters; use `ident()` for names and restrict deliberate `raw()` SQL fragments to trusted input. NULL string appends now propagate NULL; use `coalesce(x, '')` when an empty string is intended. Most dialects now run finally/ensure on return, break and continue, but query cancellation and assertion failures remain outside that handling. Read the dialect-specific breaking changes before redeploying functions.

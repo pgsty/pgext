@@ -2,13 +2,13 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/README.md)
-- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/pg_fts.control)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/CHANGELOG.md)
-- [pg_fts--1.17.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/pg_fts--1.17.0.sql)
-- [pg_fts--1.16.0--1.17.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/pg_fts--1.16.0--1.17.0.sql)
+- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/README.md)
+- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/pg_fts.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/CHANGELOG.md)
+- [pg_fts--1.18.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/pg_fts--1.18.0.sql)
+- [pg_fts--1.16.0--1.17.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/pg_fts--1.16.0--1.17.0.sql)
 
-`pg_fts` 1.17.0 provides full-text search with BM25/BM25F ranking and the dedicated fts inverted index. PostgreSQL 17, 18 and 19 are supported; 19 is tested against the release candidate. The control is trusted and relocatable, and core use needs no shared preload.
+`pg_fts` 1.18.0 provides full-text search with BM25/BM25F ranking and the dedicated fts inverted index. PostgreSQL 17, 18 and 19 are supported; 19 is tested against the 19.0 release. The control is trusted and relocatable, and core use needs no shared preload.
 
 ### Search and Rank
 
@@ -81,3 +81,7 @@ Version 1.16.0 validates frame-of-reference decoding bounds and permits compacti
 ### 1.17.0 Delete Ranking and PostgreSQL 19
 
 Version 1.17.0 removes tombstoned rows from the document count and average length after VACUUM or a merge, so rankings converge toward a REINDEX of the live rows. Existing segments retain the old average until cleanup; `fts_index_segments()` reports tombstones. Replace the library and apply the versioned SQL upgrade. The index format is unchanged, but review indexes with deletes and recheck score baselines.
+
+### Version 1.18.0
+
+Version 1.18.0 validates PostgreSQL 19.0 support and fixes an autovacuum-worker assertion failure caused by using the wrong I/O buffer-ring context on assertion-enabled servers. It updates sparsemap without changing the index format or SQL objects. Deploy matching files, replace sessions using the old library and run `ALTER EXTENSION pg_fts UPDATE TO '1.18.0';`. This release adds no REINDEX requirement; the historical data and index repairs described above still apply.

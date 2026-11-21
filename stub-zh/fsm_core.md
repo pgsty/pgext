@@ -2,49 +2,49 @@
 
 来源：
 
-- [Official PGXN1.1.0 distribution](https://pgxn.org/dist/fsm_core/1.1.0/)
-- [1.1.0 README](https://api.pgxn.org/src/fsm_core/fsm_core-1.1.0/README.md)
-- [1.1.0 control](https://api.pgxn.org/src/fsm_core/fsm_core-1.1.0/fsm_core.control)
-- [1.1.0 SQL](https://api.pgxn.org/src/fsm_core/fsm_core-1.1.0/fsm_core--1.1.0.sql)
-- [1.1.0 metadata](https://api.pgxn.org/src/fsm_core/fsm_core-1.1.0/META.json)
+- [fsm_core-v1.2.0](https://github.com/pgfsm/fsm/releases/tag/fsm_core-v1.2.0)
+- [README.md](https://github.com/pgfsm/fsm/blob/fsm_core-v1.2.0/packages/database-src/README.md)
+- [fsm_core-1.2.0.zip](https://github.com/pgfsm/fsm/releases/download/fsm_core-v1.2.0/fsm_core-1.2.0.zip)
 
-`fsm_core` 是一个有限状态机工具包，用于在 PostgreSQL 中保存 FSM 定义、实例、转换和事件日志。机器定义从 JSON 加载，实例按名称和版本创建，事件通过 SQL 函数发送，并可选择使用 `pgmq` 队列。
 
-本文描述 PGXN 1.1.0 发行版，要求 PostgreSQL 15 及以上、`ltree` 1.2 及以上，以及 `pgmq` 1.4.4 及以上。固定模式为 `fsm_core`，安装需要超级用户。这个 SQL 扩展不要求预加载或重启。当前仓库迁移是另外的来源，可能提供不同的 API。
+`fsm_core` 1.2.0 在 PostgreSQL 中保存有限状态机定义、实例、转换和事件历史。其 SQL 接口用于加载经过校验的 JSON、按名称和版本创建实例，并通过 `pgmq` 队列提交事件。
 
-### 核心表与类型
+### 安装与配置
 
-`fsm_core` 会创建枚举 `fsm_state_type`，包含 `atomic`、`compound`、`parallel`、`final` 和 `history`，并创建下列表：
+本版本要求 PostgreSQL 15 及以上，发布测试覆盖 15–18。必需扩展为 `ltree` 1.2+、`pgmq` 1.4.4+ 和 `pg_cron` 1.5+。将 `pg_cron` 加入现有 `shared_preload_libraries`，修改预加载配置后重启 PostgreSQL，并安装到 `cron.database_name` 指定的数据库。
 
-- `fsm_core.fsm_json`：加载后的 FSM 定义。
-- `fsm_core.fsm_states`：展开后的状态节点和 ltree 路径。
-- `fsm_core.fsm_transitions`：转换规则。
-- `fsm_core.fsm_instance`：运行中的实例。
-- `fsm_core.fsm_instance_lock`：advisory/concurrency 状态。
-- `fsm_core.fsm_instance_queue_event_logs` 和 `fsm_core.fsm_promise_queue_event_logs`：队列事件历史。
+安装匹配的扩展文件后，超级用户可以创建固定且不可迁移的 `fsm_core` 模式：
 
-### 加载机器定义
+```sql
+CREATE EXTENSION fsm_core CASCADE;
+SELECT fsm_core.version();
+```
+
+安装会创建 `fsm_*` 角色及每五秒运行一次的 `fsm_schedule_all_pending` 调度任务。开放应用访问前，应检查角色成员关系、队列权限和调度器。`pg_jsonschema` 为可选依赖：如果它的校验函数存在于 `fsm_core` 中，加载器会报告模式问题，但不会仅凭该检查拒绝定义。
+
+### 加载定义
+
+先用上游编译器验证状态机，并将 JSON 设置到 psql 变量 fsm_json，再执行此调用。1.2.0 的函数签名不再包含 input_fsm_type 参数：
 
 ```sql
 SELECT fsm_core.load_fsm_from_json_v2(
   json_input        := :'fsm_json'::jsonb,
   root_node_text    := 'root',
-  input_fsm_type    := 'workflow',
   input_fsm_name    := 'creditCheck',
   input_fsm_version := 'v01'
 );
 ```
 
-`load_fsm_from_json_v2()` 使用 `fsm_core.fsm_json_schema()` 检查 JSON，展开状态和转换，然后把原始定义缓存到 `fsm_json`。在 1.1.0 中，违反 JSON 模式只会产生 NOTICE，加载仍会继续；模式校验的异常语句已被注释。应在加载前验证定义，不能依赖这个检查拒绝所有无效定义。部署后的定义和版本标识应保持稳定，使已有实例继续按原始定义运行。执行示例前，应将经过校验的状态机 JSON 设置到 psql 变量 fsm_json。
+同一名称和版本的并发加载由事务级咨询锁串行化。相同 JSON 会返回缓存定义；在已有名称和版本下提交不同 JSON 会报错。修改机器定义时应使用新版本。可选参数 input_dependent_children 用于记录子状态机依赖。
 
-### 创建实例
+### 创建实例并发送事件
 
 ```sql
 SELECT fsm_core.create_fsm_instance_from_name_v2(
-  input_fsm_name     := 'creditCheck',
-  input_fsm_version  := 'v01',
-  input_fsm_context  := '{"applicant_id":"a-42"}'::jsonb,
-  create_pgmq_queue  := true
+  input_fsm_name    := 'creditCheck',
+  input_fsm_version := 'v01',
+  input_fsm_context := '{"applicant_id":"a-42"}'::jsonb,
+  create_pgmq_queue := true
 ) AS creation_result
 \gset
 SELECT :'creation_result'::jsonb AS creation_status;
@@ -52,50 +52,26 @@ SELECT :'creation_result'::jsonb ->> 'fsm_instance_id' AS fsm_instance_id
 \gset
 ```
 
-PGXN 1.1.0 函数会检查指定名称的 FSM 是否存在，插入一条 `fsm_instance`，并为该实例复制转换授权行。在 `create_pgmq_queue` 为 true 时，它尝试创建以实例 UUID 命名的 `pgmq` 队列，并发送 `initialTransition_event`。队列创建和初始事件发送失败会被捕获，并记录在返回的 JSON 中。发送后续事件前，必须确认 `queue_created` 为 true，并检查 `send_event_result`、`message` 和 `extra_message`，确认初始事件发送成功。psql 示例保留返回的 `fsm_instance_id`，供下一次调用使用。
+返回的 JSON 包含 `fsm_instance_id`、`queue_created`、`send_event_result`、`message` 和 `extra_message`。提交工作前应检查这些字段，因为队列创建和初始事件发送失败可能记录在返回结果中。初始上下文与定义中的静态上下文进行浅合并，调用时提供的对象键优先。
 
-### 发送事件
+对于此顶层状态机，发送其定义中声明的事件：
 
 ```sql
 SELECT fsm_core.send_event_to_fsm_queue_with_event_logs_v2(
-  input_fsm_instance_id                 := :'fsm_instance_id'::uuid,
-  input_fsm_instance_id_fsm_type         := 'workflow',
-  input_fsm_instance_id_fsm_version      := 'v01',
-  input_send_to_parent_queue_id          := fsm_core.pg_system_queue_uuid(),
-  input_send_to_parent_queue_type        := fsm_core.pg_system_queue_type(),
-  input_send_to_parent_queue_id_event_name := fsm_core.pg_system_event_name(),
-  input_event_name                       := 'APPROVE',
-  input_event_action_type                := 'user',
-  input_event_data                       := '{"approved_by":"manager"}'::jsonb,
-  input_event_delay                      := 0
+  input_fsm_instance_id            := :'fsm_instance_id'::uuid,
+  input_fsm_instance_id_fsm_type   := 'fsm',
+  input_fsm_instance_id_fsm_version := 'v01',
+  input_event_name                 := 'APPROVE',
+  input_event_action_type          := 'user',
+  input_event_data                 := '{"approved_by":"manager"}'::jsonb,
+  input_event_delay                := 0
 );
 ```
 
-这个辅助函数会用 `pgmq.send()` 写入实例队列，并在 `fsm_instance_queue_event_logs` 中记录事件。对于嵌套 FSM 和 promise 流，`send_event_to_queue_from_fsm_instance_id_v2()` 会根据 `fsmtype` 分派到子 FSM 或 promise 队列辅助函数。
+该函数将事件入队并写入事件历史。本版本的签名已去掉旧的父队列参数。事件入队不代表工作进程已经处理它，应监控调度器活动、队列积压和实例状态。
 
-### 解析并推进状态
+### 对象与升级边界
 
-```sql
-SELECT fsm_core.resolve_state_value_v2(
-  input_json        := '{"value":"pending"}'::jsonb,
-  input_fsm_name    := 'creditCheck',
-  input_fsm_version := 'v01'
-);
+`fsm_json`、`fsm_states` 和 `fsm_transitions` 保存定义；`fsm_instance` 保存实例；`fsm_instance_queue_event_logs` 记录队列事件。`resolve_state_value_v2` 和 `macrostep_v2` 提供较底层的状态解析和转换逻辑。优先使用经过核对的 v2 入口，并限制对安全定义者函数和底层表的访问。
 
-SELECT fsm_core.macrostep_v2(
-  event_name        := 'APPROVE',
-  input_state_value := ARRAY['pending']::text[],
-  fsm_name_param    := 'creditCheck',
-  fsm_version_param := 'v01'
-);
-```
-
-SQL 接口还包括较底层的 `microstep_v2()`、`fsm_worker_v2()`、锁辅助函数、归档辅助函数和 v1 兼容函数。当两个版本都存在时，新用法应优先选择 v2 入口点。
-
-### 依赖与运行
-
-安装 `fsm_core` 前启用 `ltree` 和 `pgmq`。发行版 README 还要求 `pg_jsonschema` 0.3.3 及以上，但控制文件和 META 的依赖列表没有列出它。JSON 加载器调用 `fsm_core.jsonschema_validation_errors`，而发行版 SQL 脚本没有定义这个函数；加载定义前应确认该模式下已有上游要求的 JSON 模式校验辅助函数。仅将依赖安装到其他模式，并不能提供这个带模式限定的函数。
-
-队列事件作为应用数据持久保存。设置 `create_pgmq_queue => true` 会请求创建实例队列及其初始事件；继续操作前应检查返回状态。仍需要消费者处理队列工作。发送事件本身不保证异步工作进程已经执行转换。应一并检查队列保留策略、消费者和权限。
-
-向应用角色开放机器创建或任意事件提交前，应检查函数和表授权。SQL 接口还包含旧 v1 和较底层的辅助函数；本版本应使用已经核实的 v2 入口。
+发布说明描述了由 `require_version` 保护的逐版本升级脚本，但本次核对的 1.2.0 ZIP 只有完整安装脚本，没有版本间升级脚本。升级已有实例前应保留数据，并取得经过核验的升级制品。不能重新执行完整安装脚本，也不能假定 `ALTER EXTENSION ... UPDATE` 已有可用的升级路径。

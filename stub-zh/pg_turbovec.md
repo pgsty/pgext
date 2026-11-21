@@ -2,9 +2,9 @@
 
 来源：
 
-- [2.16.1 变更日志](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.1/CHANGELOG.md)
-- [2.16.1 控制文件](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.1/pg_turbovec.control)
-- [2.16.1 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.1/README.md)
+- [2.16.2 变更日志](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.2/CHANGELOG.md)
+- [2.16.2 控制文件](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.2/pg_turbovec.control)
+- [2.16.2 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.2/README.md)
 - [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/docs/PRODUCTION.md)
 - [v2.16.0 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/README.md)
 - [v2.16.0 变更日志](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/CHANGELOG.md)
@@ -86,7 +86,7 @@ WHERE a.amname = 'turbovec';
 
 ### 兼容性与维护
 
-控制文件将对象固定在 `turbovec` 模式中，设置 `superuser = false`，且不支持重定位。上游覆盖 PostgreSQL 13–18，并在本版本将 PostgreSQL 19 标记为实验性；当前 Pigsty 包覆盖 14–18。替换二进制文件、预加载调优和跨索引格式迁移分别涉及重启与重建要求。2.10.3 并行执行冷后端的编码重排，不改变已有索引字节。应按实际语料规划索引构建内存、临时空间、WAL 和 vacuum 工作量，不要将上游测试数字当作性能保证。
+控制文件将对象固定在 `turbovec` 模式中，设置 `superuser = false`，且不支持重定位。上游 2.16.2 支持 PostgreSQL 13–19；包可用范围须单独检查。替换二进制文件、预加载调优和跨索引格式迁移分别涉及重启与重建要求。2.10.3 并行执行冷后端的编码重排，不改变已有索引字节。应按实际语料规划索引构建内存、临时空间、WAL 和 vacuum 工作量，不要将上游测试数字当作性能保证。
 
 ### 升级到 2.11.0
 
@@ -135,3 +135,7 @@ WHERE a.amname = 'turbovec';
 ### 2.16.1 锁定构建修复
 
 2.16.1 提交了与 2.16.0 所需 turbovec 依赖匹配的 `Cargo.lock`，使锁定构建、离线构建和 Nix 构建都能使用该发行 tag。运行时行为、wire format、SQL 接口和评分不变；健康的 2.x 索引无需 REINDEX。常规升级为 `ALTER EXTENSION pg_turbovec UPDATE TO '2.16.1';`，随后重连会话以加载替换后的库。
+
+### 版本 2.16.2
+
+2.16.2 将 PostgreSQL 19 列为正式支持版本，并将上游 pgrx 依赖更新到 0.19.4。SQL 接口与索引格式不变，本次升级不新增 REINDEX 要求。安装匹配的库文件后执行 `ALTER EXTENSION pg_turbovec UPDATE TO '2.16.2';`。受旧版本缺陷影响的索引仍须遵循原有修复要求。

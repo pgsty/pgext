@@ -2,10 +2,10 @@
 
 Sources:
 
-- [Biscuit 3.1.0 README](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/README.md)
-- [Biscuit 3.1.0 CHANGELOG](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/CHANGELOG.md)
-- [Biscuit 3.1.0 SQL](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/sql/biscuit--3.1.0.sql)
-- [Biscuit 3.0.0 to 3.1.0 SQL](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/sql/biscuit--3.0.0--3.1.0.sql)
+- [Biscuit 3.1.0 README](https://api.pgxn.org/src/biscuit/biscuit-3.1.1/README.md)
+- [Biscuit 3.1.0 CHANGELOG](https://api.pgxn.org/src/biscuit/biscuit-3.1.1/CHANGELOG.md)
+- [Biscuit 3.1.0 SQL](https://api.pgxn.org/src/biscuit/biscuit-3.1.1/sql/biscuit--3.1.0.sql)
+- [Biscuit 3.0.0 to 3.1.0 SQL](https://api.pgxn.org/src/biscuit/biscuit-3.1.1/sql/biscuit--3.0.0--3.1.0.sql)
 - [Biscuit 3.0.0 on PGXN](https://pgxn.org/dist/biscuit/3.0.0/)
 - [Biscuit 3.0.0 release](https://github.com/CrystallineCore/Biscuit/releases/tag/v3.0.0)
 - [Biscuit 3.0.0 README](https://github.com/CrystallineCore/Biscuit/blob/v3.0.0/README.md)
@@ -84,3 +84,7 @@ SELECT id, body FROM message WHERE body ~ '^timeout.*$';
 ```
 
 The update from 3.0.0 adds SQL operator-family entries without changing the index format, so it does not require a format rebuild. The earlier 2.x-to-3.0.0 rebuild requirement above still applies. This release fixes HOT-chain and partial-index build correctness, anchored-match recovery, and pending-list memory safety. Unlogged Biscuit indexes still require `REINDEX` after crash recovery.
+
+### Version 3.1.1
+
+Version 3.1.1 adds PostgreSQL 19 support while retaining PostgreSQL 16–18. From 3.1.0, deploy the new shared library; this patch needs neither ALTER EXTENSION nor REINDEX because it changes neither SQL objects nor the disk format. Recycle sessions that already loaded the older library, or restart through the normal maintenance procedure. `SELECT biscuit_version();` reports the loaded library version. This does not remove the older 2.x migration or crash-recovery requirements above.

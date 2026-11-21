@@ -2,16 +2,18 @@
 
 来源：
 
-- [Documentation index](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/docs/README.md)
-- [README](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/README.md)
-- [Control](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/extension/timescaledb_toolkit.control)
-- [Cargo version](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/extension/Cargo.toml)
-- [Changelog](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/CHANGELOG.md)
-- [Counter aggregates](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/docs/counter_agg.md)
-- [Gauge aggregates](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/docs/gauge_agg.md)
-- [UddSketch](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/docs/uddsketch.md)
-- [Statistics](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/docs/stats_agg.md)
-- [Timevector pipelines](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/docs/timeseries_pipeline_elements.md)
+- [Official source](https://github.com/timescale/timescaledb-toolkit/releases/tag/1.28.0)
+
+- [Documentation index](https://github.com/timescale/timescaledb-toolkit/blob/1.28.0/docs/README.md)
+- [README](https://github.com/timescale/timescaledb-toolkit/blob/1.28.0/README.md)
+- [Control](https://github.com/timescale/timescaledb-toolkit/blob/1.28.0/extension/timescaledb_toolkit.control)
+- [Cargo version](https://github.com/timescale/timescaledb-toolkit/blob/1.28.0/extension/Cargo.toml)
+- [Changelog](https://github.com/timescale/timescaledb-toolkit/blob/1.28.0/CHANGELOG.md)
+- [Counter aggregates](https://github.com/timescale/timescaledb-toolkit/blob/1.28.0/docs/counter_agg.md)
+- [Gauge aggregates](https://github.com/timescale/timescaledb-toolkit/blob/1.28.0/docs/gauge_agg.md)
+- [UddSketch](https://github.com/timescale/timescaledb-toolkit/blob/1.28.0/docs/uddsketch.md)
+- [Statistics](https://github.com/timescale/timescaledb-toolkit/blob/1.28.0/docs/stats_agg.md)
+- [Timevector pipelines](https://github.com/timescale/timescaledb-toolkit/blob/1.28.0/docs/timeseries_pipeline_elements.md)
 - [1.27.0+p2 release](https://github.com/timescale/timescaledb-toolkit/releases/tag/1.27.0%2Bp2)
 
 TimescaleDB Toolkit 提供了一系列专用于时序数据分析的函数，采用 **两步聚合模式**。大多数函数会先创建中间表示，再通过访问器函数进行查询，从而实现高效复用和多维分析。
@@ -270,3 +272,13 @@ FROM daily_summaries;
 1.24 为 `heartbeat_agg` 添加相等操作符，并修复空频率聚合与统计溢出处理；1.25 稳定了 `gauge_agg`，修复空输入的 t-digest 和若干类型处理问题；1.26 移除 `time_weight` 及其 rollup 的组合、序列化与反序列化支持，保持其非并行聚合边界。
 
 1.27 为 `statssummary1d` 和 `statssummary2d` 添加相等操作符，修复稀疏 HyperLogLog 合并及相同时间戳计数器点的误判重置。它拒绝无效 UTF-8 状态名、超过 1024 字节或括号嵌套超过 256 层的 lambda、不同元素类型的频率聚合合并，以及 `topn` 中类型不匹配的 NULL 参数；还补上流水线 map 的权限检查。
+
+### 版本 1.28.0
+
+1.28.0 为 `timeweightsummary` 增加相等运算符，并修复 `interpolated_delta` 和 `interpolated_rate` 遇到 NULL 计数器摘要时的错误。此版本停止构建和发布 PostgreSQL 15 二进制，源码声明 PostgreSQL 16–18 支持。选择该版本前应先升级 PG15 服务器。已有包支持字段反映独立发布的包，不能据此认定所有坐标均已提供 1.28.0。
+
+安装匹配文件，使用发行版提供的路径更新扩展，并复核依赖 NULL 计数器输入或时间加权摘要相等性的查询：
+
+```sql
+ALTER EXTENSION timescaledb_toolkit UPDATE TO '1.28.0';
+```

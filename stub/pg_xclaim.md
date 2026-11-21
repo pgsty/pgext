@@ -2,13 +2,15 @@
 
 Sources:
 
-- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/README.md)
-- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/pg_xclaim.control)
-- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/CHANGELOG.md)
-- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/sql/pg_xclaim--1.0.0-rc1--1.0.0-rc2.sql)
-- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/sql/pg_xclaim--1.0.0-rc2--1.0.0-rc3.sql)
+- [rc5 release](https://github.com/Fenoman/pg_xclaim/releases/tag/v1.0.0-rc5)
 
-`pg_xclaim` 1.0.0-rc3 is an experimental shared-memory claim mechanism for PostgreSQL 16–18. It supplies nonblocking, transaction-lifetime mutual exclusion in its own namespace. It is not a durable queue, and its keys do not coordinate with PostgreSQL advisory locks.
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/v1.0.0-rc5/README.md)
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/v1.0.0-rc5/pg_xclaim.control)
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/v1.0.0-rc5/CHANGELOG.md)
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/v1.0.0-rc5/sql/pg_xclaim--1.0.0-rc1--1.0.0-rc2.sql)
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/v1.0.0-rc5/sql/pg_xclaim--1.0.0-rc4--1.0.0-rc5.sql)
+
+`pg_xclaim` 1.0.0-rc5 is an experimental shared-memory claim mechanism for PostgreSQL 16–18. It supplies nonblocking, transaction-lifetime mutual exclusion in its own namespace. It is not a durable queue, and its keys do not coordinate with PostgreSQL advisory locks.
 
 ### Core Workflow
 
@@ -32,8 +34,8 @@ A true `xclaim.try` result means the current top-level transaction holds the cla
 
 `xclaim.try` accepts either one bigint key or two int4 keys in separate namespaces. `xclaim.try_many` returns a boolean array in input order; partial acquisition is retained until transaction end. Roll back the entire transaction if all-or-nothing behavior is required. NULL inputs raise errors.
 
-`xclaim.stats` and `xclaim.debug_snapshot` are monitoring functions with role restrictions; detailed debug functions and stale-claim injection are superuser tools, and injection is for tests only. `xclaim.session_reset` is exceptional recovery, not a routine pool-reset command. Bound shared capacity and per-backend claims using the documented configuration limits; disabling the extension can remove mutual exclusion.
+`xclaim.stats` and `xclaim.debug_snapshot` are monitoring functions with role restrictions; detailed debug functions require elevated privileges. The stale-claim injector is removed from the production library and schema in rc5. `xclaim.session_reset` is exceptional recovery, not a routine pool-reset command. Bound shared capacity and per-backend claims using the documented configuration limits; disabling the extension can remove mutual exclusion.
 
-### rc3 Upgrade
+### rc5 Upgrade
 
-rc2 repairs backend-exit cleanup and allocation-failure handling; rc3 adds Tantor SE 18 build compatibility without new SQL objects. Install matching files, restart the server and run `ALTER EXTENSION pg_xclaim UPDATE TO '1.0.0-rc3'` in each database. This remains a release candidate; test failure and capacity behavior before adopting it.
+rc5 pre-stages local claim entries before taking partition locks, fixes allocation-failure cleanup, and removes the production stale-entry injector. Install matching files, restart the server and run `ALTER EXTENSION pg_xclaim UPDATE TO '1.0.0-rc5'` in each database. The supplied upgrade chain covers rc1 through rc5. Exact SQL version strings retain the release-candidate suffix. This is experimental software; test cleanup, cancellation and capacity behavior before adoption.

@@ -1,116 +1,45 @@
-
-
-
 ## 用法
 
-[pg_duckdb 文档](https://github.com/duckdb/pg_duckdb/tree/main/docs)
+来源：
 
-| 主题                                                                                                   | 说明                                                       |
-|:-------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
-| [**函数**](https://github.com/duckdb/pg_duckdb/blob/main/docs/functions.md)                            | 所有可用函数的完整参考                                      |
-| [**语法指南与注意事项**](https://github.com/duckdb/pg_duckdb/blob/main/docs/gotchas_and_syntax.md)      | 常见 SQL 模式与注意事项速查                                 |
-| [**类型**](https://github.com/duckdb/pg_duckdb/blob/main/docs/types.md)                                | 支持的数据类型与类型映射                                    |
-| [**扩展**](https://github.com/duckdb/pg_duckdb/blob/main/docs/extensions.md)                           | DuckDB 扩展的安装与使用                                     |
-| [**配置**](https://github.com/duckdb/pg_duckdb/blob/main/docs/settings.md)                             | 配置选项与参数                                              |
-| [**事务**](https://github.com/duckdb/pg_duckdb/blob/main/docs/transactions.md)                         | 事务行为与限制                                              |
+- [README.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/README.md)
+- [pg_duckdb.control](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/pg_duckdb.control)
+- [settings.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/settings.md)
+- [functions.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/functions.md)
+- [transactions.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/transactions.md)
+- [gotchas_and_syntax.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/gotchas_and_syntax.md)
+- [v1.2.1](https://github.com/duckdb/pg_duckdb/releases/tag/v1.2.1)
 
+`pg_duckdb` 将 DuckDB 分析引擎嵌入 PostgreSQL，可查询普通 PostgreSQL 表和外部文件。1.2.1 内嵌 DuckDB 2.0.1，上游列出支持 PostgreSQL 14–18。扩展不可重定位，需要实例预加载。
 
+### 启用并比较查询
 
-### 快速上手
-
-使用 pig 安装 pg_duckdb：
-
-```bash
-pig repo set
-pig install pg_duckdb
-```
-
-编辑 `postgresql.conf`，然后重启使配置生效
+将库加入现有设置，然后重启 PostgreSQL：
 
 ```ini
 shared_preload_libraries = 'pg_duckdb'
-duckdb.allow_community_extensions = true
 ```
 
-
-### 加速查询
-
-通过 DuckDB 可以直接查询现有的 PostgreSQL 表，无需做任何修改：
+以超级用户安装，检查分析查询：
 
 ```sql
--- pgbench -is 1000  # 使用 pgbench 初始化一些测试数据
 CREATE EXTENSION pg_duckdb;
-
--- 默认行为，使用 PostgreSQL 原生引擎
-SET duckdb.force_execution = false;
-EXPLAIN ANALYZE SELECT count(*) FROM pgbench_accounts;
-
--- 现在查询将由 pg_duckdb 执行
+CREATE TABLE orders (category text, amount numeric);
+INSERT INTO orders VALUES ('a', 10), ('a', 20), ('b', 5);
 SET duckdb.force_execution = true;
-EXPLAIN ANALYZE SELECT count(*) FROM pgbench_accounts;
+EXPLAIN SELECT category, sum(amount) FROM orders GROUP BY category;
+SELECT category, sum(amount) FROM orders GROUP BY category;
+SET duckdb.force_execution = false;
 ```
 
-在本地笔记本电脑的 4 核虚拟机上，查询耗时从 8 秒降至 4 秒：
+普通查询默认使用 PostgreSQL，强制执行后才切换；DuckDB 专用函数或远程存储操作会自动选择 DuckDB。应检查计划并以代表性数据测量。`read_parquet`、`read_csv` 和 `read_json` 读取外部数据，`duckdb.create_simple_secret` 配置存储凭据。避免将密钥写入共享 SQL 历史，授权执行前先核验访问边界。
 
-```text
-postgres@el9:5432/postgres=# SET duckdb.force_execution = true;
-EXPLAIN ANALYZE SELECT count(*) FROM pgbench_accounts;
-SET
-Time: 0.206 ms
-                                              QUERY PLAN
-------------------------------------------------------------------------------------------------------
- Custom Scan (DuckDBScan)  (cost=0.00..0.00 rows=0 width=0) (actual time=0.001..0.001 rows=0 loops=1)
-   DuckDB Execution Plan:
+### 权限与配置
 
- ┌─────────────────────────────────────┐
- │┌───────────────────────────────────┐│
- ││    Query Profiling Information    ││
- │└───────────────────────────────────┘│
- └─────────────────────────────────────┘
- EXPLAIN ANALYZE  SELECT count(*) AS count FROM pgduckdb.public.pgbench_accounts
- ┌────────────────────────────────────────────────┐
- │┌──────────────────────────────────────────────┐│
- ││               Total Time: 3.89s              ││
- │└──────────────────────────────────────────────┘│
- └────────────────────────────────────────────────┘
- ┌───────────────────────────┐
- │           QUERY           │
- └─────────────┬─────────────┘
- ┌─────────────┴─────────────┐
- │      EXPLAIN_ANALYZE      │
- │    ────────────────────   │
- │           0 rows          │
- │          (0.00s)          │
- └─────────────┬─────────────┘
- ┌─────────────┴─────────────┐
- │    UNGROUPED_AGGREGATE    │
- │    ────────────────────   │
- │        Aggregates:        │
- │        count_star()       │
- │                           │
- │           1 row           │
- │          (0.00s)          │
- └─────────────┬─────────────┘
- ┌─────────────┴─────────────┐
- │         TABLE_SCAN        │
- │    ────────────────────   │
- │           Table:          │
- │      pgbench_accounts     │
- │                           │
- │      100,000,000 rows     │
- │          (3.88s)          │
- └───────────────────────────┘
-```
+`duckdb.postgres_role` 指定可执行 DuckDB、管理密钥并使用 MotherDuck 数据的角色；默认仅超级用户可用。安装时可能创建所配置的角色。成员资格会开放共享的 DuckDB 密钥与数据，应有意授权。本地文件系统访问另外受 PostgreSQL 服务器文件角色与 DuckDB 文件系统设置约束。社区扩展加载由管理员显式选择。
 
+### 事务与兼容性限制
 
+同一事务不能同时写 PostgreSQL 和 DuckDB 表，也不能混用两种引擎的 DDL。应保持 `duckdb.unsafe_allow_mixed_transactions` 关闭，绕过限制可能只提交一侧，破坏一致性。默认也禁止在 PostgreSQL 函数内执行 DuckDB；相应的不安全设置存在已知崩溃风险。
 
-### 数据湖
-
-以下示例演示如何使用本地 MinIO 实例操作数据湖：
-
-```sql
-SELECT duckdb.create_simple_secret(
-    type := 'S3', key_id := 's3user_data', secret := 'S3User.Data',
-    endpoint := 'https://sss.pigsty:9000', url_style := 'path'
-);
-```
+1.2.1 支持嵌套定长数组，改善 numeric 与浮点转换，并修复并行工作进程的内存读取、取消清理和日志/统计中含密钥内容的处理。这些修复不能替代凭据权限控制及类型、查询兼容性检查。安装匹配动态库，遵循预加载重启要求，并在各数据库更新 SQL 扩展后再依赖新行为。

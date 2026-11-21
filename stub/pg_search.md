@@ -2,6 +2,10 @@
 
 Sources:
 
+- [Official source](https://www.paradedb.com/docs/project/changelog/0.27.0.md)
+- [Official source](https://api.pgxn.org/src/pg_search/pg_search-0.27.0/pg_search/pg_search.control)
+- [Official source](https://api.pgxn.org/src/pg_search/pg_search-0.27.0/Cargo.toml)
+
 - [0.26.8 changelog](https://www.paradedb.com/docs/project/changelog/0.26.8.md)
 - [pg_search 0.26.8 README](https://api.pgxn.org/src/pg_search/pg_search-0.26.8/pg_search/README.md)
 - [pg_search 0.26.8 control](https://api.pgxn.org/src/pg_search/pg_search-0.26.8/pg_search/pg_search.control)
@@ -34,7 +38,7 @@ Sources:
 - [Query vectors](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [Hybrid-search overview](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.26.7 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
+`pg_search` 0.27.0 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
 
 ### Install and Build an Index
 
@@ -165,3 +169,15 @@ Row-level security filters now contribute 0.0 consistently to pdb.score; an earl
 ### 0.26.8 Foreground Merge Behaviour
 
 After a write successfully launches a background merger, the foreground write path now skips its own foreground merge. If the background merger cannot be launched, foreground merging remains the fallback. Apply the normal matching library, SQL-extension update and preload maintenance procedure; this release adds no new index-format migration.
+
+### Version 0.27.0: Upgrade and Query Changes
+
+Upgrade standbys before the primary. Community physical replicas can replay WAL, but queries using ParadeDB indexes on a read replica fail. After promotion, or restoration from a base backup taken on a standby, replicated ParadeDB indexes require `REINDEX INDEX`. Backups taken on the primary are unaffected. Earlier standby libraries cannot replay the new ParadeDB WAL records.
+
+Rebuild every existing vector index: 0.27.0 uses vector format 6 and refuses older formats. Replace the `vector_fields` index option with `quantization`; recreate indexes explicitly storing the removed option. Rename `max_leaf_size` to `target_leaf_size` using ALTER INDEX or recreation. Quantization defaults to `[1,1]`; zero disables it. The new default `replication = 2` assigns vectors to a second cluster and affects storage/build work; `replication = 1` disables that assignment.
+
+Whole-row bare searches now cover indexed fields rather than implicitly targeting the key. Field-specific builders need an indexed column; use `body @@@ pdb.term('postgres')`, not a whole-row term builder. Direct ltree indexing is deprecated; the documented alternative is a separate GiST index with bitmap intersection.
+
+`paradedb.mpp_queue_size` is now a byte budget, default 8MB, and `paradedb.mpp_request_timeout` is removed. `paradedb.vector_cluster_max_probe` is an absolute work budget, default 100. `paradedb.max_term_set_size` defaults to 262144; excessive term sets error. Review saved settings before rollout.
+
+New `pdb.expand` synonym rules apply at query time, and `pdb.explain_score` returns a JSONB score explanation. L2 and inner-product vectors above approximately 6.5e18 magnitude are rejected, including during REINDEX; finite cosine vectors remain accepted. Prebuilt upstream binaries require PostgreSQL 15.20, 16.16, 17.12 or 18.7 or later within those majors. These upstream requirements do not imply that the catalog's RPM/DEB packages have already been updated.

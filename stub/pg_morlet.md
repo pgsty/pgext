@@ -2,14 +2,16 @@
 
 Sources:
 
-- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/extensions/pg_morlet/pg_morlet.control)
-- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/docs/compatibility.md)
-- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/extensions/pg_morlet/sql/pg_morlet--0.3.11--0.3.12.sql)
-- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/extensions/pg_morlet/sql/pg_morlet--0.3.0--0.3.1.sql)
-- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/extensions/pg_morlet/README.md)
-- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/docs/recording-workflow.md)
+- [Beta release](https://github.com/merkhet-io/morletdb/releases/tag/v0.4.0-beta.1)
 
-`pg_morlet` 0.3.12 stores waveforms and compares compatible windows with versioned Morlet features. The exact paper-v0.31 source tag contains this control/SQL version. PostgreSQL 17 is the reference platform; 18 has functional CI coverage, while 19 was tested as a release candidate. This remains an experimental extension using pgrx 0.19.3.
+- [Official source](https://github.com/merkhet-io/morletdb/blob/v0.4.0-beta.1/extensions/pg_morlet/pg_morlet.control)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/v0.4.0-beta.1/docs/compatibility.md)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/v0.4.0-beta.1/extensions/pg_morlet/sql/pg_morlet--0.3.11--0.3.12.sql)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/v0.4.0-beta.1/extensions/pg_morlet/sql/pg_morlet--0.3.0--0.3.1.sql)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/v0.4.0-beta.1/extensions/pg_morlet/README.md)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/v0.4.0-beta.1/docs/recording-workflow.md)
+
+`pg_morlet` 0.3.12 stores waveforms and compares compatible windows with versioned Morlet features. The exact v0.4.0-beta.1 source tag contains this control/SQL version. PostgreSQL 17 is the reference platform; 18 has functional CI coverage, while 19 was tested as a release candidate. This remains an experimental extension using pgrx 0.19.3.
 
 ### Record and search
 
@@ -37,3 +39,7 @@ ALTER EXTENSION pg_morlet UPDATE TO '0.3.12';
 ```
 
 The current tag supplies a versioned upgrade chain. Upstream tests cover older alpha upgrades on PostgreSQL 17; 18/19 use fresh installations. Some README paragraphs still describe an obsolete 0.1.0 scaffold with no upgrade path; use the actual control, SQL chain and compatibility document for this revision. Preserve recordings and backups; do not drop a populated extension to follow the old walkthrough.
+
+### Beta Operating Limits
+
+The 0.4.0-beta.1 distribution retains SQL version 0.3.12. `morlet_latest` returns one row per matching recording rather than a single stream-wide result. Upstream's sustained ingest trial retained the checked samples but did not meet steady-operation or search goals; envelope and verification backlogs accumulated. Monitor backlog and validate recovery and query latency on the intended workload. The beta's API and chunk-format promises do not establish production capacity.

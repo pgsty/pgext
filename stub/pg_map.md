@@ -2,6 +2,9 @@
 
 Sources:
 
+- [3.7.0 pg_map.control](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/pg_map/pg_map.control)
+- [3.7.0 v3.7.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.7.0)
+
 - [Official pg_map README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_map/README.md)
 - [Version 3.6 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_map/pg_map.control)
 - [Base SQL definition](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_map/pg_map--1.2.sql)
@@ -64,3 +67,7 @@ FROM map_type.entries(
 ### Upstream 3.6.0
 
 Upstream 3.6.0 adds PostgreSQL 19 support and uses DuckDB 1.5.6. Deploy matching libraries and `pgduck_server`, keep `pg_extension_base` preloaded, restart loaded processes and apply the supplied SQL updates to version 3.6. This component's 3.5-to-3.6 SQL migration is empty; the matching runtime and its dependencies still need the coordinated release upgrade.
+
+### Upstream 3.7.0
+
+The current reviewed release is 3.7.0 and this component's control version is 3.7. Earlier version sections describe historical behavior and package examples. Upgrade the complete family with matching libraries and `pgduck_server`, restart processes holding old code, and apply the supplied extension updates to SQL version 3.7. This does not establish package availability.

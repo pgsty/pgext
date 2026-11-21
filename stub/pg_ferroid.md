@@ -2,13 +2,15 @@
 
 Sources:
 
-- [3.0 changes](https://github.com/s0l0ist/ferroid/blob/3.0.0/CHANGELOG.md)
-- [PostgreSQL extension README](https://github.com/s0l0ist/ferroid/blob/3.0.0/crates/pg-ferroid/README.md)
-- [Extension control file](https://github.com/s0l0ist/ferroid/blob/3.0.0/crates/pg-ferroid/pg_ferroid.control)
-- [Type, cast, and function implementation](https://github.com/s0l0ist/ferroid/blob/3.0.0/crates/pg-ferroid/src/lib.rs)
-- [Package metadata](https://github.com/s0l0ist/ferroid/blob/3.0.0/crates/pg-ferroid/Cargo.toml)
+- [Official source](https://github.com/s0l0ist/ferroid/blob/3.1.0/Cargo.toml)
 
-`pg_ferroid` 3.0.0 is a pgrx extension that adds a native 16-byte `ulid` type. ULIDs encode a millisecond timestamp plus an 80-bit tail, have a 26-character Base32 representation, and support comparisons, B-tree and hash indexing, validation, and explicit conversions.
+- [3.0 changes](https://github.com/s0l0ist/ferroid/blob/3.1.0/CHANGELOG.md)
+- [PostgreSQL extension README](https://github.com/s0l0ist/ferroid/blob/3.1.0/crates/pg-ferroid/README.md)
+- [Extension control file](https://github.com/s0l0ist/ferroid/blob/3.1.0/crates/pg-ferroid/pg_ferroid.control)
+- [Type, cast, and function implementation](https://github.com/s0l0ist/ferroid/blob/3.1.0/crates/pg-ferroid/src/lib.rs)
+- [Package metadata](https://github.com/s0l0ist/ferroid/blob/3.1.0/crates/pg-ferroid/Cargo.toml)
+
+`pg_ferroid` 3.1.0 is a pgrx extension that adds a native 16-byte `ulid` type. ULIDs encode a millisecond timestamp plus an 80-bit tail, have a 26-character Base32 representation, and support comparisons, B-tree and hash indexing, validation, and explicit conversions.
 
 ### Generate and store ULIDs
 
@@ -46,3 +48,7 @@ SELECT (timestamp '2025-01-01 12:00:00' AT TIME ZONE 'UTC')::ulid;
 ```
 
 Timestamp inputs must be finite, at or after the Unix epoch, and fit the 48-bit ULID time range. A backward clock adjustment can delay monotonic generation; cancellation and statement timeouts remain effective. The matching Rust/pgrx build uses pgrx 0.20.0.
+
+### Version 3.1.0
+
+Version 3.1.0 updates the underlying ULID generation and random-mask implementation. The SQL type, functions and casts documented above remain the extension interface; generic Rust generator features are not additional SQL objects. PostgreSQL 15–18 and the 3.0 timestamp-cast boundary remain applicable. Deploy matching extension files and check the supplied SQL update path before upgrading an existing database.

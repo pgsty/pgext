@@ -2,14 +2,16 @@
 
 来源：
 
-- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/extensions/pg_morlet/pg_morlet.control)
-- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/docs/compatibility.md)
-- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/extensions/pg_morlet/sql/pg_morlet--0.3.11--0.3.12.sql)
-- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/extensions/pg_morlet/sql/pg_morlet--0.3.0--0.3.1.sql)
-- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/extensions/pg_morlet/README.md)
-- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/docs/recording-workflow.md)
+- [Beta release](https://github.com/merkhet-io/morletdb/releases/tag/v0.4.0-beta.1)
 
-`pg_morlet` 0.3.12 保存波形记录，并使用有版本标识的 Morlet 特征比较兼容区间。paper-v0.31 源码标签实际包含该 control/SQL 版本。PostgreSQL 17 是参考平台，18 有功能 CI 覆盖，19 的验证基于候选发布版。该扩展仍属实验性质，使用 pgrx 0.19.3。
+- [Official source](https://github.com/merkhet-io/morletdb/blob/v0.4.0-beta.1/extensions/pg_morlet/pg_morlet.control)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/v0.4.0-beta.1/docs/compatibility.md)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/v0.4.0-beta.1/extensions/pg_morlet/sql/pg_morlet--0.3.11--0.3.12.sql)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/v0.4.0-beta.1/extensions/pg_morlet/sql/pg_morlet--0.3.0--0.3.1.sql)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/v0.4.0-beta.1/extensions/pg_morlet/README.md)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/v0.4.0-beta.1/docs/recording-workflow.md)
+
+`pg_morlet` 0.3.12 保存波形记录，并使用有版本标识的 Morlet 特征比较兼容区间。v0.4.0-beta.1 源码标签实际包含该 control/SQL 版本。PostgreSQL 17 是参考平台，18 有功能 CI 覆盖，19 的验证基于候选发布版。该扩展仍属实验性质，使用 pgrx 0.19.3。
 
 ### 记录与搜索
 
@@ -37,3 +39,7 @@ ALTER EXTENSION pg_morlet UPDATE TO '0.3.12';
 ```
 
 当前标签提供版本化升级链。上游只在 PostgreSQL 17 测试过从旧 alpha 版本升级，18/19 使用全新安装。部分 README 段落仍描述没有升级路径的旧 0.1.0 框架，应以本修订的 control、SQL 升级链和兼容文档为准。保留记录和备份，不要为遵循旧演示而删除已有数据的扩展。
+
+### Beta 运行限制
+
+0.4.0-beta.1 发行版保留 SQL 版本 0.3.12。`morlet_latest` 按匹配的记录各返回一行，而非整个数据流只返回一行。上游持续摄取试验保留了核对的样本，但没有达到稳定运行与搜索目标，包络和验证任务出现积压。应监控积压，并针对实际负载验证恢复和查询延迟。Beta 版的 API 与数据块格式承诺不代表已经具备生产容量。

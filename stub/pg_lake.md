@@ -2,6 +2,12 @@
 
 Sources:
 
+- [3.7.0 pg_lake.control](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/pg_lake/pg_lake.control)
+- [3.7.0 v3.7.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.7.0)
+- [3.7.0 table-options.md](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/docs/table-options.md)
+- [3.7.0 data-types.md](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/docs/data-types.md)
+- [3.7.0 iceberg-catalogs.md](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/docs/iceberg-catalogs.md)
+
 - [Upstream source](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.2)
 
 - [Current upstream](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.1)
@@ -187,3 +193,9 @@ The family retains SQL version 3.6. Deploy matching extension libraries and `pgd
 ### Upstream 3.6.2
 
 The 3.6.2 patch corrects byte-by-byte CSV-value transmission in pgduck_server. Deploy the matching query-server binary with the extension libraries and reconnect/restart processes holding old code. The component SQL version remains 3.6; an unchanged extversion does not prove the query-server fix is installed. Package availability remains a separate catalog fact.
+
+### Upstream 3.7.0
+
+The current reviewed release is 3.7.0 and this component's control version is 3.7. Earlier version sections describe historical behavior and package examples. Upgrade the complete family with matching libraries and `pgduck_server`, restart processes holding old code, and apply the supplied extension updates to SQL version 3.7. This does not establish package availability.
+
+For newly attached read-only `catalog = 'snowflake'` tables, `lowercase_column_names` defaults to true and is fixed at creation. Case collisions are rejected. `out_of_range_values = 'error'` rejects infinite intervals on PostgreSQL 17+; `clamp` stores them as NULL without a warning. Review this loss of information before enabling it.

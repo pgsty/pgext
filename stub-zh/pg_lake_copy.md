@@ -2,6 +2,9 @@
 
 来源：
 
+- [3.7.0 pg_lake_copy.control](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/pg_lake_copy/pg_lake_copy.control)
+- [3.7.0 v3.7.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.7.0)
+
 - [Upstream source](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.2)
 
 - [版本 3.6 控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_copy/pg_lake_copy.control)
@@ -68,3 +71,7 @@ WITH (format 'csv', header true, compression 'gzip');
 ### 上游 3.6.2
 
 3.6.2 补丁修正 pgduck_server 逐字节传输 CSV 值的处理。应部署与扩展库匹配的查询服务二进制，并重新连接或重启仍持有旧代码的进程。组件 SQL 版本仍为 3.6，extversion 不变不能证明查询服务修复已经安装。软件包可用性仍是单独的目录事实。
+
+### 上游 3.7.0
+
+当前核对的发行版为 3.7.0，本组件的控制版本为 3.7。前面的旧版本章节描述历史行为和软件包示例。应使用匹配的库与 `pgduck_server` 协同升级整个扩展族，重启持有旧代码的进程，并执行提供的扩展升级脚本，将 SQL 版本更新至 3.7。这不代表相应软件包已经可用。

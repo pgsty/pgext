@@ -2,6 +2,12 @@
 
 Sources:
 
+- [3.7.0 pg_lake_table.control](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/pg_lake_table/pg_lake_table.control)
+- [3.7.0 v3.7.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.7.0)
+- [3.7.0 table-options.md](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/docs/table-options.md)
+- [3.7.0 data-types.md](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/docs/data-types.md)
+- [3.7.0 iceberg-catalogs.md](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/docs/iceberg-catalogs.md)
+
 - [Current upstream](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.1)
 - [Current upstream](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.1/docs/table-options.md)
 - [Current upstream](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.1/docs/iceberg-catalogs.md)
@@ -88,3 +94,9 @@ Upstream 3.6.0 adds PostgreSQL 19 support and uses DuckDB 1.5.6. Deploy matching
 Read-only tables attached with `catalog = 'snowflake'` and inferred columns now default `lowercase_column_names` to true. Other documented read-only catalog cases retain their existing default; the option is fixed when the table is created and does not rename existing columns. Review inferred names and case collisions when attaching new tables.
 
 The family retains SQL version 3.6. Deploy matching extension libraries and `pgduck_server`: the patch also includes a Brotli decoder security correction in the query server. Existing package versions are recorded independently and are not evidence that this upstream patch is installed.
+
+### Upstream 3.7.0
+
+The current reviewed release is 3.7.0 and this component's control version is 3.7. Earlier version sections describe historical behavior and package examples. Upgrade the complete family with matching libraries and `pgduck_server`, restart processes holding old code, and apply the supplied extension updates to SQL version 3.7. This does not establish package availability.
+
+For newly attached read-only `catalog = 'snowflake'` tables, `lowercase_column_names` defaults to true and is fixed at creation. Case collisions are rejected. `out_of_range_values = 'error'` rejects infinite intervals on PostgreSQL 17+; `clamp` stores them as NULL without a warning. Review this loss of information before enabling it.

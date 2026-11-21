@@ -2,6 +2,12 @@
 
 来源：
 
+- [3.7.0 pg_lake.control](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/pg_lake/pg_lake.control)
+- [3.7.0 v3.7.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.7.0)
+- [3.7.0 table-options.md](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/docs/table-options.md)
+- [3.7.0 data-types.md](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/docs/data-types.md)
+- [3.7.0 iceberg-catalogs.md](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/docs/iceberg-catalogs.md)
+
 - [Upstream source](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.2)
 
 - [当前上游](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.1)
@@ -187,3 +193,9 @@ ORDER BY extname;
 ### 上游 3.6.2
 
 3.6.2 补丁修正 pgduck_server 逐字节传输 CSV 值的处理。应部署与扩展库匹配的查询服务二进制，并重新连接或重启仍持有旧代码的进程。组件 SQL 版本仍为 3.6，extversion 不变不能证明查询服务修复已经安装。软件包可用性仍是单独的目录事实。
+
+### 上游 3.7.0
+
+当前核对的发行版为 3.7.0，本组件的控制版本为 3.7。前面的旧版本章节描述历史行为和软件包示例。应使用匹配的库与 `pgduck_server` 协同升级整个扩展族，重启持有旧代码的进程，并执行提供的扩展升级脚本，将 SQL 版本更新至 3.7。这不代表相应软件包已经可用。
+
+新挂接的只读 `catalog = 'snowflake'` 表默认启用 `lowercase_column_names`，该选项在建表时固定，大小写折叠冲突会报错。对于 PostgreSQL 17+ 的无限间隔，`out_of_range_values = 'error'` 会拒绝写入，`clamp` 则静默保存为 NULL。启用前应评估这种信息丢失。

@@ -2,11 +2,11 @@
 
 来源：
 
-- [PGXN plx 2.0.1 README](https://pgxn.org/dist/plx/2.0.1/README.html)
-- [plx 2.0.1 用户指南](https://api.pgxn.org/src/plx/plx-2.0.1/doc/USERGUIDE.md)
-- [plx 2.0.1 兼容性说明](https://api.pgxn.org/src/plx/plx-2.0.1/doc/COMPATIBILITY.md)
-- [plx 2.0.1 变更日志](https://api.pgxn.org/src/plx/plx-2.0.1/CHANGELOG.md)
-- [plx 控制文件](https://api.pgxn.org/src/plx/plx-2.0.1/plx.control)
+- [PGXN plx 3.0.0 README](https://pgxn.org/dist/plx/3.0.0/README.html)
+- [plx 3.0.0 用户指南](https://api.pgxn.org/src/plx/plx-3.0.0/doc/USERGUIDE.md)
+- [plx 3.0.0 兼容性说明](https://api.pgxn.org/src/plx/plx-3.0.0/doc/COMPATIBILITY.md)
+- [plx 3.0.0 变更日志](https://api.pgxn.org/src/plx/plx-3.0.0/CHANGELOG.md)
+- [plx 控制文件](https://api.pgxn.org/src/plx/plx-3.0.0/plx.control)
 
 `plx` 提供了熟悉的程序语言方言，当 `CREATE FUNCTION` 执行时会编译为普通的 PL/pgSQL。PostgreSQL 存储并执行生成的 PL/pgSQL，使用其内置的信任处理程序；无需加载 Ruby、PHP、JavaScript、Python、Go、COBOL、Oracle 或 SQL Server 运行时到后端。
 
@@ -94,4 +94,11 @@ $$;
 - 参数和返回类型必须是 PostgreSQL 类型。局部变量的类型推断有限；对于调用和复合表达式需要显式声明类型。
 - SQL 使用三值逻辑和 PostgreSQL 的数值/字符串语义。源语言中的真假性和使用 `+` 进行字符串连接没有被复制。
 - 局部变量被提升到一个 PL/pgSQL 的 `DECLARE` 块中，因此块局部作用域和具有不同类型的重新声明不可用。
-- 发行包 2.0.1 安装扩展版本 2.0.0；2.0.1 只修改 PGXN 打包，没有自己的 SQL 升级。2.0.0 改变 `plxruby`、`plxphp`、`plxjs`、`plxts`、`plxpython3` 与 `plxgo` 的插值行为：NULL 操作数现在会让整个插值字符串变为 NULL，而不是静默转为空字符串。运行 `ALTER EXTENSION plx UPDATE TO '2.0.0'` 后还需重新部署受影响函数，因为扩展升级不会重写 `pg_proc.prosrc` 中既有的生成 PL/pgSQL。
+
+### 3.0.0 升级
+
+安装新库并运行 `ALTER EXTENSION plx UPDATE TO '3.0.0'` 后，用原始方言 DDL 重新创建受影响函数。扩展升级不会重写已有的生成 PL/pgSQL。迁移前保留原始源码，重点检查依赖插值、NULL 处理或异常退出结果的函数。
+
+扩展不再可重定位。安装时选定模式，并在恢复时保持相同模式，否则需重新生成嵌入辅助对象名称的函数。创建方言函数或 DO 块要求对 plpgsql 具有 USAGE 权限。启用函数体检查时，创建过程会验证生成的 PL/pgSQL，拒绝不支持的参数或结果类型以及格式错误的类型声明。
+
+SQL 插值中的值现在绑定为参数；名称使用 `ident()`，有意拼接的 `raw()` SQL 片段须限于可信输入。向字符串追加 NULL 现在传播 NULL；若要视为空字符串，应使用 `coalesce(x, '')`。多数方言现在会在 return、break、continue 时执行 finally/ensure，但查询取消和断言失败仍不在该处理范围内。重新部署函数前应阅读各方言的破坏性变更。

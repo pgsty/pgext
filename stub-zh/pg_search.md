@@ -2,6 +2,10 @@
 
 来源：
 
+- [Official source](https://www.paradedb.com/docs/project/changelog/0.27.0.md)
+- [Official source](https://api.pgxn.org/src/pg_search/pg_search-0.27.0/pg_search/pg_search.control)
+- [Official source](https://api.pgxn.org/src/pg_search/pg_search-0.27.0/Cargo.toml)
+
 - [0.26.8 变更日志](https://www.paradedb.com/docs/project/changelog/0.26.8.md)
 - [pg_search 0.26.8 README](https://api.pgxn.org/src/pg_search/pg_search-0.26.8/pg_search/README.md)
 - [pg_search 0.26.8 控制文件](https://api.pgxn.org/src/pg_search/pg_search-0.26.8/pg_search/pg_search.control)
@@ -34,7 +38,7 @@
 - [查询向量](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [混合搜索概述](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.26.7 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
+`pg_search` 0.27.0 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
 
 ### 安装并构建索引
 
@@ -165,3 +169,15 @@ Join Scan 现在支持在 `INNER` 和 `SEMI`（`IN` / `EXISTS`）连接中对向
 ### 0.26.8 前台合并行为
 
 写入路径成功启动后台合并器后，现在会跳过前台合并。若无法启动后台合并器，仍回退到前台合并。按既有流程安装匹配库、更新 SQL 扩展并执行预加载维护；本版本没有新的索引格式迁移。
+
+### 版本 0.27.0：升级与查询变化
+
+先升级备用节点，再升级主节点。Community 物理副本现在可以继续重放 WAL，但只读副本上使用 ParadeDB 索引的查询会失败。副本提升为主节点，或从备用节点取得的基础备份恢复后，复制来的 ParadeDB 索引须执行 `REINDEX INDEX`。主节点取得的备份不受此限制。旧版备用节点库无法重放新的 ParadeDB WAL 记录。
+
+所有现有向量索引都须重建：0.27.0 使用向量格式 6，拒绝旧格式。将 `vector_fields` 索引选项替换为 `quantization`；显式保存了已删除选项的索引须重新创建。通过 ALTER INDEX 或重建，将 `max_leaf_size` 改为 `target_leaf_size`。量化默认值为 `[1,1]`，零表示禁用。新的默认值 `replication = 2` 将向量额外分配到第二个簇，影响存储及构建工作量；`replication = 1` 可关闭额外分配。
+
+整行的裸搜索现在检索已索引字段，不再隐式指向键字段。字段专用构造器须绑定已索引列，例如 `body @@@ pdb.term('postgres')`，不能使用整行 term 构造器。直接索引 ltree 已弃用；文档建议使用独立 GiST 索引并通过位图求交组合检索。
+
+`paradedb.mpp_queue_size` 现表示字节预算，默认为 8MB；`paradedb.mpp_request_timeout` 已删除。`paradedb.vector_cluster_max_probe` 改为绝对工作预算，默认为 100。`paradedb.max_term_set_size` 默认 262144，超限词项集合会报错。部署前须复核已有配置。
+
+新增 `pdb.expand` 在查询时应用同义词规则，`pdb.explain_score` 返回 JSONB 分数解释。L2 和内积向量的模超过约 6.5e18 时会被拒绝，包括 REINDEX 期间；有限值余弦向量仍被接受。上游预编译二进制要求 PostgreSQL 15.20、16.16、17.12 或 18.7，或同主版本内更高的小版本。这些上游要求并不表示目录中的 RPM/DEB 包已经更新。

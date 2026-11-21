@@ -1,56 +1,48 @@
-
-
-
 ## 用法
 
-来源：[extension README](https://github.com/boringSQL/regresql/blob/master/pg_ext/README.md)，[control file](https://github.com/boringSQL/regresql/blob/master/pg_ext/pg_regresql.control)，[portable stats article](https://boringsql.com/posts/portable-stats/)
+来源：
 
-`pg_regresql` 是 RegreSQL 的 PostgreSQL planner-hook 组件。它让规划器优先信任 `pg_class` 中的统计信息，而不是根据物理文件大小重新缩放估算值，因此适合在注入生产统计后做执行计划回归测试。
+- [README.md](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/README.md)
+- [pg_regresql.control](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/pg_regresql.control)
+- [pg_regresql--2.2.sql](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/pg_regresql--2.2.sql)
 
-### 激活 hook
+`pg_regresql` 让查询规划使用目录统计信息，不再按物理文件大小缩放估算，适合在数据很少但统计信息具有代表性的数据库中做执行计划回归测试。发行版 2.2.0 安装 SQL 版本 2.2，固定使用 `pg_catalog` 模式。
+
+### 启用规划器钩子
+
+钩子支持 PostgreSQL 15 及以上版本。以超级用户在测试会话中加载：
 
 ```sql
 LOAD 'pg_regresql';
-
-EXPLAIN SELECT ...;
+CREATE TABLE test_orders (created_at date);
+EXPLAIN SELECT * FROM test_orders WHERE created_at > DATE '2024-06-01';
 ```
 
-如果希望整个测试实例都启用它，上游建议：
+如需在测试实例的新会话中加载，将库加入现有会话预加载列表：
 
-```conf
+```ini
 session_preload_libraries = 'pg_regresql'
 ```
 
-### 它覆盖的估算
+钩子用 `pg_class` 的值替换表和索引的页数、行数估计，并根据目录统计计算可见性比例。比较计划前应注入有意义的统计信息；单有空表不能代表生产负载。
 
-README 说明该 hook 会在 `estimate_rel_size()` 之后运行，并用 catalog 中的值替换规划器默认估算：
+### 恢复统计信息
 
-- `rel->pages` 来自 `pg_class.relpages`
-- `rel->tuples` 来自 `pg_class.reltuples`
-- `rel->allvisfrac` 来自 `pg_class.relallvisible / relpages`
-- `IndexOptInfo->pages` 来自索引的 `pg_class.relpages`
-- `IndexOptInfo->tuples` 来自索引的 `pg_class.reltuples`
-
-### 典型工作流
+在 PostgreSQL 16 和 17 上，先创建扩展，再加载新版 pg_dump 导出的统计信息：
 
 ```sql
+CREATE EXTENSION pg_regresql;
 SELECT pg_restore_relation_stats(
-    'schemaname', 'public',
-    'relname', 'test_orders',
-    'relpages', 123513::integer,
-    'reltuples', 50000000::real,
+    'schemaname', 'public', 'relname', 'test_orders',
+    'relpages', 123513::integer, 'reltuples', 50000000::real,
     'relallvisible', 123513::integer
 );
-
-LOAD 'pg_regresql';
-
-EXPLAIN SELECT * FROM test_orders WHERE created_at > '2024-06-01';
 ```
 
-这个流程主要用于在本地复现生产计划，或在 migration、升级和 plan-regression 测试中复用已恢复的生产统计。
+2.2 为这两个版本增加 `pg_restore_extended_stats()` 与 `pg_clear_extended_stats()`，并让 `pg_ndistinct` 和 `pg_dependencies` 接受 pg_dump 19 输出的 JSON 输入。在 PostgreSQL 16 上须删除备份中不支持的 transaction_timeout 设置。PostgreSQL 18 已内置表与属性统计恢复，19 开始内置扩展统计恢复；本扩展不会在 18 及以上版本安装这些回移函数。
 
-### 说明
+### 升级与清理
 
-- 控制文件当前声明 `default_version = '2.0'`。
-- 公开仓库里的 tag 仍主要是 `v2.0.0-alpha*`，因此打包目标 `2.0.0` 领先于 GitHub 上清晰标注的最终正式 tag。
-- 上游文档说明该扩展支持 PostgreSQL 14+。
+从 SQL 版本 2.0 升级时，上游要求删除并重新创建扩展；从 2.1 升级使用 `ALTER EXTENSION pg_regresql UPDATE`。删除前应检查依赖。扩展不可重定位，安装需要超级用户。
+
+16/17 上名为 `regresql_pg_*_in` 的替代输入函数会刻意脱离扩展成员关系。`DROP EXTENSION` 会保留这些函数，使已安装的类型转换继续工作，因此删除扩展并不等于将目录完全恢复原状。应在受控的规划测试中使用，不能假定它与其他规划器钩子的组合已经过验证。

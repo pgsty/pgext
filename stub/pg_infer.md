@@ -2,20 +2,20 @@
 
 Sources:
 
-- [Distribution README](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/README)
-- [Extension control file](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/pg_infer.control)
-- [Cargo manifest](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/Cargo.toml)
-- [Extension installation SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/sql/pg_infer--0.1.4-alpha.sql)
-- [Model registration implementation](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/src/model_mgmt.rs)
-- [Index access method implementation](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/src/am.rs)
-- [Official regression SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/sql/pg_infer.sql)
-- [Vindex format and model data](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/crates/infer-vindex/README.md)
+- [Distribution README](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/README)
+- [Extension control file](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/pg_infer.control)
+- [Cargo manifest](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/Cargo.toml)
+- [Extension installation SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/sql/pg_infer--0.1.6-alpha.sql)
+- [Model registration implementation](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/src/model_mgmt.rs)
+- [Index access method implementation](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/src/am.rs)
+- [Official regression SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/sql/pg_infer.sql)
+- [Vindex format and model data](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.6-alpha/crates/infer-vindex/README.md)
 
 `pg_infer` is an experimental PostgreSQL extension that exposes transformer-model features, learned associations, and similarity signals through SQL. It creates the `infer` schema for its model registry and provides an `infer` index access method for model-aware ordering over text. Use it to inspect externally prepared model knowledge from PostgreSQL; it does not bundle a model or vindex, and its results are model-dependent signals rather than verified facts.
 
 ### Version and Scope
 
-PGXN testing distribution `0.1.4-alpha` aligns `pg_infer.control`, `Cargo.toml` and `sql/pg_infer--0.1.4-alpha.sql` at version `0.1.4-alpha`. The README banner and SQL header still mention older versions. The earlier source tag `v0.1.1-alpha` installed SQL `1.0.0`; there is no supplied upgrade script from that version. Test with a fresh database or an explicitly reviewed migration. SQL APIs and vindex formats remain experimental.
+PGXN testing distribution `0.1.6-alpha` aligns `pg_infer.control`, `Cargo.toml` and `sql/pg_infer--0.1.6-alpha.sql` at version `0.1.6-alpha`. The README banner and SQL header still mention older versions. The earlier source tag `v0.1.1-alpha` installed SQL `1.0.0`; there is no supplied upgrade script from that version. Test with a fresh database or an explicitly reviewed migration. SQL APIs and vindex formats remain experimental.
 
 The distribution Cargo manifest declares `pg18` and `pg19`, with `pg18` selected by default. These are source feature targets, not a claim of packaged availability. Earlier majors are not declared.
 
@@ -117,3 +117,9 @@ LIMIT 5;
 ### Remote Models
 
 `infer_create_model_remote` registers an existing model served by an external larql server; `infer_create_models_remote` registers several models, and `infer_create_model_grid` resolves a model through `infer.grid_url`. Remote availability, access controls and model storage are external to the extension. Review network destinations and timeouts before allowing database roles to register remote models. The registry stores a reference, not a backup of the remote model.
+
+### Experimental 0.1.6-alpha
+
+The installation manifest now documents `describe_many(entities text[], model text DEFAULT NULL, threshold float8 DEFAULT NULL)` for batch description. `walk` returns layer, feature, gate_score and concept; `nearest_to` returns feature, token, gate_score and also. `infer_diff` reports token_a, token_b, score_a, score_b and status alongside layer and feature.
+
+Gate scores are unnormalised model-dependent magnitudes, not probabilities or portable confidence thresholds. `similar_to` can return either a shared gate activation or an embedding cosine scaled by ten; those values are not on one common scale. The `probability` column of `infer` is a vocabulary softmax, and its returned top-k slice need not sum to one. The README banner is stale; use the control, Cargo and versioned SQL evidence for this testing release. No migration script is supplied.

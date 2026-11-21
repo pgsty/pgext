@@ -1,56 +1,48 @@
-
-
-
 ## Usage
 
-Sources: [extension README](https://github.com/boringSQL/regresql/blob/master/pg_ext/README.md), [control file](https://github.com/boringSQL/regresql/blob/master/pg_ext/pg_regresql.control), [portable stats article](https://boringsql.com/posts/portable-stats/)
+Sources:
 
-`pg_regresql` is the PostgreSQL planner-hook part of RegreSQL. It makes the planner trust `pg_class` statistics instead of rescaling estimates from the physical file size, which is useful for plan regression testing with injected production statistics.
+- [README.md](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/README.md)
+- [pg_regresql.control](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/pg_regresql.control)
+- [pg_regresql--2.2.sql](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/pg_regresql--2.2.sql)
 
-### Activate the hook
+`pg_regresql` makes query planning use catalog statistics instead of rescaling them from physical file size. This supports plan regression tests in databases with representative statistics but little data. Distribution 2.2.0 installs SQL version 2.2 in the fixed `pg_catalog` schema.
+
+### Activate the Planner Hook
+
+The hook supports PostgreSQL 15 or later. Load it as a superuser in the test session:
 
 ```sql
 LOAD 'pg_regresql';
-
-EXPLAIN SELECT ...;
+CREATE TABLE test_orders (created_at date);
+EXPLAIN SELECT * FROM test_orders WHERE created_at > DATE '2024-06-01';
 ```
 
-For a whole test instance, upstream recommends:
+For new sessions on a test instance, add the library to the existing session preload list:
 
-```conf
+```ini
 session_preload_libraries = 'pg_regresql'
 ```
 
-### What it overrides
+The hook replaces table and index page/tuple estimates with `pg_class` values and computes visibility from catalog statistics. Inject useful statistics before comparing plans; an empty table alone is not a production workload.
 
-The upstream README says the hook runs after `estimate_rel_size()` and replaces planner estimates with catalog values:
+### Restore Statistics
 
-- `rel->pages` from `pg_class.relpages`
-- `rel->tuples` from `pg_class.reltuples`
-- `rel->allvisfrac` from `pg_class.relallvisible / relpages`
-- `IndexOptInfo->pages` from index `pg_class.relpages`
-- `IndexOptInfo->tuples` from index `pg_class.reltuples`
-
-### Typical workflow
+On PostgreSQL 16 and 17, create the extension before loading statistics emitted by a recent pg_dump:
 
 ```sql
+CREATE EXTENSION pg_regresql;
 SELECT pg_restore_relation_stats(
-    'schemaname', 'public',
-    'relname', 'test_orders',
-    'relpages', 123513::integer,
-    'reltuples', 50000000::real,
+    'schemaname', 'public', 'relname', 'test_orders',
+    'relpages', 123513::integer, 'reltuples', 50000000::real,
     'relallvisible', 123513::integer
 );
-
-LOAD 'pg_regresql';
-
-EXPLAIN SELECT * FROM test_orders WHERE created_at > '2024-06-01';
 ```
 
-This is meant for reproducing production plans locally and for migration or upgrade plan-regression tests.
+Version 2.2 adds `pg_restore_extended_stats()` and `pg_clear_extended_stats()` for those servers, and supports the JSON input emitted by pg_dump 19 for `pg_ndistinct` and `pg_dependencies`. On PostgreSQL 16 remove the dump's unsupported transaction_timeout setting. PostgreSQL 18 already supplies relation/attribute restoration in core; extended restoration is in core from 19. The extension does not install these backports on 18 or later.
 
-### Notes
+### Upgrade and Cleanup
 
-- The control file currently declares `default_version = '2.0'`.
-- The public repository tags visible upstream are still `v2.0.0-alpha*`, so the packaged `2.0.0` target is ahead of a clearly tagged final GitHub release.
-- Upstream documents PostgreSQL 14+ compatibility for the extension.
+From SQL version 2.0, upstream requires dropping and recreating the extension. From 2.1, use `ALTER EXTENSION pg_regresql UPDATE`. Review dependencies before removing it. The extension is not relocatable and its install requires a superuser.
+
+The replacement input functions named `regresql_pg_*_in` are deliberately detached from the extension on 16/17. `DROP EXTENSION` leaves them behind so the installed casts keep working; dropping the extension is therefore not a complete return to the original catalog state. Use this tool in controlled planning tests, and do not assume compatibility with other planner hooks has been tested.

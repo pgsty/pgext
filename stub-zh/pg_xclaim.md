@@ -2,13 +2,15 @@
 
 来源：
 
-- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/README.md)
-- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/pg_xclaim.control)
-- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/CHANGELOG.md)
-- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/sql/pg_xclaim--1.0.0-rc1--1.0.0-rc2.sql)
-- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/sql/pg_xclaim--1.0.0-rc2--1.0.0-rc3.sql)
+- [rc5 release](https://github.com/Fenoman/pg_xclaim/releases/tag/v1.0.0-rc5)
 
-`pg_xclaim` 1.0.0-rc3 是面向 PostgreSQL 16–18 的实验性共享内存认领机制，在独立命名空间内提供不等待、持续到事务结束的互斥。它不是持久化队列，其键也不与 PostgreSQL 咨询锁互通。
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/v1.0.0-rc5/README.md)
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/v1.0.0-rc5/pg_xclaim.control)
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/v1.0.0-rc5/CHANGELOG.md)
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/v1.0.0-rc5/sql/pg_xclaim--1.0.0-rc1--1.0.0-rc2.sql)
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/v1.0.0-rc5/sql/pg_xclaim--1.0.0-rc4--1.0.0-rc5.sql)
+
+`pg_xclaim` 1.0.0-rc5 是面向 PostgreSQL 16–18 的实验性共享内存认领机制，在独立命名空间内提供不等待、持续到事务结束的互斥。它不是持久化队列，其键也不与 PostgreSQL 咨询锁互通。
 
 ### 基本流程
 
@@ -30,10 +32,10 @@ COMMIT;
 
 ### 对象与限制
 
-`xclaim.try` 接受一个 bigint 键或两个 int4 键，两种形式使用不同命名空间。`xclaim.try_many` 按输入顺序返回布尔数组，部分成功的认领会保留到事务结束。如果需要全部成功或全部失败，应在任一失败时回滚整个事务。NULL 输入会报错。
+`xclaim.try` 接受一个 bigint 键或两个 int4 键，分别使用独立命名空间。`xclaim.try_many` 按输入顺序返回布尔数组，部分成功的申请会保留到事务结束；需要全有或全无语义时应回滚整个事务。NULL 输入会报错。
 
-`xclaim.stats` 和 `xclaim.debug_snapshot` 是有角色限制的监控函数；详细调试与过期认领注入是超级用户工具，注入仅用于测试。`xclaim.session_reset` 用于异常恢复，不应当作常规连接池重置命令。按文档限制共享容量及每个后端的认领数量；禁用扩展可能取消互斥保护。
+`xclaim.stats` 和 `xclaim.debug_snapshot` 是有角色限制的监控函数，详细调试需要更高权限。rc5 已从生产库和模式中移除过期申请注入器。`xclaim.session_reset` 用于异常恢复，不应作为连接池常规重置命令。应限制共享容量与每个后端的申请数量；禁用扩展会影响互斥保障。
 
-### rc3 升级
+### rc5 升级
 
-rc2 修复后端退出清理和分配失败处理；rc3 增加 Tantor SE 18 构建兼容性，没有新增 SQL 对象。安装匹配文件、重启服务，再在各数据库执行 `ALTER EXTENSION pg_xclaim UPDATE TO '1.0.0-rc3'`。该版本仍是候选版，采用前应测试故障与容量边界。
+rc5 在获取分区锁前预先建立本地申请条目，修复内存分配失败时的清理，并移除生产环境中的过期条目注入器。安装匹配文件、重启服务器后，在每个数据库执行 `ALTER EXTENSION pg_xclaim UPDATE TO '1.0.0-rc5'`。提供的升级链覆盖 rc1 至 rc5。可执行 SQL 中的版本字符串保留候选版后缀。该软件仍处于实验阶段，采用前应测试清理、取消和容量边界。

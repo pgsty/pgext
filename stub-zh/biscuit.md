@@ -2,10 +2,10 @@
 
 来源：
 
-- [Biscuit 3.1.0 README](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/README.md)
-- [Biscuit 3.1.0 CHANGELOG](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/CHANGELOG.md)
-- [Biscuit 3.1.0 SQL](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/sql/biscuit--3.1.0.sql)
-- [Biscuit 3.0.0 to 3.1.0 SQL](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/sql/biscuit--3.0.0--3.1.0.sql)
+- [Biscuit 3.1.0 README](https://api.pgxn.org/src/biscuit/biscuit-3.1.1/README.md)
+- [Biscuit 3.1.0 CHANGELOG](https://api.pgxn.org/src/biscuit/biscuit-3.1.1/CHANGELOG.md)
+- [Biscuit 3.1.0 SQL](https://api.pgxn.org/src/biscuit/biscuit-3.1.1/sql/biscuit--3.1.0.sql)
+- [Biscuit 3.0.0 to 3.1.0 SQL](https://api.pgxn.org/src/biscuit/biscuit-3.1.1/sql/biscuit--3.0.0--3.1.0.sql)
 - [PGXN 上的 Biscuit 3.0.0](https://pgxn.org/dist/biscuit/3.0.0/)
 - [Biscuit 3.0.0 发行说明](https://github.com/CrystallineCore/Biscuit/releases/tag/v3.0.0)
 - [Biscuit 3.0.0 README](https://github.com/CrystallineCore/Biscuit/blob/v3.0.0/README.md)
@@ -84,3 +84,7 @@ SELECT id, body FROM message WHERE body ~ '^timeout.*$';
 ```
 
 从 3.0.0 升级会添加 SQL 运算符族条目，但不改变索引格式，因此无需因格式变化重建索引。前述 2.x 升至 3.0.0 的重建要求仍然适用。该版修复 HOT 链与部分索引构建正确性、锚定匹配恢复和待处理列表内存安全问题。无日志 Biscuit 索引在崩溃恢复后仍需执行 `REINDEX`。
+
+### 版本 3.1.1
+
+3.1.1 新增 PostgreSQL 19 支持，并保留 PostgreSQL 16–18 支持。从 3.1.0 升级时部署新共享库即可；补丁不改变 SQL 对象或磁盘格式，因此无需 ALTER EXTENSION 或 REINDEX。应回收已加载旧库的会话，或按正常维护流程重启。`SELECT biscuit_version();` 返回当前加载的库版本。上文针对旧 2.x 迁移及崩溃恢复的要求仍然适用。

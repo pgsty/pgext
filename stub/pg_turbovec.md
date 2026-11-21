@@ -2,9 +2,9 @@
 
 Sources:
 
-- [2.16.1 changelog](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.1/CHANGELOG.md)
-- [2.16.1 control](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.1/pg_turbovec.control)
-- [2.16.1 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.1/README.md)
+- [2.16.2 changelog](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.2/CHANGELOG.md)
+- [2.16.2 control](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.2/pg_turbovec.control)
+- [2.16.2 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.2/README.md)
 - [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/docs/PRODUCTION.md)
 - [v2.16.0 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/README.md)
 - [v2.16.0 changelog](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/CHANGELOG.md)
@@ -12,7 +12,7 @@ Sources:
 - [Control file](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/pg_turbovec.control)
 - [Filtering guide](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/docs/FILTERING.md)
 
-`pg_turbovec` 2.16.0 provides the `turbovec.vector` type and compact vector indexes with candidate reranking against the original heap vectors. Flat search scans quantized codes; IVF additionally searches selected cells. Both are approximate unless the candidate set contains every true neighbour. **Upgrading any 1.x index to 2.x requires rebuilding it.**
+`pg_turbovec` 2.16.2 provides the `turbovec.vector` type and compact vector indexes with candidate reranking against the original heap vectors. Flat search scans quantized codes; IVF additionally searches selected cells. Both are approximate unless the candidate set contains every true neighbour. **Upgrading any 1.x index to 2.x requires rebuilding it.**
 
 ### Create and Query Vectors
 
@@ -86,7 +86,7 @@ The 2.10.2-to-2.10.3 patch preserves format 8 and does not itself require reinde
 
 ### Compatibility and Maintenance
 
-The control file fixes objects in schema `turbovec`, sets `superuser = false`, and is not relocatable. Upstream covers PostgreSQL 13–18 and labels PostgreSQL 19 experimental in this release; current Pigsty packages cover 14–18. Binary replacement, tuning preload and major-format migration have separate restart/rebuild requirements. Version 2.10.3 parallelizes cold-backend code repacking; it does not change existing index bytes. Budget index-build memory, temporary space, WAL and vacuum work from the actual corpus, rather than treating upstream benchmark numbers as guarantees.
+The control file fixes objects in schema `turbovec`, sets `superuser = false`, and is not relocatable. Upstream 2.16.2 supports PostgreSQL 13–19; package availability must be checked separately. Binary replacement, tuning preload and major-format migration have separate restart/rebuild requirements. Version 2.10.3 parallelizes cold-backend code repacking; it does not change existing index bytes. Budget index-build memory, temporary space, WAL and vacuum work from the actual corpus, rather than treating upstream benchmark numbers as guarantees.
 
 ### 2.11.0 Upgrade
 
@@ -135,3 +135,7 @@ Version 2.16.0 trains IVF coarse centroids with e-means by default, replacing th
 ### 2.16.1 Locked Build Fix
 
 Version 2.16.1 commits the `Cargo.lock` matching the turbovec dependency required by 2.16.0, so locked, offline and Nix builds work from the release tag. Runtime behavior, wire format, SQL surface and scores are unchanged; healthy 2.x indexes do not need REINDEX. The normal update is `ALTER EXTENSION pg_turbovec UPDATE TO '2.16.1';`, followed by reconnecting sessions so they load the replacement library.
+
+### Version 2.16.2
+
+Version 2.16.2 promotes PostgreSQL 19 to supported status and updates the upstream pgrx dependency to 0.19.4. It preserves the SQL surface and index format, so this upgrade introduces no REINDEX requirement. Install matching library files and apply `ALTER EXTENSION pg_turbovec UPDATE TO '2.16.2';`. Earlier repair requirements still apply to indexes written by affected older versions.

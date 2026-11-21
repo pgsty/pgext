@@ -2,15 +2,18 @@
 
 来源：
 
-- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.0.1/README.md)
-- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.0.1/pg_sift.control)
-- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.0.1/CHANGELOG.md)
-- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.0.1/docs/USAGE.md)
-- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.0.1/docs/UPGRADING.md)
-- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.0.1/docs/SUPPORT.md)
-- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.0.1/sql/pg_sift--5.0--5.0.1.sql)
+- [Official source](https://github.com/brauliobo/pg_sift/releases/tag/v5.1.0)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v5.0.2/sql/pg_sift--5.0.1--5.0.2.sql)
 
-`pg_sift` 5.0.1 提供 BM25 文本检索、压缩列索引与列式表访问方法。上游支持 PostgreSQL 17–19，首次安装需要超级用户。普通检索和列式分析无需预加载；通过逻辑复制发布列式表时，须另外遵循上游指南的预加载要求。
+- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.1.0/README.md)
+- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.1.0/pg_sift.control)
+- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.1.0/CHANGELOG.md)
+- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.1.0/docs/USAGE.md)
+- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.1.0/docs/UPGRADING.md)
+- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.1.0/docs/SUPPORT.md)
+- [当前版本资料](https://github.com/brauliobo/pg_sift/blob/v5.0.2/sql/pg_sift--5.0--5.0.1.sql)
+
+`pg_sift` 5.1.0 提供 BM25 文本检索、压缩列索引与列式表访问方法。上游支持 PostgreSQL 17–19，首次安装需要超级用户。普通检索和列式分析无需预加载；通过逻辑复制发布列式表时，须另外遵循上游指南的预加载要求。
 
 ### 文本检索
 
@@ -52,10 +55,10 @@ CREATE TABLE events (id bigint, kind text, amount numeric(10,2)) USING sift_tabl
 
 ### 升级边界
 
-运行对应版本的预检，为包括备库在内的全部读取节点安装匹配动态库。按要求重启或重连后，再升级各数据库：
+运行对应版本的预检，为包括备库在内的全部读取节点安装匹配动态库。先升级备库，以匹配文件重启服务器并重连连接池客户端，再升级各数据库：
 
 ```sql
-ALTER EXTENSION pg_sift UPDATE TO '5.0.1';
+ALTER EXTENSION pg_sift UPDATE TO '5.1';
 SELECT * FROM sift.upgrade_commands();
 SELECT * FROM sift.col_repair('public.orders_col', true);
 ```
@@ -65,3 +68,19 @@ SELECT * FROM sift.col_repair('public.orders_col', true);
 跨越至 5.0 时仍须完整执行升级指南：先将读取端至少升至 4.3.6，并在主库写入新格式前升级备库。4.x 读取端无法解释 5.0 索引数据。`sift_table` 逻辑变化记录使用 WAL resource-manager ID 152；5.0 同时读取旧 ID 128，但 4.x 无法回放 152。回退要求遵循干净关闭及格式重建流程；格式不匹配本身不能证明损坏。
 
 旧版修复义务继续适用：除 `analyzer = keyword` 外，3.3 之前的文本索引需为长词匹配正确性重建；受影响的 4.2.1–4.3.5 列段若存在存活位图损坏，可能需要 `sift.col_repair` 或 REINDEX。先执行上面的 dry-run，并发重建命令须在事务块外逐条运行。移除废弃的 `sift.enable_col` 和 `sift.table_auto_defrag_dead_pct`；`sift.eval_methods` 仅保留 `penalty_maintenance`。选项重命名及读取端格式限制应按当前指南处理，不可直接原地降级动态库。
+
+### 版本 5.0.2
+
+5.0.2 终止可能让索引持续增长直至磁盘写满的重复列合并，修复规划器及退出阶段崩溃，并避免 VACUUM 与插入并行时误报重复行。维护检查器拒绝分区父索引，应检查实际拥有存储的子索引。
+
+从持久配置中移除 `sift.col_build_key_ranges`，此选项已删除。键范围构建会预估临时空间；若超过 `temp_file_limit` 或临时表空间剩余容量的一半，会以 SQLSTATE 54000 失败。重试前应检查 `temp_tablespaces` 和可用容量。
+
+新库及空的 5.0.1 到 5.0.2 更新脚本不改变磁盘格式，健康的 5.0 索引无需例行 REINDEX。失控合并造成的索引膨胀须主动重建才能回收；`REINDEX INDEX CONCURRENTLY` 在切换前需要同时容纳两份索引。安装匹配文件、重启或回收所有加载旧库的会话，再更新各数据库中的 SQL 扩展。此前 4.x 的迁移与修复要求继续适用。
+
+### 版本 5.1.0
+
+发行版 5.1.0 使用 SQL 扩展版本 5.1。已有 5.0 索引可继续读取，无需强制 REINDEX。新写入可能引入删除记录、键范围写缓冲与链式目录，5.0 会拒绝读取这些格式。为采用新布局而重建属于可选操作，并非升级兼容性的前提。
+
+`sift.col_build_source` 默认为 auto，在堆表、合适的 btree 与被替换的旧索引中选择，heap 则强制使用旧策略。键范围临时文件空间不足时，构建可改用合适的 btree 或开放单元，不再总是失败。`sift.col_wbuf_key_range` 默认启用键范围，由超级用户控制。`sift.backend_cache_kb` 的默认值改为每后端 128 MB。
+
+降级前检查 `sift.upgrade_check('5.0')`，按指南依次执行 VACUUM、SQL 版本回退、停库和旧库安装，再使用旧版本重建列出的索引。在 5.1 下 REINDEX 可能再次写入不兼容格式。从受影响旧版本保留至今的索引仍须履行此前的修复要求。

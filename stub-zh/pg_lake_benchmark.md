@@ -2,6 +2,9 @@
 
 来源：
 
+- [3.7.0 pg_lake_benchmark.control](https://github.com/Snowflake-Labs/pg_lake/blob/v3.7.0/pg_lake_benchmark/pg_lake_benchmark.control)
+- [3.7.0 v3.7.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.7.0)
+
 - [官方基准测试 README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_benchmark/README.md)
 - [官方 control 文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_benchmark/pg_lake_benchmark.control)
 
@@ -49,3 +52,7 @@ SELECT lake_tpch.run_query(1);
 ### 上游 3.6.0
 
 上游 3.6.0 增加 PostgreSQL 19 支持，并使用 DuckDB 1.5.6。应部署匹配动态库与 `pgduck_server`，保持预加载 `pg_extension_base`，重启加载旧库的进程，并执行所提供的 SQL 升级到 3.6。此组件从 3.5 到 3.6 的 SQL 迁移为空，但运行库及依赖仍须按同一发布协调升级。
+
+### 上游 3.7.0
+
+当前核对的发行版为 3.7.0，本组件的控制版本为 3.7。前面的旧版本章节描述历史行为和软件包示例。应使用匹配的库与 `pgduck_server` 协同升级整个扩展族，重启持有旧代码的进程，并执行提供的扩展升级脚本，将 SQL 版本更新至 3.7。这不代表相应软件包已经可用。

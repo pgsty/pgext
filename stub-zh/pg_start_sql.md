@@ -2,21 +2,30 @@
 
 来源：
 
-- [官方上游 README](https://api.pgxn.org/src/pg_start_sql/pg_start_sql-0.0.2/README.md)
-- [官方扩展控制文件 (pg_start_sql.control)](https://api.pgxn.org/src/pg_start_sql/pg_start_sql-0.0.2/pg_start_sql.control)
+- [README.md](https://github.com/pierreforstmann/pg_start_sql/blob/a94782661c3f94a7f779a3cd61200d771fdba04a/README.md)
+- [pg_start_sql.control](https://github.com/pierreforstmann/pg_start_sql/blob/a94782661c3f94a7f779a3cd61200d771fdba04a/pg_start_sql.control)
+- [pg_start_sql--1.0.0.sql](https://github.com/pierreforstmann/pg_start_sql/blob/a94782661c3f94a7f779a3cd61200d771fdba04a/pg_start_sql--1.0.0.sql)
 
-`pg_start_sql` — PostgreSQL 扩展，用于在实例启动时执行 SQL 语句。当需要管理或自动化上述描述的数据库行为时，请使用此扩展。请使用上述链接的上游固定版本作为 API 边界，并在目标 PostgreSQL 构建上进行测试。
+`pg_start_sql` 在 PostgreSQL 实例启动时执行配置的 SQL。所核验控制文件和安装 SQL 的版本为 1.0.0，上游报告已测试 PostgreSQL 9.5–19。全部启动语句均以超级用户执行，没有配置可改为低权限角色。
 
-### 核心工作流
+### 配置启动 SQL
+
+将库加入现有预加载列表，并配置目标数据库及语句：
+
+```ini
+shared_preload_libraries = 'pg_start_sql'
+pg_start_sql.dbname = 'postgres'
+pg_start_sql.stmt = 'SELECT 1'
+```
+
+重启 PostgreSQL 使预加载生效，并按上游流程创建扩展：
 
 ```sql
 CREATE EXTENSION pg_start_sql;
 ```
 
-在目标数据库中安装扩展，当可用时运行上游示例中的最小示例，并在将其集成到应用程序 SQL 中之前验证已安装的版本和返回值。
+后台任务作用于整个实例，无需在每个数据库创建扩展。`pg_start_sql.dbname` 默认为 postgres。必须至少配置 `pg_start_sql.stmt` 或 `pg_start_sql.file` 之一，后者指定包含启动语句的文件。
 
-### 要求与注意事项
+### 运行边界
 
-- 审查过的控制文件声明默认版本为 `1.0`。
-- 控制文件将扩展标记为可重定位。
-- 在生产使用前，请确认权限、支持的 PostgreSQL 版本、升级行为以及失败情况。
+配置和 SQL 文件的写入权限应限于可信管理员，因为语句以超级用户执行。启动任务应允许在多次启动中安全重复，并核验执行结果和服务器日志。保留其他预加载库。控制文件允许 SQL 对象重定位，但这不改变实例级预加载和重启要求。
