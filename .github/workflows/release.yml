@@ -29,6 +29,7 @@ jobs:
           ref: ${{ github.event.inputs.tag || github.ref }}
 
       - name: Validate release tag
+        id: release
         env:
           # Passed through the environment rather than spliced into the script
           # body, so a dispatch input stays data and cannot inject commands.
@@ -41,6 +42,9 @@ jobs:
             exit 1
           fi
           echo "Releasing ${TAG}"
+          if [ -f "docs/releases/${TAG}.md" ]; then
+            echo "notes=--release-notes=docs/releases/${TAG}.md" >> "${GITHUB_OUTPUT}"
+          fi
 
       - name: Set up Go
         uses: actions/setup-go@v7
@@ -52,7 +56,7 @@ jobs:
         uses: goreleaser/goreleaser-action@v7
         with:
           version: "~> v2"
-          args: release --clean
+          args: release --clean ${{ steps.release.outputs.notes }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
