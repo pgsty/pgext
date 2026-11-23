@@ -2,11 +2,12 @@
 
 来源：
 
-- [README.md](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/README.md)
-- [pg_regresql.control](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/pg_regresql.control)
-- [pg_regresql--2.2.sql](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/pg_regresql--2.2.sql)
+- [README.md](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.1/README.md)
+- [pg_regresql.control](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.1/pg_regresql.control)
+- [安装脚本](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.1/pg_regresql--2.2.1.sql)
+- [从 2.2 升级的脚本](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.1/pg_regresql--2.2--2.2.1.sql)
 
-`pg_regresql` 让查询规划使用目录统计信息，不再按物理文件大小缩放估算，适合在数据很少但统计信息具有代表性的数据库中做执行计划回归测试。发行版 2.2.0 安装 SQL 版本 2.2，固定使用 `pg_catalog` 模式。
+`pg_regresql` 让查询规划使用目录统计信息，不再按物理文件大小缩放估算，适合在数据很少但统计信息具有代表性的数据库中做执行计划回归测试。2.2.1 版将 SQL 对象安装在固定的 `pg_catalog` 模式中。
 
 ### 启用规划器钩子
 
@@ -46,3 +47,7 @@ SELECT pg_restore_relation_stats(
 从 SQL 版本 2.0 升级时，上游要求删除并重新创建扩展；从 2.1 升级使用 `ALTER EXTENSION pg_regresql UPDATE`。删除前应检查依赖。扩展不可重定位，安装需要超级用户。
 
 16/17 上名为 `regresql_pg_*_in` 的替代输入函数会刻意脱离扩展成员关系。`DROP EXTENSION` 会保留这些函数，使已安装的类型转换继续工作，因此删除扩展并不等于将目录完全恢复原状。应在受控的规划测试中使用，不能假定它与其他规划器钩子的组合已经过验证。
+
+### PostgreSQL 19 规划器钩子
+
+2.2.1 在 PostgreSQL 19 上使用 `build_simple_rel_hook`，在更早的受支持主版本上使用 `get_relation_info_hook`。对于已启用 2.2 的数据库，安装匹配的文件后执行 `ALTER EXTENSION pg_regresql UPDATE TO '2.2.1';`。这次升级更新扩展版本记录，保留原有 SQL 定义。

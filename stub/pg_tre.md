@@ -2,6 +2,11 @@
 
 Sources:
 
+- [README.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.6/README.md)
+- [pg_tre.control](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.6/pg_tre.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.6/CHANGELOG.md)
+- [pg_tre--4.6.6.sql](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.6/sql/pg_tre--4.6.6.sql)
+
 - [Current version source](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/README.md)
 - [Current version source](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/pg_tre.control)
 - [Current version source](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/CHANGELOG.md)
@@ -16,7 +21,7 @@ Sources:
 - [.github/workflows/ci.yml](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/.github/workflows/ci.yml)
 - [Library initialization](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/src/module.c)
 
-`pg_tre` 4.6.3 provides the `tre` native index access method for approximate regular-expression matching over text. Upstream supports PostgreSQL 17–19. It narrows candidates with codepoint trigrams and postings, then checks matches against the heap. Use it for typo-tolerant identifiers, log messages and lexical patterns with explicit edit costs.
+`pg_tre` 4.6.6 provides the `tre` native index access method for approximate regular-expression matching over text. Upstream supports PostgreSQL 17–19. It narrows candidates with codepoint trigrams and postings, then checks matches against the heap. Use it for typo-tolerant identifiers, log messages and lexical patterns with explicit edit costs.
 
 ### Enable and Search
 
@@ -101,3 +106,7 @@ An approximate pattern with many reachable states could overflow TRE's fixed wor
 ### 4.6.3 Sparsemap Correction
 
 Version 4.6.3 updates the vendored sparsemap to 5.9.0, fixing data-loss and wrong-answer paths. It changes no wire or on-disk format and adds no REINDEX requirement. Install the matching files, replace sessions using the old library, and run `ALTER EXTENSION pg_tre UPDATE`. The earlier WAL-transition and omitted-posting rebuild requirements still apply.
+
+### Repeated Character-Class Fix in 4.6.6
+
+Versions 4.6.0 through 4.6.5 could omit matching rows when a character class occurred inside a repetition, such as `a[bc]{2,5}d`. Rows filtered out by the index never reached the heap recheck. Version 4.6.6 fixes the query-time extraction; the on-disk format is unchanged and no REINDEX is needed. Install matching files and run `ALTER EXTENSION pg_tre UPDATE TO '4.6.6';`.

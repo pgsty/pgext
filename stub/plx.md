@@ -2,6 +2,11 @@
 
 Sources:
 
+- [v3.1.0](https://github.com/commandprompt/plx/releases/tag/v3.1.0)
+- [plxlua.md](https://github.com/commandprompt/plx/blob/v3.1.0/doc/plxlua.md)
+- [plxcsharp.md](https://github.com/commandprompt/plx/blob/v3.1.0/doc/plxcsharp.md)
+- [plx.control](https://github.com/commandprompt/plx/blob/v3.1.0/plx.control)
+
 - [PGXN plx 3.0.0 README](https://pgxn.org/dist/plx/3.0.0/README.html)
 - [plx 3.0.0 user guide](https://api.pgxn.org/src/plx/plx-3.0.0/doc/USERGUIDE.md)
 - [plx 3.0.0 compatibility notes](https://api.pgxn.org/src/plx/plx-3.0.0/doc/COMPATIBILITY.md)
@@ -102,3 +107,9 @@ Install the new library and run `ALTER EXTENSION plx UPDATE TO '3.0.0'`, then re
 The extension is no longer relocatable. Choose its schema at installation and retain the same schema on restore, or regenerate functions that embed helper names. Creating dialect functions or DO blocks requires USAGE on plpgsql. With function-body checks enabled, creation validates generated PL/pgSQL and rejects unsupported argument/result types and malformed declared types.
 
 Interpolated SQL values are bound as parameters; use `ident()` for names and restrict deliberate `raw()` SQL fragments to trusted input. NULL string appends now propagate NULL; use `coalesce(x, '')` when an empty string is intended. Most dialects now run finally/ensure on return, break and continue, but query cancellation and assertion failures remain outside that handling. Read the dialect-specific breaking changes before redeploying functions.
+
+### Lua and C# in 3.1.0
+
+Version 3.1.0 adds the trusted dialects `plxlua` and `plxcsharp`. Lua includes block-scoped locals, numeric and query loops, exceptions and selected standard-library functions. C# includes typed declarations, interpolated strings, filtered exceptions, switch expressions and query/array iteration. These remain transpilers to PL/pgSQL; their documented semantic differences matter and no Lua or .NET runtime is loaded. Existing dialect behavior is unchanged.
+
+Install the new library and replace old-library sessions, or restart the server, then run `ALTER EXTENSION plx UPDATE TO '3.1.0';` as a superuser in each database. The update adds the two languages and their handlers while retaining existing objects. Both dialects require USAGE on plpgsql and bind interpolated values as SQL parameters.

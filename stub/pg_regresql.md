@@ -2,11 +2,12 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/README.md)
-- [pg_regresql.control](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/pg_regresql.control)
-- [pg_regresql--2.2.sql](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.0/pg_regresql--2.2.sql)
+- [README.md](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.1/README.md)
+- [pg_regresql.control](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.1/pg_regresql.control)
+- [Installation SQL](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.1/pg_regresql--2.2.1.sql)
+- [Upgrade SQL from 2.2](https://api.pgxn.org/src/pg_regresql/pg_regresql-2.2.1/pg_regresql--2.2--2.2.1.sql)
 
-`pg_regresql` makes query planning use catalog statistics instead of rescaling them from physical file size. This supports plan regression tests in databases with representative statistics but little data. Distribution 2.2.0 installs SQL version 2.2 in the fixed `pg_catalog` schema.
+`pg_regresql` makes query planning use catalog statistics instead of rescaling them from physical file size. This supports plan regression tests in databases with representative statistics but little data. Release 2.2.1 installs its SQL objects in the fixed `pg_catalog` schema.
 
 ### Activate the Planner Hook
 
@@ -46,3 +47,7 @@ Version 2.2 adds `pg_restore_extended_stats()` and `pg_clear_extended_stats()` f
 From SQL version 2.0, upstream requires dropping and recreating the extension. From 2.1, use `ALTER EXTENSION pg_regresql UPDATE`. Review dependencies before removing it. The extension is not relocatable and its install requires a superuser.
 
 The replacement input functions named `regresql_pg_*_in` are deliberately detached from the extension on 16/17. `DROP EXTENSION` leaves them behind so the installed casts keep working; dropping the extension is therefore not a complete return to the original catalog state. Use this tool in controlled planning tests, and do not assume compatibility with other planner hooks has been tested.
+
+### PostgreSQL 19 Planner Hook
+
+Release 2.2.1 uses `build_simple_rel_hook` on PostgreSQL 19 and `get_relation_info_hook` on earlier supported majors. After installing the matching files, run `ALTER EXTENSION pg_regresql UPDATE TO '2.2.1';` on installations using 2.2. This update advances the recorded extension version and preserves the existing SQL definitions.

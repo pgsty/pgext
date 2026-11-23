@@ -2,12 +2,14 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.0.0/README.md)
-- [pg_achievements.control](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.0.0/pg_achievements.control)
-- [sql/pg_achievements--1.0.sql](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.0.0/sql/pg_achievements--1.0.sql)
-- [LICENSE](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.0.0/LICENSE)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/CHANGELOG.md)
 
-`pg_achievements` awards achievements from database activity and displays notices in the originating session. Release 1.0.0 installs SQL version 1.0. It requires PostgreSQL 16–18 on Linux, a superuser installer, and cluster-wide preload; the fixed `achievements` schema lives in one configured database.
+- [README.md](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/README.md)
+- [pg_achievements.control](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/pg_achievements.control)
+- [sql/pg_achievements--1.2.sql](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/sql/pg_achievements--1.2.sql)
+- [LICENSE](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/LICENSE)
+
+`pg_achievements` awards achievements from database activity and displays notices in the originating session. Release 1.2.0 installs SQL version 1.2. It requires PostgreSQL 16–19 on Linux, a superuser installer, and cluster-wide preload; the fixed `achievements` schema lives in one configured database.
 
 ### Enable and Inspect
 
@@ -48,3 +50,9 @@ The role must exist before running the role-setting example. Opting out stops tr
 Tracking is independent of the user's transaction: rollback does not revoke an award. The worker persists counters asynchronously, so a crash can lose recent unflushed progress. The extension records counters and awards, not SQL text, parameters or object names. Base tables are not readable by PUBLIC.
 
 Parse-time features of prepared statements count only when analyzed, and client meta-commands are not directly visible. After restoring progress into a running server, restart PostgreSQL to refresh shared memory. Preserve the other libraries already present in the preload setting.
+
+### Version 1.2 Announcements and Upgrade
+
+Version 1.2 sends new awards through NOTIFY on `pg_achievements.notify_channel`, whose default is `achievements`; an empty channel disables it. Opted-out roles are not announced. `achievements.rarity` reports how many players hold each award. Version 1.1 consolidated platinum into one collection trophy, added counters and awards, and repaired counter/award restoration races.
+
+Install matching files, restart PostgreSQL, then run `ALTER EXTENSION pg_achievements UPDATE TO '1.2';`. The update preserves counters and awards. Custom platinum awards from 1.0 survive, while new custom platinum definitions are rejected.

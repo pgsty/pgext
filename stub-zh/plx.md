@@ -2,6 +2,11 @@
 
 来源：
 
+- [v3.1.0](https://github.com/commandprompt/plx/releases/tag/v3.1.0)
+- [plxlua.md](https://github.com/commandprompt/plx/blob/v3.1.0/doc/plxlua.md)
+- [plxcsharp.md](https://github.com/commandprompt/plx/blob/v3.1.0/doc/plxcsharp.md)
+- [plx.control](https://github.com/commandprompt/plx/blob/v3.1.0/plx.control)
+
 - [PGXN plx 3.0.0 README](https://pgxn.org/dist/plx/3.0.0/README.html)
 - [plx 3.0.0 用户指南](https://api.pgxn.org/src/plx/plx-3.0.0/doc/USERGUIDE.md)
 - [plx 3.0.0 兼容性说明](https://api.pgxn.org/src/plx/plx-3.0.0/doc/COMPATIBILITY.md)
@@ -102,3 +107,9 @@ $$;
 扩展不再可重定位。安装时选定模式，并在恢复时保持相同模式，否则需重新生成嵌入辅助对象名称的函数。创建方言函数或 DO 块要求对 plpgsql 具有 USAGE 权限。启用函数体检查时，创建过程会验证生成的 PL/pgSQL，拒绝不支持的参数或结果类型以及格式错误的类型声明。
 
 SQL 插值中的值现在绑定为参数；名称使用 `ident()`，有意拼接的 `raw()` SQL 片段须限于可信输入。向字符串追加 NULL 现在传播 NULL；若要视为空字符串，应使用 `coalesce(x, '')`。多数方言现在会在 return、break、continue 时执行 finally/ensure，但查询取消和断言失败仍不在该处理范围内。重新部署函数前应阅读各方言的破坏性变更。
+
+### 3.1.0 的 Lua 与 C# 方言
+
+3.1.0 新增可信方言 `plxlua` 和 `plxcsharp`。Lua 支持块作用域局部变量、数值与查询循环、异常和部分标准库函数；C# 支持类型声明、插值字符串、带过滤条件的异常、switch 表达式以及查询和数组遍历。二者仍转译为 PL/pgSQL，应注意文档列出的语义差异，不会加载 Lua 或 .NET 运行时。已有方言的行为不变。
+
+安装新库并替换仍使用旧库的会话，或者重启服务器，然后由超级用户在各数据库中执行 `ALTER EXTENSION plx UPDATE TO '3.1.0';`。升级添加两种语言及其处理函数，保留已有对象。两种方言都要求对 plpgsql 拥有 USAGE 权限，并将插值值绑定为 SQL 参数。

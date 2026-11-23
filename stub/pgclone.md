@@ -2,6 +2,10 @@
 
 Sources:
 
+- [README.md](https://api.pgxn.org/src/pgclone/pgclone-4.10.0/README.md)
+- [pgclone.control](https://api.pgxn.org/src/pgclone/pgclone-4.10.0/pgclone.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pgclone/pgclone-4.10.0/CHANGELOG.md)
+
 - [Current version source](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/README.md)
 - [Current version source](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/pgclone.control)
 - [Current version source](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/CHANGELOG.md)
@@ -159,3 +163,7 @@ Partitioned schema and async clones now create parents before partitions, copy r
 ### 4.9.0 Partial Clone Failures
 
 Synchronous schema and database clones accept `on_error: continue`. Each failed table rolls back in its own subtransaction, emits its message and SQLSTATE, and is excluded from later foreign-key and trigger passes. The result reports `COMPLETED WITH ERRORS: N table(s) failed: ...`; it is not a fully successful clone. The default remains abort, and cancellation/shutdown errors are not swallowed. Async schema clones already continued after individual table errors. This release adds no SQL objects: install matching files, restart PostgreSQL as directed upstream, then run `ALTER EXTENSION pgclone UPDATE TO '4.9.0'`.
+
+### PostgreSQL 19 in 4.10.0
+
+Version 4.10.0 adds PostgreSQL 19 to the supported and CI-tested range of PostgreSQL 14–19, including the cross-database test jobs. This release fixes the server-header change without changing SQL behavior. Install matching files, restart PostgreSQL and run `ALTER EXTENSION pgclone UPDATE TO '4.10.0';`.

@@ -2,6 +2,10 @@
 
 来源：
 
+- [README.md](https://api.pgxn.org/src/pgclone/pgclone-4.10.0/README.md)
+- [pgclone.control](https://api.pgxn.org/src/pgclone/pgclone-4.10.0/pgclone.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pgclone/pgclone-4.10.0/CHANGELOG.md)
+
 - [当前版本资料](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/README.md)
 - [当前版本资料](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/pgclone.control)
 - [当前版本资料](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/CHANGELOG.md)
@@ -159,3 +163,7 @@ ALTER EXTENSION pgclone UPDATE TO '4.7.0';
 ### 4.9.0 部分克隆失败
 
 同步模式的 schema 与 database 克隆支持 `on_error: continue`。失败表在独立子事务中回滚，输出错误消息及 SQLSTATE，且不再参与后续外键与触发器处理。返回值为 `COMPLETED WITH ERRORS: N table(s) failed: ...`，不能视为完整成功的克隆。默认仍为中止，取消和关闭错误不会被吞掉。异步 schema 克隆此前已支持单表出错后继续。本版本不增加 SQL 对象：安装匹配文件，按上游要求重启 PostgreSQL，再执行 `ALTER EXTENSION pgclone UPDATE TO '4.9.0'`。
+
+### 4.10.0 支持 PostgreSQL 19
+
+4.10.0 将 PostgreSQL 19 纳入支持范围和 CI 测试矩阵，覆盖 PostgreSQL 14–19，包括跨数据库测试任务。本版修复服务器头文件变化，不改变 SQL 行为。安装匹配的文件、重启 PostgreSQL 后，执行 `ALTER EXTENSION pgclone UPDATE TO '4.10.0';`。

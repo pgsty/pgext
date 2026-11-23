@@ -2,6 +2,11 @@
 
 来源：
 
+- [README.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.6/README.md)
+- [pg_tre.control](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.6/pg_tre.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.6/CHANGELOG.md)
+- [pg_tre--4.6.6.sql](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.6/sql/pg_tre--4.6.6.sql)
+
 - [当前版本资料](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/README.md)
 - [当前版本资料](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/pg_tre.control)
 - [当前版本资料](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/CHANGELOG.md)
@@ -16,7 +21,7 @@
 - [.github/workflows/ci.yml](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/.github/workflows/ci.yml)
 - [库初始化](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/src/module.c)
 
-`pg_tre` 4.6.3 提供 `tre` 原生索引访问方法，对文本执行近似正则表达式匹配。上游支持 PostgreSQL 17–19。它利用码点三元组与倒排表缩小候选范围，再到堆表核对匹配。适合需要显式编辑代价的容错标识符、日志消息与词法模式检索。
+`pg_tre` 4.6.6 提供 `tre` 原生索引访问方法，对文本执行近似正则表达式匹配。上游支持 PostgreSQL 17–19。它利用码点三元组与倒排表缩小候选范围，再到堆表核对匹配。适合需要显式编辑代价的容错标识符、日志消息与词法模式检索。
 
 ### 启用与查询
 
@@ -101,3 +106,7 @@ SELECT E'a\nfoo' %~~ tre_pattern('(?n)^foo', 0) AS line_start,
 ### 4.6.3 Sparsemap 修正
 
 4.6.3 将内置 sparsemap 更新至 5.9.0，修复数据丢失和错误结果路径。本补丁不改变传输或磁盘格式，也不增加 REINDEX 要求。安装匹配文件、替换使用旧库的会话后，执行 `ALTER EXTENSION pg_tre UPDATE`。此前的 WAL 迁移及遗漏 posting 重建要求仍适用。
+
+### 4.6.6 修复重复字符类漏行
+
+4.6.0 至 4.6.5 在字符类位于重复表达式中时可能遗漏匹配行，例如 `a[bc]{2,5}d`。被索引提前排除的行不会进入堆表复核。4.6.6 修复了查询时的提取逻辑，磁盘格式不变，无需 REINDEX。安装匹配的文件后，执行 `ALTER EXTENSION pg_tre UPDATE TO '4.6.6';`。

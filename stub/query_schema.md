@@ -2,13 +2,14 @@
 
 Sources:
 
-- [Official source](https://github.com/olhamide/pg-query-schema/blob/151f38957e389c0f0d4e5d377249b484030fae4c/README.md)
-- [Official source](https://github.com/olhamide/pg-query-schema/blob/151f38957e389c0f0d4e5d377249b484030fae4c/query_schema.control)
-- [Official source](https://github.com/olhamide/pg-query-schema/blob/151f38957e389c0f0d4e5d377249b484030fae4c/sql/query_schema--1.0.sql)
-- [Official source](https://github.com/olhamide/pg-query-schema/blob/151f38957e389c0f0d4e5d377249b484030fae4c/src/query-schema.c)
-- [Official source](https://github.com/olhamide/pg-query-schema/blob/151f38957e389c0f0d4e5d377249b484030fae4c/Dockerfile)
+- [Official README](https://github.com/olhamide/pg-query-schema/blob/v1.1.0/README.md)
+- [Extension control](https://github.com/olhamide/pg-query-schema/blob/v1.1.0/query_schema.control)
+- [Extension SQL](https://github.com/olhamide/pg-query-schema/blob/v1.1.0/sql/query_schema--1.1.sql)
+- [Upgrade SQL](https://github.com/olhamide/pg-query-schema/blob/v1.1.0/sql/query_schema--1.0--1.1.sql)
+- [Implementation](https://github.com/olhamide/pg-query-schema/blob/v1.1.0/src/query-schema.c)
+- [Supported build target](https://github.com/olhamide/pg-query-schema/blob/v1.1.0/Dockerfile)
 
-`query_schema` `1.0` uses PostgreSQL's parser and analyzer to describe query results as Effect schema source text. Upstream limits this extension to local development; the supplied release artifacts target PostgreSQL 18 on Alpine for amd64 and arm64.
+`query_schema` SQL version `1.1`, distributed in upstream release `1.1.0`, uses PostgreSQL's parser and analyzer to describe query results as Effect schema source text. Upstream limits this extension to local development; the supplied release artifacts target PostgreSQL 18 on Alpine for amd64 and arm64.
 
 ### Workflow
 
@@ -22,6 +23,20 @@ SELECT * FROM query_shape('SELECT id, label FROM example_accounts WHERE id = $1'
 ```
 
 `query_schema(text)` returns a text expression based on `Schema.Struct`. `query_shape(text)` returns `path`, `pg_type`, `nullable`, `schema` and `note` columns, including inferred parameter types and nested JSON/array paths. Parameter rows have a null `nullable` value.
+
+After replacing the module files, update an existing installation with `ALTER EXTENSION query_schema UPDATE TO '1.1';`. The upgrade SQL changes the recorded extension version without changing function definitions.
+
+### JSON and client decoding
+
+Version `1.1` handles nullability in `LATERAL` joins and set operations, including `UNION`, `INTERSECT` and `EXCEPT`. It also distinguishes top-level binary client values from values inside JSON.
+
+Inside JSON, `int8` values are JSON numbers. The generated schema uses `Schema.Int` and `SchemaGetter` to decode them to a bigint; values outside JavaScript's safe integer range are rejected after JSON parsing. Cast an `int8` to `::text` before JSON construction to preserve its full range; that shape uses `Schema.BigIntFromString`. Generated schemas may require both imports:
+
+```typescript
+import { Schema, SchemaGetter } from "effect"
+```
+
+`@effect/sql-pg` cannot decode every PostgreSQL type in binary format. For unsupported columns, such as `money`, ranges, composite types or multidimensional arrays, `query_schema` emits a warning and `query_shape` adds a note. Select these values as `::text` or wrap them in `to_json`, then verify the resulting client schema.
 
 ### Analysis boundaries
 
