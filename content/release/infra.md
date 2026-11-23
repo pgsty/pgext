@@ -6,6 +6,25 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-23
+
+This batch updates 10 packages and adds two cargo-pgrx slots. The signed local APT and YUM repositories index all 24 DEBs and 24 RPMs. APT and DNF verification passed on both architectures. Online publication is pending.
+
+| Package | Previous | New | Notes |
+|---|---|---|---|
+| [barn](https://github.com/pgsty/barn/releases/tag/v1.3.0) | 1.2.0 | 1.3.0 | Official DEB/RPM. The `rocky` and `ubuntu` aliases now select Rocky 10 and Ubuntu 26.04. |
+| [sow](https://github.com/pgsty/sow/releases/tag/v0.8.0) | 0.7.1 | 0.8.0 | R2 GC now records candidates by default. Finish any interrupted local GC with 0.7.1 before upgrading. |
+| [pgext](https://github.com/pgsty/pgext/releases/tag/v1.7.2) | 1.7.1 | 1.7.2 | Official DEB/RPM. Extension build targets are PG15–19, or PG15–18 on EL8. |
+| [agentsview](https://github.com/kenn-io/agentsview/releases/tag/v0.48.0) | 0.47.0 | 0.48.0 | Adds incremental ChatGPT history imports from Chrome and session imports for Gemini and Grok. |
+| [mtail](https://github.com/jaqx0r/mtail/releases/tag/v3.4.22) | 3.4.21 | 3.4.22 | Updates the log metrics collector. |
+| [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest/releases/tag/v4.1.0) | 4.0.1 | 4.1.0 | Uses Npgsql 11 and adds `--inspect` and `--parse`. |
+| [orca-ide](https://github.com/stablyai/orca/releases/tag/v1.4.271) | 1.4.267 | 1.4.271 | Official DEB/RPM. The RPM license field reads `unknown`. The tagged source declares MIT. |
+| [pgschema](https://github.com/pgplex/pgschema/releases/tag/v1.15.0) | 1.14.1 | 1.15.0 | Tracks the stable 1.x release. |
+| [redis-exporter](https://github.com/oliver006/redis_exporter/releases/tag/v1.98.0) | 1.97.0 | 1.98.0 | Fixes latency histogram and stream group metrics. |
+| [seaweedfs](https://github.com/seaweedfs/seaweedfs/releases/tag/4.55) | 4.54 | 4.55 | Upstream tag `4.55` is packaged as `4.55.0`. |
+| [cargo-pgrx-0195](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.5) | — | 0.19.5 | New slot for PG13–19, requiring Rust 1.96.0 or later. |
+| [cargo-pgrx-0201](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.20.1) | — | 0.20.1 | New slot for PG15–19, requiring Rust 1.99.1 or later. Cross compilation now uses `package --bundle`. |
+
 ## 2026-11-21
 
 ### Routine Package Updates

@@ -6,6 +6,25 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-23
+
+本批升级 10 个软件包，新增 2 个 cargo-pgrx 版本槽。24 个 DEB 和 24 个 RPM 已在本地签名仓库建立索引，APT 和 DNF 的两种架构均已验收。线上发布待办。
+
+| 包 | 原版本 | 新版本 | 说明 |
+|---|---|---|---|
+| [barn](https://github.com/pgsty/barn/releases/tag/v1.3.0) | 1.2.0 | 1.3.0 | 官方 DEB/RPM。`rocky` 和 `ubuntu` 别名现在分别选择 Rocky 10 和 Ubuntu 26.04。 |
+| [sow](https://github.com/pgsty/sow/releases/tag/v0.8.0) | 0.7.1 | 0.8.0 | R2 GC 默认记录候选。若 0.7.1 的本地 GC 曾中断，先用 0.7.1 完成，再升级。 |
+| [pgext](https://github.com/pgsty/pgext/releases/tag/v1.7.2) | 1.7.1 | 1.7.2 | 官方 DEB/RPM。扩展构建目标为 PG15–19，EL8 上为 PG15–18。 |
+| [agentsview](https://github.com/kenn-io/agentsview/releases/tag/v0.48.0) | 0.47.0 | 0.48.0 | 支持从 Chrome 增量导入 ChatGPT 历史，以及导入 Gemini 和 Grok 会话。 |
+| [mtail](https://github.com/jaqx0r/mtail/releases/tag/v3.4.22) | 3.4.21 | 3.4.22 | 更新日志指标采集器。 |
+| [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest/releases/tag/v4.1.0) | 4.0.1 | 4.1.0 | 采用 Npgsql 11，新增 `--inspect` 和 `--parse`。 |
+| [orca-ide](https://github.com/stablyai/orca/releases/tag/v1.4.271) | 1.4.267 | 1.4.271 | 官方 DEB/RPM。RPM 许可字段为 `unknown`，该版本源码标注 MIT。 |
+| [pgschema](https://github.com/pgplex/pgschema/releases/tag/v1.15.0) | 1.14.1 | 1.15.0 | 跟随 1.x 正式发行版。 |
+| [redis-exporter](https://github.com/oliver006/redis_exporter/releases/tag/v1.98.0) | 1.97.0 | 1.98.0 | 修复延迟直方图和 stream group 指标。 |
+| [seaweedfs](https://github.com/seaweedfs/seaweedfs/releases/tag/4.55) | 4.54 | 4.55 | 上游标签 `4.55` 对应包版本 `4.55.0`。 |
+| [cargo-pgrx-0195](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.5) | — | 0.19.5 | 新增独立槽，Rust ≥ 1.96.0，支持 PG13–19。 |
+| [cargo-pgrx-0201](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.20.1) | — | 0.20.1 | 新增独立槽，Rust ≥ 1.99.1，支持 PG15–19。交叉编译改用 `package --bundle`。 |
+
 ## 2026-11-21
 
 ### 常规软件更新
