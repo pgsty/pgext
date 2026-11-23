@@ -372,6 +372,76 @@ func TestMakeDoesNotInstallRecipeDependencies(t *testing.T) {
 	}
 }
 
+func TestVerificationRejectsStandaloneExtensionBitcode(t *testing.T) {
+	e := testEngine(t)
+	e.Platform = Platform{Family: "rpm", OS: "el9", Arch: "arm64"}
+	out := t.TempDir()
+	put(t, filepath.Join(out, "misleading-name.rpm"), "test package bytes")
+	for _, name := range []string{"vector_18-llvmjit", "custom-llvmjit", "vector_18-llvmjit-debuginfo"} {
+		e.Exec = &fakeExecutor{capture: func(command Command) (string, error) {
+			if command.Args[0] == "rpmspec" {
+				return name + "\t0:1-1PGSTY.el9", nil
+			}
+			return name + "\t0:1-1PGSTY.el9\taarch64", nil
+		}}
+		_, err := e.verify(context.Background(), &Job{}, 0, filepath.Join(t.TempDir(), "custom.spec"), out, io.Discard)
+		if err == nil || !strings.Contains(err.Error(), "extension llvmjit subpackage is forbidden") {
+			t.Fatalf("%s: %v", name, err)
+		}
+	}
+	for _, name := range []string{"postgresql18-llvmjit", "postgresql-llvmjit", "postgresql19-llvmjit-debuginfo", "vector_18"} {
+		if extensionLLVMSubpackage("rpm", name) {
+			t.Fatal(name)
+		}
+	}
+}
+
+func TestVerificationRequiresBitcodeForSelectedMajor(t *testing.T) {
+	const module = "/usr/pgsql-18/lib/bitcode/pgvector/vector.bc"
+	const index = "/usr/pgsql-18/lib/bitcode/pgvector.index.bc"
+	for _, scenario := range []struct {
+		name, payload string
+		wantError     bool
+	}{
+		{"module and index", module + "\n" + index, false},
+		{"index only", index, true},
+		{"module only", module, true},
+		{"module for another major", strings.Replace(module, "pgsql-18", "pgsql-17", 1) + "\n" + index, true},
+		{"index for another major", module + "\n" + strings.Replace(index, "pgsql-18", "pgsql-17", 1), true},
+	} {
+		t.Run(scenario.name, func(t *testing.T) {
+			engine := testEngine(t)
+			engine.Platform = Platform{Family: "rpm", OS: "el9", Arch: "arm64"}
+			root := t.TempDir()
+			recipe := filepath.Join(root, "SPECS", "pgvector.spec")
+			output := filepath.Join(root, "out")
+			put(t, recipe, "%{!?llvm:%global llvm 1}")
+			put(t, filepath.Join(output, "pgvector.rpm"), "test package bytes")
+			engine.Exec = &fakeExecutor{capture: func(command Command) (string, error) {
+				switch {
+				case command.Args[0] == "rpmspec":
+					return "pgvector_18\t0:1-1PGSTY.el9", nil
+				case command.Args[1] == "-qpl":
+					return scenario.payload, nil
+				case command.Args[2] == "--requires":
+					return "postgresql18-server", nil
+				default:
+					return "pgvector_18\t0:1-1PGSTY.el9\taarch64", nil
+				}
+			}}
+			job := &Job{Extension: engine.Catalog.Resolve("vector")}
+			_, err := engine.verify(context.Background(), job, 18, recipe, output, io.Discard)
+			if scenario.wantError {
+				if err == nil || !strings.Contains(err.Error(), "main package lacks LLVM bitcode/index") {
+					t.Fatalf("expected bitcode verification error, got %v", err)
+				}
+			} else if err != nil {
+				t.Fatal(err)
+			}
+		})
+	}
+}
+
 func TestVerificationRejectsIncompleteOrWrongPackages(t *testing.T) {
 	for _, tc := range []struct {
 		name, control, packages, problem string
@@ -381,6 +451,8 @@ func TestVerificationRejectsIncompleteOrWrongPackages(t *testing.T) {
 		{"unrequested-major", "postgresql-18-x postgresql-19-x", "postgresql-18-x:arm64 postgresql-19-x:arm64", "ignored PG18"},
 		{"duplicate", "main", "main:arm64 main:arm64", "duplicate binary package"},
 		{"unexpected", "main", "foreign:arm64", "unexpected binary package"},
+		{"split-bitcode", "postgresql-18-x-llvmjit", "postgresql-18-x-llvmjit:arm64", "extension llvmjit subpackage is forbidden"},
+		{"split-bitcode-dbgsym", "postgresql-18-x-llvmjit", "postgresql-18-x-llvmjit-dbgsym:arm64", "extension llvmjit subpackage is forbidden"},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
 			e := testEngine(t)

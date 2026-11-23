@@ -228,9 +228,11 @@ log/run-*/                   per-stage logs and result.json
 Source archives and recipes are copied into isolated build trees. Authoritative
 recipes are not rewritten. Old artifacts cannot satisfy a new build. Native
 package names, raw versions, architecture, expected companion packages,
-nonempty payloads, ELF build IDs and matching DWARF are checked. RPM native
-builds also require debugsource; LLVM-enabled extension recipes retain their
-bitcode in the main package and must not add LLVM runtime dependencies.
+nonempty payloads, ELF build IDs and matching DWARF are checked. Native RPM
+builds also require debugsource. Extension builds for both package formats
+reject standalone `-llvmjit` packages, including their debug companions.
+LLVM-enabled RPM extensions ship their bitcode and index in the main package
+and must not add LLVM runtime dependencies.
 Pure SQL packages need no artificial debug packages. `--no-debug` is an
 explicit opt-out; debug output remains the default.
 

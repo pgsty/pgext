@@ -15,6 +15,13 @@ import (
 //go:embed assets/verify-payload.sh
 var payloadVerifier []byte
 
+var llvmjitSubpackage = regexp.MustCompile(`-llvmjit(?:-debuginfo|-debugsource|-dbgsym|-dbg)?$`)
+var postgresLLVMProvider = regexp.MustCompile(`^postgresql[0-9]*-llvmjit(?:-debuginfo|-debugsource)?$`)
+
+func extensionLLVMSubpackage(family, name string) bool {
+	return llvmjitSubpackage.MatchString(name) && !(family == "rpm" && postgresLLVMProvider.MatchString(name))
+}
+
 func (e *Engine) verify(ctx context.Context, j *Job, pg int, recipe, out string, w io.Writer) ([]Artifact, error) {
 	var paths []string
 	err := filepath.WalkDir(out, func(p string, d os.DirEntry, err error) error {
@@ -61,6 +68,9 @@ func (e *Engine) verify(ctx context.Context, j *Job, pg int, recipe, out string,
 			return nil, fmt.Errorf("invalid package metadata: %s", p)
 		}
 		a := Artifact{File: f, Package: parts[0], Version: parts[1], Arch: parts[2]}
+		if extensionLLVMSubpackage(e.Platform.Family, a.Package) {
+			return nil, fmt.Errorf("extension llvmjit subpackage is forbidden: %s", a.Package)
+		}
 		if e.Platform.Family == "deb" && pg > 0 {
 			if m := regexp.MustCompile(`^postgresql-([0-9]+)-`).FindStringSubmatch(a.Package); len(m) > 0 && m[1] != strconv.Itoa(pg) {
 				return nil, fmt.Errorf("recipe ignored PG%d selection and produced %s", pg, a.Package)
@@ -117,9 +127,6 @@ func (e *Engine) verify(ctx context.Context, j *Job, pg int, recipe, out string,
 			return nil, err
 		}
 		for _, a := range result {
-			if strings.Contains(a.Package, "-llvmjit") {
-				return nil, fmt.Errorf("extension llvmjit subpackage is forbidden: %s", a.Package)
-			}
 			if strings.HasSuffix(a.Package, "-debuginfo") || strings.HasSuffix(a.Package, "-debugsource") {
 				continue
 			}
@@ -136,7 +143,18 @@ func (e *Engine) verify(ctx context.Context, j *Job, pg int, recipe, out string,
 				if err != nil {
 					return nil, err
 				}
-				if !strings.Contains(payload, "/bitcode/") || !strings.Contains(payload, ".index.bc") {
+				prefix := fmt.Sprintf("/usr/pgsql-%d/lib/bitcode/", pg)
+				var hasIndex, hasModule bool
+				for _, path := range strings.Split(payload, "\n") {
+					if strings.HasPrefix(path, prefix) && strings.HasSuffix(path, ".bc") {
+						if strings.HasSuffix(path, ".index.bc") {
+							hasIndex = true
+						} else {
+							hasModule = true
+						}
+					}
+				}
+				if !hasIndex || !hasModule {
 					return nil, fmt.Errorf("main package lacks LLVM bitcode/index: %s", primary)
 				}
 			}
