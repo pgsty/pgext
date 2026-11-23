@@ -42,9 +42,6 @@ security:
 # Resolve the pinned module instead of the retained legacy vendor snapshot.
 ignoreVendorPaths: 'github.com/pgsty/oink'
 module:
-  hugoVersion:
-    extended: true
-    min: '0.168.0'
   imports:
     - path: github.com/pgsty/oink
   mounts:
@@ -805,7 +802,7 @@ params:
   images:
     - logo.png
 
-  version: v1.7.2
+  version: v1.7.3
   pig_version: 1.11.0
   pigsty_version: 4.6.0
   pig_catalog_count: 627     # Records in PIG's separate bundled catalog
