@@ -15,7 +15,7 @@ breadcrumb: false
 ## 它提供什么
 
 {{< cards cols=3 >}}
-{{< card link="/list" title="扩展目录" icon="clipboard-list" subtitle="收录 2814 个扩展，按分类、语言与许可证建立索引" />}}
+{{< card link="/list" title="扩展目录" icon="clipboard-list" subtitle="收录 2818 个扩展，按分类、语言与许可证建立索引" />}}
 {{< card link="/repo" title="软件仓库" icon="warehouse" subtitle="627 个已打包扩展，构建为签名 RPM / DEB，覆盖 16 个 Linux 目标" />}}
 {{< card link="/pig" title="包管理器" icon="cash" subtitle="一个命令行工具，用扩展本名安装内核与扩展" />}}
 {{< /cards >}}

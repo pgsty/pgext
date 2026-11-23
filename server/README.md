@@ -17,18 +17,18 @@ PGEXT_RELOAD_TOKEN=secret pgext serve           # 可选：启用带认证的手
 
 ## 首页数字口径
 
-以下为本地 `data` 库在 **2026-11-21** 的核对值，线上与其他实例以各自快照为准：
+以下数字取自本地 `data` 库 **2026-11-23** 的快照。各实例的实时计数可通过 `GET /api/v1/meta` 查看。
 
 | 指标 | 当前值 | 计算口径 |
 | --- | ---: | --- |
-| 收录在册扩展 | 2,814 | `pgext.universe` 条目数 |
+| 收录在册扩展 | 2,818 | `pgext.universe` 条目数 |
 | 已打包扩展 | 627 | Universe 中 `packaged = true` 的条目，包含 contrib 与保留条目 |
 | 矩阵软件包 | 457 | `pgext.pkg` 中处于活跃 PG/OS 目标的 `DISTINCT pkg` |
 | Linux 目标 | 16 | `pgext.active_os` 条目；8 个系统版本 × 2 种架构（EL8 覆盖 PG 15–18） |
 | PG 大版本 | 5 | `pgext.active_pg` 条目；PG 15–19 |
 | 矩阵槽位 | 36,560 | `pgext.pkg` 中处于活跃 PG/OS 目标的记录数，包含 `AVAIL`、`MISS`、`N/A` |
 
-当前槽位为 28,608 个 `AVAIL`、3,451 个 `MISS`、4,501 个 `N/A`，不能作为成功构建数。
+其中 31,969 个槽位为 `AVAIL`，1,044 个为 `MISS`，3,547 个为 `N/A`。
 软件包族与扩展不是一一对应，contrib 随 PostgreSQL 交付，也不等于矩阵中的独立扩展包。
 首页“已打包”与筛选器使用同一 `packaged` 标记；基线 `pgext.extension` 的 627 个
 `available` 条目是另一口径，按包名归并后对应 520 个包族。

@@ -22,7 +22,7 @@ your distribution used to be an afternoon's work per extension.
 ## What it provides
 
 {{< cards cols=3 >}}
-{{< card link="/list" title="Catalog" icon="clipboard-list" subtitle="2,814 catalogued extensions, indexed by category, language and licence" />}}
+{{< card link="/list" title="Catalog" icon="clipboard-list" subtitle="2,818 catalogued extensions, indexed by category, language and licence" />}}
 {{< card link="/repo" title="Repository" icon="warehouse" subtitle="627 packaged extensions, built as signed RPM and DEB across 16 Linux targets" />}}
 {{< card link="/pig" title="Package manager" icon="cash" subtitle="One CLI that installs the kernel and its extensions by canonical name" />}}
 {{< /cards >}}

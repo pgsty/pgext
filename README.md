@@ -18,13 +18,13 @@ with web assets embedded in the binary and data stored in PostgreSQL.
 
 ## The catalog today
 
-Local catalog snapshot, **2026-11-21**:
+Local catalog snapshot for **2026-11-23**.
 
 | Layer | Current scope |
 | --- | --- |
-| Extension directory | **2,814** entries, including packaged, source, and provider-specific extensions |
+| Extension directory | **2,818** entries, including packaged, source, and provider-specific extensions |
 | Packaged directory entries | **627** marked `packaged`, including PostgreSQL contrib and retained entries |
-| Package matrix | **457** distinct package families across **36,560** recorded target slots: 28,608 available, 3,451 missing, and 4,501 not applicable |
+| Package matrix | **457** distinct package families across **36,560** recorded target slots (31,969 available, 1,044 missing, 3,547 not applicable) |
 | Categories | **16**, covering spatial data, vectors, search, analytics, operations, security, and more |
 | PostgreSQL targets | **15, 16, 17, 18, 19** |
 | Linux targets | **16** OS/architecture combinations: EL 8/9/10, Debian 12/13, Ubuntu 22.04/24.04/26.04; `x86_64` and `aarch64` |
