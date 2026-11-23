@@ -55,6 +55,8 @@ The user established this non-negotiable rule on 2026-11-05:
 
 Catalog `comment` values must be as short as possible: use a few words when sufficient. Do not put audit narratives, evidence dumps, build histories, or explanations already apparent from the version fields into `comment`; keep those in the audit report or documentation.
 
+`pgext.universe.pg_ver` records each extension's independently documented PostgreSQL compatibility, including historical majors such as `9.6` and gaps between supported versions. Preserve those values when updating package metadata and add majors supported by new evidence. The PG15–19 packaging window applies to `pgext.extension.pg_ver` and to `rpm_pg` / `deb_pg` in both catalogs.
+
 ### Package Sources and Gap Builds
 
 - On 2026-11-09 the user explicitly selected PIGSTY as the principal supplier for `login_hook`, including its RPM side. Keep `extension.repo`, `rpm_repo`, and `deb_repo` at PIGSTY, with matching Universe supplier fields.
