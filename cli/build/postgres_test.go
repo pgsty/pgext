@@ -107,3 +107,41 @@ func TestRetiredRecipeDoesNotFallBackToCatalog(t *testing.T) {
 		}
 	}
 }
+
+func TestCatalogEmptyPGRange(t *testing.T) {
+	for _, scenario := range []struct {
+		name, catalogPG, requested, recipe string
+		want                               []int
+	}{
+		{"unknown uses platform", "", "", "", []int{19, 18, 17, 16, 15}},
+		{"unknown allows explicit major", "", "18", "", []int{18}},
+		{"empty has no default", "{}", "", "", nil},
+		{"empty rejects explicit major", "{}", "18", "", nil},
+		{"declared recipe takes precedence", "{}", "", "PG_VERSIONS := 17\n", []int{17}},
+	} {
+		t.Run(scenario.name, func(t *testing.T) {
+			engine := testEngine(t)
+			catalog, err := ParseCatalog([]byte("name,pkg,source,pg_ver,deb_pkg\nexample,example,example.tar.gz," + scenario.catalogPG + ",postgresql-$v-example\n"))
+			if err != nil {
+				t.Fatal(err)
+			}
+			engine.Catalog = catalog
+			engine.Options.PG = scenario.requested
+			engine.Options.Plan = true
+			put(t, filepath.Join(engine.Options.SpecDir, "example", "Makefile"), scenario.recipe)
+			plan, err := engine.Prepare("make", []string{"example"})
+			if scenario.want == nil {
+				if err == nil {
+					t.Fatalf("scheduled empty catalog range: %v", plan.Jobs[0].PG)
+				}
+				return
+			}
+			if err != nil {
+				t.Fatal(err)
+			}
+			if got := plan.Jobs[0].PG; !slices.Equal(got, scenario.want) {
+				t.Fatalf("planned %v, want %v", got, scenario.want)
+			}
+		})
+	}
+}

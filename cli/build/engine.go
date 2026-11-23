@@ -247,6 +247,9 @@ func (e *Engine) jobPG(j *Job, recipe []byte) ([]int, error) {
 		}
 		return nil, nil
 	}
+	if supported != nil && len(supported) == 0 {
+		return nil, fmt.Errorf("catalog lists no supported PostgreSQL majors for %s", j.Package)
+	}
 	if len(requested) > 0 {
 		for _, pg := range requested {
 			if !db.SupportsOSPG(e.Platform.OS, pg) {

@@ -123,13 +123,15 @@ func ParseCatalog(b []byte) (*Catalog, error) {
 				return nil, fmt.Errorf("%s extra: %w", e.Name, err)
 			}
 		}
-		if s := get("pg_ver"); s != "" {
-			for _, v := range strings.Split(strings.Trim(s, "{}"), ",") {
-				n, err := strconv.Atoi(v)
+		if versions := get("pg_ver"); versions == "{}" {
+			e.PG = []int{}
+		} else if versions != "" {
+			for _, value := range strings.Split(strings.Trim(versions, "{}"), ",") {
+				major, err := strconv.Atoi(value)
 				if err != nil {
 					return nil, fmt.Errorf("%s pg_ver: %w", e.Name, err)
 				}
-				e.PG = append(e.PG, n)
+				e.PG = append(e.PG, major)
 			}
 		}
 		c.Extensions[e.Name] = e

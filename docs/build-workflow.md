@@ -175,6 +175,9 @@ Without `--pg`, builds select installed majors supported by the recipe,
 limited to PG15–19. An explicit target outside declared support fails before
 building. For DEB recipes, `debian/pgversions` declares support; a Makefile's
 `PG_VERSIONS` default is used only when that declaration is absent or empty.
+When a major-specific recipe leaves its targets unspecified, the planner uses
+the catalog's `pg_ver`. An empty array (`{}`) means there are no eligible
+majors. A blank field leaves the platform defaults in effect.
 Packages independent of PostgreSQL majors do not accept `--pg`.
 RPM receives `pgmajorversion`; DEB receives selected `pgversions`,
 `PG_VERSIONS`, `PG_MAJOR`, `PG_SUPPORTED_VERSIONS`, and `PG_CONFIG`. Numbered
