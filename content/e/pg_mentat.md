@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2980** | {{< badge content="pg_mentat" link="https://codeberg.org/gregburd/mentat" >}} | {{< ext "pg_mentat" >}} | `1.20.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2980** | {{< badge content="pg_mentat" link="https://codeberg.org/gregburd/mentat" >}} | {{< ext "pg_mentat" >}} | `1.22.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 {.wide .expand}
 
 
@@ -39,7 +39,7 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_mentat` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.22.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_mentat` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20.0` | {{< bg "19" "pg_mentat_19" "red" >}} {{< bg "18" "pg_mentat_18" "green" >}} {{< bg "17" "pg_mentat_17" "green" >}} {{< bg "16" "pg_mentat_16" "green" >}} {{< bg "15" "pg_mentat_15" "green" >}} | `pg_mentat_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20.0` | {{< bg "19" "postgresql-19-pg-mentat" "red" >}} {{< bg "18" "postgresql-18-pg-mentat" "green" >}} {{< bg "17" "postgresql-17-pg-mentat" "green" >}} {{< bg "16" "postgresql-16-pg-mentat" "green" >}} {{< bg "15" "postgresql-15-pg-mentat" "green" >}} | `postgresql-$v-pg-mentat` | - |
 {.packages .wide .expand}
@@ -164,7 +164,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://codeberg.org/gregburd/mentat" title="Repository" icon="link" subtitle="codeberg.org/gregburd/mentat" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_mentat-1.20.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_mentat-1.22.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -205,21 +205,24 @@ CREATE EXTENSION pg_mentat;
 
 Sources:
 
-- [v1.21.1 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/README.md)
-- [v1.21.1 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/pg_mentat.control)
-- [v1.21.1 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/CHANGELOG.md)
-- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
-- [v1.21.1 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/sql/07_function_aliases.sql)
-- [v1.21.1 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/src/functions/time_travel.rs)
-- [v1.21.1 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/src/functions/excision.rs)
-- [v1.21.1 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/src/functions/transact.rs)
-- [v1.21.1 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/src/functions/subscriptions.rs)
-- [1.18.0 upgrade SQL](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/sql/pg_mentat--1.17.2--1.18.0.sql)
-- [1.18.0 named-store guide](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/docs/src/multi-tenancy.md)
-- [1.18.0 query functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/src/functions/query.rs)
-- [1.18.0 pull functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.21.1/crates/pg/pg_mentat/src/functions/pull.rs)
+- [pg_gaps.md](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/docs/src/pg_gaps.md)
+- [pg_mentat--1.21.1--1.22.0.sql](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/crates/pg/pg_mentat/sql/pg_mentat--1.21.1--1.22.0.sql)
 
-`pg_mentat` 1.21.1 implements a Datomic-compatible data model and Datalog query engine inside PostgreSQL. It stores immutable facts as typed datoms and exposes schema transactions, Datalog queries, pull expressions, time travel, transaction history, and permanent excision through SQL functions. Use it for applications that need this model; it is not a transparent replacement for relational tables or SQL.
+- [v1.22.0 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/README.md)
+- [v1.22.0 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/crates/pg/pg_mentat/pg_mentat.control)
+- [v1.22.0 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/CHANGELOG.md)
+- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
+- [v1.22.0 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/crates/pg/pg_mentat/sql/07_function_aliases.sql)
+- [v1.22.0 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/crates/pg/pg_mentat/src/functions/time_travel.rs)
+- [v1.22.0 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/crates/pg/pg_mentat/src/functions/excision.rs)
+- [v1.22.0 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/crates/pg/pg_mentat/src/functions/transact.rs)
+- [v1.22.0 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/crates/pg/pg_mentat/src/functions/subscriptions.rs)
+- [1.18.0 upgrade SQL](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/crates/pg/pg_mentat/sql/pg_mentat--1.17.2--1.18.0.sql)
+- [1.18.0 named-store guide](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/docs/src/multi-tenancy.md)
+- [1.18.0 query functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/crates/pg/pg_mentat/src/functions/query.rs)
+- [1.18.0 pull functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.22.0/crates/pg/pg_mentat/src/functions/pull.rs)
+
+`pg_mentat` 1.22.0 implements a Datomic-compatible data model and Datalog query engine inside PostgreSQL. It stores immutable facts as typed datoms and exposes schema transactions, Datalog queries, pull expressions, time travel, transaction history, and permanent excision through SQL functions. Use it for applications that need this model; it is not a transparent replacement for relational tables or SQL.
 
 ### Install and Define a Schema
 
@@ -310,7 +313,7 @@ Version 1.6.2 fixes deeply nested EDN causing stack exhaustion, non-superuser qu
 
 ### Requirements and Caveats
 
-- Upstream v1.21.1 declares PostgreSQL 13-19 Cargo features and uses pgrx 0.19.4. Pigsty's 1.18.0 packages target PostgreSQL 14-18.
+- Upstream v1.22.0 declares PostgreSQL 13-19 Cargo features and uses pgrx 0.19.4. Pigsty's 1.18.0 packages target PostgreSQL 14-18.
 - The extension is not relocatable and does not require `shared_preload_libraries`.
 - The optional `mentatd` HTTP/Datomic-wire daemon is an upstream companion program and is not included in the Pigsty `pg_mentat` package. SQL use of the extension does not require it.
 - Datalog compilation, pull recursion, full-text attributes, subscriptions, and history can have very different cost profiles. Inspect generated SQL with the documented explain helper and benchmark representative data.
@@ -402,3 +405,9 @@ Library behavior changes apply when the new library loads, before the SQL update
 The release packages use the PostgreSQL composite-datum safety check through pgrx 0.19.4. Upgrade PostgreSQL first to at least 15.20, 16.16, 17.12, 18.7 or 19.0 for those packages; loading them on earlier minors can fail with an undefined DatumGetHeapTupleHeader symbol. Source builds for PostgreSQL 14 need fixed 14.25 headers. The 1.21.1 Nix build also enforces fixed headers; package-source compatibility must be checked separately from the unchanged SQL API.
 
 An explicit entity ID asserting another entity's unique value now fails with `:db.error/unique-conflict` instead of silently doing nothing. Releasing the value from its holder in the same transaction allows a move; tempid upsert behavior is unchanged. Review callers that relied on the old no-op. SQL update steps from 1.20.0 through 1.21.1 are empty; earlier migration and backup obligations remain.
+
+### Optional Probabilistic Queries in 1.22.0
+
+Version 1.22.0 adds optional integration with `pg_gaps` on PostgreSQL 17 or later. `mentat.create_gaps_view()` exposes current cardinality-one attributes as text columns, using NULL for missing values; it works without the other extension and requires PostgreSQL 15 or later because the view uses security-invoker semantics. `mentat.gaps_declare()` declares an attribute's domain and stripe for a model. Datalog functions `gaps-marginals` and `gaps-impute` expose missing-value probabilities and the most likely completion. `mentat.has_pg_gaps()` checks availability and `mentat.gaps_column()` resolves an attribute's view column.
+
+After installing matching files, `ALTER EXTENSION pg_mentat UPDATE TO '1.22.0';` adds the helper functions. The PostgreSQL minimum minor releases documented for 1.21.0 still apply. The optional integration does not make pg_gaps a mandatory dependency of ordinary Datalog queries.

@@ -40,7 +40,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.1` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_partman` | `plpgsql` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.1` | {{< bg "19" "pg_partman_19" "green" >}} {{< bg "18" "pg_partman_18" "green" >}} {{< bg "17" "pg_partman_17" "green" >}} {{< bg "16" "pg_partman_16" "green" >}} {{< bg "15" "pg_partman_15" "green" >}} | `pg_partman_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.1` | {{< bg "19" "postgresql-19-partman" "green" >}} {{< bg "18" "postgresql-18-partman" "green" >}} {{< bg "17" "postgresql-17-partman" "green" >}} {{< bg "16" "postgresql-16-partman" "green" >}} {{< bg "15" "postgresql-15-partman" "green" >}} | `postgresql-$v-partman` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "19" "postgresql-19-partman" "green" >}} {{< bg "18" "postgresql-18-partman" "green" >}} {{< bg "17" "postgresql-17-partman" "green" >}} {{< bg "16" "postgresql-16-partman" "green" >}} {{< bg "15" "postgresql-15-partman" "green" >}} | `postgresql-$v-partman` | - |
 {.packages .wide .expand}
 
 

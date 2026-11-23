@@ -46,12 +46,12 @@ page_width: full
 
 | **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pgaudit_19 : N/A 0" "gray" >}} | {{< bg "PGDG 18.1" "pgaudit_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 17.2" "pgaudit_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 16.2" "pgaudit_16 : AVAIL 4" "blue" >}} | {{< bg "PIGSTY 1.7.1" "pgaudit_15 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pgaudit_19 : N/A 0" "gray" >}} | {{< bg "PGDG 18.1" "pgaudit_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 17.2" "pgaudit_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 16.2" "pgaudit_16 : AVAIL 4" "blue" >}} | {{< bg "PIGSTY 1.7.1" "pgaudit_15 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 19.0" "pgaudit_19 : AVAIL 1" "blue" >}} | {{< bg "PGDG 18.1" "pgaudit_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 17.2" "pgaudit_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 16.2" "pgaudit_16 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 1.7.1" "pgaudit_15 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 19.0" "pgaudit_19 : AVAIL 1" "blue" >}} | {{< bg "PGDG 18.1" "pgaudit_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 17.2" "pgaudit_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 16.2" "pgaudit_16 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 1.7.1" "pgaudit_15 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 19.0" "pgaudit_19 : AVAIL 1" "blue" >}} | {{< bg "PGDG 18.1" "pgaudit_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 17.2" "pgaudit_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 16.2" "pgaudit_16 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 1.7.1" "pgaudit_15 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 19.0" "pgaudit_19 : AVAIL 1" "blue" >}} | {{< bg "PGDG 18.1" "pgaudit_18 : AVAIL 6" "blue" >}} | {{< bg "PGDG 17.2" "pgaudit_17 : AVAIL 6" "blue" >}} | {{< bg "PGDG 16.2" "pgaudit_16 : AVAIL 6" "blue" >}} | {{< bg "PIGSTY 1.7.1" "pgaudit_15 : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pgaudit_19 : N/A 0" "gray" >}} | {{< bg "PGDG 18.1" "pgaudit_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 17.2" "pgaudit_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 16.2" "pgaudit_16 : AVAIL 4" "blue" >}} | {{< bg "PIGSTY 1.7.2" "pgaudit_15 : AVAIL 2" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pgaudit_19 : N/A 0" "gray" >}} | {{< bg "PGDG 18.1" "pgaudit_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 17.2" "pgaudit_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 16.2" "pgaudit_16 : AVAIL 4" "blue" >}} | {{< bg "PIGSTY 1.7.2" "pgaudit_15 : AVAIL 2" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 19.0" "pgaudit_19 : AVAIL 1" "blue" >}} | {{< bg "PGDG 18.1" "pgaudit_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 17.2" "pgaudit_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 16.2" "pgaudit_16 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 1.7.2" "pgaudit_15 : AVAIL 2" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 19.0" "pgaudit_19 : AVAIL 1" "blue" >}} | {{< bg "PGDG 18.1" "pgaudit_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 17.2" "pgaudit_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 16.2" "pgaudit_16 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 1.7.2" "pgaudit_15 : AVAIL 2" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 19.0" "pgaudit_19 : AVAIL 1" "blue" >}} | {{< bg "PGDG 18.1" "pgaudit_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 17.2" "pgaudit_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 16.2" "pgaudit_16 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 1.7.2" "pgaudit_15 : AVAIL 2" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 19.0" "pgaudit_19 : AVAIL 1" "blue" >}} | {{< bg "PGDG 18.1" "pgaudit_18 : AVAIL 6" "blue" >}} | {{< bg "PGDG 17.2" "pgaudit_17 : AVAIL 6" "blue" >}} | {{< bg "PGDG 16.2" "pgaudit_16 : AVAIL 6" "blue" >}} | {{< bg "PIGSTY 1.7.2" "pgaudit_15 : AVAIL 2" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 19.0" "postgresql-19-pgaudit : AVAIL 3" "blue" >}} | {{< bg "PGDG 18.1" "postgresql-18-pgaudit : AVAIL 3" "blue" >}} | {{< bg "PGDG 17.2" "postgresql-17-pgaudit : AVAIL 3" "blue" >}} | {{< bg "PGDG 16.2" "postgresql-16-pgaudit : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-15-pgaudit : AVAIL 3" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 19.0" "postgresql-19-pgaudit : AVAIL 3" "blue" >}} | {{< bg "PGDG 18.1" "postgresql-18-pgaudit : AVAIL 3" "blue" >}} | {{< bg "PGDG 17.2" "postgresql-17-pgaudit : AVAIL 3" "blue" >}} | {{< bg "PGDG 16.2" "postgresql-16-pgaudit : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-15-pgaudit : AVAIL 3" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 19.0" "postgresql-19-pgaudit : AVAIL 3" "blue" >}} | {{< bg "PGDG 18.1" "postgresql-18-pgaudit : AVAIL 3" "blue" >}} | {{< bg "PGDG 17.2" "postgresql-17-pgaudit : AVAIL 3" "blue" >}} | {{< bg "PGDG 16.2" "postgresql-16-pgaudit : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-15-pgaudit : AVAIL 3" "blue" >}} |
@@ -280,11 +280,17 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgaudit_15` | `1.7.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 52.3 KiB | [pgaudit_15-1.7.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgaudit_15-1.7.2-1PGSTY.el8.x86_64.rpm) |
 | `pgaudit_15` | `1.7.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 50.7 KiB | [pgaudit_15-1.7.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgaudit_15-1.7.1-1PGSTY.el8.x86_64.rpm) |
+| `pgaudit_15` | `1.7.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 51.9 KiB | [pgaudit_15-1.7.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgaudit_15-1.7.2-1PGSTY.el8.aarch64.rpm) |
 | `pgaudit_15` | `1.7.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 50.4 KiB | [pgaudit_15-1.7.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgaudit_15-1.7.1-1PGSTY.el8.aarch64.rpm) |
+| `pgaudit_15` | `1.7.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 53.5 KiB | [pgaudit_15-1.7.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgaudit_15-1.7.2-1PGSTY.el9.x86_64.rpm) |
 | `pgaudit_15` | `1.7.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 51.6 KiB | [pgaudit_15-1.7.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgaudit_15-1.7.1-1PGSTY.el9.x86_64.rpm) |
+| `pgaudit_15` | `1.7.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 53.1 KiB | [pgaudit_15-1.7.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgaudit_15-1.7.2-1PGSTY.el9.aarch64.rpm) |
 | `pgaudit_15` | `1.7.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 51.4 KiB | [pgaudit_15-1.7.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgaudit_15-1.7.1-1PGSTY.el9.aarch64.rpm) |
+| `pgaudit_15` | `1.7.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 53.4 KiB | [pgaudit_15-1.7.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgaudit_15-1.7.2-1PGSTY.el10.x86_64.rpm) |
 | `pgaudit_15` | `1.7.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 51.7 KiB | [pgaudit_15-1.7.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgaudit_15-1.7.1-1PGSTY.el10.x86_64.rpm) |
+| `pgaudit_15` | `1.7.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 53.6 KiB | [pgaudit_15-1.7.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgaudit_15-1.7.2-1PGSTY.el10.aarch64.rpm) |
 | `pgaudit_15` | `1.7.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 51.9 KiB | [pgaudit_15-1.7.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgaudit_15-1.7.1-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pgaudit` | `1.7.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 45.4 KiB | [postgresql-15-pgaudit_1.7.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.7/postgresql-15-pgaudit_1.7.2-1.pgdg12+1_amd64.deb) |
 | `postgresql-15-pgaudit` | `1.7.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 44.1 KiB | [postgresql-15-pgaudit_1.7.1-2.pgdg12+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.7/postgresql-15-pgaudit_1.7.1-2.pgdg12+2_amd64.deb) |
@@ -324,7 +330,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgaudit/pgaudit" title="Repository" icon="github" subtitle="github.com/pgaudit/pgaudit" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgaudit-1.6.3.tar.gz pgaudit-1.7.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgaudit-1.7.2.tar.gz" />}}
 {{< /cards >}}
 
 

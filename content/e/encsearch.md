@@ -33,19 +33,19 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "19" "" "red" >}} {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} | `encsearch` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `encsearch` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "19" "encsearch_19" "red" >}} {{< bg "18" "encsearch_18" "red" >}} {{< bg "17" "encsearch_17" "green" >}} {{< bg "16" "encsearch_16" "red" >}} {{< bg "15" "encsearch_15" "red" >}} | `encsearch_$v` | - |
 {.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG19**                   |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "N/A" "encsearch_19 : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.1" "encsearch_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "encsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch_15 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "N/A" "encsearch_19 : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.1" "encsearch_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "encsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch_15 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "N/A" "encsearch_19 : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.1" "encsearch_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "encsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch_15 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "N/A" "encsearch_19 : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.1" "encsearch_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "encsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch_15 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "N/A" "encsearch_19 : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.1" "encsearch_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "encsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch_15 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "N/A" "encsearch_19 : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch_18 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.1" "encsearch_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "encsearch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch_15 : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "N/A" "encsearch_19 : N/A 0" "gray" >}} | {{< bg "MISS" "encsearch_18 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "encsearch_17 : AVAIL 1" "green" >}} | {{< bg "MISS" "encsearch_16 : MISS 0" "red" >}} | {{< bg "MISS" "encsearch_15 : MISS 0" "red" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "N/A" "encsearch_19 : N/A 0" "gray" >}} | {{< bg "MISS" "encsearch_18 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "encsearch_17 : AVAIL 1" "green" >}} | {{< bg "MISS" "encsearch_16 : MISS 0" "red" >}} | {{< bg "MISS" "encsearch_15 : MISS 0" "red" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "encsearch_19 : MISS 0" "red" >}} | {{< bg "MISS" "encsearch_18 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "encsearch_17 : AVAIL 1" "green" >}} | {{< bg "MISS" "encsearch_16 : MISS 0" "red" >}} | {{< bg "MISS" "encsearch_15 : MISS 0" "red" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "encsearch_19 : MISS 0" "red" >}} | {{< bg "MISS" "encsearch_18 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "encsearch_17 : AVAIL 1" "green" >}} | {{< bg "MISS" "encsearch_16 : MISS 0" "red" >}} | {{< bg "MISS" "encsearch_15 : MISS 0" "red" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "encsearch_19 : MISS 0" "red" >}} | {{< bg "MISS" "encsearch_18 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "encsearch_17 : AVAIL 1" "green" >}} | {{< bg "MISS" "encsearch_16 : MISS 0" "red" >}} | {{< bg "MISS" "encsearch_15 : MISS 0" "red" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "encsearch_19 : MISS 0" "red" >}} | {{< bg "MISS" "encsearch_18 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.1" "encsearch_17 : AVAIL 1" "green" >}} | {{< bg "MISS" "encsearch_16 : MISS 0" "red" >}} | {{< bg "MISS" "encsearch_15 : MISS 0" "red" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} |
@@ -100,7 +100,11 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install encsearch;		# install via package name, for the active PG version
 
+pig install encsearch -v 19;   # install for PG 19
+pig install encsearch -v 18;   # install for PG 18
 pig install encsearch -v 17;   # install for PG 17
+pig install encsearch -v 16;   # install for PG 16
+pig install encsearch -v 15;   # install for PG 15
 
 ```
 

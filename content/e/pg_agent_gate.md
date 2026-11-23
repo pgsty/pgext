@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7470** | {{< badge content="pg_agent_gate" link="https://github.com/Manuelreyesbravo/pg_agent_gate" >}} | {{< ext "pg_agent_gate" >}} | `0.4.1` | {{< category "SEC" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **7470** | {{< badge content="pg_agent_gate" link="https://github.com/Manuelreyesbravo/pg_agent_gate" >}} | {{< ext "pg_agent_gate" >}} | `0.4.3` | {{< category "SEC" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 {.wide .expand}
 
 
@@ -32,14 +32,14 @@ page_width: full
 |    **Schemas**    | `agent_gate` `agent_gate_internal` |
 |   **See Also**    | {{< ext "pg_living_assertions" >}} {{< ext "pg_policy" >}} |
 
-> [!Note] PG18; preload before agent statements; READ COMMITTED required. 0.4.1 fixes agent-role escape. Trusted code and external effects remain outside the sandbox.
+> [!Note] Preload before agent statements. Requires READ COMMITTED. Trusted code and external effects remain outside the sandbox.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "19" "" "red" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} | `pg_agent_gate` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.3` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} | `pg_agent_gate` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "19" "pg_agent_gate_19" "red" >}} {{< bg "18" "pg_agent_gate_18" "green" >}} {{< bg "17" "pg_agent_gate_17" "red" >}} {{< bg "16" "pg_agent_gate_16" "red" >}} {{< bg "15" "pg_agent_gate_15" "red" >}} | `pg_agent_gate_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "19" "postgresql-19-pg-agent-gate" "red" >}} {{< bg "18" "postgresql-18-pg-agent-gate" "green" >}} {{< bg "17" "postgresql-17-pg-agent-gate" "red" >}} {{< bg "16" "postgresql-16-pg-agent-gate" "red" >}} {{< bg "15" "postgresql-15-pg-agent-gate" "red" >}} | `postgresql-$v-pg-agent-gate` | - |
 {.packages .wide .expand}
@@ -49,20 +49,20 @@ page_width: full
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 | {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_agent_gate_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "pg_agent_gate_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_agent_gate_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_15 : N/A 0" "gray" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_agent_gate_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "pg_agent_gate_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_agent_gate_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_15 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "N/A" "pg_agent_gate_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "pg_agent_gate_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_agent_gate_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_15 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "N/A" "pg_agent_gate_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "pg_agent_gate_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_agent_gate_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_15 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "N/A" "pg_agent_gate_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "pg_agent_gate_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_agent_gate_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_15 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "N/A" "pg_agent_gate_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "pg_agent_gate_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_agent_gate_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_15 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pg_agent_gate_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "pg_agent_gate_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_agent_gate_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_15 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pg_agent_gate_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "pg_agent_gate_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_agent_gate_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_15 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pg_agent_gate_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "pg_agent_gate_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_agent_gate_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_15 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pg_agent_gate_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "pg_agent_gate_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_agent_gate_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_agent_gate_15 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-agent-gate : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-agent-gate : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-agent-gate : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-agent-gate : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-agent-gate : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-agent-gate : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-agent-gate : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-agent-gate : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-agent-gate : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-agent-gate : MISS 0" "red" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pg-agent-gate : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-agent-gate : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-agent-gate : N/A 0" "gray" >}} |
 {.matrix .wide .expand}
 
 
@@ -95,7 +95,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/Manuelreyesbravo/pg_agent_gate" title="Repository" icon="github" subtitle="github.com/Manuelreyesbravo/pg_agent_gate" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_agent_gate-0.4.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_agent_gate-0.4.3.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -117,6 +117,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pg_agent_gate;		# install via package name, for the active PG version
 
+pig install pg_agent_gate -v 19;   # install for PG 19
 pig install pg_agent_gate -v 18;   # install for PG 18
 
 ```

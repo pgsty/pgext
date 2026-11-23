@@ -101,12 +101,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgfincore_18` | `1.4.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 16.8 KiB | [pgfincore_18-1.4.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfincore_18-1.4.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgfincore_18` | `1.4.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 16.6 KiB | [pgfincore_18-1.4.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfincore_18-1.4.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgfincore_18` | `1.4.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 16.9 KiB | [pgfincore_18-1.4.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfincore_18-1.4.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgfincore_18` | `1.4.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 16.6 KiB | [pgfincore_18-1.4.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfincore_18-1.4.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgfincore_18` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 17.1 KiB | [pgfincore_18-1.4.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgfincore_18-1.4.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgfincore_18` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 16.8 KiB | [pgfincore_18-1.4.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgfincore_18-1.4.0-1PIGSTY.el10.aarch64.rpm) |
+| `pgfincore_18` | `1.4.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 30.1 KiB | [pgfincore_18-1.4.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfincore_18-1.4.0-1PGSTY.el8.x86_64.rpm) |
+| `pgfincore_18` | `1.4.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 29.6 KiB | [pgfincore_18-1.4.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfincore_18-1.4.0-1PGSTY.el8.aarch64.rpm) |
+| `pgfincore_18` | `1.4.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 30.5 KiB | [pgfincore_18-1.4.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfincore_18-1.4.0-1PGSTY.el9.x86_64.rpm) |
+| `pgfincore_18` | `1.4.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 30.3 KiB | [pgfincore_18-1.4.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfincore_18-1.4.0-1PGSTY.el9.aarch64.rpm) |
+| `pgfincore_18` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 30.8 KiB | [pgfincore_18-1.4.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgfincore_18-1.4.0-1PGSTY.el10.x86_64.rpm) |
+| `pgfincore_18` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 30.4 KiB | [pgfincore_18-1.4.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgfincore_18-1.4.0-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pgfincore` | `1.4.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 29.1 KiB | [postgresql-18-pgfincore_1.4.0-1.pgdg12+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-18-pgfincore_1.4.0-1.pgdg12+2_amd64.deb) |
 | `postgresql-18-pgfincore` | `1.4.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 29.0 KiB | [postgresql-18-pgfincore_1.4.0-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-18-pgfincore_1.4.0-1.pgdg12+1_amd64.deb) |
 | `postgresql-18-pgfincore` | `1.3.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 28.8 KiB | [postgresql-18-pgfincore_1.3.1-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-18-pgfincore_1.3.1-3.pgdg12+1_amd64.deb) |

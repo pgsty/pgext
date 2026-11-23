@@ -48,10 +48,10 @@ page_width: full
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 | {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_lease_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_15 : AVAIL 1" "green" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_lease_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_15 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pg_lease_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_15 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pg_lease_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_15 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pg_lease_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_15 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pg_lease_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_19 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_19 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_19 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_19 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pg_lease_15 : AVAIL 1" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} |
@@ -66,6 +66,17 @@ page_width: full
 
 
 {{< tabs group="pgmajor" >}}
+{{< tab label="PG19" value="pg19" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_lease_19` | `0.1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.8 KiB | [pg_lease_19-0.1.0-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_lease_19-0.1.0-1PGSTY.el9.noarch.rpm) |
+| `pg_lease_19` | `0.1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.8 KiB | [pg_lease_19-0.1.0-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_lease_19-0.1.0-1PGSTY.el9.noarch.rpm) |
+| `pg_lease_19` | `0.1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 22.9 KiB | [pg_lease_19-0.1.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_lease_19-0.1.0-1PGSTY.el10.noarch.rpm) |
+| `pg_lease_19` | `0.1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.9 KiB | [pg_lease_19-0.1.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_lease_19-0.1.0-1PGSTY.el10.noarch.rpm) |
+{.downloads .wide .expand}
+
+{{< /tab >}}
 {{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |

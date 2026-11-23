@@ -71,12 +71,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pljs_18` | `1.0.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 381.9 KiB | [pljs_18-1.0.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pljs_18-1.0.5-1PIGSTY.el8.x86_64.rpm) |
-| `pljs_18` | `1.0.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 349.2 KiB | [pljs_18-1.0.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pljs_18-1.0.5-1PIGSTY.el8.aarch64.rpm) |
-| `pljs_18` | `1.0.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 388.2 KiB | [pljs_18-1.0.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pljs_18-1.0.5-1PIGSTY.el9.x86_64.rpm) |
-| `pljs_18` | `1.0.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 370.5 KiB | [pljs_18-1.0.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pljs_18-1.0.5-1PIGSTY.el9.aarch64.rpm) |
-| `pljs_18` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 413.8 KiB | [pljs_18-1.0.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pljs_18-1.0.5-1PIGSTY.el10.x86_64.rpm) |
-| `pljs_18` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 380.1 KiB | [pljs_18-1.0.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pljs_18-1.0.5-1PIGSTY.el10.aarch64.rpm) |
+| `pljs_18` | `1.0.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 436.1 KiB | [pljs_18-1.0.5-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pljs_18-1.0.5-1PGSTY.el8.x86_64.rpm) |
+| `pljs_18` | `1.0.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 403.1 KiB | [pljs_18-1.0.5-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pljs_18-1.0.5-1PGSTY.el8.aarch64.rpm) |
+| `pljs_18` | `1.0.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 444.0 KiB | [pljs_18-1.0.5-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pljs_18-1.0.5-1PGSTY.el9.x86_64.rpm) |
+| `pljs_18` | `1.0.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 426.2 KiB | [pljs_18-1.0.5-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pljs_18-1.0.5-1PGSTY.el9.aarch64.rpm) |
+| `pljs_18` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 470.0 KiB | [pljs_18-1.0.5-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pljs_18-1.0.5-1PGSTY.el10.x86_64.rpm) |
+| `pljs_18` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 435.8 KiB | [pljs_18-1.0.5-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pljs_18-1.0.5-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pljs` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 410.3 KiB | [postgresql-18-pljs_1.0.5-1.pgdg12+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-18-pljs_1.0.5-1.pgdg12+2_amd64.deb) |
 | `postgresql-18-pljs` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 410.1 KiB | [postgresql-18-pljs_1.0.5-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-18-pljs_1.0.5-1.pgdg12+1_amd64.deb) |
 | `postgresql-18-pljs` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 409.1 KiB | [postgresql-18-pljs_1.0.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pljs/postgresql-18-pljs_1.0.5-1PIGSTY~bookworm_amd64.deb) |
@@ -114,12 +114,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pljs_17` | `1.0.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 381.7 KiB | [pljs_17-1.0.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pljs_17-1.0.5-1PIGSTY.el8.x86_64.rpm) |
-| `pljs_17` | `1.0.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 349.3 KiB | [pljs_17-1.0.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pljs_17-1.0.5-1PIGSTY.el8.aarch64.rpm) |
-| `pljs_17` | `1.0.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 388.1 KiB | [pljs_17-1.0.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pljs_17-1.0.5-1PIGSTY.el9.x86_64.rpm) |
-| `pljs_17` | `1.0.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 370.4 KiB | [pljs_17-1.0.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pljs_17-1.0.5-1PIGSTY.el9.aarch64.rpm) |
-| `pljs_17` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 413.6 KiB | [pljs_17-1.0.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pljs_17-1.0.5-1PIGSTY.el10.x86_64.rpm) |
-| `pljs_17` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 379.4 KiB | [pljs_17-1.0.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pljs_17-1.0.5-1PIGSTY.el10.aarch64.rpm) |
+| `pljs_17` | `1.0.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 435.9 KiB | [pljs_17-1.0.5-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pljs_17-1.0.5-1PGSTY.el8.x86_64.rpm) |
+| `pljs_17` | `1.0.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 403.0 KiB | [pljs_17-1.0.5-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pljs_17-1.0.5-1PGSTY.el8.aarch64.rpm) |
+| `pljs_17` | `1.0.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 443.8 KiB | [pljs_17-1.0.5-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pljs_17-1.0.5-1PGSTY.el9.x86_64.rpm) |
+| `pljs_17` | `1.0.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 426.1 KiB | [pljs_17-1.0.5-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pljs_17-1.0.5-1PGSTY.el9.aarch64.rpm) |
+| `pljs_17` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 470.0 KiB | [pljs_17-1.0.5-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pljs_17-1.0.5-1PGSTY.el10.x86_64.rpm) |
+| `pljs_17` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 436.0 KiB | [pljs_17-1.0.5-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pljs_17-1.0.5-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pljs` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 410.1 KiB | [postgresql-17-pljs_1.0.5-1.pgdg12+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-17-pljs_1.0.5-1.pgdg12+2_amd64.deb) |
 | `postgresql-17-pljs` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 410.0 KiB | [postgresql-17-pljs_1.0.5-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-17-pljs_1.0.5-1.pgdg12+1_amd64.deb) |
 | `postgresql-17-pljs` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 408.8 KiB | [postgresql-17-pljs_1.0.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pljs/postgresql-17-pljs_1.0.5-1PIGSTY~bookworm_amd64.deb) |
@@ -157,12 +157,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pljs_16` | `1.0.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 381.8 KiB | [pljs_16-1.0.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pljs_16-1.0.5-1PIGSTY.el8.x86_64.rpm) |
-| `pljs_16` | `1.0.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 349.2 KiB | [pljs_16-1.0.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pljs_16-1.0.5-1PIGSTY.el8.aarch64.rpm) |
-| `pljs_16` | `1.0.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 388.0 KiB | [pljs_16-1.0.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pljs_16-1.0.5-1PIGSTY.el9.x86_64.rpm) |
-| `pljs_16` | `1.0.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 370.6 KiB | [pljs_16-1.0.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pljs_16-1.0.5-1PIGSTY.el9.aarch64.rpm) |
-| `pljs_16` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 413.5 KiB | [pljs_16-1.0.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pljs_16-1.0.5-1PIGSTY.el10.x86_64.rpm) |
-| `pljs_16` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 379.5 KiB | [pljs_16-1.0.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pljs_16-1.0.5-1PIGSTY.el10.aarch64.rpm) |
+| `pljs_16` | `1.0.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 436.0 KiB | [pljs_16-1.0.5-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pljs_16-1.0.5-1PGSTY.el8.x86_64.rpm) |
+| `pljs_16` | `1.0.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 403.3 KiB | [pljs_16-1.0.5-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pljs_16-1.0.5-1PGSTY.el8.aarch64.rpm) |
+| `pljs_16` | `1.0.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 443.9 KiB | [pljs_16-1.0.5-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pljs_16-1.0.5-1PGSTY.el9.x86_64.rpm) |
+| `pljs_16` | `1.0.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 426.4 KiB | [pljs_16-1.0.5-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pljs_16-1.0.5-1PGSTY.el9.aarch64.rpm) |
+| `pljs_16` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 470.1 KiB | [pljs_16-1.0.5-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pljs_16-1.0.5-1PGSTY.el10.x86_64.rpm) |
+| `pljs_16` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 436.0 KiB | [pljs_16-1.0.5-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pljs_16-1.0.5-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pljs` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 410.2 KiB | [postgresql-16-pljs_1.0.5-1.pgdg12+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-16-pljs_1.0.5-1.pgdg12+2_amd64.deb) |
 | `postgresql-16-pljs` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 410.0 KiB | [postgresql-16-pljs_1.0.5-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-16-pljs_1.0.5-1.pgdg12+1_amd64.deb) |
 | `postgresql-16-pljs` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 408.8 KiB | [postgresql-16-pljs_1.0.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pljs/postgresql-16-pljs_1.0.5-1PIGSTY~bookworm_amd64.deb) |
@@ -200,12 +200,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pljs_15` | `1.0.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 382.4 KiB | [pljs_15-1.0.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pljs_15-1.0.5-1PIGSTY.el8.x86_64.rpm) |
-| `pljs_15` | `1.0.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 349.6 KiB | [pljs_15-1.0.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pljs_15-1.0.5-1PIGSTY.el8.aarch64.rpm) |
-| `pljs_15` | `1.0.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 389.2 KiB | [pljs_15-1.0.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pljs_15-1.0.5-1PIGSTY.el9.x86_64.rpm) |
-| `pljs_15` | `1.0.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 372.4 KiB | [pljs_15-1.0.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pljs_15-1.0.5-1PIGSTY.el9.aarch64.rpm) |
-| `pljs_15` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 414.1 KiB | [pljs_15-1.0.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pljs_15-1.0.5-1PIGSTY.el10.x86_64.rpm) |
-| `pljs_15` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 381.2 KiB | [pljs_15-1.0.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pljs_15-1.0.5-1PIGSTY.el10.aarch64.rpm) |
+| `pljs_15` | `1.0.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 435.9 KiB | [pljs_15-1.0.5-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pljs_15-1.0.5-1PGSTY.el8.x86_64.rpm) |
+| `pljs_15` | `1.0.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 403.0 KiB | [pljs_15-1.0.5-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pljs_15-1.0.5-1PGSTY.el8.aarch64.rpm) |
+| `pljs_15` | `1.0.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 444.2 KiB | [pljs_15-1.0.5-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pljs_15-1.0.5-1PGSTY.el9.x86_64.rpm) |
+| `pljs_15` | `1.0.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 426.8 KiB | [pljs_15-1.0.5-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pljs_15-1.0.5-1PGSTY.el9.aarch64.rpm) |
+| `pljs_15` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 470.1 KiB | [pljs_15-1.0.5-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pljs_15-1.0.5-1PGSTY.el10.x86_64.rpm) |
+| `pljs_15` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 436.1 KiB | [pljs_15-1.0.5-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pljs_15-1.0.5-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pljs` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 410.2 KiB | [postgresql-15-pljs_1.0.5-1.pgdg12+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-15-pljs_1.0.5-1.pgdg12+2_amd64.deb) |
 | `postgresql-15-pljs` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 409.9 KiB | [postgresql-15-pljs_1.0.5-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-15-pljs_1.0.5-1.pgdg12+1_amd64.deb) |
 | `postgresql-15-pljs` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 408.6 KiB | [postgresql-15-pljs_1.0.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pljs/postgresql-15-pljs_1.0.5-1PIGSTY~bookworm_amd64.deb) |

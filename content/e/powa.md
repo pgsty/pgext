@@ -40,7 +40,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.3.0` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `powa` | `plpgsql`, `pg_stat_statements`, `btree_gist` |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.3.0` | {{< bg "19" "powa_19" "green" >}} {{< bg "18" "powa_18" "green" >}} {{< bg "17" "powa_17" "green" >}} {{< bg "16" "powa_16" "green" >}} {{< bg "15" "powa_15" "green" >}} | `powa_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.0` | {{< bg "19" "powa_19" "green" >}} {{< bg "18" "powa_18" "green" >}} {{< bg "17" "powa_17" "green" >}} {{< bg "16" "powa_16" "green" >}} {{< bg "15" "powa_15" "green" >}} | `powa_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.3.0` | {{< bg "19" "postgresql-19-powa" "green" >}} {{< bg "18" "postgresql-18-powa" "green" >}} {{< bg "17" "postgresql-17-powa" "green" >}} {{< bg "16" "postgresql-16-powa" "green" >}} {{< bg "15" "postgresql-15-powa" "green" >}} | `postgresql-$v-powa` | - |
 {.packages .wide .expand}
 

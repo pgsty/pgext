@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1120** | {{< badge content="pg_when" link="https://github.com/frectonz/pg-when" >}} | {{< ext "pg_when" >}} | `0.1.10` | {{< category "TIME" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **1120** | {{< badge content="pg_when" link="https://github.com/frectonz/pg-when" >}} | {{< ext "pg_when" >}} | `0.1.11` | {{< category "TIME" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 {.wide .expand}
 
 
@@ -31,14 +31,12 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pgcalendar" >}} {{< ext "pg_rrule" >}} {{< ext "cron_utils" >}} {{< ext "pgagent" >}} {{< ext "pg_task" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_duration" >}} {{< ext "pg_bikram_sambat" >}} {{< ext "pg_dispatch" >}} {{< ext "edtf_postgres" >}} |
 
-> [!Note] Upstream 0.1.10 supports PostgreSQL 13-18 and pins pgrx 0.18.1; PIGSTY packages PostgreSQL 14-18 with a locked pgrx 0.19.1 compatibility update.
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.10` | {{< bg "19" "" "red" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_when` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.11` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_when` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.10` | {{< bg "19" "pg_when_19" "red" >}} {{< bg "18" "pg_when_18" "green" >}} {{< bg "17" "pg_when_17" "green" >}} {{< bg "16" "pg_when_16" "green" >}} {{< bg "15" "pg_when_15" "green" >}} | `pg_when_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.10` | {{< bg "19" "postgresql-19-pg-when" "red" >}} {{< bg "18" "postgresql-18-pg-when" "green" >}} {{< bg "17" "postgresql-17-pg-when" "green" >}} {{< bg "16" "postgresql-16-pg-when" "green" >}} {{< bg "15" "postgresql-15-pg-when" "green" >}} | `postgresql-$v-pg-when` | - |
 {.packages .wide .expand}
@@ -48,20 +46,20 @@ page_width: full
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 | {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_when_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_15 : AVAIL 1" "green" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_when_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_15 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "N/A" "pg_when_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_15 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "N/A" "pg_when_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_15 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "N/A" "pg_when_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_15 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "N/A" "pg_when_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_15 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-when : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-when : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-when : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-when : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-when : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-when : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-when : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-when : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-19-pg-when : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-19-pg-when : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pg_when_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pg_when_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pg_when_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pg_when_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "pg_when_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-when : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-when : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-when : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-when : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-when : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-when : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-when : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-when : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-pg-when : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-pg-when : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -163,7 +161,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/frectonz/pg-when" title="Repository" icon="github" subtitle="github.com/frectonz/pg-when" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_when-0.1.10.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_when-0.1.11.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -185,6 +183,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pg_when;		# install via package name, for the active PG version
 
+pig install pg_when -v 19;   # install for PG 19
 pig install pg_when -v 18;   # install for PG 18
 pig install pg_when -v 17;   # install for PG 17
 pig install pg_when -v 16;   # install for PG 16

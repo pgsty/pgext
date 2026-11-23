@@ -38,7 +38,7 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.2` | {{< bg "19" "" "red" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} | `pg_table_range` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.2` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} | `pg_table_range` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.2` | {{< bg "19" "pg_table_range_19" "red" >}} {{< bg "18" "pg_table_range_18" "green" >}} {{< bg "17" "pg_table_range_17" "green" >}} {{< bg "16" "pg_table_range_16" "green" >}} {{< bg "15" "pg_table_range_15" "red" >}} | `pg_table_range_$v` | - |
 {.packages .wide .expand}
 
@@ -47,10 +47,10 @@ page_width: full
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 | {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_table_range_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_table_range_15 : N/A 0" "gray" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_table_range_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_table_range_15 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "N/A" "pg_table_range_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_table_range_15 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "N/A" "pg_table_range_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_table_range_15 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "N/A" "pg_table_range_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_table_range_15 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "N/A" "pg_table_range_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_table_range_15 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pg_table_range_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_table_range_15 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pg_table_range_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_table_range_15 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pg_table_range_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_table_range_15 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pg_table_range_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_table_range_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_table_range_15 : N/A 0" "gray" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} | {{< bg "N/A" "pg_table_range : N/A 0" "gray" >}} |
@@ -131,6 +131,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pg_table_range;		# install via package name, for the active PG version
 
+pig install pg_table_range -v 19;   # install for PG 19
 pig install pg_table_range -v 18;   # install for PG 18
 pig install pg_table_range -v 17;   # install for PG 17
 pig install pg_table_range -v 16;   # install for PG 16

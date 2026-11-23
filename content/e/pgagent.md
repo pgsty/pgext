@@ -39,8 +39,8 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "19" "" "red" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pgagent` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "19" "pgagent_19" "red" >}} {{< bg "18" "pgagent_18" "green" >}} {{< bg "17" "pgagent_17" "green" >}} {{< bg "16" "pgagent_16" "green" >}} {{< bg "15" "pgagent_15" "green" >}} | `pgagent_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pgagent` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "19" "pgagent_19" "green" >}} {{< bg "18" "pgagent_18" "green" >}} {{< bg "17" "pgagent_17" "green" >}} {{< bg "16" "pgagent_16" "green" >}} {{< bg "15" "pgagent_15" "green" >}} | `pgagent_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "19" "pgagent" "red" >}} {{< bg "18" "pgagent" "green" >}} {{< bg "17" "pgagent" "green" >}} {{< bg "16" "pgagent" "green" >}} {{< bg "15" "pgagent" "green" >}} | `pgagent` | - |
 {.packages .wide .expand}
 
@@ -235,6 +235,7 @@ pig repo add pgdg -u    # add pgdg repo and update cache
 ```bash
 pig install pgagent;		# install via package name, for the active PG version
 
+pig install pgagent -v 19;   # install for PG 19
 pig install pgagent -v 18;   # install for PG 18
 pig install pgagent -v 17;   # install for PG 17
 pig install pgagent -v 16;   # install for PG 16

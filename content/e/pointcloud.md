@@ -48,10 +48,10 @@ page_width: full
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 | {{< os "el8.x86_64" >}} | {{< bg "N/A" "pointcloud_19 : N/A 0" "gray" >}} | {{< bg "PGDG 1.2.5" "pointcloud_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_15 : AVAIL 3" "blue" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "N/A" "pointcloud_19 : N/A 0" "gray" >}} | {{< bg "PGDG 1.2.5" "pointcloud_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_15 : AVAIL 3" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pointcloud_19 : MISS 0" "red" >}} | {{< bg "PGDG 1.2.5" "pointcloud_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_15 : AVAIL 1" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pointcloud_19 : MISS 0" "red" >}} | {{< bg "PGDG 1.2.5" "pointcloud_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_15 : AVAIL 1" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pointcloud_19 : MISS 0" "red" >}} | {{< bg "PGDG 1.2.5" "pointcloud_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_15 : AVAIL 1" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pointcloud_19 : MISS 0" "red" >}} | {{< bg "PGDG 1.2.5" "pointcloud_18 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_17 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_15 : AVAIL 5" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.2.5" "pointcloud_19 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.2.5" "pointcloud_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_15 : AVAIL 1" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.2.5" "pointcloud_19 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.2.5" "pointcloud_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_15 : AVAIL 1" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.2.5" "pointcloud_19 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.2.5" "pointcloud_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_15 : AVAIL 1" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.2.5" "pointcloud_19 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.2.5" "pointcloud_18 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_17 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.2.5" "pointcloud_15 : AVAIL 5" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pointcloud : MISS 0" "red" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 3" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pointcloud : MISS 0" "red" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 3" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pointcloud : MISS 0" "red" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 3" "blue" >}} |
@@ -66,6 +66,17 @@ page_width: full
 
 
 {{< tabs group="pgmajor" >}}
+{{< tab label="PG19" value="pg19" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pointcloud_19` | `1.2.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 112.8 KiB | [pointcloud_19-1.2.5-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pointcloud_19-1.2.5-1PGSTY.el9.x86_64.rpm) |
+| `pointcloud_19` | `1.2.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 111.9 KiB | [pointcloud_19-1.2.5-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pointcloud_19-1.2.5-1PGSTY.el9.aarch64.rpm) |
+| `pointcloud_19` | `1.2.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 113.1 KiB | [pointcloud_19-1.2.5-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pointcloud_19-1.2.5-1PGSTY.el10.x86_64.rpm) |
+| `pointcloud_19` | `1.2.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 112.7 KiB | [pointcloud_19-1.2.5-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pointcloud_19-1.2.5-1PGSTY.el10.aarch64.rpm) |
+{.downloads .wide .expand}
+
+{{< /tab >}}
 {{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |

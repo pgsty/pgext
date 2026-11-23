@@ -69,12 +69,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_auto_failover_18` | `2.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 837.3 KiB | [pg_auto_failover_18-2.2-5PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_auto_failover_18-2.2-5PIGSTY.el8.x86_64.rpm) |
-| `pg_auto_failover_18` | `2.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 837.3 KiB | [pg_auto_failover_18-2.2-5PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auto_failover_18-2.2-5PIGSTY.el8.aarch64.rpm) |
-| `pg_auto_failover_18` | `2.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 789.9 KiB | [pg_auto_failover_18-2.2-5PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_auto_failover_18-2.2-5PIGSTY.el9.x86_64.rpm) |
-| `pg_auto_failover_18` | `2.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 792.8 KiB | [pg_auto_failover_18-2.2-5PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_auto_failover_18-2.2-5PIGSTY.el9.aarch64.rpm) |
-| `pg_auto_failover_18` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 791.4 KiB | [pg_auto_failover_18-2.2-5PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_auto_failover_18-2.2-5PIGSTY.el10.x86_64.rpm) |
-| `pg_auto_failover_18` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 789.1 KiB | [pg_auto_failover_18-2.2-5PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_auto_failover_18-2.2-5PIGSTY.el10.aarch64.rpm) |
+| `pg_auto_failover_18` | `2.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 1.1 MiB | [pg_auto_failover_18-2.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_auto_failover_18-2.2-1PGSTY.el8.x86_64.rpm) |
+| `pg_auto_failover_18` | `2.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 1.1 MiB | [pg_auto_failover_18-2.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auto_failover_18-2.2-1PGSTY.el8.aarch64.rpm) |
+| `pg_auto_failover_18` | `2.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 1.1 MiB | [pg_auto_failover_18-2.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_auto_failover_18-2.2-1PGSTY.el9.x86_64.rpm) |
+| `pg_auto_failover_18` | `2.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 1.1 MiB | [pg_auto_failover_18-2.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_auto_failover_18-2.2-1PGSTY.el9.aarch64.rpm) |
+| `pg_auto_failover_18` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 1.1 MiB | [pg_auto_failover_18-2.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_auto_failover_18-2.2-1PGSTY.el10.x86_64.rpm) |
+| `pg_auto_failover_18` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 1.1 MiB | [pg_auto_failover_18-2.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_auto_failover_18-2.2-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-18-auto-failover` | `2.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 379.3 KiB | [postgresql-18-auto-failover_2.2-4.pgdg12+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-18-auto-failover_2.2-4.pgdg12+2_amd64.deb) |
 | `postgresql-18-auto-failover` | `2.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 378.2 KiB | [postgresql-18-auto-failover_2.2-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-18-auto-failover_2.2-4.pgdg12+1_amd64.deb) |
 | `postgresql-18-auto-failover` | `2.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 377.7 KiB | [postgresql-18-auto-failover_2.2-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-18-auto-failover_2.2-3.pgdg12+1_amd64.deb) |

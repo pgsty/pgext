@@ -39,8 +39,8 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `pg_permissions` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6` | {{< bg "19" "pg_permissions_19" "green" >}} {{< bg "18" "pg_permissions_18" "green" >}} {{< bg "17" "pg_permissions_17" "green" >}} {{< bg "16" "pg_permissions_16" "green" >}} {{< bg "15" "pg_permissions_15" "green" >}} | `pg_permissions_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6` | {{< bg "19" "postgresql-19-pg-permissions" "green" >}} {{< bg "18" "postgresql-18-pg-permissions" "green" >}} {{< bg "17" "postgresql-17-pg-permissions" "green" >}} {{< bg "16" "postgresql-16-pg-permissions" "green" >}} {{< bg "15" "postgresql-15-pg-permissions" "green" >}} | `postgresql-$v-pg-permissions` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.1` | {{< bg "19" "pg_permissions_19" "green" >}} {{< bg "18" "pg_permissions_18" "green" >}} {{< bg "17" "pg_permissions_17" "green" >}} {{< bg "16" "pg_permissions_16" "green" >}} {{< bg "15" "pg_permissions_15" "green" >}} | `pg_permissions_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.1` | {{< bg "19" "postgresql-19-pg-permissions" "green" >}} {{< bg "18" "postgresql-18-pg-permissions" "green" >}} {{< bg "17" "postgresql-17-pg-permissions" "green" >}} {{< bg "16" "postgresql-16-pg-permissions" "green" >}} {{< bg "15" "postgresql-15-pg-permissions" "green" >}} | `postgresql-$v-pg-permissions` | - |
 {.packages .wide .expand}
 
 

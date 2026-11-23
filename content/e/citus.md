@@ -41,8 +41,8 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `14.3.0` | {{< bg "19" "" "red" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} | `citus` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `14.3.0` | {{< bg "19" "citus_19" "red" >}} {{< bg "18" "citus_18" "green" >}} {{< bg "17" "citus_17" "green" >}} {{< bg "16" "citus_16" "green" >}} {{< bg "15" "citus_15" "red" >}} | `citus_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `14.3.0` | {{< bg "19" "postgresql-19-citus" "red" >}} {{< bg "18" "postgresql-18-citus" "green" >}} {{< bg "17" "postgresql-17-citus" "green" >}} {{< bg "16" "postgresql-16-citus" "green" >}} {{< bg "15" "postgresql-15-citus" "red" >}} | `postgresql-$v-citus` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `14.3.0` | {{< bg "19" "citus_19" "red" >}} {{< bg "18" "citus_18" "green" >}} {{< bg "17" "citus_17" "green" >}} {{< bg "16" "citus_16" "green" >}} {{< bg "15" "citus_15" "green" >}} | `citus_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `14.3.0` | {{< bg "19" "postgresql-19-citus" "red" >}} {{< bg "18" "postgresql-18-citus" "green" >}} {{< bg "17" "postgresql-17-citus" "green" >}} {{< bg "16" "postgresql-16-citus" "green" >}} {{< bg "15" "postgresql-15-citus" "green" >}} | `postgresql-$v-citus` | - |
 {.packages .wide .expand}
 
 
@@ -319,7 +319,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/citusdata/citus" title="Repository" icon="github" subtitle="github.com/citusdata/citus" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="citus-14.3.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="citus-14.3.0.tar.gz citus-13.5.0.tar.gz" />}}
 {{< /cards >}}
 
 

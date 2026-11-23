@@ -357,7 +357,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgsentinel/pgsentinel" title="Repository" icon="github" subtitle="github.com/pgsentinel/pgsentinel" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsentinel-1.5.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsentinel-1.5.2.tar.gz" />}}
 {{< /cards >}}
 
 

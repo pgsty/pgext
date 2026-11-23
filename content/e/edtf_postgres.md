@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1130** | {{< badge content="edtf_postgres" link="https://github.com/monumental-archive/edtf/tree/v1.3.2/crates/edtf-postgres" >}} | {{< ext "edtf_postgres" >}} | `1.3.2` | {{< category "TIME" >}} | {{< license "MIT OR Apache-2.0" >}} | {{< language "Rust" >}} |
+| **1130** | {{< badge content="edtf_postgres" link="https://github.com/monumental-archive/edtf/tree/v1.3.2/crates/edtf-postgres" >}} | {{< ext "edtf_postgres" >}} | `1.3.5` | {{< category "TIME" >}} | {{< license "MIT OR Apache-2.0" >}} | {{< language "Rust" >}} |
 {.wide .expand}
 
 
@@ -31,14 +31,12 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_when" >}} {{< ext "pgcalendar" >}} {{< ext "pg_rrule" >}} {{< ext "pg_duration" >}} |
 
-> [!Note] Trusted extension; upstream Cargo requests pgrx 0.19.1; Pigsty builds use the locked pgrx 0.19.3 dependency patch.
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.2` | {{< bg "19" "" "red" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `edtf_postgres` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.5` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `edtf_postgres` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.2` | {{< bg "19" "edtf_postgres_19" "red" >}} {{< bg "18" "edtf_postgres_18" "green" >}} {{< bg "17" "edtf_postgres_17" "green" >}} {{< bg "16" "edtf_postgres_16" "green" >}} {{< bg "15" "edtf_postgres_15" "green" >}} | `edtf_postgres_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.2` | {{< bg "19" "postgresql-19-edtf-postgres" "red" >}} {{< bg "18" "postgresql-18-edtf-postgres" "green" >}} {{< bg "17" "postgresql-17-edtf-postgres" "green" >}} {{< bg "16" "postgresql-16-edtf-postgres" "green" >}} {{< bg "15" "postgresql-15-edtf-postgres" "green" >}} | `postgresql-$v-edtf-postgres` | - |
 {.packages .wide .expand}
@@ -48,20 +46,20 @@ page_width: full
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 | {{< os "el8.x86_64" >}} | {{< bg "N/A" "edtf_postgres_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_15 : AVAIL 1" "green" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "N/A" "edtf_postgres_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_15 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "N/A" "edtf_postgres_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_15 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "N/A" "edtf_postgres_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_15 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "N/A" "edtf_postgres_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_15 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "N/A" "edtf_postgres_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_15 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "N/A" "postgresql-19-edtf-postgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "N/A" "postgresql-19-edtf-postgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "N/A" "postgresql-19-edtf-postgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "N/A" "postgresql-19-edtf-postgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "N/A" "postgresql-19-edtf-postgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "N/A" "postgresql-19-edtf-postgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "N/A" "postgresql-19-edtf-postgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-19-edtf-postgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-19-edtf-postgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-19-edtf-postgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "MISS" "edtf_postgres_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "MISS" "edtf_postgres_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "MISS" "edtf_postgres_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "MISS" "edtf_postgres_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "edtf_postgres_15 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-edtf-postgres : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-edtf-postgres : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-edtf-postgres : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "MISS" "postgresql-19-edtf-postgres : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "MISS" "postgresql-19-edtf-postgres : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "MISS" "postgresql-19-edtf-postgres : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "MISS" "postgresql-19-edtf-postgres : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "MISS" "postgresql-19-edtf-postgres : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "MISS" "postgresql-19-edtf-postgres : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "MISS" "postgresql-19-edtf-postgres : MISS 0" "red" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-18-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-17-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-16-edtf-postgres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.2" "postgresql-15-edtf-postgres : AVAIL 1" "green" >}} |
 {.matrix .wide .expand}
 
 
@@ -163,7 +161,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/monumental-archive/edtf/tree/v1.3.2/crates/edtf-postgres" title="Repository" icon="github" subtitle="github.com/monumental-archive/edtf/tree/v1.3.2/crates/edtf-postgres" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="edtf_postgres-1.3.2.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="edtf_postgres-1.3.5.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -185,6 +183,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install edtf_postgres;		# install via package name, for the active PG version
 
+pig install edtf_postgres -v 19;   # install for PG 19
 pig install edtf_postgres -v 18;   # install for PG 18
 pig install edtf_postgres -v 17;   # install for PG 17
 pig install edtf_postgres -v 16;   # install for PG 16

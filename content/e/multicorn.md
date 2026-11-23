@@ -38,7 +38,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.2` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `multicorn` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.2` | {{< bg "19" "multicorn2_19" "red" >}} {{< bg "18" "multicorn2_18" "green" >}} {{< bg "17" "multicorn2_17" "green" >}} {{< bg "16" "multicorn2_16" "green" >}} {{< bg "15" "multicorn2_15" "green" >}} | `multicorn2_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.2` | {{< bg "19" "postgresql-19-multicorn" "green" >}} {{< bg "18" "postgresql-18-multicorn" "green" >}} {{< bg "17" "postgresql-17-multicorn" "green" >}} {{< bg "16" "postgresql-16-multicorn" "green" >}} {{< bg "15" "postgresql-15-multicorn" "green" >}} | `postgresql-$v-multicorn` | `python3-multicorn` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.2` | {{< bg "19" "postgresql-19-multicorn" "red" >}} {{< bg "18" "postgresql-18-multicorn" "green" >}} {{< bg "17" "postgresql-17-multicorn" "green" >}} {{< bg "16" "postgresql-16-multicorn" "green" >}} {{< bg "15" "postgresql-15-multicorn" "green" >}} | `postgresql-$v-multicorn` | `python3-multicorn` |
 {.packages .wide .expand}
 
 

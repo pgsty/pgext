@@ -46,10 +46,10 @@ page_width: full
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 | {{< os "el8.x86_64" >}} | {{< bg "N/A" "pgsphere_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_15 : AVAIL 1" "green" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "N/A" "pgsphere_19 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_15 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "MISS" "pgsphere_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_15 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "MISS" "pgsphere_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_15 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "MISS" "pgsphere_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_15 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "MISS" "pgsphere_19 : MISS 0" "red" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_19 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_15 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_19 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_19 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_15 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_19 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "pgsphere_15 : AVAIL 1" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgsphere : MISS 0" "red" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsphere : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsphere : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsphere : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsphere : AVAIL 2" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "MISS" "postgresql-19-pgsphere : MISS 0" "red" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsphere : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsphere : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsphere : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsphere : AVAIL 2" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "MISS" "postgresql-19-pgsphere : MISS 0" "red" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsphere : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsphere : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsphere : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsphere : AVAIL 2" "blue" >}} |
@@ -64,16 +64,27 @@ page_width: full
 
 
 {{< tabs group="pgmajor" >}}
+{{< tab label="PG19" value="pg19" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgsphere_19` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 299.4 KiB | [pgsphere_19-1.5.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_19-1.5.2-1PGSTY.el9.x86_64.rpm) |
+| `pgsphere_19` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 299.4 KiB | [pgsphere_19-1.5.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_19-1.5.2-1PGSTY.el9.aarch64.rpm) |
+| `pgsphere_19` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 302.3 KiB | [pgsphere_19-1.5.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_19-1.5.2-1PGSTY.el10.x86_64.rpm) |
+| `pgsphere_19` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 304.8 KiB | [pgsphere_19-1.5.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_19-1.5.2-1PGSTY.el10.aarch64.rpm) |
+{.downloads .wide .expand}
+
+{{< /tab >}}
 {{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsphere_18` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 125.2 KiB | [pgsphere_18-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_18-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pgsphere_18` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 122.2 KiB | [pgsphere_18-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_18-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pgsphere_18` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 118.2 KiB | [pgsphere_18-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_18-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pgsphere_18` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 116.7 KiB | [pgsphere_18-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_18-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pgsphere_18` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 119.3 KiB | [pgsphere_18-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_18-1.5.2-1PIGSTY.el10.x86_64.rpm) |
-| `pgsphere_18` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 119.5 KiB | [pgsphere_18-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_18-1.5.2-1PIGSTY.el10.aarch64.rpm) |
+| `pgsphere_18` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 293.2 KiB | [pgsphere_18-1.5.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_18-1.5.2-1PGSTY.el8.x86_64.rpm) |
+| `pgsphere_18` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 290.0 KiB | [pgsphere_18-1.5.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_18-1.5.2-1PGSTY.el8.aarch64.rpm) |
+| `pgsphere_18` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 299.4 KiB | [pgsphere_18-1.5.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_18-1.5.2-1PGSTY.el9.x86_64.rpm) |
+| `pgsphere_18` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 299.5 KiB | [pgsphere_18-1.5.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_18-1.5.2-1PGSTY.el9.aarch64.rpm) |
+| `pgsphere_18` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 302.3 KiB | [pgsphere_18-1.5.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_18-1.5.2-1PGSTY.el10.x86_64.rpm) |
+| `pgsphere_18` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 304.7 KiB | [pgsphere_18-1.5.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_18-1.5.2-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 405.0 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg12+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg12+2_amd64.deb) |
 | `postgresql-18-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 405.0 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
 | `postgresql-18-pgsphere` | `1.5.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 400.2 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg12+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg12+2_arm64.deb) |
@@ -101,12 +112,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsphere_17` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 125.2 KiB | [pgsphere_17-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_17-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pgsphere_17` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 122.2 KiB | [pgsphere_17-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_17-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pgsphere_17` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 118.2 KiB | [pgsphere_17-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_17-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pgsphere_17` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 116.7 KiB | [pgsphere_17-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_17-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pgsphere_17` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 119.3 KiB | [pgsphere_17-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_17-1.5.2-1PIGSTY.el10.x86_64.rpm) |
-| `pgsphere_17` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 119.6 KiB | [pgsphere_17-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_17-1.5.2-1PIGSTY.el10.aarch64.rpm) |
+| `pgsphere_17` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 293.3 KiB | [pgsphere_17-1.5.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_17-1.5.2-1PGSTY.el8.x86_64.rpm) |
+| `pgsphere_17` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 290.0 KiB | [pgsphere_17-1.5.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_17-1.5.2-1PGSTY.el8.aarch64.rpm) |
+| `pgsphere_17` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 299.4 KiB | [pgsphere_17-1.5.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_17-1.5.2-1PGSTY.el9.x86_64.rpm) |
+| `pgsphere_17` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 299.5 KiB | [pgsphere_17-1.5.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_17-1.5.2-1PGSTY.el9.aarch64.rpm) |
+| `pgsphere_17` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 302.3 KiB | [pgsphere_17-1.5.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_17-1.5.2-1PGSTY.el10.x86_64.rpm) |
+| `pgsphere_17` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 304.9 KiB | [pgsphere_17-1.5.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_17-1.5.2-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 404.8 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg12+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg12+2_amd64.deb) |
 | `postgresql-17-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 404.8 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
 | `postgresql-17-pgsphere` | `1.5.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 400.2 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg12+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg12+2_arm64.deb) |
@@ -134,12 +145,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsphere_16` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 125.3 KiB | [pgsphere_16-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_16-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pgsphere_16` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 122.2 KiB | [pgsphere_16-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_16-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pgsphere_16` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 118.2 KiB | [pgsphere_16-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_16-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pgsphere_16` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 116.7 KiB | [pgsphere_16-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_16-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pgsphere_16` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 119.3 KiB | [pgsphere_16-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_16-1.5.2-1PIGSTY.el10.x86_64.rpm) |
-| `pgsphere_16` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 119.5 KiB | [pgsphere_16-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_16-1.5.2-1PIGSTY.el10.aarch64.rpm) |
+| `pgsphere_16` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 293.2 KiB | [pgsphere_16-1.5.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_16-1.5.2-1PGSTY.el8.x86_64.rpm) |
+| `pgsphere_16` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 290.0 KiB | [pgsphere_16-1.5.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_16-1.5.2-1PGSTY.el8.aarch64.rpm) |
+| `pgsphere_16` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 299.4 KiB | [pgsphere_16-1.5.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_16-1.5.2-1PGSTY.el9.x86_64.rpm) |
+| `pgsphere_16` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 299.5 KiB | [pgsphere_16-1.5.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_16-1.5.2-1PGSTY.el9.aarch64.rpm) |
+| `pgsphere_16` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 302.4 KiB | [pgsphere_16-1.5.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_16-1.5.2-1PGSTY.el10.x86_64.rpm) |
+| `pgsphere_16` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 304.8 KiB | [pgsphere_16-1.5.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_16-1.5.2-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 404.8 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg12+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg12+2_amd64.deb) |
 | `postgresql-16-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 404.8 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
 | `postgresql-16-pgsphere` | `1.5.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 400.2 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg12+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg12+2_arm64.deb) |
@@ -167,12 +178,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsphere_15` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 127.2 KiB | [pgsphere_15-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_15-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pgsphere_15` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 124.1 KiB | [pgsphere_15-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_15-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pgsphere_15` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 114.7 KiB | [pgsphere_15-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_15-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pgsphere_15` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 114.8 KiB | [pgsphere_15-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_15-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pgsphere_15` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 114.5 KiB | [pgsphere_15-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_15-1.5.2-1PIGSTY.el10.x86_64.rpm) |
-| `pgsphere_15` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 116.8 KiB | [pgsphere_15-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_15-1.5.2-1PIGSTY.el10.aarch64.rpm) |
+| `pgsphere_15` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 294.7 KiB | [pgsphere_15-1.5.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_15-1.5.2-1PGSTY.el8.x86_64.rpm) |
+| `pgsphere_15` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 291.3 KiB | [pgsphere_15-1.5.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_15-1.5.2-1PGSTY.el8.aarch64.rpm) |
+| `pgsphere_15` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 296.0 KiB | [pgsphere_15-1.5.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_15-1.5.2-1PGSTY.el9.x86_64.rpm) |
+| `pgsphere_15` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 297.1 KiB | [pgsphere_15-1.5.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_15-1.5.2-1PGSTY.el9.aarch64.rpm) |
+| `pgsphere_15` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 297.9 KiB | [pgsphere_15-1.5.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_15-1.5.2-1PGSTY.el10.x86_64.rpm) |
+| `pgsphere_15` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 301.9 KiB | [pgsphere_15-1.5.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_15-1.5.2-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 406.4 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg12+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg12+2_amd64.deb) |
 | `postgresql-15-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 405.9 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
 | `postgresql-15-pgsphere` | `1.5.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 401.2 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg12+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg12+2_arm64.deb) |

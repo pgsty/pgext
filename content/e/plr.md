@@ -38,8 +38,8 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `8.4.8.11` | {{< bg "19" "" "green" >}} {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} | `plr` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `8.4.8.11` | {{< bg "19" "plr_19" "green" >}} {{< bg "18" "plr_18" "green" >}} {{< bg "17" "plr_17" "green" >}} {{< bg "16" "plr_16" "green" >}} {{< bg "15" "plr_15" "green" >}} | `plr_$v` | `R-core` |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `8.4.8.11` | {{< bg "19" "postgresql-19-plr" "green" >}} {{< bg "18" "postgresql-18-plr" "green" >}} {{< bg "17" "postgresql-17-plr" "green" >}} {{< bg "16" "postgresql-16-plr" "green" >}} {{< bg "15" "postgresql-15-plr" "green" >}} | `postgresql-$v-plr` | `r-base-core` |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `8.4.8.10` | {{< bg "19" "plr_19" "green" >}} {{< bg "18" "plr_18" "green" >}} {{< bg "17" "plr_17" "green" >}} {{< bg "16" "plr_16" "green" >}} {{< bg "15" "plr_15" "green" >}} | `plr_$v` | `R-core` |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `8.4.8.10` | {{< bg "19" "postgresql-19-plr" "green" >}} {{< bg "18" "postgresql-18-plr" "green" >}} {{< bg "17" "postgresql-17-plr" "green" >}} {{< bg "16" "postgresql-16-plr" "green" >}} {{< bg "15" "postgresql-15-plr" "green" >}} | `postgresql-$v-plr` | `r-base-core` |
 {.packages .wide .expand}
 
 
