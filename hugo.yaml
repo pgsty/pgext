@@ -42,6 +42,9 @@ security:
 # Resolve the pinned module instead of the retained legacy vendor snapshot.
 ignoreVendorPaths: 'github.com/pgsty/oink'
 module:
+  hugoVersion:
+    extended: true
+    min: '0.168.0'
   imports:
     - path: github.com/pgsty/oink
   mounts:
