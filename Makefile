@@ -7,7 +7,7 @@ THEME_DIR ?= ../oink
 # Path      :   Makefile
 # Copyright (C) 2019-2025 Ruohang Feng
 #==============================================================#
-VERSION=v1.7.2
+VERSION=v1.7.3
 default: v dev
 
 PGURL="postgres:///data"
