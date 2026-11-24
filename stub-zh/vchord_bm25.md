@@ -2,6 +2,9 @@
 
 来源：
 
+- [1.2.0 README](https://github.com/pgsty/vchord_bm25/blob/1.2.0/README.md)
+- [1.2.0 release](https://github.com/pgsty/vchord_bm25/blob/1.2.0/docs/release-notes/1.2.0.md)
+- [1.2.0 control](https://github.com/pgsty/vchord_bm25/blob/1.2.0/vchord_bm25.control)
 - [安装说明](https://vchord.pgsty.com/docs/bm25/getting-started/installation/)
 - [原生 tsvector 入门](https://vchord.pgsty.com/docs/bm25/getting-started/quick-start/)
 - [1.0.0 迁移与权限](https://vchord.pgsty.com/docs/bm25/reference/migration/)
@@ -77,3 +80,9 @@ SELECT bm25_maintain('documents_bm25');
 索引只支持一个索引列，不支持不记日志的表。访问方法名称在数据库内唯一，因此不能与另一个定义了 `bm25` 的扩展共存。
 
 0.3.x 的原地升级被明确禁止。应保留旧数据库及其库文件，导出原始文本，在使用独立库目录的新环境中安装 1.0.0。重新生成原生向量、重建索引，并修改查询参数顺序、类型、设置和触发器后，再切换应用。只增加数据库或端口、却共用旧库目录，不能实现所需隔离。复制二进制索引，或对旧 `bm25vector` 列执行 `REINDEX`，都无法迁移 API。
+
+### 版本 1.2.0
+
+1.2.0 支持 PostgreSQL 15–19。安装匹配文件并重启 PostgreSQL，然后执行 `ALTER EXTENSION vchord_bm25 UPDATE;`。从 1.0.0 或 1.1.0 升级可保留 SQL 接口与格式 4 索引，无需例行 REINDEX。PostgreSQL 14 须先升级服务器；前述 0.3.x 迁移边界仍然适用。
+
+本次修复预过滤错误清理、规划器成本和并行构建的快照保护，并在 `bm25_maintain` 中拒绝无效索引或分区索引。这些修复不替代正常 vacuum、权限检查或应用重试处理。

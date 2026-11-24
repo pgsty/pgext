@@ -2,14 +2,14 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/README.md)
-- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pure.control)
-- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pureu.control)
-- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pure--0.1.sql)
-- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pureu--0.1.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/README.md)
+- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pure.control)
+- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pureu.control)
+- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pure--0.1.sql)
+- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pureu--0.1.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/CHANGELOG.md)
 
-`pg_pure` provides the trusted Pure procedural language and SPI database access. Distribution 0.8.0 retains SQL extension version 0.1. Since 0.2.0, trusted functions execute in a libpure safe-mode interpreter; the earlier execution refusal no longer applies.
+`pg_pure` provides the trusted Pure procedural language and SPI database access. Distribution 0.10.0 retains SQL extension version 0.1. Since 0.2.0, trusted functions execute in a libpure safe-mode interpreter; the earlier execution refusal no longer applies.
 
 ### Core Workflow
 
@@ -60,3 +60,7 @@ Distribution 0.8.0 retains SQL version 0.1 and adds tested `mpfr`, `dict` and `r
 ### Distribution 0.9.0
 
 SQL version remains 0.1. Parameterized `sql::query` and `sql::exec` now transparently cache up to 128 plans per backend, keyed by SQL text and inferred parameter types. PostgreSQL revalidates plans when referenced objects, search path or role change. The API is unchanged; replace loaded libraries through the existing session/restart procedure.
+
+### Call-Scoped Streaming in 0.10.0
+
+`sql::stream` returns a lazy Pure list backed by an SPI cursor, fetching rows in batches as consumed. It accepts a query or a query with parameters. The stream is valid only inside the function call that opened it; forcing it after the call returns raises `sql::error`. It is not a holdable cursor for later SQL statements. The SQL extension version remains 0.1.

@@ -2,12 +2,12 @@
 
 来源：
 
-- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.0/README.md)
-- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.0/pg_parquet.control)
-- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.0/Cargo.toml)
-- [Official source](https://github.com/CrunchyData/pg_parquet/releases/tag/v0.6.0)
+- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.1/README.md)
+- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.1/pg_parquet.control)
+- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.1/Cargo.toml)
+- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.1/sql/pg_parquet--0.6.0--0.6.1.sql)
 
-`pg_parquet` 0.6.0 通过 PostgreSQL COPY 读写 Parquet，并检查文件元数据。源码目标为 PostgreSQL 14–19，可访问服务器本地文件以及 S3、Azure、GCS 和 HTTP(S) 端点；这些位置及凭据不包含在普通 PostgreSQL 备份中。
+`pg_parquet` 0.6.1 通过 PostgreSQL COPY 读写 Parquet，并检查文件元数据。源码目标为 PostgreSQL 14–19，可访问服务器本地文件以及 S3、Azure、GCS 和 HTTP(S) 端点；这些位置及凭据不包含在普通 PostgreSQL 备份中。
 
 ### 启用与复制
 
@@ -55,3 +55,5 @@ SELECT * FROM pg_stat_progress_copy;
 ### 升级
 
 部署匹配服务器主版本的文件，按预加载维护流程操作，并采用发行版提供的 SQL 更新路径。迁移到 0.6.0 前应检查目录导出任务、推断复合类型的依赖、凭据映射及类型转换行为。
+
+0.6.1 明确了空间转换边界：只有 PostGIS 3.7 或更高版本的 `ST_Multi` 才会将 `TIN` 或 `POLYHEDRALSURFACE` 转成 `MULTIPOLYGON`；旧版本原样返回这些输入。没有合适转换时，可用显式二进制列保留不受支持的原始几何对象。

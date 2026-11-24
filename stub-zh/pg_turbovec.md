@@ -2,9 +2,9 @@
 
 来源：
 
-- [2.16.2 变更日志](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.2/CHANGELOG.md)
-- [2.16.2 控制文件](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.2/pg_turbovec.control)
-- [2.16.2 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.2/README.md)
+- [2.16.4 变更日志](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.4/CHANGELOG.md)
+- [2.16.4 控制文件](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.4/pg_turbovec.control)
+- [2.16.4 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.4/README.md)
 - [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/docs/PRODUCTION.md)
 - [v2.16.0 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/README.md)
 - [v2.16.0 变更日志](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/CHANGELOG.md)
@@ -12,7 +12,7 @@
 - [控制文件](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/pg_turbovec.control)
 - [过滤指南](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/docs/FILTERING.md)
 
-`pg_turbovec` 2.16.0 提供 `turbovec.vector` 类型和紧凑向量索引，并用堆中的原始向量对候选项重新排序。平坦搜索扫描量化编码，IVF 则进一步只搜索选定的单元；除非候选集覆盖所有真实近邻，两者都属于近似搜索。**任何 1.x 索引升级到 2.x 都必须重建。**
+`pg_turbovec` 2.16.4 提供 `turbovec.vector` 类型和紧凑向量索引，并用堆中的原始向量对候选项重新排序。平坦搜索扫描量化编码，IVF 则进一步只搜索选定的单元；除非候选集覆盖所有真实近邻，两者都属于近似搜索。**任何 1.x 索引升级到 2.x 都必须重建。**
 
 ### 创建和查询向量
 
@@ -49,7 +49,7 @@ LIMIT 3;
 
 无需预加载也能建立索引和查询，但上游建议将库加入 `shared_preload_libraries`，使调优 GUC 正确注册。应与已有条目合并并重启 PostgreSQL，不要替换其他必需的库：
 
-```conf
+```ini
 shared_preload_libraries = 'pg_turbovec'
 ```
 
@@ -86,7 +86,7 @@ WHERE a.amname = 'turbovec';
 
 ### 兼容性与维护
 
-控制文件将对象固定在 `turbovec` 模式中，设置 `superuser = false`，且不支持重定位。上游 2.16.2 支持 PostgreSQL 13–19；包可用范围须单独检查。替换二进制文件、预加载调优和跨索引格式迁移分别涉及重启与重建要求。2.10.3 并行执行冷后端的编码重排，不改变已有索引字节。应按实际语料规划索引构建内存、临时空间、WAL 和 vacuum 工作量，不要将上游测试数字当作性能保证。
+控制文件将对象固定在 `turbovec` 模式中，设置 `superuser = false`，且不支持重定位。上游 2.16.4 支持 PostgreSQL 13–19；包可用范围须单独检查。替换二进制文件、预加载调优和跨索引格式迁移分别涉及重启与重建要求。2.10.3 并行执行冷后端的编码重排，不改变已有索引字节。应按实际语料规划索引构建内存、临时空间、WAL 和 vacuum 工作量，不要将上游测试数字当作性能保证。
 
 ### 升级到 2.11.0
 
@@ -139,3 +139,7 @@ WHERE a.amname = 'turbovec';
 ### 版本 2.16.2
 
 2.16.2 将 PostgreSQL 19 列为正式支持版本，并将上游 pgrx 依赖更新到 0.19.4。SQL 接口与索引格式不变，本次升级不新增 REINDEX 要求。安装匹配的库文件后执行 `ALTER EXTENSION pg_turbovec UPDATE TO '2.16.2';`。受旧版本缺陷影响的索引仍须遵循原有修复要求。
+
+### 2.16.4 的事务正确性修复
+
+2.16.4 修复保存点回滚后索引遗漏行、其他会话提交后仍读取旧索引内容，以及无日志索引的崩溃初始化问题。此次升级无需因格式变化重建索引，但不会自动修复已遗漏的行。曾发生相关保存点回滚或捕获 PL/pgSQL 异常时，应按上游步骤先执行 VACUUM 再核对计数，存在遗漏则执行 REINDEX。

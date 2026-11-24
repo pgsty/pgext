@@ -2,13 +2,13 @@
 
 来源：
 
-- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/README.md)
-- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/pg_fts.control)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/CHANGELOG.md)
-- [pg_fts--1.18.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/pg_fts--1.18.0.sql)
-- [pg_fts--1.16.0--1.17.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/pg_fts--1.16.0--1.17.0.sql)
+- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.1/README.md)
+- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.1/pg_fts.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.1/CHANGELOG.md)
+- [pg_fts--1.18.1.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.1/pg_fts--1.18.1.sql)
+- [pg_fts--1.16.0--1.17.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.1/pg_fts--1.16.0--1.17.0.sql)
 
-`pg_fts` 1.18.0 通过专用 fts 倒排索引提供 BM25/BM25F 排序的全文检索。支持 PostgreSQL 17、18 与 19；19 使用 19.0 正式版测试。控制文件标记可信且可重定位，核心使用无需共享预加载。
+`pg_fts` 1.18.1 通过专用 fts 倒排索引提供 BM25/BM25F 排序的全文检索。支持 PostgreSQL 17、18 与 19；19 使用 19.0 正式版测试。控制文件标记可信且可重定位，核心使用无需共享预加载。
 
 ### 检索与排序
 
@@ -85,3 +85,7 @@ SELECT fts_vacuum('docs_fts');
 ### 版本 1.18.0
 
 1.18.0 验证了 PostgreSQL 19.0 支持，并修复启用断言的服务器上因 I/O 缓冲环上下文不当而触发的 autovacuum 工作进程断言失败。此次 sparsemap 更新不改变索引格式或 SQL 对象。部署匹配文件、替换使用旧库的会话后执行 `ALTER EXTENSION pg_fts UPDATE TO '1.18.0';`。本次发布不新增 REINDEX 要求；上文针对历史版本的数据及索引修复仍须完成。
+
+### 1.18.1 的宽范围过滤
+
+1.18.1 修复在大型语料上执行宽范围布尔过滤时的内存分配大小错误。此类过滤仍需与匹配集合规模成正比的内存，内存有限时应限制全库过滤的并发量。SQL 对象、评分和磁盘格式不变；从 1.18.0 执行 `ALTER EXTENSION pg_fts UPDATE TO '1.18.1'` 无需新增 REINDEX。

@@ -2,12 +2,12 @@
 
 Sources:
 
-- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.0/README.md)
-- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.0/pg_parquet.control)
-- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.0/Cargo.toml)
-- [Official source](https://github.com/CrunchyData/pg_parquet/releases/tag/v0.6.0)
+- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.1/README.md)
+- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.1/pg_parquet.control)
+- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.1/Cargo.toml)
+- [Official source](https://github.com/CrunchyData/pg_parquet/blob/v0.6.1/sql/pg_parquet--0.6.0--0.6.1.sql)
 
-`pg_parquet` 0.6.0 reads and writes Parquet through PostgreSQL COPY and inspects file metadata. The source targets PostgreSQL 14–19. It uses server-side local files or S3, Azure, GCS and HTTP(S) endpoints; these locations and credentials are separate from a PostgreSQL backup.
+`pg_parquet` 0.6.1 reads and writes Parquet through PostgreSQL COPY and inspects file metadata. The source targets PostgreSQL 14–19. It uses server-side local files or S3, Azure, GCS and HTTP(S) endpoints; these locations and credentials are separate from a PostgreSQL backup.
 
 ### Enable and Copy
 
@@ -55,3 +55,5 @@ The `load_from` table option infers columns and loads rows. Composite types are 
 ### Upgrade
 
 Deploy files matching the server major, follow the preload maintenance procedure and use the supplied SQL update path. Check existing folder-export jobs, inferred composite-type dependencies, credential mappings and type coercion behavior before moving to 0.6.0.
+
+Version 0.6.1 clarifies the spatial conversion boundary: `ST_Multi` converts `TIN` or `POLYHEDRALSURFACE` to `MULTIPOLYGON` only on PostGIS 3.7 or later; older versions return those inputs unchanged. Preserve original unsupported geometries as an explicit binary column when an appropriate conversion is unavailable.

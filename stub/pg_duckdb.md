@@ -2,6 +2,9 @@
 
 Sources:
 
+- [Release 1.2.2](https://github.com/duckdb/pg_duckdb/releases/tag/v1.2.2)
+- [Control 1.2.2](https://github.com/duckdb/pg_duckdb/blob/v1.2.2/pg_duckdb.control)
+
 - [README.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/README.md)
 - [pg_duckdb.control](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/pg_duckdb.control)
 - [settings.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/settings.md)
@@ -43,3 +46,7 @@ Ordinary queries use PostgreSQL unless forced; DuckDB-only functions or remote s
 A transaction may not write both PostgreSQL and DuckDB tables, or mix DDL for both engines. Keep `duckdb.unsafe_allow_mixed_transactions` disabled: bypassing the rule can commit one side only and lose consistency. Execution inside PostgreSQL functions is also disabled by default; the unsafe setting for it has known crash risks.
 
 Version 1.2.1 supports nested fixed-length arrays and improves numeric and floating conversions. It fixes parallel-worker memory reads, cancellation cleanup and secret-bearing log/statistics handling. These fixes do not remove the need to restrict credentials and review type/query compatibility. Install matching libraries, follow preload restart requirements, and update the SQL extension in each database before relying on new behavior.
+
+### Release 1.2.2
+
+Version 1.2.2 embeds DuckDB 2.0.1, adds PostgreSQL 19 release artifacts and adjusts CA-bundle loading. Install the matching server-major files and follow the extension's existing preload and SQL-upgrade procedure; remote-object credentials and TLS configuration still require deliberate administration.

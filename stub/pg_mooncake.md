@@ -2,80 +2,61 @@
 
 Sources:
 
-- [0.3.0 setup and tutorial](https://github.com/pgsty/pg_mooncake/blob/v0.3.0/README.md)
-- [0.3.0 SQL procedures](https://github.com/pgsty/pg_mooncake/blob/v0.3.0/src/functions.rs)
-- [Dependency guard and DuckDB extension loading](https://github.com/pgsty/pg_mooncake/blob/v0.3.0/src/sql/bootstrap.sql)
-- [Scan synchronization](https://github.com/pgsty/pg_mooncake/blob/v0.3.0/src/duckdb_mooncake.rs)
-- [0.3.0 validation and limitations](https://github.com/pgsty/pg_mooncake/blob/v0.3.0/docs/pg-mooncake-0.3.0-validation.md)
+- [0.3.3 setup and upgrades](https://github.com/pgsty/pg_mooncake/blob/v0.3.3/README.md)
+- [0.3.3 SQL procedures](https://github.com/pgsty/pg_mooncake/blob/v0.3.3/src/functions.rs)
+- [0.3.3 dependency guard](https://github.com/pgsty/pg_mooncake/blob/v0.3.3/src/sql/bootstrap.sql)
+- [0.3.3 release](https://github.com/pgsty/pg_mooncake/releases/tag/v0.3.3)
 
-`pg_mooncake` 0.3.0 creates read-only columnstore mirrors of PostgreSQL tables for analytical queries. Moonlink replicates committed row changes into Arrow buffers and Parquet/Iceberg storage; DuckDB executes scans and aggregates through `pg_duckdb`. This PGSTY release targets PostgreSQL 14–18 and requires exactly `pg_duckdb` 1.2.0 with DuckDB 2.0.0 and the matching bundled DuckDB Mooncake extension.
+`pg_mooncake` 0.3.3 maintains read-only columnstore mirrors of PostgreSQL tables through logical replication into Arrow and Parquet/Iceberg storage. This PGSTY release supports PostgreSQL 15–19 and requires exactly `pg_duckdb` 1.2.1, DuckDB 2.0.1 and Mooncake scanner 0.0.5.
 
 ### Configure and Enable
 
-Have an administrator configure logical replication and add both libraries to the existing preload list, in this order. Point the repository setting at the installed local DuckDB extension. This example uses the EL PostgreSQL 17 layout:
+An administrator must retain existing preload entries, add both libraries in this order and restart PostgreSQL:
 
 ```ini
 shared_preload_libraries = 'pg_duckdb,pg_mooncake'
 wal_level = logical
-duckdb.allow_community_extensions = true
 duckdb.allow_unsigned_extensions = true
 mooncake.extension_repository = '/usr/pgsql-17/share/extension/pg_mooncake'
 ```
 
-For another installation, use the directory under the matching `pg_config --sharedir`, followed by `/extension/pg_mooncake`. The tag falls back to the community repository when this setting is absent; it does not automatically select the bundled directory. Unsigned loading is required for this local binary. Ensure sufficient replication slots, WAL senders, and worker processes, then restart PostgreSQL.
+Use the absolute directory from the target server's `pg_config --sharedir`, followed by `/extension/pg_mooncake`; the example is an EL PostgreSQL 17 path. The local scanner works with community extensions disabled. Install using a superuser in a fresh session:
 
 ```sql
 CREATE EXTENSION pg_mooncake CASCADE;
 ```
 
-Extension creation requires superuser privileges and checks the installed dependency version. Mirror creation opens separate database connections: source DDL must already be committed, and the connecting role must be able to authenticate, read the source, and perform the required replication/publication setup. Run the example in autocommit mode.
+The dependency version is checked. Configure enough replication slots, WAL senders and workers. Source connections need authentication, table access and replication/publication privileges.
 
-### Write to the Source, Query the Mirror
+### Mirror and Inspect
+
+Run mirror creation as a standalone command in a writable session, after source DDL commits:
 
 ```sql
-CREATE TABLE trades (
-    id bigint PRIMARY KEY,
-    symbol text,
-    traded_at timestamp,
-    price real
-);
+CREATE TABLE trades (id bigint PRIMARY KEY, symbol text, price real);
 CALL mooncake.create_table('trades_analytics', 'trades');
-
-INSERT INTO trades VALUES
-    (1, 'AMZN', '2026-11-05 10:00:00', 207),
-    (2, 'AMZN', '2026-11-05 10:05:00', 210),
-    (3, 'AAPL', '2026-11-05 10:10:00', 203);
-UPDATE trades SET price = 209 WHERE id = 1;
-DELETE FROM trades WHERE id = 3;
-
+INSERT INTO trades VALUES (1, 'AMZN', 207), (2, 'AMZN', 210);
 SELECT symbol, avg(price) FROM trades_analytics GROUP BY symbol;
-EXPLAIN SELECT avg(price) FROM trades_analytics WHERE symbol = 'AMZN';
-```
-
-The helper copies existing rows and starts logical replication. Send `INSERT`, `UPDATE`, and `DELETE` to the source table; the mirror uses `USING mooncake` and is not a writable replacement. Rolled-back source changes are not replicated. Queries can combine mirror data with regular heap tables through supported DuckDB query plans; inspect `EXPLAIN` for a DuckDB scan.
-
-In this tag, scan and snapshot synchronization use the current backend's last-commit LSN. Do not treat this as a general guarantee that every other session's latest write has been ingested, or that a remote source shares the local WAL position. Monitor replication progress for cross-session or remote freshness requirements.
-
-### Procedures and Maintenance
-
-| Interface | Purpose |
-| --- | --- |
-| `mooncake.create_table(dst, src, src_uri, table_config)` | Create a mirror; the last two arguments default to NULL. Use the exact named argument `src_uri` for a remote PostgreSQL source. |
-| `mooncake.list_tables()` | Return registered tables, commit/flush LSNs, and Iceberg warehouse locations. |
-| `mooncake.create_snapshot(dst)` | Flush buffered data into an Iceberg snapshot at the requested synchronization point. |
-| `mooncake.optimize_table(dst, mode)` | Request compaction; full mode compacts data and indexes. |
-| `mooncake.load_files(dst, files)` | Unsupported in 0.3.0; raises SQLSTATE `0A000`. |
-
-```sql
 SELECT * FROM mooncake.list_tables();
 CALL mooncake.create_snapshot('trades_analytics');
 CALL mooncake.optimize_table('trades_analytics', 'full');
 ```
 
-In-database reads can include buffered Arrow data, while external Iceberg readers see published snapshots. Monitor logical-slot lag and retained WAL as well as mirror storage. Dropping the destination table invokes Moonlink cleanup; verify that its registration and replication slot are removed. Preserve the source data until cleanup and any migration have been checked.
+Write to the source table; the mirror is not writable. Use the `src_uri` argument for a remote source. Fresh reads and snapshots use the source server's WAL position. External Iceberg readers see published snapshots, while local queries can also see buffered data.
 
-### Compatibility and Upgrade Boundaries
+### Durability and Upgrades
 
-Mirror setup handles replica identity for source tables without a primary key, including existing leaf partitions. Partitions added later also need `REPLICA IDENTITY FULL` before receiving writes. `TRUNCATE` replication and automatic handling of later partition DDL are outside the supported/tested scope. Do not assume arbitrary schema changes or PostgreSQL-specific functions are supported by the mirror.
+Version 0.3.3 fixes snapshots that could acknowledge a source commit before Iceberg persisted it. From 0.3.1 or 0.3.2, install matching libraries and scanner, restart, refresh a cached older scanner from the configured repository, then reconnect before updating:
 
-The v0.3.0 tag provides no in-place SQL upgrade path from 0.2.0. Use a separately validated fresh installation and rebuild mirrors from retained source tables. Replace the PostgreSQL library and matching DuckDB extension together: binaries built for DuckDB 1.4 cannot be reused with DuckDB 2.0. The tagged validation covers local storage and normal restart; S3, crash recovery, and stress behavior are not established by those results.
+```sql
+SELECT duckdb.raw_query(format('FORCE INSTALL mooncake FROM %L', current_setting('mooncake.extension_repository')));
+ALTER EXTENSION pg_mooncake UPDATE TO '0.3.3';
+```
+
+Take a fresh snapshot of every mirror before using it for backup or migration. From the WAL-based 0.3.0, first stop source writers, compare every mirror against its source, and verify snapshots under the old binaries. Stop PostgreSQL cleanly and preserve complete storage backups and the old `_wal` offline before starting the new worker. Follow the tagged per-database procedure; a new snapshot cannot recover old WAL already lost. Rebuild unverifiable mirrors from authoritative sources.
+
+### Storage and Lifecycle
+
+For physical backups or streaming standbys, set `mooncake.data_directory` outside `PGDATA` before creating mirrors, give each instance private storage and back it up separately. Logical dumps do not preserve Moonlink data or replication state. Protect source connection strings and metadata files.
+
+Before renaming or dropping a database with mirrors, drop its mirrors, commit and run `SELECT mooncake._reconcile_drops()` while the worker is available. Existing leaf partitions receive full replica identity during setup; later partition changes require separate handling. Monitor slot lag and retained WAL, and verify cleanup before discarding source data.

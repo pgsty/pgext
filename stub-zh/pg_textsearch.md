@@ -2,16 +2,19 @@
 
 来源：
 
-- [Version 1.5.1 README](https://github.com/timescale/pg_textsearch/blob/v1.5.1/README.md)
-- [Control file](https://github.com/timescale/pg_textsearch/blob/v1.5.1/pg_textsearch.control)
-- [Versioned SQL](https://github.com/timescale/pg_textsearch/blob/v1.5.1/sql/pg_textsearch--1.5.1.sql)
-- [Version 1.5.1 release](https://github.com/timescale/pg_textsearch/releases/tag/v1.5.1)
+- [1.6.0 README](https://github.com/timescale/pg_textsearch/blob/v1.6.0/README.md)
+- [1.6.0 control](https://github.com/timescale/pg_textsearch/blob/v1.6.0/pg_textsearch.control)
+- [1.6.0 SQL](https://github.com/timescale/pg_textsearch/blob/v1.6.0/sql/pg_textsearch--1.6.0.sql)
+- [1.6.0 upgrade guide](https://github.com/timescale/pg_textsearch/blob/v1.6.0/UPGRADING.md)
+- [1.6.0 release](https://github.com/timescale/pg_textsearch/releases/tag/v1.6.0)
 
-`pg_textsearch` 通过 `bm25` 访问方法和 `<@>` 运算符提供 BM25 全文检索。1.5.1 支持 PostgreSQL 17 和 18，要求预加载并重启。修改预加载列表时应保留已有条目。
+`pg_textsearch` 1.6.0 通过 `bm25` 访问方法与 `<@>` 运算符，在 PostgreSQL 17–19 中提供 BM25 排序的文本检索。
 
-### 构建与查询
+### 启用与查询
 
-```conf
+管理员须将库加入已有预加载列表并重启 PostgreSQL。安装扩展需要提升权限。
+
+```ini
 shared_preload_libraries = 'pg_textsearch'
 ```
 
@@ -30,7 +33,7 @@ ORDER BY content <@> 'database system'
 LIMIT 5;
 ```
 
-分数是 BM25 值的相反数，因此数值越低越靠前。使用 `ORDER BY` 与 `LIMIT` 进行 top-k 检索。独立评分、部分索引或 PL/pgSQL 中应明确指定索引：
+分数是 BM25 值的相反数，越小越靠前。部分索引、歧义表达式、预备或动态查询文本及 PL/pgSQL 应明确指定索引。独立评分要求对索引表或列具有 SELECT 权限。
 
 ```sql
 SELECT id FROM documents
@@ -38,55 +41,47 @@ ORDER BY content <@> to_bm25query('database system', 'docs_idx')
 LIMIT 5;
 ```
 
-### 索引与查询选项
+### 过滤与索引选项
 
-`text_config` 是必填项，指定 PostgreSQL 文本搜索配置。`k1` 默认是 1.2，`b` 默认是 0.75。`bm25query` 类型和 `to_bm25query(text, text)` 显式携带查询及索引上下文。独立评分需要目标表或索引列的 SELECT 权限。
+`text_config` 必填；`k1` 默认为 1.2，`b` 默认为 0.75。支持不可变文本表达式、文本类数组、部分索引及分区表。查询须重复索引表达式，部分索引还须有匹配的过滤条件。中文文本可选用 `zhparser` 等解析器。
 
-扩展支持 `text[]`、`varchar[]` 和 `bpchar[]`、不可变文本表达式索引、部分索引及分区表。查询中须使用与索引匹配的表达式。部分索引需要匹配的过滤条件及明确的索引名。1.5.0 改进了带过滤条件的 top-k 执行，但严格的后置过滤仍可能导致结果数少于请求数。
+```sql
+SET default_text_search_config = 'english';
+SELECT id FROM documents
+WHERE content @@ to_tsquery('english', 'database & !mysql')
+ORDER BY content <@> 'database'
+LIMIT 5;
+```
 
-中文分词可配置 `zhparser` 等解析器，再使用相应的文本搜索配置；这是该工作流的可选依赖。对于缺少空白分词边界的超长文本，上游建议由应用确定分块边界，并使用文本数组保存。
+布尔查询支持 AND/OR/NOT、短语、前缀与权重。短语和权重条件可能需要表行复查。文本搜索配置须与索引一致；使用缓存的布尔查询计划期间若配置发生变化，应释放并重新准备语句。
 
-### 维护与配置
+1.6.0 可在排序扫描内部执行符合条件的常量布尔谓词，前提是每个匹配结果必然包含某个排序词项。其他形式，包括查询词未知的通用计划，继续由 PostgreSQL 过滤和排序。后置过滤的排序扫描会扩大评分批次，直到获得足够的合格行或遍历完匹配项。应检查 EXPLAIN；较小的 LIMIT 不保证工作量小。
 
-从 1.3.0 开始，持久化内存表存放于索引页中，使用 PostgreSQL 标准 WAL 回放。查询仍可使用共享内存读缓存，由下列缓存和内存上限配置控制。自动压实在刷写过程中同步执行，重写入负载可能受到压实延迟影响。
+### 维护与使用边界
+
+持久化内存表位于受 WAL 保护的索引页中。共享内存缓存可选；`pg_textsearch.memory_limit` 默认 2GB，是准入预算的近似值，并非严格上限。`pg_textsearch.default_limit` 默认 1000，在 SQL 没有限制条数时决定初始批次大小。刷写和串行 VACUUM 可能执行同步压实。
 
 ```sql
 SELECT bm25_spill_index('docs_idx');
 SELECT bm25_force_merge('docs_idx');
 ```
 
-强制合并适合在批量加载后执行，持续写入时应谨慎使用。VACUUM 也会刷写待处理的内存表页。相关配置包括：
+修改索引的维护函数要求索引所有权，不处理分区父索引，也不能在恢复期间执行。已经发布的物理合并不会被 ROLLBACK 撤销。可选的受管理后台压实需要上游规定的额外配置，内联／手动模式不依赖该配置。执行查询的热备库需要 `hot_standby_feedback = on`，以便在活动快照期间延迟物理页复用。
 
-| 配置 | 默认值 | 用途 |
-| --- | --- | --- |
-| `pg_textsearch.default_limit` | 1000 | 查询无条数限制时的评分上限 |
-| `pg_textsearch.compress_segments` | on | 倒排块压缩 |
-| `pg_textsearch.segments_per_level` | 8 | 压实阈值 |
-| `pg_textsearch.bulk_load_threshold` | 100000 | 每事务触发刷写的词项数量 |
-| `pg_textsearch.memtable_pages_threshold` | 64 | 触发刷写的链页数量 |
-| `pg_textsearch.memtable_cache_enabled` | on | 共享内存读缓存 |
-| `pg_textsearch.memory_limit` | 2GB | 缓存准入的近似预算；0 表示不设上限 |
+`bm25` 访问方法名与 `pg_search`、`vchord_bm25` 等其他提供者冲突。RLS 隐藏行，但 BM25 语料统计仍反映全部索引行。超级用户可将 `pg_textsearch.allow_rls` 设为 off，拒绝新建或重建与 RLS 组合的索引；该设置不会禁用已有索引。
 
-并行构建要求 `maintenance_work_mem` 至少为 64 MB，且有可用的并行维护进程。升级时先准备匹配的二进制文件，重启 PostgreSQL，再按发布说明执行扩展更新。
+### 升级到 1.6.0
+
+安装匹配的库与 SQL 文件，重启 PostgreSQL，然后更新每个数据库：
 
 ```sql
-ALTER EXTENSION pg_textsearch UPDATE;
+ALTER EXTENSION pg_textsearch UPDATE TO '1.6.0';
 ```
 
-### 使用边界
-
-`bm25` 访问方法名与 `pg_search`、`vchord_bm25` 冲突，不应在同一数据库安装相互冲突的提供者。短语匹配在需要时通过保守的堆表复查实现。分数采用各分区自身的统计信息，跨分区可能不可直接比较。超长词项受 PostgreSQL 文本搜索限制影响。固定的 LWLock tranche ID 也可能与其他扩展冲突，导致等待事件名称不准确。
-
-### 1.5.0 查询与维护
-
-布尔过滤现在接受 PostgreSQL `tsquery`，包含 AND/OR/NOT、纯否定、前缀、权重与短语条件；短语／权重可能需要堆表复查。PostgreSQL 19 支持仍为 beta。可选的受管理后台合并要求同一配置数据库中的 `pg_durable` 0.2.8+，并按上游要求预加载和配置；内联／手动模式无需该依赖。`pg_textsearch.allow_rls` 默认开启，BM25 统计包含被 RLS 隐藏的索引行。关闭该设置可阻止在受保护表上新建／重建 BM25 索引及相应 RLS 启用，但不会禁用现有索引。
-
-### 升级到 1.5.1
-
-1.5.1 修复并发刷写／强制合并造成的截断损坏、表达式索引及数组／域类型处理，以及未安装扩展的数据库中的维护操作。安装匹配的库文件并重启 PostgreSQL，然后在各数据库中更新扩展。1.5.0 到 1.5.1 的迁移检查库是否已预加载，没有新增 SQL 对象或显式索引格式迁移。
+1.6.0 保持 1.5.1 的索引格式，并增加感知分区的评分函数。旧版涉及 HOT 链的并行构建可能遗漏行，中断的 VACUUM 也可能留下错误计数或位图。受影响的索引必须重建；升级二进制与 SQL 无法修复其内容。
 
 ```sql
-ALTER EXTENSION pg_textsearch UPDATE TO '1.5.1';
+REINDEX INDEX docs_idx;
 ```
 
-缓存预算是近似值，并发操作可能超过它。执行 BM25 查询的热备库需要设置 `hot_standby_feedback = on`，以便在活动快照期间延迟物理页复用。修改索引的维护函数要求索引所有权，不能在恢复期间执行；已发布的物理合并替换不会被事务回滚撤销。
+普通 REINDEX 会阻塞写入。旧索引还须检查所有跨越版本的升级说明：1.3 之前未刷写的数据需在旧二进制下处理；1.5 之前的索引可能在否定布尔查询中漏掉空文档或仅含停用词的文档；1.5 之前的服务器无法读取版本 9 的索引头。在新二进制修改索引头之前须升级备库，降级二进制不会撤销格式变化。

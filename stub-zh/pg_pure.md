@@ -2,14 +2,14 @@
 
 来源：
 
-- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/README.md)
-- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pure.control)
-- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pureu.control)
-- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pure--0.1.sql)
-- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/pg_pureu--0.1.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.9.0/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/README.md)
+- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pure.control)
+- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pureu.control)
+- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pure--0.1.sql)
+- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pureu--0.1.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/CHANGELOG.md)
 
-`pg_pure` 提供受信任的 Pure 过程语言与 SPI 数据库访问。分发版本 0.8.0 仍使用 SQL 扩展版本 0.1。从 0.2.0 起，受信任函数已能在 libpure 安全模式解释器中执行，早期主动拒绝执行的限制不再适用。
+`pg_pure` 提供受信任的 Pure 过程语言与 SPI 数据库访问。分发版本 0.10.0 仍使用 SQL 扩展版本 0.1。从 0.2.0 起，受信任函数已能在 libpure 安全模式解释器中执行，早期主动拒绝执行的限制不再适用。
 
 ### 核心流程
 
@@ -60,3 +60,7 @@ pg_pure.using = 'math gsl::linalg'
 ### 发行版 0.9.0
 
 SQL 版本仍为 0.1。参数化的 `sql::query` 与 `sql::exec` 现在透明缓存每后端最多 128 个计划，键由 SQL 文本及推断的参数类型组成。引用对象、搜索路径或角色变化时，PostgreSQL 会重新验证计划。API 不变，仍须按现有会话回收或重启流程替换已加载动态库。
+
+### 0.10.0 中限定于调用期的流式读取
+
+`sql::stream` 返回由 SPI 游标支撑的惰性 Pure 列表，随消费按批取行，可接受查询或带参数的查询。流只在创建它的函数调用内有效；调用返回后再求值会抛出 `sql::error`。它不是可供后续 SQL 语句继续读取的持有游标。SQL 扩展版本仍为 0.1。

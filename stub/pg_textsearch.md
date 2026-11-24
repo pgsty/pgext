@@ -2,16 +2,19 @@
 
 Sources:
 
-- [Version 1.5.1 README](https://github.com/timescale/pg_textsearch/blob/v1.5.1/README.md)
-- [Control file](https://github.com/timescale/pg_textsearch/blob/v1.5.1/pg_textsearch.control)
-- [Versioned SQL](https://github.com/timescale/pg_textsearch/blob/v1.5.1/sql/pg_textsearch--1.5.1.sql)
-- [Version 1.5.1 release](https://github.com/timescale/pg_textsearch/releases/tag/v1.5.1)
+- [1.6.0 README](https://github.com/timescale/pg_textsearch/blob/v1.6.0/README.md)
+- [1.6.0 control](https://github.com/timescale/pg_textsearch/blob/v1.6.0/pg_textsearch.control)
+- [1.6.0 SQL](https://github.com/timescale/pg_textsearch/blob/v1.6.0/sql/pg_textsearch--1.6.0.sql)
+- [1.6.0 upgrade guide](https://github.com/timescale/pg_textsearch/blob/v1.6.0/UPGRADING.md)
+- [1.6.0 release](https://github.com/timescale/pg_textsearch/releases/tag/v1.6.0)
 
-`pg_textsearch` provides BM25-ranked full-text search with the `bm25` access method and `<@>` operator. Version 1.5.1 supports PostgreSQL 17 and 18 and requires preloading and restart. Preserve other entries when updating the preload list.
+`pg_textsearch` 1.6.0 provides BM25-ranked text search on PostgreSQL 17–19 through the `bm25` access method and `<@>` operator.
 
-### Build and Query
+### Enable and Query
 
-```conf
+An administrator must add the library to the existing preload list and restart PostgreSQL. Installation requires elevated privileges.
+
+```ini
 shared_preload_libraries = 'pg_textsearch'
 ```
 
@@ -30,7 +33,7 @@ ORDER BY content <@> 'database system'
 LIMIT 5;
 ```
 
-Scores are negative BM25 values, so lower scores rank first. Use `ORDER BY` with `LIMIT` for top-k execution. Specify the index explicitly for standalone scoring, partial indexes, or PL/pgSQL:
+Scores are negative BM25 values: lower values rank first. Use an explicit index for partial indexes, ambiguous expressions, prepared or dynamic query text, and PL/pgSQL. Standalone scoring needs SELECT permission on the indexed table or columns.
 
 ```sql
 SELECT id FROM documents
@@ -38,55 +41,47 @@ ORDER BY content <@> to_bm25query('database system', 'docs_idx')
 LIMIT 5;
 ```
 
-### Index and Query Options
+### Filtering and Index Options
 
-`text_config` is required and names a PostgreSQL text search configuration. `k1` defaults to 1.2 and `b` to 0.75. The `bm25query` type and `to_bm25query(text, text)` carry explicit query/index context. Standalone scoring requires SELECT permission on the table or indexed columns.
+`text_config` is required; `k1` defaults to 1.2 and `b` to 0.75. Immutable text expressions, text-like arrays, partial indexes and partitioned tables are supported. Repeat indexed expressions in queries and supply a matching predicate for partial indexes. A parser such as `zhparser` is an optional dependency for Chinese text.
 
-The extension supports `text[]`, `varchar[]` and `bpchar[]`, immutable text expression indexes, partial indexes and partitioned tables. Repeat an indexed expression in the query. Partial indexes need the matching predicate and an explicit index name. Version 1.5.0 improves filtered top-k execution, but restrictive post-filters can still return fewer rows than requested.
+```sql
+SET default_text_search_config = 'english';
+SELECT id FROM documents
+WHERE content @@ to_tsquery('english', 'database & !mysql')
+ORDER BY content <@> 'database'
+LIMIT 5;
+```
 
-For Chinese tokenization, configure a parser such as `zhparser` and use that text search configuration. This is an optional workflow dependency. For very large texts without whitespace word boundaries, upstream recommends application-controlled chunks in a text array.
+Boolean queries support AND/OR/NOT, phrases, prefixes and weights. Phrase and weight checks can require table-row rechecks. The text-search configuration must match the index. If it changes while using a cached Boolean plan, deallocate and prepare the statement again.
 
-### Maintenance and Configuration
+In 1.6.0, eligible constant Boolean predicates run inside ranked scans when every match is guaranteed to contain a ranking term. Other forms, including generic plans with unknown terms, retain PostgreSQL filtering and sorting. Post-filtered ranked scans expand their scoring batch until enough rows qualify or matches run out. Inspect EXPLAIN; a small LIMIT does not guarantee little work.
 
-Starting with 1.3.0, the durable memtable is stored in index pages and uses standard PostgreSQL WAL replay. Queries can still use a shared-memory read cache, controlled by the cache and memory-limit settings below. Automatic compaction runs during spills, so write-heavy workloads can observe synchronous compaction latency.
+### Maintenance and Boundaries
+
+The durable memtable lives in WAL-logged index pages. Shared-memory caching is optional; `pg_textsearch.memory_limit` defaults to 2GB and is an approximate admission budget, not a hard bound. `pg_textsearch.default_limit` defaults to 1000 and sets the initial batch when no SQL limit is available. Spills and serial VACUUM can perform synchronous compaction.
 
 ```sql
 SELECT bm25_spill_index('docs_idx');
 SELECT bm25_force_merge('docs_idx');
 ```
 
-Use force-merge after bulk loading rather than during steady write traffic. VACUUM also spills pending memtable pages. Relevant settings are:
+Mutating maintenance functions require index ownership and do not operate on partitioned parent indexes or during recovery. Published physical merges are not undone by ROLLBACK. Optional managed background compaction has additional upstream setup requirements; inline/manual modes do not require it. Querying hot standbys need `hot_standby_feedback = on` to delay physical page reuse for active snapshots.
 
-| Setting | Default | Purpose |
-| --- | --- | --- |
-| `pg_textsearch.default_limit` | 1000 | Scoring bound without a query limit |
-| `pg_textsearch.compress_segments` | on | Posting-block compression |
-| `pg_textsearch.segments_per_level` | 8 | Compaction threshold |
-| `pg_textsearch.bulk_load_threshold` | 100000 | Terms per transaction before spilling |
-| `pg_textsearch.memtable_pages_threshold` | 64 | Chain-page count before spilling |
-| `pg_textsearch.memtable_cache_enabled` | on | Shared-memory read cache |
-| `pg_textsearch.memory_limit` | 2GB | Approximate cache admission budget; 0 removes the limit |
+The `bm25` access-method name conflicts with other providers such as `pg_search` and `vchord_bm25`. RLS hides rows but BM25 corpus statistics still reflect all indexed rows. Superusers can set `pg_textsearch.allow_rls` to off to reject new or rebuilt combinations with RLS; this does not disable existing indexes.
 
-Parallel builds require at least 64 MB of `maintenance_work_mem` and available parallel maintenance workers. For upgrades, install the matching binary, restart PostgreSQL and run the extension update according to the release instructions.
+### Upgrade to 1.6.0
+
+Install matching libraries and SQL files, restart PostgreSQL, then update every database:
 
 ```sql
-ALTER EXTENSION pg_textsearch UPDATE;
+ALTER EXTENSION pg_textsearch UPDATE TO '1.6.0';
 ```
 
-### Boundaries
-
-The `bm25` access-method name conflicts with `pg_search` and `vchord_bm25`; do not install conflicting providers in the same database. Phrase matching uses conservative heap rechecks where needed. Partition scores use partition-local statistics and may not be comparable across partitions. Very long tokens inherit PostgreSQL text-search limits. Fixed LWLock tranche IDs can also conflict with another extension and produce misleading wait-event names.
-
-### Version 1.5.0 Queries and Maintenance
-
-Boolean filtering now accepts PostgreSQL `tsquery`, including AND/OR/NOT, pure-negative, prefix, weight and phrase conditions. Phrase/weight conditions may require heap rechecks. PostgreSQL 19 support is beta. Optional managed background compaction requires `pg_durable` 0.2.8+ in the same configured database, preloaded and configured according to upstream; inline/manual modes do not require it. `pg_textsearch.allow_rls` defaults on: BM25 statistics include all indexed rows, including rows hidden by RLS. Turning it off prevents new/rebuilt BM25 indexes on protected tables and related RLS enablement; it does not disable existing indexes.
-
-### Upgrade to 1.5.1
-
-Version 1.5.1 fixes concurrent spill/force-merge truncation corruption, expression-index and array/domain handling, and maintenance in databases without the extension. Install the matching library, restart PostgreSQL, then run the extension update in each database. The 1.5.0-to-1.5.1 migration checks that the library was preloaded; it adds no SQL object or explicit index-format migration.
+Version 1.6.0 keeps the 1.5.1 index format and adds partition-aware scoring functions. Earlier parallel builds involving HOT chains could omit rows, and interrupted VACUUM could leave incorrect counts or bitmaps. Rebuild affected indexes; upgrading binaries and SQL cannot repair their contents.
 
 ```sql
-ALTER EXTENSION pg_textsearch UPDATE TO '1.5.1';
+REINDEX INDEX docs_idx;
 ```
 
-The cache budget is approximate and concurrent work can exceed it. Hot standbys serving BM25 queries require `hot_standby_feedback = on` to delay physical page reuse while snapshots are active. Mutating maintenance helpers require index ownership and cannot run during recovery; published physical merge replacements are not undone by transaction rollback.
+Standard REINDEX blocks writes. Check all intervening upgrade notes for older indexes: pre-1.3 unspilled data needs handling under the old binary, pre-1.5 indexes can omit empty or stopword-only documents from negative Boolean queries, and version-9 headers cannot be read by pre-1.5 servers. Upgrade replicas before new binaries modify index headers; a binary downgrade does not reverse that change.

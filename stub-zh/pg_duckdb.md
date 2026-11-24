@@ -2,6 +2,9 @@
 
 来源：
 
+- [Release 1.2.2](https://github.com/duckdb/pg_duckdb/releases/tag/v1.2.2)
+- [Control 1.2.2](https://github.com/duckdb/pg_duckdb/blob/v1.2.2/pg_duckdb.control)
+
 - [README.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/README.md)
 - [pg_duckdb.control](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/pg_duckdb.control)
 - [settings.md](https://github.com/duckdb/pg_duckdb/blob/v1.2.1/docs/settings.md)
@@ -43,3 +46,7 @@ SET duckdb.force_execution = false;
 同一事务不能同时写 PostgreSQL 和 DuckDB 表，也不能混用两种引擎的 DDL。应保持 `duckdb.unsafe_allow_mixed_transactions` 关闭，绕过限制可能只提交一侧，破坏一致性。默认也禁止在 PostgreSQL 函数内执行 DuckDB；相应的不安全设置存在已知崩溃风险。
 
 1.2.1 支持嵌套定长数组，改善 numeric 与浮点转换，并修复并行工作进程的内存读取、取消清理和日志/统计中含密钥内容的处理。这些修复不能替代凭据权限控制及类型、查询兼容性检查。安装匹配动态库，遵循预加载重启要求，并在各数据库更新 SQL 扩展后再依赖新行为。
+
+### 1.2.2 发行版
+
+1.2.2 内嵌 DuckDB 2.0.1，增加 PostgreSQL 19 发布制品，并调整 CA 证书包加载。安装匹配服务器主版本的文件后，遵循扩展既有的预加载与 SQL 升级流程；远程对象凭据和 TLS 配置仍需单独管理。

@@ -2,6 +2,9 @@
 
 来源：
 
+- [1.4.0 README](https://github.com/pgsty/vchord/blob/1.4.0/README.md)
+- [1.4.0 release](https://github.com/pgsty/vchord/blob/1.4.0/docs/release-notes/1.4.0.md)
+- [1.4.0 control](https://github.com/pgsty/vchord/blob/1.4.0/vchord.control)
 - [安装与升级](https://vchord.pgsty.com/docs/vchord/getting-started/installation/)
 - [分区向量索引](https://vchord.pgsty.com/docs/vchord/usage/indexing/)
 - [图索引与结果顺序](https://vchord.pgsty.com/docs/vchord/usage/graph-index/)
@@ -106,3 +109,11 @@ ALTER EXTENSION vchord UPDATE TO '1.2.0';
 ```
 
 本次发布提供从 0.2.0 到 1.1.1 各版本直接升级的路径，无需重建索引。升级后应重新检查代表性查询的排序：1.2.0 修正了 MaxSim 候选估计、图索引球体过滤、已删除顶点的可见性以及量化边界问题，并提高了默认重排序预算。扩展可重定位，应将安装模式加入搜索路径或使用模式限定的对象名。
+
+### 版本 1.4.0
+
+1.4.0 支持 PostgreSQL 15–19；PostgreSQL 14 必须先升级服务器。安装匹配文件并重启 PostgreSQL，然后在每个数据库执行 `ALTER EXTENSION vchord UPDATE;`。
+
+RQ 过滤键列支持等值、范围和 NULL 条件。`vchordrq.probes` 选择初始列表，`vchordrq.max_probes` 限制后续扩展，默认 -1 允许访问所有列表，并始终保留初始探测。能够扩展的有序扫描会在返回首行前对候选项排序；排序超过 `work_mem` 时可能写入临时文件。降低上限前须测量召回率。
+
+普通 1.3.0 RQ 索引继续使用格式 1001，包含过滤键的新索引使用格式 1003。退回 1.3.0 二进制前，须在 1.4.0 下移除过滤键索引，并恢复兼容的扩展目录或备份；只降级二进制不足以回退。两种索引的球形范围扫描仍是近似搜索；要求返回全部匹配行时，应确认使用顺序扫描计划。

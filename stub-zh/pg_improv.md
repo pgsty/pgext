@@ -2,14 +2,14 @@
 
 来源：
 
-- [发行日志](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/CHANGELOG.md)
+- [发行日志](https://api.pgxn.org/src/pg_improv/pg_improv-0.15.0/CHANGELOG.md)
 
-- [官方资料](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/crates/pg_improv/README.md)
-- [官方资料](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/crates/pg_improv/pg_improv.control)
-- [官方资料](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/crates/pg_improv/Cargo.toml)
-- [SQL 升级脚本](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/crates/pg_improv/sql/pg_improv--0.13.0--0.14.0.sql)
+- [官方资料](https://api.pgxn.org/src/pg_improv/pg_improv-0.15.0/crates/pg_improv/README.md)
+- [官方资料](https://api.pgxn.org/src/pg_improv/pg_improv-0.15.0/crates/pg_improv/pg_improv.control)
+- [官方资料](https://api.pgxn.org/src/pg_improv/pg_improv-0.15.0/crates/pg_improv/Cargo.toml)
+- [SQL 升级脚本](https://api.pgxn.org/src/pg_improv/pg_improv-0.15.0/crates/pg_improv/sql/pg_improv--0.13.0--0.14.0.sql)
 
-`pg_improv` 0.14.0 将 PostgreSQL 表绑定到多维模型，计算公式并物化结果。它支持 PostgreSQL 15–18，安装需要超级用户。以下示例使用手工同步模式，无需预加载库。
+`pg_improv` 0.15.0 将 PostgreSQL 表绑定到多维模型，计算公式并物化结果。它支持 PostgreSQL 15–19，安装需要超级用户。以下示例使用手工同步模式，无需预加载库。
 
 ### 核心流程
 
@@ -63,4 +63,8 @@ SELECT * FROM improv.explain_access('plan', 'Read');
 ALTER EXTENSION pg_improv UPDATE TO '0.14.0';
 ```
 
-0.13.0 到 0.14.0 的 SQL 更新只记录扩展版本。库级修复使逻辑同步工作进程在模型所有者权限被 REVOKE 后，能够稳定报告所有者和受影响列，而不是稍后仅抛出裸权限错误。安装匹配文件、重启已预加载进程并逐库更新；应结合模型备份演练。0.14 的其他变化属于 Improv 客户端、服务器、TLS 和 GUI，不改变 pg_improv SQL API。当前已知软件包坐标仍为 RPM 0.13.0、DEB 0.12.2。
+0.13.0 到 0.14.0 的 SQL 更新只记录扩展版本。库级修复使逻辑同步工作进程在模型所有者权限被 REVOKE 后，能够稳定报告所有者和受影响列，而不是稍后仅抛出裸权限错误。安装匹配文件、重启已预加载进程并逐库更新；应结合模型备份演练。0.14 的其他变化属于 Improv 客户端、服务器、TLS 和 GUI，不改变 pg_improv SQL API。
+
+### PostgreSQL 19
+
+0.15.0 增加 PostgreSQL 19 构建与测试，并验证从 PostgreSQL 18 升级到 19。同一发行版中的桌面、Android 和 DuckDB 功能属于独立组件，不改变 PostgreSQL 扩展的 SQL 使用流程。

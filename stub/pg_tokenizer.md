@@ -2,6 +2,9 @@
 
 Sources:
 
+- [1.2.0 README](https://github.com/pgsty/pg_tokenizer/blob/v1.2.0/README.md)
+- [1.2.0 release notes](https://github.com/pgsty/pg_tokenizer/blob/v1.2.0/docs/release-notes/1.2.0.md)
+- [1.2.0 control](https://github.com/pgsty/pg_tokenizer/blob/v1.2.0/pg_tokenizer.control)
 - [Installation, upgrades, permissions, and backups](https://vchord.pgsty.com/docs/tokenizer/installation/)
 - [Tokenizer and native full-text workflows](https://vchord.pgsty.com/docs/tokenizer/overview/)
 - [Text analyzer pipelines](https://vchord.pgsty.com/docs/tokenizer/text-analyzer/)
@@ -105,3 +108,11 @@ Lindera 6 changes dictionary token IDs. Rebuild external dictionaries with Linde
 `pg_database_owner` receives access to database-local catalogs and functions; application roles need explicit grants. Object ownership still controls removal. Cluster preload changes are nontransactional and restricted separately. Vocabulary writers introducing new tokens serialize per model; retry SQLSTATE `40001` under repeatable-read or serializable isolation. Definition-changing APIs disallow two-phase prepare.
 
 An ordinary `pg_dump` now includes analyzer, tokenizer, model, stopword, and synonym definitions, together with custom vocabulary tables, sequences, and source triggers. The shipped `lucene_english`, `nltk_english`, and `iso_english` lists are reserved and recreated by extension installation; use another name for a custom list.
+
+### Version 1.2.0
+
+Version 1.2.0 supports PostgreSQL 15–19 and upgrades directly from 1.1.0 while preserving SQL APIs, catalog definitions and custom vocabulary IDs. Install matching files, replace external Lindera system dictionaries with Lindera 7 format v3 on every node while PostgreSQL is stopped, restart, then run `ALTER EXTENSION pg_tokenizer UPDATE;` in each database. PostgreSQL 14 must first move to a supported major.
+
+Lindera segmentation, token IDs, regex boundaries and Unicode tables can change output. Regenerate affected stored token arrays or vectors from source text and rebuild their indexes before switching queries. This release's GitHub binaries embed IPADIC; check the contents of separately supplied native packages.
+
+Preload names and the regular-file format remain compatible. Startup now skips symlinks, special files and invalid configurations. Move intended preload contents into real directories and regular files before restarting; keep their separate backup. Definition caches continue to follow the caller's SQL snapshot.

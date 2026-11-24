@@ -2,6 +2,8 @@
 
 来源：
 
+- [0.7.0 release](https://github.com/LogicOcean/pgokf/releases/tag/v0.7.0)
+- [0.6 to 0.7 upgrade SQL](https://github.com/LogicOcean/pgokf/blob/v0.7.0/crates/extension/sql/pgokf--0.6.0--0.7.0.sql)
 - [当前上游](https://github.com/LogicOcean/pgokf/releases/tag/v0.6.0)
 - [当前上游](https://github.com/LogicOcean/pgokf/blob/v0.6.0/crates/extension/sql/pgokf--0.5.0--0.6.0.sql)
 
@@ -20,7 +22,7 @@
 
 ### 启用与角色
 
-0.4.0 支持 PostgreSQL 15–18；PostgreSQL 19 RC 的测试属于独立的兼容性目标。安装准确大版本的构件，并以超级用户创建不可迁移扩展：
+0.7.0 分发 PostgreSQL 15–18 构件，并单独测试 PostgreSQL 19 GA；尚未发布 PG19 软件包。安装准确大版本的构件，并以超级用户创建不可迁移扩展：
 
 ```sql
 CREATE EXTENSION pgokf;
@@ -81,4 +83,8 @@ ALTER EXTENSION pgokf UPDATE TO '0.5.0';
 
 ### 0.6.0 配套组件发布
 
-0.5.0 到 0.6.0 的 SQL 升级只更新扩展版本收据，不改变目录对象或数据；安装匹配文件后执行 `ALTER EXTENSION pgokf UPDATE TO '0.6.0'`。新增的私有 Confluence Forge 应用与 `pgokf-confluence-events` 接收器验证投递身份，写入可去重的 JSON 行事件，但不会自动将事件记录到 PostgreSQL 目录中。这些配套组件需要单独配置与运行。稳定分发仍为 PostgreSQL 15–18，PostgreSQL 19 RC2 仅是非生产兼容性测试目标。
+0.5.0 到 0.6.0 的 SQL 升级只更新扩展版本收据，不改变目录对象或数据；安装匹配文件后执行 `ALTER EXTENSION pgokf UPDATE TO '0.6.0'`。新增的私有 Confluence Forge 应用与 `pgokf-confluence-events` 接收器验证投递身份，写入可去重的 JSON 行事件，但不会自动将事件记录到 PostgreSQL 目录中。这些配套组件需要单独配置与运行。0.6.0 的分发覆盖 PostgreSQL 15–18，另外测试 PostgreSQL 19 RC2。
+
+### 0.7.0 配套程序连接管理
+
+目录对象和数据与 0.6.0 相同。安装匹配文件后，`ALTER EXTENSION pgokf UPDATE TO '0.7.0'` 推进扩展版本收据。独立的 MCP、Web 与 Confluence 配套程序共用连接池生命周期；`pgokf-mcp` 会替换断开的连接，不再因此退出。这些变化需要单独更新相应配套二进制程序，数据库扩展升级不会替代该步骤。

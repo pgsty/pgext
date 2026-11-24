@@ -2,6 +2,9 @@
 
 来源：
 
+- [1.2.0 README](https://github.com/pgsty/pg_tokenizer/blob/v1.2.0/README.md)
+- [1.2.0 release notes](https://github.com/pgsty/pg_tokenizer/blob/v1.2.0/docs/release-notes/1.2.0.md)
+- [1.2.0 control](https://github.com/pgsty/pg_tokenizer/blob/v1.2.0/pg_tokenizer.control)
 - [安装、升级、权限与备份](https://vchord.pgsty.com/docs/tokenizer/installation/)
 - [分词与原生全文检索用法](https://vchord.pgsty.com/docs/tokenizer/overview/)
 - [文本分析流水线](https://vchord.pgsty.com/docs/tokenizer/text-analyzer/)
@@ -105,3 +108,11 @@ Lindera 6 改变了词典的词元 ID。应使用 Lindera 6 重建外部词典�
 `pg_database_owner` 获得数据库内目录表和函数的访问权限，应用角色需要显式授权；删除对象仍受所有权限制。集群级预加载修改不参与事务，并单独限制权限。引入新词元的词表写入按模型串行执行；在可重复读或可串行化隔离级别下遇到 SQLSTATE `40001` 时应重试。修改定义的 API 不允许两阶段事务准备。
 
 普通 `pg_dump` 现在会包含分析器、分词器、模型、停用词和同义词定义，以及自定义词表、序列和源表触发器。随扩展提供的 `lucene_english`、`nltk_english` 和 `iso_english` 列表是保留名称，由扩展安装过程重新创建；自定义列表应使用其他名称。
+
+### 版本 1.2.0
+
+1.2.0 支持 PostgreSQL 15–19，可从 1.1.0 直接升级并保留 SQL 接口、目录定义与自定义词汇 ID。安装匹配文件，在 PostgreSQL 停止时将所有节点的外部 Lindera 系统词典替换为 Lindera 7 格式 v3，重启后在每个数据库执行 `ALTER EXTENSION pg_tokenizer UPDATE;`。PostgreSQL 14 必须先升级到受支持的大版本。
+
+Lindera 分词、词元 ID、正则匹配边界和 Unicode 表可能改变输出。切换查询前，应从原文重新生成受影响的词元数组或向量并重建索引。本次 GitHub 二进制内嵌 IPADIC；单独供应的原生包须另查其内容。
+
+预加载名称和普通文件格式保持兼容。启动时会跳过符号链接、特殊文件与无效配置；重启前须将需要的预加载内容移入真实目录和普通文件，并单独备份。定义缓存仍遵循调用者的 SQL 快照。

@@ -2,13 +2,13 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/README.md)
-- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/pg_fts.control)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/CHANGELOG.md)
-- [pg_fts--1.18.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/pg_fts--1.18.0.sql)
-- [pg_fts--1.16.0--1.17.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.0/pg_fts--1.16.0--1.17.0.sql)
+- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.1/README.md)
+- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.1/pg_fts.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.1/CHANGELOG.md)
+- [pg_fts--1.18.1.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.1/pg_fts--1.18.1.sql)
+- [pg_fts--1.16.0--1.17.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.18.1/pg_fts--1.16.0--1.17.0.sql)
 
-`pg_fts` 1.18.0 provides full-text search with BM25/BM25F ranking and the dedicated fts inverted index. PostgreSQL 17, 18 and 19 are supported; 19 is tested against the 19.0 release. The control is trusted and relocatable, and core use needs no shared preload.
+`pg_fts` 1.18.1 provides full-text search with BM25/BM25F ranking and the dedicated fts inverted index. PostgreSQL 17, 18 and 19 are supported; 19 is tested against the 19.0 release. The control is trusted and relocatable, and core use needs no shared preload.
 
 ### Search and Rank
 
@@ -85,3 +85,7 @@ Version 1.17.0 removes tombstoned rows from the document count and average lengt
 ### Version 1.18.0
 
 Version 1.18.0 validates PostgreSQL 19.0 support and fixes an autovacuum-worker assertion failure caused by using the wrong I/O buffer-ring context on assertion-enabled servers. It updates sparsemap without changing the index format or SQL objects. Deploy matching files, replace sessions using the old library and run `ALTER EXTENSION pg_fts UPDATE TO '1.18.0';`. This release adds no REINDEX requirement; the historical data and index repairs described above still apply.
+
+### Wide Filters in 1.18.1
+
+Version 1.18.1 removes an allocation-size failure for broad boolean filters over large corpora. Such filters still retain memory proportional to the matching set, so bound concurrent whole-corpus filters on memory-limited hosts. SQL objects, scoring and disk format are unchanged; `ALTER EXTENSION pg_fts UPDATE TO '1.18.1'` needs no new REINDEX from 1.18.0.

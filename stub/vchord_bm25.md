@@ -2,6 +2,9 @@
 
 Sources:
 
+- [1.2.0 README](https://github.com/pgsty/vchord_bm25/blob/1.2.0/README.md)
+- [1.2.0 release](https://github.com/pgsty/vchord_bm25/blob/1.2.0/docs/release-notes/1.2.0.md)
+- [1.2.0 control](https://github.com/pgsty/vchord_bm25/blob/1.2.0/vchord_bm25.control)
 - [Installation](https://vchord.pgsty.com/docs/bm25/getting-started/installation/)
 - [Native tsvector quick start](https://vchord.pgsty.com/docs/bm25/getting-started/quick-start/)
 - [1.0.0 migration and permissions](https://vchord.pgsty.com/docs/bm25/reference/migration/)
@@ -77,3 +80,9 @@ The extension is relocatable; applications need access to the selected installat
 The index supports one indexed column and does not support unlogged tables. The access-method name is database-wide, so another extension defining `bm25` cannot coexist in that database.
 
 Upgrades from 0.3.x are deliberately blocked. Keep the old database and library available, export source text, and create a fresh 1.0.0 installation with its own library directory. Recompute native vectors, rebuild indexes, and adapt query argument order, types, settings, and triggers before switching the application. Another database or port sharing the old library directory is insufficient isolation. Neither a binary index copy nor `REINDEX` on an old `bm25vector` column migrates the API.
+
+### Version 1.2.0
+
+Version 1.2.0 supports PostgreSQL 15–19. Install matching files, restart PostgreSQL and run `ALTER EXTENSION vchord_bm25 UPDATE;`. Upgrades from 1.0.0 and 1.1.0 retain their SQL APIs and format-4 indexes without routine REINDEX. PostgreSQL 14 requires a server upgrade first; the legacy 0.3.x migration boundary above still applies.
+
+This release fixes error cleanup during prefiltering, planner costs and parallel-build snapshot protection. It also rejects invalid or partitioned indexes in `bm25_maintain`. These fixes do not replace normal vacuuming, access checks or application-level retry handling.

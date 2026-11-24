@@ -2,14 +2,14 @@
 
 Sources:
 
-- [Release changelog](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/CHANGELOG.md)
+- [Release changelog](https://api.pgxn.org/src/pg_improv/pg_improv-0.15.0/CHANGELOG.md)
 
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/crates/pg_improv/README.md)
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/crates/pg_improv/pg_improv.control)
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/crates/pg_improv/Cargo.toml)
-- [SQL update](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/crates/pg_improv/sql/pg_improv--0.13.0--0.14.0.sql)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.15.0/crates/pg_improv/README.md)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.15.0/crates/pg_improv/pg_improv.control)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.15.0/crates/pg_improv/Cargo.toml)
+- [SQL update](https://api.pgxn.org/src/pg_improv/pg_improv-0.15.0/crates/pg_improv/sql/pg_improv--0.13.0--0.14.0.sql)
 
-`pg_improv` 0.14.0 binds PostgreSQL tables to multidimensional models, evaluates formulas and materializes results. It supports PostgreSQL 15–18 and requires superuser installation. This example uses manual synchronization, which works without preloading the library.
+`pg_improv` 0.15.0 binds PostgreSQL tables to multidimensional models, evaluates formulas and materializes results. It supports PostgreSQL 15–19 and requires superuser installation. This example uses manual synchronization, which works without preloading the library.
 
 ### Core Workflow
 
@@ -63,4 +63,8 @@ Install matching files and restart PostgreSQL when the library is preloaded, the
 ALTER EXTENSION pg_improv UPDATE TO '0.14.0';
 ```
 
-The 0.13.0-to-0.14.0 SQL update only records the extension version. The library fix makes the logical-sync worker consistently report a model owner's REVOKE with the owner and affected columns instead of failing later with a bare permission error. Install matching files, restart preloaded processes, and update each database; rehearse this operation with model backups. Other 0.14 changes concern Improv clients, servers, TLS and the GUI rather than the pg_improv SQL API. RPM 0.13.0 and DEB 0.12.2 remain the currently known package coordinates.
+The 0.13.0-to-0.14.0 SQL update only records the extension version. The library fix makes the logical-sync worker consistently report a model owner's REVOKE with the owner and affected columns instead of failing later with a bare permission error. Install matching files, restart preloaded processes, and update each database; rehearse this operation with model backups. Other 0.14 changes concern Improv clients, servers, TLS and the GUI rather than the pg_improv SQL API.
+
+### PostgreSQL 19
+
+Release 0.15.0 adds PostgreSQL 19 builds and tests, including a PostgreSQL 18-to-19 upgrade check. Desktop, Android and DuckDB additions in the same distribution are separate from the PostgreSQL extension's SQL workflow.

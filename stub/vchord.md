@@ -2,6 +2,9 @@
 
 Sources:
 
+- [1.4.0 README](https://github.com/pgsty/vchord/blob/1.4.0/README.md)
+- [1.4.0 release](https://github.com/pgsty/vchord/blob/1.4.0/docs/release-notes/1.4.0.md)
+- [1.4.0 control](https://github.com/pgsty/vchord/blob/1.4.0/vchord.control)
 - [Installation and upgrades](https://vchord.pgsty.com/docs/vchord/getting-started/installation/)
 - [Partitioned vector indexes](https://vchord.pgsty.com/docs/vchord/usage/indexing/)
 - [Graph indexes and result ordering](https://vchord.pgsty.com/docs/vchord/usage/graph-index/)
@@ -106,3 +109,11 @@ ALTER EXTENSION vchord UPDATE TO '1.2.0';
 ```
 
 The release provides upgrade paths from 0.2.0 through 1.1.1 without reindexing. Recheck representative rankings after upgrading: 1.2.0 fixes MaxSim candidate estimates, graph sphere filters, deleted-vertex visibility, and quantization edge cases, and raises the default reranking budget. The extension is relocatable; include its chosen schema in the search path or qualify its objects.
+
+### Version 1.4.0
+
+Version 1.4.0 supports PostgreSQL 15–19. PostgreSQL 14 requires a server upgrade first. Install matching files, restart PostgreSQL and apply `ALTER EXTENSION vchord UPDATE;` in each database.
+
+RQ filter key columns support equality, range and NULL conditions. `vchordrq.probes` selects initial lists; `vchordrq.max_probes` limits subsequent expansion and defaults to -1, allowing all lists. The initial probes are always honored. An ordered scan that can expand sorts eligible candidates before its first result; the sort can spill at `work_mem`. Measure recall before lowering this cap.
+
+Ordinary 1.3.0 RQ indexes retain format 1001. A new index with filter key columns uses format 1003. Before returning to a 1.3.0 binary, remove keyed indexes under 1.4.0 and restore a compatible extension catalog or backup. A binary downgrade alone is insufficient. Sphere scans through both index methods remain approximate; use a verified sequential plan when every matching row is required.

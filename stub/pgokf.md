@@ -2,6 +2,8 @@
 
 Sources:
 
+- [0.7.0 release](https://github.com/LogicOcean/pgokf/releases/tag/v0.7.0)
+- [0.6 to 0.7 upgrade SQL](https://github.com/LogicOcean/pgokf/blob/v0.7.0/crates/extension/sql/pgokf--0.6.0--0.7.0.sql)
 - [Current upstream](https://github.com/LogicOcean/pgokf/releases/tag/v0.6.0)
 - [Current upstream](https://github.com/LogicOcean/pgokf/blob/v0.6.0/crates/extension/sql/pgokf--0.5.0--0.6.0.sql)
 
@@ -20,7 +22,7 @@ Sources:
 
 ### Enablement and Roles
 
-Release 0.4.0 supports PostgreSQL 15–18; PostgreSQL 19 RC testing is a separate compatibility target. Install the exact-major build and create the non-relocatable extension as a superuser:
+Release 0.7.0 distributes PostgreSQL 15–18 builds and tests PostgreSQL 19 GA separately; PG19 packages are not published. Install the exact-major build and create the non-relocatable extension as a superuser:
 
 ```sql
 CREATE EXTENSION pgokf;
@@ -81,4 +83,8 @@ The separate `pgokf-confluence` companion previews a complete Confluence Cloud s
 
 ### 0.6.0 companion release
 
-The 0.5.0-to-0.6.0 SQL edge updates the extension receipt without changing catalog objects or data; use `ALTER EXTENSION pgokf UPDATE TO '0.6.0'` after installing matching files. The new private Confluence Forge application and `pgokf-confluence-events` receiver validate delivery identity and write deduplicable JSON-line events. They do not automatically record those events in the PostgreSQL catalog. Configure and operate these companions separately. Stable distribution remains PostgreSQL 15–18; PostgreSQL 19 RC2 is a nonproduction compatibility test target.
+The 0.5.0-to-0.6.0 SQL edge updates the extension receipt without changing catalog objects or data; use `ALTER EXTENSION pgokf UPDATE TO '0.6.0'` after installing matching files. The new private Confluence Forge application and `pgokf-confluence-events` receiver validate delivery identity and write deduplicable JSON-line events. They do not automatically record those events in the PostgreSQL catalog. Configure and operate these companions separately. The 0.6.0 distribution covered PostgreSQL 15–18 and tested PostgreSQL 19 RC2 separately.
+
+### 0.7.0 Companion Connections
+
+The catalog objects and data are unchanged from 0.6.0. After installing matching files, `ALTER EXTENSION pgokf UPDATE TO '0.7.0'` advances the extension receipt. The separate MCP, web and Confluence companions share a pooled connection lifecycle; `pgokf-mcp` replaces dropped connections instead of exiting. These changes require updating the relevant companion binaries separately from the database extension.

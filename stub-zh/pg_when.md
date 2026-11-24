@@ -2,14 +2,14 @@
 
 来源：
 
-- [PGXN 上的 pg_when 0.1.10](https://pgxn.org/dist/pg_when/0.1.10/)
-- [pg_when 0.1.10 README](https://github.com/frectonz/pg-when/blob/0.1.10/README.md)
-- [pg_when 0.1.10 Cargo 清单](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/Cargo.toml)
-- [pg_when 0.1.10 control 文件](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/pg_when.control)
-- [pg_when 0.1.10 导出函数源码](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/src/when_is.rs)
-- [pg_when 0.1.10 相对日期实现](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/src/when_relative_date.rs)
+- [PGXN 上的 pg_when 0.1.11](https://pgxn.org/dist/pg_when/0.1.11/)
+- [pg_when 0.1.11 README](https://api.pgxn.org/src/pg_when/pg_when-0.1.11/README.md)
+- [pg_when 0.1.11 Cargo 清单](https://api.pgxn.org/src/pg_when/pg_when-0.1.11/Cargo.toml)
+- [pg_when 0.1.11 control 文件](https://api.pgxn.org/src/pg_when/pg_when-0.1.11/pg_when.control)
+- [pg_when 0.1.11 导出函数源码](https://api.pgxn.org/src/pg_when/pg_when-0.1.11/src/when_is.rs)
+- [pg_when 0.1.11 相对日期实现](https://api.pgxn.org/src/pg_when/pg_when-0.1.11/src/when_relative_date.rs)
 
-`pg_when` 0.1.10 解析受限的自然语言日期与时间表达式，返回 PostgreSQL `timestamptz`，或按指定精度返回 Unix epoch 值。
+`pg_when` 0.1.11 解析受限的自然语言日期与时间表达式，返回 PostgreSQL `timestamptz`，或按指定精度返回 Unix epoch 值。
 
 ```sql
 CREATE EXTENSION pg_when;
@@ -47,7 +47,7 @@ SELECT when_is('<date> at <time>');
 ### 兼容性与边界
 
 - 解析器实现的是文档中定义的语法，并非通用自然语言解释器。
-- 上游 0.1.10 提供 PostgreSQL 13–18 的构建特性并固定使用 pgrx 0.18.1；Pigsty 软件包覆盖 PostgreSQL 14–18，并应用锁定依赖的 pgrx 0.19.1 兼容更新。
+- 上游 0.1.11 提供 PostgreSQL 13–19 的构建特性，并固定使用 pgrx 0.19.3。具体二进制软件包支持哪些服务器版本，取决于该包的实际构建。
 - `pg_when` 不可重定位，其 control 文件要求超级用户执行 `CREATE EXTENSION`。
 - 非法文本会触发错误。这五个函数都声明为 `STRICT`，因此空值输入返回空值；当 epoch 纳秒数无法放入 `bigint` 时，`nanos_at(text)` 也会报错。
-- 0.1.10 的 SQL 函数声明为 `IMMUTABLE`，但 `now`、`tomorrow`、`5 days ago` 等相对表达式会读取当前时钟。不要把相对输入调用用于表达式索引或生成列，也不要假定它们会在缓存计划中重新求值；只有完整指定日期、时间与时区的输入才与当前时间无关。
+- 0.1.11 的 SQL 函数声明为 `IMMUTABLE`，但 `now`、`tomorrow`、`5 days ago` 等相对表达式会读取当前时钟。不要把相对输入调用用于表达式索引或生成列，也不要假定它们会在缓存计划中重新求值；只有完整指定日期、时间与时区的输入才与当前时间无关。

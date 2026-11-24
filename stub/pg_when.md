@@ -2,14 +2,14 @@
 
 Sources:
 
-- [pg_when 0.1.10 on PGXN](https://pgxn.org/dist/pg_when/0.1.10/)
-- [pg_when 0.1.10 README](https://github.com/frectonz/pg-when/blob/0.1.10/README.md)
-- [pg_when 0.1.10 Cargo manifest](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/Cargo.toml)
-- [pg_when 0.1.10 control file](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/pg_when.control)
-- [pg_when 0.1.10 exported functions](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/src/when_is.rs)
-- [pg_when 0.1.10 relative-date implementation](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/src/when_relative_date.rs)
+- [pg_when 0.1.11 on PGXN](https://pgxn.org/dist/pg_when/0.1.11/)
+- [pg_when 0.1.11 README](https://api.pgxn.org/src/pg_when/pg_when-0.1.11/README.md)
+- [pg_when 0.1.11 Cargo manifest](https://api.pgxn.org/src/pg_when/pg_when-0.1.11/Cargo.toml)
+- [pg_when 0.1.11 control file](https://api.pgxn.org/src/pg_when/pg_when-0.1.11/pg_when.control)
+- [pg_when 0.1.11 exported functions](https://api.pgxn.org/src/pg_when/pg_when-0.1.11/src/when_is.rs)
+- [pg_when 0.1.11 relative-date implementation](https://api.pgxn.org/src/pg_when/pg_when-0.1.11/src/when_relative_date.rs)
 
-`pg_when` 0.1.10 parses a constrained natural-language date and time expression and returns either a PostgreSQL `timestamptz` value or a Unix epoch value at a selected precision.
+`pg_when` 0.1.11 parses a constrained natural-language date and time expression and returns either a PostgreSQL `timestamptz` value or a Unix epoch value at a selected precision.
 
 ```sql
 CREATE EXTENSION pg_when;
@@ -47,7 +47,7 @@ If the time zone is omitted, the parser uses UTC. Supported inputs include relat
 ### Compatibility and Boundaries
 
 - The parser implements the documented grammar; it is not a general-purpose natural-language interpreter.
-- Upstream 0.1.10 declares PostgreSQL 13–18 features and pins pgrx 0.18.1. Pigsty packages cover PostgreSQL 14–18 and apply a locked pgrx 0.19.1 compatibility update.
+- Upstream 0.1.11 declares PostgreSQL 13–19 build features and pins pgrx 0.19.3. Server support in a particular binary package depends on that package's build.
 - `pg_when` is not relocatable and its control file requires a superuser for `CREATE EXTENSION`.
 - Invalid text raises an error. All five functions are `STRICT`, so a null input returns null; `nanos_at(text)` also errors when the epoch nanoseconds cannot fit in `bigint`.
-- The 0.1.10 SQL functions are declared `IMMUTABLE`, but relative expressions such as `now`, `tomorrow`, and `5 days ago` read the wall clock. Do not use relative-input calls in expression indexes or generated columns, and do not rely on them being reevaluated in cached plans; only fully specified date, time, and time-zone inputs are time-independent.
+- The 0.1.11 SQL functions are declared `IMMUTABLE`, but relative expressions such as `now`, `tomorrow`, and `5 days ago` read the wall clock. Do not use relative-input calls in expression indexes or generated columns, and do not rely on them being reevaluated in cached plans; only fully specified date, time, and time-zone inputs are time-independent.
