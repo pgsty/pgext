@@ -1,8 +1,0 @@
-// Sass-level overrides, applied before Bootstrap.
-//
-// OINK owns the sans stack so Paper, Slate, Ink and Terminal can select their
-// bundled reading/UI fonts. Keep the catalogue's coding face for data.
-
-$font-family-monospace:
-  ui-monospace, 'SF Mono', 'Cascadia Code', 'JetBrains Mono', Menlo, Consolas,
-  'Liberation Mono', 'Sarasa Mono SC', monospace !default;
