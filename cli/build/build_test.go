@@ -109,6 +109,67 @@ func TestStageBoundariesAndFamilyDedup(t *testing.T) {
 	}
 }
 
+func TestOpenHaloBuildAliases(t *testing.T) {
+	aliases := strings.Fields("openhalo aux_mysql openhalodb openhalo-19 openhalo19 openhalodb-19")
+	for _, family := range []string{"rpm", "deb"} {
+		t.Run(family, func(t *testing.T) {
+			e := testEngine(t)
+			e.Platform.Family = family
+			if family == "rpm" {
+				e.Platform.OS = "el9"
+			}
+			e.Options.PG = ""
+			old := &Extension{Name: "aux_mysql", Package: "openhalo", Source: "openhalodb-1.0.tar.gz", PG: []int{14}}
+			e.Catalog.Extensions[old.Name], e.Catalog.Packages[old.Package] = old, old
+			e.Catalog.Extensions["archived_kernel"] = &Extension{Package: "openhalodb-18", Source: old.Source}
+			for _, recipe := range []string{"openhalodb", "openhalodb-18", "openhalodb-19"} {
+				if family == "rpm" {
+					put(t, filepath.Join(e.Options.SpecDir, "SPECS", recipe+".spec"), "Name: "+recipe+"\n")
+				} else if recipe != "openhalodb-18" {
+					put(t, filepath.Join(e.Options.SpecDir, recipe, "Makefile"), "all:\n")
+				}
+			}
+			for _, pg := range []string{"", "19"} {
+				e.Options.PG = pg
+				for _, action := range []string{"get", "dep", "make", "pkg"} {
+					p, err := e.Prepare(action, aliases)
+					if err != nil {
+						t.Fatal(err)
+					}
+					if len(p.Jobs) != 1 {
+						t.Fatalf("expected one kernel build, got %d", len(p.Jobs))
+					}
+					j := p.Jobs[0]
+					if j.Package != "openhalodb-19" || !j.standaloneKernel || !reflect.DeepEqual(j.PG, []int{19}) ||
+						!reflect.DeepEqual(j.Requested, aliases) || !reflect.DeepEqual(j.Sources, []string{"openhalodb-19.0.0.tar.gz"}) {
+						t.Fatalf("%s/--pg=%q: %+v", action, pg, j)
+					}
+				}
+			}
+			for _, pg := range []string{"14", "18", "18,19"} {
+				e.Options.PG = pg
+				if _, err := e.Prepare("pkg", []string{"openhalo"}); err == nil {
+					t.Errorf("accepted incompatible --pg %s", pg)
+				}
+			}
+			e.Options.PG = ""
+			for _, name := range strings.Fields("openhalo14 openhalo-14 openhalodb-14 openhalo18 openhalo-18 openhalodb-18 archived_kernel") {
+				for _, action := range []string{"get", "dep", "make", "pkg"} {
+					if _, err := e.Prepare(action, []string{name}); err == nil {
+						t.Errorf("%s accepted retired build name %s", action, name)
+					}
+				}
+			}
+			if family == "rpm" {
+				e.Platform.OS = "el8"
+				if _, err := e.Prepare("pkg", []string{"openhalo"}); err == nil {
+					t.Fatal("selected PG19 on EL8")
+				}
+			}
+		})
+	}
+}
+
 func TestDebianSupportIsNotLimitedByMakeDefault(t *testing.T) {
 	for _, tc := range []struct {
 		name, versions, makeDefault, requested string

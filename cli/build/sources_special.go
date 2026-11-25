@@ -25,7 +25,7 @@ var cloudberryPXFSourceBundle = []string{
 
 var SpecialSourceMapping = map[string][]string{
 	"scws":              {"scws-1.2.3.tar.bz2"},
-	"openhalodb":        {"openhalodb-1.0.tar.gz"},
+	openHaloPackage:     {"openhalodb-19.0.0.tar.gz"},
 	"cloudberry":        cloudberrySourceBundle,
 	"cloudberry-backup": {"apache-cloudberry-backup-2.2.0-incubating-src.tar.gz"},
 	"cloudberry-pxf":    cloudberryPXFSourceBundle,

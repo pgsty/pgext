@@ -32,6 +32,7 @@ type Job struct {
 	Sources          []string   `json:"sources"`
 	Stages           []string   `json:"stages"`
 	Extension        *Extension `json:"-"`
+	standaloneKernel bool       // the recipe builds PostgreSQL itself without an installed pg_config
 }
 type Plan struct {
 	Action   string   `json:"action"`
@@ -161,18 +162,15 @@ func (e *Engine) Prepare(action string, names []string) (*Plan, error) {
 	p := &Plan{Action: action, Platform: e.Platform, Catalog: e.Catalog, Root: e.Options.Root}
 	seen := map[string]*Job{}
 	for _, name := range names {
-		if !safeName(name) {
-			return nil, fmt.Errorf("invalid extension/package/source name %q", name)
+		j, err := e.resolveJob(name)
+		if err != nil {
+			return nil, err
 		}
-		j := &Job{Package: name, Requested: []string{name}, Stages: stages, Extension: e.Catalog.Resolve(name)}
-		if j.Extension != nil {
-			j.Package = j.Extension.Package
-		}
-		j.Package = recipeName(e.Platform.Family, j.Package)
 		if previous := seen[j.Package]; previous != nil {
 			previous.Requested = append(previous.Requested, name)
 			continue
 		}
+		j.Stages = stages
 		if e.Platform.Family == "rpm" {
 			j.Recipe = filepath.Join(e.Options.SpecDir, "SPECS", j.Package+".spec")
 		} else {
@@ -191,7 +189,7 @@ func (e *Engine) Prepare(action string, names []string) (*Plan, error) {
 				return nil, err
 			}
 		}
-		if action != "get" || e.Options.PG != "" || (j.Recipe != "" && e.Platform.Family != "") {
+		if !j.standaloneKernel && (action != "get" || e.Options.PG != "" || (j.Recipe != "" && e.Platform.Family != "")) {
 			selector := *e
 			if action == "get" {
 				// Source preparation must also work before development tools are
@@ -216,6 +214,40 @@ func (e *Engine) Prepare(action string, names []string) (*Plan, error) {
 		p.Jobs = append(p.Jobs, j)
 	}
 	return p, nil
+}
+
+func (e *Engine) resolveJob(name string) (*Job, error) {
+	if !safeName(name) {
+		return nil, fmt.Errorf("invalid extension/package/source name %q", name)
+	}
+	j := &Job{Package: recipeName(e.Platform.Family, name), Requested: []string{name}}
+	if j.Package != openHaloPackage && !openHaloVersionedName.MatchString(name) {
+		j.Extension = e.Catalog.Resolve(name)
+		if j.Extension != nil {
+			j.Package = recipeName(e.Platform.Family, j.Extension.Package)
+		}
+	}
+	if j.Package != openHaloPackage {
+		if openHaloVersionedName.MatchString(j.Package) {
+			return nil, fmt.Errorf("unsupported OpenHalo target %q, use openhalo-19", j.Package)
+		}
+		return j, nil
+	}
+	majors, err := ParsePG(e.Options.PG)
+	if err != nil {
+		return nil, err
+	}
+	if len(majors) != 0 && !slices.Equal(majors, []int{19}) {
+		return nil, fmt.Errorf("OpenHalo requires --pg 19, got %s", e.Options.PG)
+	}
+	if !db.SupportsOSPG(e.Platform.OS, 19) {
+		return nil, fmt.Errorf("OpenHalo PG19 is unavailable on %s", e.Platform.OS)
+	}
+	// A stale extension catalog may list tarballs from several kernel versions.
+	j.Extension = nil
+	j.PG = []int{19}
+	j.standaloneKernel = true
+	return j, nil
 }
 
 func (e *Engine) jobPG(j *Job, recipe []byte) ([]int, error) {

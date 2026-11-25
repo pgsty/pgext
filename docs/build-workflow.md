@@ -182,6 +182,12 @@ Packages independent of PostgreSQL majors do not accept `--pg`.
 RPM receives `pgmajorversion`; DEB receives selected `pgversions`,
 `PG_VERSIONS`, `PG_MAJOR`, `PG_SUPPORTED_VERSIONS`, and `PG_CONFIG`. Numbered
 Makefile targets such as `build18` are selected explicitly.
+
+OpenHalo builds its own PostgreSQL 19 server and bundles the `aux_mysql` extension.
+On RPM and DEB builders, `pgext pkg openhalo-19` builds `openhalodb-19`.
+The names `openhalo`, `openhalodb`, `openhalo19`, and `aux_mysql` select the
+same recipe. An explicit `--pg` must select 19.
+
 Source-only `get` prepares all declared source variants without requiring
 PostgreSQL development tools to be installed first.
 DEB recipe inputs include auxiliary wheels, source descriptors, headers and

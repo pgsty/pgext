@@ -638,6 +638,15 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 			return strings.ReplaceAll(s, old, new)
 		},
 		"hasPrefix": strings.HasPrefix,
+		"supportsKernelAlias": func(key string) bool {
+			switch key {
+			case "greenplum", "gpsql":
+				return g.arch != "aarch64"
+			case "openhalo", "openhalodb", "openhalo-19", "openhalo19":
+				return db.SupportsOSPG(g.osCode, 19)
+			}
+			return true
+		},
 		"trimPrefix": func(prefix, s string) string {
 			// Note: template calls with prefix first, but strings.TrimPrefix expects string first
 			return strings.TrimPrefix(s, prefix)
@@ -869,7 +878,10 @@ func GetConfigConstants() *ConfigConstants {
 
 			{"agensgraph", "agensgraph-$v", "agensgraph-$v"},
 			{"polardb", "polardb-$v", "polardb-$v"},
-			{"openhalo", "openhalodb-$v", "openhalodb-$v"},
+			{"openhalo", "openhalodb-19", "openhalodb-19"},
+			{"openhalodb", "openhalodb-19", "openhalodb-19"},
+			{"openhalo-19", "openhalodb-19", "openhalodb-19"},
+			{"openhalo19", "openhalodb-19", "openhalodb-19"},
 			{"ivorysql", "ivorysql-$v ivorysql-$v-contrib", "ivorysql-$v ivorysql-$v-contrib"},
 			{"babelfish", "babelfish-$v", "babelfish-$v"},
 			{"orioledb", "orioledb-$v", "orioledb-$v"},
@@ -934,8 +946,8 @@ pg_home_map:
   citus:  '/usr/pgsql-$v'
   mssql:  '/usr/babelfish-$v/'
   agens:  '/usr/agens-$v'
-  ivory:  '/usr/ivory-$v'
-  mysql:  '/usr/halo-$v'
+  ivory:  '/usr/ivory-$v'{{ if supportsKernelAlias "openhalo" }}
+  mysql:  '/usr/halo-19'{{ end }}
   pgtde:  '/usr/pgtde-$v'
   polar:  '/usr/polar-$v'
   oriole: '/usr/oriole-$v'
@@ -966,7 +978,7 @@ package_map:
 
   #--------------------------------#
   # MISC: pro modules
-  #--------------------------------#{{ range .Constants.PGSQLExoticMap }}{{ if and (or (eq .Key "greenplum") (eq .Key "gpsql")) (eq $.Arch "aarch64") }}{{ else if .RPM }}
+  #--------------------------------#{{ range .Constants.PGSQLExoticMap }}{{ if and .RPM (supportsKernelAlias .Key) }}
   {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .RPM }}"{{ end }}{{ end }}
   java-runtime:            "{{ getJavaRuntime }}"
   kafka-stack:             "kafka kafka-exporter jmx-exporter"
@@ -1049,8 +1061,8 @@ pg_home_map:
   citus:  '/usr/lib/postgresql/$v'
   mssql:  '/usr/babelfish-$v/'
   agens:  '/usr/agens-$v'
-  ivory:  '/usr/ivory-$v'
-  mysql:  '/usr/halo-$v'
+  ivory:  '/usr/ivory-$v'{{ if supportsKernelAlias "openhalo" }}
+  mysql:  '/usr/halo-19'{{ end }}
   pgtde:  '/usr/pgtde-$v'
   polar:  '/usr/polar-$v'
   oriole: '/usr/oriole-$v'
@@ -1081,7 +1093,7 @@ package_map:
 
   #--------------------------------#
   # MISC: pro modules
-  #--------------------------------#{{ range .Constants.PGSQLExoticMap }}{{ if and (or (eq .Key "greenplum") (eq .Key "gpsql")) (eq $.Arch "aarch64") }}{{ else if .DEB }}
+  #--------------------------------#{{ range .Constants.PGSQLExoticMap }}{{ if and .DEB (supportsKernelAlias .Key) }}
   {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .DEB }}"{{ end }}{{ end }}
   java-runtime:            "{{ getJavaRuntime }}"
   kafka-stack:             "kafka kafka-exporter jmx-exporter"

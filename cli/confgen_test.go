@@ -1393,6 +1393,25 @@ func TestRenderedTemplatesIncludePolarDBPackageMap(t *testing.T) {
 	}
 }
 
+func TestRenderedOpenHaloPackageAliases(t *testing.T) {
+	for _, code := range []string{"el8", "el9", "u24"} {
+		render := renderRPMTemplateForTest
+		if code == "u24" {
+			render = renderDEBTemplateForTest
+		}
+		conf := strings.Join(strings.Fields(render(t, code+".x86_64", code)), " ")
+		for _, alias := range []string{"openhalo", "openhalodb", "openhalo-19", "openhalo19"} {
+			if strings.Contains(conf, alias+`: "openhalodb-19"`) != (code != "el8") {
+				t.Errorf("%s has incorrect availability for %s", code, alias)
+			}
+		}
+		if strings.Contains(conf, "mysql: '/usr/halo-19'") != (code != "el8") ||
+			strings.Contains(conf, "openhalodb-$v") || strings.Contains(conf, "/usr/halo-$v") {
+			t.Errorf("%s has incorrect OpenHalo package or prefix", code)
+		}
+	}
+}
+
 func TestRenderedTemplatesIncludePgTDEPackageMap(t *testing.T) {
 	tests := map[string]struct {
 		rendered string

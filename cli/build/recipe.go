@@ -14,9 +14,17 @@ import (
 	"pgext/db"
 )
 
+const openHaloPackage = "openhalodb-19"
+
+// Numeric kernel names are reserved even in workspaces with obsolete recipes.
+var openHaloVersionedName = regexp.MustCompile(`^openhalo(db)?-?[0-9]+$`)
+
 // A few catalog package identities differ from the native recipe names.
 func recipeName(family, name string) string {
-	if name == "one_sparse" {
+	switch name {
+	case "aux_mysql", "openhalo", "openhalodb", "openhalo19", "openhalo-19", openHaloPackage:
+		return openHaloPackage
+	case "one_sparse":
 		return "onesparse"
 	}
 	if family == "deb" {
@@ -200,9 +208,11 @@ func (e *Engine) buildEnv(pg int) []string {
 }
 
 func (e *Engine) make(ctx context.Context, j *Job, r *Result, w io.Writer) error {
-	for _, pg := range j.PG {
-		if _, err := os.Stat(e.Platform.PGConfig(pg)); err != nil {
-			return fmt.Errorf("PG%d development tools missing: %w", pg, err)
+	if !j.standaloneKernel {
+		for _, pg := range j.PG {
+			if _, err := os.Stat(e.Platform.PGConfig(pg)); err != nil {
+				return fmt.Errorf("PG%d development tools missing: %w", pg, err)
+			}
 		}
 	}
 	for _, tool := range []string{"make", "gcc", "rustc", "cargo", "rpmbuild", "dpkg-buildpackage"} {
@@ -228,10 +238,14 @@ func (e *Engine) make(ctx context.Context, j *Job, r *Result, w io.Writer) error
 			return err
 		}
 		var recipe string
+		buildPG := pg
+		if j.standaloneKernel {
+			buildPG = 0 // no PGXS flags or PG_CONFIG for a complete kernel
+		}
 		if e.Platform.Family == "rpm" {
-			recipe, err = e.makeRPM(ctx, j, pg, unit, out, r, w)
+			recipe, err = e.makeRPM(ctx, j, buildPG, unit, out, r, w)
 		} else {
-			recipe, err = e.makeDEB(ctx, j, pg, unit, out, r, w)
+			recipe, err = e.makeDEB(ctx, j, buildPG, unit, out, r, w)
 		}
 		if err != nil {
 			return fmt.Errorf("%s PG%d: %w", j.Package, pg, err)
