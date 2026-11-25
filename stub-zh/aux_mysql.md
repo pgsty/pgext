@@ -1,51 +1,19 @@
-
-
-
 ## 用法
 
-> [aux_mysql: MySQL 补充扩展](https://github.com/HaloTech-Co-Ltd/openHalo)
+来源：
 
-`aux_mysql` 扩展是 openHalo 项目的一部分，为 PostgreSQL 提供 MySQL 兼容函数和特性。它使 PostgreSQL 能够理解 MySQL SQL 方言和通信协议。
+- [19.0.0 使用说明](https://github.com/pgsty/openhalo/blob/v19.0.0/README.md)
+- [2.0 控制文件](https://github.com/pgsty/openhalo/blob/v19.0.0/contrib/aux_mysql/aux_mysql.control)
 
-### 启用
+`aux_mysql` 2.0 随 OpenHalo 19.0.0 提供，支持 MySQL 线协议、语法和函数。运行 `pig install openhalo-19` 安装内核包 `openhalodb-19`。即使当前使用其他 PostgreSQL 大版本，这条命令也会选择 PG19。
+
+### 启用与连接
+
+OpenHalo 19 的新实例默认在 `shared_preload_libraries` 中加载 `aux_mysql`。扩展会创建 ICU 排序规则，数据库编码需支持 ICU，例如 `UTF8`。管理员通过 PostgreSQL 接口连接 `mysql.database` 指定的数据库（默认为 `postgres`），然后创建扩展。
 
 ```sql
-CREATE EXTENSION aux_mysql CASCADE;
+CREATE EXTENSION aux_mysql;
+SELECT extversion FROM pg_extension WHERE extname = 'aux_mysql';
 ```
 
-### 概述
-
-与 openHalo 的 MySQL 兼容模式配合使用时，该扩展允许：
-
-- 通过 MySQL 线协议进行 MySQL 客户端连接（3306 端口）
-- MySQL 兼容的 SQL 语法解析
-- MySQL 兼容的函数和操作符
-
-### MySQL 兼容模式
-
-在 `postgresql.conf` 中配置：
-
-```ini
-database_compat_mode = 'mysql'      -- 启用 MySQL 模式
-mysql.listener_on = true            -- 启用 MySQL 协议监听
-mysql.port = 3306                   -- MySQL 协议端口
-```
-
-启用后，MySQL 客户端可以直接连接：
-
-```bash
-mysql -P 3306 -h 127.0.0.1
-```
-
-### 关键特性
-
-- MySQL 兼容 SQL 方言支持
-- MySQL 线协议兼容性（TDS）
-- MySQL 风格认证（`mysql_native_password`）
-- PostgreSQL 中可用常见 MySQL 函数和操作符
-
-### 注意事项
-
-- 该扩展设计为作为 openHalo 发行版的一部分使用
-- 标准 PostgreSQL 连接在 MySQL 协议连接旁边继续工作
-- 并非所有 MySQL 特性都受支持；专注于常用功能
+在 OpenHalo 19 上查询应返回 `2.0`。启用 `mysql.listener_on` 后，MySQL 客户端可连接 `mysql.port`（默认 3306）。MySQL 数据库映射到该 PostgreSQL 数据库中的模式。扩展在安装库中注册类型转换，需要原生转换行为的工作负载可使用独立数据库。

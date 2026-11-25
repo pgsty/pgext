@@ -1,51 +1,19 @@
-
-
-
 ## Usage
 
-> [aux_mysql: MySQL Supplementary Extension](https://github.com/HaloTech-Co-Ltd/openHalo)
+Sources:
 
-The `aux_mysql` extension is part of the openHalo project, providing MySQL compatibility functions and features for PostgreSQL. It enables PostgreSQL to understand MySQL SQL dialect and communication protocol.
+- [19.0.0 manual](https://github.com/pgsty/openhalo/blob/v19.0.0/README.md)
+- [2.0 control file](https://github.com/pgsty/openhalo/blob/v19.0.0/contrib/aux_mysql/aux_mysql.control)
 
-### Enabling
+`aux_mysql` 2.0 ships with OpenHalo 19.0.0 and provides MySQL wire protocol, syntax, and functions. Run `pig install openhalo-19` to install the `openhalodb-19` kernel package. This command selects PG19 even when another PostgreSQL major is active.
+
+### Enable and connect
+
+New OpenHalo 19 clusters load `aux_mysql` through `shared_preload_libraries` by default. The extension creates ICU collations, so use a database with an ICU-compatible encoding such as `UTF8`. As an administrator, connect over PostgreSQL to the database named by `mysql.database` (default `postgres`) and create the extension.
 
 ```sql
-CREATE EXTENSION aux_mysql CASCADE;
+CREATE EXTENSION aux_mysql;
+SELECT extversion FROM pg_extension WHERE extname = 'aux_mysql';
 ```
 
-### Overview
-
-When used with openHalo's MySQL compatibility mode, this extension allows:
-
-- MySQL client connections via the MySQL wire protocol (port 3306)
-- MySQL-compatible SQL syntax parsing
-- MySQL-compatible functions and operators
-
-### MySQL Compatibility Mode
-
-Configure in `postgresql.conf`:
-
-```ini
-database_compat_mode = 'mysql'      -- enable MySQL mode
-mysql.listener_on = true            -- enable MySQL protocol listener
-mysql.port = 3306                   -- MySQL protocol port
-```
-
-After enabling, MySQL clients can connect directly:
-
-```bash
-mysql -P 3306 -h 127.0.0.1
-```
-
-### Key Features
-
-- MySQL-compatible SQL dialect support
-- MySQL wire protocol compatibility (TDS)
-- MySQL-style authentication (`mysql_native_password`)
-- Common MySQL functions and operators available in PostgreSQL
-
-### Notes
-
-- This extension is designed to work as part of the openHalo distribution
-- Standard PostgreSQL connections continue to work alongside MySQL protocol connections
-- Not all MySQL features are supported; focuses on commonly used functionality
+On OpenHalo 19 the query returns `2.0`. With `mysql.listener_on` enabled, MySQL clients can connect to `mysql.port` (default 3306). MySQL databases map to schemas in the selected PostgreSQL database. The extension installs casts in that database. Use a separate database for workloads that require stock PostgreSQL casts.

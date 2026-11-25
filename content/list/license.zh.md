@@ -25,13 +25,13 @@ page_width: full
 | {{< license "BSD-3-Clause" >}} | 28 | [许可证文本](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 19 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 12 | [许可证文本](#) | Unknown license |
-| {{< license "GPL-3.0" >}} | 9 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "ISC" >}} | 9 | [许可证文本](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
+| {{< license "GPL-3.0" >}} | 8 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 7 | [许可证文本](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "Unknown" >}} | 5 | [许可证文本](#) | Unknown license |
+| {{< license "GPL-3.0-or-later" >}} | 5 | [许可证文本](#) | Unknown license |
 | {{< license "LGPL-3.0" >}} | 4 | [许可证文本](https://opensource.org/licenses/LGPL-3.0) | Weak copyleft license with additional patent and hardware provisions. |
 | {{< license "AGPL-3.0-only" >}} | 4 | [许可证文本](#) | Unknown license |
-| {{< license "GPL-3.0-or-later" >}} | 4 | [许可证文本](#) | Unknown license |
 | {{< license "Timescale" >}} | 2 | [许可证文本](https://www.timescale.com/legal/licenses) | Proprietary license with restrictions on commercial use and distribution. |
 | {{< license "MPL-2.0" >}} | 2 | [许可证文本](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "AGPL-3.0-or-later" >}} | 2 | [许可证文本](#) | Unknown license |
@@ -687,26 +687,6 @@ page_width: full
 | 6440 | {{< alias "meta" "pg_meta" >}} | 标准化，更友好的PostgreSQL系统目录视图 |
 {.wide .expand}
 
-## GPL-3.0
-
-
-
-| {{< license "GPL-3.0" >}} | {{< badge content="9 个扩展" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/GPL-3.0" icon="scale" >}} | Strong copyleft license with additional patent and hardware restrictions. |
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 1050 | {{< alias "emaj" >}} | 让数据库的子集具有细粒度日志和时间旅行功能 |
-| 3620 | {{< alias "asn1oid" >}} | ASN1OID数据类型支持 |
-| 4330 | {{< alias "schedoc" "pg_schedoc" >}} | 在Django与DBT之间通过注释文档交换元数据 |
-| 4660 | {{< alias "vasco" >}} | 使用MIC发现数据中隐含的关联 |
-| 4670 | {{< alias "xicor" "pgxicor" >}} | 在PG中计算XI相关系数 |
-| 7360 | {{< alias "login_hook" >}} | 在用户登陆时执行login_hook.login()函数 |
-| 9120 | {{< alias "session_variable" >}} | Oracle兼容的会话变量/常量操作函数 |
-| 9420 | {{< alias "aux_mysql" "openhalo" >}} | MySQL兼容辅助扩展模块 |
-| 9710 | {{< alias "repmgr" >}} | PostgreSQL复制管理组件 |
-
 ## ISC
 
 
@@ -727,6 +707,25 @@ page_width: full
 | 9210 | {{< alias "plpgsql_wrap" >}} | Oracle WRAP 等价的 PL/pgSQL 语言处理器，以 AES-256-GCM 加密存储过程源码。 |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 模仿 Oracle DBMS_ERRLOG 模块来记录特定表的DML错误 |
 {.wide .expand}
+
+## GPL-3.0
+
+
+
+| {{< license "GPL-3.0" >}} | {{< badge content="8 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/GPL-3.0" icon="scale" >}} | Strong copyleft license with additional patent and hardware restrictions. |
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 1050 | {{< alias "emaj" >}} | 让数据库的子集具有细粒度日志和时间旅行功能 |
+| 3620 | {{< alias "asn1oid" >}} | ASN1OID数据类型支持 |
+| 4330 | {{< alias "schedoc" "pg_schedoc" >}} | 在Django与DBT之间通过注释文档交换元数据 |
+| 4660 | {{< alias "vasco" >}} | 使用MIC发现数据中隐含的关联 |
+| 4670 | {{< alias "xicor" "pgxicor" >}} | 在PG中计算XI相关系数 |
+| 7360 | {{< alias "login_hook" >}} | 在用户登陆时执行login_hook.login()函数 |
+| 9120 | {{< alias "session_variable" >}} | Oracle兼容的会话变量/常量操作函数 |
+| 9710 | {{< alias "repmgr" >}} | PostgreSQL复制管理组件 |
 
 ## AGPL-3.0
 
@@ -762,6 +761,22 @@ page_width: full
 | 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | 快速跳转至PEV查阅可视化执行计划 |
 | 7180 | {{< alias "oidc_validator" "pg_oidc_validator_rust" >}} | 使用 Rust 与 pgrx 编写的 PostgreSQL 18 OIDC Bearer 令牌验证模块 |
 
+## GPL-3.0-or-later
+
+
+
+| {{< license "GPL-3.0-or-later" >}} | {{< badge content="5 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 3550 | {{< alias "unit" "pgunit" >}} | SI 国标单位扩展 |
+| 3830 | {{< alias "debversion" >}} | Debian版本号数据类型 |
+| 5240 | {{< alias "qos" "pg_qos" >}} | PostgreSQL QoS 资源治理扩展（会话与查询限流/隔离） |
+| 7420 | {{< alias "libx509pq" >}} | 通过 OpenSSL 解析与检查 X.509 证书 |
+| 9420 | {{< alias "aux_mysql" "openhalo" >}} | MySQL兼容辅助扩展模块 |
+
 ## LGPL-3.0
 
 
@@ -791,21 +806,6 @@ page_width: full
 | 2160 | {{< alias "vchord_bm25" >}} | BM25排序算法 |
 | 2400 | {{< alias "citus" >}} | 将 PostgreSQL 横向扩展为分布式数据库 |
 | 2401 | {{< alias "citus_columnar" "citus" >}} | Citus 列式存储引擎 |
-
-## GPL-3.0-or-later
-
-
-
-| {{< license "GPL-3.0-or-later" >}} | {{< badge content="4 个扩展" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 3550 | {{< alias "unit" "pgunit" >}} | SI 国标单位扩展 |
-| 3830 | {{< alias "debversion" >}} | Debian版本号数据类型 |
-| 5240 | {{< alias "qos" "pg_qos" >}} | PostgreSQL QoS 资源治理扩展（会话与查询限流/隔离） |
-| 7420 | {{< alias "libx509pq" >}} | 通过 OpenSSL 解析与检查 X.509 证书 |
 
 ## Timescale
 

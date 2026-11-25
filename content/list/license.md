@@ -25,13 +25,13 @@ PostgreSQL extension categorized by license.
 | {{< license "BSD-3-Clause" >}} | 28 | [License Text](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 19 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 12 | [License Text](#) | Unknown license |
-| {{< license "GPL-3.0" >}} | 9 | [License Text](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "ISC" >}} | 9 | [License Text](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
+| {{< license "GPL-3.0" >}} | 8 | [License Text](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 7 | [License Text](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "Unknown" >}} | 5 | [License Text](#) | Unknown license |
+| {{< license "GPL-3.0-or-later" >}} | 5 | [License Text](#) | Unknown license |
 | {{< license "LGPL-3.0" >}} | 4 | [License Text](https://opensource.org/licenses/LGPL-3.0) | Weak copyleft license with additional patent and hardware provisions. |
 | {{< license "AGPL-3.0-only" >}} | 4 | [License Text](#) | Unknown license |
-| {{< license "GPL-3.0-or-later" >}} | 4 | [License Text](#) | Unknown license |
 | {{< license "Timescale" >}} | 2 | [License Text](https://www.timescale.com/legal/licenses) | Proprietary license with restrictions on commercial use and distribution. |
 | {{< license "MPL-2.0" >}} | 2 | [License Text](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "AGPL-3.0-or-later" >}} | 2 | [License Text](#) | Unknown license |
@@ -687,27 +687,6 @@ PostgreSQL extension categorized by license.
 | 6440 | {{< alias "meta" "pg_meta" >}} | Normalized, friendlier system catalog for PostgreSQL |
 {.wide .expand}
 
-## GPL-3.0
-
-
-
-| {{< license "GPL-3.0" >}} | {{< badge content="9 Extensions" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/GPL-3.0" icon="scale" >}} | Strong copyleft license with additional patent and hardware restrictions. |
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 1050 | {{< alias "emaj" >}} | Enables fine-grained write logging and time travel on subsets of the database. |
-| 3620 | {{< alias "asn1oid" >}} | asn1oid extension |
-| 4330 | {{< alias "schedoc" "pg_schedoc" >}} | Cross documentation between Django and DBT projects |
-| 4660 | {{< alias "vasco" >}} | discover hidden correlations in your data with MIC |
-| 4670 | {{< alias "xicor" "pgxicor" >}} | XI Correlation Coefficient in Postgres |
-| 7360 | {{< alias "login_hook" >}} | login_hook - hook to execute login_hook.login() at login time |
-| 9120 | {{< alias "session_variable" >}} | Registration and manipulation of session variables and constants |
-| 9420 | {{< alias "aux_mysql" "openhalo" >}} | MySQL Supplementary Extension |
-| 9710 | {{< alias "repmgr" >}} | Replication manager for PostgreSQL |
-{.wide .expand}
-
 ## ISC
 
 
@@ -727,6 +706,26 @@ PostgreSQL extension categorized by license.
 | 9130 | {{< alias "pg_statement_rollback" >}} | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
 | 9210 | {{< alias "plpgsql_wrap" >}} | Oracle WRAP-equivalent PL/pgSQL language handler storing AES-256-GCM encrypted procedure source. |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
+{.wide .expand}
+
+## GPL-3.0
+
+
+
+| {{< license "GPL-3.0" >}} | {{< badge content="8 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/GPL-3.0" icon="scale" >}} | Strong copyleft license with additional patent and hardware restrictions. |
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 1050 | {{< alias "emaj" >}} | Enables fine-grained write logging and time travel on subsets of the database. |
+| 3620 | {{< alias "asn1oid" >}} | asn1oid extension |
+| 4330 | {{< alias "schedoc" "pg_schedoc" >}} | Cross documentation between Django and DBT projects |
+| 4660 | {{< alias "vasco" >}} | discover hidden correlations in your data with MIC |
+| 4670 | {{< alias "xicor" "pgxicor" >}} | XI Correlation Coefficient in Postgres |
+| 7360 | {{< alias "login_hook" >}} | login_hook - hook to execute login_hook.login() at login time |
+| 9120 | {{< alias "session_variable" >}} | Registration and manipulation of session variables and constants |
+| 9710 | {{< alias "repmgr" >}} | Replication manager for PostgreSQL |
 {.wide .expand}
 
 ## AGPL-3.0
@@ -764,6 +763,22 @@ PostgreSQL extension categorized by license.
 | 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | easily jump into a visual plan UI for any SQL query |
 | 7180 | {{< alias "oidc_validator" "pg_oidc_validator_rust" >}} | PostgreSQL 18 OIDC bearer-token validator plugin written in Rust |
 
+## GPL-3.0-or-later
+
+
+
+| {{< license "GPL-3.0-or-later" >}} | {{< badge content="5 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 3550 | {{< alias "unit" "pgunit" >}} | SI units extension |
+| 3830 | {{< alias "debversion" >}} | Debian version number data type |
+| 5240 | {{< alias "qos" "pg_qos" >}} | QoS resource governor extension for PostgreSQL sessions and queries |
+| 7420 | {{< alias "libx509pq" >}} | X.509 certificate parsing and inspection through OpenSSL |
+| 9420 | {{< alias "aux_mysql" "openhalo" >}} | MySQL Supplementary Extension |
+
 ## LGPL-3.0
 
 
@@ -793,21 +808,6 @@ PostgreSQL extension categorized by license.
 | 2160 | {{< alias "vchord_bm25" >}} | A postgresql extension for bm25 ranking algorithm |
 | 2400 | {{< alias "citus" >}} | Distributed PostgreSQL as an extension |
 | 2401 | {{< alias "citus_columnar" "citus" >}} | Citus columnar storage engine |
-
-## GPL-3.0-or-later
-
-
-
-| {{< license "GPL-3.0-or-later" >}} | {{< badge content="4 Extensions" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 3550 | {{< alias "unit" "pgunit" >}} | SI units extension |
-| 3830 | {{< alias "debversion" >}} | Debian version number data type |
-| 5240 | {{< alias "qos" "pg_qos" >}} | QoS resource governor extension for PostgreSQL sessions and queries |
-| 7420 | {{< alias "libx509pq" >}} | X.509 certificate parsing and inspection through OpenSSL |
 
 ## Timescale
 

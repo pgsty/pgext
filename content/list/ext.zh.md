@@ -645,7 +645,7 @@ comments: false
 | {{< ext "babelfishpg_tds" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | SQL Server TDS线缆协议兼容扩展 |
 | {{< ext "babelfishpg_money" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | SQL Server 货币数据类型兼容扩展 |
 | {{< ext "pgmemcache" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 为PG提供memcached兼容接口 |
-| {{< ext "aux_mysql" >}} | {{< pgver "19,18,17,16,15" "r,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | MySQL兼容辅助扩展模块 |
+| {{< ext "aux_mysql" >}} | {{< pgver "19,18,17,16,15" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | MySQL兼容辅助扩展模块 |
 | {{< ext "pgs3" >}} | {{< pgver "19,18,17,16,15" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 在 PostgreSQL 内实现的 S3 兼容对象存储端点 |
 | {{< ext "kafgres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 在 PostgreSQL 中运行 Kafka 协议消息代理 |
 | {{< ext "pglogical" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | PostgreSQL逻辑复制：三方扩展实现 |

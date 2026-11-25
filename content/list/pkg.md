@@ -541,7 +541,7 @@ There are 457 available PostgreSQL packages:
 | {{< ext "pg_utl_smtp" >}} | `2.0.0` | {{< badge content="Link" link="https://github.com/hexacluster/pg_utl_smtp" >}} | {{< category "SIM" >}} | `pg_utl_smtp_$v` | `postgresql-$v-utl-smtp` |
 | {{< ext "babelfishpg_common" "babelfish" >}} | `6.2.0` | {{< badge content="Link" link="https://babelfishpg.org/" >}} | {{< category "SIM" >}} | `babelfish-$v` | `babelfish-$v` |
 | {{< ext "pgmemcache" >}} | `2.3.0` | {{< badge content="Link" link="https://github.com/ohmu/pgmemcache" >}} | {{< category "SIM" >}} | `pgmemcache_$v` | `postgresql-$v-pgmemcache` |
-| {{< ext "aux_mysql" "openhalo" >}} | `1.5` | {{< badge content="Link" link="https://github.com/HaloTech-Co-Ltd/openHalo" >}} | {{< category "SIM" >}} | `openhalodb-$v` | `openhalodb-$v` |
+| {{< ext "aux_mysql" "openhalo" >}} | `2.0` | {{< badge content="Link" link="https://github.com/pgsty/openhalo" >}} | {{< category "SIM" >}} | `openhalodb-19` | `openhalodb-19` |
 | {{< ext "pgs3" >}} | `0.1.1` | {{< badge content="Link" link="https://github.com/pgsty/pgs3" >}} | {{< category "SIM" >}} | `pgs3_$v` | `postgresql-$v-pgs3` |
 | {{< ext "kafgres" >}} | `0.3.3` | {{< badge content="Link" link="https://github.com/RayElg/kafgres" >}} | {{< category "SIM" >}} | `kafgres_$v` | `postgresql-$v-kafgres` |
 | {{< ext "pglogical" >}} | `2.4.8` | {{< badge content="Link" link="https://github.com/2ndQuadrant/pglogical" >}} | {{< category "ETL" >}} | `pglogical_$v` | `postgresql-$v-pglogical` |

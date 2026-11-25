@@ -734,7 +734,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9320 | {{< alias "babelfishpg_tds" "babelfish" >}} | 1.0.0 | SQL Server TDS线缆协议兼容扩展 |
 | 9330 | {{< alias "babelfishpg_money" "babelfish" >}} | 1.1.0 | SQL Server 货币数据类型兼容扩展 |
 | 9410 | {{< alias "pgmemcache" >}} | 2.3.0 | 为PG提供memcached兼容接口 |
-| 9420 | {{< alias "aux_mysql" "openhalo" >}} | 1.5 | MySQL兼容辅助扩展模块 |
+| 9420 | {{< alias "aux_mysql" "openhalo" >}} | 2.0 | MySQL兼容辅助扩展模块 |
 | 9430 | {{< alias "pgs3" >}} | 0.1.1 | 在 PostgreSQL 内实现的 S3 兼容对象存储端点 |
 | 9440 | {{< alias "kafgres" >}} | 0.3.3 | 在 PostgreSQL 中运行 Kafka 协议消息代理 |
 {.wide .expand}

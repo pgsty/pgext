@@ -613,7 +613,7 @@ There are 627 packaged PostgreSQL extensions:
 | {{< ext "babelfishpg_tds" "babelfish" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server TDS protocol extension |
 | {{< ext "babelfishpg_money" "babelfish" >}} | {{< pgver "19,18,17,16,15" "r,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | SQL Server Money Data Type |
 | {{< ext "pgmemcache" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | memcached interface |
-| {{< ext "aux_mysql" "openhalo" >}} | {{< pgver "19,18,17,16,15" "r,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | MySQL Supplementary Extension |
+| {{< ext "aux_mysql" "openhalo" >}} | {{< pgver "19,18,17,16,15" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | MySQL Supplementary Extension |
 | {{< ext "pgs3" >}} | {{< pgver "19,18,17,16,15" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | S3-compatible object storage endpoint implemented inside PostgreSQL |
 | {{< ext "kafgres" >}} | {{< pgver "19,18,17,16,15" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Kafka protocol broker embedded in PostgreSQL |
 | {{< ext "pglogical" >}} | {{< pgver "19,18,17,16,15" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | PostgreSQL Logical Replication |

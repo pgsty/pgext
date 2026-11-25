@@ -792,9 +792,9 @@ func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
 
 	// Build install commands
 	b.WriteString("[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):\n\n")
-	installScript := fmt.Sprintf("pig install %s;\t\t# install via package name, for the active PG version\n", ext.Pkg)
+	installScript := fmt.Sprintf("pig install %s;\t\t# install by package name\n", ext.Pkg)
 	if ext.Name != ext.Pkg {
-		installScript = installScript + fmt.Sprintf("pig install %s;\t\t# install by extension name, for the current active PG version\n", ext.Name)
+		installScript = installScript + fmt.Sprintf("pig install %s;\t\t# install by extension name\n", ext.Name)
 	}
 	if len(installCmds) > 0 {
 		installScript += "\n" + strings.Join(installCmds, "\n") + "\n"

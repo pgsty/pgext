@@ -581,7 +581,7 @@ func (g *IOPageGenerator) generateInstall(ext *Extension) string {
 
 	// Tab: Install (simple install)
 	b.WriteString("```bash {tab=\"Install\" group=\"extension-install\" value=\"install\"}\n")
-	b.WriteString(fmt.Sprintf("pig install %s;          # Install for current active PG version\n", ext.Pkg))
+	b.WriteString(fmt.Sprintf("pig install %s\n", ext.Pkg))
 	b.WriteString("```\n\n")
 
 	// Tab: pig (per-version)

@@ -734,7 +734,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9320 | {{< alias "babelfishpg_tds" "babelfish" >}} | 1.0.0 | SQL Server TDS protocol extension |
 | 9330 | {{< alias "babelfishpg_money" "babelfish" >}} | 1.1.0 | SQL Server Money Data Type |
 | 9410 | {{< alias "pgmemcache" >}} | 2.3.0 | memcached interface |
-| 9420 | {{< alias "aux_mysql" "openhalo" >}} | 1.5 | MySQL Supplementary Extension |
+| 9420 | {{< alias "aux_mysql" "openhalo" >}} | 2.0 | MySQL Supplementary Extension |
 | 9430 | {{< alias "pgs3" >}} | 0.1.1 | S3-compatible object storage endpoint implemented inside PostgreSQL |
 | 9440 | {{< alias "kafgres" >}} | 0.3.3 | Kafka protocol broker embedded in PostgreSQL |
 {.wide .expand}

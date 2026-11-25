@@ -635,7 +635,7 @@ func (g *CCPageGenerator) generateInstall(ext *Extension) string {
 
 	// Tab: 安装 (simple install)
 	b.WriteString("```bash {tab=\"安装\" group=\"extension-install\" value=\"install\"}\n")
-	b.WriteString(fmt.Sprintf("pig install %s;          # 当前活跃 PG 版本安装\n", ext.Pkg))
+	b.WriteString(fmt.Sprintf("pig install %s\n", ext.Pkg))
 	b.WriteString("```\n\n")
 
 	// Tab: pig (per-version)
