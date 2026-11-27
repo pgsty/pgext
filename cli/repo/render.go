@@ -49,13 +49,9 @@ func Render(r Repository, p Platform, opts RenderOptions) (string, error) {
 	if meta == nil {
 		meta = map[string]string{}
 	}
-	arch := p.Arch
-	if p.Family == "deb" {
-		arch = "amd64"
-		if p.Arch == "aarch64" {
-			arch = "arm64"
-		}
-	}
+	keyPath, _ := bundledSigningKey(r, p)
+	local := r.Name == "pigsty-local" && r.Module == "local"
+	arch := p.NativeArch()
 	replacer := strings.NewReplacer(
 		"${admin_ip}", opts.AdminIP,
 		"${distro_codename}", p.Codename, "${distro_name}", p.Vendor,
@@ -94,7 +90,15 @@ func Render(r Repository, p Platform, opts RenderOptions) (string, error) {
 			meta["enabled"] = "1"
 		}
 		if _, ok := meta["gpgcheck"]; !ok {
-			meta["gpgcheck"] = "0"
+			meta["gpgcheck"] = "1"
+			if local && meta["gpgkey"] == "" {
+				meta["gpgcheck"] = "0"
+			}
+		}
+		if keyPath != "" {
+			meta["gpgkey"] = "file:///" + keyPath
+		} else if r.Name == "epel" && r.Module == "node" && meta["gpgkey"] == "" {
+			meta["gpgkey"] = fmt.Sprintf("https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-%d", p.Major())
 		}
 		for _, endpoint := range strings.Fields(base) {
 			if err := validateEndpoint(endpoint); err != nil {
@@ -116,8 +120,10 @@ func Render(r Repository, p Platform, opts RenderOptions) (string, error) {
 		if _, ok := meta["arch"]; !ok {
 			meta["arch"] = arch
 		}
-		// Preserve Pigsty's trust policy unless the catalog declares a key/policy.
-		if _, ok := meta["trusted"]; !ok && meta["signed-by"] == "" {
+		if keyPath != "" {
+			meta["signed-by"] = "/" + keyPath
+		}
+		if _, ok := meta["trusted"]; !ok && local && meta["signed-by"] == "" {
 			meta["trusted"] = "yes"
 		}
 		var options []string

@@ -1,64 +1,11 @@
-#!/usr/bin/env python3
-import argparse
-import sys
-from pathlib import Path
-
-sys.dont_write_bytecode = True
-
-import stub_doc
-
-
-REPO_ROOT = Path(__file__).resolve().parents[1]
-
-
-def parse_args():
-    parser = argparse.ArgumentParser(
-        description="Load local stub/ and stub-zh/ Markdown files into pgext.doc."
-    )
-    parser.add_argument("--pgurl", default=stub_doc.DEFAULT_PGURL, help="PostgreSQL connection URL")
-    parser.add_argument("--stub-dir", default=REPO_ROOT / "stub", type=Path, help="English stub directory")
-    parser.add_argument("--zh-stub-dir", default=REPO_ROOT / "stub-zh", type=Path, help="Chinese stub directory")
-    parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="run every database assertion and write in a transaction, then roll it back",
-    )
-    return parser.parse_args()
-
-
-def warn_extra(label: str, names):
-    if not names:
-        return
-    preview = ", ".join(names[:10])
-    suffix = "" if len(names) <= 10 else f", ... (+{len(names) - 10} more)"
-    print(
-        f"warning: {len(names)} {label} files do not match "
-        f"pgext.universe rows: {preview}{suffix}",
-        file=sys.stderr,
-    )
-
-
-def main() -> int:
-    args = parse_args()
-    en_docs = stub_doc.collect_stub_docs(args.stub_dir)
-    zh_docs = stub_doc.collect_stub_docs(args.zh_stub_dir)
-
-    with stub_doc.connect(args.pgurl) as conn:
-        stats = stub_doc.load_stub_docs(conn, en_docs, zh_docs, dry_run=args.dry_run)
-
-    warn_extra("English stub", stats["extra_en"])
-    warn_extra("Chinese stub", stats["extra_zh"])
-    action = "validated" if stats["dry_run"] else "loaded"
-    print(
-        f"{action} pgext.doc: "
-        f"universe_rows={stats['base_rows']} "
-        f"en_doc={stats['en_doc']} "
-        f"zh_doc={stats['zh_doc']} "
-        f"missing_en={len(stats['missing_en'])} "
-        f"missing_zh={len(stats['missing_zh'])}"
-    )
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+#!/usr/bin/env sh
+set -eu
+ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+export PGEXT_SOURCE_DIR="${PGEXT_SOURCE_DIR:-$ROOT}"
+if [ -x "$ROOT/pgext" ] && "$ROOT/pgext" doc load --help >/dev/null 2>&1; then
+  exec "$ROOT/pgext" doc load "$@"
+fi
+build_dir=$(mktemp -d "${TMPDIR:-/tmp}/pgext-doc.XXXXXX")
+trap 'rm -f -- "$build_dir/pgext"; rmdir -- "$build_dir"' EXIT
+go -C "$ROOT" build -o "$build_dir/pgext" .
+"$build_dir/pgext" doc load "$@"

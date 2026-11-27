@@ -84,10 +84,10 @@ func TestPackageStatusRenderersUseTriStateColors(t *testing.T) {
 
 	ext := &Extension{RpmRepo: sql.NullString{Valid: true, String: "PIGSTY"}}
 	pkg := &PkgInfo{State: sql.NullString{Valid: true, String: "N/A"}, Count: sql.NullInt64{Valid: true, Int64: 0}}
-	if got := (&IOPageGenerator{}).formatAvailCell(pkg, ext, "el9.x86_64"); got != "N/A PIGSTY - 0" {
+	if got := NewIOPageGenerator(nil, "", "").formatAvailCell(pkg, ext, "el9.x86_64"); got != "N/A PIGSTY - 0" {
 		t.Fatalf("IO N/A cell = %q", got)
 	}
-	if got := (&CCPageGenerator{}).formatAvailCell(pkg, ext, "el9.x86_64"); got != "N/A PIGSTY - 0" {
+	if got := NewCCPageGenerator(nil, "", "").formatAvailCell(pkg, ext, "el9.x86_64"); got != "N/A PIGSTY - 0" {
 		t.Fatalf("CC N/A cell = %q", got)
 	}
 }

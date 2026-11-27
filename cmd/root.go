@@ -64,14 +64,20 @@ var rootCmd = &cobra.Command{
   pgext matrix <name>           # show package availability matrix
   pgext bin <name> -p 17 -o el9 # show binary packages with URLs
   pgext info <name>             # show extension information
-  pgext env                    # inspect build environment (no database)
+  pgext env                     # inspect build environment (no database)
   pgext get pgvector            # fetch sources
   pgext dep pgvector -p 18      # install build dependencies
-  pgext mak pgvector -p 18      # build from prepared inputs
-  pgext pkg pgvector -p 18      # get + dep + mak
+  pgext make pgvector -p 18     # build from prepared inputs
+  pgext pkg pgvector -p 18      # get + dep + make
 `,
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 		return setupLogging()
+	},
+	PersistentPostRun: func(cmd *cobra.Command, args []string) {
+		if logFile != nil {
+			_ = logFile.Close()
+			logFile = nil
+		}
 	},
 }
 
@@ -121,12 +127,9 @@ func initDatabase(cmd *cobra.Command, args []string) error {
 	return nil
 }
 
-// closeDatabase closes the database connection
+// closeDatabase closes the database connection.
 func closeDatabase(cmd *cobra.Command, args []string) {
 	cli.CloseDB()
-	if logFile != nil {
-		logFile.Close()
-	}
 }
 
 func init() {
@@ -158,5 +161,7 @@ func init() {
 
 	rootCmd.AddCommand(loadCmd)
 	rootCmd.AddCommand(repoCmd)
+	rootCmd.AddCommand(newDocCommand())
+	rootCmd.AddCommand(newSyncCommand())
 	rootCmd.AddCommand(purgeCmd)
 }

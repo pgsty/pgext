@@ -65,25 +65,8 @@ func TestRetiredTargetsAreRejectedAndEL8ExcludesPG19(t *testing.T) {
 	}
 
 	el8 := testEngine(t)
-	el8.Platform = Platform{OS: "el8", Family: "rpm", Arch: "amd64", Version: "8.10"}
+	el8.Platform = Platform{OS: "el8", Family: "rpm", Arch: "x86_64", Version: "8.10"}
 	el8.Options.Plan = true
-	repoText, err := el8.repoContent("pgdg")
-	if err != nil {
-		t.Fatal(err)
-	}
-	if strings.Contains(repoText, "pgdg19") || !strings.Contains(repoText, "pgdg18") {
-		t.Fatalf("EL8 PGDG repo must include PG18 and omit PG19:\n%s", repoText)
-	}
-	el9 := testEngine(t)
-	el9.Platform = Platform{OS: "el9", Family: "rpm", Arch: "amd64", Version: "9.6"}
-	el9.Options.Plan = true
-	el9RepoText, err := el9.repoContent("pgdg")
-	if err != nil {
-		t.Fatal(err)
-	}
-	if !strings.Contains(el9RepoText, "pgdg19") {
-		t.Fatalf("EL9 PGDG repo must include PG19:\n%s", el9RepoText)
-	}
 	el8.Options.PG = "19"
 	if _, err := el8.toolCommand("full"); err == nil {
 		t.Fatal("EL8 toolCommand must reject PG19")
@@ -101,7 +84,7 @@ func TestRetiredRecipeDoesNotFallBackToCatalog(t *testing.T) {
 			if family == "rpm" {
 				put(t, filepath.Join(e.Options.SpecDir, "Makefile"), "pgvector:\n\t./build pgvector 14\n")
 			}
-			if pgs, err := e.jobPG(j, recipe); err == nil {
+			if pgs, err := e.jobPG(j, recipe, e.Options.Plan); err == nil {
 				t.Fatalf("%s --pg=%q scheduled retired recipe as %v", family, requested, pgs)
 			}
 		}

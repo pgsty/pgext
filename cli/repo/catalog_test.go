@@ -4,6 +4,8 @@ import (
 	"slices"
 	"strings"
 	"testing"
+
+	"pgext/db"
 )
 
 func testPlatform(t *testing.T, code, version string) Platform {
@@ -98,7 +100,7 @@ func TestRenderMatchesPigstyPlatformRules(t *testing.T) {
 
 func TestRenderEverySupportedCoordinate(t *testing.T) {
 	catalog := testCatalog(t)
-	for code := range codenames {
+	for _, code := range db.SupportedOSCodes() {
 		for _, arch := range []string{"x86_64", "aarch64"} {
 			t.Run(code+"."+arch, func(t *testing.T) {
 				version := ""

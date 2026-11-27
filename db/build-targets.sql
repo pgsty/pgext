@@ -35,9 +35,6 @@ BEGIN
     END IF;
 
     IF changed_pg + changed_os > 0 THEN
-        IF to_regclass('pgext.matrix') IS NOT NULL THEN
-            REFRESH MATERIALIZED VIEW pgext.matrix;
-        END IF;
         -- Invalidate derived summaries without changing historical pkg/bin rows.
         UPDATE pgext.status SET recap_time = now() WHERE id = 0;
     END IF;

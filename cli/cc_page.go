@@ -1,8 +1,7 @@
 /*
 Copyright 2018-2025 Ruohang Feng <rh@vonng.com>
 
-CC Page Generator - generates extension detail pages for pigsty.cc (Chinese only)
-Uses CSS classes and OINK native Markdown components for styling
+OINK Page Generator - generates extension detail pages for pigsty.cc (ZH) & pigsty.io (EN).
 */
 package cli
 
@@ -15,23 +14,30 @@ import (
 	"strings"
 )
 
-// CCPageGenerator generates extension pages for pigsty.cc
+// CCPageGenerator generates extension detail pages for pigsty.cc (DocsZH) or pigsty.io (DocsEN).
 type CCPageGenerator struct {
 	Cache     *ExtensionCache
 	OutputDir string
 	StubDir   string
+	Locale    DocsLocale
 }
 
-// NewCCPageGenerator creates a new CC page generator
 func NewCCPageGenerator(cache *ExtensionCache, outputDir, stubDir string) *CCPageGenerator {
-	return &CCPageGenerator{
-		Cache:     cache,
-		OutputDir: outputDir,
-		StubDir:   stubDir,
-	}
+	return &CCPageGenerator{Cache: cache, OutputDir: outputDir, StubDir: stubDir, Locale: DocsZH}
 }
 
-// GenerateExtensionPage generates a single extension page (Chinese only)
+func NewIOPageGenerator(cache *ExtensionCache, outputDir, stubDir string) *CCPageGenerator {
+	return &CCPageGenerator{Cache: cache, OutputDir: outputDir, StubDir: stubDir, Locale: DocsEN}
+}
+
+func (g *CCPageGenerator) locale() DocsLocale {
+	if g.Locale == "" {
+		return DocsZH
+	}
+	return g.Locale
+}
+
+// GenerateExtensionPage generates a single extension detail page.
 func (g *CCPageGenerator) GenerateExtensionPage(ctx context.Context, ext *Extension) error {
 	stubContent, err := ReadValidatedStub(filepath.Join(g.StubDir, ext.Name+".md"))
 	if err != nil {
@@ -41,17 +47,13 @@ func (g *CCPageGenerator) GenerateExtensionPage(ctx context.Context, ext *Extens
 	if err != nil {
 		return err
 	}
-
 	if stubContent != "" {
 		content += "\n" + stubContent
 	}
-
 	return WriteMarkdownFile(filepath.Join(g.OutputDir, "e", ext.Name+".md"), content)
 }
 
-// PruneStaleExtensionPages removes generated detail pages that are no longer
-// present in the packaged extension catalog. It deliberately preserves index
-// files and hand-written Markdown that does not have generated page metadata.
+// PruneStaleExtensionPages removes generated detail pages no longer present in the packaged catalog.
 func (g *CCPageGenerator) PruneStaleExtensionPages(extensions []*Extension) ([]string, error) {
 	if len(extensions) == 0 {
 		return nil, fmt.Errorf("refusing to prune extension pages with an empty catalog")
@@ -102,10 +104,7 @@ func (g *CCPageGenerator) PruneStaleExtensionPages(extensions []*Extension) ([]s
 	return removed, nil
 }
 
-// generateExtensionContent generates the markdown content
 func (g *CCPageGenerator) generateExtensionContent(ctx context.Context, ext *Extension) (string, error) {
-	var b strings.Builder
-
 	packages, err := LoadPackages(ctx, ext.Pkg)
 	if err != nil {
 		return "", fmt.Errorf("load packages for %s: %w", ext.Name, err)
@@ -115,67 +114,45 @@ func (g *CCPageGenerator) generateExtensionContent(ctx context.Context, ext *Ext
 		return "", fmt.Errorf("load binaries for %s: %w", ext.Name, err)
 	}
 	siblings := g.Cache.GetSiblingExtensions(ext.Pkg, ext.Name)
-	allExts := g.getAllPackageExtensions(ext, siblings)
+	allExts := append([]*Extension{ext}, siblings...)
+	sort.Slice(allExts, func(i, j int) bool { return allExts[i].ID < allExts[j].ID })
 
+	var b strings.Builder
 	b.WriteString(g.generateFrontmatter(ext))
 	b.WriteString(g.generateCards(ext))
 	b.WriteString("\n---------\n\n")
 	b.WriteString(g.generateOverview(ext))
-	b.WriteString(g.generateExtensionTable(ext, allExts))
-	b.WriteString(g.generateRelationships(ext, siblings))
+	b.WriteString(g.generateExtensionTable(allExts))
+	b.WriteString(g.generateRelationships(ext))
 	if ext.Comment.Valid && ext.Comment.String != "" {
 		b.WriteString(fmt.Sprintf("\n> %s\n\n", ext.Comment.String))
 	}
 	b.WriteString(g.generatePackages(ext))
-
 	if !ext.Contrib {
 		b.WriteString(g.generateAvailability(ext, packages, binaries))
 		b.WriteString(g.generateBuild(ext))
 	}
-
 	b.WriteString(g.generateInstall(ext))
-
 	return b.String(), nil
 }
 
-// getAllPackageExtensions returns all extensions for the package (self + siblings), sorted by ID
-func (g *CCPageGenerator) getAllPackageExtensions(ext *Extension, siblings []*Extension) []*Extension {
-	all := make([]*Extension, 0, 1+len(siblings))
-	all = append(all, ext)
-	all = append(all, siblings...)
-	sort.Slice(all, func(i, j int) bool { return all[i].ID < all[j].ID })
-	return all
-}
-
-// generateFrontmatter generates YAML frontmatter
 func (g *CCPageGenerator) generateFrontmatter(ext *Extension) string {
-	desc := strings.ReplaceAll(ext.GetZhDesc(), `"`, `\"`)
-
-	return fmt.Sprintf(`---
-title: "%s"
-linkTitle: "%s"
-description: "%s"
-weight: %d
----
-
-`, ext.Name, ext.Name, desc, ext.ID)
+	desc := strings.ReplaceAll(g.locale().extDesc(ext), `"`, `\"`)
+	return fmt.Sprintf("---\ntitle: \"%s\"\nlinkTitle: \"%s\"\ndescription: \"%s\"\nweight: %d\n---\n\n",
+		ext.Name, ext.Name, desc, ext.ID)
 }
 
-// generateCards generates the top card section with repo and source links
 func (g *CCPageGenerator) generateCards(ext *Extension) string {
 	hasRepo := ext.URL.Valid && ext.URL.String != ""
 	hasSource := ext.Source.Valid && ext.Source.String != ""
-
 	if !hasRepo && !hasSource {
 		return ""
 	}
-
+	l := g.locale()
 	var b strings.Builder
 	b.WriteString("<div class=\"ext-cards\">\n")
-
 	if hasRepo {
 		url := ext.URL.String
-		// Extract org/repo from GitHub URL
 		title := url
 		if strings.Contains(url, "github.com") {
 			parts := strings.Split(strings.TrimRight(url, "/"), "/")
@@ -183,155 +160,113 @@ func (g *CCPageGenerator) generateCards(ext *Extension) string {
 				title = parts[len(parts)-2] + "/" + parts[len(parts)-1]
 			}
 		}
-		b.WriteString(fmt.Sprintf("  <a class=\"ext-card ext-card--repo\" href=\"%s\">\n", url))
-		b.WriteString("    <div class=\"ext-card__kicker\">仓库</div>\n")
-		b.WriteString(fmt.Sprintf("    <div class=\"ext-card__title\">%s</div>\n", title))
-		b.WriteString(fmt.Sprintf("    <div class=\"ext-card__desc\">%s</div>\n", url))
-		b.WriteString("  </a>\n")
+		b.WriteString(fmt.Sprintf("  <a class=\"ext-card ext-card--repo\" href=\"%s\">\n    <div class=\"ext-card__kicker\">%s</div>\n    <div class=\"ext-card__title\">%s</div>\n    <div class=\"ext-card__desc\">%s</div>\n  </a>\n",
+			url, l.t("仓库", "Repository"), title, url))
 	}
-
 	if hasSource {
-		sourceURL := ext.GetSourceURL(RegionChina)
+		sourceURL := ext.GetSourceURL(l.region())
 		fileName := ext.GetSourceFilename()
-		b.WriteString(fmt.Sprintf("  <a class=\"ext-card ext-card--source\" href=\"%s\">\n", sourceURL))
-		b.WriteString("    <div class=\"ext-card__kicker\">源码</div>\n")
-		b.WriteString(fmt.Sprintf("    <div class=\"ext-card__title\">%s</div>\n", fileName))
-		b.WriteString(fmt.Sprintf("    <div class=\"ext-card__desc\">%s</div>\n", fileName))
-		b.WriteString("  </a>\n")
+		b.WriteString(fmt.Sprintf("  <a class=\"ext-card ext-card--source\" href=\"%s\">\n    <div class=\"ext-card__kicker\">%s</div>\n    <div class=\"ext-card__title\">%s</div>\n    <div class=\"ext-card__desc\">%s</div>\n  </a>\n",
+			sourceURL, l.t("源码", "Source"), fileName, fileName))
 	}
-
 	b.WriteString("</div>\n\n")
 	return b.String()
 }
 
-// generateOverview generates the overview table
 func (g *CCPageGenerator) generateOverview(ext *Extension) string {
-	var b strings.Builder
-	b.WriteString("## 概览\n\n")
-
-	// Package badge: lead pages point to themselves, sibling pages point to the lead page.
+	l := g.locale()
 	pkgLink := fmt.Sprintf("[**`%s`**](/ext/e/%s)", ext.Pkg, ext.GetPkgPageName())
-
-	version := "-"
+	version, category, license, lang := "-", "-", "-", "-"
 	if ext.Version.Valid {
 		version = fmt.Sprintf("`%s`", ext.Version.String)
 	}
-
-	category := "-"
 	if ext.Category.Valid {
 		category = CCCategoryBadge(ext.Category.String)
 	}
-
-	license := "-"
 	if ext.License.Valid {
 		license = CCLicenseBadge(ext.License.String)
 	}
-
-	lang := "-"
 	if ext.Lang.Valid {
 		lang = CCLanguageBadge(ext.Lang.String)
 	}
 
-	b.WriteString("| **扩展包名** | **版本** | **分类** | **许可证** | **语言** |\n")
+	var b strings.Builder
+	b.WriteString(l.t("## 概览\n\n", "## Overview\n\n"))
+	b.WriteString(l.t("| **扩展包名** | **版本** | **分类** | **许可证** | **语言** |\n", "| **Package** | **Version** | **Category** | **License** | **Language** |\n"))
 	b.WriteString("|:---------------------------------------------------:|:-------:|:--------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------:|:--------------------------------------------------------------------:|\n")
-	b.WriteString(fmt.Sprintf("| %s | %s | %s | %s | %s |\n", pkgLink, version, category, license, lang))
-	b.WriteString("{.ext-table}\n\n")
-
+	b.WriteString(fmt.Sprintf("| %s | %s | %s | %s | %s |\n{.ext-table}\n\n", pkgLink, version, category, license, lang))
 	return b.String()
 }
 
-// generateExtensionTable generates the extension attributes table showing all extensions in the package
-func (g *CCPageGenerator) generateExtensionTable(ext *Extension, allExts []*Extension) string {
+func (g *CCPageGenerator) generateExtensionTable(allExts []*Extension) string {
+	l := g.locale()
 	var b strings.Builder
-
-	b.WriteString("|  ID   | **扩展名** | **Bin** | **Lib** | **Load** | **Create** | **Trust** | **Reloc** | **模式** |\n")
+	b.WriteString(l.t(
+		"|  ID   | **扩展名** | **Bin** | **Lib** | **Load** | **Create** | **Trust** | **Reloc** | **模式** |\n",
+		"|  ID   | **Extension** | **Bin** | **Lib** | **Load** | **Create** | **Trust** | **Reloc** | **Schema** |\n",
+	))
 	b.WriteString("|:-----:|:-------------------------------------------------------------------------|:--------------------------------------------:|:---------------------------------------------:|:--------------------------------------------:|:---------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|:----------|\n")
-
 	for _, e := range allExts {
-		extLink := CCExtBoldLink(e.Name, fmt.Sprintf("/ext/e/%s", e.Name))
-
 		schema := "-"
 		if len(e.Schemas) > 0 {
 			schema = fmt.Sprintf("`%s`", e.Schemas[0])
 		}
-
 		b.WriteString(fmt.Sprintf("| %d  | %s | %s | %s | %s | %s | %s | %s | %s |\n",
 			e.ID,
-			extLink,
-			CCFlagBadge(e.HasBin),
-			CCFlagBadge(e.HasLib),
-			CCFlagBadge(e.NeedLoad),
-			CCFlagBadge(e.NeedDDL),
-			CCOptFlagBadge(e.Trusted),
-			CCOptFlagBadge(e.Relocatable),
+			CCExtBoldLink(e.Name, fmt.Sprintf("/ext/e/%s", e.Name)),
+			DocsFlagBadge(l, e.HasBin),
+			DocsFlagBadge(l, e.HasLib),
+			DocsFlagBadge(l, e.NeedLoad),
+			DocsFlagBadge(l, e.NeedDDL),
+			DocsOptFlagBadge(l, e.Trusted),
+			DocsOptFlagBadge(l, e.Relocatable),
 			schema,
 		))
 	}
-
 	b.WriteString("{.ext-table}\n\n")
-
 	return b.String()
 }
 
-// generateRelationships generates the relationships section
-func (g *CCPageGenerator) generateRelationships(ext *Extension, siblings []*Extension) string {
+func (g *CCPageGenerator) generateRelationships(ext *Extension) string {
 	if len(ext.Requires) == 0 && len(ext.RequireBy) == 0 && len(ext.SeeAlso) == 0 {
 		return ""
 	}
+	l := g.locale()
+	headerParts := make([]string, 0, len(ext.Requires)+len(ext.SeeAlso))
+	for _, req := range ext.Requires {
+		headerParts = append(headerParts, CCExtRef(g.Cache, req))
+	}
+	for _, see := range ext.SeeAlso {
+		headerParts = append(headerParts, CCExtRef(g.Cache, see))
+	}
 
 	var b strings.Builder
-
-	// Build "相关扩展" header row content from requires + see_also
-	headerParts := make([]string, 0)
-	if len(ext.Requires) > 0 {
-		for _, req := range ext.Requires {
-			headerParts = append(headerParts, CCExtRef(g.Cache, req))
-		}
-	}
-	if len(ext.SeeAlso) > 0 {
-		for _, see := range ext.SeeAlso {
-			headerParts = append(headerParts, CCExtRef(g.Cache, see))
-		}
-	}
-
-	// If no related extensions at all (only require_by), use empty header
-	headerContent := ""
-	if len(headerParts) > 0 {
-		headerContent = strings.Join(headerParts, " ")
-	}
-
-	b.WriteString(fmt.Sprintf("| **相关扩展** | %s |\n", headerContent))
+	b.WriteString(fmt.Sprintf("| **%s** | %s |\n", l.t("相关扩展", "Related"), strings.Join(headerParts, " ")))
 	b.WriteString("|:--------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n")
-
 	if len(ext.RequireBy) > 0 {
 		links := make([]string, len(ext.RequireBy))
 		for i, req := range ext.RequireBy {
 			links[i] = CCExtRef(g.Cache, req)
 		}
-		b.WriteString(fmt.Sprintf("| **下游依赖** | %s |\n", strings.Join(links, " ")))
+		b.WriteString(fmt.Sprintf("| **%s** | %s |\n", l.t("下游依赖", "Depended By"), strings.Join(links, " ")))
 	}
-
 	b.WriteString("{.ext-table .ext-table--rel}\n\n")
 	return b.String()
 }
 
-// generatePackages generates the packages table
 func (g *CCPageGenerator) generatePackages(ext *Extension) string {
 	if ext.Contrib {
 		return g.generateContribPackages(ext)
 	}
-
+	l := g.locale()
 	var b strings.Builder
-	b.WriteString("\n## 版本\n\n")
-	b.WriteString("| 类型 | 仓库 | 版本 | PG 大版本 | 包名 | 依赖 |\n")
+	b.WriteString(l.t("\n## 版本\n\n", "\n## Version\n\n"))
+	b.WriteString(l.t("| 类型 | 仓库 | 版本 | PG 大版本 | 包名 | 依赖 |\n", "| Type | Repo | Version | PG Ver | Package | Deps |\n"))
 	b.WriteString("|:----:|:----:|:----:|:------:|:--------:|:----:|\n")
 
-	// EXT row
 	if ext.Repo.Valid || ext.Version.Valid || len(ext.PgVer) > 0 {
 		b.WriteString(g.buildPackageRow("EXT", ext.Category.String, ext.Repo.String, ext.Version.String, ext.Pkg, ext.PgVer, ext.Requires))
 	}
-
-	// RPM row
 	if ext.RpmRepo.Valid || ext.RpmVer.Valid || len(ext.RpmPg) > 0 {
 		pkg := ext.Pkg
 		if ext.RpmPkg.Valid && ext.RpmPkg.String != "" {
@@ -339,8 +274,6 @@ func (g *CCPageGenerator) generatePackages(ext *Extension) string {
 		}
 		b.WriteString(g.buildPackageRow("RPM", ext.Category.String, ext.RpmRepo.String, ext.RpmVer.String, pkg, ext.RpmPg, ext.RpmDeps))
 	}
-
-	// DEB row
 	if ext.DebRepo.Valid || ext.DebVer.Valid || len(ext.DebPg) > 0 {
 		pkg := ext.Pkg
 		if ext.DebPkg.Valid && ext.DebPkg.String != "" {
@@ -348,31 +281,21 @@ func (g *CCPageGenerator) generatePackages(ext *Extension) string {
 		}
 		b.WriteString(g.buildPackageRow("DEB", ext.Category.String, ext.DebRepo.String, ext.DebVer.String, pkg, ext.DebPg, ext.DebDeps))
 	}
-
 	b.WriteString("{.ext-table}\n\n")
 	return b.String()
 }
 
-// buildPackageRow builds a single package row
 func (g *CCPageGenerator) buildPackageRow(label, category, repo, version, pattern string, pgVers, deps []string) string {
-	repoBadge := "-"
+	repoBadge, verStr, patternStr, depsStr := "-", "-", "-", "-"
 	if repo != "" {
 		repoBadge = CCRepoBadge(repo)
 	}
-
-	verStr := "-"
 	if version != "" {
 		verStr = fmt.Sprintf("`%s`", version)
 	}
-
-	patternStr := "-"
 	if pattern != "" {
 		patternStr = fmt.Sprintf("`%s`", pattern)
 	}
-
-	pgBadges := CCPGVersShortcode(pgVers)
-
-	depsStr := "-"
 	if len(deps) > 0 {
 		depList := make([]string, len(deps))
 		for i, dep := range deps {
@@ -380,8 +303,6 @@ func (g *CCPageGenerator) buildPackageRow(label, category, repo, version, patter
 		}
 		depsStr = strings.Join(depList, ", ")
 	}
-
-	// Map label to URL with category anchor
 	catAnchor := ""
 	if category != "" {
 		catAnchor = "#" + strings.ToLower(category)
@@ -395,18 +316,13 @@ func (g *CCPageGenerator) buildPackageRow(label, category, repo, version, patter
 	case "DEB":
 		labelLink = fmt.Sprintf("[**DEB**](/ext/deb%s)", catAnchor)
 	}
-
 	return fmt.Sprintf("| %s | %s | %s | %s | %s | %s |\n",
-		labelLink, repoBadge, verStr, pgBadges, patternStr, depsStr)
+		labelLink, repoBadge, verStr, CCPGVersShortcode(pgVers), patternStr, depsStr)
 }
 
-// generateContribPackages generates package info for contrib extensions
 func (g *CCPageGenerator) generateContribPackages(ext *Extension) string {
 	var b strings.Builder
-	b.WriteString("\n## 版本\n\n")
-
-	// Build header
-	b.WriteString("|")
+	b.WriteString(g.locale().t("\n## 版本\n\n|", "\n## Version\n\n|"))
 	for _, pg := range g.Cache.PGVersions {
 		b.WriteString(fmt.Sprintf(" **PG%d** |", pg))
 	}
@@ -417,16 +333,10 @@ func (g *CCPageGenerator) generateContribPackages(ext *Extension) string {
 	b.WriteString("\n|")
 
 	availablePgs := make(map[int]bool)
-	for _, pgStr := range ext.PgVer {
-		if pgVersions := ParsePGVersions([]string{pgStr}); len(pgVersions) > 0 {
-			for _, pg := range pgVersions {
-				availablePgs[pg] = true
-			}
-		}
+	for _, pg := range ParsePGVersions(ext.PgVer) {
+		availablePgs[pg] = true
 	}
-
 	version := ext.GetVersion()
-
 	for _, pg := range g.Cache.PGVersions {
 		if availablePgs[pg] {
 			b.WriteString(fmt.Sprintf(" %s |", CCAvailBadge(version)))
@@ -435,21 +345,14 @@ func (g *CCPageGenerator) generateContribPackages(ext *Extension) string {
 		}
 	}
 	b.WriteString("\n{.ext-table}\n\n")
-
 	return b.String()
 }
 
-// generateAvailability generates the availability matrix using the pgext_matrix shortcode.
-// Each cell is plain text: "STATE REPO VERSION PKG_NAME"
-// The shortcode parses cells and renders two-line badges with CSS coloring.
 func (g *CCPageGenerator) generateAvailability(ext *Extension, packages []*PkgInfo, binaries []*Binary) string {
 	if len(packages) == 0 {
 		return ""
 	}
-
-	var b strings.Builder
-
-	pkgMap := make(map[string]*PkgInfo)
+	pkgMap := make(map[string]*PkgInfo, len(packages))
 	for _, pkg := range packages {
 		key := fmt.Sprintf("%d-%s", pkg.PG, pkg.OS)
 		if _, exists := pkgMap[key]; !exists {
@@ -457,10 +360,8 @@ func (g *CCPageGenerator) generateAvailability(ext *Extension, packages []*PkgIn
 		}
 	}
 
-	b.WriteString("{{< pgext_matrix >}}\n")
-
-	// Header
-	b.WriteString("| **OS / PG** |")
+	var b strings.Builder
+	b.WriteString("{{< pgext_matrix >}}\n| **OS / PG** |")
 	for _, pg := range g.Cache.PGVersions {
 		b.WriteString(fmt.Sprintf(" **PG%d** |", pg))
 	}
@@ -470,20 +371,14 @@ func (g *CCPageGenerator) generateAvailability(ext *Extension, packages []*PkgIn
 	}
 	b.WriteString("\n")
 
-	// Data rows
 	for _, osv := range g.Cache.OSVersions {
 		if !osv.Active {
 			continue
 		}
-
 		b.WriteString(fmt.Sprintf("| %s |", osv.OS))
-
 		for _, pg := range g.Cache.PGVersions {
-			key := fmt.Sprintf("%d-%s", pg, osv.OS)
-
-			if pkg, ok := pkgMap[key]; ok {
-				cell := g.formatAvailCell(pkg, ext, osv.OS)
-				b.WriteString(fmt.Sprintf(" %s |", cell))
+			if pkg, ok := pkgMap[fmt.Sprintf("%d-%s", pg, osv.OS)]; ok {
+				b.WriteString(fmt.Sprintf(" %s |", g.formatAvailCell(pkg, ext, osv.OS)))
 			} else {
 				b.WriteString(" N/A - - 0 |")
 			}
@@ -491,12 +386,12 @@ func (g *CCPageGenerator) generateAvailability(ext *Extension, packages []*PkgIn
 		b.WriteString("\n")
 	}
 
-	// Download data lines (@ OS PG PKG FILENAME REPO VERSION SIZE URL)
 	if len(binaries) > 0 {
 		activePG := make(map[int]bool, len(g.Cache.PGVersions))
 		for _, pg := range g.Cache.PGVersions {
 			activePG[pg] = true
 		}
+		region := g.locale().region()
 		for _, bin := range binaries {
 			if !activePG[bin.PG] {
 				continue
@@ -506,146 +401,124 @@ func (g *CCPageGenerator) generateAvailability(ext *Extension, packages []*PkgIn
 				org = bin.Org.String
 			}
 			size := strings.ReplaceAll(FormatSize(bin.Size), " ", "")
-			url := bin.GetDownloadURL(RegionChina)
 			b.WriteString(fmt.Sprintf("@ %s %d %s %s %s %s %s %s\n",
-				bin.OS, bin.PG, bin.Name, bin.File, org, bin.Version, size, url))
+				bin.OS, bin.PG, bin.Name, bin.File, org, bin.Version, size, bin.GetDownloadURL(region)))
 		}
 	}
-
 	b.WriteString("{{< /pgext_matrix >}}\n\n")
 	return b.String()
 }
 
-// formatAvailCell formats a cell as plain text: "STATE REPO VERSION COUNT"
 func (g *CCPageGenerator) formatAvailCell(pkg *PkgInfo, ext *Extension, osName string) string {
 	state := "MISS"
 	if pkg.State.Valid {
 		state = pkg.State.String
 	}
-
 	org := InferRepo(ext, osName)
 	if pkg.Org.Valid && pkg.Org.String != "" {
 		org = strings.ToUpper(pkg.Org.String)
 	}
-
 	version := "-"
 	if pkg.Version.Valid && pkg.Version.String != "" {
 		version = pkg.Version.String
 	}
-
 	count := int64(0)
 	if pkg.Count.Valid {
 		count = pkg.Count.Int64
 	}
-
 	return fmt.Sprintf("%s %s %s %d", state, org, version, count)
 }
 
-// generateBuild generates the build section
 func (g *CCPageGenerator) generateBuild(ext *Extension) string {
 	if ext.Contrib {
 		return ""
 	}
-
-	// Check extra.rpm and extra.deb to determine if build command should be shown
-	var buildRPM, buildDEB bool
-	if ext.Extra != nil {
-		if rpm, ok := ext.Extra["rpm"]; ok {
-			if rpmBool, ok := rpm.(bool); ok && rpmBool {
-				buildRPM = true
-			}
-		}
-		if deb, ok := ext.Extra["deb"]; ok {
-			if debBool, ok := deb.(bool); ok && debBool {
-				buildDEB = true
-			}
-		}
-	}
-
+	buildRPM, buildDEB := extBuildFlags(ext)
 	if !buildRPM && !buildDEB {
 		return ""
 	}
-
+	l := g.locale()
 	var buildHint string
-	if buildRPM && buildDEB {
-		buildHint = "RPM / DEB 包"
-	} else if buildRPM {
-		buildHint = "RPM 包"
-	} else {
-		buildHint = "DEB 包"
+	switch {
+	case buildRPM && buildDEB:
+		buildHint = l.t("RPM / DEB 包", "RPM / DEB packages")
+	case buildRPM:
+		buildHint = l.t("RPM 包", "RPM packages")
+	default:
+		buildHint = l.t("DEB 包", "DEB packages")
 	}
 
 	var b strings.Builder
-	b.WriteString("## 构建\n\n")
-	b.WriteString(fmt.Sprintf("您可以使用 `pig build` 命令构建 `%s` 扩展的 %s：\n\n", ext.Pkg, buildHint))
+	b.WriteString(l.t("## 构建\n\n", "## Build\n\n"))
+	if l.isZH() {
+		b.WriteString(fmt.Sprintf("您可以使用 `pig build` 命令构建 `%s` 扩展的 %s：\n\n", ext.Pkg, buildHint))
+	} else {
+		b.WriteString(fmt.Sprintf("You can build the %s for `%s` using `pig build`:\n\n", buildHint, ext.Pkg))
+	}
 	b.WriteString("```bash\n")
-	b.WriteString(fmt.Sprintf("pig build pkg %s         # 构建 %s\n", ext.Pkg, buildHint))
+	b.WriteString(fmt.Sprintf(l.t("pig build pkg %s         # 构建 %s\n", "pig build pkg %s         # build %s\n"), ext.Pkg, buildHint))
 	b.WriteString("```\n\n")
 	return b.String()
 }
 
-// generateInstall generates the install section
 func (g *CCPageGenerator) generateInstall(ext *Extension) string {
+	l := g.locale()
 	var b strings.Builder
-	b.WriteString("\n## 安装\n\n")
+	b.WriteString(l.t("\n## 安装\n\n", "\n## Install\n\n"))
 
-	// For contrib, just show CREATE EXTENSION
 	if ext.Contrib {
-		b.WriteString("> **提示**：这是 PostgreSQL 内核自带的 contrib 扩展\n\n")
+		b.WriteString(l.t(
+			"> **提示**：这是 PostgreSQL 内核自带的 contrib 扩展\n\n",
+			"> **Note**: This is a built-in contrib extension of PostgreSQL\n\n",
+		))
 		if ext.NeedDDL {
 			b.WriteString("```sql\nCREATE EXTENSION " + ext.Name + ";\n```\n")
 		}
 		return b.String()
 	}
 
-	// Determine repo setup text
 	if ext.UsesPGDGOnly() {
-		b.WriteString("您可以直接安装 `" + ext.Pkg + "` 扩展包的预置二进制包，首先确保 [**PGDG**](/docs/repo/pgdg) 仓库已经添加并启用：\n\n")
-		b.WriteString("```bash\npig repo add pgdg -u          # 添加 PGDG 仓库并更新缓存\n```\n\n")
+		b.WriteString(fmt.Sprintf(l.t(
+			"您可以直接安装 `%s` 扩展包的预置二进制包，首先确保 [**PGDG**](/docs/repo/pgdg) 仓库已经添加并启用：\n\n",
+			"You can install `%s` directly. First, make sure the [**PGDG**](/docs/repo/pgdg) repository is added and enabled:\n\n",
+		), ext.Pkg))
+		b.WriteString(l.t(
+			"```bash\npig repo add pgdg -u          # 添加 PGDG 仓库并更新缓存\n```\n\n",
+			"```bash\npig repo add pgdg -u          # Add PGDG repo and update cache\n```\n\n",
+		))
 	} else {
-		b.WriteString("您可以直接安装 `" + ext.Pkg + "` 扩展包的预置二进制包，首先确保 [**PGDG**](/docs/repo/pgdg) 和 [**PIGSTY**](/docs/repo/pgsql) 仓库已经添加并启用：\n\n")
-		b.WriteString("```bash\npig repo add pgsql -u          # 添加仓库并更新缓存\n```\n\n")
+		b.WriteString(fmt.Sprintf(l.t(
+			"您可以直接安装 `%s` 扩展包的预置二进制包，首先确保 [**PGDG**](/docs/repo/pgdg) 和 [**PIGSTY**](/docs/repo/pgsql) 仓库已经添加并启用：\n\n",
+			"You can install `%s` directly. First, make sure the [**PGDG**](/docs/repo/pgdg) and [**PIGSTY**](/docs/repo/pgsql) repositories are added and enabled:\n\n",
+		), ext.Pkg))
+		b.WriteString(l.t(
+			"```bash\npig repo add pgsql -u          # 添加仓库并更新缓存\n```\n\n",
+			"```bash\npig repo add pgsql -u          # Add repo and update cache\n```\n\n",
+		))
 	}
 
-	// Determine available PG versions
-	activePG := make(map[int]bool, len(g.Cache.PGVersions))
-	for _, pg := range g.Cache.PGVersions {
-		activePG[pg] = true
-	}
-
-	var pgVersions []int
-	for _, pg := range ParsePGVersions(ext.PgVer) {
-		if activePG[pg] {
-			pgVersions = append(pgVersions, pg)
-		}
-	}
-	sort.Sort(sort.Reverse(sort.IntSlice(pgVersions)))
-
-	// Get RPM and DEB package patterns
-	rpmPkg := ext.Pkg
+	pgVersions := activePGVersionsFor(g.Cache, ext)
+	rpmPkg, debPkg := ext.Pkg, ext.Pkg
 	if ext.RpmPkg.Valid && ext.RpmPkg.String != "" {
 		rpmPkg = ext.RpmPkg.String
 	}
-	debPkg := ext.Pkg
 	if ext.DebPkg.Valid && ext.DebPkg.String != "" {
 		debPkg = ext.DebPkg.String
 	}
 
-	b.WriteString("使用 [**pig**](https://pig.pgsty.com/zh) 或者是 `apt/yum/dnf` 安装扩展：\n\n")
+	b.WriteString(l.t(
+		"使用 [**pig**](https://pig.pgsty.com/zh) 或者是 `apt/yum/dnf` 安装扩展：\n\n",
+		"Install the extension using [**pig**](https://pig.pgsty.com) or `apt/yum/dnf`:\n\n",
+	))
+	b.WriteString(fmt.Sprintf("```bash {tab=%q group=\"extension-install\" value=\"install\"}\npig install %s\n```\n\n",
+		l.t("安装", "Install"), ext.Pkg))
 
-	// Tab: 安装 (simple install)
-	b.WriteString("```bash {tab=\"安装\" group=\"extension-install\" value=\"install\"}\n")
-	b.WriteString(fmt.Sprintf("pig install %s\n", ext.Pkg))
-	b.WriteString("```\n\n")
-
-	// Tab: pig (per-version)
 	b.WriteString("```bash {tab=\"pig\" value=\"pig\"}\n")
 	for _, pg := range pgVersions {
 		b.WriteString(fmt.Sprintf("pig ext install -y %s -v %d  # PG %d\n", ext.Pkg, pg, pg))
 	}
 	b.WriteString("```\n\n")
 
-	// Tab: dnf (RPM)
 	if ext.RpmRepo.Valid || ext.RpmVer.Valid || len(ext.RpmPg) > 0 {
 		b.WriteString("```bash {tab=\"dnf\" value=\"dnf\"}\n")
 		for _, pg := range pgVersions {
@@ -655,7 +528,6 @@ func (g *CCPageGenerator) generateInstall(ext *Extension) string {
 		b.WriteString("```\n\n")
 	}
 
-	// Tab: apt (DEB)
 	if ext.DebRepo.Valid || ext.DebVer.Valid || len(ext.DebPg) > 0 {
 		b.WriteString("```bash {tab=\"apt\" value=\"apt\"}\n")
 		for _, pg := range pgVersions {
@@ -665,54 +537,26 @@ func (g *CCPageGenerator) generateInstall(ext *Extension) string {
 		b.WriteString("```\n\n")
 	}
 
-	// Shared preload libraries
 	if ext.NeedLoad {
-		b.WriteString("\n**预加载配置**：\n\n")
-
-		var libsToLoad []string
-		libSet := make(map[string]bool)
-
-		for _, depName := range ext.Requires {
-			if depExt, exists := g.Cache.ExtMap[depName]; exists && depExt.NeedLoad {
-				depLibName := depExt.GetLibName()
-				for _, lib := range strings.Split(depLibName, ",") {
-					lib = strings.TrimSpace(lib)
-					if lib != "" && !libSet[lib] {
-						libSet[lib] = true
-						libsToLoad = append(libsToLoad, lib)
-					}
-				}
-			}
-		}
-
-		extLibName := ext.GetLibName()
-		for _, lib := range strings.Split(extLibName, ",") {
-			lib = strings.TrimSpace(lib)
-			if lib != "" && !libSet[lib] {
-				libSet[lib] = true
-				libsToLoad = append(libsToLoad, lib)
-			}
-		}
-
-		libConfig := strings.Join(libsToLoad, ", ")
-		b.WriteString("```bash\n")
-		b.WriteString(fmt.Sprintf("shared_preload_libraries = '%s';\n", libConfig))
-		b.WriteString("```\n\n")
+		b.WriteString(l.t("\n**预加载配置**：\n\n", "\n**Preload**:\n\n"))
+		libConfig := strings.Join(preloadLibraries(g.Cache, ext), ", ")
+		b.WriteString(fmt.Sprintf("```ini\nshared_preload_libraries = '%s';\n```\n\n", libConfig))
 	}
 
-	// CREATE EXTENSION
 	if ext.NeedDDL {
-		b.WriteString("\n**创建扩展**：\n\n")
+		b.WriteString(l.t("\n**创建扩展**：\n\n", "\n**Create Extension**:\n\n"))
 		b.WriteString("```sql\n")
 		if len(ext.Requires) > 0 {
-			b.WriteString(fmt.Sprintf("CREATE EXTENSION %s CASCADE;  -- 依赖: %s\n", ext.Name, strings.Join(ext.Requires, ", ")))
+			b.WriteString(fmt.Sprintf(l.t(
+				"CREATE EXTENSION %s CASCADE;  -- 依赖: %s\n",
+				"CREATE EXTENSION %s CASCADE;  -- requires: %s\n",
+			), ext.Name, strings.Join(ext.Requires, ", ")))
 		} else {
 			b.WriteString(fmt.Sprintf("CREATE EXTENSION %s;\n", ext.Name))
 		}
 		b.WriteString("```\n")
 	} else if !ext.NeedLoad {
-		b.WriteString("> 此扩展不需要执行 `CREATE EXTENSION` 语句\n")
+		b.WriteString(l.t("> 此扩展不需要执行 `CREATE EXTENSION` 语句\n", "> This extension does not require `CREATE EXTENSION`\n"))
 	}
-
 	return b.String()
 }

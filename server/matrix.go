@@ -6,30 +6,20 @@ package server
 /* ----------------------------------------------------------------
    Global build-matrix payload (GET /api/v1/matrix).
 
-   The payload is computed at write time and cached in pgext.matrix_cache
-   (one mtime-stamped row per view), so the read path is one primary-key
-   lookup. The builder collapses pgext.pkg into one row per package with a
-   single aggregation query; Go lays the cells out on the canonical OS × PG
-   grid of the active snapshot.
+   The builder collapses pgext.pkg into one row per package with a single
+   aggregation query; Go lays the cells out on the canonical OS × PG grid of
+   the active snapshot and caches each view in memory per snapshot version
+   with in-flight deduplication (no runtime DDL or database cache table).
 
    Wire format "matrix-row.v2": each row is {p, e, c[, v, i]} where c holds
    one status byte per cell — G = AVAIL via PGDG, P = AVAIL via Pigsty/other,
    M = MISS, N = N/A. v is the row-local version dictionary and i its
-   per-cell base36 index ('.' = none). The pkg.hide flag is deliberately
-   ignored: rendering follows the four states only.
+   per-cell base36 index ('.' = none).
 
    Besides the global view, ?repo=pgdg|pigsty serves single-repository
-   what-if views (mirroring the pgext.pkg_pgdg / pkg_pigsty schema views):
-   the same grid recomputed as if only that organization's repositories
-   existed. Rows shrink to the packages that organization actually ships,
-   AVAIL cells carry its own latest version, every other currently-valid
-   slot degrades to M. stats.global carries the real-world package/slot
-   totals so clients can state what the missing complement amounts to.
-
-   Freshness: a cache row is reused while it is newer than the catalog
-   load recorded in pgext.status and less than a day old; POST /api/v1/reload
-   rebuilds all views eagerly. Rebuilds are cheap (tens of ms) but never sit
-   on the request path for regular visitors.
+   what-if views (mirroring pgext.pkg_pgdg / pkg_pigsty): rows shrink to the
+   packages that organization ships, AVAIL cells carry its own latest version,
+   every other valid slot degrades to M, and stats.global sizes the full grid.
    ---------------------------------------------------------------- */
 
 import (
@@ -45,20 +35,18 @@ import (
 
 const matrixFormat = "matrix-row.v2"
 
-// matrixView is one /api/v1/matrix variant: the ?repo= query value, its
-// pgext.matrix_cache row, and the status letter its AVAIL cells carry
-// ("" is the global three-color view).
+// matrixView is one /api/v1/matrix variant: the ?repo= query value and the
+// status letter its AVAIL cells carry ("" is the global multi-repo view).
 type matrixView struct {
 	name   string
-	id     int
 	letter string
 }
 
 // matrixViews lists every variant in warmup/reload rebuild order (global first).
 var matrixViews = []matrixView{
-	{name: "", id: 1},
-	{name: "pgdg", id: 2, letter: "G"},
-	{name: "pigsty", id: 3, letter: "P"},
+	{name: ""},
+	{name: "pgdg", letter: "G"},
+	{name: "pigsty", letter: "P"},
 }
 
 func matrixViewOf(name string) (matrixView, bool) {
@@ -78,17 +66,11 @@ func (mv matrixView) label() string {
 	return mv.name
 }
 
-const matrixCacheDDL = `
-	CREATE TABLE IF NOT EXISTS pgext.matrix_cache (
-	    id      int PRIMARY KEY CONSTRAINT matrix_cache_id_range CHECK (id BETWEEN 1 AND 3),
-	    mtime   timestamptz NOT NULL DEFAULT now(),
-	    payload jsonb NOT NULL
-	)`
-
-// Databases from the one-row era carry a CHECK (id = 1) under this name;
-// dropping it lets the repo view rows in without touching fresh installs.
-const matrixCacheLegacyCheckDDL = `
-	ALTER TABLE pgext.matrix_cache DROP CONSTRAINT IF EXISTS matrix_cache_id_check`
+type matrixCacheEntry struct {
+	ver      string
+	payload  []byte
+	building chan struct{}
+}
 
 // matrixRow is one package row of the global matrix payload.
 type matrixRow struct {
@@ -99,11 +81,10 @@ type matrixRow struct {
 	VIdx     string   `json:"i,omitempty"`
 }
 
-// parseMatrixCell splits one encoded cell value "<version>(#|@)<state>",
-// where '#' marks a hidden package row.
-func parseMatrixCell(value string) (version string, hidden bool, state byte) {
+// parseMatrixCell splits one encoded cell value "<version>@<state>".
+func parseMatrixCell(value string) (version string, state byte) {
 	if len(value) < 2 {
-		return "", false, 'N'
+		return "", 'N'
 	}
 	state = value[len(value)-1]
 	switch state {
@@ -111,7 +92,7 @@ func parseMatrixCell(value string) (version string, hidden bool, state byte) {
 	default:
 		state = 'N'
 	}
-	return value[:len(value)-2], value[len(value)-2] == '#', state
+	return value[:len(value)-2], state
 }
 
 // matrixColumnKeys returns the aggregation key ("el8i.17") for every cell of
@@ -149,7 +130,7 @@ func layoutMatrixRow(cells map[string]string, keys []string, counts map[string]i
 			counts["N"]++
 			continue
 		}
-		version, _, state := parseMatrixCell(value)
+		version, state := parseMatrixCell(value)
 		counts[string(state)]++
 		codes[ci] = state
 		if version != "" && (state == 'G' || state == 'P') {
@@ -195,8 +176,7 @@ const matrixCellAggKey = `split_part(p.os, '.', 1)
 const matrixGlobalQuery = `
 		SELECT p.pkg, e.name,
 		       jsonb_object_agg(` + matrixCellAggKey + `,
-		           coalesce(p.version, '')
-		             || CASE WHEN p.hide THEN '#' ELSE '@' END
+		           coalesce(p.version, '') || '@'
 		             || CASE p.state
 		                  WHEN 'AVAIL' THEN CASE p.org WHEN 'pgdg' THEN 'G' ELSE 'P' END
 		                  WHEN 'MISS'  THEN 'M'
@@ -207,10 +187,7 @@ const matrixGlobalQuery = `
 		ORDER BY e.id`
 
 // matrixRepoQuery recomputes the grid as if only one repository organization
-// ($1) existed — the SQL twin of the pgext.pkg_pgdg / pkg_pigsty views. Rows
-// are limited to packages that organization ships at least once; AVAIL cells
-// carry its own latest version (as the given status letter, always one of the
-// matrixViews constants) and everything else valid degrades to MISS.
+// ($1) existed — the SQL twin of pgext.pkg_pgdg / pkg_pigsty.
 func matrixRepoQuery(letter string) string {
 	return `
 		SELECT p.pkg, e.name,
@@ -292,7 +269,7 @@ func (a *api) buildMatrixPayload(ctx context.Context, snap *Snapshot, mv matrixV
 	}
 	payload := map[string]any{
 		"generated": generated.UTC().Format(time.RFC3339),
-		"source":    "pgext.matrix_cache",
+		"source":    "pgext.pkg",
 		"format":    matrixFormat,
 		"pg":        snap.PGs,
 		"os":        snap.OSs,
@@ -300,8 +277,6 @@ func (a *api) buildMatrixPayload(ctx context.Context, snap *Snapshot, mv matrixV
 		"rows":      out,
 	}
 	if mv.name != "" {
-		// size the real-world matrix so clients can state the complement:
-		// packages this organization does not ship and slots it leaves missing
 		var globalRows, globalAvail int
 		if err := a.pool.QueryRow(ctx, matrixGlobalStats).Scan(&globalRows, &globalAvail); err != nil {
 			return nil, fmt.Errorf("size global matrix for %s view: %w", mv.label(), err)
@@ -312,57 +287,71 @@ func (a *api) buildMatrixPayload(ctx context.Context, snap *Snapshot, mv matrixV
 	return json.Marshal(payload)
 }
 
-// ensureMatrixCache creates the cache table; a read-only role just loses the
-// persistent cache, never the endpoint.
-func (a *api) ensureMatrixCache(ctx context.Context) {
-	if _, err := a.pool.Exec(ctx, matrixCacheDDL); err != nil {
-		logrus.Debugf("matrix cache table unavailable (read-only role?): %v", err)
-		return
-	}
-	if _, err := a.pool.Exec(ctx, matrixCacheLegacyCheckDDL); err != nil {
-		logrus.Debugf("matrix cache legacy check not dropped: %v", err)
-	}
-}
-
-// matrixPayload returns the cached payload of one view when it is still
-// current, and rebuilds + upserts it otherwise. force skips the freshness
-// check (reload).
+// matrixPayload returns the in-memory cached payload of one view for the
+// active snapshot, coalescing concurrent rebuilds and falling back to the last
+// valid payload if a transient database error occurs.
 func (a *api) matrixPayload(ctx context.Context, force bool, mv matrixView) ([]byte, error) {
 	snap := a.store.Get()
 	if snap == nil {
 		return nil, fmt.Errorf("catalog snapshot not loaded yet")
 	}
-	var cached []byte
-	var mtime *time.Time
-	if err := a.pool.QueryRow(ctx,
-		`SELECT payload::text, mtime FROM pgext.matrix_cache WHERE id = $1`, mv.id,
-	).Scan(&cached, &mtime); err != nil {
-		cached, mtime = nil, nil
-	}
-	if !force && len(cached) > 0 && mtime != nil && time.Since(*mtime) < 24*time.Hour {
-		if dataMtime, err := a.catalogMtime(ctx); err == nil && (dataMtime == nil || !mtime.Before(*dataMtime)) {
-			return cached, nil
+	ver := snap.queryVersion()
+
+	for {
+		a.matrixMu.Lock()
+		if a.matrixCache == nil {
+			a.matrixCache = map[string]*matrixCacheEntry{}
 		}
-	}
-	payload, err := a.buildMatrixPayload(ctx, snap, mv)
-	if err != nil {
-		if len(cached) > 0 {
-			logrus.Warnf("%s matrix rebuild failed, serving cached payload: %v", mv.label(), err)
-			return cached, nil
+		entry := a.matrixCache[mv.name]
+		if !force && entry != nil && entry.ver == ver && len(entry.payload) > 0 {
+			out := entry.payload
+			a.matrixMu.Unlock()
+			return out, nil
 		}
-		return nil, err
+		if entry != nil && entry.building != nil {
+			wait := entry.building
+			a.matrixMu.Unlock()
+			select {
+			case <-wait:
+				force = false // reuse the result of the build we waited for
+				continue
+			case <-ctx.Done():
+				return nil, ctx.Err()
+			}
+		}
+		if entry == nil {
+			entry = &matrixCacheEntry{}
+			a.matrixCache[mv.name] = entry
+		}
+		done := make(chan struct{})
+		entry.building = done
+		stale := entry.payload
+		a.matrixMu.Unlock()
+
+		payload, err := a.buildMatrixPayload(ctx, snap, mv)
+
+		a.matrixMu.Lock()
+		if err == nil {
+			entry.ver = ver
+			entry.payload = payload
+		}
+		entry.building = nil
+		close(done)
+		a.matrixMu.Unlock()
+
+		if err != nil {
+			if len(stale) > 0 {
+				logrus.Warnf("%s matrix rebuild failed, serving stale payload: %v", mv.label(), err)
+				return stale, nil
+			}
+			return nil, err
+		}
+		return payload, nil
 	}
-	if _, err := a.pool.Exec(ctx, `
-		INSERT INTO pgext.matrix_cache (id, mtime, payload) VALUES ($1, now(), $2::jsonb)
-		ON CONFLICT (id) DO UPDATE SET mtime = EXCLUDED.mtime, payload = EXCLUDED.payload`,
-		mv.id, string(payload)); err != nil {
-		logrus.Debugf("matrix cache write skipped: %v", err)
-	}
-	return payload, nil
 }
 
-// refreshMatrixCaches rebuilds/refreshes every matrix view in order; used by
-// startup warmup and POST /api/v1/reload so no visitor pays for a build.
+// refreshMatrixCaches rebuilds every matrix view in order; used by startup
+// warmup and POST /api/v1/reload so visitors hit warm memory.
 func (a *api) refreshMatrixCaches(ctx context.Context, force bool) {
 	for _, mv := range matrixViews {
 		if _, err := a.matrixPayload(ctx, force, mv); err != nil {
@@ -371,11 +360,9 @@ func (a *api) refreshMatrixCaches(ctx context.Context, force bool) {
 	}
 }
 
-// warmMatrixCache runs at startup so the first /matrix visitor gets the
-// precomputed payload instead of paying for the initial build.
+// warmMatrixCache precomputes all views in the background at startup.
 func (a *api) warmMatrixCache(ctx context.Context) {
 	ctx, cancel := context.WithTimeout(ctx, time.Minute)
 	defer cancel()
-	a.ensureMatrixCache(ctx)
 	a.refreshMatrixCaches(ctx, false)
 }

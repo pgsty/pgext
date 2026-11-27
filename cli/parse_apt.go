@@ -14,10 +14,9 @@ import (
 	"github.com/jackc/pgx/v5"
 )
 
-// APTParser handles parsing of APT/DEB repository metadata
+// APTParser handles parsing of APT/DEB repository metadata.
 type APTParser struct {
 	ctx   context.Context
-	tx    pgx.Tx
 	table string
 }
 
@@ -60,31 +59,19 @@ func (p *APTParser) ParseRepository(repoID string, data []byte) (int, error) {
 		return 0, nil
 	}
 
-	// Begin transaction
 	tx, err := Begin(p.ctx)
 	if err != nil {
 		return 0, fmt.Errorf("begin transaction: %w", err)
 	}
+	defer rollbackPackageTransaction(tx)
 
-	// Store transaction for use in insertPackages
-	p.tx = tx
-	defer func() {
-		rollbackPackageTransaction(tx)
-		p.tx = nil
-	}()
-
-	// Insert packages in batches
-	count, err := p.insertPackages(repoID, packages)
+	count, err := p.insertPackages(tx, repoID, packages)
 	if err != nil {
 		return count, err
 	}
-
-	// Commit transaction
 	if err := tx.Commit(p.ctx); err != nil {
-		// Transaction failed, rollback is automatic
 		return count, fmt.Errorf("commit transaction: %w", err)
 	}
-
 	return count, nil
 }
 
@@ -205,45 +192,45 @@ func (p *APTParser) processSpecialFields(pkg map[string]interface{}) {
 	}
 }
 
-// insertPackages inserts parsed packages into the database
-func (p *APTParser) insertPackages(repoID string, packages []map[string]interface{}) (int, error) {
+// insertPackages inserts parsed packages into the database.
+func (p *APTParser) insertPackages(tx pgx.Tx, repoID string, packages []map[string]interface{}) (int, error) {
 	if len(packages) == 0 {
 		return 0, nil
 	}
+
+	insertSQL := fmt.Sprintf(`
+		INSERT INTO %s (
+			repo, package, version, architecture, size, size_install,
+			priority, section, filename, sha256, sha1, md5sum,
+			maintainer, homepage, depends, source, provides,
+			recommends, suggests, conflicts, breaks, replaces,
+			enhances, pre_depends, build_ids, package_type,
+			auto_built, multi_arch, description, extra
+		) VALUES (
+			$1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
+			$11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
+			$21, $22, $23, $24, $25, $26, $27, $28, $29, $30
+		)
+	`, p.table)
 
 	batch := &pgx.Batch{}
 	count := 0
 
 	for _, pkg := range packages {
-		// Build values array for fixed fields
-		values := make([]interface{}, 0, 30) // Exactly 30 parameters expected
-		values = append(values, repoID)      // First column is repo
-
-		// Add fixed field values (28 fields)
+		values := make([]interface{}, 0, 30)
+		values = append(values, repoID)
 		for _, field := range aptFixedFields {
-			if val, ok := pkg[field]; ok {
-				values = append(values, val)
-			} else {
-				values = append(values, nil)
-			}
+			values = append(values, pkg[field])
 		}
 
-		// Collect extra fields as JSON
 		extraFields := make(map[string]interface{})
 		for key, value := range pkg {
-			isFixed := false
-			for _, field := range aptFixedFields {
-				if key == field {
-					isFixed = true
-					break
+			if value != nil {
+				if _, isFixed := aptCanonicalFields[strings.ToLower(key)]; !isFixed {
+					extraFields[key] = value
 				}
 			}
-			if !isFixed && value != nil {
-				extraFields[key] = value
-			}
 		}
-
-		// Add extra fields as JSON
 		if len(extraFields) > 0 {
 			if jsonData, err := json.Marshal(extraFields); err == nil {
 				values = append(values, string(jsonData))
@@ -254,29 +241,12 @@ func (p *APTParser) insertPackages(repoID string, packages []map[string]interfac
 			values = append(values, nil)
 		}
 
-		// Queue insert - 30 columns total: 1 repo + 28 fields + 1 extra
-		batch.Queue(fmt.Sprintf(`
-			INSERT INTO %s (
-				repo, package, version, architecture, size, size_install,
-				priority, section, filename, sha256, sha1, md5sum,
-				maintainer, homepage, depends, source, provides,
-				recommends, suggests, conflicts, breaks, replaces,
-				enhances, pre_depends, build_ids, package_type,
-				auto_built, multi_arch, description, extra
-			) VALUES (
-				$1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
-				$11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
-				$21, $22, $23, $24, $25, $26, $27, $28, $29, $30
-			)
-		`, p.table), values...)
-
+		batch.Queue(insertSQL, values...)
 		count++
 
-		// Send batch every 1000 records
 		if batch.Len() >= 1000 {
-			if p.tx != nil {
-				br := p.tx.SendBatch(p.ctx, batch)
-				if err := br.Close(); err != nil {
+			if tx != nil {
+				if err := tx.SendBatch(p.ctx, batch).Close(); err != nil {
 					return count, fmt.Errorf("insert APT batch: %w", err)
 				}
 			}
@@ -284,13 +254,10 @@ func (p *APTParser) insertPackages(repoID string, packages []map[string]interfac
 		}
 	}
 
-	// Send remaining batch
-	if batch.Len() > 0 && p.tx != nil {
-		br := p.tx.SendBatch(p.ctx, batch)
-		if err := br.Close(); err != nil {
+	if batch.Len() > 0 && tx != nil {
+		if err := tx.SendBatch(p.ctx, batch).Close(); err != nil {
 			return count, fmt.Errorf("insert final APT batch: %w", err)
 		}
 	}
-
 	return count, nil
 }

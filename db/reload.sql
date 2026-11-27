@@ -1,7 +1,7 @@
 -- update pgext.pkg with state/hide mark
 SET search_path TO pgext,public;
 
--- 'step 1/5: trucnate pgext.pkg ...';
+-- 'step 1/5: truncate pgext.pkg ...';
 TRUNCATE pgext.pkg;
 
 -- 'step 2/5: init pgext.pkg combinations ...';
@@ -45,7 +45,7 @@ UPDATE pgext.pkg SET state = 'AVAIL' WHERE count > 0;
 UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hydra', 'duckdb_fdw');
 
 -- too big, non-free, heavy extensions
-UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr', 'fbsql', 'informix_fdw' ,'oracle_fdw', 'db2_fdw', 'pg_utl_smtp' ,'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2', 'pgml', 'pljava', 'rdkit', 'jdbc_fdw', 'odbc_fdw', 'pg_strom', 'db_fdw', 'informix_fdw' , 'oracle_fdw', 'pg_statviz');
+UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr', 'fbsql', 'informix_fdw', 'oracle_fdw', 'db2_fdw', 'pg_utl_smtp', 'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2', 'pgml', 'pljava', 'rdkit', 'jdbc_fdw', 'odbc_fdw', 'db_fdw', 'pg_statviz');
 
 -- HDFS needs Java; OneSparse pulls in GraphBLAS and its runtime compiler.
 -- Keep individual aliases available, but leave both out of default groups.

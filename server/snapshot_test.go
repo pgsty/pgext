@@ -9,23 +9,24 @@ import (
 )
 
 func TestLiveQueryCacheExpiresOnIdenticalCatalogReload(t *testing.T) {
-	for _, path := range []string{"doc?lang=en", "changelog", "matrix", "files"} {
-		t.Run(path, func(t *testing.T) {
+	for _, key := range []string{"doc|demo|en", "changelog|demo", "matrix|demo", "files|demo|0|"} {
+		t.Run(key, func(t *testing.T) {
 			snap := fixtureSnapshot()
 			a := &api{cache: newTTLCache(time.Hour, 10)}
 			calls := 0
 			query := func(context.Context) (any, error) { calls++; return map[string]int{"revision": calls}, nil }
-			request := func() string {
+			request := func(extraQuery string) string {
 				w := httptest.NewRecorder()
-				a.cached(w, httptest.NewRequest(http.MethodGet, "/api/v1/ext/demo/"+path, nil), snap.queryVersion(), query)
+				a.cached(w, httptest.NewRequest(http.MethodGet, "/api/v1/ext/demo/matrix"+extraQuery, nil), snap.queryVersion()+"|"+key, query)
 				return w.Body.String()
 			}
-			before := request()
-			if request() != before || calls != 1 {
-				t.Fatal("same snapshot did not reuse its query cache")
+			before := request("")
+			// Canonical key ensures arbitrary query strings cannot bust the cache.
+			if request("?bust=12345") != before || calls != 1 {
+				t.Fatal("same snapshot did not reuse its canonical query cache")
 			}
 			snap.LoadedAt = snap.LoadedAt.Add(time.Minute)
-			if request() == before || calls != 2 {
+			if request("") == before || calls != 2 {
 				t.Fatal("live content stayed cached after a metadata-identical reload")
 			}
 		})

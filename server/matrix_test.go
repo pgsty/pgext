@@ -12,23 +12,22 @@ func TestParseMatrixCell(t *testing.T) {
 	tests := []struct {
 		value   string
 		version string
-		hidden  bool
 		state   byte
 	}{
-		{"3.6.3@G", "3.6.3", false, 'G'},
-		{"0.8.5#P", "0.8.5", true, 'P'},
-		{"@M", "", false, 'M'},
-		{"#N", "", true, 'N'},
-		{"@G", "", false, 'G'},
-		{"1.2-3.el9@P", "1.2-3.el9", false, 'P'},
-		{"", "", false, 'N'},
-		{"x@Z", "x", false, 'N'}, // unknown state degrades to N/A
+		{"3.6.3@G", "3.6.3", 'G'},
+		{"0.8.5@P", "0.8.5", 'P'},
+		{"@M", "", 'M'},
+		{"@N", "", 'N'},
+		{"@G", "", 'G'},
+		{"1.2-3.el9@P", "1.2-3.el9", 'P'},
+		{"", "", 'N'},
+		{"x@Z", "x", 'N'}, // unknown state degrades to N/A
 	}
 	for _, tt := range tests {
-		version, hidden, state := parseMatrixCell(tt.value)
-		if version != tt.version || hidden != tt.hidden || state != tt.state {
-			t.Errorf("parseMatrixCell(%q) = (%q,%v,%c), want (%q,%v,%c)",
-				tt.value, version, hidden, state, tt.version, tt.hidden, tt.state)
+		version, state := parseMatrixCell(tt.value)
+		if version != tt.version || state != tt.state {
+			t.Errorf("parseMatrixCell(%q) = (%q,%c), want (%q,%c)",
+				tt.value, version, state, tt.version, tt.state)
 		}
 	}
 }
@@ -37,15 +36,7 @@ func TestMatrixViews(t *testing.T) {
 	if matrixViews[0].name != "" {
 		t.Fatalf("the global view must lead the rebuild order, got %q", matrixViews[0].name)
 	}
-	seen := map[int]string{}
 	for _, mv := range matrixViews {
-		if prev, dup := seen[mv.id]; dup {
-			t.Fatalf("cache id %d shared by %q and %q", mv.id, prev, mv.name)
-		}
-		seen[mv.id] = mv.name
-		if mv.id < 1 || mv.id > 3 {
-			t.Fatalf("view %q cache id %d outside the matrix_cache_id_range check", mv.name, mv.id)
-		}
 		if mv.name == "" && mv.letter != "" {
 			t.Fatalf("global view must not carry a status letter, got %q", mv.letter)
 		}
@@ -73,7 +64,7 @@ func TestLayoutMatrixRow(t *testing.T) {
 	keys := matrixColumnKeys([]string{"el8.x86_64", "el8.aarch64"}, []int{18, 17})
 	cells := map[string]string{
 		"el8i.18": "1.0@G",
-		"el8i.17": "1.0#G", // hidden flag is ignored: same state, same version slot
+		"el8i.17": "1.0@G",
 		"el8a.18": "2.0@P",
 		"el8a.17": "@M",
 	}

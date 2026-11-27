@@ -157,8 +157,9 @@ sudo pgext repo restore <backup-id>
 ```
 
 `all` selects `node,pgsql,infra`. `add`, `set`, and `rm` normally manage only
-PGEXT-owned files; `set --replace` backs up and replaces all existing system
-source definitions. `set` also updates the cache by default. Use `--dry-run`
+PGEXT-owned files. `set --replace` backs up and migrates conflicting PGDG and
+Pigsty definitions within the selection. `set` updates the cache by default.
+Use `--dry-run`
 to inspect changes and `--json` for scripts. The old database-backed repository
 summary is available as `pgext repo summary`.
 
@@ -209,7 +210,7 @@ pgext matrix <name>           # show a package availability matrix
 pgext bin <name> -p 18 -o el9  # show binary packages and download URLs
 
 pgext env                    # inspect the build environment (no database)
-pgext env repo               # prepare builder package repositories
+pgext env repo               # alias for `pgext repo set` (prepare builder repositories)
 pgext env tool --pg 18       # install build tools and PostgreSQL development files
 pgext env spec               # install or update RPM/DEB recipes
 pgext get <name>             # download source inputs
@@ -217,33 +218,53 @@ pgext dep <name> --pg 18     # install recipe dependencies
 pgext mak <name> --pg 18     # build and verify packages from prepared inputs
 pgext pkg <name> --pg 18     # get → dep → mak
 
-pgext gen all                 # run content generators
-pgext gen lint                # lint bilingual usage stubs
+pgext gen site                # refresh the standalone Hugo catalog
+pgext gen all                 # refresh all sites and Pigsty configuration
+pgext gen lint [--pair]       # lint bilingual usage stubs (and EN/ZH pair parity)
+pgext doc load [--dry-run]    # sync stub/ and stub-zh/ into pgext.doc
+pgext doc dump                # export pgext.doc into stub/ and stub-zh/
+pgext sync github             # refresh the GitHub cache, add --backfill to update Universe
 pgext pgxn                    # export PGXN metadata to standalone reports
 ```
 
 Run `pgext help <command>` for command-specific options. `pgext reload` reads
 the current repository manifests, validates and parses their metadata, and
 publishes the parsed package tables and availability matrix atomically.
-The former read-only `pgext pkg` query is now `pgext matrix`; `pkg` runs
-the extension build pipeline.
+Use `pgext matrix` for package availability and `pgext pkg` for the build
+pipeline. See the [1.8 upgrade notes](docs/releases/v1.8.0.md) for repository
+migration, the API field changes, and optional cleanup of the legacy SQL view.
 
 ## Development
 
 ```bash
 go test ./...                 # Go unit tests
-node --test server/*_test.cjs  # frontend behavior tests
+node --test server/*_test.mjs  # frontend behavior tests
 make check-stubs              # validate usage Markdown
-make build                    # build the Hugo site
+make build                    # build the pgext binary
 ```
 
-The Hugo site uses **Hugo Extended 0.168.0** and **OINK v1.5.1**.
-`make dev` previews it at [http://localhost:1313](http://localhost:1313) using a
-sibling `../oink` checkout; set `THEME_DIR` to use another local theme checkout.
+### Generate the static site
+
+The [Hugo site](https://github.com/pgsty/pgext.cloud) has its own checkout and build. Its root defaults to `~/pgsty/pgext.cloud`. Select another checkout with `-D, --dir` or the `PGEXT_SITE_DIR` environment variable. The command-line directory takes precedence.
+
+```bash
+make gen                                 # run the generator from this CLI checkout
+pgext gen site -D ../pgext-preview        # pages, matrix downloads and catalog CSVs
+pgext gen page vector                    # one English detail page with its usage guide
+PGEXT_SITE_DIR=/tmp/preview pgext gen matrix
+```
+
+The `page`, `list`, `os`, and `matrix` commands also accept `-o, --output` for the content directory. Matrix downloads go into the adjacent `static/matrix/`, or under an explicit `--static-output`. The `cc`, `io` and `conf` generators have their own destinations.
+
+Generation reads the database selected by `-d, --database` or `PGURL`. Usage guides come from the pgext source checkout. From another directory the CLI uses `~/pgsty/pgext`. Set `PGEXT_SOURCE_DIR` to select a different checkout. Page generators also accept `--stub-dir`. Use `make build` or `make dev` in the site checkout to render or preview the resulting tree.
+
+Edit the English and Chinese RPM/DEB release notes in `~/pgsty/pgext.cloud/content/release/`. Run `python3 bin/changelog.py` to regenerate `db/changelog.csv` from those notes. The script accepts the same `-D, --dir` and `PGEXT_SITE_DIR` site-root overrides.
+
+PR and push checks run the changelog generator's unit tests. The weekly and manually dispatched drift check compares `db/changelog.csv` against the bilingual release notes on the site repository's default branch.
 
 Catalog snapshots and schema definitions live in `db/`. English and Chinese
 usage sources live in `stub/` and `stub-zh/`, and are loaded separately into
-`pgext.doc` with `bin/load-stub`. Follow the
+`pgext.doc` with `pgext doc load` (or its wrapper `bin/load-stub`). Follow the
 [stub documentation SOP](docs/stub-documentation-sop.md) for source review,
 validation, and loading.
 

@@ -15,8 +15,13 @@ import (
 //go:embed assets/verify-payload.sh
 var payloadVerifier []byte
 
-var llvmjitSubpackage = regexp.MustCompile(`-llvmjit(?:-debuginfo|-debugsource|-dbgsym|-dbg)?$`)
-var postgresLLVMProvider = regexp.MustCompile(`^postgresql[0-9]*-llvmjit(?:-debuginfo|-debugsource)?$`)
+var (
+	llvmjitSubpackage    = regexp.MustCompile(`-llvmjit(?:-debuginfo|-debugsource|-dbgsym|-dbg)?$`)
+	postgresLLVMProvider = regexp.MustCompile(`^postgresql[0-9]*-llvmjit(?:-debuginfo|-debugsource)?$`)
+	debPGPackagePattern  = regexp.MustCompile(`^postgresql-([0-9]+)-`)
+	llvmRuntimeDep       = regexp.MustCompile(`(?im)(^|[/\s])(llvm|clang|libLLVM|libclang)|postgresql\d+-llvmjit`)
+	debControlPkgPattern = regexp.MustCompile(`(?m)^Package:\s*(\S+)`)
+)
 
 func extensionLLVMSubpackage(family, name string) bool {
 	return llvmjitSubpackage.MatchString(name) && !(family == "rpm" && postgresLLVMProvider.MatchString(name))
@@ -72,7 +77,7 @@ func (e *Engine) verify(ctx context.Context, j *Job, pg int, recipe, out string,
 			return nil, fmt.Errorf("extension llvmjit subpackage is forbidden: %s", a.Package)
 		}
 		if e.Platform.Family == "deb" && pg > 0 {
-			if m := regexp.MustCompile(`^postgresql-([0-9]+)-`).FindStringSubmatch(a.Package); len(m) > 0 && m[1] != strconv.Itoa(pg) {
+			if m := debPGPackagePattern.FindStringSubmatch(a.Package); len(m) > 0 && m[1] != strconv.Itoa(pg) {
 				return nil, fmt.Errorf("recipe ignored PG%d selection and produced %s", pg, a.Package)
 			}
 		}
@@ -116,6 +121,7 @@ func (e *Engine) verify(ctx context.Context, j *Job, pg int, recipe, out string,
 	if err := AtomicWrite(script, payloadVerifier, 0700); err != nil {
 		return nil, err
 	}
+	defer os.Remove(script)
 	args := []string{"bash", script, e.Platform.Family, out, strconv.FormatBool(e.Options.NoDebug)}
 	if err := e.Exec.Run(ctx, Command{Args: args}, w); err != nil {
 		return nil, err
@@ -134,7 +140,7 @@ func (e *Engine) verify(ctx context.Context, j *Job, pg int, recipe, out string,
 			if err != nil {
 				return nil, err
 			}
-			if regexp.MustCompile(`(?im)(^|[/\s])(llvm|clang|libLLVM|libclang)|postgresql\d+-llvmjit`).MatchString(deps) {
+			if llvmRuntimeDep.MatchString(deps) {
 				return nil, fmt.Errorf("forbidden LLVM runtime dependency: %s", a.Package)
 			}
 			primary := strings.ReplaceAll(j.Extension.RPM, "$v", strconv.Itoa(pg))
@@ -229,7 +235,7 @@ func (e *Engine) expectedPackages(ctx context.Context, pg int, recipe string) (m
 		if err != nil {
 			return nil, err
 		}
-		for _, m := range regexp.MustCompile(`(?m)^Package:\s*(\S+)`).FindAllSubmatch(b, -1) {
+		for _, m := range debControlPkgPattern.FindAllSubmatch(b, -1) {
 			name := string(m[1])
 			if strings.Contains(name, "PGVERSION") {
 				return nil, fmt.Errorf("unexpanded package name %s", name)

@@ -11,6 +11,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 SPEC = importlib.util.spec_from_file_location(
     "changelog", Path(__file__).with_name("changelog.py")
 )
@@ -47,14 +48,16 @@ class ChangelogTest(unittest.TestCase):
         for name, (en, zh) in cases.items():
             with self.subTest(name=name), tempfile.TemporaryDirectory() as temp:
                 root = Path(temp)
+                release = root / "content" / "release"
+                release.mkdir(parents=True)
                 for side in ("rpm", "deb"):
-                    (root / f"{side}.md").write_text(en, encoding="utf-8")
-                    (root / f"{side}.zh.md").write_text(zh, encoding="utf-8")
+                    (release / f"{side}.md").write_text(en, encoding="utf-8")
+                    (release / f"{side}.zh.md").write_text(zh, encoding="utf-8")
                 output = root / "changelog.csv"
                 output.write_text("previous validated output\n", encoding="utf-8")
-                with patch.object(changelog, "RELEASE", root), patch.object(changelog, "OUTPUT", output):
+                with patch.object(changelog, "OUTPUT", output):
                     with self.assertRaises(ValueError):
-                        changelog.main()
+                        changelog.main(["-D", str(root)])
                 self.assertEqual(output.read_text(), "previous validated output\n")
 
     def test_reordered_twins_preserve_versions_notes_and_side_differences(self):
@@ -72,18 +75,21 @@ class ChangelogTest(unittest.TestCase):
                     "| postgis | 3.6.2 | 3.6.3-1 | DEB 构建 |",
                 ]),
             }
+            site = root / "site"
+            release = site / "content" / "release"
+            release.mkdir(parents=True)
             for name, text in sources.items():
-                (root / name).write_text(text, encoding="utf-8")
+                (release / name).write_text(text, encoding="utf-8")
             output = root / "changelog.csv"
             catalog = ({"postgis": "postgis", "vector": "pgvector"}, {"postgis", "pgvector"}, {})
             with (
                 patch.object(changelog, "ROOT", root),
-                patch.object(changelog, "RELEASE", root),
+                patch.dict("os.environ", {"PGEXT_SITE_DIR": str(site)}),
                 patch.object(changelog, "OUTPUT", output),
                 patch.object(changelog, "load_catalog", return_value=catalog),
                 contextlib.redirect_stdout(io.StringIO()),
             ):
-                self.assertEqual(changelog.main(), 0)
+                self.assertEqual(changelog.main([]), 0)
             with output.open(newline="", encoding="utf-8") as stream:
                 rows = list(csv.DictReader(stream))
             self.assertEqual([r["pkg"] for r in rows], ["pgvector", "postgis"])

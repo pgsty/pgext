@@ -202,12 +202,6 @@ func (b *Binary) GetDownloadURL(region Region) string {
 	return strings.TrimRight(base, "/") + "/" + strings.TrimLeft(href, "/")
 }
 
-// PGVersion represents a PostgreSQL major version configuration
-type PGVersion struct {
-	PG     int  `db:"pg"`
-	Active bool `db:"active"`
-}
-
 // OSVersion represents an OS configuration
 type OSVersion struct {
 	OS      string `db:"os"`
@@ -227,9 +221,6 @@ type ExtensionCache struct {
 
 	// Map from package name to lead extension
 	PkgMap map[string]*Extension
-
-	// Map from extension name to extensions that depend on it
-	ExtDeps map[string][]*Extension
 
 	// All categories
 	Categories []*Category

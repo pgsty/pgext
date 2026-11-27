@@ -1,10 +1,15 @@
 package cmd
 
-import "github.com/spf13/cobra"
+import (
+	"errors"
+
+	"github.com/spf13/cobra"
+)
 
 // runSubcommand executes a command through its local argument, pre-run, run,
-// and post-run hooks while preserving the caller's context.
-func runSubcommand(caller, target *cobra.Command, args []string) error {
+// and post-run hooks while preserving the caller's context. Once PreRun/PreRunE
+// succeeds, PostRun/PostRunE always runs even if RunE returns an error.
+func runSubcommand(caller, target *cobra.Command, args []string) (retErr error) {
 	previousContext := target.Context()
 	target.SetContext(caller.Context())
 	defer target.SetContext(previousContext)
@@ -22,19 +27,21 @@ func runSubcommand(caller, target *cobra.Command, args []string) error {
 		target.PreRun(target, args)
 	}
 
-	if target.RunE != nil {
-		if err := target.RunE(target, args); err != nil {
-			return err
+	defer func() {
+		if target.PostRunE != nil {
+			if postErr := target.PostRunE(target, args); postErr != nil {
+				retErr = errors.Join(retErr, postErr)
+			}
+		} else if target.PostRun != nil {
+			target.PostRun(target, args)
 		}
-	} else if target.Run != nil {
-		target.Run(target, args)
-	}
+	}()
 
-	if target.PostRunE != nil {
-		return target.PostRunE(target, args)
+	if target.RunE != nil {
+		return target.RunE(target, args)
 	}
-	if target.PostRun != nil {
-		target.PostRun(target, args)
+	if target.Run != nil {
+		target.Run(target, args)
 	}
 	return nil
 }

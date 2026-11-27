@@ -85,27 +85,9 @@ The parsed package tables and availability matrix are published atomically.
 			return fmt.Errorf("failed to initialize schema: %w", err)
 		}
 
-		// Step 2: Fetch repository metadata
-		logrus.Info("step 2/4: fetching repository metadata...")
-		fetcher := cli.NewFetcher(cli.FetchOptions{
-			Force:      true,
-			Region:     region,
-			Parallel:   workers,
-			Retry:      retry,
-			BestEffort: initBestEffort,
-		})
-		if err := fetcher.FetchAll(cmd.Context()); err != nil {
-			return fmt.Errorf("failed to fetch: %w", err)
-		}
-
-		// Steps 3-4: Parse repository data and build the package matrix
-		logrus.Info("steps 3-4/4: parsing repository data and generating package matrix...")
-		parser := cli.NewParserContext(cmd.Context(), cli.ParseOptions{
-			Parallel:   workers,
-			BestEffort: initBestEffort,
-		})
-		if err := parser.ParseAndRecap(); err != nil {
-			return fmt.Errorf("failed to build package catalog: %w", err)
+		// Steps 2-4: Fetch, parse, and rebuild package matrix
+		if err := runFetchAndParse(cmd.Context(), true, initBestEffort); err != nil {
+			return err
 		}
 
 		logrus.Info("initialization completed successfully!")
@@ -160,11 +142,4 @@ func init() {
 	initCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
 	initCmd.Flags().IntVar(&retry, "retry", 1, "number of retry attempts")
 	initCmd.Flags().BoolVar(&initBestEffort, "best-effort", false, "publish a partial catalog when some repositories fail")
-
-	// reload command flags
-	reloadCmd.Flags().BoolVarP(&force, "force", "f", false, "force re-fetch all repositories")
-	reloadCmd.Flags().StringVarP(&region, "region", "r", "", "region: default or china/mirror")
-	reloadCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
-	reloadCmd.Flags().IntVar(&retry, "retry", 1, "number of retry attempts")
-	reloadCmd.Flags().BoolVar(&reloadBestEffort, "best-effort", false, "publish a partial catalog when some repositories fail")
 }

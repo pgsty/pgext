@@ -20,9 +20,15 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// Ext is one canonical extension record from pgext.universe. New universe
-// columns are exposed directly; the state/repo/ext_* fields remain as v1 API
-// compatibility aliases for existing clients.
+// FamilyMember carries per-sibling fields needed by extension and package
+// detail views without triggering N+1 /api/v1/ext/{sibling} lookups.
+type FamilyMember struct {
+	Name     string   `json:"name"`
+	Schemas  []string `json:"schemas,omitempty"`
+	Requires []string `json:"requires,omitempty"`
+}
+
+// Ext is one canonical extension record from pgext.universe.
 type Ext struct {
 	ID       int    `json:"id"`
 	Name     string `json:"name"`
@@ -59,18 +65,19 @@ type Ext struct {
 	Relocatable bool `json:"relocatable"`
 	Lead        bool `json:"lead"`
 
-	Libs        []string `json:"libs,omitempty"`
-	PreloadLibs []string `json:"preload_libs,omitempty"`
-	Schemas     []string `json:"schemas,omitempty"`
-	PG          []int    `json:"pg_ver,omitempty"`
-	Requires    []string `json:"requires,omitempty"`
-	RequiredBy  []string `json:"required_by,omitempty"`
-	RequireBy   []string `json:"require_by,omitempty"` // v1 compatibility
-	SeeAlso     []string `json:"see_also,omitempty"`
-	Siblings    []string `json:"siblings,omitempty"`
+	Libs        []string       `json:"libs,omitempty"`
+	PreloadLibs []string       `json:"preload_libs,omitempty"`
+	Schemas     []string       `json:"schemas,omitempty"`
+	PG          []int          `json:"pg_ver,omitempty"`
+	Requires    []string       `json:"requires,omitempty"`
+	RequiredBy  []string       `json:"required_by,omitempty"`
+	SeeAlso     []string       `json:"see_also,omitempty"`
+	Siblings    []string       `json:"siblings,omitempty"`
+	Family      []FamilyMember `json:"family,omitempty"`
 
 	Tarball  string   `json:"tarball,omitempty"`
 	PGRXVer  string   `json:"pgrx_ver,omitempty"`
+	Repo     string   `json:"repo,omitempty"`
 	RPMVer   string   `json:"rpm_ver,omitempty"`
 	RPMRepo  string   `json:"rpm_repo,omitempty"`
 	RPMPkg   string   `json:"rpm_pkg,omitempty"`
@@ -87,9 +94,6 @@ type Ext struct {
 	Stars    *int `json:"stars,omitempty"`
 	Watchers *int `json:"watchers,omitempty"`
 	Forks    *int `json:"forks,omitempty"`
-	StarCnt  *int `json:"star_cnt,omitempty"`  // v1 compatibility
-	WatchCnt *int `json:"watch_cnt,omitempty"` // v1 compatibility
-	ForkCnt  *int `json:"fork_cnt,omitempty"`  // v1 compatibility
 
 	RepoCreatedAt string `json:"repo_created_at,omitempty"`
 	LastCommit    string `json:"last_commit,omitempty"`
@@ -108,31 +112,8 @@ type Ext struct {
 	TargetIdx  []int `json:"target_idx,omitempty"`
 	FamilySize int   `json:"family_size"`
 
-	HasEnDoc bool      `json:"has_en_doc"`
-	HasZhDoc bool      `json:"has_zh_doc"`
-	DocLinks *DocLinks `json:"doc_links,omitempty"`
-
-	// Legacy aliases retained for API v1 clients.
-	State      string `json:"state"`
-	Repo       string `json:"repo,omitempty"`
-	Source     string `json:"source,omitempty"`
-	ExtType    string `json:"ext_type,omitempty"`
-	ExtKernel  string `json:"ext_kernel,omitempty"`
-	ExtVendor  string `json:"ext_vendor,omitempty"`
-	LastUpdate string `json:"last_update,omitempty"`
-}
-
-// DocLinks carries the most useful upstream references as a compatibility
-// bundle. The same URLs are also first-class Ext fields in the new schema.
-type DocLinks struct {
-	Repo    string `json:"repo_url,omitempty"`
-	License string `json:"license_url,omitempty"`
-	Control string `json:"control_url,omitempty"`
-	Author  string `json:"author_url,omitempty"`
-	Home    string `json:"home_url,omitempty"`
-	Docs    string `json:"doc_url,omitempty"`
-	Cargo   string `json:"cargo_url,omitempty"`
-	PGXN    string `json:"pgxn_url,omitempty"`
+	HasEnDoc bool `json:"has_en_doc"`
+	HasZhDoc bool `json:"has_zh_doc"`
 }
 
 // Category is one row of pgext.category with a member count.
@@ -145,8 +126,8 @@ type Category struct {
 }
 
 // Snapshot is an immutable in-memory copy of the slowly-changing catalog.
-// It doubles as the query cache: list, detail, and dimension endpoints are
-// answered from here; only per-extension package/doc queries hit the pool.
+// It doubles as the query cache: list, detail, dimension and bootstrap
+// endpoints are answered from here; only per-extension package/doc queries hit the pool.
 type Snapshot struct {
 	LoadedAt time.Time
 	Version  string // stable content ETag for bootstrap/list payloads
@@ -168,8 +149,8 @@ type Snapshot struct {
 	CountPackages        int // distinct package families on active pg/os targets in pgext.pkg
 	CountBuildSlots      int // recorded active pkg × pg × os combinations, including MISS and N/A
 
-	// CountAvail is kept internally for older tests/callers.
-	CountAvail int
+	bootstrapJSON []byte
+	bootstrapTag  string
 }
 
 // counts summarizes the snapshot totals for /api/v1/meta and /api/v1/bootstrap.
@@ -294,22 +275,48 @@ func loadSnapshot(ctx context.Context, pool *pgxpool.Pool) (*Snapshot, error) {
 		return nil, err
 	}
 	snap := &Snapshot{LoadedAt: time.Now().UTC(), ByName: map[string]*Ext{}}
+	if err := loadDimensions(ctx, pool, snap); err != nil {
+		return nil, err
+	}
+	byPkg, err := loadUniverseRows(ctx, pool, snap)
+	if err != nil {
+		return nil, err
+	}
+	linkFamilies(snap, byPkg)
+	if err := loadTargets(ctx, pool, snap, byPkg); err != nil {
+		return nil, err
+	}
+	sortBrowseOrder(snap.Exts)
+	if err := loadCategories(ctx, pool, snap); err != nil {
+		return nil, err
+	}
+	if err := loadDocPresence(ctx, pool, snap); err != nil {
+		return nil, err
+	}
+	if err := snap.finalize(); err != nil {
+		return nil, err
+	}
+	return snap, nil
+}
 
-	// Dimensions are loaded first because compact target indices depend on
-	// their canonical order.
+func loadDimensions(ctx context.Context, pool *pgxpool.Pool, snap *Snapshot) error {
 	if err := pool.QueryRow(ctx, `SELECT array_agg(pg ORDER BY pg DESC) FROM pgext.active_pg`).Scan(&snap.PGs); err != nil {
-		return nil, fmt.Errorf("query pgext.active_pg: %w", err)
+		return fmt.Errorf("query pgext.active_pg: %w", err)
 	}
 	if err := pool.QueryRow(ctx, `SELECT array_agg(os) FROM pgext.active_os`).Scan(&snap.OSs); err != nil {
-		return nil, fmt.Errorf("query pgext.active_os: %w", err)
+		return fmt.Errorf("query pgext.active_os: %w", err)
 	}
 	sortOS(snap.OSs)
+	return nil
+}
 
+func loadUniverseRows(ctx context.Context, pool *pgxpool.Pool, snap *Snapshot) (map[string][]*Ext, error) {
 	rows, err := pool.Query(ctx, universeQuery)
 	if err != nil {
 		return nil, fmt.Errorf("query pgext.universe: %w", err)
 	}
 	defer rows.Close()
+
 	byPkg := map[string][]*Ext{}
 	packagedProjects := map[string]struct{}{}
 	for rows.Next() {
@@ -334,27 +341,11 @@ func loadSnapshot(ctx context.Context, pool *pgxpool.Pool) (*Snapshot, error) {
 		e.Lead = e.Name == e.LeadExt
 		e.PG, e.RPMPG, e.DEBPG = atois(pgVer), ints16(rpmPG), ints16(debPG)
 
-		// v1 aliases.
-		e.State = "n/a"
-		if e.Packaged {
-			e.State = "available"
-		}
-		e.RequireBy = e.RequiredBy
-		e.Source, e.ExtType, e.ExtKernel, e.ExtVendor = e.Tarball, e.Kind, e.Kernel, e.Vendor
-		e.LastUpdate = e.LastActive
-		e.StarCnt, e.WatchCnt, e.ForkCnt = e.Stars, e.Watchers, e.Forks
-
-		links := DocLinks{Repo: e.RepoURL, License: e.LicenseURL, Control: e.ControlURL, Author: e.AuthorURL, Home: e.HomeURL, Docs: e.DocURL, Cargo: e.CargoURL, PGXN: e.PGXNURL}
-		if links != (DocLinks{}) {
-			e.DocLinks = &links
-		}
-
 		snap.Exts = append(snap.Exts, &e)
 		snap.ByName[e.Name] = &e
 		byPkg[e.Pkg] = append(byPkg[e.Pkg], &e)
 		if e.Packaged {
 			snap.CountPackaged++
-			snap.CountAvail++
 			packagedProjects[e.Pkg] = struct{}{}
 		} else if e.RepoURL != "" || e.Tarball != "" {
 			snap.CountSourceOnly++
@@ -377,11 +368,19 @@ func loadSnapshot(ctx context.Context, pool *pgxpool.Pool) (*Snapshot, error) {
 	}
 	snap.CountProjects = len(byPkg)
 	snap.CountPackagedProject = len(packagedProjects)
+	return byPkg, nil
+}
 
-	// Package families and exact active target availability.
+func linkFamilies(snap *Snapshot, byPkg map[string][]*Ext) {
 	for _, group := range byPkg {
+		family := make([]FamilyMember, len(group))
+		for i, m := range group {
+			family[i] = FamilyMember{Name: m.Name, Schemas: m.Schemas, Requires: m.Requires}
+		}
+		sort.Slice(family, func(i, j int) bool { return family[i].Name < family[j].Name })
 		for _, e := range group {
 			e.FamilySize = len(group)
+			e.Family = family
 			if len(group) > 1 {
 				for _, sibling := range group {
 					if sibling.Name != e.Name {
@@ -395,74 +394,87 @@ func loadSnapshot(ctx context.Context, pool *pgxpool.Pool) (*Snapshot, error) {
 	for _, e := range snap.Exts {
 		e.PreloadLibs = preloadLibraries(e, snap.ByName)
 	}
-	if err := loadTargets(ctx, pool, snap, byPkg); err != nil {
-		return nil, err
-	}
+}
 
+func sortBrowseOrder(exts []*Ext) {
 	// Default browse order: stars, credible activity, then name.
-	sort.SliceStable(snap.Exts, func(i, j int) bool {
-		si, sj := starOf(snap.Exts[i]), starOf(snap.Exts[j])
+	sort.SliceStable(exts, func(i, j int) bool {
+		si, sj := starOf(exts[i]), starOf(exts[j])
 		if si != sj {
 			return si > sj
 		}
-		if snap.Exts[i].LastActive != snap.Exts[j].LastActive {
-			return snap.Exts[i].LastActive > snap.Exts[j].LastActive
+		if exts[i].LastActive != exts[j].LastActive {
+			return exts[i].LastActive > exts[j].LastActive
 		}
-		return snap.Exts[i].Name < snap.Exts[j].Name
+		return exts[i].Name < exts[j].Name
 	})
+}
 
+func loadCategories(ctx context.Context, pool *pgxpool.Pool, snap *Snapshot) error {
 	catCount := map[string]int{}
 	for _, e := range snap.Exts {
 		catCount[e.Category]++
 	}
 	crows, err := pool.Query(ctx, `SELECT id, name, coalesce(zh_desc, ''), coalesce(en_desc, '') FROM pgext.category ORDER BY id`)
 	if err != nil {
-		return nil, fmt.Errorf("query pgext.category: %w", err)
+		return fmt.Errorf("query pgext.category: %w", err)
 	}
 	defer crows.Close()
 	for crows.Next() {
 		var c Category
 		if err := crows.Scan(&c.ID, &c.Name, &c.ZhDesc, &c.EnDesc); err != nil {
-			return nil, fmt.Errorf("scan pgext.category: %w", err)
+			return fmt.Errorf("scan pgext.category: %w", err)
 		}
 		c.Count = catCount[c.Name]
 		snap.Cats = append(snap.Cats, c)
 	}
 	if err := crows.Err(); err != nil {
-		return nil, fmt.Errorf("iterate pgext.category: %w", err)
+		return fmt.Errorf("iterate pgext.category: %w", err)
 	}
+	return nil
+}
 
-	// Only doc presence is fetched here; URLs already live in universe.
+func loadDocPresence(ctx context.Context, pool *pgxpool.Pool, snap *Snapshot) error {
 	drows, err := pool.Query(ctx, `
 		SELECT ext, en_doc IS NOT NULL AND en_doc != '', zh_doc IS NOT NULL AND zh_doc != ''
 		FROM pgext.doc`)
 	if err != nil {
 		logrus.Warnf("pgext.doc unavailable, usage docs disabled: %v", err)
-	} else {
-		defer drows.Close()
-		for drows.Next() {
-			var ext string
-			var hasEn, hasZh bool
-			if err := drows.Scan(&ext, &hasEn, &hasZh); err != nil {
-				return nil, fmt.Errorf("scan pgext.doc: %w", err)
-			}
-			if e, ok := snap.ByName[ext]; ok {
-				e.HasEnDoc, e.HasZhDoc = hasEn, hasZh
-				if hasEn || hasZh {
-					snap.CountDocs++
-				}
-			}
+		return nil
+	}
+	defer drows.Close()
+	for drows.Next() {
+		var ext string
+		var hasEn, hasZh bool
+		if err := drows.Scan(&ext, &hasEn, &hasZh); err != nil {
+			return fmt.Errorf("scan pgext.doc: %w", err)
 		}
-		if err := drows.Err(); err != nil {
-			return nil, fmt.Errorf("iterate pgext.doc: %w", err)
+		if e, ok := snap.ByName[ext]; ok {
+			e.HasEnDoc, e.HasZhDoc = hasEn, hasZh
+			if hasEn || hasZh {
+				snap.CountDocs++
+			}
 		}
 	}
+	if err := drows.Err(); err != nil {
+		return fmt.Errorf("iterate pgext.doc: %w", err)
+	}
+	return nil
+}
 
-	snap.Version, err = snap.contentVersion()
+func (s *Snapshot) finalize() error {
+	ver, err := s.contentVersion()
 	if err != nil {
-		return nil, err
+		return err
 	}
-	return snap, nil
+	s.Version = ver
+	body, tag, err := s.marshalBootstrap()
+	if err != nil {
+		return err
+	}
+	s.bootstrapJSON = body
+	s.bootstrapTag = tag
+	return nil
 }
 
 // contentVersion includes the matrix totals as well as the catalog rows:
@@ -487,6 +499,16 @@ func (s *Snapshot) contentVersion() (string, error) {
 // package files and changelog bodies are queried live, outside the snapshot.
 func (s *Snapshot) queryVersion() string {
 	return s.Version + "|" + s.LoadedAt.Format(time.RFC3339Nano)
+}
+
+// bootstrapPayload returns the pre-serialized /api/v1/bootstrap JSON and ETag,
+// falling back to on-demand encoding for synthetic snapshots in tests.
+func (s *Snapshot) bootstrapPayload() ([]byte, string, error) {
+	etag := bootstrapETag(s)
+	if len(s.bootstrapJSON) > 0 && s.bootstrapTag == etag {
+		return s.bootstrapJSON, etag, nil
+	}
+	return s.marshalBootstrap()
 }
 
 // preloadLibraries includes only entries explicitly classified as preload.

@@ -20,14 +20,6 @@ import (
 type ListGenerator struct {
 	Cache     *ExtensionCache
 	OutputDir string
-	DB        interface {
-		Query(ctx context.Context, sql string, args ...interface{}) (interface {
-			Next() bool
-			Scan(dest ...interface{}) error
-			Close()
-			Err() error
-		}, error)
-	}
 }
 
 // NewListGenerator creates a new unified list generator
@@ -105,18 +97,8 @@ func (g *ExtensionGenerator) GenerateExtensionList(locale, outputPath string) er
 		return fmt.Errorf("failed to fetch catalog stats: %w", err)
 	}
 
-	categories, err := g.fetchCategoriesWithExtensionsSorted()
-	if err != nil {
-		return fmt.Errorf("failed to fetch categories: %w", err)
-	}
-
-	// Filter out not-ready extensions
-	var extensions []*Extension
-	for _, ext := range g.Cache.Extensions {
-		if ext.IsReady() {
-			extensions = append(extensions, ext)
-		}
-	}
+	categories := g.categoryItems(false)
+	extensions := g.Cache.ReadyExtensions()
 
 	content := g.generateExtensionListContent(stats, categories, extensions, locale)
 	return WriteMarkdownFile(outputPath, content)
@@ -169,12 +151,7 @@ func (g *ExtensionGenerator) generateExtensionListContent(stats *CatalogStats, c
 
 // GenerateExtensionIndexPages generates extension index pages (_index.md and _index.zh.md)
 func (g *ExtensionGenerator) GenerateExtensionIndexPages(enPath, zhPath string) error {
-	var extensions []*Extension
-	for _, ext := range g.Cache.Extensions {
-		if ext.IsReady() {
-			extensions = append(extensions, ext)
-		}
-	}
+	extensions := g.Cache.ReadyExtensions()
 
 	enContent := g.generateExtensionIndexContent(extensions, "en")
 	if err := WriteMarkdownFile(enPath, enContent); err != nil {
@@ -239,8 +216,8 @@ func (g *ExtensionGenerator) generateExtensionIndexTable(extensions []*Extension
 		}
 
 		desc := getDescription(ext, isZh)
-		if len(desc) > 100 {
-			desc = desc[:100]
+		if runes := []rune(desc); len(runes) > 100 {
+			desc = string(runes[:100])
 		}
 
 		b.WriteString(fmt.Sprintf("| %s | %s | %s | %s | %s |\n",
@@ -317,16 +294,10 @@ func (g *ExtensionGenerator) GeneratePackageList(locale, outputPath string) erro
 		return fmt.Errorf("failed to fetch catalog stats: %w", err)
 	}
 
-	categories, err := g.fetchCategoriesWithPackagesSorted()
-	if err != nil {
-		return fmt.Errorf("failed to fetch categories: %w", err)
-	}
+	categories := g.categoryPackages()
 
 	var packages []*Extension
-	for _, ext := range g.Cache.Extensions {
-		if !ext.IsReady() {
-			continue
-		}
+	for _, ext := range g.Cache.ReadyExtensions() {
 		if ext.Lead {
 			packages = append(packages, ext)
 		}
@@ -469,10 +440,7 @@ func (g *ExtensionGenerator) GenerateCatalogPage(locale, outputPath string) erro
 		return fmt.Errorf("failed to fetch universe total: %w", err)
 	}
 
-	categories, err := g.fetchCategoriesWithExtensions()
-	if err != nil {
-		return fmt.Errorf("failed to fetch categories: %w", err)
-	}
+	categories := g.categoryItems(false)
 
 	content := g.generateCatalogContent(stats, categories, universeTotal, locale)
 	return WriteMarkdownFile(outputPath, content)
@@ -559,8 +527,9 @@ func (g *ExtensionGenerator) fetchUniverseTotal() (int, error) {
 func (g *ListGenerator) GenerateCategoryList(locale, outputPath string) error {
 	isZh := locale == "zh"
 
+	ready := g.Cache.ReadyExtensions()
 	pkgMap := make(map[string]bool)
-	for _, ext := range g.Cache.Extensions {
+	for _, ext := range ready {
 		pkgMap[ext.Pkg] = true
 	}
 	pkgCount := len(pkgMap)
@@ -568,9 +537,9 @@ func (g *ListGenerator) GenerateCategoryList(locale, outputPath string) error {
 	var b strings.Builder
 
 	if isZh {
-		b.WriteString(fmt.Sprintf("---\ntitle: \"按分类\"\nweight: 100\npage_width: full\n---\n\n%d 个已打包 PostgreSQL 扩展（归属 %d 个包族）划分为 %d 个分类。\n\n", len(g.Cache.Extensions), pkgCount, len(g.Cache.Categories)))
+		b.WriteString(fmt.Sprintf("---\ntitle: \"按分类\"\nweight: 100\npage_width: full\n---\n\n%d 个已打包 PostgreSQL 扩展（归属 %d 个包族）划分为 %d 个分类。\n\n", len(ready), pkgCount, len(g.Cache.Categories)))
 	} else {
-		b.WriteString(fmt.Sprintf("---\ntitle: \"By Category\"\nweight: 100\npage_width: full\n---\n\nThe %d packaged PostgreSQL extensions (in %d package families) are organized into %d categories.\n\n", len(g.Cache.Extensions), pkgCount, len(g.Cache.Categories)))
+		b.WriteString(fmt.Sprintf("---\ntitle: \"By Category\"\nweight: 100\npage_width: full\n---\n\nThe %d packaged PostgreSQL extensions (in %d package families) are organized into %d categories.\n\n", len(ready), pkgCount, len(g.Cache.Categories)))
 	}
 
 	b.WriteString(`
@@ -584,7 +553,12 @@ func (g *ListGenerator) GenerateCategoryList(locale, outputPath string) error {
 
 	for _, cat := range g.Cache.Categories {
 		catKey := strings.ToUpper(cat.Name)
-		exts := g.Cache.CateExtMap[catKey]
+		var exts []*Extension
+		for _, ext := range g.Cache.CateExtMap[catKey] {
+			if ext.IsReady() {
+				exts = append(exts, ext)
+			}
+		}
 		b.WriteString(g.generateCategorySection(cat, exts, isZh))
 	}
 
@@ -660,7 +634,7 @@ func (g *ListGenerator) GenerateLanguageList(locale, outputPath string) error {
 	isZh := locale == "zh"
 
 	langMap := make(map[string][]*Extension)
-	for _, ext := range g.Cache.Extensions {
+	for _, ext := range g.Cache.ReadyExtensions() {
 		if ext.Lang.Valid && ext.Lang.String != "" {
 			lang := ext.Lang.String
 			langMap[lang] = append(langMap[lang], ext)
@@ -789,7 +763,7 @@ func (g *ListGenerator) GenerateLicenseList(locale, outputPath string) error {
 	isZh := locale == "zh"
 
 	licenseMap := make(map[string][]*Extension)
-	for _, ext := range g.Cache.Extensions {
+	for _, ext := range g.Cache.ReadyExtensions() {
 		if ext.License.Valid && ext.License.String != "" {
 			license := ext.License.String
 			licenseMap[license] = append(licenseMap[license], ext)
@@ -814,9 +788,9 @@ func (g *ListGenerator) GenerateLicenseList(locale, outputPath string) error {
 
 	b.WriteString(`
 
-| {{< license "MIT" >}}      | {{< license "ISC" >}}        | {{< license "PostgreSQL" >}} | {{< license "0BSD" >}} | {{< license "BSD 2-Clause" >}} | {{< license "BSD 3-Clause" >}} |
+| {{< license "MIT" >}}      | {{< license "ISC" >}}        | {{< license "PostgreSQL" >}} | {{< license "0BSD" >}} | {{< license "BSD-2-Clause" >}} | {{< license "BSD-3-Clause" >}} |
 |:---------------------------|:-----------------------------|:-----------------------------|:-------------------------------|:-------------------------------|:-------------------------------|
-| {{< license "Artistic-2.0" >}} | {{< license "Apache-2.0" >}} | {{< license "MPL-2.0" >}}    |                                |                                |                                |
+| {{< license "Artistic-1.0" >}} | {{< license "Artistic-2.0" >}} | {{< license "Apache-2.0" >}} | {{< license "MPL-2.0" >}} | | |
 | {{< license "GPL-2.0" >}}  | {{< license "GPL-3.0" >}}    | {{< license "LGPL-2.1" >}}   | {{< license "LGPL-3.0" >}}     | {{< license "AGPL-3.0" >}}     | {{< license "Timescale" >}}    |
 
 `)
@@ -996,217 +970,45 @@ func (g *ExtensionGenerator) fetchCatalogStats() (*CatalogStats, error) {
 }
 
 func (g *ExtensionGenerator) getActivePGVersions(ctx context.Context) ([]int, error) {
-	query := `SELECT pg FROM pgext.active_pg ORDER BY pg DESC`
-	rows, err := g.DB.Query(ctx, query)
-	if err != nil {
-		return nil, err
+	if g.Cache != nil && len(g.Cache.PGVersions) > 0 {
+		return g.Cache.PGVersions, nil
 	}
-	defer rows.Close()
-
-	var versions []int
-	for rows.Next() {
-		var pg int
-		if err := rows.Scan(&pg); err != nil {
-			return nil, err
-		}
-		versions = append(versions, pg)
-	}
-	return versions, rows.Err()
+	return ActivePGVersions(ctx)
 }
 
-func (g *ExtensionGenerator) fetchCategoriesWithExtensions() ([]CategoryExtensions, error) {
-	ctx := context.Background()
-	query := `
-		SELECT e.category, e.id, e.name, COALESCE(e.pkg, e.name) as pkg
-		FROM pgext.extension e
-		WHERE e.category IS NOT NULL
-		ORDER BY e.category, e.id
-	`
-
-	rows, err := g.DB.Query(ctx, query)
-	if err != nil {
-		return nil, fmt.Errorf("failed to query categories: %w", err)
-	}
-	defer rows.Close()
-
-	categoryMap := make(map[string]*CategoryExtensions)
-	var categories []string
-
-	for rows.Next() {
-		var category string
-		var ext struct {
-			ID   int
-			Name string
-			Pkg  string
-		}
-
-		err := rows.Scan(&category, &ext.ID, &ext.Name, &ext.Pkg)
-		if err != nil {
-			return nil, fmt.Errorf("failed to scan row: %w", err)
-		}
-
-		if _, exists := categoryMap[category]; !exists {
-			categoryMap[category] = &CategoryExtensions{
-				Category: category,
-				Extensions: []struct {
-					ID   int
-					Name string
-					Pkg  string
-				}{},
+func (g *ExtensionGenerator) categoryItems(leadOnly bool) []CategoryExtensions {
+	result := make([]CategoryExtensions, 0, len(g.Cache.Categories))
+	for _, cat := range g.Cache.Categories {
+		entry := CategoryExtensions{Category: cat.Name}
+		for _, e := range g.Cache.CateExtMap[strings.ToUpper(cat.Name)] {
+			if !e.IsReady() || (leadOnly && !e.Lead) {
+				continue
 			}
-			categories = append(categories, category)
+			pkg := e.Pkg
+			if pkg == "" {
+				pkg = e.Name
+			}
+			entry.Extensions = append(entry.Extensions, struct {
+				ID   int
+				Name string
+				Pkg  string
+			}{ID: e.ID, Name: e.Name, Pkg: pkg})
 		}
-		categoryMap[category].Extensions = append(categoryMap[category].Extensions, ext)
+		if len(entry.Extensions) > 0 {
+			sort.Slice(entry.Extensions, func(i, j int) bool { return entry.Extensions[i].ID < entry.Extensions[j].ID })
+			result = append(result, entry)
+		}
 	}
-
-	result := make([]CategoryExtensions, 0, len(categories))
-	for _, cat := range categories {
-		result = append(result, *categoryMap[cat])
-	}
-
-	return result, nil
+	return result
 }
 
-func (g *ExtensionGenerator) fetchCategoriesWithExtensionsSorted() ([]CategoryExtensions, error) {
-	ctx := context.Background()
-
-	categoryQuery := `SELECT name, id FROM pgext.category ORDER BY id`
-	categoryRows, err := g.DB.Query(ctx, categoryQuery)
-	if err != nil {
-		return nil, fmt.Errorf("failed to query category order: %w", err)
+func (g *ExtensionGenerator) categoryPackages() []CategoryPackages {
+	items := g.categoryItems(true)
+	result := make([]CategoryPackages, len(items))
+	for i, it := range items {
+		result[i] = CategoryPackages{Category: it.Category, Packages: it.Extensions}
 	}
-	defer categoryRows.Close()
-
-	var categoryOrder []string
-	for categoryRows.Next() {
-		var name string
-		var id int
-		if err := categoryRows.Scan(&name, &id); err != nil {
-			return nil, fmt.Errorf("failed to scan category: %w", err)
-		}
-		categoryOrder = append(categoryOrder, name)
-	}
-
-	query := `
-		SELECT e.category, e.id, e.name, COALESCE(e.pkg, e.name) as pkg
-		FROM pgext.extension e
-		WHERE e.category IS NOT NULL
-		ORDER BY e.category, e.id
-	`
-
-	rows, err := g.DB.Query(ctx, query)
-	if err != nil {
-		return nil, fmt.Errorf("failed to query categories: %w", err)
-	}
-	defer rows.Close()
-
-	categoryMap := make(map[string]*CategoryExtensions)
-
-	for rows.Next() {
-		var category string
-		var ext struct {
-			ID   int
-			Name string
-			Pkg  string
-		}
-
-		err := rows.Scan(&category, &ext.ID, &ext.Name, &ext.Pkg)
-		if err != nil {
-			return nil, fmt.Errorf("failed to scan row: %w", err)
-		}
-
-		if _, exists := categoryMap[category]; !exists {
-			categoryMap[category] = &CategoryExtensions{
-				Category: category,
-				Extensions: []struct {
-					ID   int
-					Name string
-					Pkg  string
-				}{},
-			}
-		}
-		categoryMap[category].Extensions = append(categoryMap[category].Extensions, ext)
-	}
-
-	result := make([]CategoryExtensions, 0, len(categoryOrder))
-	for _, cat := range categoryOrder {
-		if catData, exists := categoryMap[cat]; exists {
-			result = append(result, *catData)
-		}
-	}
-
-	return result, nil
-}
-
-func (g *ExtensionGenerator) fetchCategoriesWithPackagesSorted() ([]CategoryPackages, error) {
-	ctx := context.Background()
-
-	categoryQuery := `SELECT name, id FROM pgext.category ORDER BY id`
-	categoryRows, err := g.DB.Query(ctx, categoryQuery)
-	if err != nil {
-		return nil, fmt.Errorf("failed to query category order: %w", err)
-	}
-	defer categoryRows.Close()
-
-	var categoryOrder []string
-	for categoryRows.Next() {
-		var name string
-		var id int
-		if err := categoryRows.Scan(&name, &id); err != nil {
-			return nil, fmt.Errorf("failed to scan category: %w", err)
-		}
-		categoryOrder = append(categoryOrder, name)
-	}
-
-	query := `
-		SELECT e.category, e.id, e.name, COALESCE(e.pkg, e.name) as pkg
-		FROM pgext.extension e
-		WHERE e.category IS NOT NULL AND e.lead = true
-		ORDER BY e.category, e.id
-	`
-
-	rows, err := g.DB.Query(ctx, query)
-	if err != nil {
-		return nil, fmt.Errorf("failed to query packages: %w", err)
-	}
-	defer rows.Close()
-
-	categoryMap := make(map[string]*CategoryPackages)
-
-	for rows.Next() {
-		var category string
-		var pkg struct {
-			ID   int
-			Name string
-			Pkg  string
-		}
-
-		err := rows.Scan(&category, &pkg.ID, &pkg.Name, &pkg.Pkg)
-		if err != nil {
-			return nil, fmt.Errorf("failed to scan row: %w", err)
-		}
-
-		if _, exists := categoryMap[category]; !exists {
-			categoryMap[category] = &CategoryPackages{
-				Category: category,
-				Packages: []struct {
-					ID   int
-					Name string
-					Pkg  string
-				}{},
-			}
-		}
-		categoryMap[category].Packages = append(categoryMap[category].Packages, pkg)
-	}
-
-	result := make([]CategoryPackages, 0, len(categoryOrder))
-	for _, cat := range categoryOrder {
-		if catData, exists := categoryMap[cat]; exists {
-			result = append(result, *catData)
-		}
-	}
-
-	return result, nil
+	return result
 }
 
 func (g *ExtensionGenerator) generateStatsTable(rows []StatsRow, pgVersions []int, isZh, isExtension bool) string {
@@ -1296,21 +1098,41 @@ func getLicenseInfo(license string) LicenseInfo {
 		"PostgreSQL":   {"https://opensource.org/licenses/postgresql", "Very liberal license based on the BSD license, allowing almost unlimited freedom.", 1},
 		"Apache-2.0":   {"https://opensource.org/licenses/Apache-2.0", "Permissive license with patent protection and attribution requirements.", 2},
 		"MIT":          {"https://opensource.org/licenses/MIT", "A permissive license that allows commercial use, modification, and private use.", 3},
-		"BSD 3-Clause": {"https://opensource.org/license/bsd-3-clause", "Permissive license with attribution and endorsement restriction clauses.", 4},
-		"BSD 2-Clause": {"https://opensource.org/license/bsd-2-clause", "Permissive license requiring attribution but allowing commercial use.", 5},
+		"BSD-3-Clause": {"https://opensource.org/license/bsd-3-clause", "Permissive license with attribution and endorsement restriction clauses.", 4},
+		"BSD-2-Clause": {"https://opensource.org/license/bsd-2-clause", "Permissive license requiring attribution but allowing commercial use.", 5},
 		"GPL-2.0":      {"https://opensource.org/licenses/GPL-2.0", "Strong copyleft license requiring derivative works to be open source.", 6},
 		"GPL-3.0":      {"https://opensource.org/licenses/GPL-3.0", "Strong copyleft license with additional patent and hardware restrictions.", 7},
 		"AGPL-3.0":     {"https://opensource.org/licenses/AGPL-3.0", "Network copyleft license extending GPL to cover network-distributed software.", 8},
 		"ISC":          {"https://opensource.org/licenses/ISC", "A permissive license similar to MIT, allowing commercial use and modification.", 9},
-		"Artistic":     {"https://opensource.org/license/artistic-2-0", "Copyleft license allowing modification with certain distribution requirements.", 10},
+		"Artistic-1.0": {"https://spdx.org/licenses/Artistic-1.0.html", "Artistic License 1.0 for distributing original or modified packages.", 10},
+		"Artistic-2.0": {"https://opensource.org/license/artistic-2-0", "Artistic License 2.0 for distributing original or modified packages.", 10},
 		"Timescale":    {"https://www.timescale.com/legal/licenses", "Proprietary license with restrictions on commercial use and distribution.", 11},
-		"BSD 0-Clause": {"https://opensource.org/license/0bsd", "Public domain equivalent license with no restrictions on use.", 12},
+		"0BSD":         {"https://opensource.org/license/0bsd", "Public domain equivalent license with no restrictions on use.", 12},
 		"LGPL-3.0":     {"https://opensource.org/licenses/LGPL-3.0", "Weak copyleft license with additional patent and hardware provisions.", 13},
 		"MPL-2.0":      {"https://opensource.org/licenses/MPL-2.0", "Weak copyleft license allowing proprietary combinations with file-level copyleft.", 14},
 		"LGPL-2.1":     {"https://opensource.org/licenses/LGPL-2.1", "Weak copyleft license allowing proprietary applications to link dynamically.", 15},
+		"LGPL-2.0":     {"https://spdx.org/licenses/LGPL-2.0.html", "GNU Library General Public License version 2.", 15},
+		"Elastic-2.0":  {"https://www.elastic.co/licensing/elastic-license", "Elastic License 2.0 restricts provision of a managed service.", 16},
 	}
 
+	// Older packaged snapshots use these spellings in generated pages.
+	switch license {
+	case "BSD 0-Clause":
+		license = "0BSD"
+	case "BSD 2-Clause", "BSD 3-Clause":
+		license = strings.Replace(license, " ", "-", 1)
+	case "Artistic":
+		license = "Artistic-2.0"
+	}
 	if info, ok := licenses[license]; ok {
+		return info
+	}
+	family := strings.TrimSuffix(license, "-or-later")
+	if family == license {
+		family = strings.TrimSuffix(license, "-only")
+	}
+	if info, ok := licenses[family]; ok && strings.Contains(family, "GPL-") {
+		info.URL = "https://spdx.org/licenses/" + license + ".html"
 		return info
 	}
 	return LicenseInfo{"#", "Unknown license", 999}

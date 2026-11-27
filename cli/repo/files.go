@@ -112,7 +112,7 @@ func (m *Manager) scan() (map[string]*fileImage, error) {
 	if err != nil && !os.IsNotExist(err) {
 		return nil, err
 	}
-	paths := []string{}
+	paths := []string{signingKeyPath("pgdg", m.Platform.Family), signingKeyPath("pigsty", m.Platform.Family)}
 	if m.Platform.Family == "deb" {
 		paths = append(paths, "etc/apt/sources.list")
 	}
@@ -135,9 +135,12 @@ func (m *Manager) scan() (map[string]*fileImage, error) {
 	return files, nil
 }
 
-func installed(root string, files map[string]*fileImage) []InstalledFile {
+func installed(root, family string, files map[string]*fileImage) []InstalledFile {
 	result := []InstalledFile{}
 	for path, f := range files {
+		if !validRepoPath(path, family) {
+			continue
+		}
 		sum := sha256.Sum256([]byte(f.Content))
 		result = append(result, InstalledFile{Path: filepath.Join(root, path), Managed: owned(path, f), SHA256: hex.EncodeToString(sum[:])})
 	}
@@ -250,7 +253,9 @@ func (m *Manager) restoreChanges(id string) ([]Change, error) {
 	seen := map[string]bool{}
 	var changes []Change
 	for _, c := range saved.Changes {
-		if !validRepoPath(c.Path, m.Platform.Family) || seen[c.Path] {
+		family := m.Platform.Family
+		key := c.Path == signingKeyPath("pgdg", family) || c.Path == signingKeyPath("pigsty", family)
+		if (!validRepoPath(c.Path, family) && !key) || seen[c.Path] {
 			return nil, fmt.Errorf("invalid or duplicate backup path %q", c.Path)
 		}
 		seen[c.Path] = true

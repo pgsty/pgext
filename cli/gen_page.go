@@ -19,6 +19,7 @@ import (
 type ExtensionGenerator struct {
 	Cache     *ExtensionCache
 	OutputDir string
+	StubDir   string
 	DB        *pgxpool.Pool
 }
 
@@ -33,7 +34,15 @@ func NewExtensionGenerator(cache *ExtensionCache, outputDir string) *ExtensionGe
 
 // GenerateExtensionPage generates a single extension detail page
 func (g *ExtensionGenerator) GenerateExtensionPage(ctx context.Context, ext *Extension) error {
-	stubPath := filepath.Join(filepath.Dir(g.OutputDir), "..", "stub", ext.Name+".md")
+	stubDir := g.StubDir
+	if stubDir == "" {
+		var err error
+		stubDir, err = SourceStubDir("", "stub")
+		if err != nil {
+			return err
+		}
+	}
+	stubPath := filepath.Join(stubDir, ext.Name+".md")
 	stubContent, err := ReadValidatedStub(stubPath)
 	if err != nil {
 		return err
@@ -716,22 +725,7 @@ func (g *ExtensionGenerator) generateSourceSection(ext *Extension) string {
 	section += CardsShortcode(3, strings.Join(cards, "\n"))
 	section += "\n\n"
 
-	// Check extra.rpm and extra.deb to determine if build command should be shown
-	var buildRPM, buildDEB bool
-	if ext.Extra != nil {
-		if rpm, ok := ext.Extra["rpm"]; ok {
-			if rpmBool, ok := rpm.(bool); ok && rpmBool {
-				buildRPM = true
-			}
-		}
-		if deb, ok := ext.Extra["deb"]; ok {
-			if debBool, ok := deb.(bool); ok && debBool {
-				buildDEB = true
-			}
-		}
-	}
-
-	// Only show build command if either rpm or deb is true in extra
+	buildRPM, buildDEB := extBuildFlags(ext)
 	if ext.Source.Valid && ext.Source.String != "" && (buildRPM || buildDEB) {
 		var buildHint string
 		if buildRPM && buildDEB {
@@ -760,19 +754,7 @@ func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
 		return b.String() + loadCreate
 	}
 
-	// Parse PG versions
-	activePG := make(map[int]bool, len(g.Cache.PGVersions))
-	for _, pg := range g.Cache.PGVersions {
-		activePG[pg] = true
-	}
-
-	var pgVersions []int
-	for _, pg := range ParsePGVersions(ext.PgVer) {
-		if activePG[pg] {
-			pgVersions = append(pgVersions, pg)
-		}
-	}
-	sort.Sort(sort.Reverse(sort.IntSlice(pgVersions)))
+	pgVersions := activePGVersionsFor(g.Cache, ext)
 
 	// Generate install commands
 	var installCmds []string
@@ -809,44 +791,9 @@ func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
 
 func (g *ExtensionGenerator) generateLoadCreate(ext *Extension) string {
 	var b strings.Builder
-	// Add shared_preload_libraries section if needed
 	if ext.NeedLoad {
 		b.WriteString("\n[**Config**](https://pigsty.io/docs/pgsql/ext/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):\n\n")
-
-		// Build the list of libraries to load
-		libSet := make(map[string]bool)
-		var libsToLoad []string
-
-		// Check if extension has dependencies that also need loading
-		if len(ext.Requires) > 0 {
-			for _, depName := range ext.Requires {
-				if depExt, exists := g.Cache.ExtMap[depName]; exists && depExt.NeedLoad {
-					// Get library name(s) for the dependency
-					depLibName := depExt.GetLibName()
-					// Handle case where lib name might contain multiple libraries separated by comma
-					for _, lib := range strings.Split(depLibName, ",") {
-						lib = strings.TrimSpace(lib)
-						if lib != "" && !libSet[lib] {
-							libSet[lib] = true
-							libsToLoad = append(libsToLoad, lib)
-						}
-					}
-				}
-			}
-		}
-
-		// Add current extension's library name(s)
-		extLibName := ext.GetLibName()
-		for _, lib := range strings.Split(extLibName, ",") {
-			lib = strings.TrimSpace(lib)
-			if lib != "" && !libSet[lib] {
-				libSet[lib] = true
-				libsToLoad = append(libsToLoad, lib)
-			}
-		}
-
-		// Generate the shared_preload_libraries config
-		libConfig := strings.Join(libsToLoad, ", ")
+		libConfig := strings.Join(preloadLibraries(g.Cache, ext), ", ")
 		b.WriteString(TripleQuoteINI(fmt.Sprintf("shared_preload_libraries = '%s';", libConfig)))
 		b.WriteString("\n\n")
 	}

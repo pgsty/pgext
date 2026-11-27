@@ -4,6 +4,7 @@ Copyright 2018-2026 Ruohang Feng <rh@vonng.com>
 package server
 
 import (
+	"bytes"
 	"cmp"
 	"context"
 	"crypto/subtle"
@@ -16,6 +17,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/jackc/pgx/v5"
@@ -25,7 +27,7 @@ import (
 )
 
 /* ----------------------------------------------------------------
-   API surface (all JSON, read-only except /reload):
+   API surface (all JSON, read-only except /reload and /visit):
 
      GET  /api/v1/meta                  server + snapshot + dimensions
      GET  /api/v1/ext                   list/search: q + catalog/runtime/build/doc/relation dimensions
@@ -54,7 +56,7 @@ type Filter struct {
 	Lifecycle  string
 	Kernel     string
 	Vendor     string
-	Scope      string // "", "packaged", "source", "kernel", "vendor", "contrib"
+	Scope      string // "", "packaged", "unpacked", "source", "kernel", "vendor", "contrib"
 	Tag        string
 	Pkg        string
 	Capability string
@@ -220,11 +222,8 @@ func (f Filter) match(e *Ext, snap *Snapshot) (int, bool) {
 	if f.Kernel != "" && !strings.Contains(strings.ToLower(e.Kernel), strings.ToLower(f.Kernel)) {
 		return 0, false
 	}
-	if f.Vendor != "" {
-		v := strings.ToLower(f.Vendor)
-		if !strings.Contains(strings.ToLower(e.Vendor), v) {
-			return 0, false
-		}
+	if f.Vendor != "" && !strings.Contains(strings.ToLower(e.Vendor), strings.ToLower(f.Vendor)) {
+		return 0, false
 	}
 	score := 0
 	for _, w := range f.Words {
@@ -463,6 +462,19 @@ type api struct {
 	pool        *pgxpool.Pool
 	reloadToken string
 	counter     *counterStore
+	matrixMu    sync.Mutex
+	matrixCache map[string]*matrixCacheEntry
+}
+
+func newAPI(store *Store, pool *pgxpool.Pool, cacheTTL time.Duration, reloadToken string, counter *counterStore) *api {
+	return &api{
+		store:       store,
+		cache:       newTTLCache(cacheTTL, 2048),
+		pool:        pool,
+		reloadToken: reloadToken,
+		counter:     counter,
+		matrixCache: map[string]*matrixCacheEntry{},
+	}
 }
 
 func writeJSON(w http.ResponseWriter, code int, v any) {
@@ -563,11 +575,14 @@ func (a *api) handleMatrix(w http.ResponseWriter, r *http.Request) {
 	if e == nil {
 		return
 	}
-	a.cached(w, r, snap.queryVersion(), func(ctx context.Context) (any, error) {
-		rows, _ := a.pool.Query(ctx, `
+	a.cached(w, r, snap.queryVersion()+"|matrix|"+e.Name, func(ctx context.Context) (any, error) {
+		rows, err := a.pool.Query(ctx, `
 			SELECT pg, os, coalesce(name,''), state::text, coalesce(org,''), coalesce(version,''), coalesce(count,0)
 			FROM pgext.pkg WHERE pkg = $1 AND pg = ANY($2::integer[]) AND os = ANY($3::text[])
 			ORDER BY pg DESC, os`, e.Pkg, snap.PGs, snap.OSs)
+		if err != nil {
+			return nil, err
+		}
 		cells, err := pgx.CollectRows(rows, pgx.RowToStructByPos[MatrixCell])
 		if err != nil {
 			return nil, err
@@ -580,12 +595,8 @@ func (a *api) handleMatrix(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-// handleGlobalMatrix serves the write-time-computed matrix payload (see
-// server/matrix.go). The request path is one primary-key lookup on
-// pgext.matrix_cache behind the in-memory TTL cache; the payload is compact
-// and positional: p=package, e=lead extension, c=status bytes (lowercase =
-// hidden), v/i=row-local version dictionary and per-cell index.
-// ?repo=pgdg|pigsty selects the single-repository what-if view.
+// handleGlobalMatrix serves the snapshot-cached global (or ?repo=pgdg|pigsty
+// what-if) build matrix payload.
 func (a *api) handleGlobalMatrix(w http.ResponseWriter, r *http.Request) {
 	view := strings.ToLower(strings.TrimSpace(r.URL.Query().Get("repo")))
 	mv, ok := matrixViewOf(view)
@@ -593,14 +604,18 @@ func (a *api) handleGlobalMatrix(w http.ResponseWriter, r *http.Request) {
 		writeErr(w, http.StatusBadRequest, "unknown matrix repo view %q (want pgdg or pigsty)", view)
 		return
 	}
-	snap := a.store.Get()
-	a.cached(w, r, snap.queryVersion(), func(ctx context.Context) (any, error) {
-		payload, err := a.matrixPayload(ctx, false, mv)
-		if err != nil {
-			return nil, err
-		}
-		return json.RawMessage(payload), nil
-	})
+	ctx, cancel := context.WithTimeout(r.Context(), 15*time.Second)
+	defer cancel()
+	payload, err := a.matrixPayload(ctx, false, mv)
+	if err != nil {
+		logrus.Errorf("matrix query failed for %s: %v", mv.label(), err)
+		writeErr(w, http.StatusInternalServerError, "catalog query failed")
+		return
+	}
+	w.Header().Set("Content-Type", "application/json; charset=utf-8")
+	w.Header().Set("Cache-Control", "public, max-age=60")
+	w.WriteHeader(http.StatusOK)
+	w.Write(payload)
 }
 
 // FileRow is one downloadable binary artifact.
@@ -626,8 +641,9 @@ func (a *api) handleFiles(w http.ResponseWriter, r *http.Request) {
 	q := r.URL.Query()
 	pg, _ := strconv.Atoi(q.Get("pg"))
 	osFilter := q.Get("os")
-	a.cached(w, r, snap.queryVersion(), func(ctx context.Context) (any, error) {
-		rows, _ := a.pool.Query(ctx, `
+	key := fmt.Sprintf("%s|files|%s|%d|%s", snap.queryVersion(), e.Name, pg, osFilter)
+	a.cached(w, r, key, func(ctx context.Context) (any, error) {
+		rows, err := a.pool.Query(ctx, `
 			SELECT b.pg, b.os, b.name, b.repo, coalesce(r.org,''), coalesce(b.ver,''), coalesce(b.version,''),
 			       coalesce(b.file,''), coalesce(b.sha256,''), coalesce(b.size,0),
 			       CASE WHEN b.href ~ '^https?://' THEN b.href
@@ -637,6 +653,9 @@ func (a *api) handleFiles(w http.ResponseWriter, r *http.Request) {
 			  AND ($2 = 0 OR b.pg = $2) AND ($3 = '' OR b.os = $3)
 			ORDER BY b.pg DESC, b.os, b.name, b.ver::pgext.version USING OPERATOR (pgext.>), b.repo, b.file
 			LIMIT 5000`, e.Pkg, pg, osFilter)
+		if err != nil {
+			return nil, err
+		}
 		files, err := pgx.CollectRows(rows, pgx.RowToStructByPos[FileRow])
 		if err != nil {
 			return nil, err
@@ -654,7 +673,7 @@ func (a *api) handleDoc(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Query().Get("lang") == "zh" {
 		lang, col = "zh", "zh_doc"
 	}
-	a.cached(w, r, snap.queryVersion(), func(ctx context.Context) (any, error) {
+	a.cached(w, r, snap.queryVersion()+"|doc|"+e.Name+"|"+lang, func(ctx context.Context) (any, error) {
 		var doc *string
 		err := a.pool.QueryRow(ctx, `SELECT `+col+` FROM pgext.doc WHERE ext = $1`, e.Name).Scan(&doc)
 		if err != nil && !errors.Is(err, pgx.ErrNoRows) {
@@ -813,7 +832,7 @@ func (a *api) handleDim(w http.ResponseWriter, r *http.Request) {
 /*
 bootstrap: compact positional rows for the SPA.
 
-	Column order — keep in sync with decodeBoot() in web/app.js:
+	Column order — keep in sync with decodeBoot() in web/js/state.js:
 	  0 name  1 category  2 avail  3 repo  4 license  5 lang  6 version  7 stars
 	  8 en_desc  9 zh_desc  10 kind  11 vendor  12 kernel  13 pg_ver[]
 	  14 flags(lead1 contrib2 bin4 lib8 ddl16 load32 trusted64 reloc128)
@@ -824,7 +843,7 @@ bootstrap: compact positional rows for the SPA.
 */
 // bootFormat versions the positional payload layout. It participates in the
 // ETag (and the SPA's request URL) so a redeployed binary can never pair its
-// new app.js with an older cached payload whose columns no longer line up.
+// new JS with an older cached payload whose columns no longer line up.
 const bootFormat = "b34"
 
 func bootstrapETag(snap *Snapshot) string {
@@ -842,15 +861,9 @@ func bits(bs ...bool) int {
 	return n
 }
 
-func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
-	snap := a.store.Get()
-	etag := bootstrapETag(snap)
-	if r.Header.Get("If-None-Match") == etag {
-		w.WriteHeader(http.StatusNotModified)
-		return
-	}
-	rows := make([]any, len(snap.Exts))
-	for i, e := range snap.Exts {
+func (s *Snapshot) marshalBootstrap() ([]byte, string, error) {
+	rows := make([]any, len(s.Exts))
+	for i, e := range s.Exts {
 		flags := bits(e.Lead, e.Contrib, e.HasBin, e.HasLib, e.NeedDDL, e.NeedLoad, e.Trusted, e.Relocatable)
 		docbits := bits(e.HasEnDoc, e.HasZhDoc)
 		buildbits := bits(e.RPMBuild, e.DEBBuild, e.PGRXVer != "", e.RepoURL != "" || e.Tarball != "")
@@ -863,18 +876,42 @@ func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
 			relationbits, e.PGRXVer, e.RepoURL, e.URL, e.LicenseURL, e.RPMPkg, e.DEBPkg,
 		}
 	}
+	var buf bytes.Buffer
+	enc := json.NewEncoder(&buf)
+	enc.SetEscapeHTML(false)
+	if err := enc.Encode(map[string]any{
+		"generated": s.LoadedAt.Format(time.RFC3339),
+		"format":    bootFormat,
+		"version":   strings.Trim(s.Version, `"`),
+		"pg":        s.PGs,
+		"os":        s.OSs,
+		"counts":    s.counts(),
+		"cats":      s.Cats,
+		"rows":      rows,
+	}); err != nil {
+		return nil, "", fmt.Errorf("encode bootstrap payload: %w", err)
+	}
+	return buf.Bytes(), bootstrapETag(s), nil
+}
+
+func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
+	snap := a.store.Get()
+	etag := bootstrapETag(snap)
 	w.Header().Set("ETag", etag)
 	w.Header().Set("Cache-Control", "public, max-age=60")
-	writeJSON(w, 200, map[string]any{
-		"generated": snap.LoadedAt.Format(time.RFC3339),
-		"format":    bootFormat,
-		"version":   strings.Trim(snap.Version, `"`),
-		"pg":        snap.PGs,
-		"os":        snap.OSs,
-		"counts":    snap.counts(),
-		"cats":      snap.Cats,
-		"rows":      rows,
-	})
+	if etagMatches(r.Header.Get("If-None-Match"), etag) {
+		w.WriteHeader(http.StatusNotModified)
+		return
+	}
+	body, _, err := snap.bootstrapPayload()
+	if err != nil {
+		logrus.Errorf("bootstrap encode failed: %v", err)
+		writeErr(w, http.StatusInternalServerError, "response encoding failed")
+		return
+	}
+	w.Header().Set("Content-Type", "application/json; charset=utf-8")
+	w.WriteHeader(http.StatusOK)
+	w.Write(body)
 }
 
 /* visit counter: in-memory counts persisted additively to pgext.counter.
@@ -915,16 +952,19 @@ func (a *api) handleChangelog(w http.ResponseWriter, r *http.Request) {
 	if e == nil {
 		return
 	}
-	a.cached(w, r, snap.queryVersion(), func(ctx context.Context) (any, error) {
-		rows, _ := a.pool.Query(ctx, `
+	a.cached(w, r, snap.queryVersion()+"|changelog|"+e.Name, func(ctx context.Context) (any, error) {
+		rows, err := a.pool.Query(ctx, `
 			SELECT ds::text, coalesce(old_ver,''), coalesce(new_ver,''), coalesce(note_en,''), coalesce(note_zh,'')
 			FROM pgext.changelog WHERE pkg = $1 ORDER BY ds DESC`, e.Pkg)
-		entries, err := pgx.CollectRows(rows, pgx.RowToStructByPos[ChangelogRow])
+		var entries []ChangelogRow
+		if err == nil {
+			entries, err = pgx.CollectRows(rows, pgx.RowToStructByPos[ChangelogRow])
+		}
 		if err != nil {
 			if !isUndefinedTable(err) {
 				return nil, err
 			}
-			entries = []ChangelogRow{} // catalog database predates the changelog table
+			entries = []ChangelogRow{}
 		}
 		return map[string]any{"ext": e.Name, "pkg": e.Pkg, "total": len(entries), "entries": entries}, nil
 	})
@@ -958,7 +998,7 @@ func (a *api) handleReload(w http.ResponseWriter, r *http.Request) {
 		writeErr(w, 500, "catalog reload failed")
 		return
 	}
-	// recompute the matrix caches at write time so no visitor pays for them
+	// Recompute the in-memory matrix views eagerly so visitors stay warm.
 	a.refreshMatrixCaches(ctx, true)
 	writeJSON(w, 200, map[string]any{
 		"generated": snap.LoadedAt.Format(time.RFC3339),
@@ -983,15 +1023,15 @@ func (a *api) handleHealth(w http.ResponseWriter, r *http.Request) {
 	writeJSON(w, code, body)
 }
 
-/* cached wraps a per-extension query with the TTL response cache; entries are
-   keyed by snapshot version + URL, so a snapshot reload invalidates everything. */
+/* cached wraps a per-extension query with the TTL response cache; callers pass
+   a canonical cache key rooted in snap.queryVersion() so a snapshot reload
+   invalidates everything and arbitrary query params cannot bust the cache. */
 
 type errNotFound struct{ msg string }
 
 func (e errNotFound) Error() string { return e.msg }
 
-func (a *api) cached(w http.ResponseWriter, r *http.Request, ver string, fn func(ctx context.Context) (any, error)) {
-	key := ver + "|" + r.URL.RequestURI()
+func (a *api) cached(w http.ResponseWriter, r *http.Request, key string, fn func(ctx context.Context) (any, error)) {
 	body, ok := a.cache.Get(key)
 	if !ok {
 		ctx, cancel := context.WithTimeout(r.Context(), 10*time.Second)

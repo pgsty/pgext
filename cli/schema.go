@@ -34,30 +34,17 @@ func InitSchema(force bool) error {
 		if err != nil {
 			return fmt.Errorf("failed to get embedded universe CSV: %w", err)
 		}
-		matrixDDL, err := db.GetMatrixSchema()
-		if err != nil {
-			return fmt.Errorf("failed to get embedded matrix schema: %w", err)
-		}
 
 		universeCreated, universeRows, err := ensureUniverse(ctx, universeDDL, universeCSV)
 		if err != nil {
 			return fmt.Errorf("failed to ensure pgext.universe: %w", err)
 		}
-		matrixCreated, matrixRows, err := ensureMatrix(ctx, matrixDDL)
-		if err != nil {
-			return fmt.Errorf("failed to ensure pgext.matrix: %w", err)
-		}
-		if !universeCreated && !matrixCreated {
+		if !universeCreated {
 			logrus.Warn("pgext schema already exists, use --force to recreate")
 			return nil
 		}
 
-		if universeCreated {
-			logrus.Infof("added pgext.universe to existing schema with %d rows", universeRows)
-		}
-		if matrixCreated {
-			logrus.Infof("added pgext.matrix to existing schema with %d rows", matrixRows)
-		}
+		logrus.Infof("added pgext.universe to existing schema with %d rows", universeRows)
 		return nil
 	}
 
@@ -101,14 +88,12 @@ type csvLoadResult struct {
 	rows int64
 }
 
-// ensureUniverse upgrades schemas created before pgext.universe was part of
-// schema.sql. DDL and COPY share a transaction, so a failed load leaves no
-// partially initialized table. The advisory lock serializes concurrent pgext
-// schema upgrades; the relation is rechecked after the lock is acquired.
-func ensureUniverse(ctx context.Context, universeDDL string, universeCSV db.CSVFile) (bool, int64, error) {
+// ensureSchemaRelation atomically applies an idempotent schema addition under
+// the pgext schema upgrade advisory lock.
+func ensureSchemaRelation(ctx context.Context, relation, ddl string, populate func(pgx.Tx) (int64, error)) (bool, int64, error) {
 	tx, err := Begin(ctx)
 	if err != nil {
-		return false, 0, fmt.Errorf("failed to begin universe transaction: %w", err)
+		return false, 0, fmt.Errorf("failed to begin %s transaction: %w", relation, err)
 	}
 	defer tx.Rollback(ctx)
 
@@ -117,64 +102,38 @@ func ensureUniverse(ctx context.Context, universeDDL string, universeCSV db.CSVF
 	}
 
 	var exists bool
-	if err := tx.QueryRow(ctx, "SELECT to_regclass('pgext.universe') IS NOT NULL").Scan(&exists); err != nil {
-		return false, 0, fmt.Errorf("failed to check pgext.universe: %w", err)
+	if err := tx.QueryRow(ctx, "SELECT to_regclass($1) IS NOT NULL", relation).Scan(&exists); err != nil {
+		return false, 0, fmt.Errorf("failed to check %s: %w", relation, err)
 	}
 	if exists {
 		if err := tx.Commit(ctx); err != nil {
-			return false, 0, fmt.Errorf("failed to commit universe check: %w", err)
+			return false, 0, fmt.Errorf("failed to commit %s check: %w", relation, err)
 		}
 		return false, 0, nil
 	}
 
-	if _, err := tx.Exec(ctx, universeDDL); err != nil {
-		return false, 0, fmt.Errorf("failed to create pgext.universe: %w", err)
+	if _, err := tx.Exec(ctx, ddl); err != nil {
+		return false, 0, fmt.Errorf("failed to create %s: %w", relation, err)
 	}
-	rows, err := copyCSVToTable(ctx, tx, universeCSV.Name, universeCSV.Content)
+	rows, err := populate(tx)
 	if err != nil {
-		return false, 0, fmt.Errorf("failed to load pgext.universe: %w", err)
+		return false, 0, err
 	}
 	if err := tx.Commit(ctx); err != nil {
-		return false, 0, fmt.Errorf("failed to commit universe transaction: %w", err)
+		return false, 0, fmt.Errorf("failed to commit %s transaction: %w", relation, err)
 	}
 	return true, rows, nil
 }
 
-// ensureMatrix adds the compact matrix materialization to an existing catalog.
-// Creation and its initial population are serialized with other schema upgrades.
-func ensureMatrix(ctx context.Context, matrixDDL string) (bool, int64, error) {
-	tx, err := Begin(ctx)
-	if err != nil {
-		return false, 0, fmt.Errorf("failed to begin matrix transaction: %w", err)
-	}
-	defer tx.Rollback(ctx)
-
-	if _, err := tx.Exec(ctx, "SELECT pg_advisory_xact_lock(hashtext('pgext'), hashtext('schema'))"); err != nil {
-		return false, 0, fmt.Errorf("failed to acquire schema lock: %w", err)
-	}
-
-	var exists bool
-	if err := tx.QueryRow(ctx, "SELECT to_regclass('pgext.matrix') IS NOT NULL").Scan(&exists); err != nil {
-		return false, 0, fmt.Errorf("failed to check pgext.matrix: %w", err)
-	}
-	if exists {
-		if err := tx.Commit(ctx); err != nil {
-			return false, 0, fmt.Errorf("failed to commit matrix check: %w", err)
+// ensureUniverse upgrades schemas created before pgext.universe was part of schema.sql.
+func ensureUniverse(ctx context.Context, universeDDL string, universeCSV db.CSVFile) (bool, int64, error) {
+	return ensureSchemaRelation(ctx, "pgext.universe", universeDDL, func(tx pgx.Tx) (int64, error) {
+		rows, err := copyCSVToTable(ctx, tx, universeCSV.Name, universeCSV.Content)
+		if err != nil {
+			return 0, fmt.Errorf("failed to load pgext.universe: %w", err)
 		}
-		return false, 0, nil
-	}
-
-	if _, err := tx.Exec(ctx, matrixDDL); err != nil {
-		return false, 0, fmt.Errorf("failed to create pgext.matrix: %w", err)
-	}
-	var rows int64
-	if err := tx.QueryRow(ctx, "SELECT count(*) FROM pgext.matrix").Scan(&rows); err != nil {
-		return false, 0, fmt.Errorf("failed to count pgext.matrix: %w", err)
-	}
-	if err := tx.Commit(ctx); err != nil {
-		return false, 0, fmt.Errorf("failed to commit matrix transaction: %w", err)
-	}
-	return true, rows, nil
+		return rows, nil
+	})
 }
 
 func initializeSchema(ctx context.Context, replace bool, schemaSQL string, csvFiles []db.CSVFile) ([]csvLoadResult, error) {

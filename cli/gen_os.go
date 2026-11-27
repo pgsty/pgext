@@ -9,59 +9,52 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/sirupsen/logrus"
 )
 
-// OSGenerator generates Hugo content for OS-specific extension availability
+// OSGenerator generates Hugo content for OS-specific extension availability.
 type OSGenerator struct {
 	Cache     *ExtensionCache
 	OutputDir string
-	DB        *pgxpool.Pool
 }
 
-// NewOSGenerator creates a new OS generator
+// NewOSGenerator creates a new OS generator.
 func NewOSGenerator(cache *ExtensionCache, outputDir string) *OSGenerator {
-	return &OSGenerator{
-		Cache:     cache,
-		OutputDir: outputDir,
-		DB:        DB, // Use the global DB connection
-	}
+	return &OSGenerator{Cache: cache, OutputDir: outputDir}
 }
 
-// OSPackageInfo represents package availability for a specific OS
+// OSPackageInfo represents package availability for a specific OS.
 type OSPackageInfo struct {
-	ID     int              // Extension ID for sorting
-	Pkg    string           // Extension package name
-	Lead   string           // Lead extension name
-	PGData map[int]*PkgInfo // Package info by PG version
+	ID     int
+	Pkg    string
+	Lead   string
+	PGData map[int]*PkgInfo
 }
 
-// GenerateOSPage generates OS-specific availability pages in both English and Chinese
+// OSInfo represents OS information.
+type OSInfo struct {
+	OS     string
+	Desc   string
+	Major  *int
+	Arch   string
+	Active bool
+}
+
+// GenerateOSPage generates OS-specific availability pages in both English and Chinese.
 func (g *OSGenerator) GenerateOSPage(ctx context.Context, osName string) error {
-	// Validate OS exists and is active
-	osInfo, err := g.getOSInfo(ctx, osName)
+	osInfo, err := loadOSInfo(ctx, osName)
 	if err != nil {
 		return fmt.Errorf("failed to get OS info for %s: %w", osName, err)
 	}
-
-	// Load all packages for this OS
-	packages, err := g.loadOSPackages(ctx, osName)
+	packages, err := loadOSPackages(ctx, osName)
 	if err != nil {
 		return fmt.Errorf("failed to load packages for %s: %w", osName, err)
 	}
 
-	// Generate English content
-	contentEn := g.generateOSContent(osInfo, packages, "en")
-	outputPathEn := filepath.Join(g.OutputDir, fmt.Sprintf("%s.md", osName))
-	if err := WriteMarkdownFile(outputPathEn, contentEn); err != nil {
+	if err := WriteMarkdownFile(filepath.Join(g.OutputDir, osName+".md"), g.generateOSContent(osInfo, packages, "en")); err != nil {
 		return fmt.Errorf("failed to write English file: %w", err)
 	}
-
-	// Generate Chinese content
-	contentZh := g.generateOSContent(osInfo, packages, "zh")
-	outputPathZh := filepath.Join(g.OutputDir, fmt.Sprintf("%s.zh.md", osName))
-	if err := WriteMarkdownFile(outputPathZh, contentZh); err != nil {
+	if err := WriteMarkdownFile(filepath.Join(g.OutputDir, osName+".zh.md"), g.generateOSContent(osInfo, packages, "zh")); err != nil {
 		return fmt.Errorf("failed to write Chinese file: %w", err)
 	}
 
@@ -69,325 +62,95 @@ func (g *OSGenerator) GenerateOSPage(ctx context.Context, osName string) error {
 	return nil
 }
 
-// getOSInfo retrieves OS information from database
-func (g *OSGenerator) getOSInfo(ctx context.Context, osName string) (*OSInfo, error) {
-	query := `SELECT os, os_full, os_major, os_arch, active FROM pgext.os WHERE os = $1 AND active = true`
-
-	var info OSInfo
-	err := QueryRowContext(ctx, query, osName).Scan(
-		&info.OS, &info.Desc, &info.Major, &info.Arch, &info.Active)
-	if err != nil {
-		return nil, err
-	}
-
-	return &info, nil
+// GenerateAllOSPages generates OS pages for all active OS distributions in parallel.
+func (g *OSGenerator) GenerateAllOSPages(ctx context.Context) error {
+	return runParallelOSPages(ctx, g.GenerateOSPage)
 }
 
-// loadOSPackages loads all packages with lead extensions for a specific OS
-func (g *OSGenerator) loadOSPackages(ctx context.Context, osName string) ([]*OSPackageInfo, error) {
-	// Query to get all packages for this OS with lead extensions and their IDs
-	query := `
-		WITH lead_extensions AS (
-			SELECT DISTINCT e.id, e.pkg, e.name AS lead
-			FROM pgext.extension e
-			WHERE e.lead = true
-		)
-		SELECT p.pg, p.pkg, le.lead, le.id, p.name, p.state, p.org, p.version, p.count
-		FROM pgext.pkg p
-		JOIN lead_extensions le ON p.pkg = le.pkg
-		WHERE p.os = $1
-		ORDER BY le.id, p.pg DESC
-	`
-
-	rows, err := QueryContext(ctx, query, osName)
-	if err != nil {
-		return nil, err
-	}
-	defer rows.Close()
-
-	// Organize packages by pkg name
-	pkgMap := make(map[string]*OSPackageInfo)
-
-	for rows.Next() {
-		var pg, extID int
-		var pkgName, lead string
-		info := &PkgInfo{}
-
-		err := rows.Scan(&pg, &pkgName, &lead, &extID, &info.Name,
-			&info.State, &info.Org, &info.Version, &info.Count)
-		if err != nil {
-			return nil, err
-		}
-
-		info.PG = pg
-		info.OS = osName
-		info.Pkg = pkgName
-		info.Ext = lead
-
-		// Get or create package info
-		if _, exists := pkgMap[pkgName]; !exists {
-			pkgMap[pkgName] = &OSPackageInfo{
-				ID:     extID,
-				Pkg:    pkgName,
-				Lead:   lead,
-				PGData: make(map[int]*PkgInfo),
-			}
-		}
-
-		pkgMap[pkgName].PGData[pg] = info
-	}
-
-	// Convert map to sorted slice
-	var packages []*OSPackageInfo
-	for _, pkg := range pkgMap {
-		packages = append(packages, pkg)
-	}
-
-	// Sort packages by lead extension name
-	sortOSPackages(packages)
-
-	return packages, nil
-}
-
-// sortOSPackages sorts packages by extension ID
-func sortOSPackages(packages []*OSPackageInfo) {
-	// Sort by extension ID
-	for i := 0; i < len(packages)-1; i++ {
-		for j := i + 1; j < len(packages); j++ {
-			if packages[i].ID > packages[j].ID {
-				packages[i], packages[j] = packages[j], packages[i]
-			}
-		}
-	}
-}
-
-// generateOSContent generates the markdown content for an OS page
 func (g *OSGenerator) generateOSContent(osInfo *OSInfo, packages []*OSPackageInfo, locale string) string {
 	var b strings.Builder
-
-	// Frontmatter
 	b.WriteString(g.generateOSFrontmatter(osInfo, locale))
-
-	// Overview
-	b.WriteString(g.generateOSOverview(osInfo, packages, locale))
-
-	// Availability Matrix
-	b.WriteString(g.generateOSAvailabilityMatrix(packages, osInfo.OS, locale))
-
+	b.WriteString(g.generateOSOverview(osInfo, locale))
+	b.WriteString(g.generateOSAvailabilityMatrix(packages, locale))
 	return b.String()
 }
 
-// generateOSFrontmatter generates the YAML frontmatter
 func (g *OSGenerator) generateOSFrontmatter(osInfo *OSInfo, locale string) string {
-	weight := 100 // Default weight, can be adjusted based on OS priority
-
-	// Adjust weight based on OS (newer/popular OSes get lower weight = higher priority)
-	switch osInfo.OS {
-
-	case "el7.x86_64":
-		weight = 710
-	case "el8.x86_64":
-		weight = 720
-	case "el8.aarch64":
-		weight = 721
-	case "el9.x86_64":
-		weight = 730
-	case "el9.aarch64":
-		weight = 731
-	case "el10.x86_64":
-		weight = 740
-	case "el10.aarch64":
-		weight = 741
-	case "d11.x86_64":
-		weight = 810
-	case "d11.aarch64":
-		weight = 811
-	case "d12.x86_64":
-		weight = 820
-	case "d12.aarch64":
-		weight = 821
-	case "d13.x86_64":
-		weight = 830
-	case "d13.aarch64":
-		weight = 831
-	case "u20.x86_64":
-		weight = 910
-	case "u20.aarch64":
-		weight = 911
-	case "u22.x86_64":
-		weight = 920
-	case "u22.aarch64":
-		weight = 921
-	case "u24.x86_64":
-		weight = 930
-	case "u24.aarch64":
-		weight = 931
-	case "u26.x86_64":
-		weight = 940
-	case "u26.aarch64":
-		weight = 941
+	weight := computeOSWeight(osInfo.OS)
+	desc := fmt.Sprintf("PostgreSQL Extension Availability for %s", osInfo.Desc)
+	if locale == "zh" {
+		desc = fmt.Sprintf("%s 的 PostgreSQL 扩展可用性", osInfo.Desc)
 	}
-
-	isZh := locale == "zh"
-	localizedDesc := osInfo.Desc
-
-	if isZh {
-		return fmt.Sprintf(`---
-title: "OS: %s"
-linkTitle: "%s"
-description: "%s 的 PostgreSQL 扩展可用性"
-weight: %d
-page_width: full
----
-
-`, osInfo.OS, osInfo.OS, localizedDesc, weight)
-	}
-
-	return fmt.Sprintf(`---
-title: "OS: %s"
-linkTitle: "%s"
-description: "PostgreSQL Extension Availability for %s"
-weight: %d
-page_width: full
----
-
-`, osInfo.OS, osInfo.OS, localizedDesc, weight)
+	return fmt.Sprintf("---\ntitle: \"OS: %s\"\nlinkTitle: \"%s\"\ndescription: \"%s\"\nweight: %d\npage_width: full\n---\n\n",
+		osInfo.OS, osInfo.OS, desc, weight)
 }
 
-// generateOSOverview generates the overview section
-func (g *OSGenerator) generateOSOverview(osInfo *OSInfo, packages []*OSPackageInfo, locale string) string {
-	var b strings.Builder
-	isZh := locale == "zh"
-	localizedDesc := osInfo.Desc
-
-	if isZh {
-		b.WriteString(fmt.Sprintf("本页面展示了 **%s** (`%s`) 系统的 PostgreSQL 扩展可用性。\n\n", localizedDesc, osInfo.OS))
-	} else {
-		b.WriteString(fmt.Sprintf("This page shows the availability of PostgreSQL extensions for **%s** (`%s`) Platform.\n\n", localizedDesc, osInfo.OS))
+func (g *OSGenerator) generateOSOverview(osInfo *OSInfo, locale string) string {
+	if locale == "zh" {
+		return fmt.Sprintf("本页面展示了 **%s** (`%s`) 系统的 PostgreSQL 扩展可用性。\n\n", osInfo.Desc, osInfo.OS)
 	}
-
-	return b.String()
+	return fmt.Sprintf("This page shows the availability of PostgreSQL extensions for **%s** (`%s`) Platform.\n\n", osInfo.Desc, osInfo.OS)
 }
 
-// generateOSAvailabilityMatrix generates the availability matrix table
-func (g *OSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo, osName string, locale string) string {
+func (g *OSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo, locale string) string {
 	var b strings.Builder
-	isZh := locale == "zh"
-
-	if isZh {
-		//b.WriteString("## 扩展可用性矩阵\n\n")
+	if locale == "zh" {
 		b.WriteString("| **扩展** / **PG版本** |")
 	} else {
-		//b.WriteString("## Extension Availability Matrix\n\n")
 		b.WriteString("| **Extension** / **PG** |")
 	}
-
-	// Table header - PG versions
 	for _, pg := range g.Cache.PGVersions {
 		b.WriteString(fmt.Sprintf("       **PG%d**        |", pg))
 	}
-	b.WriteString("\n")
-
-	// Table separator
-	b.WriteString("|:----------------------:|")
+	b.WriteString("\n|:----------------------:|")
 	for range g.Cache.PGVersions {
 		b.WriteString(":--------------------:|")
 	}
 	b.WriteString("\n")
 
-	// Generate rows for each package
 	for _, ospkg := range packages {
-		// Extension link through the site's own `ext` shortcode
-		extLink := fmt.Sprintf(`{{< ext "%s" "%s" >}}`, ospkg.Lead, ospkg.Pkg)
-		b.WriteString(fmt.Sprintf("| %s |", extLink))
-
-		// Generate cells for each PG version
+		b.WriteString(fmt.Sprintf("| {{< ext %q %q >}} |", ospkg.Lead, ospkg.Pkg))
 		for _, pg := range g.Cache.PGVersions {
-			cell := g.generateOSMatrixCell(ospkg, pg)
-			b.WriteString(fmt.Sprintf(" %s |", cell))
+			b.WriteString(fmt.Sprintf(" %s |", g.generateOSMatrixCell(ospkg, pg)))
 		}
 		b.WriteString("\n")
 	}
-
-	// Several hundred rows against five majors: `{.matrix}` pins the header
-	// row and the extension column inside a scrolling viewport.
 	b.WriteString("{.matrix}\n")
-
 	return b.String()
 }
 
-// generateOSMatrixCell generates a single cell in the availability matrix
 func (g *OSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int) string {
 	pkg, exists := ospkg.PGData[pg]
 	if !exists {
 		return Badge("N/A", "gray", "", "", "")
 	}
-
-	// Get package state
 	state := "MISS"
 	if pkg.State.Valid {
 		state = pkg.State.String
 	}
-
 	version := ""
 	if pkg.Version.Valid {
 		version = pkg.Version.String
 	}
-
 	org := ""
 	if pkg.Org.Valid {
 		org = strings.ToUpper(pkg.Org.String)
 	}
-
-	// Generate badge based on state
 	switch state {
 	case "AVAIL":
 		if version != "" && org != "" {
-			// Show org and version
-			text := fmt.Sprintf("%s %s", org, version)
-			color := getOSBadgeColor(state, org)
-			return Badge(text, color, "", "", "")
-		} else if version != "" {
+			return Badge(fmt.Sprintf("%s %s", org, version), getBadgeColor(state, org), "", "", "")
+		}
+		if version != "" {
 			return Badge(version, "blue", "", "", "")
 		}
 		return Badge("✓", "green", "", "", "")
 	case "MISS":
 		return Badge("✗", "red", "", "", "")
-	case "N/A":
-		return Badge("N/A", "gray", "", "", "")
 	default:
 		return Badge("N/A", "gray", "", "", "")
 	}
 }
 
-// getOSBadgeColor determines the badge color based on state and org
-func getOSBadgeColor(state, org string) string {
-	// First check state
-	switch state {
-	case "MISS":
-		return "red"
-	case "N/A":
-		return "gray"
-	case "AVAIL":
-		// For AVAIL, check org
-		switch strings.ToUpper(org) {
-		case "PGDG":
-			return "blue"
-		case "PIGSTY":
-			return "green"
-		default:
-			return "green"
-		}
-	default:
-		return ""
-	}
-}
-
-// OSInfo represents OS information
-type OSInfo struct {
-	OS     string
-	Desc   string
-	Major  *int // os_major can be NULL
-	Arch   string
-	Active bool
-}
+// getOSBadgeColor aliases getBadgeColor for callers/tests.
+func getOSBadgeColor(state, org string) string { return getBadgeColor(state, org) }

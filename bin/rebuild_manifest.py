@@ -14,6 +14,7 @@ import collections
 import csv
 import hashlib
 import json
+import os
 import pathlib
 import re
 import subprocess
@@ -46,6 +47,7 @@ DEB_PLATFORMS = [
 
 ALIASES = {
     "rpm": {
+        "pg_strom_$v": "pg_strom_6",
         "pgedge-$v": "pgedge",
         "omnigres_$v": "omnigres",
         "onesparse_$v": "onesparse",
@@ -64,6 +66,7 @@ ALIASES = {
 }
 
 ALIAS_NOTES = {
+    "pg_strom_$v": "pg_strom_6 builds PG15–18 for EL9/EL10 x86_64",
     "pgedge-$v": "pgedge bundles spock, lolor, and snowflake",
     "omnigres_$v": "one omnigres distribution provides multiple omni extensions",
     "postgresql-$v-omnigres": "one omnigres distribution provides multiple omni extensions",
@@ -344,6 +347,7 @@ RPM_MAIN_BITCODE_RECIPES = {
     "pg_stat_monitor",
     "pg_statement_rollback",
     "pg_store_plans",
+    "pg_strom_6",
     "pg_tde",
     "pg_textsearch",
     "pg_tiktoken_c",
@@ -469,14 +473,7 @@ EXPLICIT_QUARANTINE = {
 }
 
 QUARANTINE_REASONS = {
-    "pg_strom": (
-        "local recipe is the legacy 3.5 PostgreSQL 14 compatibility port; "
-        "current 6.1 PostgreSQL 15-18 packages are owned by PGDG"
-    ),
-}
-
-CATALOG_RECIPE_QUARANTINE = {
-    ("rpm", "pg_strom_$v"): QUARANTINE_REASONS["pg_strom"],
+    "pg_strom": "legacy 3.5 PostgreSQL 14 compatibility port",
 }
 
 SUPERSEDED_RECIPES = {
@@ -542,42 +539,22 @@ def git_status(repo: pathlib.Path) -> str:
     return run_text(["git", "status", "--porcelain=v1", "--untracked-files=all"], repo)
 
 
+def psql_cmd(*extra_args: str) -> list[str]:
+    pgurl = os.environ.get("PGURL", "").strip()
+    if pgurl:
+        return ["psql", "-X", pgurl, *extra_args]
+    return ["psql", "-X", "-h", "/tmp", "-p", "5432", "-d", "data", "-U", "postgres", *extra_args]
+
+
 def load_catalog_db_export() -> tuple[bytes, str]:
     export = run_bytes(
-        [
-            "psql",
-            "-X",
+        psql_cmd(
             "-q",
-            "-h",
-            "/tmp",
-            "-p",
-            "5432",
-            "-d",
-            "data",
-            "-U",
-            "postgres",
             "-c",
             "COPY (SELECT * FROM pgext.extension ORDER BY id) TO STDOUT WITH (FORMAT csv, HEADER true)",
-        ]
+        )
     )
-    snapshot_at = run_text(
-        [
-            "psql",
-            "-X",
-            "-h",
-            "/tmp",
-            "-p",
-            "5432",
-            "-d",
-            "data",
-            "-U",
-            "postgres",
-            "-A",
-            "-t",
-            "-c",
-            "select clock_timestamp()",
-        ]
-    )
+    snapshot_at = run_text(psql_cmd("-A", "-t", "-c", "select clock_timestamp()"))
     return export, snapshot_at
 
 
@@ -621,6 +598,9 @@ def pgdg_build_reasons(
     ]
     if not expected:
         return ()
+    if fmt == "rpm" and all(row["pkg"] == "pg_strom" for row in expected):
+        if platform not in {"el9.x86_64", "el10.x86_64"} or not 15 <= pg <= 18:
+            return ()
     # The curated overall repo label does not replace format-specific ownership.
     if any(row.get(f"{fmt}_repo") != "PGDG" for row in expected):
         return ("format_primary",)
@@ -669,26 +649,7 @@ def load_pgdg_state() -> tuple[dict[tuple[str, str, str, int], set[str]], dict[s
         "join pgext.repository r on r.id=b.repo "
         "where r.org='pgdg' and p.state='AVAIL'"
     )
-    output = run_text(
-        [
-            "psql",
-            "-X",
-            "-h",
-            "/tmp",
-            "-p",
-            "5432",
-            "-d",
-            "data",
-            "-U",
-            "postgres",
-            "-A",
-            "-t",
-            "-F",
-            "|",
-            "-c",
-            query,
-        ]
-    )
+    output = run_text(psql_cmd("-A", "-t", "-F", "|", "-c", query))
     available: dict[tuple[str, str, str, int], set[str]] = collections.defaultdict(set)
     for line in output.splitlines():
         if line:
@@ -699,26 +660,7 @@ def load_pgdg_state() -> tuple[dict[tuple[str, str, str, int], set[str]], dict[s
         "from pgext.repository join pgext.repo_data using(id) "
         "group by type,org order by type,org"
     )
-    stamp_output = run_text(
-        [
-            "psql",
-            "-X",
-            "-h",
-            "/tmp",
-            "-p",
-            "5432",
-            "-d",
-            "data",
-            "-U",
-            "postgres",
-            "-A",
-            "-t",
-            "-F",
-            "|",
-            "-c",
-            stamp_query,
-        ]
-    )
+    stamp_output = run_text(psql_cmd("-A", "-t", "-F", "|", "-c", stamp_query))
     stamps = dict(line.split("|", 1) for line in stamp_output.splitlines() if line)
     return dict(available), stamps
 
@@ -740,9 +682,6 @@ def recipe_path(fmt: str, recipe: str) -> str:
 
 
 def map_recipe(fmt: str, template: str, rows: list[dict[str, str]], inventory: set[str]) -> tuple[str | None, str]:
-    if (fmt, template) in CATALOG_RECIPE_QUARANTINE:
-        return None, "explicit_quarantine"
-
     if template in ALIASES[fmt]:
         recipe = ALIASES[fmt][template]
         return (recipe if recipe in inventory else None, "explicit_alias")
@@ -1030,6 +969,377 @@ def sha256_file(path: pathlib.Path) -> str:
     return digest.hexdigest()
 
 
+CSV_FIELDS = [
+    "format",
+    "platform",
+    "arch",
+    "package",
+    "recipe",
+    "pg_versions",
+    "build_class",
+    "batch",
+    "source",
+    "source_sha256",
+    "source_provenance",
+    "repo_sha",
+    "dependency_group",
+    "release_policy",
+    "debug_policy",
+    "artifact_guard",
+    "artifact_package_template",
+    "job_kind",
+    "build_target",
+    "status",
+    "origin",
+    "supplement_reasons",
+    "catalog_extensions",
+    "mapping",
+    "shard_policy",
+]
+
+
+def _schedule_extension_jobs(
+    fmt: str,
+    platforms: list[str],
+    catalog: list[dict[str, str]],
+    inventory: set[str],
+    pgdg_available: dict[tuple[str, str, str, int], set[str]],
+    repo_sha: dict[str, str],
+    args: argparse.Namespace,
+    manifests: list[dict[str, Any]],
+    unmatched: list[dict[str, Any]],
+    alias_records: list[dict[str, Any]],
+    source_conflicts: list[dict[str, Any]],
+    referenced_recipes: dict[str, set[str]],
+    catalog_recipes: dict[str, set[str]],
+    pgdg_covered_recipes: dict[str, set[str]],
+    rule_effects: collections.Counter[str],
+) -> None:
+    for side_repo in ("PIGSTY", "PGDG"):
+        groups: dict[str, list[dict[str, str]]] = collections.defaultdict(list)
+        for row in catalog:
+            if row[f"{fmt}_repo"] == side_repo and row[f"{fmt}_pkg"]:
+                groups[row[f"{fmt}_pkg"]].append(row)
+
+        for template, rows in sorted(groups.items()):
+            pg_versions = sorted(set().union(*(parse_pg_array(row[f"{fmt}_pg"]) for row in rows)))
+            os_exclude: set[str] = set()
+            for row in rows:
+                os_exclude.update(json.loads(row.get("extra") or "{}").get("os_exclude", []))
+            pgdg_gap = side_repo == "PGDG"
+
+            recipe, mapping_kind = map_recipe(fmt, template, rows, inventory)
+            if "$v" in template and not pg_versions:
+                if recipe is not None:
+                    catalog_recipes[fmt].add(recipe)
+                rule_effects[f"{fmt}:no_active_pg_packages_removed"] += 1
+                continue
+            if recipe is None:
+                has_gap = side_repo == "PIGSTY" or any(
+                    platform not in os_exclude
+                    and any(pgdg_build_reasons(fmt, rows, platform, pg, pgdg_available) for pg in pg_versions)
+                    for platform in platforms
+                )
+                if has_gap:
+                    unmatched.append(
+                        {
+                            "format": fmt,
+                            "package": template,
+                            "catalog_repo": side_repo,
+                            "catalog_extensions": sorted(row["name"] for row in rows),
+                            "reason": f"{side_repo} package has a build coordinate but no active spec/recipe or explicit alias",
+                        }
+                    )
+                continue
+
+            catalog_recipes[fmt].add(recipe)
+            if mapping_kind == "explicit_alias":
+                alias_records.append(
+                    {
+                        "format": fmt,
+                        "package": template,
+                        "recipe": recipe,
+                        "extensions": sorted(row["name"] for row in rows),
+                        "note": ALIAS_NOTES.get(template, "explicit product alias"),
+                    }
+                )
+
+            noarch = is_noarch(fmt, recipe, args.rpm_repo, args.deb_repo)
+            jobs_before = len(manifests)
+            names = {row["name"] for row in rows}
+            for platform in platforms:
+                if platform in os_exclude:
+                    rule_effects[f"{fmt}:os_exclude_jobs"] += 1
+                    rule_effects[f"{fmt}:os_exclude_pg_abi"] += len(pg_versions)
+                    continue
+                selected_pg = [pg for pg in pg_versions if not (platform.startswith("el8.") and pg >= 19)]
+
+                if recipe == "rdkit" and side_repo == "PIGSTY":
+                    if fmt == "rpm":
+                        if platform.startswith("el8."):
+                            rule_effects["rpm:rdkit_platform_jobs_removed"] += 1
+                            rule_effects["rpm:rdkit_pg_abi_removed"] += len(selected_pg)
+                            continue
+                        selected_pg = [pg for pg in selected_pg if 15 <= pg <= 18]
+                    else:
+                        if platform.startswith(("d13.", "u24.")):
+                            rule_effects["deb:rdkit_pgdg_platform_jobs_removed"] += 1
+                            rule_effects["deb:rdkit_pgdg_pg_abi_removed"] += len(selected_pg)
+                            continue
+                        supported_pg = [17, 18] if platform.startswith(("d12.", "u22.")) else [15, 16, 17]
+                        selected_pg = [pg for pg in selected_pg if pg in supported_pg]
+
+                if pgdg_gap:
+                    before = len(selected_pg)
+                    selected_pg = [pg for pg in selected_pg if pgdg_build_reasons(fmt, rows, platform, pg, pgdg_available)]
+                    rule_effects[f"{fmt}:pgdg_covered_pg_abi_removed"] += before - len(selected_pg)
+                if pg_versions and not selected_pg:
+                    rule_effects[f"{fmt}:empty_after_policy_jobs_removed"] += 1
+                    continue
+                if noarch and platform.endswith(".x86_64"):
+                    rule_effects[f"{fmt}:canonical_noarch_jobs_removed"] += 1
+                    rule_effects[f"{fmt}:canonical_noarch_pg_abi_removed"] += len(selected_pg)
+                    continue
+
+                pg_slices = (
+                    [[pg] for pg in selected_pg]
+                    if fmt == "deb" and recipe in DEB_SINGLE_PG_RECIPES
+                    else [selected_pg]
+                )
+                for job_pg in pg_slices:
+                    supplement_reasons = tuple(sorted({
+                        reason
+                        for pg in job_pg
+                        for reason in pgdg_build_reasons(fmt, rows, platform, pg, pgdg_available)
+                    })) if pgdg_gap else ()
+                    sources, conflicts = source_list(fmt, template, recipe, rows, job_pg, platform)
+                    if conflicts:
+                        conflict_record = {
+                            "format": fmt,
+                            "package": template,
+                            "recipe": recipe,
+                            "pg_versions": job_pg,
+                            "catalog_sources": conflicts,
+                            "selected_sources": sources,
+                        }
+                        if conflict_record not in source_conflicts:
+                            source_conflicts.append(conflict_record)
+                        if template in {"omnigres_$v", "postgresql-$v-omnigres"}:
+                            blocker = {
+                                "format": fmt,
+                                "package": template,
+                                "catalog_repo": side_repo,
+                                "catalog_extensions": sorted(row["name"] for row in rows),
+                                "reason": "Omnigres catalog rows select multiple source archives",
+                            }
+                            if blocker not in unmatched:
+                                unmatched.append(blocker)
+                    build_class = classify(recipe, rows, noarch, pgdg_gap)
+                    batch, shard_policy = batch_for(build_class, recipe)
+                    manifests.append(
+                        {
+                            "format": fmt,
+                            "platform": platform,
+                            "arch": platform.split(".", 1)[1],
+                            "package": template,
+                            "recipe": recipe_path(fmt, recipe),
+                            "pg_versions": job_pg,
+                            "build_class": build_class,
+                            "batch": batch,
+                            "source": sources,
+                            "source_sha256": {},
+                            "source_provenance": {},
+                            "repo_sha": repo_sha[fmt],
+                            "dependency_group": dependency_group(recipe),
+                            "release_policy": release_policy(fmt, recipe, platform, rows, pgdg_gap, supplement_reasons),
+                            "debug_policy": debug_policy(fmt, recipe, noarch),
+                            "artifact_guard": (
+                                "bin/verify-extension-job.sh run"
+                                if fmt == "deb"
+                                else ("bin/verify-rpm-extension-job.sh" if recipe in RPM_MAIN_BITCODE_RECIPES else "")
+                            ),
+                            "artifact_package_template": template,
+                            "job_kind": "extension",
+                            "build_target": build_target(fmt, recipe, job_pg),
+                            "status": "pending_gate",
+                            "origin": supplement_origin(side_repo, supplement_reasons),
+                            "supplement_reasons": list(supplement_reasons),
+                            "catalog_extensions": sorted(names),
+                            "mapping": mapping_kind,
+                            "os_exclude": sorted(os_exclude),
+                            "shard_policy": shard_policy,
+                        }
+                    )
+
+            if len(manifests) > jobs_before:
+                referenced_recipes[fmt].add(recipe)
+            elif side_repo == "PGDG":
+                pgdg_covered_recipes[fmt].add(recipe)
+
+
+def _schedule_support_jobs(
+    fmt: str,
+    platforms: list[str],
+    inventory: set[str],
+    repo_sha: dict[str, str],
+    manifests: list[dict[str, Any]],
+    unmatched: list[dict[str, Any]],
+    referenced_recipes: dict[str, set[str]],
+    catalog_recipes: dict[str, set[str]],
+    rule_effects: collections.Counter[str],
+) -> None:
+    for package, recipe, pgs, sources, allowed_platforms, dep_group in SUPPORT[fmt]:
+        if recipe in catalog_recipes[fmt]:
+            continue
+        if recipe not in inventory:
+            unmatched.append(
+                {
+                    "format": fmt,
+                    "package": package,
+                    "catalog_repo": "explicit_B10",
+                    "catalog_extensions": [],
+                    "reason": "explicit B10 support recipe missing",
+                }
+            )
+            continue
+        referenced_recipes[fmt].add(recipe)
+        for platform in platforms:
+            if allowed_platforms is not None and platform not in allowed_platforms:
+                continue
+            job_sources = list(sources)
+            if recipe == "libduckdb":
+                asset_suffix = "-arm64.tar.gz" if platform.endswith(".aarch64") else "-amd64.tar.gz"
+                job_sources = [source for source in sources if source.endswith(asset_suffix)]
+                if len(job_sources) != 1:
+                    raise RuntimeError(f"libduckdb source mapping failed for {platform}: {job_sources}")
+            rule_effects[f"{fmt}:explicit_support_jobs_added"] += 1
+            rule_effects[f"{fmt}:explicit_support_pg_abi_added"] += len(pgs)
+            manifests.append(
+                {
+                    "format": fmt,
+                    "platform": platform,
+                    "arch": platform.split(".", 1)[1],
+                    "package": package,
+                    "recipe": recipe_path(fmt, recipe),
+                    "pg_versions": pgs,
+                    "build_class": "support",
+                    "batch": "B10",
+                    "source": job_sources,
+                    "source_sha256": {},
+                    "source_provenance": {},
+                    "repo_sha": repo_sha[fmt],
+                    "dependency_group": dep_group,
+                    "release_policy": "explicit B10 support; current release must end PGSTY",
+                    "debug_policy": debug_policy(fmt, recipe, noarch=False),
+                    "artifact_guard": "bin/verify-extension-job.sh run" if fmt == "deb" else "",
+                    "artifact_package_template": DEB_SUPPORT_PRIMARY.get(recipe, package) if fmt == "deb" else package,
+                    "job_kind": "support",
+                    "build_target": "-",
+                    "status": "pending_gate",
+                    "origin": "explicit_support",
+                    "supplement_reasons": [],
+                    "catalog_extensions": [],
+                    "mapping": "explicit_B10_allowlist",
+                    "os_exclude": [],
+                    "shard_policy": "dependency ordered",
+                }
+            )
+
+
+def _attach_source_hashes(
+    manifests: list[dict[str, Any]],
+    source_root: pathlib.Path,
+) -> tuple[dict[str, str | None], dict[str, str]]:
+    selected_sources = sorted({source for row in manifests for source in row["source"]})
+    source_hashes: dict[str, str | None] = {}
+    source_provenance: dict[str, str] = {}
+    for source in selected_sources:
+        path = source_root / source
+        source_hashes[source] = sha256_file(path) if path.is_file() else None
+        source_provenance[source] = f"source-root:{source}"
+    for row in manifests:
+        row["source_sha256"] = {source: source_hashes[source] for source in row["source"]}
+        row["source_provenance"] = {source: source_provenance[source] for source in row["source"]}
+        if not row["source"]:
+            row["status"] = "blocked_missing_source_field"
+        elif any(source_hashes[source] is None for source in row["source"]):
+            row["status"] = "blocked_missing_source_file"
+    return source_hashes, source_provenance
+
+
+def _classify_unreferenced_recipes(
+    args: argparse.Namespace,
+    referenced_recipes: dict[str, set[str]],
+    catalog_recipes: dict[str, set[str]],
+    pgdg_covered_recipes: dict[str, set[str]],
+) -> dict[str, list[dict[str, str]]]:
+    classifications: dict[str, list[dict[str, str]]] = {
+        "pgdg_covered": [],
+        "catalog_not_scheduled": [],
+        "linux_owned": [],
+        "explicit_exclude": [],
+        "superseded": [],
+        "explicit_quarantine": [],
+        "unlisted_quarantine": [],
+    }
+    for fmt in ("rpm", "deb"):
+        inventory = recipe_inventory(fmt, args.rpm_repo, args.deb_repo)
+        for recipe in sorted(inventory - referenced_recipes[fmt]):
+            item = {"format": fmt, "recipe": recipe_path(fmt, recipe)}
+            if recipe in pgdg_covered_recipes[fmt]:
+                item["reason"] = "refreshed PGDG metadata covers every declared coordinate"
+                classifications["pgdg_covered"].append(item)
+            elif recipe in catalog_recipes[fmt]:
+                item["reason"] = "catalog mapping exists but all coordinates were removed by explicit platform/PG policy"
+                classifications["catalog_not_scheduled"].append(item)
+            elif recipe in LINUX_OWNED:
+                classifications["linux_owned"].append(item)
+            elif recipe in EXPLICIT_EXCLUDE:
+                classifications["explicit_exclude"].append(item)
+            elif recipe in SUPERSEDED_RECIPES:
+                item["reason"] = SUPERSEDED_RECIPES[recipe]
+                classifications["superseded"].append(item)
+            elif recipe in EXPLICIT_QUARANTINE:
+                if recipe in QUARANTINE_REASONS:
+                    item["reason"] = QUARANTINE_REASONS[recipe]
+                classifications["explicit_quarantine"].append(item)
+            else:
+                item["reason"] = "active recipe/spec has no catalog package-template or explicit B10 product mapping"
+                classifications["unlisted_quarantine"].append(item)
+    return classifications
+
+
+def _write_manifest_outputs(
+    output: pathlib.Path,
+    manifests: list[dict[str, Any]],
+    source_hashes: dict[str, str | None],
+    source_provenance: dict[str, str],
+) -> None:
+    with (output / "build-manifest.jsonl").open("w") as stream:
+        for row in manifests:
+            stream.write(json.dumps(row, sort_keys=True, separators=(",", ":")) + "\n")
+
+    with (output / "build-manifest.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=CSV_FIELDS)
+        writer.writeheader()
+        for row in manifests:
+            flat = {key: row[key] for key in CSV_FIELDS}
+            for key in ("pg_versions", "source", "catalog_extensions", "supplement_reasons"):
+                flat[key] = " ".join(map(str, flat[key]))
+            flat["source_sha256"] = " ".join(
+                f"{source}={digest or 'MISSING'}" for source, digest in sorted(row["source_sha256"].items())
+            )
+            flat["source_provenance"] = " ".join(
+                f"{source}={location}" for source, location in sorted(row["source_provenance"].items())
+            )
+            writer.writerow(flat)
+
+    with (output / "source-sha256.tsv").open("w") as stream:
+        stream.write("source\tsha256\tstatus\tprovenance\n")
+        for source, digest in sorted(source_hashes.items()):
+            stream.write(f"{source}\t{digest or ''}\t{'present' if digest else 'missing'}\t{source_provenance[source]}\n")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--run-id", required=True)
@@ -1080,268 +1390,15 @@ def main() -> int:
 
     for fmt, platforms in (("rpm", RPM_PLATFORMS), ("deb", DEB_PLATFORMS)):
         inventory = recipe_inventory(fmt, args.rpm_repo, args.deb_repo)
-        for side_repo in ("PIGSTY", "PGDG"):
-            groups: dict[str, list[dict[str, str]]] = collections.defaultdict(list)
-            for row in catalog:
-                if row[f"{fmt}_repo"] == side_repo and row[f"{fmt}_pkg"]:
-                    groups[row[f"{fmt}_pkg"]].append(row)
-
-            for template, rows in sorted(groups.items()):
-                pg_versions = sorted(
-                    set().union(*(parse_pg_array(row[f"{fmt}_pg"]) for row in rows))
-                )
-                os_exclude: set[str] = set()
-                for row in rows:
-                    extra = json.loads(row.get("extra") or "{}")
-                    os_exclude.update(extra.get("os_exclude", []))
-                # Package ownership is format-specific.  A generic catalog
-                # repo=PGDG value must never override rpm_repo/deb_repo=PIGSTY.
-                pgdg_gap = side_repo == "PGDG"
-
-                recipe, mapping_kind = map_recipe(fmt, template, rows, inventory)
-                # An empty intersection for a major-specific package is not
-                # an unversioned build. In particular, PG14-only packages
-                # must not invoke a recipe's default PostgreSQL major.
-                if "$v" in template and not pg_versions:
-                    if recipe is not None:
-                        catalog_recipes[fmt].add(recipe)
-                    rule_effects[f"{fmt}:no_active_pg_packages_removed"] += 1
-                    continue
-                if recipe is None:
-                    # A fully covered PGDG coordinate does not need a local
-                    # recipe.  A real metadata gap without a recipe is a gate
-                    # blocker and must not disappear from the unmatched list.
-                    has_gap = side_repo == "PIGSTY"
-                    if side_repo == "PGDG":
-                        has_gap = any(
-                            platform not in os_exclude
-                            and any(
-                                pgdg_build_reasons(fmt, rows, platform, pg, pgdg_available)
-                                for pg in pg_versions
-                            )
-                            for platform in platforms
-                        )
-                    if has_gap:
-                        reason = (
-                            f"{side_repo} package has a build coordinate but no active "
-                            "spec/recipe or explicit alias"
-                        )
-                        if mapping_kind == "explicit_quarantine":
-                            reason = CATALOG_RECIPE_QUARANTINE[(fmt, template)]
-                        unmatched.append(
-                            {
-                                "format": fmt,
-                                "package": template,
-                                "catalog_repo": side_repo,
-                                "catalog_extensions": sorted(row["name"] for row in rows),
-                                "reason": reason,
-                            }
-                        )
-                    continue
-
-                catalog_recipes[fmt].add(recipe)
-                if mapping_kind == "explicit_alias":
-                    alias_records.append(
-                        {
-                            "format": fmt,
-                            "package": template,
-                            "recipe": recipe,
-                            "extensions": sorted(row["name"] for row in rows),
-                            "note": ALIAS_NOTES.get(template, "explicit product alias"),
-                        }
-                    )
-
-                noarch = is_noarch(fmt, recipe, args.rpm_repo, args.deb_repo)
-                jobs_before = len(manifests)
-                for platform in platforms:
-                    if platform in os_exclude:
-                        rule_effects[f"{fmt}:os_exclude_jobs"] += 1
-                        rule_effects[f"{fmt}:os_exclude_pg_abi"] += len(pg_versions)
-                        continue
-                    selected_pg = [
-                        pg
-                        for pg in pg_versions
-                        if not (platform.startswith("el8.") and pg >= 19)
-                    ]
-                    names = {row["name"] for row in rows}
-
-                    if recipe == "rdkit" and side_repo == "PIGSTY":
-                        if fmt == "rpm":
-                            if platform.startswith("el8."):
-                                rule_effects["rpm:rdkit_platform_jobs_removed"] += 1
-                                rule_effects["rpm:rdkit_pg_abi_removed"] += len(selected_pg)
-                                continue
-                            selected_pg = [pg for pg in selected_pg if 15 <= pg <= 18]
-                        else:
-                            if platform.startswith(("d13.", "u24.")):
-                                rule_effects["deb:rdkit_pgdg_platform_jobs_removed"] += 1
-                                rule_effects["deb:rdkit_pgdg_pg_abi_removed"] += len(selected_pg)
-                                continue
-                            supported_pg = [17, 18] if platform.startswith(("d12.", "u22.")) else [15, 16, 17]
-                            selected_pg = [pg for pg in selected_pg if pg in supported_pg]
-
-                    if pgdg_gap:
-                        before_pgdg_filter = list(selected_pg)
-                        selected_pg = [
-                            pg
-                            for pg in selected_pg
-                            if pgdg_build_reasons(fmt, rows, platform, pg, pgdg_available)
-                        ]
-                        rule_effects[f"{fmt}:pgdg_covered_pg_abi_removed"] += (
-                            len(before_pgdg_filter) - len(selected_pg)
-                        )
-                    if pg_versions and not selected_pg:
-                        rule_effects[f"{fmt}:empty_after_policy_jobs_removed"] += 1
-                        continue
-                    if noarch and platform.endswith(".x86_64"):
-                        rule_effects[f"{fmt}:canonical_noarch_jobs_removed"] += 1
-                        rule_effects[f"{fmt}:canonical_noarch_pg_abi_removed"] += len(selected_pg)
-                        continue
-
-                    pg_slices = (
-                        [[pg] for pg in selected_pg]
-                        if fmt == "deb" and recipe in DEB_SINGLE_PG_RECIPES
-                        else [selected_pg]
-                    )
-                    for job_pg in pg_slices:
-                        supplement_reasons = tuple(sorted({
-                            reason
-                            for pg in job_pg
-                            for reason in pgdg_build_reasons(fmt, rows, platform, pg, pgdg_available)
-                        })) if pgdg_gap else ()
-                        sources, conflicts = source_list(
-                            fmt, template, recipe, rows, job_pg, platform
-                        )
-                        if conflicts:
-                            conflict_record = {
-                                "format": fmt,
-                                "package": template,
-                                "recipe": recipe,
-                                "pg_versions": job_pg,
-                                "catalog_sources": conflicts,
-                                "selected_sources": sources,
-                            }
-                            if conflict_record not in source_conflicts:
-                                source_conflicts.append(conflict_record)
-                            if template in {"omnigres_$v", "postgresql-$v-omnigres"}:
-                                blocker = {
-                                    "format": fmt,
-                                    "package": template,
-                                    "catalog_repo": side_repo,
-                                    "catalog_extensions": sorted(row["name"] for row in rows),
-                                    "reason": "Omnigres catalog rows select multiple source archives",
-                                }
-                                if blocker not in unmatched:
-                                    unmatched.append(blocker)
-                        build_class = classify(recipe, rows, noarch, pgdg_gap)
-                        batch, shard_policy = batch_for(build_class, recipe)
-                        manifests.append(
-                            {
-                                "format": fmt,
-                                "platform": platform,
-                                "arch": platform.split(".", 1)[1],
-                                "package": template,
-                                "recipe": recipe_path(fmt, recipe),
-                                "pg_versions": job_pg,
-                                "build_class": build_class,
-                                "batch": batch,
-                                "source": sources,
-                                "source_sha256": {},
-                                "source_provenance": {},
-                                "repo_sha": repo_sha[fmt],
-                                "dependency_group": dependency_group(recipe),
-                                "release_policy": release_policy(
-                                    fmt, recipe, platform, rows, pgdg_gap, supplement_reasons
-                                ),
-                                "debug_policy": debug_policy(fmt, recipe, noarch),
-                                "artifact_guard": (
-                                    "bin/verify-extension-job.sh run"
-                                    if fmt == "deb"
-                                    else (
-                                        "bin/verify-rpm-extension-job.sh"
-                                        if recipe in RPM_MAIN_BITCODE_RECIPES
-                                        else ""
-                                    )
-                                ),
-                                "artifact_package_template": template,
-                                "job_kind": "extension",
-                                "build_target": build_target(fmt, recipe, job_pg),
-                                "status": "pending_gate",
-                                "origin": supplement_origin(side_repo, supplement_reasons),
-                                "supplement_reasons": list(supplement_reasons),
-                                "catalog_extensions": sorted(names),
-                                "mapping": mapping_kind,
-                                "os_exclude": sorted(os_exclude),
-                                "shard_policy": shard_policy,
-                            }
-                        )
-
-                if len(manifests) > jobs_before:
-                    referenced_recipes[fmt].add(recipe)
-                elif side_repo == "PGDG":
-                    pgdg_covered_recipes[fmt].add(recipe)
-
-        # Explicitly allowlisted support components that are absent from the
-        # extension catalog.  Existing catalog recipes are classified as
-        # support above and are not duplicated here.
-        for package, recipe, pgs, sources, allowed_platforms, dep_group in SUPPORT[fmt]:
-            if recipe in catalog_recipes[fmt]:
-                continue
-            if recipe not in inventory:
-                unmatched.append(
-                    {
-                        "format": fmt,
-                        "package": package,
-                        "catalog_repo": "explicit_B10",
-                        "catalog_extensions": [],
-                        "reason": "explicit B10 support recipe missing",
-                    }
-                )
-                continue
-            referenced_recipes[fmt].add(recipe)
-            for platform in platforms:
-                if allowed_platforms is not None and platform not in allowed_platforms:
-                    continue
-                job_sources = list(sources)
-                if recipe == "libduckdb":
-                    asset_suffix = "-arm64.tar.gz" if platform.endswith(".aarch64") else "-amd64.tar.gz"
-                    job_sources = [source for source in sources if source.endswith(asset_suffix)]
-                    if len(job_sources) != 1:
-                        raise RuntimeError(f"libduckdb source mapping failed for {platform}: {job_sources}")
-                rule_effects[f"{fmt}:explicit_support_jobs_added"] += 1
-                rule_effects[f"{fmt}:explicit_support_pg_abi_added"] += len(pgs)
-                manifests.append(
-                    {
-                        "format": fmt,
-                        "platform": platform,
-                        "arch": platform.split(".", 1)[1],
-                        "package": package,
-                        "recipe": recipe_path(fmt, recipe),
-                        "pg_versions": pgs,
-                        "build_class": "support",
-                        "batch": "B10",
-                        "source": job_sources,
-                        "source_sha256": {},
-                        "source_provenance": {},
-                        "repo_sha": repo_sha[fmt],
-                        "dependency_group": dep_group,
-                        "release_policy": "explicit B10 support; current release must end PGSTY",
-                        "debug_policy": debug_policy(fmt, recipe, noarch=False),
-                        "artifact_guard": "bin/verify-extension-job.sh run" if fmt == "deb" else "",
-                        "artifact_package_template": (
-                            DEB_SUPPORT_PRIMARY.get(recipe, package) if fmt == "deb" else package
-                        ),
-                        "job_kind": "support",
-                        "build_target": "-",
-                        "status": "pending_gate",
-                        "origin": "explicit_support",
-                        "supplement_reasons": [],
-                        "catalog_extensions": [],
-                        "mapping": "explicit_B10_allowlist",
-                        "os_exclude": [],
-                        "shard_policy": "dependency ordered",
-                    }
-                )
+        _schedule_extension_jobs(
+            fmt, platforms, catalog, inventory, pgdg_available, repo_sha, args,
+            manifests, unmatched, alias_records, source_conflicts,
+            referenced_recipes, catalog_recipes, pgdg_covered_recipes, rule_effects,
+        )
+        _schedule_support_jobs(
+            fmt, platforms, inventory, repo_sha,
+            manifests, unmatched, referenced_recipes, catalog_recipes, rule_effects,
+        )
 
     manifest_key_counts = collections.Counter(
         (row["format"], row["platform"], row["package"], tuple(row["pg_versions"]))
@@ -1359,125 +1416,21 @@ def main() -> int:
                 }
             )
 
-    # Hash each selected source once, then attach hashes to all manifest rows.
-    selected_sources = sorted({source for row in manifests for source in row["source"]})
-    source_hashes: dict[str, str | None] = {}
-    source_provenance: dict[str, str] = {}
-    for source in selected_sources:
-        path = args.source_root / source
-        provenance = f"source-root:{source}"
-        source_hashes[source] = sha256_file(path) if path.is_file() else None
-        source_provenance[source] = provenance
-    for row in manifests:
-        row["source_sha256"] = {source: source_hashes[source] for source in row["source"]}
-        row["source_provenance"] = {
-            source: source_provenance[source] for source in row["source"]
-        }
-        if not row["source"]:
-            row["status"] = "blocked_missing_source_field"
-        elif any(source_hashes[source] is None for source in row["source"]):
-            row["status"] = "blocked_missing_source_file"
-
+    source_hashes, source_provenance = _attach_source_hashes(manifests, args.source_root)
     manifests.sort(key=lambda row: (row["format"], row["platform"], row["batch"], row["package"]))
+    _write_manifest_outputs(args.output, manifests, source_hashes, source_provenance)
 
-    with (args.output / "build-manifest.jsonl").open("w") as stream:
-        for row in manifests:
-            stream.write(json.dumps(row, sort_keys=True, separators=(",", ":")) + "\n")
-
-    csv_fields = [
-        "format",
-        "platform",
-        "arch",
-        "package",
-        "recipe",
-        "pg_versions",
-        "build_class",
-        "batch",
-        "source",
-        "source_sha256",
-        "source_provenance",
-        "repo_sha",
-        "dependency_group",
-        "release_policy",
-        "debug_policy",
-        "artifact_guard",
-        "artifact_package_template",
-        "job_kind",
-        "build_target",
-        "status",
-        "origin",
-        "supplement_reasons",
-        "catalog_extensions",
-        "mapping",
-        "shard_policy",
-    ]
-    with (args.output / "build-manifest.csv").open("w", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=csv_fields)
-        writer.writeheader()
-        for row in manifests:
-            flat = {key: row[key] for key in csv_fields}
-            for key in ("pg_versions", "source", "catalog_extensions", "supplement_reasons"):
-                flat[key] = " ".join(map(str, flat[key]))
-            flat["source_sha256"] = " ".join(
-                f"{source}={digest or 'MISSING'}" for source, digest in sorted(row["source_sha256"].items())
-            )
-            flat["source_provenance"] = " ".join(
-                f"{source}={location}"
-                for source, location in sorted(row["source_provenance"].items())
-            )
-            writer.writerow(flat)
-
-    with (args.output / "source-sha256.tsv").open("w") as stream:
-        stream.write("source\tsha256\tstatus\tprovenance\n")
-        for source, digest in sorted(source_hashes.items()):
-            stream.write(
-                f"{source}\t{digest or ''}\t{'present' if digest else 'missing'}"
-                f"\t{source_provenance[source]}\n"
-            )
-
-    classifications: dict[str, list[dict[str, str]]] = {
-        "pgdg_covered": [],
-        "catalog_not_scheduled": [],
-        "linux_owned": [],
-        "explicit_exclude": [],
-        "superseded": [],
-        "explicit_quarantine": [],
-        "unlisted_quarantine": [],
-    }
-    for fmt in ("rpm", "deb"):
-        inventory = recipe_inventory(fmt, args.rpm_repo, args.deb_repo)
-        for recipe in sorted(inventory - referenced_recipes[fmt]):
-            item = {"format": fmt, "recipe": recipe_path(fmt, recipe)}
-            if recipe in pgdg_covered_recipes[fmt]:
-                item["reason"] = "refreshed PGDG metadata covers every declared coordinate"
-                classifications["pgdg_covered"].append(item)
-            elif recipe in catalog_recipes[fmt]:
-                item["reason"] = "catalog mapping exists but all coordinates were removed by explicit platform/PG policy"
-                classifications["catalog_not_scheduled"].append(item)
-            elif recipe in LINUX_OWNED:
-                classifications["linux_owned"].append(item)
-            elif recipe in EXPLICIT_EXCLUDE:
-                classifications["explicit_exclude"].append(item)
-            elif recipe in SUPERSEDED_RECIPES:
-                item["reason"] = SUPERSEDED_RECIPES[recipe]
-                classifications["superseded"].append(item)
-            elif recipe in EXPLICIT_QUARANTINE:
-                if recipe in QUARANTINE_REASONS:
-                    item["reason"] = QUARANTINE_REASONS[recipe]
-                classifications["explicit_quarantine"].append(item)
-            else:
-                item["reason"] = "active recipe/spec has no catalog package-template or explicit B10 product mapping"
-                classifications["unlisted_quarantine"].append(item)
-
-    (args.output / "unmatched.json").write_text(json.dumps(unmatched, indent=2, sort_keys=True) + "\n")
-    (args.output / "aliases.json").write_text(json.dumps(alias_records, indent=2, sort_keys=True) + "\n")
-    (args.output / "quarantine.json").write_text(json.dumps(classifications, indent=2, sort_keys=True) + "\n")
-    (args.output / "source-conflicts.json").write_text(
-        json.dumps(source_conflicts, indent=2, sort_keys=True) + "\n"
+    classifications = _classify_unreferenced_recipes(
+        args, referenced_recipes, catalog_recipes, pgdg_covered_recipes
     )
-    (args.output / "external-dependencies.json").write_text(
-        json.dumps(EXTERNAL_DEPENDENCIES, indent=2, sort_keys=True) + "\n"
-    )
+    for filename, payload in (
+        ("unmatched.json", unmatched),
+        ("aliases.json", alias_records),
+        ("quarantine.json", classifications),
+        ("source-conflicts.json", source_conflicts),
+        ("external-dependencies.json", EXTERNAL_DEPENDENCIES),
+    ):
+        (args.output / filename).write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
 
     catalog_snapshot = {
         "pgext_head": repo_sha["pgext"],
@@ -1491,9 +1444,7 @@ def main() -> int:
         "worktree_status_sha256": hashlib.sha256(pgext_status.encode()).hexdigest(),
         "worktree_status": pgext_status.splitlines(),
     }
-    (args.output / "catalog-snapshot.json").write_text(
-        json.dumps(catalog_snapshot, indent=2, sort_keys=True) + "\n"
-    )
+    (args.output / "catalog-snapshot.json").write_text(json.dumps(catalog_snapshot, indent=2, sort_keys=True) + "\n")
 
     by_format = collections.Counter(row["format"] for row in manifests)
     abi_by_format = collections.Counter()
@@ -1504,11 +1455,7 @@ def main() -> int:
         "production_gate": "closed",
         "repo_sha": repo_sha,
         "pgext_catalog_head": repo_sha["pgext"],
-        "pgext_catalog": {
-            key: value
-            for key, value in catalog_snapshot.items()
-            if key != "worktree_status"
-        },
+        "pgext_catalog": {k: v for k, v in catalog_snapshot.items() if k != "worktree_status"},
         "generator_sha256": sha256_file(pathlib.Path(__file__)),
         "pgdg_snapshot": repo_stamps,
         "rules": {
@@ -1518,26 +1465,22 @@ def main() -> int:
             "standard_shard": "sha256(recipe UTF-8) mod 2; B30=0, B31=1",
             "rdkit": "RPM EL9/10 202603.6; DEB D12/U22 legacy PG17-18, D13/U24 PGDG, U26 202603.6 PG15-17",
             "pg_net": "RPM EL8/EL9 & DEB Jammy 0.9.2; EL10 & D12/D13/U24/U26 0.20.5",
-            "pg_strom": "current 6.1/PG15-18 is PGDG-covered; local 3.5/PG14 recipe is quarantined",
+            "pg_strom": "6.1 supplements PGDG gaps on EL9/EL10 x86_64 for PG15–18; legacy 3.5 is PG14-only",
             "rpm_main_bitcode_recipes": sorted(RPM_MAIN_BITCODE_RECIPES),
             "rpm_main_bitcode_policy": "jobs default to LLVM enabled; rpmspec exact packages plus debug; bitcode in main; extension llvmjit RPM and runtime LLVM dependencies forbidden",
         },
         "jobs": dict(by_format),
         "pg_abi_units": dict(abi_by_format),
-        "jobs_by_origin": dict(collections.Counter((row["format"], row["origin"]) for row in manifests)),
-        "jobs_by_class": dict(collections.Counter((row["format"], row["build_class"]) for row in manifests)),
-        "jobs_by_batch": dict(collections.Counter((row["format"], row["batch"]) for row in manifests)),
-        "status": dict(collections.Counter((row["format"], row["status"]) for row in manifests)),
+        "jobs_by_origin": {f"{f}:{v}": c for (f, v), c in collections.Counter((r["format"], r["origin"]) for r in manifests).items()},
+        "jobs_by_class": {f"{f}:{v}": c for (f, v), c in collections.Counter((r["format"], r["build_class"]) for r in manifests).items()},
+        "jobs_by_batch": {f"{f}:{v}": c for (f, v), c in collections.Counter((r["format"], r["batch"]) for r in manifests).items()},
+        "status": {f"{f}:{v}": c for (f, v), c in collections.Counter((r["format"], r["status"]) for r in manifests).items()},
         "rule_effects": dict(sorted(rule_effects.items())),
         "source_files": len(source_hashes),
         "source_files_missing": sorted(source for source, digest in source_hashes.items() if digest is None),
         "catalog_unmatched_count": len([item for item in unmatched if item["catalog_extensions"]]),
-        "pigsty_unmatched_count": len(
-            [item for item in unmatched if item.get("catalog_repo") == "PIGSTY"]
-        ),
-        "pgdg_gap_unmatched_count": len(
-            [item for item in unmatched if item.get("catalog_repo") == "PGDG"]
-        ),
+        "pigsty_unmatched_count": len([item for item in unmatched if item.get("catalog_repo") == "PIGSTY"]),
+        "pgdg_gap_unmatched_count": len([item for item in unmatched if item.get("catalog_repo") == "PGDG"]),
         "support_unmatched_count": len([item for item in unmatched if not item["catalog_extensions"]]),
         "baseline": {
             "rpm": {"jobs": 1828, "pg_abi_units": 8347},
@@ -1547,21 +1490,12 @@ def main() -> int:
             fmt: {
                 "jobs": by_format[fmt] - ({"rpm": 1828, "deb": 3114}[fmt]),
                 "pg_abi_units": abi_by_format[fmt] - ({"rpm": 8347, "deb": 14352}[fmt]),
-                "rule_effects": {
-                    key: value
-                    for key, value in sorted(rule_effects.items())
-                    if key.startswith(f"{fmt}:")
-                },
+                "rule_effects": {k: v for k, v in sorted(rule_effects.items()) if k.startswith(f"{fmt}:")},
                 "explanation": "baseline delta is traced by the counters above plus catalog snapshot drift; counters are directional rule effects and are not asserted to sum across overlapping rules",
             }
             for fmt in ("rpm", "deb")
         },
     }
-
-    # JSON object keys cannot be tuples; normalize the nested counters.
-    for key in ("jobs_by_origin", "jobs_by_class", "jobs_by_batch", "status"):
-        counter = summary[key]
-        summary[key] = {f"{fmt}:{value}": count for (fmt, value), count in counter.items()}
     (args.output / "summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")
 
     if unmatched or summary["source_files_missing"]:

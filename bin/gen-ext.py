@@ -9,15 +9,18 @@ Usage:
     python generate.py [PGURL] [OUTPUT_DIR]
 
     PGURL: PostgreSQL connection URL (default: postgres:///)
-    OUTPUT_DIR: Output directory for generated files (default: content/e/)
+    OUTPUT_DIR: Output directory for generated files (default: <site>/content/e/)
 """
 
 import argparse
-import psycopg2
-from typing import List, Optional, Any, Dict, Tuple
+import logging
 from dataclasses import dataclass
 from pathlib import Path
-import logging
+from typing import List, Optional, Any, Dict, Tuple
+
+import psycopg2
+
+from site_paths import add_site_dir
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -970,6 +973,7 @@ CREATE EXTENSION {ext.name}{cascade_schema};
 def main():
     """Main entry point"""
     parser = argparse.ArgumentParser(description='Generate Hugo content for PostgreSQL extensions')
+    add_site_dir(parser)
     parser.add_argument('pgurl', nargs='?', default='postgres:///',
                         help='PostgreSQL connection URL (default: postgres:///)')
     parser.add_argument('output_dir', nargs='?', default=None,
@@ -981,8 +985,7 @@ def main():
 
     # Set output directory
     if args.output_dir is None:
-        script_dir = Path(__file__).parent
-        output_dir = script_dir.parent / 'content' / 'e'
+        output_dir = args.dir.expanduser() / 'content' / 'e'
     else:
         output_dir = Path(args.output_dir)
 

@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 	"strings"
 	"time"
 
@@ -18,11 +19,10 @@ import (
 	"golang.org/x/sync/semaphore"
 )
 
-// Constants for batch operations
-// MaxFileSize defines the maximum allowed file size for downloads (500MB)
+// MaxFileSize defines the maximum allowed file size for downloads (500MB).
 const MaxFileSize = 500 * 1024 * 1024
 
-// RepoMetadata represents a package repository with cached metadata
+// RepoMetadata represents a package repository with cached metadata.
 type RepoMetadata struct {
 	ID               string
 	Type             string // rpm or deb
@@ -35,7 +35,7 @@ type RepoMetadata struct {
 	CachedDataSHA256 sql.NullString
 }
 
-// FetchResult represents the result of fetching a repository
+// FetchResult represents the result of fetching a repository.
 type FetchResult struct {
 	Repository *RepoMetadata
 	Data       []byte
@@ -46,7 +46,7 @@ type FetchResult struct {
 	Extra      *RPMMetadataCache
 }
 
-// FetchOptions contains options for fetch operation
+// FetchOptions contains options for fetch operation.
 type FetchOptions struct {
 	Force      bool   // Force re-download all repos
 	Region     string // Region for mirror selection (default|china)
@@ -55,7 +55,7 @@ type FetchOptions struct {
 	BestEffort bool   // Allow a partial result when at least one repository succeeds
 }
 
-// Fetcher handles repository metadata fetching
+// Fetcher handles repository metadata fetching.
 type Fetcher struct {
 	httpClient *http.Client
 	region     Region
@@ -65,9 +65,8 @@ type Fetcher struct {
 	bestEffort bool
 }
 
-// NewFetcher creates a new repository fetcher
+// NewFetcher creates a new repository fetcher.
 func NewFetcher(opts FetchOptions) *Fetcher {
-	// Set defaults
 	if opts.Parallel <= 0 {
 		opts.Parallel = 8
 	}
@@ -97,40 +96,35 @@ func NewFetcher(opts FetchOptions) *Fetcher {
 	}
 }
 
-// FetchAll fetches metadata for all repositories
+// FetchAll fetches metadata for all repositories.
 func (f *Fetcher) FetchAll(ctx context.Context) error {
-	// Load repositories from database
 	repos, err := f.loadRepositories(ctx)
 	if err != nil {
 		return fmt.Errorf("load repositories: %w", err)
 	}
-
 	if len(repos) == 0 {
 		logrus.Info("No repositories to fetch")
 		return nil
 	}
 
-	logrus.Infof("Fetching %d repositories (workers=%d, force=%v)",
-		len(repos), f.maxWorkers, f.force)
+	logrus.Infof("Fetching %d repositories (workers=%d, force=%v)", len(repos), f.maxWorkers, f.force)
+	results := runParallelRepos(ctx, repos, f.maxWorkers,
+		func(repo *RepoMetadata, err error) *FetchResult { return &FetchResult{Repository: repo, Error: err} },
+		f.fetchWithRetry,
+	)
 
-	// Fetch repositories concurrently
-	results := f.fetchConcurrent(ctx, repos)
-
-	// Process results
 	report := RunReport{Operation: "fetch", Total: len(repos)}
-
 	for _, result := range results {
 		if result.Error != nil {
 			report.AddFailure(result.Repository.ID, result.Error)
 			continue
 		}
-
 		if result.Updated {
 			if err := f.saveMetadata(ctx, result); err != nil {
 				report.AddFailure(result.Repository.ID, fmt.Errorf("save metadata: %w", err))
 			} else {
 				report.Succeeded++
-				logrus.Debugf("Updated %s (%s)", result.Repository.ID, formatBytes(int64(len(result.Data))))
+				logrus.Debugf("Updated %s (%s)", result.Repository.ID, FormatSize(int64(len(result.Data))))
 			}
 		} else {
 			report.Skipped++
@@ -138,11 +132,8 @@ func (f *Fetcher) FetchAll(ctx context.Context) error {
 		}
 	}
 
-	// Log summary
 	logrus.Infof("Fetch complete: %d updated, %d skipped, %d failed",
 		report.Succeeded, report.Skipped, report.Failed())
-
-	// Report errors
 	for _, failure := range report.Failures {
 		logrus.Errorf("%s: %v", failure.Item, failure.Err)
 	}
@@ -153,19 +144,87 @@ func (f *Fetcher) FetchAll(ctx context.Context) error {
 	if report.Failed() > 0 {
 		logrus.Warnf("best-effort fetch accepted %d failed repositories", report.Failed())
 	}
-
-	// Advance the accepted-run timestamp only after strict/best-effort policy
-	// has approved the result.
 	if report.Succeeded > 0 {
-		if err := f.updateFetchTime(ctx); err != nil {
+		if err := updateFetchTime(ctx); err != nil {
 			logrus.Warnf("Failed to update fetch time: %v", err)
 		}
 	}
-
 	return nil
 }
 
-// loadRepositories loads repository configurations from database
+// runParallelRepos runs fn across repos with bounded concurrency and an optional TTY progress bar.
+func runParallelRepos[T any](
+	ctx context.Context,
+	repos []*RepoMetadata,
+	workers int,
+	makeErr func(*RepoMetadata, error) T,
+	fn func(context.Context, *RepoMetadata) T,
+) []T {
+	results := make([]T, len(repos))
+	sem := semaphore.NewWeighted(int64(workers))
+	completed := make(chan struct{}, len(repos))
+	done := make(chan struct{})
+	go displayProgress(completed, len(repos), done)
+
+	g, gctx := errgroup.WithContext(ctx)
+	for i, repo := range repos {
+		i, repo := i, repo
+		g.Go(func() error {
+			if err := sem.Acquire(gctx, 1); err != nil {
+				results[i] = makeErr(repo, err)
+				completed <- struct{}{}
+				return nil
+			}
+			defer sem.Release(1)
+			results[i] = fn(gctx, repo)
+			completed <- struct{}{}
+			return nil
+		})
+	}
+	_ = g.Wait()
+	close(completed)
+	<-done
+	return results
+}
+
+func isStdoutTTY() bool {
+	fi, err := os.Stdout.Stat()
+	return err == nil && (fi.Mode()&os.ModeCharDevice) != 0
+}
+
+func displayProgress(completed <-chan struct{}, total int, done chan<- struct{}) {
+	defer close(done)
+	if !isStdoutTTY() || total == 0 {
+		for range completed {
+		}
+		return
+	}
+	const barWidth = 40
+	count := 0
+	fmt.Print("\033[?25l")
+	for range completed {
+		count++
+		percent := float64(count) / float64(total) * 100
+		filled := int(float64(count) / float64(total) * float64(barWidth))
+		var bar strings.Builder
+		bar.Grow(barWidth + 2)
+		bar.WriteByte('[')
+		for i := 0; i < barWidth; i++ {
+			switch {
+			case i < filled:
+				bar.WriteByte('=')
+			case i == filled:
+				bar.WriteByte('>')
+			default:
+				bar.WriteByte(' ')
+			}
+		}
+		bar.WriteByte(']')
+		fmt.Printf("\r%s %d/%d (%.1f%%)", bar.String(), count, total, percent)
+	}
+	fmt.Print("\033[?25h\n")
+}
+
 func (f *Fetcher) loadRepositories(ctx context.Context) ([]*RepoMetadata, error) {
 	urlColumn := "r.default_meta"
 	fallbackColumn := "r.mirror_meta"
@@ -188,18 +247,11 @@ func (f *Fetcher) loadRepositories(ctx context.Context) ([]*RepoMetadata, error)
 	for rows.Next() {
 		repo := &RepoMetadata{}
 		var extra []byte
-		err := rows.Scan(
-			&repo.ID,
-			&repo.Type,
-			&repo.MetadataURL,
-			&repo.MirrorURL,
-			&repo.CachedETag,
-			&repo.CachedTime,
-			&repo.CachedSize,
-			&extra,
-			&repo.CachedDataSHA256,
-		)
-		if err != nil {
+		if err := rows.Scan(
+			&repo.ID, &repo.Type, &repo.MetadataURL, &repo.MirrorURL,
+			&repo.CachedETag, &repo.CachedTime, &repo.CachedSize,
+			&extra, &repo.CachedDataSHA256,
+		); err != nil {
 			return nil, fmt.Errorf("scan repository metadata: %w", err)
 		}
 		if len(extra) > 0 {
@@ -210,104 +262,12 @@ func (f *Fetcher) loadRepositories(ctx context.Context) ([]*RepoMetadata, error)
 		}
 		repos = append(repos, repo)
 	}
-
 	return repos, rows.Err()
 }
 
-// fetchConcurrent fetches multiple repositories concurrently
-func (f *Fetcher) fetchConcurrent(ctx context.Context, repos []*RepoMetadata) []*FetchResult {
-	results := make([]*FetchResult, len(repos))
-	total := len(repos)
-
-	// Use semaphore to limit concurrency
-	sem := semaphore.NewWeighted(int64(f.maxWorkers))
-
-	// Progress tracking
-	completed := make(chan int, total)
-	done := make(chan bool)
-
-	// Start progress display goroutine
-	go f.displayProgress(completed, total, done)
-
-	// Use errgroup for better error handling
-	g, ctx := errgroup.WithContext(ctx)
-
-	for i, repo := range repos {
-		i, repo := i, repo // capture loop variables
-
-		g.Go(func() error {
-			// Acquire semaphore
-			if err := sem.Acquire(ctx, 1); err != nil {
-				results[i] = &FetchResult{Repository: repo, Error: err}
-				completed <- 1
-				return nil // Don't fail the whole group
-			}
-			defer sem.Release(1)
-
-			// Fetch with retries
-			result := f.fetchWithRetry(ctx, repo)
-			results[i] = result
-
-			// Signal completion
-			completed <- 1
-
-			return nil
-		})
-	}
-
-	// Wait for all fetches to complete
-	_ = g.Wait() // We handle errors in results
-
-	// Stop progress display
-	close(completed)
-	<-done
-
-	return results
-}
-
-// displayProgress shows a progress bar for repository fetching
-func (f *Fetcher) displayProgress(completed chan int, total int, done chan bool) {
-	count := 0
-	barWidth := 40
-
-	// Hide cursor
-	fmt.Print("\033[?25l")
-
-	for range completed {
-		count++
-
-		// Calculate progress
-		percent := float64(count) / float64(total) * 100
-		filled := int(float64(count) / float64(total) * float64(barWidth))
-
-		// Build progress bar
-		bar := "["
-		for i := 0; i < barWidth; i++ {
-			if i < filled {
-				bar += "="
-			} else if i == filled {
-				bar += ">"
-			} else {
-				bar += " "
-			}
-		}
-		bar += "]"
-
-		// Print progress (carriage return to overwrite)
-		fmt.Printf("\r%s %d/%d (%.1f%%)", bar, count, total, percent)
-	}
-
-	// Show cursor and newline
-	fmt.Print("\033[?25h\n")
-	done <- true
-}
-
-// fetchWithRetry fetches a repository with retry logic
 func (f *Fetcher) fetchWithRetry(ctx context.Context, repo *RepoMetadata) *FetchResult {
 	var lastErr error
-
 	for attempt := 0; attempt <= f.retries; attempt++ {
-		// Add backoff for retries
 		if attempt > 0 {
 			select {
 			case <-time.After(time.Duration(attempt) * 2 * time.Second):
@@ -315,39 +275,20 @@ func (f *Fetcher) fetchWithRetry(ctx context.Context, repo *RepoMetadata) *Fetch
 				return &FetchResult{Repository: repo, Error: ctx.Err()}
 			}
 		}
-
 		result := f.fetchOne(ctx, repo)
 		if result.Error == nil {
 			return result
 		}
-
 		lastErr = result.Error
-		logrus.Debugf("Fetch attempt %d/%d failed for %s: %v",
-			attempt+1, f.retries+1, repo.ID, lastErr)
+		logrus.Debugf("Fetch attempt %d/%d failed for %s: %v", attempt+1, f.retries+1, repo.ID, lastErr)
 	}
-
 	return &FetchResult{
 		Repository: repo,
 		Error:      fmt.Errorf("failed after %d attempts: %w", f.retries+1, lastErr),
 	}
 }
 
-// fetchOne fetches a single repository
 func (f *Fetcher) fetchOne(ctx context.Context, repo *RepoMetadata) *FetchResult {
-	// Check if we should skip (not forced and have cache)
-	if repo.Type == "deb" && !f.force && repo.CachedETag.Valid {
-		// Check if modified using conditional request
-		modified, err := f.checkModified(ctx, repo)
-		if err != nil {
-			return &FetchResult{Repository: repo, Error: err}
-		}
-
-		if !modified {
-			return &FetchResult{Repository: repo, Updated: false}
-		}
-	}
-
-	// Fetch based on repository type
 	switch repo.Type {
 	case "rpm":
 		return f.fetchRPM(ctx, repo)
@@ -361,18 +302,16 @@ func (f *Fetcher) fetchOne(ctx context.Context, repo *RepoMetadata) *FetchResult
 	}
 }
 
-// fetchRPM fetches RPM repository metadata
 func (f *Fetcher) fetchRPM(ctx context.Context, repo *RepoMetadata) *FetchResult {
-	var errors []string
+	var errs []string
 	for _, metadataURL := range repo.metadataURLs() {
 		result := f.fetchRPMFromMetadataURL(ctx, repo, metadataURL)
 		if result.Error == nil {
 			return result
 		}
-		errors = append(errors, fmt.Sprintf("%s: %v", metadataURL, result.Error))
+		errs = append(errs, fmt.Sprintf("%s: %v", metadataURL, result.Error))
 	}
-
-	return &FetchResult{Repository: repo, Error: fmt.Errorf("%s", strings.Join(errors, "; "))}
+	return &FetchResult{Repository: repo, Error: fmt.Errorf("%s", strings.Join(errs, "; "))}
 }
 
 func (f *Fetcher) fetchRPMFromMetadataURL(ctx context.Context, repo *RepoMetadata, metadataURL string) *FetchResult {
@@ -388,8 +327,6 @@ func (f *Fetcher) fetchRPMFromMetadataURL(ctx context.Context, repo *RepoMetadat
 	if err != nil {
 		return &FetchResult{Repository: repo, Error: err}
 	}
-	// The manifest's content checksum, rather than validators from a different
-	// URL or metadata format, determines whether the cached XML is current.
 	if !f.force && repo.hasCurrentPrimary(primary, primaryURL) {
 		return &FetchResult{Repository: repo, Updated: false}
 	}
@@ -425,71 +362,33 @@ func (r *RepoMetadata) metadataURLs() []string {
 	return urls
 }
 
-// fetchDEB fetches DEB repository metadata
+// fetchDEB fetches DEB repository metadata using conditional HTTP GET (304 Not Modified).
 func (f *Fetcher) fetchDEB(ctx context.Context, repo *RepoMetadata) *FetchResult {
-	// Download Packages file directly
 	resp, err := f.download(ctx, repo.MetadataURL, repo)
 	if err != nil {
 		return &FetchResult{Repository: repo, Error: err}
 	}
 	defer resp.Body.Close()
 
-	// Handle 304 Not Modified
 	if resp.StatusCode == http.StatusNotModified {
 		return &FetchResult{Repository: repo, Updated: false}
 	}
 
-	// Read response
 	data, err := io.ReadAll(io.LimitReader(resp.Body, MaxFileSize))
 	if err != nil {
 		return &FetchResult{Repository: repo, Error: fmt.Errorf("read response: %w", err)}
 	}
 
-	// Parse response headers
 	etag := normalizeETag(resp.Header.Get("ETag"))
 	lastMod, _ := http.ParseTime(resp.Header.Get("Last-Modified"))
-
-	return &FetchResult{
-		Repository: repo,
-		Data:       data,
-		ETag:       etag,
-		LastMod:    lastMod,
-		Updated:    true,
-	}
+	return &FetchResult{Repository: repo, Data: data, ETag: etag, LastMod: lastMod, Updated: true}
 }
 
-// checkModified checks if remote content has been modified
-func (f *Fetcher) checkModified(ctx context.Context, repo *RepoMetadata) (bool, error) {
-	req, err := http.NewRequestWithContext(ctx, "HEAD", repo.MetadataURL, nil)
-	if err != nil {
-		return false, err
-	}
-
-	// Add conditional headers
-	if repo.CachedETag.Valid && repo.CachedETag.String != "" {
-		req.Header.Set("If-None-Match", repo.CachedETag.String)
-	}
-	if repo.CachedTime.Valid {
-		req.Header.Set("If-Modified-Since", repo.CachedTime.Time.Format(http.TimeFormat))
-	}
-
-	resp, err := f.httpClient.Do(req)
-	if err != nil {
-		return true, nil // Assume modified on error
-	}
-	defer resp.Body.Close()
-
-	return resp.StatusCode != http.StatusNotModified, nil
-}
-
-// download performs HTTP GET with caching headers
 func (f *Fetcher) download(ctx context.Context, url string, repo *RepoMetadata) (*http.Response, error) {
 	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
 	if err != nil {
 		return nil, err
 	}
-
-	// Add conditional headers for caching
 	if !f.force && repo != nil {
 		if repo.CachedETag.Valid && repo.CachedETag.String != "" {
 			req.Header.Set("If-None-Match", repo.CachedETag.String)
@@ -503,42 +402,34 @@ func (f *Fetcher) download(ctx context.Context, url string, repo *RepoMetadata) 
 	if err != nil {
 		return nil, fmt.Errorf("HTTP request failed: %w", err)
 	}
-
 	if resp.StatusCode != http.StatusOK && resp.StatusCode != http.StatusNotModified {
 		resp.Body.Close()
 		return nil, fmt.Errorf("HTTP %d", resp.StatusCode)
 	}
-
 	return resp, nil
 }
 
-// fetchRepoMD fetches and parses repomd.xml
 func (f *Fetcher) fetchRepoMD(ctx context.Context, url string) (*RepoMD, error) {
 	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
 	if err != nil {
 		return nil, err
 	}
-
 	resp, err := f.httpClient.Do(req)
 	if err != nil {
 		return nil, err
 	}
 	defer resp.Body.Close()
-
 	if resp.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("HTTP %d", resp.StatusCode)
 	}
-
 	repomd, err := parseRPMManifest(resp.Body)
 	if err != nil {
 		return nil, err
 	}
-
 	repomd.SourceURL = resp.Request.URL.String()
 	return repomd, nil
 }
 
-// saveMetadata stores the uncompressed package payload and its source identity.
 func (f *Fetcher) saveMetadata(ctx context.Context, result *FetchResult) error {
 	var lastMod *time.Time
 	if !result.LastMod.IsZero() {
@@ -571,32 +462,21 @@ func saveRepositoryMetadata(ctx context.Context, id string, data []byte, etag st
 	return err
 }
 
-// updateFetchTime updates the fetch timestamp in status table
-func (f *Fetcher) updateFetchTime(ctx context.Context) error {
+func updateFetchTime(ctx context.Context) error {
 	_, err := ExecSQLContext(ctx, "UPDATE pgext.status SET fetch_time = CURRENT_TIMESTAMP")
 	return err
 }
 
-// normalizeETag normalizes an ETag value for consistent storage and comparison
-// It keeps the quotes but ensures consistent format
 func normalizeETag(etag string) string {
+	etag = strings.TrimSpace(etag)
 	if etag == "" {
 		return ""
 	}
-
-	// Trim whitespace
-	etag = strings.TrimSpace(etag)
-
-	// Already properly quoted
 	if strings.HasPrefix(etag, `"`) && strings.HasSuffix(etag, `"`) {
 		return etag
 	}
-
-	// Handle weak ETags (W/"...")
 	if strings.HasPrefix(etag, `W/"`) && strings.HasSuffix(etag, `"`) {
 		return etag
 	}
-
-	// Add quotes if missing
 	return `"` + etag + `"`
 }

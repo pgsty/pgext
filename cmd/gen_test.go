@@ -3,6 +3,8 @@ package cmd
 import (
 	"context"
 	"errors"
+	"os"
+	"path/filepath"
 	"strings"
 	"testing"
 
@@ -20,6 +22,7 @@ func TestGeneratorCommandMounts(t *testing.T) {
 		{name: "gen cc", cmd: ccCmd, parent: genCmd},
 		{name: "gen io", cmd: ioCmd, parent: genCmd},
 		{name: "gen all", cmd: allCmd, parent: genCmd},
+		{name: "gen site", cmd: genSiteCmd, parent: genCmd},
 	} {
 		if got := tt.cmd.Parent(); got != tt.parent {
 			t.Errorf("%s parent = %v, want %s", tt.name, got, tt.parent.CommandPath())
@@ -63,8 +66,8 @@ func TestCatalogOutputFlagsAreScopedToCatalogGenerators(t *testing.T) {
 		if flag.Shorthand != "o" {
 			t.Errorf("%s --output shorthand = %q, want o", cmd.CommandPath(), flag.Shorthand)
 		}
-		if flag.DefValue != defaultCatalogOutputDir {
-			t.Errorf("%s --output default = %q, want %q", cmd.CommandPath(), flag.DefValue, defaultCatalogOutputDir)
+		if flag.DefValue != "" {
+			t.Errorf("%s --output default = %q, want derived from --dir", cmd.CommandPath(), flag.DefValue)
 		}
 	}
 	staticOutput := genMatrixCmd.Flags().Lookup("static-output")
@@ -156,7 +159,7 @@ func TestAllCommandRunsEveryGenerator(t *testing.T) {
 	var got []*cobra.Command
 	runAllGeneratorCommand = func(caller, target *cobra.Command, args []string) error {
 		got = append(got, target)
-		if target == genPageCmd {
+		if target == genSiteCmd {
 			return sentinel
 		}
 		return nil
@@ -170,10 +173,7 @@ func TestAllCommandRunsEveryGenerator(t *testing.T) {
 	want := []*cobra.Command{
 		ccCmd,
 		ioCmd,
-		genPageCmd,
-		genListCmd,
-		genOSCmd,
-		genMatrixCmd,
+		genSiteCmd,
 		genConfCmd,
 	}
 	if len(got) != len(want) {
@@ -261,5 +261,73 @@ func TestGeneratorCommandsRunAllSubcommandByDefault(t *testing.T) {
 				t.Fatalf("%s did not delegate to all subcommand", tt.name)
 			}
 		})
+	}
+}
+
+func TestCatalogRootAndContentOverrides(t *testing.T) {
+	prev := genDir
+	t.Cleanup(func() { genDir = prev })
+	home, err := os.UserHomeDir()
+	if err != nil {
+		t.Fatal(err)
+	}
+	flag := genCmd.PersistentFlags().Lookup("dir")
+	if flag == nil || flag.Shorthand != "D" {
+		t.Fatal("gen must expose -D, --dir")
+	}
+	for _, tc := range []struct{ name, env, dir, output, want string }{
+		{"default", "", "", "", filepath.Join(home, "pgsty", "pgext.cloud", "content")},
+		{"environment", "~/preview", "", "", filepath.Join(home, "preview", "content")},
+		{"flag", "/from-env", "/from-flag", "", "/from-flag/content"},
+		{"content override", "/from-env", "/from-flag", "/custom/pages", "/custom/pages"},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			t.Setenv("PGEXT_SITE_DIR", tc.env)
+			genDir = tc.dir
+			cmd := &cobra.Command{Use: "page"}
+			cmd.SetContext(context.Background())
+			cmd.Flags().String("output", tc.output, "")
+			got, err := catalogContentDir(cmd)
+			if err != nil || got != tc.want {
+				t.Fatalf("content directory = %q, %v; want %q", got, err, tc.want)
+			}
+		})
+	}
+}
+
+func TestPublishSiteKeepsExistingPagesOnInvalidDestination(t *testing.T) {
+	root := t.TempDir()
+	stage := filepath.Join(t.TempDir(), "site")
+	for _, dir := range []string{stage, filepath.Join(root, "conflict.md")} {
+		if err := os.MkdirAll(dir, 0755); err != nil {
+			t.Fatal(err)
+		}
+	}
+	for _, file := range []struct{ dir, name, body string }{
+		{root, "a.md", "previous"}, {root, "editorial.md", "hand edited"},
+		{stage, "a.md", "updated"}, {stage, "conflict.md", "new page"},
+	} {
+		if err := os.WriteFile(filepath.Join(file.dir, file.name), []byte(file.body), 0644); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if err := publishCatalogSite(stage, root); err == nil {
+		t.Fatal("expected destination directory conflict")
+	}
+	got, err := os.ReadFile(filepath.Join(root, "a.md"))
+	if err != nil || string(got) != "previous" {
+		t.Fatalf("previous page = %q, %v", got, err)
+	}
+	if err := os.Remove(filepath.Join(root, "conflict.md")); err != nil {
+		t.Fatal(err)
+	}
+	if err := publishCatalogSite(stage, root); err != nil {
+		t.Fatal(err)
+	}
+	for name, want := range map[string]string{"a.md": "updated", "conflict.md": "new page", "editorial.md": "hand edited"} {
+		got, err := os.ReadFile(filepath.Join(root, name))
+		if err != nil || string(got) != want {
+			t.Fatalf("%s = %q, %v", name, got, err)
+		}
 	}
 }

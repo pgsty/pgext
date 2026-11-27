@@ -16,102 +16,25 @@ import (
 	"pgext/db"
 )
 
-type Platform struct {
-	OS       string `json:"os"`
-	Arch     string `json:"arch"`
-	Family   string `json:"family"`
-	Version  string `json:"version"`
-	Codename string `json:"codename,omitempty"`
-}
+type Platform = db.Platform
 
 func DetectPlatform() (Platform, error) {
-	p := Platform{OS: runtime.GOOS, Arch: runtime.GOARCH}
-	if runtime.GOOS != "linux" {
-		return p, nil
-	}
-	b, err := os.ReadFile("/etc/os-release")
+	p, err := db.DetectPlatform()
 	if err != nil {
 		return p, err
 	}
-	return ParsePlatform(string(b), runtime.GOARCH)
-}
-
-func ParsePlatform(release, arch string) (Platform, error) {
-	m := map[string]string{}
-	for _, l := range strings.Split(release, "\n") {
-		if k, v, ok := strings.Cut(l, "="); ok {
-			m[k] = strings.Trim(v, `"'`)
-		}
-	}
-	p := Platform{Arch: arch, Version: m["VERSION_ID"], Codename: m["VERSION_CODENAME"]}
-	major := strings.Split(p.Version, ".")[0]
-	switch m["ID"] {
-	case "rocky", "rhel", "almalinux", "centos", "ol":
-		p.OS, p.Family = "el"+major, "rpm"
-	case "debian":
-		p.OS, p.Family = "d"+major, "deb"
-	case "ubuntu":
-		p.OS, p.Family = "u"+major, "deb"
-	default:
-		return p, fmt.Errorf("unsupported Linux distribution %q", m["ID"])
-	}
-	if _, ok := db.BuildOSCodename(p.OS); !ok {
-		return p, fmt.Errorf("unsupported build platform %s", p.OS)
-	}
-	if arch != "amd64" && arch != "arm64" {
-		return p, fmt.Errorf("unsupported architecture %s", arch)
+	if p.OS == "" {
+		return Platform{OS: runtime.GOOS, Arch: db.NormalizeArch(runtime.GOARCH)}, nil
 	}
 	return p, nil
 }
 
-func PlanPlatform(value string) (Platform, error) {
-	parts := strings.Split(value, ".")
-	if len(parts) != 2 {
-		return Platform{}, fmt.Errorf("platform must be OS.ARCH, e.g. el9.arm64")
-	}
-	code, ok := db.BuildOSCodename(parts[0])
-	if !ok {
-		return Platform{}, fmt.Errorf("unsupported platform %s", value)
-	}
-	arch := parts[1]
-	if arch == "x86_64" {
-		arch = "amd64"
-	}
-	if arch == "aarch64" {
-		arch = "arm64"
-	}
-	if arch != "amd64" && arch != "arm64" {
-		return Platform{}, fmt.Errorf("unsupported architecture %s", arch)
-	}
-	family := "deb"
-	if strings.HasPrefix(parts[0], "el") {
-		family = "rpm"
-	}
-	return Platform{OS: parts[0], Family: family, Arch: arch, Codename: code, Version: strings.TrimLeft(parts[0], "eldu")}, nil
+func ParsePlatform(release, arch string) (Platform, error) {
+	return db.ParseOSRelease(release, arch)
 }
 
-func (p Platform) PGConfig(pg int) string {
-	if p.OS == "darwin" {
-		for _, path := range []string{fmt.Sprintf("/opt/homebrew/opt/postgresql@%d/bin/pg_config", pg), fmt.Sprintf("/usr/local/opt/postgresql@%d/bin/pg_config", pg), fmt.Sprintf("/Applications/Postgres.app/Contents/Versions/%d/bin/pg_config", pg)} {
-			if fileExists(path) {
-				return path
-			}
-		}
-		return fmt.Sprintf("/opt/homebrew/opt/postgresql@%d/bin/pg_config", pg)
-	}
-	if p.Family == "rpm" {
-		return fmt.Sprintf("/usr/pgsql-%d/bin/pg_config", pg)
-	}
-	return fmt.Sprintf("/usr/lib/postgresql/%d/bin/pg_config", pg)
-}
-func (p Platform) NativeArch() string {
-	if p.Family == "rpm" {
-		if p.Arch == "arm64" {
-			return "aarch64"
-		}
-		return "x86_64"
-	}
-	return p.Arch
+func PlanPlatform(value string) (Platform, error) {
+	return db.ParsePlatform(value, "")
 }
 
 type Command struct {

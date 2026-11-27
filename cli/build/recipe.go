@@ -17,7 +17,13 @@ import (
 const openHaloPackage = "openhalodb-19"
 
 // Numeric kernel names are reserved even in workspaces with obsolete recipes.
-var openHaloVersionedName = regexp.MustCompile(`^openhalo(db)?-?[0-9]+$`)
+var (
+	openHaloVersionedName    = regexp.MustCompile(`^openhalo(db)?-?[0-9]+$`)
+	debPGVersionsPattern     = regexp.MustCompile(`(?m)^PG_VERSIONS\s*[:?+]?=\s*([0-9 ]+)`)
+	sourcePatchHeaderPattern = regexp.MustCompile(`^(Source|Patch)[0-9]*\s*:`)
+	sourceTarballVarPattern  = regexp.MustCompile(`(?m)^([A-Z_]*SOURCE_TARBALL)\s*[:?]?=`)
+	srcDirAssignPattern      = regexp.MustCompile(`(?m)^SRC_DIR\s*[:?]?=`)
+)
 
 // A few catalog package identities differ from the native recipe names.
 func recipeName(family, name string) string {
@@ -53,7 +59,7 @@ func recipePG(family, root, name string, recipe []byte) []int {
 		// pgversions declares support; PG_VERSIONS may only select a default
 		// build (for example, PG18). Explicit --pg overrides that Make default.
 		if strings.TrimSpace(raw) == "" {
-			if m := regexp.MustCompile(`(?m)^PG_VERSIONS\s*[:?+]?=\s*([0-9 ]+)`).FindSubmatch(recipe); len(m) > 0 {
+			if m := debPGVersionsPattern.FindSubmatch(recipe); len(m) > 0 {
 				raw = string(m[1])
 			}
 		}
@@ -215,7 +221,13 @@ func (e *Engine) make(ctx context.Context, j *Job, r *Result, w io.Writer) error
 			}
 		}
 	}
-	for _, tool := range []string{"make", "gcc", "rustc", "cargo", "rpmbuild", "dpkg-buildpackage"} {
+	tools := []string{"make", "gcc", "rustc", "cargo"}
+	if e.Platform.Family == "rpm" {
+		tools = append(tools, "rpmbuild")
+	} else {
+		tools = append(tools, "dpkg-buildpackage")
+	}
+	for _, tool := range tools {
 		if out, err := e.Exec.Capture(ctx, Command{Args: []string{tool, "--version"}, Env: e.buildEnv(0)}); err == nil {
 			r.ToolVersions[tool] = strings.Split(strings.TrimSpace(out), "\n")[0]
 		}
@@ -262,10 +274,10 @@ func (e *Engine) make(ctx context.Context, j *Job, r *Result, w io.Writer) error
 func (e *Engine) makeRPM(ctx context.Context, j *Job, pg int, unit, out string, r *Result, w io.Writer) (string, error) {
 	root := filepath.Join(unit, "rpmbuild")
 	spec := filepath.Join(root, "SPECS", j.Package+".spec")
-	if err := copyRecipe(filepath.Join(e.Options.SpecDir, "SPECS"), filepath.Join(root, "SPECS")); err != nil {
+	if err := copyRPMRecipe(filepath.Join(e.Options.SpecDir, "SPECS"), j.Package, filepath.Join(root, "SPECS")); err != nil {
 		return spec, err
 	}
-	if err := checkRecipeCopy(j, filepath.Join(root, "SPECS")); err != nil {
+	if err := checkRecipeCopy("rpm", j, spec); err != nil {
 		return spec, err
 	}
 	for _, d := range []string{"BUILD", "BUILDROOT", "SRPMS", "SOURCES"} {
@@ -291,7 +303,7 @@ func (e *Engine) makeRPM(ctx context.Context, j *Job, pg int, unit, out string, 
 		return spec, err
 	}
 	for _, line := range strings.Split(expanded, "\n") {
-		if !regexp.MustCompile(`^(Source|Patch)[0-9]*\s*:`).MatchString(line) {
+		if !sourcePatchHeaderPattern.MatchString(line) {
 			continue
 		}
 		kind, raw, _ := strings.Cut(line, ":")
@@ -326,7 +338,7 @@ func (e *Engine) makeDEB(ctx context.Context, j *Job, pg int, unit, out string, 
 	if err := copyRecipe(filepath.Dir(j.Recipe), recipe); err != nil {
 		return recipe, err
 	}
-	if err := checkRecipeCopy(j, recipe); err != nil {
+	if err := checkRecipeCopy("deb", j, filepath.Join(recipe, "Makefile")); err != nil {
 		return recipe, err
 	}
 	if err := os.MkdirAll(filepath.Join(root, "SOURCES"), 0755); err != nil {
@@ -374,7 +386,7 @@ func (e *Engine) makeDEB(ctx context.Context, j *Job, pg int, unit, out string, 
 	// Existing recipes pair SOURCE_TARBALL with TARBALL (and prefixed variants).
 	// Let Make expand the archive name, including its per-PG conditionals, but
 	// bind the input to the staged, checksummed copy instead of a home cache.
-	for _, m := range regexp.MustCompile(`(?m)^([A-Z_]*SOURCE_TARBALL)\s*[:?]?=`).FindAllStringSubmatch(text, -1) {
+	for _, m := range sourceTarballVarPattern.FindAllStringSubmatch(text, -1) {
 		archive := strings.Replace(m[1], "SOURCE_", "", 1)
 		args = append(args, m[1]+"="+sourceDir+"/$("+archive+")")
 	}
@@ -384,7 +396,7 @@ func (e *Engine) makeDEB(ctx context.Context, j *Job, pg int, unit, out string, 
 		}
 		env = append(env, "DOCUMENTDB_SETUP_ROOT="+unit)
 	}
-	if regexp.MustCompile(`(?m)^SRC_DIR\s*[:?]?=`).MatchString(text) {
+	if srcDirAssignPattern.MatchString(text) {
 		args = append(args, "SRC_DIR="+filepath.Join(unit, "src"))
 	}
 	if pg > 0 {
@@ -485,7 +497,7 @@ func (e *Engine) checkSource(path string) error {
 	if e.Options.Checksums == "" {
 		return nil
 	}
-	sums, err := loadChecksums(e.Options.Checksums)
+	sums, err := e.getChecksums()
 	if err != nil {
 		return err
 	}
@@ -534,11 +546,11 @@ func makeHasTarget(content, target string) bool {
 	return false
 }
 
-func checkRecipeCopy(j *Job, root string) error {
+func checkRecipeCopy(family string, j *Job, stagedRecipe string) error {
 	if j.RecipeTreeSHA256 == "" {
 		return nil
 	}
-	digest, err := recipeTreeHash(root)
+	digest, err := recipeTreeHashFor(family, stagedRecipe)
 	if err != nil {
 		return err
 	}

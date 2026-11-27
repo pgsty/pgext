@@ -12,13 +12,11 @@ import (
 const (
 	universeDDLBegin = "-- BEGIN PGEXT UNIVERSE DDL"
 	universeDDLEnd   = "-- END PGEXT UNIVERSE DDL"
-	matrixDDLBegin   = "-- BEGIN PGEXT MATRIX DDL"
-	matrixDDLEnd     = "-- END PGEXT MATRIX DDL"
 )
 
-// Embed all SQL and CSV files from the db directory
+// Embed runtime SQL and CSV catalog assets from the db directory.
 //
-//go:embed *.sql *.csv
+//go:embed schema.sql reload.sql build-targets.sql *.csv
 var embeddedFS embed.FS
 
 // GetSchema returns the embedded schema.sql content
@@ -39,16 +37,6 @@ func GetUniverseSchema() (string, error) {
 		return "", err
 	}
 	return extractSchemaBlock(schema, universeDDLBegin, universeDDLEnd)
-}
-
-// GetMatrixSchema returns the independently executable global matrix DDL.
-// It upgrades existing catalogs without duplicating the materialized-view SQL.
-func GetMatrixSchema() (string, error) {
-	schema, err := GetSchema()
-	if err != nil {
-		return "", err
-	}
-	return extractSchemaBlock(schema, matrixDDLBegin, matrixDDLEnd)
 }
 
 func extractSchemaBlock(schema, begin, end string) (string, error) {

@@ -4,6 +4,7 @@ Copyright 2018-2025 Ruohang Feng <rh@vonng.com>
 package cmd
 
 import (
+	"context"
 	"fmt"
 	"pgext/cli"
 	"strings"
@@ -11,6 +12,31 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
+
+func runFetchAndParse(ctx context.Context, forceFetch, bestEffort bool) error {
+	fetcher := cli.NewFetcher(cli.FetchOptions{
+		Force:      forceFetch,
+		Region:     region,
+		Parallel:   workers,
+		Retry:      retry,
+		BestEffort: bestEffort,
+	})
+	if err := fetcher.FetchAll(ctx); err != nil {
+		return fmt.Errorf("failed to fetch: %w", err)
+	}
+	return runParseCatalog(ctx, bestEffort)
+}
+
+func runParseCatalog(ctx context.Context, bestEffort bool) error {
+	parser := cli.NewParserContext(ctx, cli.ParseOptions{
+		Parallel:   workers,
+		BestEffort: bestEffort,
+	})
+	if err := parser.ParseAndRecap(); err != nil {
+		return fmt.Errorf("failed to build package catalog: %w", err)
+	}
+	return nil
+}
 
 var (
 	reloadBestEffort bool
@@ -46,30 +72,9 @@ The parsed package tables and availability matrix are published atomically.
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		logrus.Info("starting data reload...")
-
-		// Step 1: Fetch repository metadata
-		logrus.Info("step 1/3: fetching repository metadata...")
-		fetcher := cli.NewFetcher(cli.FetchOptions{
-			Force:      force,
-			Region:     region,
-			Parallel:   workers,
-			Retry:      retry,
-			BestEffort: reloadBestEffort,
-		})
-		if err := fetcher.FetchAll(cmd.Context()); err != nil {
-			return fmt.Errorf("failed to fetch: %w", err)
+		if err := runFetchAndParse(cmd.Context(), force, reloadBestEffort); err != nil {
+			return err
 		}
-
-		// Steps 2-3: Parse repository data and build the package matrix
-		logrus.Info("steps 2-3/3: parsing repository data and generating package matrix...")
-		parser := cli.NewParserContext(cmd.Context(), cli.ParseOptions{
-			Parallel:   workers,
-			BestEffort: reloadBestEffort,
-		})
-		if err := parser.ParseAndRecap(); err != nil {
-			return fmt.Errorf("failed to build package catalog: %w", err)
-		}
-
 		logrus.Info("reload completed successfully!")
 		return nil
 	},
@@ -116,14 +121,8 @@ The parsed package tables and availability matrix are published atomically.
 			return fmt.Errorf("failed to scan: %w", err)
 		}
 
-		// Steps 2-3: Parse repository data and build the package matrix
-		logrus.Info("steps 2-3/3: parsing repository data and generating package matrix...")
-		parser := cli.NewParserContext(cmd.Context(), cli.ParseOptions{
-			Parallel:   workers,
-			BestEffort: rescanBestEffort,
-		})
-		if err := parser.ParseAndRecap(); err != nil {
-			return fmt.Errorf("failed to build package catalog: %w", err)
+		if err := runParseCatalog(cmd.Context(), rescanBestEffort); err != nil {
+			return err
 		}
 
 		logrus.Info("rescan completed successfully!")
@@ -289,6 +288,13 @@ to local paths:
 }
 
 func init() {
+	// reload command flags
+	reloadCmd.Flags().BoolVarP(&force, "force", "f", false, "force re-fetch all repositories")
+	reloadCmd.Flags().StringVarP(&region, "region", "r", "", "region: default or china/mirror")
+	reloadCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
+	reloadCmd.Flags().IntVar(&retry, "retry", 1, "number of retry attempts")
+	reloadCmd.Flags().BoolVar(&reloadBestEffort, "best-effort", false, "publish a partial catalog when some repositories fail")
+
 	// fetch command flags
 	fetchCmd.Flags().BoolVarP(&force, "force", "f", false, "force re-fetch all repositories")
 	fetchCmd.Flags().StringVarP(&region, "region", "r", "", "region: default or china/mirror")

@@ -33,7 +33,8 @@ COMMENT ON COLUMN pgext.status.recap_time IS 'Last time the catalog was recapitu
 COMMENT ON COLUMN pgext.status.pkg_time IS 'Last time the extension availability pkg was rebuilt';
 COMMENT ON COLUMN pgext.status.extra IS 'Additional status information and metadata in JSONB format';
 INSERT INTO pgext.status(id, init_time)
-VALUES (0, now());
+VALUES (0, now())
+ON CONFLICT (id) DO NOTHING;
 
 -----------------------------------
 -- PostgreSQL Versions
@@ -208,7 +209,7 @@ CREATE TABLE IF NOT EXISTS pgext.extension
     category    TEXT,                     -- Category classification (TIME, GIS, RAG, FTS, etc.)
     state       TEXT,                     -- Extension state: available, deprecated, removed, not-ready
     url         TEXT,                     -- Extension homepage or source repository URL
-    license     TEXT,                     -- Software license (PostgreSQL, MIT, Apache-2.0, etc.)
+    license     TEXT CONSTRAINT extension_primary_license CHECK (license !~* '(^|[[:space:]()])(and|or)($|[[:space:]()])'),
     tags        TEXT[],                   -- Additional classification tags
     version     TEXT,                     -- Latest available version of this extension
     repo        TEXT,                     -- Principal package supplier (PGDG, PIGSTY, MIXED, CONTRIB)
@@ -254,7 +255,7 @@ COMMENT ON COLUMN pgext.extension.lead_ext IS 'Primary/leading extension name in
 COMMENT ON COLUMN pgext.extension.category IS 'Functional category: TIME, GIS, RAG, FTS, OLAP, FEAT, LANG, TYPE, UTIL, FUNC, ADMIN, STAT, SEC, FDW, SIM, ETL';
 COMMENT ON COLUMN pgext.extension.state IS 'Extension lifecycle state: available, deprecated, removed, not-ready';
 COMMENT ON COLUMN pgext.extension.url IS 'Extension homepage or source code repository URL (GitHub, GitLab, etc.)';
-COMMENT ON COLUMN pgext.extension.license IS 'Software license (e.g., PostgreSQL, MIT, Apache-2.0, GPL, BSD)';
+COMMENT ON COLUMN pgext.extension.license IS 'Single short primary license name for the packaged extension source, such as PostgreSQL, MIT or Apache-2.0.';
 COMMENT ON COLUMN pgext.extension.tags IS 'Additional classification tags as string array for flexible categorization';
 COMMENT ON COLUMN pgext.extension.version IS 'Latest available version of this extension';
 COMMENT ON COLUMN pgext.extension.repo IS 'Principal package supplier (PGDG, PIGSTY, MIXED, CONTRIB); local gap builds do not change the principal supplier';
@@ -313,7 +314,7 @@ CREATE TABLE pgext.universe
     vendor          TEXT,                                                                          -- Extension, kernel, or managed-service vendor.
     contrib         BOOLEAN     NOT NULL DEFAULT false,                                            -- Whether the extension is part of PostgreSQL contrib.
     lang            TEXT        NOT NULL,                                                          -- Primary implementation language or data format.
-    license         TEXT,                                                                          -- SPDX expression or project-specific license identifier.
+    license         TEXT CONSTRAINT universe_primary_license CHECK (license !~* '(^|[[:space:]()])(and|or)($|[[:space:]()])'),
     tags            TEXT[],                                                                        -- Tags used for search and presentation.
 
     version         TEXT,                                                                          -- Catalog or control-file extension version.
@@ -386,7 +387,7 @@ COMMENT ON COLUMN pgext.universe.kernel          IS 'Required or associated Post
 COMMENT ON COLUMN pgext.universe.vendor          IS 'Extension, kernel, or managed-service vendor.';
 COMMENT ON COLUMN pgext.universe.contrib         IS 'Whether the extension is part of PostgreSQL contrib.';
 COMMENT ON COLUMN pgext.universe.lang            IS 'Primary implementation language or data format.';
-COMMENT ON COLUMN pgext.universe.license         IS 'SPDX expression or project-specific license identifier.';
+COMMENT ON COLUMN pgext.universe.license         IS 'Single short primary license name for the upstream extension. Reuse packaged catalog spelling and link the upstream grant in license_url.';
 COMMENT ON COLUMN pgext.universe.tags            IS 'Tags used for search and presentation.';
 COMMENT ON COLUMN pgext.universe.version         IS 'Catalog or control-file extension version.';
 COMMENT ON COLUMN pgext.universe.url             IS 'Preferred user-facing URL.';
@@ -518,26 +519,21 @@ CREATE TABLE IF NOT EXISTS pgext.gh_repo
     default_branch              TEXT,
     archived                    BOOLEAN,
     last_commit_at              TIMESTAMPTZ,
-    last_commit_date            TIMESTAMPTZ,
     last_commit_sha             TEXT,
     last_commit_html_url        TEXT,
     latest_release_tag          TEXT,
     latest_release_published_at TIMESTAMPTZ,
     latest_release_created_at   TIMESTAMPTZ,
     last_release_at             TIMESTAMPTZ,
-    last_release_date           TIMESTAMPTZ,
     latest_tag_name             TEXT,
     latest_tag_at               TIMESTAMPTZ,
-    last_tag_date               TIMESTAMPTZ,
     latest_tag_date_source      TEXT,
     latest_tag_target_type      TEXT,
     latest_tag_commit_sha       TEXT,
     latest_tag_commit_at        TIMESTAMPTZ,
     last_release_or_tag_at      TIMESTAMPTZ,
-    last_release_or_tag_date    TIMESTAMPTZ,
     last_release_or_tag_source  TEXT,
     last_update_at              TIMESTAMPTZ,
-    last_update_date            TIMESTAMPTZ,
     last_update_source          TEXT,
     activity_json               JSONB
 );
@@ -550,8 +546,8 @@ CREATE INDEX IF NOT EXISTS gh_repo_last_commit_at_idx
     ON pgext.gh_repo(last_commit_at DESC NULLS LAST);
 CREATE INDEX IF NOT EXISTS gh_repo_last_release_or_tag_at_idx
     ON pgext.gh_repo(last_release_or_tag_at DESC NULLS LAST);
-CREATE INDEX IF NOT EXISTS gh_repo_last_update_date_idx
-    ON pgext.gh_repo(last_update_date DESC NULLS LAST);
+CREATE INDEX IF NOT EXISTS gh_repo_last_update_at_idx
+    ON pgext.gh_repo(last_update_at DESC NULLS LAST);
 
 COMMENT ON TABLE pgext.gh_repo IS 'GitHub repository metadata and activity cache keyed by normalized repository URL.';
 COMMENT ON COLUMN pgext.gh_repo.extension_ids IS 'Current pgext.universe ids associated with this repository.';
@@ -593,8 +589,8 @@ COMMENT ON VIEW pgext.ext IS 'Compatibility projection of packaged pgext.univers
 -- English and Chinese docs are synchronized from stub/ and stub-zh/.
 CREATE TABLE IF NOT EXISTS pgext.doc
 (
-    id          INTEGER PRIMARY KEY REFERENCES pgext.extension (id) ON DELETE CASCADE,
-    ext         TEXT NOT NULL UNIQUE REFERENCES pgext.extension (name) ON DELETE CASCADE,
+    id          INTEGER PRIMARY KEY,
+    ext         TEXT NOT NULL UNIQUE,
     pkg         TEXT NOT NULL,
     repo_url    TEXT,
     license_url TEXT,
@@ -608,11 +604,11 @@ CREATE TABLE IF NOT EXISTS pgext.doc
 
 CREATE INDEX IF NOT EXISTS doc_ext_pkg_idx ON pgext.doc (ext, pkg);
 
-COMMENT ON TABLE pgext.doc IS 'PostgreSQL extension local documentation synchronized from stub directories';
-COMMENT ON COLUMN pgext.doc.id IS 'Extension identifier copied from pgext.extension.id';
-COMMENT ON COLUMN pgext.doc.ext IS 'Extension name copied from pgext.extension.name';
-COMMENT ON COLUMN pgext.doc.pkg IS 'Package name copied from pgext.extension.pkg';
-COMMENT ON COLUMN pgext.doc.repo_url IS 'Source repository URL seeded from pgext.extension.url';
+COMMENT ON TABLE pgext.doc IS 'PostgreSQL extension local documentation synchronized from stub directories against pgext.universe';
+COMMENT ON COLUMN pgext.doc.id IS 'Extension identifier copied from pgext.universe.id';
+COMMENT ON COLUMN pgext.doc.ext IS 'Extension name copied from pgext.universe.name';
+COMMENT ON COLUMN pgext.doc.pkg IS 'Package name copied from pgext.universe.pkg';
+COMMENT ON COLUMN pgext.doc.repo_url IS 'Source repository URL copied from pgext.universe.url';
 COMMENT ON COLUMN pgext.doc.license_url IS 'Optional upstream license URL';
 COMMENT ON COLUMN pgext.doc.control_url IS 'Optional upstream control file URL';
 COMMENT ON COLUMN pgext.doc.author_url IS 'Optional upstream author or maintainer URL';
@@ -628,7 +624,7 @@ COMMENT ON COLUMN pgext.doc.zh_doc IS 'Chinese Markdown documentation from stub-
 -- Per-package release history distilled from the RPM/DEB release notes.
 -- One row per (release batch date, normalized package); RPM and DEB sides of
 -- the same batch are merged under one aligned date. Generated from
--- content/release/{rpm,deb}{,.zh}.md by bin/changelog.py into db/changelog.csv.
+-- pgext.cloud/content/release/{rpm,deb}{,.zh}.md by bin/changelog.py into db/changelog.csv.
 CREATE TABLE IF NOT EXISTS pgext.changelog
 (
     ds      DATE NOT NULL, -- release batch date (RPM/DEB sides aligned)
@@ -880,125 +876,10 @@ COMMENT ON COLUMN pgext.pkg.org IS 'Latest package source organization (pgdg or 
 COMMENT ON COLUMN pgext.pkg.version IS 'Latest available package version for this specific PG+OS combination';
 COMMENT ON COLUMN pgext.pkg.count IS 'Count of available package variants (including different repos and versions)';
 
--- BEGIN PGEXT MATRIX DDL
--- Precomputed package x OS x PG matrix consumed by `pgext serve`.
--- Each row is one lead package. `codes` contains one byte per cell in OS-major,
--- PG-minor order; `data` is the compact wire row used by /api/v1/matrix.
-CREATE MATERIALIZED VIEW pgext.matrix AS
-WITH lead_packages AS (
-    SELECT DISTINCT ON (e.pkg)
-           e.id, e.pkg, e.name AS ext
-    FROM pgext.extension e
-    WHERE e.lead = true
-      AND (e.state IS NULL OR e.state <> 'not-ready')
-      AND EXISTS (SELECT 1 FROM pgext.pkg p WHERE p.pkg = e.pkg)
-    ORDER BY e.pkg, e.id
-),
-os_dim AS (
-    SELECT o.os,
-           row_number() OVER (
-               ORDER BY CASE o.os_vendor
-                            WHEN 'EL' THEN 0
-                            WHEN 'Debian' THEN 1
-                            WHEN 'Ubuntu' THEN 2
-                            ELSE 9
-                        END,
-                        o.os_major,
-                        CASE o.os_arch WHEN 'x86_64' THEN 0 WHEN 'aarch64' THEN 1 ELSE 9 END,
-                        o.os
-           ) - 1 AS oi
-    FROM pgext.os o
-    WHERE o.active = true
-),
-pg_dim AS (
-    SELECT p.pg, row_number() OVER (ORDER BY p.pg DESC) - 1 AS pi
-    FROM pgext.pg p
-    WHERE p.active = true
-),
-matrix_cells AS (
-    SELECT lp.id, lp.pkg, lp.ext,
-           o.os, o.oi, p.pg, p.pi,
-           coalesce(x.name, '') AS name,
-           coalesce(x.state::text, 'N/A') AS state,
-           upper(coalesce(x.org, '')) AS org,
-           coalesce(x.version, '') AS version,
-           coalesce(x.count, 0) AS count
-    FROM lead_packages lp
-    CROSS JOIN os_dim o
-    CROSS JOIN pg_dim p
-    LEFT JOIN pgext.pkg x ON x.pkg = lp.pkg AND x.os = o.os AND x.pg = p.pg
-),
-classified AS (
-    SELECT c.*,
-           CASE
-               WHEN c.state = 'AVAIL' AND c.org = 'PGDG' THEN 'B'
-               WHEN c.state = 'AVAIL' THEN 'G'
-               WHEN c.state = 'MISS' THEN 'R'
-               WHEN c.state = 'N/A' THEN '.'
-               ELSE '.'
-           END AS code
-    FROM matrix_cells c
-),
-detail_names AS (
-    SELECT id, array_agg(name ORDER BY name) AS names
-    FROM (
-        SELECT DISTINCT id, name
-        FROM classified
-        WHERE code IN ('B', 'G') AND name <> ''
-    ) n
-    GROUP BY id
-),
-detail_versions AS (
-    SELECT id, array_agg(version ORDER BY version) AS versions
-    FROM (
-        SELECT DISTINCT id, version
-        FROM classified
-        WHERE code IN ('B', 'G') AND version <> ''
-    ) v
-    GROUP BY id
-),
-matrix_rows AS (
-    SELECT c.id, c.pkg, c.ext,
-           coalesce(n.names, ARRAY[]::text[]) AS names,
-           coalesce(v.versions, ARRAY[]::text[]) AS versions,
-           string_agg(c.code, '' ORDER BY c.oi, c.pi) AS codes,
-           jsonb_agg(
-               CASE
-                   WHEN c.code IN ('B', 'G') THEN jsonb_build_array(
-                       coalesce(array_position(n.names, c.name) - 1, -1),
-                       coalesce(array_position(v.versions, c.version) - 1, -1),
-                       c.count
-                   )
-                   ELSE 'null'::jsonb
-               END
-               ORDER BY c.oi, c.pi
-           ) AS details
-    FROM classified c
-    LEFT JOIN detail_names n ON n.id = c.id
-    LEFT JOIN detail_versions v ON v.id = c.id
-    GROUP BY c.id, c.pkg, c.ext, n.names, v.versions
-)
-SELECT id, pkg, ext, codes,
-       jsonb_build_object(
-           'p', pkg, 'e', ext, 'c', codes,
-           'n', to_jsonb(names), 'v', to_jsonb(versions), 'd', details
-       ) AS data
-FROM matrix_rows
-ORDER BY id;
-
-CREATE UNIQUE INDEX matrix_id_idx ON pgext.matrix (id);
-CREATE UNIQUE INDEX matrix_pkg_idx ON pgext.matrix (pkg);
-
-COMMENT ON MATERIALIZED VIEW pgext.matrix IS 'Precomputed compact package x OS x PG build matrix for /api/v1/matrix';
-COMMENT ON COLUMN pgext.matrix.codes IS 'Positional status codes ordered by active OS then active PG descending: B=PGDG, G=Pigsty, R=MISS, .=N/A';
-COMMENT ON COLUMN pgext.matrix.data IS 'Compact wire row: p=package, e=lead extension, c=status string, n/v=row dictionaries, d=aligned indexed details';
--- END PGEXT MATRIX DDL
-
 -----------------------------------
 -- Domain: Semantic Version
 -----------------------------------
 -- DROP DOMAIN pgext.version CASCADE;
-SET search_path TO pgext, public;
 CREATE DOMAIN pgext.version AS TEXT;
 
 -- Segment comparison shared by upstream versions and package releases.
@@ -1109,12 +990,12 @@ CREATE OR REPLACE FUNCTION pgext.version_gt(pgext.version, pgext.version) RETURN
 CREATE OR REPLACE FUNCTION pgext.version_cmp(pgext.version, pgext.version) RETURNS INTEGER AS 'SELECT pgext.version_compare($1::TEXT, $2::TEXT)' LANGUAGE SQL IMMUTABLE STRICT PARALLEL SAFE;
 
 -- Operator definitions (compact inline form)
-CREATE OPERATOR pgext.< (LEFTARG = pgext.version, RIGHTARG = pgext.version, PROCEDURE = pgext.version_lt, COMMUTATOR = >, NEGATOR = >=, RESTRICT = scalarltsel, JOIN = scalarltjoinsel);
-CREATE OPERATOR pgext.<= (LEFTARG = pgext.version, RIGHTARG = pgext.version, PROCEDURE = pgext.version_le, COMMUTATOR = >=, NEGATOR = >, RESTRICT = scalarlesel, JOIN = scalarlejoinsel);
-CREATE OPERATOR pgext.= (LEFTARG = pgext.version, RIGHTARG = pgext.version, PROCEDURE = pgext.version_eq, COMMUTATOR = =, NEGATOR = <>, RESTRICT = eqsel, JOIN = eqjoinsel);
-CREATE OPERATOR pgext.<> (LEFTARG = pgext.version, RIGHTARG = pgext.version, PROCEDURE = pgext.version_ne, COMMUTATOR = <>, NEGATOR = =, RESTRICT = neqsel, JOIN = neqjoinsel);
-CREATE OPERATOR pgext.>= (LEFTARG = pgext.version, RIGHTARG = pgext.version, PROCEDURE = pgext.version_ge, COMMUTATOR = <=, NEGATOR = <, RESTRICT = scalargesel, JOIN = scalargejoinsel);
-CREATE OPERATOR pgext.> (LEFTARG = pgext.version, RIGHTARG = pgext.version, PROCEDURE = pgext.version_gt, COMMUTATOR = <, NEGATOR = <=, RESTRICT = scalargtsel, JOIN = scalargtjoinsel);
+CREATE OPERATOR pgext.< (LEFTARG = pgext.version, RIGHTARG = pgext.version, PROCEDURE = pgext.version_lt, COMMUTATOR = OPERATOR(pgext.>), NEGATOR = OPERATOR(pgext.>=), RESTRICT = scalarltsel, JOIN = scalarltjoinsel);
+CREATE OPERATOR pgext.<= (LEFTARG = pgext.version, RIGHTARG = pgext.version, PROCEDURE = pgext.version_le, COMMUTATOR = OPERATOR(pgext.>=), NEGATOR = OPERATOR(pgext.>), RESTRICT = scalarlesel, JOIN = scalarlejoinsel);
+CREATE OPERATOR pgext.= (LEFTARG = pgext.version, RIGHTARG = pgext.version, PROCEDURE = pgext.version_eq, COMMUTATOR = OPERATOR(pgext.=), NEGATOR = OPERATOR(pgext.<>), RESTRICT = eqsel, JOIN = eqjoinsel);
+CREATE OPERATOR pgext.<> (LEFTARG = pgext.version, RIGHTARG = pgext.version, PROCEDURE = pgext.version_ne, COMMUTATOR = OPERATOR(pgext.<>), NEGATOR = OPERATOR(pgext.=), RESTRICT = neqsel, JOIN = neqjoinsel);
+CREATE OPERATOR pgext.>= (LEFTARG = pgext.version, RIGHTARG = pgext.version, PROCEDURE = pgext.version_ge, COMMUTATOR = OPERATOR(pgext.<=), NEGATOR = OPERATOR(pgext.<), RESTRICT = scalargesel, JOIN = scalargejoinsel);
+CREATE OPERATOR pgext.> (LEFTARG = pgext.version, RIGHTARG = pgext.version, PROCEDURE = pgext.version_gt, COMMUTATOR = OPERATOR(pgext.<), NEGATOR = OPERATOR(pgext.<=), RESTRICT = scalargtsel, JOIN = scalargtjoinsel);
 
 -- B-tree operator class for indexing and sorting
 CREATE OPERATOR CLASS pgext.version_ops DEFAULT FOR TYPE pgext.version USING btree AS
@@ -1175,33 +1056,33 @@ COMMENT ON VIEW pgext.pkg_pigsty IS 'pgext.pkg as if only Pigsty repositories ex
 -----------------------------------
 CREATE OR REPLACE VIEW pgext.summary AS
 SELECT 1::INTEGER AS id, 'ALL Extensions' AS title, count(*) AS total,
-       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, 0 AS miss,
-       count(*) FILTER ( WHERE pg_ver @> '{19}') AS pg19, count(*) FILTER ( WHERE pg_ver @> '{18}') AS pg18,count(*) FILTER ( WHERE pg_ver @> '{17}') AS pg17,count(*) FILTER ( WHERE pg_ver @> '{16}') AS pg16,count(*) FILTER ( WHERE pg_ver @> '{15}') AS pg15,count(*) FILTER ( WHERE pg_ver @> '{14}') AS pg14
+       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty, count(*) FILTER ( WHERE contrib ) AS contrib, 0 AS miss,
+       count(*) FILTER ( WHERE pg_ver @> '{19}') AS pg19, count(*) FILTER ( WHERE pg_ver @> '{18}') AS pg18, count(*) FILTER ( WHERE pg_ver @> '{17}') AS pg17, count(*) FILTER ( WHERE pg_ver @> '{16}') AS pg16, count(*) FILTER ( WHERE pg_ver @> '{15}') AS pg15, count(*) FILTER ( WHERE pg_ver @> '{14}') AS pg14
 FROM pgext.extension
 UNION ALL
 SELECT 2::INTEGER AS id, 'EL Extensions' AS title, count(*) AS total,
-       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension) - count(*) AS miss,
-       count(*) FILTER ( WHERE rpm_pg @> '{19}') AS pg19, count(*) FILTER ( WHERE rpm_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE rpm_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE rpm_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE rpm_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE rpm_pg @> '{14}') AS pg14
+       count(*) FILTER ( WHERE rpm_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' ) AS pigsty, count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension) - count(*) AS miss,
+       count(*) FILTER ( WHERE rpm_pg @> '{19}') AS pg19, count(*) FILTER ( WHERE rpm_pg @> '{18}') AS pg18, count(*) FILTER ( WHERE rpm_pg @> '{17}') AS pg17, count(*) FILTER ( WHERE rpm_pg @> '{16}') AS pg16, count(*) FILTER ( WHERE rpm_pg @> '{15}') AS pg15, count(*) FILTER ( WHERE rpm_pg @> '{14}') AS pg14
 FROM pgext.extension WHERE rpm_repo IS NOT NULL
 UNION ALL
 SELECT 3::INTEGER AS id, 'Debian Extensions' AS title, count(*) AS total,
-       count(*) FILTER ( WHERE deb_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE deb_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension) - count(*) AS miss,
-       count(*) FILTER ( WHERE deb_pg @> '{19}') AS pg19, count(*) FILTER ( WHERE deb_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE deb_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE deb_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE deb_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE deb_pg @> '{14}') AS pg14
+       count(*) FILTER ( WHERE deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE deb_repo = 'PIGSTY' ) AS pigsty, count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension) - count(*) AS miss,
+       count(*) FILTER ( WHERE deb_pg @> '{19}') AS pg19, count(*) FILTER ( WHERE deb_pg @> '{18}') AS pg18, count(*) FILTER ( WHERE deb_pg @> '{17}') AS pg17, count(*) FILTER ( WHERE deb_pg @> '{16}') AS pg16, count(*) FILTER ( WHERE deb_pg @> '{15}') AS pg15, count(*) FILTER ( WHERE deb_pg @> '{14}') AS pg14
 FROM pgext.extension WHERE deb_repo IS NOT NULL
 UNION ALL
 SELECT 4::INTEGER AS id, 'ALL Packages' AS title, count(*) AS total,
-       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, 0 AS miss,
-       count(*) FILTER ( WHERE pg_ver @> '{19}') AS pg19, count(*) FILTER ( WHERE pg_ver @> '{18}') AS pg18,count(*) FILTER ( WHERE pg_ver @> '{17}') AS pg17,count(*) FILTER ( WHERE pg_ver @> '{16}') AS pg16,count(*) FILTER ( WHERE pg_ver @> '{15}') AS pg15,count(*) FILTER ( WHERE pg_ver @> '{14}') AS pg14
+       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty, count(*) FILTER ( WHERE contrib ) AS contrib, 0 AS miss,
+       count(*) FILTER ( WHERE pg_ver @> '{19}') AS pg19, count(*) FILTER ( WHERE pg_ver @> '{18}') AS pg18, count(*) FILTER ( WHERE pg_ver @> '{17}') AS pg17, count(*) FILTER ( WHERE pg_ver @> '{16}') AS pg16, count(*) FILTER ( WHERE pg_ver @> '{15}') AS pg15, count(*) FILTER ( WHERE pg_ver @> '{14}') AS pg14
 FROM pgext.extension WHERE lead AND NOT contrib
 UNION ALL
 SELECT 5::INTEGER AS id, 'EL Packages' AS title, count(*) AS total,
-       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension WHERE lead) - count(*) AS miss,
-       count(*) FILTER ( WHERE rpm_pg @> '{19}') AS pg19, count(*) FILTER ( WHERE rpm_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE rpm_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE rpm_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE rpm_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE rpm_pg @> '{14}') AS pg14
+       count(*) FILTER ( WHERE rpm_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' ) AS pigsty, count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension WHERE lead AND NOT contrib) - count(*) AS miss,
+       count(*) FILTER ( WHERE rpm_pg @> '{19}') AS pg19, count(*) FILTER ( WHERE rpm_pg @> '{18}') AS pg18, count(*) FILTER ( WHERE rpm_pg @> '{17}') AS pg17, count(*) FILTER ( WHERE rpm_pg @> '{16}') AS pg16, count(*) FILTER ( WHERE rpm_pg @> '{15}') AS pg15, count(*) FILTER ( WHERE rpm_pg @> '{14}') AS pg14
 FROM pgext.extension WHERE rpm_repo IS NOT NULL AND lead AND NOT contrib
 UNION ALL
 SELECT 6::INTEGER AS id, 'Debian Packages' AS title, count(*) AS total,
-       count(*) FILTER ( WHERE deb_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE deb_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension WHERE lead) - count(*) AS miss,
-       count(*) FILTER ( WHERE deb_pg @> '{19}') AS pg19, count(*) FILTER ( WHERE deb_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE deb_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE deb_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE deb_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE deb_pg @> '{14}') AS pg14
+       count(*) FILTER ( WHERE deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE deb_repo = 'PIGSTY' ) AS pigsty, count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension WHERE lead AND NOT contrib) - count(*) AS miss,
+       count(*) FILTER ( WHERE deb_pg @> '{19}') AS pg19, count(*) FILTER ( WHERE deb_pg @> '{18}') AS pg18, count(*) FILTER ( WHERE deb_pg @> '{17}') AS pg17, count(*) FILTER ( WHERE deb_pg @> '{16}') AS pg16, count(*) FILTER ( WHERE deb_pg @> '{15}') AS pg15, count(*) FILTER ( WHERE deb_pg @> '{14}') AS pg14
 FROM pgext.extension WHERE deb_repo IS NOT NULL AND lead AND NOT contrib;
 
 

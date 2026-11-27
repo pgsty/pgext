@@ -1,91 +1,146 @@
 package cmd
 
 import (
-	"encoding/json"
 	"fmt"
 	"os"
-	"os/signal"
 	"path/filepath"
 	"pgext/cli/repo"
 	"strings"
-	"syscall"
 	"text/tabwriter"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/pflag"
 	"go.yaml.in/yaml/v3"
 )
 
 var repoCmd = newRepoCommand()
 
+type repoCommonFlags struct {
+	platform    string
+	version     string
+	catalogPath string
+	root        string
+	opts        repo.Options
+	asJSON      bool
+	mirror      bool
+}
+
+func (rf *repoCommonFlags) bind(f *pflag.FlagSet) {
+	f.StringVar(&rf.platform, "platform", "", "target OS.ARCH for listing, preview or staging (default: detected Linux)")
+	f.StringVar(&rf.version, "os-version", "", "full OS version, e.g. 9.6 or 10.1")
+	f.StringVar(&rf.catalogPath, "catalog", "", "Pigsty YAML with repo_upstream or repo_upstream_default (default: embedded confgen catalog)")
+	f.StringVar(&rf.root, "root", "/", "existing staging root; never runs the host package manager")
+	f.StringVar(&rf.opts.Region, "region", "default", "mirror region; missing mirrors fall back to default")
+	f.BoolVarP(&rf.mirror, "mirror", "m", false, "use China mirrors (same as --region=china)")
+	f.StringVar(&rf.opts.AdminIP, "admin-ip", "", "host[:port] for the local Pigsty repository")
+	f.BoolVar(&rf.opts.DryRun, "dry-run", false, "preview changes without writing files or updating caches")
+	f.BoolVar(&rf.opts.DryRun, "plan", false, "alias for --dry-run")
+	f.BoolVar(&rf.asJSON, "json", false, "emit one JSON result on stdout")
+}
+
+func (rf *repoCommonFlags) load(cmd *cobra.Command) (repo.Platform, []repo.Repository, string, error) {
+	var p repo.Platform
+	var err error
+	if rf.platform == "" {
+		p, err = repo.DetectPlatform()
+		if err == nil && rf.version != "" {
+			return p, nil, "", fmt.Errorf("--os-version requires --platform")
+		}
+	} else {
+		p, err = repo.ParsePlatform(rf.platform, rf.version)
+	}
+	if err != nil {
+		return p, nil, "", err
+	}
+	if rf.mirror {
+		if cmd.Flags().Changed("region") && rf.opts.Region != "china" {
+			return p, nil, "", fmt.Errorf("--mirror conflicts with --region=%s", rf.opts.Region)
+		}
+		rf.opts.Region = "china"
+	}
+	source := "embedded confgen catalog"
+	var catalog []repo.Repository
+	if rf.catalogPath == "" {
+		catalog, err = repo.DefaultCatalog("")
+	} else {
+		source = rf.catalogPath
+		var data []byte
+		data, err = os.ReadFile(rf.catalogPath)
+		if err == nil {
+			catalog, err = repo.ParseCatalog(data, p.Family)
+		}
+	}
+	return p, catalog, source, err
+}
+
+func (rf *repoCommonFlags) runAction(cmd *cobra.Command, action string, args []string, update, replace, all bool) error {
+	p, catalog, source, err := rf.load(cmd)
+	if err != nil {
+		return err
+	}
+	m, err := repo.NewManager(rf.root, p, catalog, cmd.ErrOrStderr())
+	if err != nil {
+		return err
+	}
+	opts := rf.opts
+	opts.Update, opts.Replace, opts.All = update, replace, all
+	ctx, stop := buildContext(cmd)
+	defer stop()
+	result, runErr := m.Execute(ctx, action, args, opts)
+	result.Catalog = source
+	if rf.asJSON {
+		if err := writeJSON(cmd, result); err != nil {
+			return err
+		}
+	} else {
+		printRepoResult(cmd, result)
+	}
+	return runErr
+}
+
+// newEnvRepoCommand exposes `pgext env repo` as a thin alias pointing to `pgext repo set`.
+func newEnvRepoCommand() *cobra.Command {
+	var rf repoCommonFlags
+	var update, replace bool
+	c := &cobra.Command{
+		Use:          "repo [repo|module...]",
+		Short:        "alias for 'pgext repo set' (prepare builder package repositories)",
+		Args:         cobra.ArbitraryArgs,
+		SilenceUsage: true,
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return rf.runAction(cmd, "set", args, update, replace, false)
+		},
+	}
+	rf.bind(c.Flags())
+	c.Flags().BoolVar(&replace, "replace", false, "migrate conflicting PGDG/Pigsty sources within the selection")
+	c.Flags().BoolVarP(&update, "update", "u", true, "refresh package metadata after changes")
+	return c
+}
+
 func newRepoCommand() *cobra.Command {
-	var platform, version, catalogPath, root string
-	var opts repo.Options
-	var asJSON, mirror bool
+	var rf repoCommonFlags
 	c := &cobra.Command{
 		Use: "repo", Short: "manage Linux package repositories from the confgen catalog", Aliases: []string{"r"},
 		Args: cobra.NoArgs, SilenceUsage: true,
 		Long: `Manage Linux repositories using the same definitions as Pigsty confgen.
 Select repository names or modules; comma-separated selectors are accepted.
 all = node + pgsql + infra; pgdg and pigsty select their stable repositories.
-add/rm/set manage pgext's own files. set --replace also backs up and replaces
-existing system sources. Each change has a guarded restore point.
+add/rm/set manage pgext's own files. With --replace, add/set migrate only
+conflicting PGDG/Pigsty sources in the selection. Existing OS sources are reused.
+Each change has a guarded restore point.
 These commands work without a metadata database; only summary needs one.`,
 		Example: `  pgext repo list
   pgext repo list all
   pgext repo show pgsql --platform u24.arm64 --mirror
   pgext repo add pgdg pigsty --dry-run
   sudo pgext repo add pgdg pigsty --update
-  sudo pgext repo set all --replace --mirror
+  sudo pgext repo set pgdg,pigsty --replace --mirror
   pgext repo status
   sudo pgext repo rm docker
   sudo pgext repo restore <backup-id>`,
 		RunE: func(cmd *cobra.Command, args []string) error { return cmd.Help() },
 	}
-	f := c.PersistentFlags()
-	f.StringVar(&platform, "platform", "", "target OS.ARCH for listing, preview or staging (default: detected Linux)")
-	f.StringVar(&version, "os-version", "", "full OS version, e.g. 9.6 or 10.1")
-	f.StringVar(&catalogPath, "catalog", "", "Pigsty YAML with repo_upstream or repo_upstream_default (default: embedded confgen catalog)")
-	f.StringVar(&root, "root", "/", "existing staging root; never runs the host package manager")
-	f.StringVar(&opts.Region, "region", "default", "mirror region; missing mirrors fall back to default")
-	f.BoolVarP(&mirror, "mirror", "m", false, "use China mirrors (same as --region=china)")
-	f.StringVar(&opts.AdminIP, "admin-ip", "", "host[:port] for the local Pigsty repository")
-	f.BoolVar(&opts.DryRun, "dry-run", false, "preview changes without writing files or updating caches")
-	f.BoolVar(&opts.DryRun, "plan", false, "alias for --dry-run")
-	f.BoolVar(&asJSON, "json", false, "emit one JSON result on stdout")
-	load := func(cmd *cobra.Command) (repo.Platform, []repo.Repository, string, error) {
-		var p repo.Platform
-		var err error
-		if platform == "" {
-			p, err = repo.DetectPlatform()
-			if err == nil && version != "" {
-				return p, nil, "", fmt.Errorf("--os-version requires --platform")
-			}
-		} else {
-			p, err = repo.ParsePlatform(platform, version)
-		}
-		if err != nil {
-			return p, nil, "", err
-		}
-		if mirror {
-			if cmd.Flags().Changed("region") && opts.Region != "china" {
-				return p, nil, "", fmt.Errorf("--mirror conflicts with --region=%s", opts.Region)
-			}
-			opts.Region = "china"
-		}
-		source := "embedded confgen catalog"
-		var catalog []repo.Repository
-		if catalogPath == "" {
-			catalog, err = repo.DefaultCatalog("")
-		} else {
-			source = catalogPath
-			var data []byte
-			data, err = os.ReadFile(catalogPath)
-			if err == nil {
-				catalog, err = repo.ParseCatalog(data, p.Family)
-			}
-		}
-		return p, catalog, source, err
-	}
+	rf.bind(c.PersistentFlags())
 	for _, action := range []string{"list", "info", "show"} {
 		var showAll bool
 		sub := &cobra.Command{Use: action + " [repo|module...]", Args: cobra.ArbitraryArgs, SilenceUsage: true}
@@ -99,7 +154,7 @@ These commands work without a metadata database; only summary needs one.`,
 			sub.Short = "render the exact repository configuration without writing it"
 		}
 		sub.RunE = func(cmd *cobra.Command, args []string) error {
-			p, catalog, source, err := load(cmd)
+			p, catalog, source, err := rf.load(cmd)
 			if err != nil {
 				return err
 			}
@@ -123,14 +178,14 @@ These commands work without a metadata database; only summary needs one.`,
 					return fmt.Errorf("show requires --platform when not running on supported Linux")
 				}
 				for _, r := range selected {
-					contents[r.Name], err = repo.Render(r, p, opts.RenderOptions)
+					contents[r.Name], err = repo.Render(r, p, rf.opts.RenderOptions)
 					if err != nil {
 						return err
 					}
 				}
 			}
-			if asJSON {
-				return writeRepoJSON(cmd, map[string]any{"action": action, "success": true, "platform": filter, "catalog": source, "repositories": selected, "content": contents})
+			if rf.asJSON {
+				return writeJSON(cmd, map[string]any{"action": action, "success": true, "platform": filter, "catalog": source, "repositories": selected, "content": contents})
 			}
 			if action == "show" {
 				for _, r := range selected {
@@ -162,7 +217,7 @@ These commands work without a metadata database; only summary needs one.`,
 			sub.Use += " [repo|module...]"
 			sub.Args = cobra.ArbitraryArgs
 			sub.Short = action + " repositories (default: node, pgsql, infra)"
-			sub.Flags().BoolVar(&replace, "replace", false, "back up and replace ALL existing system repository definitions")
+			sub.Flags().BoolVar(&replace, "replace", false, "migrate conflicting PGDG/Pigsty sources within the selection")
 		case "rm":
 			sub.Use += " [repo|module...]"
 			sub.Args = cobra.ArbitraryArgs
@@ -179,39 +234,13 @@ These commands work without a metadata database; only summary needs one.`,
 			sub.Flags().BoolVarP(&update, "update", "u", action == "set", "refresh package metadata after changes")
 		}
 		sub.RunE = func(cmd *cobra.Command, args []string) error {
-			p, catalog, source, err := load(cmd)
-			if err != nil {
-				return err
-			}
-			m, err := repo.NewManager(root, p, catalog, cmd.ErrOrStderr())
-			if err != nil {
-				return err
-			}
-			opts.Update, opts.Replace, opts.All = update, replace, all
-			ctx, stop := signal.NotifyContext(cmd.Context(), os.Interrupt, syscall.SIGTERM)
-			defer stop()
-			result, runErr := m.Execute(ctx, action, args, opts)
-			result.Catalog = source
-			if asJSON {
-				if err := writeRepoJSON(cmd, result); err != nil {
-					return err
-				}
-			} else {
-				printRepoResult(cmd, result)
-			}
-			return runErr
+			return rf.runAction(cmd, action, args, update, replace, all)
 		}
 		c.AddCommand(sub)
 	}
 	// Keep database hooks on this subcommand, never on the management parent.
 	c.AddCommand(newRepoSummaryCommand())
 	return c
-}
-
-func writeRepoJSON(cmd *cobra.Command, value any) error {
-	enc := json.NewEncoder(cmd.OutOrStdout())
-	enc.SetIndent("", "  ")
-	return enc.Encode(value)
 }
 
 func printRepoResult(cmd *cobra.Command, r *repo.Result) {
@@ -242,7 +271,7 @@ func printRepoResult(cmd *cobra.Command, r *repo.Result) {
 			op = "remove"
 		}
 		fmt.Fprintf(w, "  %-6s %s\n", op, filepath.Join(r.Root, file.Path))
-		if r.DryRun && file.After != nil {
+		if r.DryRun && file.After != nil && !strings.HasSuffix(file.Path, ".asc") {
 			fmt.Fprintln(w, file.After.Content)
 		}
 	}

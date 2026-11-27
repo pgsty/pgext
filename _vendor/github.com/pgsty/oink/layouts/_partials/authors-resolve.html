@@ -1,7 +1,0 @@
-{{- $authors := slice -}}
-{{- if isset .Site.Taxonomies "authors" -}}
-  {{- range .GetTerms "authors" -}}
-    {{- $authors = $authors | append (partial "authors-descriptor.html" .) -}}
-  {{- end -}}
-{{- end -}}
-{{- return $authors -}}

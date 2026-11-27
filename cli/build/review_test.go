@@ -161,16 +161,53 @@ func TestFailedBuildRetainsStagedSourceProvenance(t *testing.T) {
 	}
 }
 
-func TestLegacyRPMCustomURLsAreNotReplaceable(t *testing.T) {
-	for _, line := range []string{
-		"baseurl=https://private.example/postgresql",
-		"baseurl=https://repo.pigsty.cc.evil.example/yum/pgdg/18/redhat/rhel-9.8-aarch64",
-		"mirrorlist=https://private.example/list",
-		"baseurl=https://repo.pigsty.cc/yum/pgdg/18/redhat/rhel-9.8-aarch64\nexclude=postgresql18*",
-	} {
-		if recognizedLegacyRepos("[pgdg18]\n"+line+"\n", "rpm") {
-			t.Fatalf("accepted custom definition: %s", line)
-		}
+func TestRPMRecipeStagesAndHashesSpecDirInputs(t *testing.T) {
+	src := t.TempDir()
+	dst := filepath.Join(t.TempDir(), "staged")
+	spec := "pdu.spec"
+	license := "LICENSE-PostgreSQL"
+	put(t, filepath.Join(src, spec), "%prep\ncp -f %{_specdir}/LICENSE-PostgreSQL LICENSE-PostgreSQL\npatch -p1 < %{_specdir}/patches/fix.patch\n")
+	put(t, filepath.Join(src, license), "original license")
+	put(t, filepath.Join(src, "patches", "fix.patch"), "patch")
+	put(t, filepath.Join(src, "other.spec"), "unrelated recipe")
+
+	want, err := recipeTreeHashFor("rpm", filepath.Join(src, spec))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := copyRPMRecipe(src, "pdu", dst); err != nil {
+		t.Fatal(err)
+	}
+	data, err := os.ReadFile(filepath.Join(dst, license))
+	if err != nil || string(data) != "original license" {
+		t.Fatalf("staged license = %q, %v", data, err)
+	}
+	if got, err := recipeTreeHashFor("rpm", filepath.Join(dst, spec)); err != nil || got != want {
+		t.Fatalf("staged fingerprint = %q, %v, want %q", got, err, want)
+	}
+	if _, err := os.Stat(filepath.Join(dst, "other.spec")); !os.IsNotExist(err) {
+		t.Fatalf("unrelated recipe was staged: %v", err)
+	}
+	put(t, filepath.Join(src, license), "updated license")
+	if got, err := recipeTreeHashFor("rpm", filepath.Join(src, spec)); err != nil || got == want {
+		t.Fatalf("license change did not invalidate the fingerprint: %q, %v", got, err)
+	}
+}
+
+func TestRPMRecipeHashIgnoresUnrelatedSpecs(t *testing.T) {
+	e := testEngine(t)
+	e.Platform = Platform{OS: "el9", Family: "rpm", Arch: "aarch64"}
+	put(t, filepath.Join(e.Options.SpecDir, "SPECS", "pgvector.spec"), "Name: pgvector_%{pgmajorversion}\n")
+	put(t, filepath.Join(e.Options.SpecDir, "SPECS", "other.spec"), "Name: other\n")
+	put(t, filepath.Join(e.Options.SpecDir, "Makefile"), "pgvector:\n\t./build pgvector 18\n")
+	plan, err := e.Prepare("make", []string{"vector"})
+	if err != nil {
+		t.Fatal(err)
+	}
+	// Editing an unrelated spec must NOT change pgvector's recipe tree hash.
+	put(t, filepath.Join(e.Options.SpecDir, "SPECS", "other.spec"), "Name: other-modified\n")
+	if got, err := recipeTreeHashFor("rpm", plan.Jobs[0].Recipe); err != nil || got != plan.Jobs[0].RecipeTreeSHA256 {
+		t.Fatalf("unrelated spec invalidated recipe hash: %v", err)
 	}
 }
 

@@ -15,6 +15,8 @@ from typing import Dict, List, Optional
 
 import psycopg2
 
+from site_paths import add_site_dir
+
 LANGUAGE_NAV_ORDER = ["C", "C++", "Rust", "Java", "Python", "SQL", "Data"]
 
 LANGUAGE_DESCRIPTIONS_EN: Dict[str, str] = {
@@ -53,10 +55,11 @@ class Extension:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Render language-based extension lists.")
+    add_site_dir(parser)
     parser.add_argument("--dsn", default="postgres:///vonng", help="PostgreSQL connection string")
     parser.add_argument(
         "--output",
-        default="content/list",
+        default=None,
         help="Output directory for generated Markdown files",
     )
     return parser.parse_args()
@@ -252,7 +255,7 @@ def main() -> None:
         )
     ]
 
-    output_dir = Path(args.output)
+    output_dir = Path(args.output) if args.output else args.dir.expanduser() / "content" / "list"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     (output_dir / "lang.md").write_text(

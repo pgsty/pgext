@@ -6,7 +6,6 @@ package cli
 import (
 	"context"
 	"fmt"
-	"sync"
 	"time"
 
 	"github.com/sirupsen/logrus"
@@ -42,12 +41,6 @@ func NewParserContext(ctx context.Context, opts ParseOptions) *Parser {
 		ctx:  ctx,
 		opts: opts,
 	}
-}
-
-// ParseRepoData parses repository data and publishes a complete package catalog.
-func ParseRepoData(opts ParseOptions) error {
-	parser := NewParser(opts)
-	return parser.ParseAndRecap()
 }
 
 // ParseAll parses and publishes only the core apt, dnf, and bin tables.
@@ -219,56 +212,33 @@ func (p *Parser) loadRepositories() ([]RepositoryData, error) {
 	return repos, rows.Err()
 }
 
-// parseRepositories parses multiple repositories in parallel
+// parseRepositories parses multiple repositories in parallel.
 func (p *Parser) parseRepositories(repos []RepositoryData, stage *packageStaging) []ParseResult {
 	results := make([]ParseResult, len(repos))
-	var mu sync.Mutex // Protect results slice access
-
-	// Use semaphore to limit concurrency
 	sem := semaphore.NewWeighted(int64(p.opts.Parallel))
-
-	// Use errgroup for better error handling
 	g, ctx := errgroup.WithContext(p.ctx)
 
 	for i, repo := range repos {
-		i, repo := i, repo // Capture loop variables
-
+		i, repo := i, repo
 		g.Go(func() error {
-			// Acquire semaphore
 			if err := sem.Acquire(ctx, 1); err != nil {
-				mu.Lock()
-				results[i] = ParseResult{
-					RepoID: repo.ID,
-					Type:   repo.Type,
-					Error:  err,
-				}
-				mu.Unlock()
+				results[i] = ParseResult{RepoID: repo.ID, Type: repo.Type, Error: err}
 				return nil
 			}
 			defer sem.Release(1)
 
-			// Parse repository
 			result := p.parseOneRepository(repo, stage)
-
-			// Safely store result
-			mu.Lock()
 			results[i] = result
-			mu.Unlock()
 
-			// Log progress
 			if result.Error != nil {
 				logrus.Debugf("Failed to parse %s: %v", repo.ID, result.Error)
 			} else {
 				logrus.Debugf("Parsed %s: %d packages", repo.ID, result.Count)
 			}
-
 			return nil
 		})
 	}
-
-	// Wait for all goroutines to complete
 	_ = g.Wait()
-
 	return results
 }
 

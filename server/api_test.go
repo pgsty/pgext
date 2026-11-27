@@ -6,6 +6,7 @@ package server
 import (
 	"context"
 	"encoding/json"
+	"io/fs"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -19,31 +20,68 @@ import (
 func fixtureSnapshot() *Snapshot {
 	stars := func(n int) *int { return &n }
 	exts := []*Ext{
-		{Name: "postgis", Pkg: "postgis", Category: "GIS", Packaged: true, State: "available", Repo: "PGDG", TargetIdx: []int{0, 1, 2, 3},
+		{Name: "postgis", Pkg: "postgis", Category: "GIS", Packaged: true, Repo: "PGDG", TargetIdx: []int{0, 1, 2, 3},
 			License: "GPL-2.0", Lang: "C", PG: []int{18, 17, 16, 15, 14}, Stars: stars(9),
-			EnDesc: "spatial types and functions", Kind: "standard", ExtType: "standard", Lifecycle: "active", HasLib: true, NeedDDL: true,
+			EnDesc: "spatial types and functions", Kind: "standard", Lifecycle: "active", HasLib: true, NeedDDL: true,
 			LastCommit: "2026-05-11", LastActive: "2026-05-11"},
-		{Name: "timescaledb", Pkg: "timescaledb", Category: "TIME", Packaged: true, State: "available", Repo: "PIGSTY", TargetIdx: []int{0, 2},
+		{Name: "timescaledb", Pkg: "timescaledb", Category: "TIME", Packaged: true, Repo: "PIGSTY", TargetIdx: []int{0, 2},
 			License: "Timescale", Lang: "C", PG: []int{18, 17, 16, 15}, Stars: stars(22656),
-			EnDesc: "time-series database", ZhDesc: "时序数据库扩展插件", Kind: "preload", ExtType: "preload", Lifecycle: "active", HasLib: true, NeedDDL: true, NeedLoad: true,
+			EnDesc: "time-series database", ZhDesc: "时序数据库扩展插件", Kind: "preload", Lifecycle: "active", HasLib: true, NeedDDL: true, NeedLoad: true,
 			RPMBuild: true, DEBBuild: true, HasEnDoc: true, LastCommit: "2026-05-18", LastActive: "2026-05-18"},
-		{Name: "vector", Pkg: "pgvector", Category: "RAG", Packaged: true, State: "available", Repo: "PGDG", Tags: []string{"embedding", "hnsw"}, TargetIdx: []int{0, 1, 2, 3},
+		{Name: "vector", Pkg: "pgvector", Category: "RAG", Packaged: true, Repo: "PGDG", Tags: []string{"embedding", "hnsw"}, TargetIdx: []int{0, 1, 2, 3},
 			License: "PostgreSQL", Lang: "C", PG: []int{18, 17, 16, 15, 14}, Stars: stars(21351),
-			EnDesc: "vector data type and ivfflat and hnsw", Kind: "standard", ExtType: "standard", Lifecycle: "active", HasLib: true, NeedDDL: true, Trusted: true,
+			EnDesc: "vector data type and ivfflat and hnsw", Kind: "standard", Lifecycle: "active", HasLib: true, NeedDDL: true, Trusted: true,
 			PGRXVer: "0.12.0", RepoURL: "https://github.com/pgvector/pgvector", Requires: []string{"btree_gist"}, HasEnDoc: true, HasZhDoc: true,
 			LastCommit: "2026-04-01", LastActive: "2026-04-01"},
-		{Name: "aws_s3", Pkg: "aws_s3", Category: "ETL", State: "n/a", Repo: "n/a",
-			License: "Unknown", Lang: "SQL", Kernel: "aws-rds-pg", Vendor: "AWS", ExtKernel: "aws-rds-pg", ExtVendor: "AWS",
-			EnDesc: "S3 import export for RDS", Kind: "puresql", ExtType: "puresql", Lifecycle: "active"},
+		{Name: "aws_s3", Pkg: "aws_s3", Category: "ETL", Repo: "n/a",
+			License: "Unknown", Lang: "SQL", Kernel: "aws-rds-pg", Vendor: "AWS",
+			EnDesc: "S3 import export for RDS", Kind: "puresql", Lifecycle: "active"},
 	}
 	snap := &Snapshot{Exts: exts, ByName: map[string]*Ext{}, LoadedAt: time.Now(), PGs: []int{18, 17}, OSs: []string{"el9.x86_64", "d12.x86_64"}, Version: `"fixture"`}
 	for _, e := range exts {
 		snap.ByName[e.Name] = e
-		if e.State == "available" {
-			snap.CountAvail++
+		if e.Packaged {
+			snap.CountPackaged++
 		}
 	}
 	return snap
+}
+
+func TestSiblingExtensionResponseCaches(t *testing.T) {
+	snap := fixtureSnapshot()
+	snap.ByName["postgis_raster"] = &Ext{Name: "postgis_raster", Pkg: "postgis"}
+	store := NewStore(nil)
+	store.snap.Store(snap)
+	api := newAPI(store, nil, time.Minute, "", nil)
+	handler := newMux(api)
+
+	for _, endpoint := range []struct{ name, suffix, query string }{
+		{"matrix", "", ""},
+		{"files", "|18|el9.x86_64", "pg=018&os=el9.x86_64&"},
+		{"changelog", "", ""},
+	} {
+		t.Run(endpoint.name, func(t *testing.T) {
+			for _, name := range []string{"postgis", "postgis_raster"} {
+				key := snap.queryVersion() + "|" + endpoint.name + "|" + name + endpoint.suffix
+				body, err := json.Marshal(map[string]string{"ext": name, "pkg": "postgis"})
+				if err != nil {
+					t.Fatal(err)
+				}
+				api.cache.Set(key, body)
+			}
+
+			for _, name := range []string{"postgis", "postgis_raster"} {
+				path := "/api/v1/ext/" + name + "/" + endpoint.name + "?" + endpoint.query + "ignored=1"
+				resp := httptest.NewRecorder()
+				handler.ServeHTTP(resp, httptest.NewRequest(http.MethodGet, path, nil))
+				var record map[string]string
+				if err := json.Unmarshal(resp.Body.Bytes(), &record); err != nil ||
+					resp.Code != http.StatusOK || record["ext"] != name || record["pkg"] != "postgis" {
+					t.Fatalf("%s returned %d %s", path, resp.Code, resp.Body.String())
+				}
+			}
+		})
+	}
 }
 
 func TestParseFilterOperators(t *testing.T) {
@@ -127,13 +165,8 @@ func TestFilterApply(t *testing.T) {
 			for i, e := range got {
 				names[i] = e.Name
 			}
-			if len(names) != len(tt.want) {
+			if !reflect.DeepEqual(names, tt.want) {
 				t.Fatalf("Apply(%q) = %v, want %v", tt.query, names, tt.want)
-			}
-			for i := range names {
-				if names[i] != tt.want[i] {
-					t.Fatalf("Apply(%q) = %v, want %v", tt.query, names, tt.want)
-				}
 			}
 		})
 	}
@@ -145,6 +178,19 @@ func TestPGTargetAlsoRequiresUniverseCoverage(t *testing.T) {
 	filter := Filter{PG: []int{18, 17}, OS: "el9.x86_64"}
 	if _, ok := filter.match(ext, snap); ok {
 		t.Fatal("package-family targets must not bypass the extension's pg_ver coverage")
+	}
+}
+
+func TestLinkFamiliesPopulatesFamilyMembers(t *testing.T) {
+	a := &Ext{Name: "postgis_topology", Pkg: "postgis", Schemas: []string{"topology"}, Requires: []string{"postgis"}}
+	b := &Ext{Name: "postgis", Pkg: "postgis", Schemas: []string{"public"}}
+	snap := &Snapshot{Exts: []*Ext{a, b}, ByName: map[string]*Ext{"postgis": b, "postgis_topology": a}}
+	linkFamilies(snap, map[string][]*Ext{"postgis": {a, b}})
+	if b.FamilySize != 2 || len(b.Family) != 2 {
+		t.Fatalf("expected 2 family members, got size=%d family=%+v", b.FamilySize, b.Family)
+	}
+	if b.Family[0].Name != "postgis" || b.Family[1].Name != "postgis_topology" || !reflect.DeepEqual(b.Family[1].Requires, []string{"postgis"}) {
+		t.Fatalf("unexpected family payload: %+v", b.Family)
 	}
 }
 
@@ -231,13 +277,8 @@ func TestPreloadLibrariesIncludesDependencies(t *testing.T) {
 	ext := &Ext{Name: "demo", Kind: "preload", NeedLoad: true, Requires: []string{"dep_a", "dep_b", "auth"}, Libs: []string{"shared", "demo_lib"}}
 	got := preloadLibraries(ext, deps)
 	want := []string{"dep_a", "shared", "demo_lib"}
-	if len(got) != len(want) {
+	if !reflect.DeepEqual(got, want) {
 		t.Fatalf("preloadLibraries = %v, want %v", got, want)
-	}
-	for i := range want {
-		if got[i] != want[i] {
-			t.Fatalf("preloadLibraries = %v, want %v", got, want)
-		}
 	}
 	for _, kind := range []string{"headless", "standard", ""} {
 		if got := preloadLibraries(&Ext{Name: "explicit_load", Kind: kind, NeedLoad: true}, deps); got != nil {
@@ -286,7 +327,56 @@ func TestPublicMiddlewareIsReadOnlyAndHardened(t *testing.T) {
 	}
 }
 
-func TestServeIndexFingerprintsAssets(t *testing.T) {
+func TestWithGzipSkipsHeadAndIcons(t *testing.T) {
+	h := withGzip(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if strings.HasSuffix(r.URL.Path, ".ico") {
+			w.Header().Set("Content-Type", "image/x-icon")
+		} else {
+			w.Header().Set("Content-Type", "text/plain")
+		}
+		w.WriteHeader(http.StatusOK)
+		if r.Method != http.MethodHead {
+			w.Write([]byte("payload"))
+		}
+	}))
+	for _, tc := range []struct {
+		method, path string
+		wantGzip     bool
+	}{
+		{http.MethodGet, "/api/v1/meta", true},
+		{http.MethodHead, "/api/v1/meta", false},
+		{http.MethodGet, "/assets/favicon.ico", false},
+	} {
+		req := httptest.NewRequest(tc.method, tc.path, nil)
+		req.Header.Set("Accept-Encoding", "gzip")
+		w := httptest.NewRecorder()
+		h.ServeHTTP(w, req)
+		gotGzip := w.Header().Get("Content-Encoding") == "gzip"
+		if gotGzip != tc.wantGzip {
+			t.Fatalf("%s %s gzip=%v, want %v", tc.method, tc.path, gotGzip, tc.wantGzip)
+		}
+	}
+}
+
+func TestEtagMatchesRFC9110(t *testing.T) {
+	if !etagMatches(`"abc"`, `"abc"`) {
+		t.Fatal("exact match failed")
+	}
+	if !etagMatches(`W/"abc"`, `"abc"`) {
+		t.Fatal("weak etag match failed")
+	}
+	if !etagMatches(`"other", W/"abc", "tail"`, `"abc"`) {
+		t.Fatal("etag list match failed")
+	}
+	if !etagMatches(`*`, `"abc"`) {
+		t.Fatal("wildcard match failed")
+	}
+	if etagMatches(`"xyz"`, `"abc"`) {
+		t.Fatal("mismatched etag unexpectedly matched")
+	}
+}
+
+func TestServeIndexFingerprintsAssetsAndESModules(t *testing.T) {
 	req := httptest.NewRequest(http.MethodGet, "/", nil)
 	w := httptest.NewRecorder()
 	serveIndex(w, req)
@@ -302,16 +392,28 @@ func TestServeIndexFingerprintsAssets(t *testing.T) {
 		t.Fatal("index is missing ETag")
 	}
 	body := w.Body.String()
-	for _, asset := range []string{"style.css", "app.js"} {
-		version := strings.Trim(assetETags[asset], `"`)
-		want := "/assets/" + asset + "?v=" + version
+	styleVer := strings.Trim(embeddedAssets["style.css"].etag, `"`)
+	for _, want := range []string{
+		"/assets/style.css?v=" + styleVer,
+		"/assets/js/main.js?v=" + jsBundleVer,
+	} {
 		if !strings.Contains(body, want) {
 			t.Fatalf("index is missing fingerprinted asset %q", want)
 		}
 	}
 
+	// Verify relative ESM imports inside js/main.js carry ?v=<jsBundleVer>.
+	req = httptest.NewRequest(http.MethodGet, "/assets/js/main.js", nil)
+	req.SetPathValue("path", "js/main.js")
+	w = httptest.NewRecorder()
+	handleAsset(w, req)
+	if w.Code != http.StatusOK || !strings.Contains(w.Body.String(), "./state.js?v="+jsBundleVer) {
+		t.Fatalf("js/main.js missing rewritten ESM import version (status=%d)", w.Code)
+	}
+
+	// Weak If-None-Match must return 304.
 	req = httptest.NewRequest(http.MethodGet, "/", nil)
-	req.Header.Set("If-None-Match", etag)
+	req.Header.Set("If-None-Match", "W/"+etag)
 	w = httptest.NewRecorder()
 	serveIndex(w, req)
 	if w.Code != http.StatusNotModified {
@@ -319,9 +421,6 @@ func TestServeIndexFingerprintsAssets(t *testing.T) {
 	}
 	if got := w.Header().Get("ETag"); got != etag {
 		t.Fatalf("304 ETag = %q, want %q", got, etag)
-	}
-	if got := w.Header().Get("Cache-Control"); got != "no-cache" {
-		t.Fatalf("304 cache control = %q", got)
 	}
 }
 
@@ -347,16 +446,34 @@ func TestSPAHistoryRoutesServeShell(t *testing.T) {
 	}
 }
 
-func TestEmbeddedGlobalMatrixContract(t *testing.T) {
-	app, err := webFS.ReadFile("web/app.js")
+func readAllEmbeddedJS(t *testing.T) string {
+	t.Helper()
+	var b strings.Builder
+	err := fs.WalkDir(webFS, "web/js", func(p string, d fs.DirEntry, err error) error {
+		if err != nil || d.IsDir() || !strings.HasSuffix(p, ".js") {
+			return err
+		}
+		data, err := webFS.ReadFile(p)
+		if err != nil {
+			return err
+		}
+		b.Write(data)
+		b.WriteByte('\n')
+		return nil
+	})
 	if err != nil {
 		t.Fatal(err)
 	}
+	return b.String()
+}
+
+func TestEmbeddedGlobalMatrixContract(t *testing.T) {
+	js := readAllEmbeddedJS(t)
 	for _, want := range []string{
-		`href="/matrix"`, `j('/api/v1/matrix')`, "globalMatrixShellHTML", "setupGlobalMatrix",
+		`href="/matrix"`, `/api/v1/matrix`, "globalMatrixShellHTML", "setupGlobalMatrix",
 		"gmx-sheet", "gmx-canvas", "matrix-row.v2", "gmx-readout", "sliceMatrixHTML", "osNavHTML", "matrixBlockHTML", "gmxTipHTML", "PIGSTY_LOGO",
 	} {
-		if !strings.Contains(string(app), want) {
+		if !strings.Contains(js, want) {
 			t.Errorf("embedded matrix app is missing %q", want)
 		}
 	}
@@ -373,26 +490,22 @@ func TestEmbeddedGlobalMatrixContract(t *testing.T) {
 }
 
 func TestEmbeddedDetailManualContract(t *testing.T) {
-	app, err := webFS.ReadFile("web/app.js")
-	if err != nil {
-		t.Fatal(err)
-	}
-	appText := string(app)
+	js := readAllEmbeddedJS(t)
 	for _, want := range []string{
 		`id="ext-overview"`, `id="ext-relations"`,
 		`id="ext-packages"`, `id="ext-build"`, `id="ext-install"`, `id="ext-usage"`,
 		`id="pkg-family"`, `id="pkg-packages"`, `id="pkg-downloads"`,
 		`id="pkg-build"`, `id="pkg-install"`, `id="pkg-changelog"`, "changelogHTML", "/changelog",
 		"metadataHTML", "packageVersionsHTML", "packageInstallHTML", "packageTabsHTML", "preload_libs", "pgext pkg",
-		"file-browser", "usage-prose", "function navigateTo", "const extHref", "const pkgHref",
+		"file-browser", "usage-prose", "function navigateTo", "export const extHref", "export const pkgHref",
 		"DIM_GROUPS", "relationbits", "migrateLegacyHash", "data-dim-search", "capabilityMatches",
 		"heroDimBadgesHTML", "heroLinkBadgesHTML", "data-hover-ext", "md-alert", "/visit", "ghCardHTML", "heroDatesHTML",
 	} {
-		if !strings.Contains(appText, want) {
+		if !strings.Contains(js, want) {
 			t.Errorf("embedded detail app is missing %q", want)
 		}
 	}
-	if strings.Contains(appText, `href="#/`) {
+	if strings.Contains(js, `href="#/`) {
 		t.Error("embedded app still emits hash-prefixed links")
 	}
 
@@ -433,7 +546,7 @@ func TestLegacyRoutesRedirectPermanently(t *testing.T) {
 }
 
 func TestCounterStoreCountsInMemory(t *testing.T) {
-	s := newCounterStore(nil) // no database: memory-only counting
+	s := newCounterStore(nil)
 	if v, _ := s.hit("postgis"); v != 1 {
 		t.Fatalf("first hit = %d", v)
 	}
@@ -447,8 +560,8 @@ func TestCounterStoreCountsInMemory(t *testing.T) {
 	if v, _ := s.get("nosuch"); v != 0 {
 		t.Fatalf("unknown ext visits = %d, want 0", v)
 	}
-	// counts survive a flush attempt without a pool (nothing to flush into)
 	s.flush(context.Background())
+	s.Wait() // safe no-op when flusher never started
 	if v, _ := s.get("postgis"); v != 2 {
 		t.Fatalf("visits after no-op flush = %d, want 2", v)
 	}
@@ -478,7 +591,6 @@ func TestCounterStoreImportsLegacyFileOnce(t *testing.T) {
 	if _, err := os.Stat(path); !os.IsNotExist(err) {
 		t.Fatalf("legacy file should be renamed away, stat err = %v", err)
 	}
-	// a second import (e.g. another process restart) finds nothing to claim
 	again := newCounterStore(nil)
 	again.importLegacy(path)
 	if v, _ := again.get("postgis"); v != 0 {
@@ -540,23 +652,16 @@ func TestSortOS(t *testing.T) {
 		"d12.x86_64", "d12.aarch64", "d13.aarch64",
 		"u22.aarch64", "u24.x86_64", "u26.x86_64",
 	}
-	for i := range want {
-		if oss[i] != want[i] {
-			t.Fatalf("sortOS = %v, want %v", oss, want)
-		}
+	if !reflect.DeepEqual(oss, want) {
+		t.Fatalf("sortOS = %v, want %v", oss, want)
 	}
 }
 
 func TestAtois(t *testing.T) {
 	got := atois([]string{"14", "18", "junk", "16", ""})
 	want := []int{18, 16, 14}
-	if len(got) != len(want) {
+	if !reflect.DeepEqual(got, want) {
 		t.Fatalf("atois = %v, want %v", got, want)
-	}
-	for i := range want {
-		if got[i] != want[i] {
-			t.Fatalf("atois = %v, want %v", got, want)
-		}
 	}
 }
 
@@ -567,7 +672,7 @@ func TestTTLCache(t *testing.T) {
 		t.Fatal("expected cache hit for a")
 	}
 	c.Set("b", []byte("2"))
-	c.Set("c", []byte("3")) // exceeds maxSize, evicts something
+	c.Set("c", []byte("3"))
 	if len(c.items) > 2 {
 		t.Fatalf("cache exceeded max size: %d", len(c.items))
 	}

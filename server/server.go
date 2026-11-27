@@ -10,8 +10,11 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
+	"io/fs"
 	"net/http"
-	"net/url"
+	"path"
+	"regexp"
+	"sort"
 	"strings"
 	"time"
 
@@ -56,15 +59,15 @@ func Serve(ctx context.Context, opts Options) error {
 	}
 	counter.prime(bootCtx, names)
 	counter.importLegacy(opts.VisitsFile)
-	counter.startFlusher(ctx, time.Minute)
-	a := &api{store: store, cache: newTTLCache(opts.CacheTTL, 2048), pool: opts.Pool, reloadToken: opts.ReloadToken, counter: counter}
-	go a.warmMatrixCache(ctx)
+	flushCtx, stopFlusher := context.WithCancel(context.Background())
+	counter.startFlusher(flushCtx, time.Minute)
 
-	mux := newMux(a)
+	a := newAPI(store, opts.Pool, opts.CacheTTL, opts.ReloadToken, counter)
+	go a.warmMatrixCache(ctx)
 
 	srv := &http.Server{
 		Addr:              opts.Listen,
-		Handler:           withLogging(withSecurityHeaders(withCORS(withGzip(withRecover(mux))))),
+		Handler:           withLogging(withSecurityHeaders(withCORS(withGzip(withRecover(newMux(a)))))),
 		ReadHeaderTimeout: 10 * time.Second,
 		WriteTimeout:      120 * time.Second,
 		IdleTimeout:       120 * time.Second,
@@ -80,12 +83,17 @@ func Serve(ctx context.Context, opts Options) error {
 
 	select {
 	case err := <-errCh:
+		stopFlusher()
+		counter.Wait()
 		return err
 	case <-ctx.Done():
 		logrus.Info("shutting down...")
 		shutCtx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 		defer cancel()
-		return srv.Shutdown(shutCtx)
+		err := srv.Shutdown(shutCtx)
+		stopFlusher()
+		counter.Wait()
+		return err
 	}
 }
 
@@ -106,148 +114,10 @@ func newMux(a *api) *http.ServeMux {
 	mux.HandleFunc("GET /api/v1/bootstrap", a.handleBootstrap)
 	mux.HandleFunc("POST /api/v1/reload", a.handleReload)
 	mux.HandleFunc("GET /healthz", a.handleHealth)
-	mux.HandleFunc("GET /assets/{file}", handleAsset)
-	// Canonical deep links are /ext/{name}, /pkg/{name} and /cate/{code}; the
-	// short legacy forms redirect permanently so old shared URLs keep working.
-	for _, route := range []struct{ from, to string }{
-		{"/e", "/ext/"}, {"/p", "/pkg/"}, {"/c", "/cate/"},
-	} {
-		mux.HandleFunc("GET "+route.from+"/{name}", redirectPrefix(route.to, http.StatusMovedPermanently))
-		mux.HandleFunc("GET "+route.from+"/{name}/{$}", redirectPrefix(route.to, http.StatusMovedPermanently))
-	}
+	mux.HandleFunc("GET /assets/{path...}", handleAsset)
 	registerLegacyRedirects(mux)
 	mux.HandleFunc("/", handleSPA)
 	return mux
-}
-
-/* ---------------- legacy Hugo URL compatibility ---------------- */
-
-// pigSiteURL is where the retired /pig/* CLI handbook lives now.
-const pigSiteURL = "https://pig.pgsty.com"
-
-// legacyRedirects maps retired Hugo-era pages onto their dynamic equivalents.
-// Each entry is registered with and without a trailing slash and answers with
-// a 302 that carries the query string over. Prefix families (/zh, /en, /pig
-// and the taxonomy term pages) are wired in registerLegacyRedirects.
-var legacyRedirects = map[string]string{
-	"/e":          "/",              // full extension table → catalog home
-	"/list/ext":   "/",              // ditto (lang/license are native dims already)
-	"/list/pkg":   "/list/package",  // package family index
-	"/list/cate":  "/list/category", // category index
-	"/os":         "/list/os",       // Linux target index; /os/{target} is a live SPA route
-	"/os/matrix":  "/matrix",        // global build matrix
-	"/categories": "/list/category", // Hugo taxonomy index
-	"/tags":       "/list/tag",      // Hugo taxonomy index
-	"/repo":       "/list/repo",     // repo doc index; /repo/{value} is a live SPA route
-	"/repo/pgsql": "/repo/PIGSTY",   // old Pigsty PGSQL repo doc → its repo page
-}
-
-func registerLegacyRedirects(mux *http.ServeMux) {
-	for from, to := range legacyRedirects {
-		mux.HandleFunc("GET "+from, redirectTo(to))
-		mux.HandleFunc("GET "+from+"/{$}", redirectTo(to))
-	}
-	// The /zh mirror (and a defensive /en) drops its language prefix; the SPA
-	// switches UI language via ?lang= instead.
-	for _, lang := range []string{"/zh", "/en"} {
-		mux.HandleFunc("GET "+lang, redirectStripPrefix(lang))
-		mux.HandleFunc("GET "+lang+"/", redirectStripPrefix(lang))
-	}
-	// The retired pig CLI handbook now has its own bilingual site. Preserve the
-	// old page suffix so bookmarks land on the corresponding new document.
-	mux.HandleFunc("GET /pig", redirectTo(pigSiteURL))
-	mux.HandleFunc("GET /pig/", redirectPigDocs(false))
-	mux.HandleFunc("GET /zh/pig", redirectTo(pigSiteURL+"/zh"))
-	mux.HandleFunc("GET /zh/pig/", redirectPigDocs(true))
-	mux.HandleFunc("GET /release/pig", redirectTo(pigSiteURL+"/release/"))
-	mux.HandleFunc("GET /release/pig/", redirectTo(pigSiteURL+"/release/"))
-	mux.HandleFunc("GET /zh/release/pig", redirectTo(pigSiteURL+"/zh/release/"))
-	mux.HandleFunc("GET /zh/release/pig/", redirectTo(pigSiteURL+"/zh/release/"))
-	// Hugo taxonomy term pages: categories have dedicated landing pages while
-	// tag terms map onto the catalog tag filter.
-	mux.HandleFunc("GET /categories/{name}", redirectPrefix("/cate/", http.StatusFound))
-	mux.HandleFunc("GET /categories/{name}/{$}", redirectPrefix("/cate/", http.StatusFound))
-	mux.HandleFunc("GET /tags/{name}", redirectTagTerm)
-	mux.HandleFunc("GET /tags/{name}/{$}", redirectTagTerm)
-}
-
-// withQuery carries the request's query string over to a redirect target,
-// appending with '&' when the target already has one of its own.
-func withQuery(target string, r *http.Request) string {
-	if q := r.URL.RawQuery; q != "" {
-		sep := "?"
-		if strings.Contains(target, "?") {
-			sep = "&"
-		}
-		return target + sep + q
-	}
-	return target
-}
-
-// redirectPrefix maps a one-segment legacy route onto its canonical prefix.
-func redirectPrefix(prefix string, code int) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		http.Redirect(w, r, withQuery(prefix+url.PathEscape(r.PathValue("name")), r), code)
-	}
-}
-
-// redirectTo answers a retired page with a temporary redirect onto its fixed
-// replacement.
-func redirectTo(target string) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		http.Redirect(w, r, withQuery(target, r), http.StatusFound)
-	}
-}
-
-// redirectPigDocs maps the retired pgext Hugo handbook onto pig.pgsty.com.
-// Old command pages used /pig/cmd/<name>; the dedicated site exposes each
-// command at the root. Other handbook pages retain their original slug.
-func redirectPigDocs(zh bool) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		path := strings.TrimPrefix(r.URL.Path, "/pig/")
-		if zh {
-			path = strings.TrimPrefix(r.URL.Path, "/zh/pig/")
-		}
-		commandIndex := path == "cmd" || path == "cmd/"
-		if !commandIndex {
-			path = strings.TrimPrefix(path, "cmd/")
-		}
-		target := pigSiteURL
-		if zh {
-			target += "/zh"
-		}
-		if commandIndex {
-			target += "/cmd"
-			if strings.HasSuffix(path, "/") {
-				target += "/"
-			}
-		} else if path != "" {
-			target += "/" + path
-		}
-		http.Redirect(w, r, withQuery(target, r), http.StatusFound)
-	}
-}
-
-// redirectStripPrefix drops a legacy language prefix and redirects to the same
-// path on the default site. The target is always a local absolute path (never
-// protocol-relative), and stripping one prefix per hop cannot loop.
-func redirectStripPrefix(prefix string) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		target := strings.TrimPrefix(r.URL.EscapedPath(), prefix)
-		for strings.HasPrefix(target, "//") {
-			target = target[1:]
-		}
-		if !strings.HasPrefix(target, "/") {
-			target = "/" + target
-		}
-		http.Redirect(w, r, withQuery(target, r), http.StatusFound)
-	}
-}
-
-// redirectTagTerm maps a Hugo /tags/{term} taxonomy page onto the catalog tag
-// filter, merging any extra query parameters behind it.
-func redirectTagTerm(w http.ResponseWriter, r *http.Request) {
-	http.Redirect(w, r, withQuery("/?tag="+url.QueryEscape(r.PathValue("name")), r), http.StatusFound)
 }
 
 func displayAddr(listen string) string {
@@ -262,87 +132,136 @@ func displayAddr(listen string) string {
 
 /* ---------------- embedded assets & SPA shell ---------------- */
 
-// assetTypes is the single registry of embedded assets served under /assets/.
-var assetTypes = map[string]string{
-	"style.css":   "text/css; charset=utf-8",
-	"app.js":      "text/javascript; charset=utf-8",
-	"favicon.ico": "image/x-icon",
+type embeddedAsset struct {
+	data        []byte
+	contentType string
+	etag        string
 }
 
-var assetETags = map[string]string{}
+var (
+	assetExtTypes = map[string]string{
+		".css": "text/css; charset=utf-8",
+		".js":  "text/javascript; charset=utf-8",
+		".ico": "image/x-icon",
+	}
+	esmImportRe    = regexp.MustCompile(`(from\s+['"]\./[A-Za-z0-9_-]+\.js)(['"])`)
+	embeddedAssets = map[string]embeddedAsset{}
+	jsBundleVer    string
+	indexHTML      []byte
+	indexETag      string
+)
 
 func etagOf(data []byte) string {
 	sum := sha1.Sum(data)
 	return `"` + hex.EncodeToString(sum[:8]) + `"`
 }
 
-func init() {
-	for name := range assetTypes {
-		if b, err := webFS.ReadFile("web/" + name); err == nil {
-			assetETags[name] = etagOf(b)
+// etagMatches checks RFC 9110 If-None-Match headers, handling weak validators
+// (W/"...") and comma-separated ETag lists.
+func etagMatches(header, etag string) bool {
+	if header == "" || etag == "" {
+		return false
+	}
+	want := strings.TrimPrefix(strings.TrimSpace(etag), "W/")
+	for _, part := range strings.Split(header, ",") {
+		tok := strings.TrimSpace(part)
+		if tok == "*" || strings.TrimPrefix(tok, "W/") == want {
+			return true
 		}
 	}
-	// The shell ETag covers its referenced assets as well as its own source.
-	// This makes the fingerprint query strings advance on every UI change.
-	if b, err := webFS.ReadFile("web/index.html"); err == nil {
-		assetETags["index.html"] = etagOf(b)
-	}
-	assetETags["index.html"] = etagOf([]byte(assetETags["index.html"] + assetETags["style.css"] + assetETags["app.js"]))
+	return false
 }
 
-func serveEmbedded(w http.ResponseWriter, r *http.Request, name, ctype string) {
-	b, err := webFS.ReadFile("web/" + name)
-	if err != nil {
-		http.NotFound(w, r)
-		return
+func init() {
+	rawJS := map[string][]byte{}
+	var jsNames []string
+
+	_ = fs.WalkDir(webFS, "web", func(p string, d fs.DirEntry, err error) error {
+		if err != nil || d.IsDir() {
+			return nil
+		}
+		rel := strings.TrimPrefix(p, "web/")
+		ctype, ok := assetExtTypes[path.Ext(rel)]
+		if !ok {
+			return nil
+		}
+		b, err := webFS.ReadFile(p)
+		if err != nil {
+			return nil
+		}
+		if path.Ext(rel) == ".js" {
+			rawJS[rel] = b
+			jsNames = append(jsNames, rel)
+			return nil
+		}
+		embeddedAssets[rel] = embeddedAsset{data: b, contentType: ctype, etag: etagOf(b)}
+		return nil
+	})
+
+	// Fingerprint the whole ES module graph with one combined content hash and
+	// append ?v=<hash> to relative imports so browser caches never mix modules
+	// from two binary deployments (while keeping strict CSP script-src 'self').
+	sort.Strings(jsNames)
+	h := sha1.New()
+	for _, rel := range jsNames {
+		h.Write([]byte(rel))
+		h.Write([]byte{0})
+		h.Write(rawJS[rel])
 	}
-	etag := assetETags[name]
-	if etag != "" {
-		w.Header().Set("ETag", etag)
-		if r.Header.Get("If-None-Match") == etag {
-			w.WriteHeader(http.StatusNotModified)
-			return
+	jsBundleVer = hex.EncodeToString(h.Sum(nil)[:8])
+	for _, rel := range jsNames {
+		rewritten := esmImportRe.ReplaceAll(rawJS[rel], []byte("${1}?v="+jsBundleVer+"${2}"))
+		embeddedAssets[rel] = embeddedAsset{
+			data:        rewritten,
+			contentType: assetExtTypes[".js"],
+			etag:        etagOf(rewritten),
 		}
 	}
-	w.Header().Set("Content-Type", ctype)
-	w.Header().Set("Cache-Control", "public, max-age=300")
-	w.WriteHeader(200)
-	w.Write(b)
+
+	// Precompute the fingerprinted SPA shell and its ETag once at startup.
+	if b, err := webFS.ReadFile("web/index.html"); err == nil {
+		styleVer := strings.Trim(embeddedAssets["style.css"].etag, `"`)
+		html := string(b)
+		html = strings.ReplaceAll(html, `/assets/style.css`, `/assets/style.css?v=`+styleVer)
+		html = strings.ReplaceAll(html, `/assets/js/main.js`, `/assets/js/main.js?v=`+jsBundleVer)
+		indexHTML = []byte(html)
+		indexETag = etagOf(indexHTML)
+	}
 }
 
 func handleAsset(w http.ResponseWriter, r *http.Request) {
-	name := r.PathValue("file")
-	ctype, ok := assetTypes[name]
+	asset, ok := embeddedAssets[r.PathValue("path")]
 	if !ok {
 		http.NotFound(w, r)
 		return
 	}
-	serveEmbedded(w, r, name, ctype)
+	w.Header().Set("ETag", asset.etag)
+	if etagMatches(r.Header.Get("If-None-Match"), asset.etag) {
+		w.WriteHeader(http.StatusNotModified)
+		return
+	}
+	w.Header().Set("Content-Type", asset.contentType)
+	w.Header().Set("Cache-Control", "public, max-age=300")
+	w.WriteHeader(http.StatusOK)
+	w.Write(asset.data)
 }
 
 // serveIndex keeps the shell revalidated and fingerprints its embedded asset
-// URLs. A newly deployed binary therefore cannot be paired with a five-minute
-// stale app.js from the previous catalog contract.
+// URLs so a newly deployed binary never pairs with stale cached CSS or JS.
 func serveIndex(w http.ResponseWriter, r *http.Request) {
-	b, err := webFS.ReadFile("web/index.html")
-	if err != nil {
+	if len(indexHTML) == 0 {
 		http.NotFound(w, r)
 		return
 	}
-	version := func(name string) string { return strings.Trim(assetETags[name], `"`) }
-	html := string(b)
-	html = strings.ReplaceAll(html, `/assets/style.css`, `/assets/style.css?v=`+version("style.css"))
-	html = strings.ReplaceAll(html, `/assets/app.js`, `/assets/app.js?v=`+version("app.js"))
-	etag := assetETags["index.html"]
-	w.Header().Set("ETag", etag)
+	w.Header().Set("ETag", indexETag)
 	w.Header().Set("Cache-Control", "no-cache")
-	if r.Header.Get("If-None-Match") == etag {
+	if etagMatches(r.Header.Get("If-None-Match"), indexETag) {
 		w.WriteHeader(http.StatusNotModified)
 		return
 	}
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(html))
+	w.Write(indexHTML)
 }
 
 // handleSPA serves the app shell for any non-API GET; unknown API paths get a JSON 404.

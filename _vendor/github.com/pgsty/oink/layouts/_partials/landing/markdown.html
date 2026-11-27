@@ -1,3 +1,0 @@
-{{- if and (isset . "value") (ne .value nil) -}}
-  {{- .page.RenderString (dict "display" "inline") (printf "%v" .value) -}}
-{{- end -}}

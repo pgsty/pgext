@@ -101,8 +101,9 @@ type gzipWriter struct {
 func (w *gzipWriter) WriteHeader(code int) {
 	if !w.wroteHeader {
 		w.wroteHeader = true
-		// bodyless responses must not carry a gzip trailer
-		if code != http.StatusNoContent && code != http.StatusNotModified {
+		// bodyless responses and binary images must not carry a gzip stream
+		ctype := w.Header().Get("Content-Type")
+		if code != http.StatusNoContent && code != http.StatusNotModified && !strings.HasPrefix(ctype, "image/") {
 			w.Header().Del("Content-Length")
 			w.Header().Set("Content-Encoding", "gzip")
 			w.Header().Add("Vary", "Accept-Encoding")
@@ -135,7 +136,7 @@ func (w *gzipWriter) close() {
 // withGzip compresses responses when the client accepts it.
 func withGzip(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if !strings.Contains(r.Header.Get("Accept-Encoding"), "gzip") {
+		if r.Method == http.MethodHead || !strings.Contains(r.Header.Get("Accept-Encoding"), "gzip") || strings.HasSuffix(r.URL.Path, ".ico") {
 			next.ServeHTTP(w, r)
 			return
 		}

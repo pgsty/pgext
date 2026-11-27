@@ -66,23 +66,21 @@ PGEXT writes one marked file per repository:
 
 A filename prefix alone does not establish ownership: a PGEXT management
 header must also be present. `set` removes obsolete PGEXT files and installs
-the requested selection. External files remain in place. Duplicate RPM IDs
-and APT endpoint/suite pairs, including active Deb822 `.sources` stanzas, are
-rejected before writing.
+the requested selection. Existing distribution definitions that cover the
+same node source are reused, including a configured distribution mirror.
 
-For an intentional complete replacement, including distribution sources or
-files created by Pigsty, PIG, or the builder's `env repo` command:
+To migrate legacy PGDG or Pigsty source definitions, preview `--replace` with
+the repositories to migrate:
 
 ```bash
-pgext repo set all --replace --mirror --dry-run
-sudo pgext repo set all --replace --mirror
+pgext repo set pgdg,pigsty --replace --mirror --dry-run
+sudo pgext repo set pgdg,pigsty --replace --mirror
 ```
 
-`--replace` backs up and replaces **all active source definition files** on
-the selected package-manager side, including `/etc/apt/sources.list` and
-`.sources` files. Choose a selection that includes every source you need.
-The EL `node` module follows Pigsty's Rocky Linux source definitions; inspect
-the preview before replacing another EL distribution's native sources.
+`--replace` migrates recognized conflicts in the selection. A mixed file
+keeps its unselected RPM sections, APT lines or Deb822 stanzas. Split a
+Deb822 stanza if it combines selected and unselected sources. Unrelated
+PGEXT-managed files are preserved in this mode.
 
 ## Platforms and custom catalogs
 
@@ -126,14 +124,17 @@ repo_upstream:
 An explicit `repo_upstream`, including an empty list, takes precedence over
 `repo_upstream_default`. Other Pigsty settings in the file are ignored.
 
-Trust settings follow the catalog and Pigsty's renderer: absent explicit
-metadata, RPM uses `gpgcheck=0` and APT uses `trusted=yes`. Explicit RPM
-`gpgcheck`/`gpgkey` and APT `signed-by`/`trusted` options are preserved. APT
-`signed-by` suppresses the implicit `trusted=yes`. This command does not fetch
-keys or fall back to weaker verification after a failure; provision keys
-referenced by a custom catalog before refreshing metadata. The existing
-`pgext env repo` remains the separate builder setup with its signing-key
-installation behavior.
+RPM defaults to `gpgcheck=1`. APT uses the system trust policy for sources
+without a dedicated key. PGEXT installs its bundled Pigsty and PGDG public
+keys for the selected definitions and points the renderer at those files.
+The explicitly selected `pigsty-local` intranet source supports unsigned
+metadata. Custom catalogs can supply explicit `gpgcheck`/`gpgkey` or
+`signed-by`/`trusted` settings. Provision any custom key files before
+refreshing metadata.
+
+`pgext env repo` calls the same implementation as `pgext repo set`. PGDG
+keys are sourced from the PostgreSQL project. [APT key](https://www.postgresql.org/download/linux/debian/)
+· [RPM keys](https://download.postgresql.org/pub/repos/yum/keys/)
 
 ## Preview, backups and restore
 
@@ -159,8 +160,9 @@ operation to another OS. Symlinks beneath the selected root are rejected.
 
 Every actual file change records its before/after content and permissions in
 a private JSON backup under `/var/lib/pgext/repo/backups/` (beneath `--root`
-when staging). Backups also record newly created files, so restoring removes
-those files. Identical configurations are a no-op and create no backup.
+when staging). The backup includes signing-key changes. Restoring removes
+files first created by that operation. Identical configurations are a no-op
+and create no backup.
 
 Operations serialize through a process lock and check for changes between
 planning and writing. Individual writes use atomic rename. A write or cache

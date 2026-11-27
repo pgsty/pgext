@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate db/changelog.csv from the RPM/DEB release notes.
 
-Reads content/release/{rpm,deb}.md (English) and their .zh.md twins (Chinese),
+Reads content/release/{rpm,deb}.md and their .zh.md twins in the pgext.cloud checkout,
 parses every per-batch markdown table into (date, package, old, new, comment)
 rows, then:
 
@@ -18,17 +18,20 @@ Bilingual batches must contain the same package/version rows. Missing rows,
 malformed tables and conflicting versions fail before the output is opened.
 
 The output db/changelog.csv feeds pgext.changelog (COPY ... CSV HEADER).
-Run from the repository root:  python3 bin/changelog.py
+Run python3 bin/changelog.py from the CLI repository. Select the Hugo checkout
+with -D/--dir or PGEXT_SITE_DIR (default ~/pgsty/pgext.cloud).
 """
 
+import argparse
 import csv
 import re
 import sys
 from collections import Counter, OrderedDict
 from pathlib import Path
 
+from site_paths import add_site_dir
+
 ROOT = Path(__file__).resolve().parent.parent
-RELEASE = ROOT / "content" / "release"
 UNIVERSE = ROOT / "db" / "universe.csv"
 OUTPUT = ROOT / "db" / "changelog.csv"
 
@@ -299,9 +302,12 @@ def merge_group(pkg: str, rows: list, leads: set):
     return old, new, note, note_zh
 
 
-def main():
-    rpm = parse_side("rpm", RELEASE / "rpm.md", RELEASE / "rpm.zh.md")
-    deb = parse_side("deb", RELEASE / "deb.md", RELEASE / "deb.zh.md")
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Generate db/changelog.csv from the site’s bilingual package release notes.")
+    add_site_dir(parser)
+    release = parser.parse_args(argv).dir.expanduser() / "content" / "release"
+    rpm = parse_side("rpm", release / "rpm.md", release / "rpm.zh.md")
+    deb = parse_side("deb", release / "deb.md", release / "deb.zh.md")
 
     norm = Normalizer()
     merged = {}  # (ds, pkg) → [Row]

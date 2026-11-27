@@ -48,8 +48,8 @@ func TestPageRelationshipsKeepNonPageEntitiesAsText(t *testing.T) {
 	}
 
 	for name, content := range map[string]string{
-		"io": NewIOPageGenerator(cache, "", "").generateRelationships(ext, nil),
-		"cc": NewCCPageGenerator(cache, "", "").generateRelationships(ext, nil),
+		"io": NewIOPageGenerator(cache, "", "").generateRelationships(ext),
+		"cc": NewCCPageGenerator(cache, "", "").generateRelationships(ext),
 	} {
 		t.Run(name, func(t *testing.T) {
 			if !strings.Contains(content, "[`vector`](/ext/e/vector)") {

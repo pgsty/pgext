@@ -1,11 +1,10 @@
 # Repository Guidelines
 
-## OINK build baseline
+## Static catalog
 
-As of 2026-11-11, this site uses OINK v1.5.1, Hugo Extended 0.169.0, and Go 1.27.4.
-Keep CI and local builds on this baseline. Do not enable `--panicOnWarning`
-or `HUGO_PANICONWARNING`; keep warnings visible and review them. The upstream
-LibSass deprecation warning is accepted. No external Sass compiler is required.
+The sibling `~/pgsty/pgext.cloud` checkout owns the Hugo site at `ext.pgsty.com`. From this CLI checkout, `make gen` runs the current source generator. `pgext gen site` selects the destination with `-D, --dir`, then `PGEXT_SITE_DIR`, then the default checkout. Build with the site's Makefile and follow its `AGENTS.md` and `go.mod` for Hugo and OINK requirements and warning review.
+
+Daily discovery and Universe/doc propagation run from `~/pgsty/pgext` using its catalog and bilingual stubs. Their PGEXT application checks target the Go service at `pgext.cloud`. Static-site generation is a separate maintenance task.
 
 ## Review Execution
 
@@ -13,12 +12,12 @@ The user revoked automatic Claude / Claude Code / Opus review on 2026-10-01 beca
 
 ## Project Structure & Module Organization
 
-`cmd/` exposes the Cobra command surface, while `cli/` carries the data-fetch, parse, and recap pipelines. `content/` and `layouts/` drive the Hugo front end, and `db/` plus `bin/` store CSV exports and Python generators that feed the site. Treat `public/` and any other build artefacts as disposable—rebuild instead of editing them.
+`cmd/` exposes the Cobra command surface, while `cli/` carries the data-fetch, parse, and recap pipelines. `server/web/` supplies the embedded web application. `db/`, `stub/` and `stub-zh/` supply catalog data and usage sources. The site checkout owns Hugo content, layouts and bilingual RPM/DEB release notes. Treat `public/` and any other build artefacts as disposable—rebuild instead of editing them.
 
 ## Build, Test, and Development Commands
 
-- `make dev` (alias `make d`): run `hugo serve` for local previews at http://localhost:1313.
-- `make build`: generate the static site with `hugo build`; use before publishing.
+- `make dev`: preview the embedded Go web app locally. Use `make dev` in the site checkout for the Hugo preview.
+- `make build`: compile the pgext CLI. The site checkout has its own `make build` target.
 - `go run .`: execute the CLI entrypoint (`pgext`) for tasks like `pgext reload`.
 - `go run . serve`: run the self-contained PGEXT.CLOUD web app + JSON query API at http://localhost:8432 (assets embedded from `server/web/`, data queried live from the `pgext` schema via `--db`/`$PGURL`; see `server/README.md`).
 - `go test ./...`: run Go unit tests across `cli/` (add `-cover` when needed).
@@ -55,6 +54,8 @@ The user established this non-negotiable rule on 2026-11-05:
 
 Catalog `comment` values must be as short as possible: use a few words when sufficient. Do not put audit narratives, evidence dumps, build histories, or explanations already apparent from the version fields into `comment`; keep those in the audit report or documentation.
 
+In both source catalogs, `license` is one short primary license name. Use the packaged catalog spelling for the same license, including standard identifiers such as `BSD-2-Clause` and meaningful `-only` and `-or-later` suffixes. For an explicit MIT/Apache-2.0 choice, use `MIT` as the catalog label. For bundled components, label the extension's own code and preserve component notices in the package. Use concise names for vendor terms, such as `Matroid-SAL-1.0` and `Tecnisys-Community-1.0`. Keep the original upstream grant in `universe.license_url`.
+
 `pgext.universe.pg_ver` records each extension's independently documented PostgreSQL compatibility, including historical majors such as `9.6` and gaps between supported versions. Preserve those values when updating package metadata and add majors supported by new evidence. The PG15–19 packaging window applies to `pgext.extension.pg_ver` and to `rpm_pg` / `deb_pg` in both catalogs.
 
 ### Package Sources and Gap Builds
@@ -78,7 +79,7 @@ Core catalog and package pipeline:
 - `pgext.doc`: one row per `pgext.universe` extension, containing English Markdown from `stub/` and Chinese Markdown from `stub-zh/`; `bin/load-stub` synchronizes the complete bilingual corpus atomically.
 - `pgext.category`, `pgext.pg`, `pgext.os`, `pgext.status`: category, PostgreSQL version, OS target, and lifecycle status dimension tables.
 - `pgext.repository`, `pgext.repo_data`, `pgext.apt`, `pgext.dnf`, `pgext.bin`, `pgext.pkg`: repository configuration, raw repository metadata cache, parsed APT/RPM package metadata, normalized binary package rows, and final package availability matrix.
-- `pgext.changelog`: per-package release history distilled from `content/release/{rpm,deb}{,.zh}.md` by `bin/changelog.py` into `db/changelog.csv` (aligned batch dates, normalized pkg names, merged RPM/DEB sides, bilingual notes).
+- `pgext.changelog`: per-package release history distilled from `~/pgsty/pgext.cloud/content/release/{rpm,deb}{,.zh}.md` by `bin/changelog.py` into `db/changelog.csv` (aligned batch dates, normalized pkg names, merged RPM/DEB sides, bilingual notes).
 - `pgext.counter`: per-extension visit/download counters; `pgext serve` accumulates increments in memory and flushes them additively every minute.
 
 Reporting views:
@@ -124,7 +125,7 @@ Use an explicit column list and fill every field from evidence or a deliberate c
 
 - Identity: allocate the next stable `id` under a table lock; store the control/`CREATE EXTENSION` name in `name`, the source distribution in `pkg`, the family primary in `lead_ext`, and one valid `pgext.category` value in `category`.
 - Status: set `packaged=true` only when the extension belongs to the approved packaged baseline represented by `pgext.extension`; an upstream tarball or binary release alone does not make it packaged here. Set `lifecycle` and `kind` (`standard`, `preload`, `puresql`, or `headless`) from current upstream behavior.
-- Classification: verify `kernel`, `vendor`, `contrib`, primary implementation `lang`, SPDX-style `license`, and concise stable `tags`. Use `NULL` for unknown facts rather than an attractive guess.
+- Classification: verify `kernel`, `vendor`, `contrib`, primary implementation `lang`, the primary `license` as described above, and concise stable `tags`. Use `NULL` for unknown facts rather than an attractive guess.
 - Version and sources: apply the catalog version policy above: normally use the latest verified upstream release for `version`, while preserving an intentional shorter extension/control version; retain exact nonconforming upstream strings in source evidence. Populate stable public `url`, `repo_url`, `home_url`, `doc_url`, `license_url`, `control_url`, `author_url`, `cargo_url`, and `pgxn_url` as applicable. Prefer tag-specific file URLs for version-specific evidence and check that every stored URL resolves.
 - Runtime: derive `has_bin`, `has_lib`, `need_ddl`, `need_load`, `trusted`, `relocatable`, `libs`, `schemas`, and `pg_ver` from the control file, build metadata, source, and official documentation. Do not infer preload, restart, privileges, or PostgreSQL-major support from project category or language.
 - Relationships: populate `requires` and `see_also` only with canonical Universe names. Treat `required_by` as a derived reverse-dependency cache; run `SELECT pgext.refresh_deps()` when forward dependencies change, then inspect every resulting `required_by` delta.
@@ -219,7 +220,7 @@ The versioned operational SOP is [docs/stub-documentation-sop.md](docs/stub-docu
 
 - Process only the extensions named by the user. Do not opportunistically scan or rewrite unrelated stubs unless a full-catalog refresh was explicitly requested.
 - Resolve the canonical PostgreSQL extension name before writing. Use the user-supplied target list plus repository metadata (`db/extension.csv` for the packaged baseline and the current universe metadata for broader catalog entries). The canonical extension name, not necessarily the package name, determines `stub/<extension>.md`; record package-to-extension mappings instead of guessing.
-- English output goes only to `stub/<extension>.md` unless the user explicitly requests Chinese synchronization, invokes the End-to-End New Extension Intake SOP above, or requests generated site pages. Do not edit `stub-zh/`, `content/e/`, catalog CSV/SQL, or package metadata as an unrelated side effect.
+- English output goes only to `stub/<extension>.md` unless the user explicitly requests Chinese synchronization, invokes the End-to-End New Extension Intake SOP above, or requests generated site pages. Do not edit `stub-zh/`, `~/pgsty/pgext.cloud/content/e/`, catalog CSV/SQL, or package metadata as an unrelated side effect.
 - Read an existing stub before refreshing it. For a version update, change only facts or examples with a material user-facing upstream delta. If there is no material change, leave the file intact and report `reviewed upstream <version>, no material stub delta`.
 - Distinguish upstream feature changes from Pigsty packaging, rebuild, platform-matrix, or catalog-only changes.
 
@@ -274,8 +275,8 @@ Concise summary of what the extension does and its primary use cases.
 
 - Inspect the final diff for every in-scope stub and confirm no out-of-scope file was changed by this workflow.
 - Run `go run . gen lint stub/<name>.md stub-zh/<name>.md` for the affected pair and `make check-stubs` for the complete bilingual corpus. These checks are required in addition to the existing pair/technical lint. Go CI executes the same shared validator. Invalid stubs cause site generators to return the source path and line number before writing the corresponding page; IO/CC batch generation preflights the selected corpus before any site writes.
-- A formatting fix must repair the source, not just `content/e/` or another site's generated `content/ext/e/`. Keep the entire bilingual pair in one batch where possible. For generator/validator changes, add a regression test proving that an invalid source is rejected and an existing valid output remains intact, then run `go test ./...`.
-- When generation is authorized, write to an explicit staging `--output` first and run the target site's strict Markdown, Hugo, rendered-content, and internal-link checks. Source lint does not replace target-site acceptance. Keep source repair, DB load, generation, commit/push, deployment, and public verification distinct in the handoff.
+- Fix formatting in the source stubs. Generated detail pages live in `~/pgsty/pgext.cloud/content/e/` for the static catalog and in `content/ext/e/` in the Pigsty documentation sites. Keep the entire bilingual pair in one batch where possible. For generator/validator changes, add a regression test proving that an invalid source is rejected and an existing valid output remains intact, then run `go test ./...`.
+- When generation is authorized, stage a full catalog with `gen site -D <staging-site>`. For `gen cc` or `gen io`, pass the staging extension directory with `--output`. Run the target site's Markdown, Hugo, rendered-content, and internal-link checks. Keep source repair, DB load, generation, commit/push, deployment, and public verification distinct in the handoff.
 - Check: no front matter/H1; exactly one `## Usage`; `Sources:` plus linked bullets immediately after it; canonical name present; balanced code fences; no placeholders; core use cases/examples and confirmed caveats covered.
 - When a compatible Phase B run directory and manifest exist, run `python3 bin/stub_phaseb.py lint --run-dir <run-dir> --manifest <manifest> --name <extension>` and use `check` for the final batch gate. Otherwise perform equivalent focused checks and run `git diff --check`.
 - Report completed, unchanged-after-review, blocked, and deferred items separately. State source/diff validation separately from any database load, generated-site build, commit, or publication; none of those later layers is implied by a stub edit.

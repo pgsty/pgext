@@ -98,7 +98,7 @@ func (g *BinGenerator) Generate() (int, error) {
 	}
 
 	// Get active PostgreSQL versions
-	pgVersions, err := g.getActivePGVersions()
+	pgVersions, err := ActivePGVersions(g.ctx)
 	if err != nil {
 		return 0, fmt.Errorf("get active PG versions: %w", err)
 	}
@@ -131,27 +131,6 @@ func (g *BinGenerator) Generate() (int, error) {
 
 	logrus.Infof("generated %d binary package records", total)
 	return total, nil
-}
-
-// getActivePGVersions retrieves active PostgreSQL versions in descending order.
-func (g *BinGenerator) getActivePGVersions() ([]int, error) {
-	query := "SELECT pg FROM pgext.active_pg ORDER BY pg DESC"
-
-	rows, err := QueryContext(g.ctx, query)
-	if err != nil {
-		return nil, err
-	}
-	defer rows.Close()
-
-	var versions []int
-	for rows.Next() {
-		var pg int
-		if err := rows.Scan(&pg); err != nil {
-			return nil, err
-		}
-		versions = append(versions, pg)
-	}
-	return versions, rows.Err()
 }
 
 // processVersion collects and inserts packages for a specific PG version.
@@ -345,46 +324,11 @@ func toInt64(v interface{}) int64 {
 // Package Availability Matrix Generation (from recap.go)
 //============================================================================
 
-// Repository represents a repository with its metadata
-type Repository struct {
-	ID         string
-	Type       string // rpm or deb
-	OS         string
-	Org        string
-	OSCode     string
-	OSArch     string
-	DefaultURL string
-	MirrorURL  string
-}
-
-// Package represents a package entry
-type Package struct {
-	PG        int
-	OS        string
-	PName     string // normalized package name
-	Org       string
-	Type      string
-	OSCode    string
-	OSArch    string
-	Repo      string
-	Name      string // original package name
-	Ver       string // full version string
-	Version   string // semantic version
-	Release   string
-	File      string
-	SHA256    string
-	URL       string
-	MirrorURL string
-	Size      int64
-	SizeFull  int64
-}
-
-// RecapMatrix generates pgext.pkg availability matrix using SQL procedures
+// RecapMatrix generates pgext.pkg availability matrix using SQL procedures.
 func RecapMatrix() error {
 	if DB == nil {
 		return fmt.Errorf("database not initialized")
 	}
-
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Minute)
 	defer cancel()
 	return RecapMatrixContext(ctx)
@@ -398,48 +342,15 @@ func RecapMatrixContext(ctx context.Context) error {
 	}
 
 	logrus.Info("generate pgext.pkg from repo package data")
-
-	// Get active PostgreSQL versions
-	var activePG []int
-	rows, err := QueryContext(ctx, "SELECT pg FROM pgext.active_pg ORDER BY pg DESC")
+	activePG, err := ActivePGVersions(ctx)
 	if err != nil {
 		return fmt.Errorf("failed to query active pg versions: %w", err)
 	}
-	for rows.Next() {
-		var pg int
-		if err := rows.Scan(&pg); err != nil {
-			rows.Close()
-			return fmt.Errorf("scan active pg version: %w", err)
-		}
-		activePG = append(activePG, pg)
-	}
-	if err := rows.Err(); err != nil {
-		rows.Close()
-		return fmt.Errorf("iterate active pg versions: %w", err)
-	}
-	rows.Close()
-
-	// Get active OS versions
-	var activeOS []string
-	rows, err = QueryContext(ctx, "SELECT os FROM pgext.active_os ORDER BY os")
+	activeOS, err := GetActiveOS(ctx)
 	if err != nil {
 		return fmt.Errorf("failed to query active os versions: %w", err)
 	}
-	for rows.Next() {
-		var os string
-		if err := rows.Scan(&os); err != nil {
-			rows.Close()
-			return fmt.Errorf("scan active os: %w", err)
-		}
-		activeOS = append(activeOS, os)
-	}
-	if err := rows.Err(); err != nil {
-		rows.Close()
-		return fmt.Errorf("iterate active os versions: %w", err)
-	}
-	rows.Close()
 
-	// Format and log active versions
 	pgVersions := make([]string, len(activePG))
 	for i, pg := range activePG {
 		pgVersions[i] = fmt.Sprintf("%d", pg)
@@ -467,12 +378,7 @@ func RecapMatrixContext(ctx context.Context) error {
 	return nil
 }
 
-// RecapPackages is the main entry point for the recap operation
-func RecapPackages() error {
-	return RecapMatrix()
-}
-
-// containsSQL checks if the content has actual SQL statements (not just comments)
+// containsSQL checks if the content has actual SQL statements (not just comments).
 func containsSQL(content string) bool {
 	lines := strings.Split(content, "\n")
 	for _, line := range lines {

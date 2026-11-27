@@ -9,7 +9,7 @@ Usage:
     python list-license.py [PGURL] [OUTPUT_DIR]
 
     PGURL: PostgreSQL connection URL (default: postgres:///vonng)
-    OUTPUT_DIR: Output directory for generated files (default: content/list/)
+    OUTPUT_DIR: Output directory for generated files (default: <site>/content/list/)
 """
 
 import argparse
@@ -20,6 +20,8 @@ from pathlib import Path
 from typing import Dict, List
 
 import psycopg2
+
+from site_paths import add_site_dir
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -54,9 +56,9 @@ LICENSE_INFO = {
                               'Permissive license with patent protection and attribution requirements.', 2),
     'MIT': LicenseInfo('MIT', 'https://opensource.org/licenses/MIT',
                        'A permissive license that allows commercial use, modification, and private use.', 3),
-    'BSD 3-Clause': LicenseInfo('BSD 3-Clause', 'https://opensource.org/license/bsd-3-clause',
+    'BSD-3-Clause': LicenseInfo('BSD-3-Clause', 'https://opensource.org/license/bsd-3-clause',
                                 'Permissive license with attribution and endorsement restriction clauses.', 4),
-    'BSD 2-Clause': LicenseInfo('BSD 2-Clause', 'https://opensource.org/license/bsd-2-clause',
+    'BSD-2-Clause': LicenseInfo('BSD-2-Clause', 'https://opensource.org/license/bsd-2-clause',
                                 'Permissive license requiring attribution but allowing commercial use.', 5),
     'GPL-2.0': LicenseInfo('GPL-2.0', 'https://opensource.org/licenses/GPL-2.0',
                            'Strong copyleft license requiring derivative works to be open source.', 6),
@@ -66,24 +68,43 @@ LICENSE_INFO = {
                             'Network copyleft license extending GPL to cover network-distributed software.', 8),
     'ISC': LicenseInfo('ISC', 'https://opensource.org/licenses/ISC',
                        'A permissive license similar to MIT, allowing commercial use and modification.', 9),
-    'Artistic': LicenseInfo('Artistic', 'https://opensource.org/license/artistic-2-0',
-                            'Copyleft license allowing modification with certain distribution requirements.', 10),
+    'Artistic-1.0': LicenseInfo('Artistic-1.0', 'https://spdx.org/licenses/Artistic-1.0.html',
+                                'Artistic License 1.0 for distributing original or modified packages.', 10),
+    'Artistic-2.0': LicenseInfo('Artistic-2.0', 'https://opensource.org/license/artistic-2-0',
+                                'Artistic License 2.0 for distributing original or modified packages.', 10),
     'Timescale': LicenseInfo('Timescale', 'https://www.timescale.com/legal/licenses',
                              'Proprietary license with restrictions on commercial use and distribution.', 11),
-    'BSD 0-Clause': LicenseInfo('BSD 0-Clause', 'https://opensource.org/license/0bsd',
+    '0BSD': LicenseInfo('0BSD', 'https://opensource.org/license/0bsd',
                                 'Public domain equivalent license with no restrictions on use.', 12),
     'LGPL-3.0': LicenseInfo('LGPL-3.0', 'https://opensource.org/licenses/LGPL-3.0',
                             'Weak copyleft license with additional patent and hardware provisions.', 13),
     'MPL-2.0': LicenseInfo('MPL-2.0', 'https://opensource.org/licenses/MPL-2.0',
                            'Weak copyleft license allowing proprietary combinations with file-level copyleft.', 14),
+    'Elastic-2.0': LicenseInfo('Elastic-2.0', 'https://www.elastic.co/licensing/elastic-license',
+                               'Elastic License 2.0 restricts provision of a managed service.', 16),
+    'LGPL-2.0': LicenseInfo('LGPL-2.0', 'https://spdx.org/licenses/LGPL-2.0.html',
+                            'GNU Library General Public License version 2.', 15),
     'LGPL-2.1': LicenseInfo('LGPL-2.1', 'https://opensource.org/licenses/LGPL-2.1',
                             'Weak copyleft license allowing proprietary applications to link dynamically.', 15),
 }
 
-# License groupings
-PERMISSIVE_LICENSES = ['MIT', 'ISC', 'PostgreSQL', 'BSD 0-Clause', 'BSD 2-Clause', 'BSD 3-Clause',
-                       'Artistic', 'Apache-2.0', 'MPL-2.0']
-COPYLEFT_LICENSES = ['GPL-2.0', 'GPL-3.0', 'LGPL-2.1', 'LGPL-3.0', 'AGPL-3.0', 'Timescale']
+PERMISSIVE_LICENSES = ['MIT', 'ISC', 'PostgreSQL', '0BSD', 'BSD-2-Clause', 'BSD-3-Clause', 'Apache-2.0']
+
+
+def get_license_info(name: str) -> LicenseInfo:
+    aliases = {'BSD 0-Clause': '0BSD', 'BSD 2-Clause': 'BSD-2-Clause',
+               'BSD 3-Clause': 'BSD-3-Clause', 'Artistic': 'Artistic-2.0'}
+    canonical = aliases.get(name, name)
+    if canonical in LICENSE_INFO:
+        return LICENSE_INFO[canonical]
+    for suffix in ('-only', '-or-later'):
+        if name.endswith(suffix):
+            family = name[:-len(suffix)]
+            if 'GPL-' in family and family in LICENSE_INFO:
+                info = LICENSE_INFO[family]
+                return LicenseInfo(name, f'https://spdx.org/licenses/{name}.html',
+                                   info.description, info.display_order)
+    return LicenseInfo(name, '#', 'Unknown license', 999)
 
 
 def fetch_extensions(pgurl: str) -> Dict[str, List[Extension]]:
@@ -98,7 +119,7 @@ def fetch_extensions(pgurl: str) -> Dict[str, List[Extension]]:
         extensions_by_license = defaultdict(list)
         for row in cur.fetchall():
             ext = Extension(*row)
-            extensions_by_license[ext.license].append(ext)
+            extensions_by_license[ext.license or 'Unknown'].append(ext)
 
         return extensions_by_license
 
@@ -134,7 +155,7 @@ def render_summary_table(sorted_licenses: List[tuple], is_zh: bool) -> List[str]
 
     for license_name, exts in sorted_licenses:
         count = len(exts)
-        info = LICENSE_INFO.get(license_name, LicenseInfo(license_name, '#', 'Unknown license', 999))
+        info = get_license_info(license_name)
         lines.append(
             f'| {{{{< license "{license_name}" >}}}} | {count} | '
             f'[{ref_text}]({info.url}) | {info.description} |'
@@ -145,7 +166,7 @@ def render_summary_table(sorted_licenses: List[tuple], is_zh: bool) -> List[str]
 
 def render_license_section(license_name: str, exts: List[Extension], is_zh: bool) -> List[str]:
     """Render a single license section with extension table"""
-    info = LICENSE_INFO.get(license_name, LicenseInfo(license_name, '#', 'Unknown license', 999))
+    info = get_license_info(license_name)
     count = len(exts)
 
     # Section header
@@ -182,7 +203,7 @@ def generate_content(extensions_by_license: Dict[str, List[Extension]], is_zh: b
     # Sort licenses by count (descending) and then by display order
     sorted_licenses = sorted(
         extensions_by_license.items(),
-        key=lambda x: (-len(x[1]), LICENSE_INFO.get(x[0], LicenseInfo(x[0], '', '', 999)).display_order)
+        key=lambda x: (-len(x[1]), get_license_info(x[0]).display_order)
     )
 
     lines = []
@@ -195,12 +216,12 @@ def generate_content(extensions_by_license: Dict[str, List[Extension]], is_zh: b
 
     # License badges
     permissive = [lic for lic in PERMISSIVE_LICENSES if lic in extensions_by_license]
-    copyleft = [lic for lic in COPYLEFT_LICENSES if lic in extensions_by_license]
+    other = [lic for lic, _ in sorted_licenses if lic not in PERMISSIVE_LICENSES]
 
     lines.extend([
         license_badge_line(permissive),
         "",
-        license_badge_line(copyleft),
+        license_badge_line(other),
         ""
     ])
 
@@ -220,6 +241,7 @@ def generate_content(extensions_by_license: Dict[str, List[Extension]], is_zh: b
 def main():
     """Main entry point"""
     parser = argparse.ArgumentParser(description='Generate license-grouped extension lists')
+    add_site_dir(parser)
     parser.add_argument('pgurl', nargs='?', default='postgres:///vonng',
                         help='PostgreSQL connection URL (default: postgres:///vonng)')
     parser.add_argument('output_dir', nargs='?', default=None,
@@ -231,7 +253,7 @@ def main():
 
     # Set output directory
     if args.output_dir is None:
-        output_dir = Path(__file__).parent.parent / 'content' / 'list'
+        output_dir = args.dir.expanduser() / 'content' / 'list'
     else:
         output_dir = Path(args.output_dir)
 

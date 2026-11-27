@@ -31,6 +31,7 @@ type counterStore struct {
 	names []string              // known extension names, used to (re)prime the table
 	base  map[string]counterVal // totals last read back from the database
 	delta map[string]counterVal // local increments not yet flushed
+	done  chan struct{}         // closed after the shutdown flush completes
 }
 
 type counterVal struct{ Visit, Download int64 }
@@ -225,7 +226,12 @@ func (s *counterStore) startFlusher(ctx context.Context, interval time.Duration)
 	if interval <= 0 {
 		interval = time.Minute
 	}
+	done := make(chan struct{})
+	s.mu.Lock()
+	s.done = done
+	s.mu.Unlock()
 	go func() {
+		defer close(done)
 		t := time.NewTicker(interval)
 		defer t.Stop()
 		for {
@@ -243,4 +249,14 @@ func (s *counterStore) startFlusher(ctx context.Context, interval time.Duration)
 			}
 		}
 	}()
+}
+
+// Wait blocks until the background flusher has finished its final shutdown flush.
+func (s *counterStore) Wait() {
+	s.mu.Lock()
+	done := s.done
+	s.mu.Unlock()
+	if done != nil {
+		<-done
+	}
 }

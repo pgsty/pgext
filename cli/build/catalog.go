@@ -22,8 +22,6 @@ import (
 type Extension struct {
 	Name, Package, Lead, Source, RPM, DEB string
 	PG                                    []int
-	HasLib, HasBin                        bool
-	Extra                                 map[string]any
 }
 
 type Catalog struct {
@@ -111,17 +109,15 @@ func ParseCatalog(b []byte) (*Catalog, error) {
 			}
 			return ""
 		}
-		e := &Extension{Name: get("name"), Package: get("pkg"), Lead: get("lead_ext"), Source: get("source"), RPM: get("rpm_pkg"), DEB: get("deb_pkg"), HasLib: get("has_lib") == "t", HasBin: get("has_bin") == "t", Extra: map[string]any{}}
+		e := &Extension{Name: get("name"), Package: get("pkg"), Lead: get("lead_ext"), Source: get("source"), RPM: get("rpm_pkg"), DEB: get("deb_pkg")}
 		if !safeName(e.Name) || !safeName(e.Package) {
 			return nil, fmt.Errorf("row %d: invalid extension/package name", line)
 		}
 		if _, ok := c.Extensions[e.Name]; ok {
 			return nil, fmt.Errorf("duplicate extension %s", e.Name)
 		}
-		if s := get("extra"); s != "" {
-			if err := json.Unmarshal([]byte(s), &e.Extra); err != nil {
-				return nil, fmt.Errorf("%s extra: %w", e.Name, err)
-			}
+		if s := get("extra"); s != "" && !json.Valid([]byte(s)) {
+			return nil, fmt.Errorf("%s extra: invalid JSON", e.Name)
 		}
 		if versions := get("pg_ver"); versions == "{}" {
 			e.PG = []int{}
@@ -177,12 +173,4 @@ func ParsePG(s string) ([]int, error) {
 		}
 	}
 	return out, nil
-}
-
-func pgStrings(vs []int) []string {
-	out := make([]string, len(vs))
-	for i, v := range vs {
-		out[i] = strconv.Itoa(v)
-	}
-	return out
 }

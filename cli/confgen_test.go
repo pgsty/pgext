@@ -1,13 +1,10 @@
 package cli
 
 import (
-	"bytes"
-	"pgext/db"
 	"reflect"
 	"regexp"
 	"strings"
 	"testing"
-	"text/template"
 )
 
 func TestPackagePatternUsesExtensionTemplates(t *testing.T) {
@@ -376,32 +373,7 @@ func TestRPMNodePackage1IncludesACL(t *testing.T) {
 		})
 	}
 
-	g := &PigstyConfigGenerator{
-		osName:    "el9.x86_64",
-		osCode:    "el9",
-		arch:      "x86_64",
-		constants: constants,
-	}
-	tmpl := template.Must(template.New("rpm").Funcs(g.getFuncMap()).Parse(rpmTemplate))
-	data := map[string]interface{}{
-		"OSName":          g.osName,
-		"OSCode":          g.osCode,
-		"Arch":            g.arch,
-		"TunedProfileDir": g.tunedProfileDir(),
-		"Constants":       g.constants,
-		"Extensions":      map[string]*ExtensionData{},
-		"PGVersions":      db.SupportedPGVersions(),
-		"DefaultPG":       db.DefaultPGVersion,
-		"CategoryExts":    map[string]CategoryPkgList{},
-		"Categories":      []string{},
-		"ExtMappings":     []ExtensionMapping{},
-	}
-
-	var buf bytes.Buffer
-	if err := tmpl.Execute(&buf, data); err != nil {
-		t.Fatal(err)
-	}
-	rendered := buf.String()
+	rendered := renderRPMTemplateForTest(t, "el9.x86_64", "el9")
 
 	required := []string{
 		"bash,python3,sudo,acl,ca-certificates,openssl,curl,wget,lz4,zstd",
@@ -955,32 +927,7 @@ func TestEL7NodePackage2IncludesIPRoute(t *testing.T) {
 }
 
 func TestDebTemplateRendersBind9DNSUtils(t *testing.T) {
-	g := &PigstyConfigGenerator{
-		osName:    "u24.x86_64",
-		osCode:    "u24",
-		arch:      "x86_64",
-		constants: GetConfigConstants(),
-	}
-	tmpl := template.Must(template.New("deb").Funcs(g.getFuncMap()).Parse(debTemplate))
-	data := map[string]interface{}{
-		"OSName":          g.osName,
-		"OSCode":          g.osCode,
-		"Arch":            g.arch,
-		"TunedProfileDir": g.tunedProfileDir(),
-		"Constants":       g.constants,
-		"Extensions":      map[string]*ExtensionData{},
-		"PGVersions":      db.SupportedPGVersions(),
-		"DefaultPG":       db.DefaultPGVersion,
-		"CategoryExts":    map[string]CategoryPkgList{},
-		"Categories":      []string{},
-		"ExtMappings":     []ExtensionMapping{},
-	}
-
-	var buf bytes.Buffer
-	if err := tmpl.Execute(&buf, data); err != nil {
-		t.Fatal(err)
-	}
-	rendered := buf.String()
+	rendered := renderDEBTemplateForTest(t, "u24.x86_64", "u24")
 
 	required := []string{
 		"bash,python3,sudo,acl,ca-certificates,openssl,curl,wget,lz4,zstd",
@@ -1030,49 +977,28 @@ func TestDebNodePackageBaselineIncludesMinimalNodePackages(t *testing.T) {
 
 func renderRPMTemplateForTest(t *testing.T, osName, osCode string) string {
 	t.Helper()
-	g := &PigstyConfigGenerator{
-		osName:    osName,
-		osCode:    osCode,
-		arch:      "x86_64",
-		constants: GetConfigConstants(),
-	}
-	tmpl := template.Must(template.New("rpm").Funcs(g.getFuncMap()).Parse(rpmTemplate))
-	return renderConfigTemplateForTest(t, tmpl, g)
+	return renderConfigTemplateForTest(t, osName, osCode)
 }
 
 func renderDEBTemplateForTest(t *testing.T, osName, osCode string) string {
 	t.Helper()
+	return renderConfigTemplateForTest(t, osName, osCode)
+}
+
+func renderConfigTemplateForTest(t *testing.T, osName, osCode string) string {
+	t.Helper()
 	g := &PigstyConfigGenerator{
 		osName:    osName,
 		osCode:    osCode,
 		arch:      "x86_64",
 		constants: GetConfigConstants(),
 	}
-	tmpl := template.Must(template.New("deb").Funcs(g.getFuncMap()).Parse(debTemplate))
-	return renderConfigTemplateForTest(t, tmpl, g)
-}
-
-func renderConfigTemplateForTest(t *testing.T, tmpl *template.Template, g *PigstyConfigGenerator) string {
-	t.Helper()
-	data := map[string]interface{}{
-		"OSName":          g.osName,
-		"OSCode":          g.osCode,
-		"Arch":            g.arch,
-		"TunedProfileDir": g.tunedProfileDir(),
-		"Constants":       g.constants,
-		"Extensions":      map[string]*ExtensionData{},
-		"PGVersions":      db.SupportedPGVersions(),
-		"DefaultPG":       db.DefaultPGVersion,
-		"CategoryExts":    map[string]CategoryPkgList{},
-		"Categories":      []string{},
-		"ExtMappings":     []ExtensionMapping{},
-	}
-
-	var buf bytes.Buffer
-	if err := tmpl.Execute(&buf, data); err != nil {
+	data := g.buildTemplateData(map[string]*ExtensionData{}, nil, map[int]map[string]*CategoryPkgList{}, nil)
+	rendered, err := g.renderConfig(data)
+	if err != nil {
 		t.Fatal(err)
 	}
-	return buf.String()
+	return rendered
 }
 
 func nodePackagesDefaultLines(rendered string) []string {
@@ -1348,6 +1274,8 @@ func TestConfigConstantsIncludePgHardstorageToolAlias(t *testing.T) {
 }
 
 func TestTemplatesIncludeAgensAndPgEdgeHomeMap(t *testing.T) {
+	rpm := renderRPMTemplateForTest(t, "el9.x86_64", "el9")
+	deb := renderDEBTemplateForTest(t, "u24.x86_64", "u24")
 	required := []string{
 		"agens:  '/usr/agens-$v'",
 		"gpsql:  '/usr/cloudberry'",
@@ -1355,11 +1283,11 @@ func TestTemplatesIncludeAgensAndPgEdgeHomeMap(t *testing.T) {
 		"pgedge: '/usr/pgedge-$v'",
 	}
 	for _, fragment := range required {
-		if !strings.Contains(rpmTemplate, fragment) {
-			t.Fatalf("rpmTemplate missing expected home map fragment: %q", fragment)
+		if !strings.Contains(rpm, fragment) {
+			t.Fatalf("rpm rendered config missing expected home map fragment: %q", fragment)
 		}
-		if !strings.Contains(debTemplate, fragment) {
-			t.Fatalf("debTemplate missing expected home map fragment: %q", fragment)
+		if !strings.Contains(deb, fragment) {
+			t.Fatalf("deb rendered config missing expected home map fragment: %q", fragment)
 		}
 	}
 }
@@ -1436,6 +1364,7 @@ func TestRenderedTemplatesIncludePgTDEPackageMap(t *testing.T) {
 }
 
 func TestDebTemplateUbuntuRepoSuffixesMatchRepoName(t *testing.T) {
+	deb := renderDEBTemplateForTest(t, "u24.x86_64", "u24")
 	required := []string{
 		"name: updates        ,description: 'Ubuntu Updates'     ,module: node    ,releases: [         22,24,26] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-updates",
 		"name: backports      ,description: 'Ubuntu Backports'   ,module: node    ,releases: [         22,24,26] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-backports",
@@ -1445,8 +1374,8 @@ func TestDebTemplateUbuntuRepoSuffixesMatchRepoName(t *testing.T) {
 		"name: security       ,description: 'Ubuntu Security'    ,module: node    ,releases: [         22,24,26] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-security",
 	}
 	for _, fragment := range required {
-		if !strings.Contains(debTemplate, fragment) {
-			t.Fatalf("debTemplate missing expected fragment: %q", fragment)
+		if !strings.Contains(deb, fragment) {
+			t.Fatalf("deb config missing expected fragment: %q", fragment)
 		}
 	}
 }
@@ -1491,6 +1420,7 @@ func TestPGDGChinaMirrorContract(t *testing.T) {
 }
 
 func TestDebTemplateRepoReleaseCompatibility(t *testing.T) {
+	deb := renderDEBTemplateForTest(t, "u24.x86_64", "u24")
 	required := []string{
 		"name: pigsty-local   ,description: 'Pigsty Local'       ,module: local   ,releases: [11,12,13,22,24,26]",
 		"name: pigsty-pgsql   ,description: 'Pigsty PgSQL'       ,module: pgsql   ,releases: [11,12,13,22,24,26]",
@@ -1517,8 +1447,8 @@ func TestDebTemplateRepoReleaseCompatibility(t *testing.T) {
 		"name: clickhouse     ,description: 'ClickHouse'         ,module: click   ,releases: [11,12,13,22,24,26]",
 	}
 	for _, fragment := range required {
-		if !strings.Contains(debTemplate, fragment) {
-			t.Fatalf("debTemplate missing expected compatibility fragment: %q", fragment)
+		if !strings.Contains(deb, fragment) {
+			t.Fatalf("deb config missing expected compatibility fragment: %q", fragment)
 		}
 	}
 
@@ -1529,13 +1459,14 @@ func TestDebTemplateRepoReleaseCompatibility(t *testing.T) {
 		"${distro_codename}-backports-3.1",
 	}
 	for _, fragment := range forbidden {
-		if strings.Contains(debTemplate, fragment) {
-			t.Fatalf("debTemplate still contains incompatible repo fragment: %q", fragment)
+		if strings.Contains(deb, fragment) {
+			t.Fatalf("deb config still contains incompatible repo fragment: %q", fragment)
 		}
 	}
 }
 
 func TestRPMTemplateEL10RepoReleaseCompatibility(t *testing.T) {
+	rpm := renderRPMTemplateForTest(t, "el10.x86_64", "el10")
 	required := []string{
 		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
 		"name: mysql          ,description: 'MySQL 8.4 LTS'      ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
@@ -1546,8 +1477,8 @@ func TestRPMTemplateEL10RepoReleaseCompatibility(t *testing.T) {
 		"name: gitlab-ce      ,description: 'Gitlab CE'          ,module: gitlab  ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
 	}
 	for _, fragment := range required {
-		if !strings.Contains(rpmTemplate, fragment) {
-			t.Fatalf("rpmTemplate missing expected EL10 repo fragment: %q", fragment)
+		if !strings.Contains(rpm, fragment) {
+			t.Fatalf("rpm config missing expected EL10 repo fragment: %q", fragment)
 		}
 	}
 
@@ -1556,13 +1487,14 @@ func TestRPMTemplateEL10RepoReleaseCompatibility(t *testing.T) {
 		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [   10] ,arch: [x86_64         ]",
 	}
 	for _, fragment := range forbidden {
-		if strings.Contains(rpmTemplate, fragment) {
-			t.Fatalf("rpmTemplate still advertises unsupported EL10 TimescaleDB arch: %q", fragment)
+		if strings.Contains(rpm, fragment) {
+			t.Fatalf("rpm config still advertises unsupported EL10 TimescaleDB arch: %q", fragment)
 		}
 	}
 }
 
 func TestRPMTemplateReplacementReposOptOutOfModularFiltering(t *testing.T) {
+	rpm := renderRPMTemplateForTest(t, "el9.x86_64", "el9")
 	repos := map[string]string{
 		"nginx":   "name: nginx          ,description: 'Nginx Repo'         ,module: nginx   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://nginx.org/packages/rhel/$releasever/$basearch/' } ,meta: { module_hotfixes: 1 }",
 		"percona": "name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.percona.com/ppg-18.4/yum/release/$releasever/RPMS/$basearch'  } ,meta: { module_hotfixes: 1 }",
@@ -1571,14 +1503,16 @@ func TestRPMTemplateReplacementReposOptOutOfModularFiltering(t *testing.T) {
 	}
 	for name, repo := range repos {
 		t.Run(name, func(t *testing.T) {
-			if !strings.Contains(rpmTemplate, repo) {
-				t.Fatalf("rpmTemplate %s repository must declare module_hotfixes: %q", name, repo)
+			if !strings.Contains(rpm, repo) {
+				t.Fatalf("rpm %s repository must declare module_hotfixes: %q", name, repo)
 			}
 		})
 	}
 }
 
 func TestCurrentRepositoryVersionContract(t *testing.T) {
+	rpm := renderRPMTemplateForTest(t, "el9.x86_64", "el9")
+	deb := renderDEBTemplateForTest(t, "u24.x86_64", "u24")
 	required := map[string][]string{
 		"rpm": {
 			"https://mirrors.cloud.tencent.com/grafana/yum/rpm/",
@@ -1590,7 +1524,7 @@ func TestCurrentRepositoryVersionContract(t *testing.T) {
 			"https://mirrors.ustc.edu.cn/kubernetes/core:/stable:/v1.36/deb/ /",
 		},
 	}
-	templates := map[string]string{"rpm": rpmTemplate, "deb": debTemplate}
+	templates := map[string]string{"rpm": rpm, "deb": deb}
 	for kind, fragments := range required {
 		for _, fragment := range fragments {
 			if !strings.Contains(templates[kind], fragment) {
@@ -1604,7 +1538,7 @@ func TestCurrentRepositoryVersionContract(t *testing.T) {
 		"core:/stable:/v1.33/deb/",
 		"china: 'https://mirrors.cloud.tencent.com/grafana/yum/'",
 	} {
-		if strings.Contains(rpmTemplate, fragment) || strings.Contains(debTemplate, fragment) {
+		if strings.Contains(rpm, fragment) || strings.Contains(deb, fragment) {
 			t.Errorf("generated templates still contain obsolete repository fragment %q", fragment)
 		}
 	}
@@ -1622,9 +1556,10 @@ func TestRenderedTemplatesEndWithNewline(t *testing.T) {
 }
 
 func TestDebTemplateUbuntu20Removed(t *testing.T) {
+	deb := renderDEBTemplateForTest(t, "u24.x86_64", "u24")
 	releaseWith20 := regexp.MustCompile(`releases:\s*\[[^]]*\b20\b`)
-	if match := releaseWith20.FindString(debTemplate); match != "" {
-		t.Fatalf("debTemplate still includes Ubuntu 20.04 in repo releases: %q", match)
+	if match := releaseWith20.FindString(deb); match != "" {
+		t.Fatalf("deb config still includes Ubuntu 20.04 in repo releases: %q", match)
 	}
 
 	if _, ok := GetConfigConstants().DistroAdhocPkg["u20"]; ok {
@@ -1633,14 +1568,15 @@ func TestDebTemplateUbuntu20Removed(t *testing.T) {
 }
 
 func TestDebTemplateDebianChinaComponents(t *testing.T) {
+	deb := renderDEBTemplateForTest(t, "d12.x86_64", "d12")
 	required := []string{
 		"name: base           ,description: 'Debian Basic'       ,module: node    ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://deb.debian.org/debian/ ${distro_codename} main non-free-firmware'                                  ,china: 'https://mirrors.cloud.tencent.com/debian/ ${distro_codename} main non-free-firmware' }",
 		"name: updates        ,description: 'Debian Updates'     ,module: node    ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://deb.debian.org/debian/ ${distro_codename}-updates main non-free-firmware'                          ,china: 'https://mirrors.cloud.tencent.com/debian/ ${distro_codename}-updates main non-free-firmware' }",
 		"name: security       ,description: 'Debian Security'    ,module: node    ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://security.debian.org/debian-security ${distro_codename}-security main non-free-firmware'            ,china: 'https://mirrors.cloud.tencent.com/debian-security/ ${distro_codename}-security main non-free-firmware' }",
 	}
 	for _, fragment := range required {
-		if !strings.Contains(debTemplate, fragment) {
-			t.Fatalf("debTemplate missing expected Debian china fragment: %q", fragment)
+		if !strings.Contains(deb, fragment) {
+			t.Fatalf("deb config missing expected Debian china fragment: %q", fragment)
 		}
 	}
 
@@ -1653,39 +1589,31 @@ func TestDebTemplateDebianChinaComponents(t *testing.T) {
 		"china: 'https://mirrors.cloud.tencent.com/debian-security/ ${distro_codename}-security main contrib non-free non-free-firmware'",
 	}
 	for _, fragment := range forbidden {
-		if strings.Contains(debTemplate, fragment) {
-			t.Fatalf("debTemplate still contains invalid Debian/Ubuntu mixed components: %q", fragment)
+		if strings.Contains(deb, fragment) {
+			t.Fatalf("deb config still contains invalid Debian/Ubuntu mixed components: %q", fragment)
 		}
 	}
 }
 
 func TestPG19ConfigurationKeepsPG18DefaultGroups(t *testing.T) {
 	for _, tc := range []struct {
-		os, template, separator string
-		wantPG19                bool
+		os, separator string
+		wantPG19      bool
 	}{
-		{"el8", rpmTemplate, "_", false},
-		{"el9", rpmTemplate, "_", true},
-		{"u24", debTemplate, "-", true},
+		{"el8", "_", false},
+		{"el9", "_", true},
+		{"u24", "-", true},
 	} {
 		t.Run(tc.os, func(t *testing.T) {
 			g := &PigstyConfigGenerator{osName: tc.os + ".x86_64", osCode: tc.os, arch: "x86_64", constants: GetConfigConstants()}
-			tmpl := template.Must(template.New("config").Funcs(g.getFuncMap()).Parse(tc.template))
-			data := map[string]interface{}{
-				"OSName": g.osName, "OSCode": g.osCode, "Arch": g.arch,
-				"TunedProfileDir": g.tunedProfileDir(), "Constants": g.constants,
-				"PGVersions": db.SupportedPGVersionsForOS(g.osCode), "DefaultPG": db.DefaultPGVersion,
-				"Categories": []string{"gis"}, "ExtMappings": []ExtensionMapping{},
-				"CategoryExts": map[int]map[string]*CategoryPkgList{
-					18: {"gis": {Visible: "stable" + tc.separator + "18"}},
-					19: {"gis": {Visible: "new" + tc.separator + "19"}},
-				},
-			}
-			var out bytes.Buffer
-			if err := tmpl.Execute(&out, data); err != nil {
+			data := g.buildTemplateData(nil, []string{"gis"}, map[int]map[string]*CategoryPkgList{
+				18: {"gis": {Visible: "stable" + tc.separator + "18"}},
+				19: {"gis": {Visible: "new" + tc.separator + "19"}},
+			}, nil)
+			rendered, err := g.renderConfig(data)
+			if err != nil {
 				t.Fatal(err)
 			}
-			rendered := out.String()
 			if got := renderedPackageAliasValue(rendered, "pgsql-gis"); got != "stable"+tc.separator+"$v" {
 				t.Fatalf("default group switched away from PG18: %q", got)
 			}

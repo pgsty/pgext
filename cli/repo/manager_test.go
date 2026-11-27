@@ -69,12 +69,18 @@ func TestManagementRoundTrip(t *testing.T) {
 			if !sameImage(first[external], original) {
 				t.Fatal("changed external source")
 			}
+			for _, provider := range []string{"pgdg", "pigsty"} {
+				key := first[signingKeyPath(provider, m.Platform.Family)]
+				if key == nil || key.Mode != 0644 || !strings.Contains(key.Content, "BEGIN PGP PUBLIC KEY BLOCK") {
+					t.Fatalf("missing or invalid %s key", provider)
+				}
+			}
 			again := execute(t, m, "add", []string{"pgdg", "pigsty"}, Options{})
 			if len(again.Changes) != 0 || again.Backup != "" {
 				t.Fatal("idempotent add wrote backup", again)
 			}
 			status := execute(t, m, "status", nil, Options{})
-			if len(status.Installed) != len(first) {
+			if len(status.Installed) != len(first)-2 {
 				t.Fatal("incomplete status")
 			}
 			removed := execute(t, m, "rm", []string{"pigsty"}, Options{})
@@ -87,35 +93,54 @@ func TestManagementRoundTrip(t *testing.T) {
 			}
 			execute(t, m, "set", []string{"docker"}, Options{})
 			files := snapshot(t, m)
-			if len(files) != 2 || !sameImage(files[external], original) {
+			if len(files) != 4 || !sameImage(files[external], original) {
 				t.Fatal("set failed to replace only managed files", files)
 			}
 			execute(t, m, "rm", nil, Options{All: true})
-			if files := snapshot(t, m); len(files) != 1 || !sameImage(files[external], original) {
+			if files := snapshot(t, m); len(files) != 3 || !sameImage(files[external], original) {
 				t.Fatal("rm --all removed external source", files)
 			}
 		})
 	}
 }
 
-func TestReplaceAndRestoreAllAPTFormats(t *testing.T) {
+func TestReplaceAndRestoreSelectedAPTSources(t *testing.T) {
 	m := testManager(t, "u24.arm64")
+	legacy := "etc/apt/sources.list.d/pgsql.sources"
+	vendor := "Types: deb\nURIs: https://old.example.org\nSuites: stable\nComponents: main\n"
+	oldPGDG := "Types: deb\nURIs: http://apt.postgresql.org/pub/repos/apt/\nSuites: noble-pgdg\nComponents: main\nSigned-By: /keys/old-pgdg.asc\n"
 	files := map[string]*fileImage{
 		"etc/apt/sources.list":                  {Content: "deb http://ports.ubuntu.com/ubuntu-ports noble main\n", Mode: 0640},
-		"etc/apt/sources.list.d/ubuntu.sources": {Content: "Types: deb\nURIs: http://ports.ubuntu.com/ubuntu-ports\nSuites: noble-updates\nComponents: main\nSigned-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n", Mode: 0644},
-		"etc/apt/sources.list.d/old.list":       {Content: "deb https://old.example.org stable main\n", Mode: 0600},
+		"etc/apt/sources.list.d/ubuntu.sources": {Content: "Types: deb\nURIs: http://mirrors.aliyun.com/ubuntu-ports/\nSuites: noble-updates noble-backports noble-security\nComponents: main\nSigned-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n", Mode: 0644},
+		repoPath("docker-ce", "deb"):            {Content: managedHeader + "deb https://download.docker.com/linux/ubuntu noble stable\n", Mode: 0600},
+		legacy:                                  {Content: oldPGDG + "\n" + vendor, Mode: 0640},
+		"etc/apt/sources.list.d/infra.list": {
+			Content: "deb https://repo.pigsty.cc/apt/infra generic main\n", Mode: 0644,
+		},
 	}
 	for path, image := range files {
 		if err := m.write(path, image); err != nil {
 			t.Fatal(err)
 		}
 	}
-	if _, err := m.Execute(context.Background(), "add", []string{"node"}, Options{}); err == nil || !strings.Contains(err.Error(), "conflicts") {
-		t.Fatal("duplicate sources accepted", err)
+	plan := execute(t, m, "set", []string{"node"}, Options{DryRun: true, Replace: true})
+	if len(plan.Changes) != 0 {
+		t.Fatalf("installed OS sources should cover node: %+v", plan.Changes)
 	}
 	r := execute(t, m, "set", []string{"all"}, Options{Replace: true})
-	if len(snapshot(t, m)) != 7 {
-		t.Fatal("replacement did not install all default modules")
+	after := snapshot(t, m)
+	for _, path := range []string{"etc/apt/sources.list", "etc/apt/sources.list.d/ubuntu.sources", repoPath("docker-ce", "deb")} {
+		if !sameImage(after[path], files[path]) {
+			t.Fatalf("migrating builder sources changed %s", path)
+		}
+	}
+	if !sameImage(after[legacy], &fileImage{Content: vendor, Mode: 0640}) || after["etc/apt/sources.list.d/infra.list"] != nil {
+		t.Fatal("did not migrate only the selected source definitions")
+	}
+	content := after[repoPath("pgdg", "deb")].Content
+	if !strings.Contains(content, "signed-by=/etc/apt/keyrings/pgext-pgdg.asc") ||
+		!strings.Contains(content, "https://apt.postgresql.org/") || strings.Contains(content, "trusted=yes") {
+		t.Fatalf("PGDG source lost its signature policy: %s", content)
 	}
 	execute(t, m, "restore", []string{r.Backup}, Options{})
 	if !maps.EqualFunc(files, snapshot(t, m), sameImage) {
@@ -123,10 +148,61 @@ func TestReplaceAndRestoreAllAPTFormats(t *testing.T) {
 	}
 }
 
+func TestReplacePreservesUnselectedRPMSections(t *testing.T) {
+	m := testManager(t, "el9.arm64")
+	path := "etc/yum.repos.d/pgsql.repo"
+	retired := "[pgdg14]\nbaseurl=https://repo.pigsty.cc/yum/pgdg/14/redhat/rhel-9.6-aarch64\n"
+	legacy := "[pgext-pgdg18]\nbaseurl=https://repo.pigsty.cc/yum/pgdg/18/redhat/rhel-9.6-aarch64\n"
+	preserved := &fileImage{Content: retired, Mode: 0640}
+	original := &fileImage{Content: legacy + retired, Mode: 0640}
+	if err := m.write(path, original); err != nil {
+		t.Fatal(err)
+	}
+	r := execute(t, m, "set", []string{"pgdg"}, Options{Replace: true})
+	after := snapshot(t, m)
+	keyPath := signingKeyPath("pgdg", "rpm")
+	armKey, err := signingKeys.ReadFile("keys/pgdg-rpm-aarch64.asc")
+	if err != nil || after[keyPath] == nil || after[keyPath].Content != string(armKey) {
+		t.Fatal("wrong PGDG key for RPM aarch64", err)
+	}
+	content := after[repoPath("pgdg18", "rpm")].Content
+	if !strings.Contains(content, "gpgcheck=1") || !strings.Contains(content, "gpgkey=file:///"+keyPath) {
+		t.Fatalf("PGDG source lost its signature policy: %s", content)
+	}
+	if !sameImage(after[path], preserved) {
+		t.Fatal("migrating the selected RPM section changed the unselected section")
+	}
+	execute(t, m, "restore", []string{r.Backup}, Options{})
+	if after := snapshot(t, m); len(after) != 1 || !sameImage(after[path], original) {
+		t.Fatal("RPM restore did not restore the exact original source and key state")
+	}
+}
+
+func TestReplaceRejectsUnrecognizedOrPartialSources(t *testing.T) {
+	for _, tt := range []struct{ platform, selector, path, source string }{
+		{"el9.amd64", "pgdg", "etc/yum.repos.d/custom.repo", "[pgdg18]\nbaseurl=https://private.example/rpm\n"},
+		{"u24.arm64", "pgdg", "etc/apt/sources.list.d/custom.sources", "Types: deb\nURIs: https://apt.postgresql.org/pub/repos/apt\nSuites: noble-pgdg noble-pgdg-testing\nComponents: main\n"},
+	} {
+		t.Run(tt.platform, func(t *testing.T) {
+			m := testManager(t, tt.platform)
+			if err := m.write(tt.path, &fileImage{Content: tt.source, Mode: 0640}); err != nil {
+				t.Fatal(err)
+			}
+			before := snapshot(t, m)
+			if _, err := m.Execute(context.Background(), "set", []string{tt.selector}, Options{Replace: true}); err == nil {
+				t.Fatal("accepted replacement of an ambiguous source")
+			}
+			if !maps.EqualFunc(before, snapshot(t, m), sameImage) {
+				t.Fatal("failed replacement wrote changes")
+			}
+		})
+	}
+}
+
 func TestDryRunAndInvalidSelectionLeaveNoFiles(t *testing.T) {
 	m := testManager(t, "u24.arm64")
 	r := execute(t, m, "add", nil, Options{DryRun: true})
-	if len(r.Changes) != 7 || r.Backup != "" || !r.DryRun {
+	if len(r.Changes) != 9 || r.Backup != "" || !r.DryRun {
 		t.Fatal(r)
 	}
 	for _, tt := range []struct {
@@ -174,11 +250,12 @@ func TestConflictDetectionForLegacyAndDeb822(t *testing.T) {
 			}
 		})
 	}
-	if keys := sourceKeys("x.sources", "Types: deb\nEnabled: no\nURIs: https://example.org\nSuites: stable\n", "deb"); len(keys) != 0 {
-		t.Fatal("disabled deb822 source is active", keys)
+	if defs := deb822Sources("Types: deb\nEnabled: no\nURIs: https://example.org\nSuites: stable\n")[0].definitions; len(defs) != 1 || defs[0].active {
+		t.Fatal("disabled deb822 source is active", defs)
 	}
-	if keys := sourceKeys("x.list", "# deb https://example.org stable main\ndeb-src https://example.org stable main", "deb"); len(keys) != 0 {
-		t.Fatal("comments or source-only entries considered binary sources", keys)
+	stanzas := sourceStanzas("x.list", "# deb https://example.org stable main\ndeb-src https://example.org stable main", "deb")
+	if len(stanzas) != 2 || len(stanzas[0].definitions) != 0 || !stanzas[1].definitions[0].active {
+		t.Fatal("source-only entries share APT signature options with binary sources", stanzas)
 	}
 }
 

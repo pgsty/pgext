@@ -49,10 +49,6 @@ func newBuildCommand(action string) *cobra.Command {
 		defer stop()
 		r, runErr := e.Run(ctx, p)
 		if r != nil {
-			if r.ToolVersions == nil {
-				r.ToolVersions = map[string]string{}
-			}
-			r.ToolVersions["pgext"] = Version + " (" + Commit + ")"
 			if err := printBuildValue(cmd, r, jsonOutput); err != nil {
 				return err
 			}
@@ -90,11 +86,15 @@ func buildFlags(c *cobra.Command, o *build.Options, jsonOutput *bool) {
 	}
 }
 
+func writeJSON(cmd *cobra.Command, v any) error {
+	enc := json.NewEncoder(cmd.OutOrStdout())
+	enc.SetIndent("", "  ")
+	return enc.Encode(v)
+}
+
 func printBuildValue(cmd *cobra.Command, v any, asJSON bool) error {
 	if asJSON {
-		enc := json.NewEncoder(cmd.OutOrStdout())
-		enc.SetIndent("", "  ")
-		return enc.Encode(v)
+		return writeJSON(cmd, v)
 	}
 	switch x := v.(type) {
 	case *build.Plan:
@@ -115,7 +115,7 @@ func printBuildValue(cmd *cobra.Command, v any, asJSON bool) error {
 			}
 		}
 	default:
-		return json.NewEncoder(cmd.OutOrStdout()).Encode(v)
+		return writeJSON(cmd, v)
 	}
 	return nil
 }
@@ -167,6 +167,6 @@ func newEnvCommand() *cobra.Command {
 		}
 		c.AddCommand(sub)
 	}
-	c.AddCommand(newEnvRepoCommand(), newEnvProxyCommand())
+	c.AddCommand(newEnvRepoCommand())
 	return c
 }

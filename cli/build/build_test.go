@@ -313,7 +313,7 @@ func TestArchiveCannotEscapeOrInjectLinks(t *testing.T) {
 	}
 }
 
-func TestAllSupportedRepoAndToolPlans(t *testing.T) {
+func TestAllSupportedToolPlans(t *testing.T) {
 	for _, target := range db.SupportedOSPlatforms() {
 		code, archName, _ := strings.Cut(target, ".")
 		if archName != "x86_64" {
@@ -333,24 +333,12 @@ func TestAllSupportedRepoAndToolPlans(t *testing.T) {
 			e := testEngine(t)
 			e.Platform = p
 			e.Options.Plan = true
-			for _, m := range []string{"pgdg", "pigsty"} {
-				content, err := e.repoContent(m)
-				if err != nil {
-					t.Fatal(err)
-				}
-				if strings.Contains(content, "trusted=yes") || strings.Contains(content, "gpgcheck=0") {
-					t.Fatal("signature verification disabled")
-				}
-			}
 			cmd, err := e.toolCommand("full")
 			if err != nil {
 				t.Fatal(err)
 			}
 			if strings.Contains(strings.Join(cmd.Args, " "), "postgresql19") {
 				t.Fatal("tool installation must default to PostgreSQL 18")
-			}
-			if _, err := e.Repo(context.Background(), "add", []string{"unknown"}, true); err == nil {
-				t.Fatal("unknown module accepted")
 			}
 		}
 	}
@@ -567,20 +555,21 @@ func TestRecipeDriftStillSavesFailure(t *testing.T) {
 	}
 }
 
-func TestLegacyRepoRecognition(t *testing.T) {
-	for _, tc := range []struct {
-		family, content string
-		want            bool
-	}{
-		{"deb", "# pigsty-infra\ndeb [signed-by=/etc/apt/keyrings/pigsty.asc trusted=yes] https://repo.pigsty.cc/apt/infra/ generic main\ndeb [trusted=yes] https://apt.postgresql.org/pub/repos/apt/ noble-pgdg main\n", true},
-		{"deb", "deb https://example.com/custom stable main", false},
-		{"deb", "deb https://repo.pigsty.cc/apt/infra generic main\ndeb https://example.com/custom stable main", false},
-		{"rpm", "[pigsty-pgsql]\nbaseurl=https://repo.pigsty.cc/yum/pgsql/el9.$basearch\n[pgdg18]\nbaseurl=https://repo.pigsty.cc/yum/pgdg/18/redhat/rhel-9.8-$basearch\nenabled=1", true},
-		{"rpm", "[pgdg18]\nenabled=1\n[custom]\nenabled=1", false},
-	} {
-		if got := recognizedLegacyRepos(tc.content, tc.family); got != tc.want {
-			t.Fatalf("%s: %t", tc.content, got)
+func TestSourceFallbackDoesNotOverrideCatalog(t *testing.T) {
+	e := testEngine(t)
+	j := &Job{Package: "rdkit", Extension: &Extension{Source: "rdkit-future.tar.gz future-dependency.tar.gz"}}
+	for _, family := range []string{"", "rpm", "deb"} {
+		e.Platform.Family = family
+		if got := e.sourceNames(j, nil); !reflect.DeepEqual(got, strings.Fields(j.Extension.Source)) {
+			t.Fatalf("%s: hardcoded sources override catalog: %v", family, got)
 		}
+	}
+	if got := e.sourceNames(j, []byte("TARBALL := rdkit-recipe.tar.gz\n")); !reflect.DeepEqual(got, []string{"rdkit-recipe.tar.gz"}) {
+		t.Fatal("local recipe must remain authoritative", got)
+	}
+	j.Extension = nil
+	if got := e.sourceNames(j, nil); !reflect.DeepEqual(got, SpecialSourceMapping["rdkit"]) {
+		t.Fatal("missing fallback", got)
 	}
 }
 

@@ -6,13 +6,16 @@ Usage:
     python list-cate.py [PGURL] [OUTPUT_DIR]
 
     PGURL: PostgreSQL connection URL (default: postgres:///)
-    OUTPUT_DIR: Output directory for list files (default: content/list/)
+    OUTPUT_DIR: Output directory for list files (default: <site>/content/list/)
 """
 
 import argparse
-import psycopg2
 from pathlib import Path
 from typing import List, Optional
+
+import psycopg2
+
+from site_paths import add_site_dir
 
 
 # ============================================================
@@ -221,13 +224,14 @@ def main():
     parser = argparse.ArgumentParser(
         description='Generate category list pages for Hugo'
     )
+    add_site_dir(parser)
     parser.add_argument(
         'pgurl', nargs='?', default='postgres:///',
         help='PostgreSQL connection URL (default: postgres:///)'
     )
     parser.add_argument(
         'output_dir', nargs='?', default=None,
-        help='Output directory (default: content/list/)'
+        help='Output directory (default: <site>/content/list/)'
     )
 
     args = parser.parse_args()
@@ -236,7 +240,7 @@ def main():
     if args.output_dir:
         output_dir = Path(args.output_dir)
     else:
-        output_dir = Path(__file__).parent.parent / 'content' / 'list'
+        output_dir = args.dir.expanduser() / 'content' / 'list'
 
     generate_category_lists(args.pgurl, output_dir)
 

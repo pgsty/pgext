@@ -63,7 +63,9 @@ func TestRepoCLIStagingRoundTrip(t *testing.T) {
 		return r
 	}
 	plan := run("add", "pigsty", "--plan", "--mirror")
-	if !plan.DryRun || len(plan.Changes) != 2 || !strings.Contains(plan.Changes[0].After.Content, "repo.pigsty.cc") {
+	if !plan.DryRun || len(plan.Changes) != 3 ||
+		!strings.Contains(plan.Changes[2].After.Content, "signed-by=/etc/apt/keyrings/pgext-pigsty.asc") ||
+		!strings.Contains(plan.Changes[2].After.Content, "repo.pigsty.cc") {
 		t.Fatal(plan)
 	}
 	r := run("add", "pigsty", "--mirror")
@@ -74,6 +76,9 @@ func TestRepoCLIStagingRoundTrip(t *testing.T) {
 	files, err := filepath.Glob(filepath.Join(root, "etc/apt/sources.list.d/*.list"))
 	if err != nil || len(files) != 0 {
 		t.Fatal("restore failed", files, err)
+	}
+	if _, err := os.Stat(filepath.Join(root, "etc/apt/keyrings/pgext-pigsty.asc")); !os.IsNotExist(err) {
+		t.Fatal("restore did not remove the installed signing key", err)
 	}
 	if entries, err := os.ReadDir(filepath.Join(root, "var/lib/pgext/repo/backups")); err != nil || len(entries) != 2 {
 		t.Fatal("missing restore backup", entries, err)
@@ -90,5 +95,27 @@ func TestRepoCLIRejectsInvalidOptions(t *testing.T) {
 		if out, err := runRepoTest(args...); err == nil {
 			t.Fatalf("accepted %v: %s", args, out)
 		}
+	}
+}
+
+func TestEnvRepoAliasesRepoSetAndProxyRemoved(t *testing.T) {
+	env := newEnvCommand()
+	if sub, _, err := env.Find([]string{"proxy"}); err == nil && sub.Name() == "proxy" {
+		t.Fatal("env proxy should be removed")
+	}
+	root := t.TempDir()
+	var out, diag bytes.Buffer
+	env.SetOut(&out)
+	env.SetErr(&diag)
+	env.SetArgs([]string{"repo", "pigsty", "--plan", "--mirror", "--update=false", "--platform", "u24.arm64", "--root", root, "--json"})
+	if err := env.Execute(); err != nil {
+		t.Fatalf("env repo failed: %v\n%s", err, diag.String())
+	}
+	var r repo.Result
+	if err := json.Unmarshal(out.Bytes(), &r); err != nil {
+		t.Fatalf("dirty JSON: %q (%v)", out.String(), err)
+	}
+	if r.Action != "set" || !r.DryRun || !r.Success || len(r.Changes) != 3 || !strings.Contains(r.Changes[2].After.Content, "repo.pigsty.cc") {
+		t.Fatalf("unexpected env repo result: %+v", r)
 	}
 }

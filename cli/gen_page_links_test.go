@@ -47,17 +47,31 @@ func TestCatalogLicenseNavigationUsesCanonicalTerms(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			for _, term := range []string{"0BSD", "Artistic-2.0"} {
+			for _, term := range []string{"0BSD", "BSD-2-Clause", "BSD-3-Clause", "Artistic-1.0", "Artistic-2.0"} {
 				if !strings.Contains(string(data), LicenseShortcode(term)) {
 					t.Errorf("missing canonical license term %s", term)
 				}
 			}
-			for _, absent := range []string{"BSD 0-Clause", "Artistic"} {
+			for _, absent := range []string{"BSD 0-Clause", "BSD 2-Clause", "BSD 3-Clause", "Artistic"} {
 				if strings.Contains(string(data), LicenseShortcode(absent)) {
 					t.Errorf("navigation links absent taxonomy %s", absent)
 				}
 			}
 		})
+	}
+}
+
+func TestCatalogLicenseTextLinks(t *testing.T) {
+	for _, name := range []string{"0BSD", "BSD-2-Clause", "BSD-3-Clause", "Artistic-1.0", "Artistic-2.0", "Elastic-2.0"} {
+		if getLicenseInfo(name).URL == "#" {
+			t.Errorf("missing license text for %s", name)
+		}
+	}
+	for _, name := range []string{"GPL-3.0-or-later", "AGPL-3.0-only", "LGPL-2.0-only"} {
+		want := "https://spdx.org/licenses/" + name + ".html"
+		if got := getLicenseInfo(name).URL; got != want {
+			t.Errorf("license text for %s = %s, want %s", name, got, want)
+		}
 	}
 }
 
@@ -89,7 +103,7 @@ func TestProductOverviewLinksUseCanonicalLicenseAnchors(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			for _, anchor := range []string{"0bsd", "artistic10", "artistic20"} {
+			for _, anchor := range []string{"0bsd", "bsd2clause", "bsd3clause", "artistic10", "artistic20"} {
 				if !strings.Contains(string(data), `href="/ext/license#`+anchor+`"`) {
 					t.Errorf("missing canonical license anchor %s", anchor)
 				}

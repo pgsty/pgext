@@ -138,8 +138,4 @@ func TestBuildTargetMigrationPreservesHistoryIntegration(t *testing.T) {
 			t.Fatal("no-op migration invalidated caches again")
 		}
 	}
-	var cells int
-	if err := QueryRowContext(ctx, `SELECT length(codes) FROM pgext.matrix WHERE pkg='pgvector'`).Scan(&cells); err != nil || cells != 80 {
-		t.Fatalf("materialized matrix must contain 80 cells, got %d: %v", cells, err)
-	}
 }

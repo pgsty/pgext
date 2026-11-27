@@ -4,6 +4,7 @@ import (
 	"encoding/csv"
 	"io"
 	"reflect"
+	"regexp"
 	"strings"
 	"testing"
 )
@@ -197,26 +198,6 @@ func TestUniverseSchemaMatchesCSV(t *testing.T) {
 	}
 }
 
-func TestMatrixSchemaIsStandaloneCompactMaterialization(t *testing.T) {
-	matrixDDL, err := GetMatrixSchema()
-	if err != nil {
-		t.Fatal(err)
-	}
-	for _, fragment := range []string{
-		"CREATE MATERIALIZED VIEW pgext.matrix",
-		"string_agg(c.code, '' ORDER BY c.oi, c.pi)",
-		"'n', to_jsonb(names), 'v', to_jsonb(versions), 'd', details",
-		"CREATE UNIQUE INDEX matrix_pkg_idx",
-	} {
-		if !strings.Contains(matrixDDL, fragment) {
-			t.Errorf("matrix migration DDL is missing %q", fragment)
-		}
-	}
-	if strings.Contains(matrixDDL, "CREATE DOMAIN pgext.version") {
-		t.Fatal("matrix migration DDL must not include the following version domain")
-	}
-}
-
 func TestUniverseContainsPackagedExtensionCatalog(t *testing.T) {
 	extension, err := GetCSVFile("extension")
 	if err != nil {
@@ -236,6 +217,21 @@ func TestUniverseContainsPackagedExtensionCatalog(t *testing.T) {
 	}
 	if len(all) <= len(packaged) {
 		t.Fatalf("universe must be a strict superset: extension=%d universe=%d", len(packaged), len(all))
+	}
+}
+
+func TestCatalogCSVUsesSinglePrimaryLicense(t *testing.T) {
+	operator := regexp.MustCompile(`(?i)(^|[[:space:]()])(and|or)($|[[:space:]()])`)
+	for _, table := range []string{"extension", "universe"} {
+		file, err := GetCSVFile(table)
+		if err != nil {
+			t.Fatal(err)
+		}
+		for name := range csvColumn(t, file.Content, "license") {
+			if operator.MatchString(name) {
+				t.Errorf("%s.csv contains compound license %q", table, name)
+			}
+		}
 	}
 }
 

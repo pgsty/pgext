@@ -19,7 +19,6 @@ type Options struct {
 	CatalogFile, PG, SpecDir, Root, Platform, SourceURL, Checksums string
 	Mirror, Force, NoDebug, Plan                                   bool
 	Jobs                                                           int
-	ReplaceRepos                                                   bool
 }
 
 type Job struct {
@@ -74,13 +73,15 @@ type Result struct {
 }
 
 type Engine struct {
-	Options    Options
-	Platform   Platform
-	Catalog    *Catalog
-	Exec       Executor
-	Err        io.Writer
-	Version    string
-	aptUpdated bool
+	Options       Options
+	Platform      Platform
+	Catalog       *Catalog
+	Exec          Executor
+	Err           io.Writer
+	Version       string
+	aptUpdated    bool
+	checksumsPath string
+	checksums     map[string]string
 }
 
 func New(opts Options, diagnostics io.Writer) (*Engine, error) {
@@ -146,7 +147,7 @@ func NewEnvironment(opts Options, diagnostics io.Writer) (*Engine, error) {
 }
 
 func (e *Engine) Prepare(action string, names []string) (*Plan, error) {
-	if _, err := loadChecksums(e.Options.Checksums); err != nil {
+	if _, err := e.getChecksums(); err != nil {
 		return nil, err
 	}
 	stages := map[string][]string{"get": {"get"}, "dep": {"dep"}, "make": {"make"}, "pkg": {"get", "dep", "make"}}[action]
@@ -184,19 +185,15 @@ func (e *Engine) Prepare(action string, names []string) (*Plan, error) {
 			j.Recipe = ""
 		} else {
 			j.RecipeSHA256 = Hash(raw)
-			j.RecipeTreeSHA256, err = recipeTreeHash(filepath.Dir(j.Recipe))
+			j.RecipeTreeSHA256, err = recipeTreeHashFor(e.Platform.Family, j.Recipe)
 			if err != nil {
 				return nil, err
 			}
 		}
 		if !j.standaloneKernel && (action != "get" || e.Options.PG != "" || (j.Recipe != "" && e.Platform.Family != "")) {
-			selector := *e
-			if action == "get" {
-				// Source preparation must also work before development tools are
-				// installed, and fetch every declared per-major source variant.
-				selector.Options.Plan = true
-			}
-			j.PG, err = selector.jobPG(j, raw)
+			// Source preparation must also work before development tools are
+			// installed, and fetch every declared per-major source variant.
+			j.PG, err = e.jobPG(j, raw, e.Options.Plan || action == "get")
 			if err != nil {
 				return nil, err
 			}
@@ -250,7 +247,7 @@ func (e *Engine) resolveJob(name string) (*Job, error) {
 	return j, nil
 }
 
-func (e *Engine) jobPG(j *Job, recipe []byte) ([]int, error) {
+func (e *Engine) jobPG(j *Job, recipe []byte, planOnly bool) ([]int, error) {
 	requested, err := ParsePG(e.Options.PG)
 	if err != nil {
 		return nil, err
@@ -301,7 +298,7 @@ func (e *Engine) jobPG(j *Job, recipe []byte) ([]int, error) {
 		if !db.SupportsOSPG(e.Platform.OS, pg) {
 			continue
 		}
-		if e.Options.Plan {
+		if planOnly {
 			out = append(out, pg)
 		} else if _, err := os.Stat(e.Platform.PGConfig(pg)); err == nil {
 			out = append(out, pg)
@@ -346,7 +343,7 @@ func (e *Engine) Run(ctx context.Context, p *Plan) (r *Result, runErr error) {
 				if err != nil {
 					return r, err
 				}
-				tree, err := recipeTreeHash(filepath.Dir(j.Recipe))
+				tree, err := recipeTreeHashFor(e.Platform.Family, j.Recipe)
 				if err != nil {
 					return r, err
 				}

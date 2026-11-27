@@ -46,39 +46,6 @@ func BgShortcode(text, alt, color string) string {
 	}
 }
 
-// PkgShortcode generates package shortcode with 5 parameters:
-// name, version, org, state, count
-func PkgShortcode(name, version, org, state, count string) string {
-	parts := []string{fmt.Sprintf(`{{< pkg "%s"`, name)}
-
-	// Always include all 5 parameters for consistency
-	if version != "" {
-		parts = append(parts, fmt.Sprintf(`"%s"`, version))
-	} else {
-		parts = append(parts, `""`)
-	}
-
-	if org != "" {
-		parts = append(parts, fmt.Sprintf(`"%s"`, org))
-	} else {
-		parts = append(parts, `""`)
-	}
-
-	if state != "" {
-		parts = append(parts, fmt.Sprintf(`"%s"`, state))
-	} else {
-		parts = append(parts, `""`)
-	}
-
-	if count != "" {
-		parts = append(parts, fmt.Sprintf(`"%s"`, count))
-	} else {
-		parts = append(parts, `""`)
-	}
-
-	return strings.Join(parts, " ") + " >}}"
-}
-
 // ExtShortcode generates extension link shortcode
 func ExtShortcode(target, label string) string {
 	if target == "" {
@@ -221,11 +188,6 @@ func TabShortcode(label, value, content string) string {
 		return fmt.Sprintf("\n{{< tab label=%q >}}\n%s\n{{< /tab >}}", label, content)
 	}
 	return fmt.Sprintf("\n{{< tab label=%q value=%q >}}\n%s\n{{< /tab >}}", label, value, content)
-}
-
-// TripleQuote wraps content in triple backticks (```) for code blocks
-func TripleQuote(content string) string {
-	return "```\n" + content + "\n```"
 }
 
 // TripleQuoteLang wraps content in triple backticks with language specification

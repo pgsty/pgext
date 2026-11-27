@@ -32,7 +32,7 @@ func ShowPackage(pkgName string) error {
 		return fmt.Errorf("get active OS: %w", err)
 	}
 
-	pgList, err := getActivePG(ctx)
+	pgList, err := ActivePGVersions(ctx)
 	if err != nil {
 		return fmt.Errorf("get active PG: %w", err)
 	}
@@ -78,11 +78,9 @@ func GetActiveOS(ctx context.Context) ([]string, error) {
 	return osList, rows.Err()
 }
 
-// getActivePG retrieves active PostgreSQL versions from database.
-func getActivePG(ctx context.Context) ([]int, error) {
-	query := "SELECT pg FROM pgext.active_pg ORDER BY pg DESC"
-
-	rows, err := QueryContext(ctx, query)
+// ActivePGVersions retrieves active PostgreSQL major versions ordered newest first.
+func ActivePGVersions(ctx context.Context) ([]int, error) {
+	rows, err := QueryContext(ctx, "SELECT pg FROM pgext.active_pg ORDER BY pg DESC")
 	if err != nil {
 		return nil, err
 	}

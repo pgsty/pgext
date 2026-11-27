@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"io"
 	"maps"
-	"net/url"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -103,7 +102,7 @@ func (m *Manager) execute(ctx context.Context, r *Result, args []string, opts Op
 	if err != nil {
 		return err
 	}
-	r.Installed = installed(m.Root, files)
+	r.Installed = installed(m.Root, m.Platform.Family, files)
 	if r.Action == "status" {
 		return nil
 	}
@@ -121,36 +120,15 @@ func (m *Manager) execute(ctx context.Context, r *Result, args []string, opts Op
 			return fmt.Errorf("no repositories selected")
 		}
 		r.Repositories = selected
-		for path, image := range files {
-			if opts.Replace || r.Action == "set" && owned(path, image) {
-				delete(after, path)
-			}
-		}
-		for _, repository := range selected {
-			path := repoPath(repository.Name, m.Platform.Family)
-			if old := after[path]; old != nil && !owned(path, old) {
-				return fmt.Errorf("%s is not managed by pgext repo; use set --replace to back up and replace existing sources", path)
-			}
-			content, err := Render(repository, m.Platform, opts.RenderOptions)
-			if err != nil {
-				return err
-			}
-			after[path] = &fileImage{Content: content, Mode: 0644}
-		}
-		// Check selected definitions against every retained source, including deb822.
-		for _, repository := range selected {
-			path := repoPath(repository.Name, m.Platform.Family)
-			keys := sourceKeys(path, after[path].Content, m.Platform.Family)
-			for other, image := range after {
-				if other == path {
-					continue
-				}
-				for _, key := range sourceKeys(other, image.Content, m.Platform.Family) {
-					if slices.Contains(keys, key) {
-						return fmt.Errorf("%s conflicts with %s (%s); use set --replace to back up and replace existing sources", path, other, key)
-					}
+		if r.Action == "set" && !opts.Replace {
+			for path, image := range files {
+				if owned(path, image) {
+					delete(after, path)
 				}
 			}
+		}
+		if err := m.planSources(after, selected, opts); err != nil {
+			return err
 		}
 	case "rm":
 		if opts.All && len(args) != 0 {
@@ -216,6 +194,96 @@ func (m *Manager) execute(ctx context.Context, r *Result, args []string, opts Op
 		}
 	}
 	return m.apply(ctx, r, files)
+}
+
+func (m *Manager) planSources(after map[string]*fileImage, selected []Repository, opts Options) error {
+	family := m.Platform.Family
+	type source struct {
+		repo  Repository
+		image *fileImage
+	}
+	desired := make(map[string]source, len(selected))
+	byKey := make(map[string]string, len(selected))
+	for _, repository := range selected {
+		path := repoPath(repository.Name, family)
+		content, err := Render(repository, m.Platform, opts.RenderOptions)
+		if err != nil {
+			return err
+		}
+		desired[path] = source{repository, &fileImage{Content: content, Mode: 0644}}
+		for _, stanza := range sourceStanzas(path, content, family) {
+			for _, definition := range stanza.definitions {
+				if other := byKey[definition.key]; other != "" && other != path {
+					return fmt.Errorf("%s conflicts with %s (%s)", path, other, definition.key)
+				}
+				byKey[definition.key] = path
+			}
+		}
+	}
+
+	reuse := map[string]bool{}
+	for _, path := range slices.Sorted(maps.Keys(after)) {
+		image := after[path]
+		_, selectedPath := desired[path]
+		if !validRepoPath(path, family) || (selectedPath && owned(path, image)) {
+			continue
+		}
+		var retained strings.Builder
+		changed, hasSources := false, false
+		for _, stanza := range sourceStanzas(path, image.Content, family) {
+			replaceable := len(stanza.definitions) > 0
+			var conflict string
+			for _, definition := range stanza.definitions {
+				target := byKey[definition.key]
+				repository := desired[target].repo
+				replaceable = replaceable && definition.provider != "" && definition.provider == repoProvider(repository.Name)
+				if target == "" || !definition.active {
+					continue
+				}
+				if repository.Module == "node" {
+					reuse[target] = true
+				} else {
+					conflict = target
+				}
+			}
+			if conflict != "" {
+				if !replaceable {
+					return fmt.Errorf("%s conflicts with an unrecognized or partly selected source in %s; split or move the source first", conflict, path)
+				}
+				if !opts.Replace {
+					return fmt.Errorf("%s conflicts with %s; use --replace to migrate the selected PGDG/Pigsty sources", conflict, path)
+				}
+				changed = true
+				continue
+			}
+			hasSources = hasSources || len(stanza.definitions) > 0
+			retained.WriteString(stanza.content)
+		}
+		if selectedPath && !reuse[path] && (!changed || hasSources) {
+			return fmt.Errorf("%s has source content not managed by pgext repo; move it before retrying", path)
+		}
+		if changed {
+			if hasSources {
+				after[path] = &fileImage{Content: retained.String(), Mode: image.Mode}
+			} else {
+				delete(after, path)
+			}
+		}
+	}
+	for path, source := range desired {
+		if reuse[path] {
+			continue
+		}
+		after[path] = source.image
+		if path, asset := bundledSigningKey(source.repo, m.Platform); asset != "" {
+			key, err := signingKeys.ReadFile(asset)
+			if err != nil {
+				return err
+			}
+			after[path] = &fileImage{Content: string(key), Mode: 0644}
+		}
+	}
+	return nil
 }
 
 // compatibleHostPlatform guards system writes without making an explicit
@@ -294,74 +362,4 @@ func (m *Manager) apply(ctx context.Context, r *Result, files map[string]*fileIm
 		}
 	}
 	return nil
-}
-
-// sourceKeys identifies RPM section IDs and active APT endpoint/suite pairs.
-// Comparing http and https equally catches conflicting Signed-By/Trusted policy.
-func sourceKeys(path, content, family string) []string {
-	var keys []string
-	add := func(endpoint, suite string) {
-		u, err := url.Parse(endpoint)
-		if err == nil {
-			keys = append(keys, strings.ToLower(u.Host)+strings.TrimRight(u.Path, "/")+" "+suite)
-		}
-	}
-	if family == "rpm" {
-		for _, line := range strings.Split(content, "\n") {
-			line = strings.TrimSpace(line)
-			if strings.HasPrefix(line, "[") {
-				if name, _, ok := strings.Cut(line[1:], "]"); ok {
-					keys = append(keys, name)
-				}
-			}
-		}
-	} else if strings.HasSuffix(path, ".sources") {
-		fields := map[string]string{}
-		flush := func() {
-			if strings.ToLower(fields["enabled"]) != "no" && slices.Contains(strings.Fields(fields["types"]), "deb") {
-				for _, endpoint := range strings.Fields(fields["uris"]) {
-					for _, suite := range strings.Fields(fields["suites"]) {
-						add(endpoint, suite)
-					}
-				}
-			}
-			fields = map[string]string{}
-		}
-		last := ""
-		for _, line := range strings.Split(strings.ReplaceAll(content, "\r\n", "\n"), "\n") {
-			if strings.TrimSpace(line) == "" {
-				flush()
-				last = ""
-			} else if strings.HasPrefix(strings.TrimSpace(line), "#") {
-				continue
-			} else if strings.HasPrefix(line, " ") || strings.HasPrefix(line, "\t") {
-				fields[last] += " " + strings.TrimSpace(line)
-			} else if k, v, ok := strings.Cut(line, ":"); ok {
-				last = strings.ToLower(strings.TrimSpace(k))
-				fields[last] = strings.TrimSpace(v)
-			}
-		}
-		flush()
-	} else {
-		for _, line := range strings.Split(content, "\n") {
-			parts := strings.Fields(line)
-			if len(parts) == 0 || parts[0] != "deb" {
-				continue
-			}
-			parts = parts[1:]
-			if len(parts) > 0 && strings.HasPrefix(parts[0], "[") {
-				for len(parts) > 0 {
-					last := strings.HasSuffix(parts[0], "]")
-					parts = parts[1:]
-					if last {
-						break
-					}
-				}
-			}
-			if len(parts) >= 2 {
-				add(parts[0], parts[1])
-			}
-		}
-	}
-	return keys
 }

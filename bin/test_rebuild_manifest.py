@@ -104,6 +104,27 @@ class PGDGSupplementPolicyTest(unittest.TestCase):
                 self.assertEqual(manifest.main(), 0)
             self.assertEqual((root / "out/build-manifest.jsonl").read_text(), "")
 
+    def test_pg_strom_rpm_gap_uses_current_recipe_and_minor_compatible_platforms(self):
+        rows = [catalog_row("pg_strom")]
+        inventory = {"pg_strom_6", "pg_strom"}
+        self.assertEqual(
+            manifest.map_recipe("rpm", "pg_strom_$v", rows, inventory),
+            ("pg_strom_6", "explicit_alias"),
+        )
+        self.assertIsNone(manifest.map_recipe("rpm", "pg_strom_$v", rows, {"pg_strom"})[0])
+        packages = {("rpm", "pg_strom", "el10.x86_64", 17): {"6.1-4PGDG"}}
+        gaps = {
+            (platform, pg)
+            for platform in manifest.RPM_PLATFORMS
+            for pg in range(15, 20)
+            if manifest.pgdg_build_reasons("rpm", rows, platform, pg, packages)
+        }
+        self.assertEqual(
+            gaps,
+            {(os, pg) for os in ("el9.x86_64", "el10.x86_64") for pg in range(15, 19)}
+            - {("el10.x86_64", 17)},
+        )
+
     def test_h3_pigsty_build_uses_catalog_extension_and_pinned_core_sources(self):
         row = catalog_row(
             "h3", "pg_h3", id="1530", lead="t", lead_ext="h3",

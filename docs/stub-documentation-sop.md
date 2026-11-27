@@ -75,10 +75,15 @@ compliance with the current document contract.
    make check-stubs
    ```
 
-3. For new or materially refreshed documentation, also run the existing
-   `bin/stub_phaseb.py` pair lint for the bound manifest, or equivalent focused
-   checks of the document contract, source URLs, identifiers, and bilingual code
-   blocks. Markdown lint and technical/bilingual review are separate checks.
+3. For new or materially refreshed documentation, also run bilingual pair lint to
+   verify the document contract, source URLs, identifiers, language guards, and
+   matching EN/ZH code blocks:
+
+   ```bash
+   go run . gen lint --pair example
+   ```
+
+   Markdown lint and technical/bilingual review are separate checks.
 4. Run `git diff --check` and relevant tests. Changes to Markdown validation or
    generators require `go test ./...`.
 5. Check the batch ledger against the target list. Report reviewed, unchanged,
@@ -99,10 +104,12 @@ existing page. Correct the source rather than bypassing this failure.
 - When a local documentation load is authorized, run loader tests and a complete
   transactional dry-run first. After loading, verify that stored bilingual
   bodies match the source files. This is separate from source lint.
-- When site generation is authorized, lint sources first, generate to a named
-  staging directory using `--output`, and run the destination site's own strict
-  source/rendered/link checks before replacing or publishing its generated files.
-  The shared source check catches the recurring fence/spacing errors; it does
-  not replace each site's complete Hugo and rendered-page validation.
+- When site generation is authorized, lint the stubs in the CLI checkout first.
+  For the static catalog, `go run . gen site -D <staging-site>` writes detail
+  pages to `<staging-site>/content/e/`. To stage just those pages, use
+  `go run . gen page --output <staging-site>/content`. For Pigsty's language
+  sites, use `gen cc page` or `gen io page` with
+  `--output <staging-site>/content/ext`. Run the destination site's Markdown,
+  Hugo, rendered-page and link checks before replacing or publishing pages.
 - Verify the provider deployment and public pages after publication. A local
   build or a successful upload alone does not establish public delivery.

@@ -17,6 +17,8 @@ import (
 
 const DefaultPgrxVersion = "0.19.3"
 
+var pgrxVersionPattern = regexp.MustCompile(`^\d+\.\d+\.\d+$`)
+
 type EnvOptions struct {
 	Options
 	From, Mode, PgrxVersion string
@@ -131,9 +133,6 @@ func (e *Engine) setupSpec(ctx context.Context, from string) error {
 	}
 	defer os.RemoveAll(stage)
 	root := e.Platform.Family + "build"
-	if e.Platform.Family == "deb" {
-		root = "debbuild"
-	}
 	if from == "" {
 		bases := []string{"https://repo.pigsty.io/ext/spec", "https://repo.pigsty.cc/ext/spec"}
 		if e.Options.Mirror {
@@ -319,7 +318,7 @@ func (e *Engine) pgrxCommands(ctx context.Context, version string) ([]Command, e
 	if version == "" {
 		version = DefaultPgrxVersion
 	}
-	if !regexp.MustCompile(`^\d+\.\d+\.\d+$`).MatchString(version) {
+	if !pgrxVersionPattern.MatchString(version) {
 		return nil, fmt.Errorf("invalid pgrx version")
 	}
 	h, err := os.UserHomeDir()

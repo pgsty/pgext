@@ -16,9 +16,17 @@ import (
 	"pgext/db"
 )
 
-var tarballPattern = regexp.MustCompile(`[A-Za-z0-9][A-Za-z0-9_.+~-]*\.(?:tar\.(?:gz|bz2|xz|zst)|tgz|zip)`)
-var auxiliarySourcePattern = regexp.MustCompile(`[A-Za-z0-9][A-Za-z0-9_.+~-]*\.(?:whl|dsc|jar(?:\.sha256)?)`)
-var sourcePathPattern = regexp.MustCompile(`(?:\.\./SOURCES/|/ext/src/)([^\s"'();|&<>]+)`)
+var (
+	tarballPattern         = regexp.MustCompile(`[A-Za-z0-9][A-Za-z0-9_.+~-]*\.(?:tar\.(?:gz|bz2|xz|zst)|tgz|zip)`)
+	auxiliarySourcePattern = regexp.MustCompile(`[A-Za-z0-9][A-Za-z0-9_.+~-]*\.(?:whl|dsc|jar(?:\.sha256)?)`)
+	sourcePathPattern      = regexp.MustCompile(`(?:\.\./SOURCES/|/ext/src/)([^\s"'();|&<>]+)`)
+	makeCommentPattern     = regexp.MustCompile(`(?m)^\s*#[^\n]*`)
+	makeAssignPattern      = regexp.MustCompile(`(?m)^([A-Za-z_][A-Za-z0-9_]*)\s*[:?]?=\s*([^\n]+)`)
+	makeVarRefPattern      = regexp.MustCompile(`\$\(([A-Za-z_][A-Za-z0-9_]*)\)`)
+	httpURLPattern         = regexp.MustCompile(`https?://[^\s"'()]+`)
+	sha256HexPattern       = regexp.MustCompile(`^[a-fA-F0-9]{64}$`)
+	rpmSourceHeaderPattern = regexp.MustCompile(`^Source[0-9]*\s*:`)
+)
 
 func (e *Engine) sourceNames(j *Job, recipe []byte) []string {
 	var sources []string
@@ -47,15 +55,13 @@ func (e *Engine) sourceNames(j *Job, recipe []byte) []string {
 // Conditional recipes retain all literal source variants for offline reuse.
 func recipeSources(content string) []string {
 	// Ignore examples and historical filenames in whole-line comments.
-	content = regexp.MustCompile(`(?m)^\s*#[^\n]*`).ReplaceAllString(content, "")
+	content = makeCommentPattern.ReplaceAllString(content, "")
 	vars := map[string]string{}
-	assignment := regexp.MustCompile(`(?m)^([A-Za-z_][A-Za-z0-9_]*)\s*[:?]?=\s*([^\n]+)`)
-	for _, m := range assignment.FindAllStringSubmatch(content, -1) {
+	for _, m := range makeAssignPattern.FindAllStringSubmatch(content, -1) {
 		vars[m[1]] = strings.TrimSpace(strings.Split(m[2], "#")[0])
 	}
-	ref := regexp.MustCompile(`\$\(([A-Za-z_][A-Za-z0-9_]*)\)`)
 	for i := 0; i < 8; i++ {
-		next := ref.ReplaceAllStringFunc(content, func(s string) string {
+		next := makeVarRefPattern.ReplaceAllStringFunc(content, func(s string) string {
 			k := s[2 : len(s)-1]
 			if v, ok := vars[k]; ok {
 				return v
@@ -69,11 +75,11 @@ func recipeSources(content string) []string {
 	}
 	// Download URLs can use a different basename from the cached input (Valkey
 	// tags are <version>.tar.gz). Do not treat those basenames as extra inputs.
-	content = regexp.MustCompile(`https?://[^\s"'()]+`).ReplaceAllString(content, "")
+	content = httpURLPattern.ReplaceAllString(content, "")
 	sources := tarballPattern.FindAllString(content, -1)
 	// Wheels, Debian source descriptors and wrapper JARs are also build inputs.
 	// Other literal SOURCES paths (e.g. RDKit's enum.h) need no suffix whitelist.
-	for _, assignment := range assignment.FindAllStringSubmatch(content, -1) {
+	for _, assignment := range makeAssignPattern.FindAllStringSubmatch(content, -1) {
 		sources = append(sources, auxiliarySourcePattern.FindAllString(assignment[2], -1)...)
 	}
 	for _, match := range sourcePathPattern.FindAllStringSubmatch(content, -1) {
@@ -125,6 +131,22 @@ func (e *Engine) sourceBases() []string {
 	return urls
 }
 
+func (e *Engine) getChecksums() (map[string]string, error) {
+	if e.Options.Checksums == "" {
+		return map[string]string{}, nil
+	}
+	if e.checksums != nil && e.checksumsPath == e.Options.Checksums {
+		return e.checksums, nil
+	}
+	m, err := loadChecksums(e.Options.Checksums)
+	if err != nil {
+		return nil, err
+	}
+	e.checksumsPath = e.Options.Checksums
+	e.checksums = m
+	return m, nil
+}
+
 func loadChecksums(path string) (map[string]string, error) {
 	m := map[string]string{}
 	if path == "" {
@@ -138,7 +160,7 @@ func loadChecksums(path string) (map[string]string, error) {
 		return nil, err
 	}
 	for k, v := range m {
-		if !safeName(k) || !regexp.MustCompile(`^[a-fA-F0-9]{64}$`).MatchString(v) {
+		if !safeName(k) || !sha256HexPattern.MatchString(v) {
 			return nil, fmt.Errorf("invalid source checksum for %q", k)
 		}
 		m[k] = strings.ToLower(v)
@@ -147,7 +169,7 @@ func loadChecksums(path string) (map[string]string, error) {
 }
 
 func (e *Engine) get(ctx context.Context, j *Job, r *Result, w io.Writer) error {
-	sums, err := loadChecksums(e.Options.Checksums)
+	sums, err := e.getChecksums()
 	if err != nil {
 		return err
 	}
@@ -163,7 +185,7 @@ func (e *Engine) get(ctx context.Context, j *Job, r *Result, w io.Writer) error 
 				return err
 			}
 			for _, line := range strings.Split(out, "\n") {
-				if regexp.MustCompile(`^Source[0-9]*\s*:`).MatchString(line) {
+				if rpmSourceHeaderPattern.MatchString(line) {
 					_, s, _ := strings.Cut(line, ":")
 					name, err := rpmSourceName(s)
 					if err != nil {

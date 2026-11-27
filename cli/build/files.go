@@ -9,10 +9,12 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"slices"
 	"strings"
 )
 
 var buildWorkspaceName = regexp.MustCompile(`^(?:build(?:-[0-9]+)?|target)$`)
+var specDirFilePattern = regexp.MustCompile(`%\{_specdir\}/([A-Za-z0-9_][A-Za-z0-9_.+-]*)(?:[ \t\r"';|&()<>]|$)`)
 
 func fileExists(path string) bool { i, err := os.Stat(path); return err == nil && i.Mode().IsRegular() }
 
@@ -30,6 +32,10 @@ func AtomicWrite(path string, b []byte, mode os.FileMode) error {
 		return err
 	}
 	if err = f.Chmod(mode); err != nil {
+		f.Close()
+		return err
+	}
+	if err = f.Sync(); err != nil {
 		f.Close()
 		return err
 	}
@@ -168,4 +174,98 @@ func recipeTreeHash(root string) (string, error) {
 		return nil
 	})
 	return hex.EncodeToString(h.Sum(nil)), err
+}
+
+// rpmRecipeFiles lists the spec and its literal top-level SPECS/ inputs.
+// Paths under patches/ are covered by the shared patch directory.
+func rpmRecipeFiles(recipePath string) ([]string, error) {
+	content, err := os.ReadFile(recipePath)
+	if err != nil {
+		return nil, err
+	}
+	spec := filepath.Base(recipePath)
+	var auxiliary []string
+	for line := range strings.SplitSeq(string(content), "\n") {
+		if strings.HasPrefix(strings.TrimSpace(line), "#") {
+			continue
+		}
+		for _, match := range specDirFilePattern.FindAllStringSubmatch(line, -1) {
+			if match[1] != spec && match[1] != "patches" {
+				auxiliary = append(auxiliary, match[1])
+			}
+		}
+	}
+	slices.Sort(auxiliary)
+	return append([]string{spec}, slices.Compact(auxiliary)...), nil
+}
+
+// copyRPMRecipe stages the target recipe, its local inputs and patches.
+func copyRPMRecipe(specsDir, pkg, dstSpecsDir string) error {
+	names, err := rpmRecipeFiles(filepath.Join(specsDir, pkg+".spec"))
+	if err != nil {
+		return err
+	}
+	if err := os.MkdirAll(dstSpecsDir, 0755); err != nil {
+		return err
+	}
+	for _, name := range names {
+		path := filepath.Join(specsDir, name)
+		info, err := rpmRecipeFileInfo(path)
+		if err != nil {
+			return err
+		}
+		if err := copyFile(path, filepath.Join(dstSpecsDir, name), info.Mode().Perm()); err != nil {
+			return err
+		}
+	}
+	patchDir := filepath.Join(specsDir, "patches")
+	if pi, err := os.Stat(patchDir); err == nil && pi.IsDir() {
+		return copyRecipe(patchDir, filepath.Join(dstSpecsDir, "patches"))
+	}
+	return nil
+}
+
+func rpmRecipeFileInfo(path string) (os.FileInfo, error) {
+	info, err := os.Lstat(path)
+	if err != nil {
+		return nil, err
+	}
+	if !info.Mode().IsRegular() {
+		return nil, fmt.Errorf("RPM recipe input is not a regular file: %s", path)
+	}
+	return info, nil
+}
+
+// recipeTreeHashFor fingerprints the same files copied into the build workspace.
+func recipeTreeHashFor(family, recipePath string) (string, error) {
+	dir := filepath.Dir(recipePath)
+	if family != "rpm" {
+		return recipeTreeHash(dir)
+	}
+	names, err := rpmRecipeFiles(recipePath)
+	if err != nil {
+		return "", err
+	}
+	h := sha256.New()
+	for _, name := range names {
+		path := filepath.Join(dir, name)
+		info, err := rpmRecipeFileInfo(path)
+		if err != nil {
+			return "", err
+		}
+		f, err := fileInfo(path)
+		if err != nil {
+			return "", err
+		}
+		fmt.Fprintf(h, "%s\x00%d\x00%s\x00", name, info.Mode(), f.SHA256)
+	}
+	patchDir := filepath.Join(dir, "patches")
+	if pi, err := os.Stat(patchDir); err == nil && pi.IsDir() {
+		ph, err := recipeTreeHash(patchDir)
+		if err != nil {
+			return "", err
+		}
+		fmt.Fprintf(h, "patches\x00%s\x00", ph)
+	}
+	return hex.EncodeToString(h.Sum(nil)), nil
 }

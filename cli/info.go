@@ -34,13 +34,11 @@ func ShowBin(name string, pgVer int, osFilter string, region string) error {
 		return fmt.Errorf("package or extension name is required")
 	}
 
-	// Choose URL field based on region
 	urlField := "r.default_url"
 	if region == "china" || region == "mirror" {
 		urlField = "COALESCE(r.mirror_url, r.default_url)"
 	}
 
-	// Build query
 	query := fmt.Sprintf(`
 		SELECT b.name, p.os, r.org, b.size, b.version, format('%%s/%%s', %s, b.href) AS url
 		FROM pgext.pkg p
@@ -50,141 +48,66 @@ func ShowBin(name string, pgVer int, osFilter string, region string) error {
 	`, urlField)
 
 	args := []interface{}{name}
-	argCount := 2
-
 	if pgVer > 0 {
-		query += fmt.Sprintf(" AND p.pg = $%d", argCount)
+		query += fmt.Sprintf(" AND p.pg = $%d", len(args)+1)
 		args = append(args, pgVer)
-		argCount++
 	}
 	if osFilter != "" {
-		query += fmt.Sprintf(" AND p.os LIKE $%d", argCount)
+		query += fmt.Sprintf(" AND p.os LIKE $%d", len(args)+1)
 		args = append(args, "%"+osFilter+"%")
-		argCount++
 	}
-
 	query += " ORDER BY p.pg DESC, p.os, b.ver::pgext.version DESC"
 
-	// Execute query
 	rows, err := QueryContext(ctx, query, args...)
 	if err != nil {
 		return fmt.Errorf("query failed: %w", err)
 	}
 	defer rows.Close()
 
-	// Collect results
 	var packages []BinPackage
 	for rows.Next() {
 		var pkg BinPackage
 		var size int64
-		err := rows.Scan(&pkg.Name, &pkg.OS, &pkg.Org, &size, &pkg.Version, &pkg.URL)
-		if err != nil {
-			logrus.Debugf("scan error: %v", err)
+		if err := rows.Scan(&pkg.Name, &pkg.OS, &pkg.Org, &size, &pkg.Version, &pkg.URL); err != nil {
+			logrus.Warnf("scan bin row: %v", err)
 			continue
 		}
-		pkg.Size = formatSize(size)
+		pkg.Size = FormatSize(size)
 		packages = append(packages, pkg)
 	}
-
 	if err := rows.Err(); err != nil {
 		return fmt.Errorf("row iteration failed: %w", err)
 	}
 
-	// Display results
 	displayBinTable(packages)
-
 	return nil
-}
-
-// formatSize formats byte size to human-readable format with 2 significant digits.
-func formatSize(bytes int64) string {
-	if bytes < 0 {
-		return "0"
-	}
-
-	const unit = 1024
-	if bytes < unit {
-		return fmt.Sprintf("%d B", bytes)
-	}
-
-	units := []string{"KiB", "MiB", "GiB", "TiB"}
-	size := float64(bytes) / unit
-	unitIdx := 0
-
-	for size >= unit && unitIdx < len(units)-1 {
-		size /= unit
-		unitIdx++
-	}
-
-	// Format: 100+ = integer, 1-99.9 = one decimal
-	if size >= 100 {
-		return fmt.Sprintf("%.0f %s", size, units[unitIdx])
-	}
-	return fmt.Sprintf("%.1f %s", size, units[unitIdx])
 }
 
 // displayBinTable displays binary packages in a table format.
 func displayBinTable(packages []BinPackage) {
 	if len(packages) == 0 {
-		fmt.Println()
-		fmt.Println("No packages found.")
-		fmt.Println()
+		fmt.Print("\nNo packages found.\n\n")
 		return
 	}
 
-	// Calculate column widths
-	widths := map[string]int{
-		"name":    4,
-		"os":      2,
-		"org":     3,
-		"size":    4,
-		"version": 7,
-	}
-
+	wName, wOS, wOrg, wSize, wVer := 4, 2, 3, 4, 7
 	for _, pkg := range packages {
-		if len(pkg.Name) > widths["name"] {
-			widths["name"] = len(pkg.Name)
-		}
-		if len(pkg.OS) > widths["os"] {
-			widths["os"] = len(pkg.OS)
-		}
-		if len(pkg.Org) > widths["org"] {
-			widths["org"] = len(pkg.Org)
-		}
-		if len(pkg.Size) > widths["size"] {
-			widths["size"] = len(pkg.Size)
-		}
-		if len(pkg.Version) > widths["version"] {
-			widths["version"] = len(pkg.Version)
-		}
+		wName = max(wName, len(pkg.Name))
+		wOS = max(wOS, len(pkg.OS))
+		wOrg = max(wOrg, len(pkg.Org))
+		wSize = max(wSize, len(pkg.Size))
+		wVer = max(wVer, len(pkg.Version))
 	}
 
-	// Print header
+	totalWidth := wName + wOS + wOrg + wSize + wVer + 12
+	sep := strings.Repeat("─", totalWidth)
 	fmt.Println()
-	fmt.Printf("%-*s  %-*s  %-*s  %-*s  %-*s  %s\n",
-		widths["name"], "NAME",
-		widths["os"], "OS",
-		widths["org"], "ORG",
-		widths["size"], "SIZE",
-		widths["version"], "VER", "URL")
-
-	// Print separator
-	totalWidth := widths["name"] + widths["os"] + widths["org"] + widths["size"] + widths["version"] + 12
-	fmt.Println(strings.Repeat("─", totalWidth))
-
-	// Print rows
+	fmt.Printf("%-*s  %-*s  %-*s  %-*s  %-*s  %s\n", wName, "NAME", wOS, "OS", wOrg, "ORG", wSize, "SIZE", wVer, "VER", "URL")
+	fmt.Println(sep)
 	for _, pkg := range packages {
-		fmt.Printf("%-*s  %-*s  %-*s  %-*s  %-*s  %s\n",
-			widths["name"], pkg.Name,
-			widths["os"], pkg.OS,
-			widths["org"], pkg.Org,
-			widths["size"], pkg.Size,
-			widths["version"], pkg.Version,
-			pkg.URL)
+		fmt.Printf("%-*s  %-*s  %-*s  %-*s  %-*s  %s\n", wName, pkg.Name, wOS, pkg.OS, wOrg, pkg.Org, wSize, pkg.Size, wVer, pkg.Version, pkg.URL)
 	}
-
-	// Print footer
-	fmt.Println(strings.Repeat("─", totalWidth))
+	fmt.Println(sep)
 	fmt.Printf("Total: %d packages\n\n", len(packages))
 }
 
@@ -245,15 +168,10 @@ type ExtensionInfo struct {
 	MTime       string   `json:"mtime"`
 }
 
-// ShowExtOptions controls extension output without changing the legacy ShowExt API.
+// ShowExtOptions controls extension output formatting and destination.
 type ShowExtOptions struct {
 	JSON   bool
 	Writer io.Writer
-}
-
-// ShowExt displays extension information using the legacy text format.
-func ShowExt(extName string) error {
-	return ShowExtWithOptions(context.Background(), extName, ShowExtOptions{Writer: os.Stdout})
 }
 
 // ShowExtWithOptions displays extension information from pgext.extension.
@@ -273,7 +191,6 @@ func ShowExtWithOptions(ctx context.Context, extName string, opts ShowExtOptions
 		}
 		return nil
 	}
-
 	if err := writeExtensionInfo(out, info); err != nil {
 		return fmt.Errorf("write extension %q: %w", extName, err)
 	}
@@ -282,23 +199,24 @@ func ShowExtWithOptions(ctx context.Context, extName string, opts ShowExtOptions
 
 // LoadExtensionInfo loads one record from the standard packaged extension catalog.
 func LoadExtensionInfo(ctx context.Context, extName string) (*ExtensionInfo, error) {
-	ext := &Extension{}
-	var tags, schemas, pgVer, requires, requireBy, seeAlso interface{}
-	var rpmPG, rpmDeps, debPG, debDeps interface{}
-	var contrib, lead, hasBin, hasLib, needDDL, needLoad sql.NullBool
-	var extraJSON []byte
-	var mtime sql.NullString
+	info := &ExtensionInfo{}
+	var (
+		leadExt, category, state, url, license, version, repo, lang sql.NullString
+		rpmVer, rpmRepo, rpmPkg, debVer, debRepo, debPkg            sql.NullString
+		source, enDesc, zhDesc, comment, mtime                      sql.NullString
+		extraJSON                                                   []byte
+	)
 
 	err := QueryRowContext(ctx, extensionInfoQuery, extName).Scan(
-		&ext.ID, &ext.Name, &ext.Pkg, &ext.LeadExt, &ext.Category,
-		&ext.State, &ext.URL, &ext.License, &tags, &ext.Version,
-		&ext.Repo, &ext.Lang, &contrib, &lead, &hasBin,
-		&hasLib, &needDDL, &needLoad, &ext.Trusted,
-		&ext.Relocatable, &schemas, &pgVer, &requires, &requireBy,
-		&seeAlso, &ext.RpmVer, &ext.RpmRepo, &ext.RpmPkg, &rpmPG,
-		&rpmDeps, &ext.DebVer, &ext.DebRepo, &ext.DebPkg, &debDeps,
-		&debPG, &ext.Source, &extraJSON, &ext.EnDesc, &ext.ZhDesc,
-		&ext.Comment, &mtime,
+		&info.ID, &info.Name, &info.Pkg, &leadExt, &category,
+		&state, &url, &license, &info.Tags, &version,
+		&repo, &lang, &info.Contrib, &info.Lead, &info.HasBin,
+		&info.HasLib, &info.NeedDDL, &info.NeedLoad, &info.Trusted,
+		&info.Relocatable, &info.Schemas, &info.PGVer, &info.Requires, &info.RequireBy,
+		&info.SeeAlso, &rpmVer, &rpmRepo, &rpmPkg, &info.RPMPG,
+		&info.RPMDeps, &debVer, &debRepo, &debPkg, &info.DEBDeps,
+		&info.DEBPG, &source, &extraJSON, &enDesc, &zhDesc,
+		&comment, &mtime,
 	)
 	if errors.Is(err, pgx.ErrNoRows) {
 		return nil, fmt.Errorf("extension %q not found", extName)
@@ -307,62 +225,20 @@ func LoadExtensionInfo(ctx context.Context, extName string) (*ExtensionInfo, err
 		return nil, fmt.Errorf("query extension %q: %w", extName, err)
 	}
 
-	ext.Tags = nullableInfoArray(tags)
-	ext.Schemas = nullableInfoArray(schemas)
-	ext.PgVer = nullableInfoArray(pgVer)
-	ext.Requires = nullableInfoArray(requires)
-	ext.RequireBy = nullableInfoArray(requireBy)
-	ext.SeeAlso = nullableInfoArray(seeAlso)
-	ext.RpmPg = nullableInfoArray(rpmPG)
-	ext.RpmDeps = nullableInfoArray(rpmDeps)
-	ext.DebPg = nullableInfoArray(debPG)
-	ext.DebDeps = nullableInfoArray(debDeps)
+	info.LeadExt, info.Category, info.State = leadExt.String, category.String, state.String
+	info.URL, info.License, info.Version = url.String, license.String, version.String
+	info.Repo, info.Lang = repo.String, lang.String
+	info.RPMVer, info.RPMRepo, info.RPMPkg = rpmVer.String, rpmRepo.String, rpmPkg.String
+	info.DEBVer, info.DEBRepo, info.DEBPkg = debVer.String, debRepo.String, debPkg.String
+	info.Source, info.EnDesc, info.ZhDesc = source.String, enDesc.String, zhDesc.String
+	info.Comment, info.MTime = comment.String, mtime.String
+
 	if len(extraJSON) > 0 {
-		if err := json.Unmarshal(extraJSON, &ext.Extra); err != nil {
+		if err := json.Unmarshal(extraJSON, &info.Extra); err != nil {
 			return nil, fmt.Errorf("decode extension %q metadata: %w", extName, err)
 		}
 	}
-
-	info := &ExtensionInfo{
-		ID: ext.ID, Name: ext.Name, Pkg: ext.Pkg,
-		LeadExt: ext.LeadExt.String, Category: ext.Category.String,
-		State: ext.State.String, URL: ext.URL.String, License: ext.License.String,
-		Tags: ext.Tags, Version: ext.Version.String, Repo: ext.Repo.String,
-		Lang: ext.Lang.String, Contrib: nullBoolPointer(contrib), Lead: nullBoolPointer(lead),
-		HasBin: nullBoolPointer(hasBin), HasLib: nullBoolPointer(hasLib), NeedDDL: nullBoolPointer(needDDL),
-		NeedLoad: nullBoolPointer(needLoad), Schemas: ext.Schemas, PGVer: ext.PgVer,
-		Requires: ext.Requires, RequireBy: ext.RequireBy, SeeAlso: ext.SeeAlso,
-		RPMVer: ext.RpmVer.String, RPMRepo: ext.RpmRepo.String,
-		RPMPkg: ext.RpmPkg.String, RPMPG: ext.RpmPg, RPMDeps: ext.RpmDeps,
-		DEBVer: ext.DebVer.String, DEBRepo: ext.DebRepo.String,
-		DEBPkg: ext.DebPkg.String, DEBDeps: ext.DebDeps, DEBPG: ext.DebPg,
-		Source: ext.Source.String, Extra: ext.Extra, EnDesc: ext.EnDesc.String,
-		ZhDesc: ext.ZhDesc.String, Comment: ext.Comment.String, MTime: mtime.String,
-	}
-	if ext.Trusted.Valid {
-		value := ext.Trusted.Bool
-		info.Trusted = &value
-	}
-	if ext.Relocatable.Valid {
-		value := ext.Relocatable.Bool
-		info.Relocatable = &value
-	}
 	return info, nil
-}
-
-func nullBoolPointer(value sql.NullBool) *bool {
-	if !value.Valid {
-		return nil
-	}
-	result := value.Bool
-	return &result
-}
-
-func nullableInfoArray(value interface{}) []string {
-	if value == nil {
-		return nil
-	}
-	return parseArrayValue(value)
 }
 
 func writeExtensionInfoJSON(out io.Writer, info *ExtensionInfo) error {
@@ -403,17 +279,13 @@ func writeExtensionInfo(out io.Writer, info *ExtensionInfo) error {
 	return err
 }
 
-// wrapText wraps text to specified width.
 func wrapText(text string, width int) string {
 	if len(text) <= width {
 		return "  " + text
 	}
-
 	var result strings.Builder
-	words := strings.Fields(text)
 	line := "  "
-
-	for _, word := range words {
+	for _, word := range strings.Fields(text) {
 		if len(line)+len(word)+1 > width {
 			result.WriteString(line)
 			result.WriteString("\n")
@@ -425,10 +297,8 @@ func wrapText(text string, width int) string {
 			line += word
 		}
 	}
-
 	if line != "  " {
 		result.WriteString(line)
 	}
-
 	return result.String()
 }

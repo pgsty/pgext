@@ -6,6 +6,7 @@ package cmd
 import (
 	"fmt"
 	"pgext/cli"
+	"sort"
 
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -49,8 +50,13 @@ The command:
 
 		logrus.Infof("PGXN export complete: %d dist, %d matched, %d missing, %d failed",
 			result.DistCount, result.MatchedCount, result.MissingCount, result.FailedCount)
-		for label, path := range result.Files {
-			logrus.Infof("  %s => %s", label, path)
+		labels := make([]string, 0, len(result.Files))
+		for label := range result.Files {
+			labels = append(labels, label)
+		}
+		sort.Strings(labels)
+		for _, label := range labels {
+			logrus.Infof("  %s => %s", label, result.Files[label])
 		}
 		if result.FailedCount > 0 {
 			logrus.Warnf("some distributions failed; inspect %s for details", result.Files["summary_json"])

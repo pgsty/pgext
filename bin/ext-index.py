@@ -10,14 +10,17 @@ Usage:
     python ext-index.py [PGURL] [OUTPUT_DIR]
 
     PGURL: PostgreSQL connection URL (default: postgres:///)
-    OUTPUT_DIR: Output directory for index files (default: content/e/)
+    OUTPUT_DIR: Output directory for index files (default: <site>/content/e/)
 """
 
 import argparse
-import psycopg2
+from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Dict, Optional, Any
-from dataclasses import dataclass
+
+import psycopg2
+
+from site_paths import add_site_dir
 
 
 # ============================================================
@@ -365,13 +368,14 @@ def main():
     parser = argparse.ArgumentParser(
         description='Generate extension index pages for Hugo'
     )
+    add_site_dir(parser)
     parser.add_argument(
         'pgurl', nargs='?', default='postgres:///',
         help='PostgreSQL connection URL (default: postgres:///)'
     )
     parser.add_argument(
         'output_dir', nargs='?', default=None,
-        help='Output directory (default: content/e/)'
+        help='Output directory (default: <site>/content/e/)'
     )
 
     args = parser.parse_args()
@@ -380,7 +384,7 @@ def main():
     if args.output_dir:
         output_dir = Path(args.output_dir)
     else:
-        output_dir = Path(__file__).parent.parent / 'content' / 'e'
+        output_dir = args.dir.expanduser() / 'content' / 'e'
 
     generate_index_pages(args.pgurl, output_dir)
 

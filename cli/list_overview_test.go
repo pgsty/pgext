@@ -43,9 +43,7 @@ func TestOverviewPagesOnlyEmitHTMLOutput(t *testing.T) {
 	t.Run("io", func(t *testing.T) {
 		dir := t.TempDir()
 		path := filepath.Join(dir, "_index.md")
-		g := &IOListGenerator{
-			Cache: &ExtensionCache{},
-		}
+		g := NewIOListGenerator(&ExtensionCache{}, dir)
 
 		if err := g.GenerateOverviewPage(path); err != nil {
 			t.Fatalf("GenerateOverviewPage() error = %v", err)

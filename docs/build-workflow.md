@@ -13,7 +13,6 @@ packages. The build commands require neither PIG nor a metadata database.
 | `pig build spec` | `pgext env spec` | Install or update native recipes |
 | `pig build rust` | `pgext env rust` | Install Rust and optionally configure the China mirror |
 | `pig build pgrx` | `pgext env pgrx` | Install cargo-pgrx and register installed PostgreSQL versions |
-| `pig build proxy` | `pgext env proxy` | Install/configure the build proxy |
 | `pig build get` | `pgext get` | Download source inputs |
 | `pig build dep` | `pgext dep` | Install recipe dependencies |
 | `pig build ext` | `pgext mak` | Build and verify packages from prepared inputs |
@@ -90,37 +89,37 @@ uses `TRUNCATE ... CASCADE`. Regenerate site content into a staging directory
 and review it separately; the migration does not publish a site or packages.
 
 Use `pgext env` for the detected platform and configured paths. Environment
-commands accept `--plan` where shown by their help. Proxy client/server
-subcommands expose their own `--plan` option. Environment preparation does not
-load the extension catalog, so an invalid local CSV cannot block repairs.
+commands accept `--plan` where shown by their help. Source downloads honor
+the builder's HTTP proxy environment. Environment preparation works
+independently of the extension catalog.
 
 Repository maintenance is deliberately limited to builder sources:
 
 ```bash
-pgext env repo list
-pgext env repo add pgdg pigsty --mirror
-pgext env repo update
-pgext env repo rm pigsty
+pgext repo list
+pgext repo add pgdg pigsty --mirror --update
+pgext repo update
+pgext repo rm pigsty
 ```
 
-`env repo` defaults to `add all`; modules are `node`, `pgdg`, and `pigsty`.
-Node setup retains distribution sources and enables the required EL
-CRB/PowerTools/EPEL repositories. PGDG/Pigsty definitions use signature
-verification and separate `pgext-*` filenames. `rm` removes only PGEXT-owned
-PGDG/Pigsty definitions, not OS repositories. Managed definition changes
-are backed up, and restored if their cache refresh fails; installing EPEL
-or changing an OS module is not undone by that file rollback.
+`env repo` is an alias for `repo set` and defaults to `all`
+(`node`, `pgsql` and `infra`). Existing distribution definitions that cover
+the same node source are reused. PGDG and Pigsty sources use signature
+verification. Changes to source definitions and the bundled keys are backed
+up and rolled back on cache refresh failure.
 
 For an existing PIG builder with `infra`/`pgsql` source files, migrate both
 modules together:
 
 ```bash
-pgext env repo add pgdg pigsty --replace --mirror
+pgext env repo pgdg pigsty --replace --mirror --plan
+pgext env repo pgdg pigsty --replace --mirror
 ```
 
-Only recognized legacy files qualify. Mixed/custom definitions are rejected
-for explicit migration. The result records the backup directory. New Docker
-build stages start from base images and need no legacy migration.
+Migration replaces the selected, recognized legacy definitions and preserves
+the rest of the configuration. The command reports a backup ID for
+`pgext repo restore`. See [repository management](repository-management.md)
+for details.
 
 ## Catalog and recipes
 

@@ -308,7 +308,14 @@ func (e *pgxnExporter) fetchAll(ctx context.Context, dists []string) ([]*PgxnRec
 	}
 
 	for idx := range dists {
-		jobs <- idx
+		select {
+		case jobs <- idx:
+		case <-ctx.Done():
+			close(jobs)
+			wg.Wait()
+			sort.Strings(failed)
+			return nil, failed
+		}
 	}
 	close(jobs)
 	wg.Wait()
@@ -369,6 +376,13 @@ func (e *pgxnExporter) fetchURL(ctx context.Context, target string) ([]byte, err
 	var lastErr error
 
 	for attempt := 1; attempt <= e.opts.Retry; attempt++ {
+		if attempt > 1 {
+			select {
+			case <-time.After(time.Duration(attempt-1) * time.Second):
+			case <-ctx.Done():
+				return nil, ctx.Err()
+			}
+		}
 		req, err := http.NewRequestWithContext(ctx, http.MethodGet, target, nil)
 		if err != nil {
 			return nil, err
@@ -385,6 +399,9 @@ func (e *pgxnExporter) fetchURL(ctx context.Context, target string) ([]byte, err
 		resp.Body.Close()
 		if resp.StatusCode != http.StatusOK {
 			lastErr = fmt.Errorf("unexpected status %s", resp.Status)
+			if resp.StatusCode >= 400 && resp.StatusCode < 500 && resp.StatusCode != http.StatusTooManyRequests {
+				return nil, lastErr
+			}
 			continue
 		}
 		if readErr != nil {
@@ -590,7 +607,6 @@ func writePGXNCSV(path string, records []*PgxnRecord) error {
 	defer file.Close()
 
 	writer := csv.NewWriter(file)
-	defer writer.Flush()
 
 	header := []string{
 		"dist", "display_name", "url", "api_url", "meta_url", "version", "release_status", "date",
@@ -654,6 +670,7 @@ func writePGXNCSV(path string, records []*PgxnRecord) error {
 		}
 	}
 
+	writer.Flush()
 	return writer.Error()
 }
 
@@ -739,7 +756,6 @@ func writeCatalogEnrichedCSV(path string, rows []CatalogRecord, pkgMatches map[s
 	defer file.Close()
 
 	writer := csv.NewWriter(file)
-	defer writer.Flush()
 
 	header := []string{
 		"id", "name", "pkg", "lead_ext", "category", "state", "url", "license", "version", "repo", "lang", "lead", "contrib",
@@ -795,6 +811,7 @@ func writeCatalogEnrichedCSV(path string, rows []CatalogRecord, pkgMatches map[s
 		}
 	}
 
+	writer.Flush()
 	return writer.Error()
 }
 

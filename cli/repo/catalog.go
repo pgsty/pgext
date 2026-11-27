@@ -9,7 +9,18 @@ import (
 	"slices"
 	"strings"
 
+	"pgext/db"
+
 	"go.yaml.in/yaml/v3"
+)
+
+// Platform and helpers delegate to pgext/db as the single platform source of truth.
+type Platform = db.Platform
+
+var (
+	ParsePlatform  = db.ParsePlatform
+	DetectPlatform = db.DetectPlatform
+	ParseOSRelease = db.ParseOSRelease
 )
 
 // These blocks are embedded verbatim in confgen as well as parsed by repo.
@@ -62,7 +73,7 @@ func ParseCatalog(data []byte, family string) ([]Repository, error) {
 			return nil, fmt.Errorf("repository %s requires releases, arch and a default baseurl", r.Name)
 		}
 		for j, arch := range r.Arch {
-			r.Arch[j] = normalizeArch(arch)
+			r.Arch[j] = db.NormalizeArch(arch)
 			if r.Arch[j] != "x86_64" && r.Arch[j] != "aarch64" {
 				return nil, fmt.Errorf("repository %s: unsupported architecture %q", r.Name, arch)
 			}

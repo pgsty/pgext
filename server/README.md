@@ -43,31 +43,29 @@ PGEXT_RELOAD_TOKEN=secret pgext serve           # 可选：启用带认证的手
 ┌──────────────┐   go:embed    ┌────────────────────────────┐
 │ web/          │──────────────▶│ pgext serve (:8432)        │
 │  index.html   │               │  ┌──────────┐  ┌─────────┐ │   pgxpool   ┌────────────┐
-│  app.js      │   /assets/*   │  │ Snapshot │  │ ttlCache│ │◀───────────▶│ PostgreSQL │
-│  style.css   │               │  │ (内存快照)│  │ (响应缓存)│ │             │ pgext.*    │
+│  js/*.js      │   /assets/*   │  │ Snapshot │  │ ttlCache│ │◀───────────▶│ PostgreSQL │
+│  style.css    │               │  │ (内存快照)│  │ (响应缓存)│ │             │ pgext.*    │
 └──────────────┘               │  └──────────┘  └─────────┘ │             └────────────┘
                                └────────────────────────────┘
 ```
 
 三层缓存策略：
 
-1. **Snapshot（`snapshot.go`）**——启动时把新版 `universe`、`category`、`active_pg/os`、
-   `doc` 元数据与 `pkg` 的 AVAIL 目标整体载入内存（`atomic.Pointer` 原子换入）。列表、详情、
-   维度聚合及首页的 PG × OS 精确筛选均零 SQL 应答。内容 ETag 不包含加载时间，相同数据刷新后
-   浏览器缓存仍然有效。按 `--cache-ttl`（默认 5m）后台自动刷新。
-2. **矩阵缓存（`matrix.go` / `pgext.matrix_cache`）**——`/api/v1/matrix` 的完整响应在写入侧预计算：
-   一条 `jsonb_object_agg` 聚合把 `pgext.pkg` 折叠成每包一行（键 `el9i.17`，值 `版本 + #/@ + G/P/M/N`），
-   Go 侧铺到规范 OS × PG 网格后连同统计一起序列化，落入 mtime 缓存表（每视图一行：1=全局、
-   2=pgdg、3=pigsty what-if；旧库的单行 CHECK 约束在启动时自动放宽）。读路径是一次主键查询；
-   缓存在早于 `pgext.status` 装载时间或超过 24h 时惰性重建，`POST /api/v1/reload` 与启动预热会
-   主动重建全部三个视图。
-3. **ttlCache（`cache.go`）**——全局物化矩阵、逐扩展 `pkg` 矩阵、`bin` 文件表、`doc` 正文与发布历史按需查询后缓存；
+1. **Snapshot（`snapshot.go`）**——启动时把 `universe`、`category`、`active_pg/os`、
+   `doc` 元数据与 `pkg` 的 AVAIL 目标整体载入内存（`atomic.Pointer` 原子换入），并预序列化
+   `/api/v1/bootstrap` 载荷与同包家族摘要。列表、详情、维度聚合及首页的 PG × OS 精确筛选均零 SQL 应答。
+   内容 ETag 不包含加载时间，相同数据刷新后浏览器缓存仍然有效。按 `--cache-ttl`（默认 5m）后台自动刷新。
+2. **内存矩阵缓存（`matrix.go`）**——`/api/v1/matrix`（含 `?repo=pgdg|pigsty` what-if 视图）按需从
+   `pgext.pkg`（及 `pgext.bin`/`repository`）以一条 `jsonb_object_agg` 聚合计算并常驻内存，
+   跟随 `Snapshot` 失效并在 `POST /api/v1/reload` 或启动预热时并发去重刷新。矩阵缓存只查询数据库，
+   访问计数仍由独立的计数器定期写入。旧库的 `pgext.matrix` 清理方式见 [升级说明](../docs/releases/v1.8.0.md#optional-legacy-matrix-cleanup)。
+3. **ttlCache（`cache.go`）**——逐扩展 `pkg` 矩阵、`bin` 文件表、`doc` 正文与发布历史按需查询后按规范键缓存；
    键包含内容版本与快照加载时间，因此文档、制品或发布历史单独更新，也会在下一次快照刷新后失效。
 
 中间件（`middleware.go`）：访问日志（debug 级）、panic 恢复、只读 `/api/*` CORS、安全响应头、
-gzip（204/304 除外）。`POST /api/v1/reload` 默认关闭；仅在设置 `--reload-token` 或
+gzip（204/304、HEAD 与图片/图标除外）。`POST /api/v1/reload` 默认关闭；仅在设置 `--reload-token` 或
 `PGEXT_RELOAD_TOKEN` 后启用，并要求 `Authorization: Bearer …` 或 `X-PGEXT-Reload-Token`。
-优雅退出：SIGINT/SIGTERM → `http.Server.Shutdown`（5s 期限）。
+优雅退出：SIGINT/SIGTERM → `http.Server.Shutdown`（5s 期限）→ 等待访问计数器完成最后一次落盘。
 
 ## 查询 API（/api/v1，全 JSON，只读）
 
@@ -75,9 +73,9 @@ gzip（204/304 除外）。`POST /api/v1/reload` 默认关闭；仅在设置 `--
 |---|---|
 | `GET /api/v1/meta` | 服务信息、计数（含 `packages` 包族数与 `build_slots` 构建槽位）、分类（双语描述）、活跃 PG/OS |
 | `GET /api/v1/ext` | 列表/搜索：除分类、仓库、PG/OS、形态、生命周期与来源外，还支持 `tag pkg capability build docs relation pgrx active`；`q` 可组合 `tag:vector build:pgrx doc:bilingual is:packaged` 等操作符 |
-| `GET /api/v1/ext/{name}` | 单个扩展完整记录（新版 universe 字段 + `state/repo/ext_*` v1 兼容别名） |
+| `GET /api/v1/ext/{name}` | 单个扩展完整记录（规范 `universe` 字段 + 同包家族摘要 `family`） |
 | `GET /api/v1/ext/{name}/matrix` | 可用性矩阵：`pgext.pkg` 的 pg × os 单元格（state/org/version/count） |
-| `GET /api/v1/matrix` | 全局构建矩阵（`matrix-row.v2`）：`p/e/c` 每格一个状态字节（`G/P/M/N`），`v/i` 为行级版本字典与 base36 索引（gzip 后约 7 KiB，读路径为 `pgext.matrix_cache` 单行查询；前端以单张 canvas 一次绘制，/pg/{n} 与 /os/{target} 复用同一载荷切片渲染）。`?repo=pgdg\|pigsty` 返回单仓库 what-if 视图（与 `pgext.pkg_pgdg`/`pkg_pigsty` 视图同一逻辑）：行恰为该仓库实际交付的扩展包，AVAIL 格携带其自有最新版本（单一状态字母），其余现实有效槽位降级为 `M`，`stats.global` 附带现实矩阵的包数与可用槽位数供前端陈述缺口 |
+| `GET /api/v1/matrix` | 全局构建矩阵（`matrix-row.v2`）：`p/e/c` 每格一个状态字节（`G/P/M/N`），`v/i` 为行级版本字典与 base36 索引（gzip 后约 7 KiB，内存按快照缓存；前端以单张 canvas 一次绘制，/pg/{n} 与 /os/{target} 复用同一载荷切片渲染）。`?repo=pgdg\|pigsty` 返回单仓库 what-if 视图（与 `pgext.pkg_pgdg`/`pkg_pigsty` 视图同一逻辑）：行恰为该仓库实际交付的扩展包，AVAIL 格携带其自有最新版本（单一状态字母），其余现实有效槽位降级为 `M`，`stats.global` 附带现实矩阵的包数与可用槽位数供前端陈述缺口 |
 | `GET /api/v1/ext/{name}/files` | 二进制包文件（`pgext.bin` ⋈ `repository`，含下载 URL 与 SHA256），可选 `?pg= &os=`；同名同目标按原始 `ver` 经 `pgext.version` 比较器降序排列，保留 epoch、预发布及发行修订信息 |
 | `GET /api/v1/ext/{name}/doc` | 用法文档 markdown（`pgext.doc`），`?lang=en\|zh` |
 | `GET /api/v1/ext/{name}/changelog` | 所属软件包的发布历史（`pgext.changelog`，由 RPM/DEB 发布说明经 `bin/changelog.py` 蒸馏）：`{ds, old, new, note_en, note_zh}` 按日期降序；库中无该表时返回空列表 |
@@ -110,12 +108,9 @@ curl 'localhost:8432/api/v1/ext/timescaledb/doc?lang=zh'
 curl -X POST -H 'Authorization: Bearer secret' localhost:8432/api/v1/reload
 ```
 
-全局矩阵缓存表 `pgext.matrix_cache` 由服务端按需自建（`CREATE TABLE IF NOT EXISTS`，只读角色下
-自动降级为纯内存计算），每个视图一行（全局 / pgdg / pigsty what-if）。任何路径更新 `pgext.pkg`
-后，只要 `pgext.status` 的装载时间随之推进，服务端就会在下一次读取时自动重建缓存；
-`POST /api/v1/reload` 会立即重建全部视图。单仓库 what-if 的规范定义是 `db/schema.sql` 里的
-`pgext.pkg_pgdg` / `pgext.pkg_pigsty` 视图（服务端内联同一逻辑，不依赖视图存在）。旧的
-`pgext.matrix` 物化视图不再被服务端读取，仍由 `pgext reload` 的发布事务顺带刷新。
+全局与单仓库 what-if 矩阵由服务端在内存中按快照版本缓存（不写入数据库表），单仓库 what-if 的规范定义仍是
+`db/schema.sql` 里的 `pgext.pkg_pgdg` / `pgext.pkg_pigsty` 视图（服务端内联同一逻辑，不依赖视图存在）。
+当 `pgext.pkg` 更新后，下一次快照刷新或 `POST /api/v1/reload` 会自动重建全部三个视图。
 
 ## 前端（web/）
 
@@ -178,14 +173,14 @@ curl -X POST -H 'Authorization: Bearer secret' localhost:8432/api/v1/reload
 本身可以为 `/ext/...`、`/pkg/...` 等任意 History API 深链返回 SPA 外壳，所以公开链接始终是干净路径。
 客户端仅保留一次性的旧链接迁移：访问旧 `/#/ext/vector` 会立即 `replaceState` 为 `/ext/vector`。
 
-如果页面仍生成 `/#/`，说明当前端口运行的是升级前编译、内嵌了旧 `web/app.js` 的进程；磁盘上的
-前端文件不会热替换已经运行的 Go 二进制。请重启开发进程（例如 `go run . serve --listen :8432`），
-再用页面 HTML 中带内容指纹的 `/assets/app.js?v=...` 确认新资产已经生效。
+如果页面仍生成 `/#/`，说明当前端口运行的是升级前编译的进程；磁盘上的前端文件不会热替换已经运行的
+Go 二进制。请重启开发进程（例如 `go run . serve --listen :8432`），再用页面 HTML 中带内容指纹的
+`/assets/js/main.js?v=...` 确认新资产已经生效。
 
 ## 测试
 
 ```bash
-go test ./server        # 过滤引擎、OS 排序、TTL 缓存（无需数据库）
-node --test server/*_test.cjs  # 首页计数与安装命令渲染
+go test ./server               # 过滤引擎、OS 排序、TTL 缓存、矩阵与资产指纹（无需数据库）
+node --test server/*_test.mjs  # 前端 ESM 模块：首页计数、缓存刷新与安装/构建命令渲染
 go build -o pgext . && ./pgext serve   # 端到端
 ```

@@ -5,6 +5,7 @@ package cli
 
 import (
 	"context"
+	_ "embed"
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
@@ -14,6 +15,12 @@ import (
 	"sort"
 	"strings"
 )
+
+//go:embed assets/matrix_standalone.css
+var matrixStandaloneCSS string
+
+//go:embed assets/matrix_standalone.js
+var matrixStandaloneJS string
 
 const globalMatrixBaseURL = "https://pigsty.io/ext/e"
 const globalMatrixOSBaseURL = "https://pigsty.io/ext/os"
@@ -218,28 +225,7 @@ func (g *GlobalMatrixGenerator) loadGlobalMatrixPackageData(ctx context.Context)
 		JOIN pgext.os o ON o.os = p.os AND o.active
 		ORDER BY p.pkg, p.os, p.pg
 	`
-
-	rows, err := QueryContext(ctx, query)
-	if err != nil {
-		return nil, fmt.Errorf("load package matrix data: %w", err)
-	}
-	defer rows.Close()
-
-	result := make(map[string]map[string]map[int]*PkgInfo)
-	for rows.Next() {
-		info := &PkgInfo{}
-		if err := rows.Scan(&info.PG, &info.OS, &info.Name, &info.Pkg, &info.Ext, &info.State, &info.Org, &info.Version, &info.Count); err != nil {
-			return nil, err
-		}
-		if result[info.Pkg] == nil {
-			result[info.Pkg] = make(map[string]map[int]*PkgInfo)
-		}
-		if result[info.Pkg][info.OS] == nil {
-			result[info.Pkg][info.OS] = make(map[int]*PkgInfo)
-		}
-		result[info.Pkg][info.OS][info.PG] = info
-	}
-	return result, rows.Err()
+	return scanGlobalMatrixPkgRows(ctx, query, "load package matrix data")
 }
 
 func (g *GlobalMatrixGenerator) loadGlobalMatrixPGDGOnlyPackageData(ctx context.Context) (map[string]map[string]map[int]*PkgInfo, error) {
@@ -313,10 +299,13 @@ func (g *GlobalMatrixGenerator) loadGlobalMatrixPGDGOnlyPackageData(ctx context.
 		LEFT JOIN matches m ON m.pg = b.pg AND m.os = b.os AND m.pkg = b.pkg
 		ORDER BY b.pkg, b.os, b.pg
 	`
+	return scanGlobalMatrixPkgRows(ctx, query, "load PGDG-only package matrix data")
+}
 
+func scanGlobalMatrixPkgRows(ctx context.Context, query, label string) (map[string]map[string]map[int]*PkgInfo, error) {
 	rows, err := QueryContext(ctx, query)
 	if err != nil {
-		return nil, fmt.Errorf("load PGDG-only package matrix data: %w", err)
+		return nil, fmt.Errorf("%s: %w", label, err)
 	}
 	defer rows.Close()
 
@@ -587,13 +576,7 @@ func (g *GlobalMatrixGenerator) renderStandaloneToolbar(stats globalMatrixStats)
 	var b strings.Builder
 	b.WriteString(`<section class="mx-toolbar" aria-label="Legend and view controls">` + "\n")
 	b.WriteString(`  <div class="mx-legend" aria-label="Legend">` + "\n")
-	items := []globalMatrixLegendItem{
-		{Code: "B", Label: "PGDG", Class: "gm-pgdg"},
-		{Code: "G", Label: "PIGSTY", Class: "gm-pigsty"},
-		{Code: "R", Label: "Missing", Class: "gm-missing"},
-		{Code: ".", Label: "N/A", Class: "gm-na"},
-	}
-	for _, item := range items {
+	for _, item := range globalMatrixLegend {
 		count := stats.Counts[item.Code]
 		pgdgCount := stats.PGDGCounts[item.Code]
 		b.WriteString(fmt.Sprintf(`  <span class="mx-legend-item" data-code="%s"><i class="mx-dot %s"></i><b>%s</b><em data-full-count="%d" data-pgdg-count="%d">%d</em></span>`+"\n",
@@ -671,7 +654,7 @@ func (g *GlobalMatrixGenerator) renderStandaloneTable(rows []*GlobalMatrixRow, o
 					html.EscapeString(cell.Code),
 					html.EscapeString(pgdgCell.Code),
 					html.EscapeString(title),
-					html.EscapeString(standaloneCellClass(cell)),
+					html.EscapeString(cell.Class),
 				))
 			}
 		}
@@ -688,281 +671,10 @@ func standalonePGVersions(pgVersions []int) []int {
 	return display
 }
 
-func standaloneCellClass(cell GlobalMatrixCell) string { return cell.Class }
-
 func globalMatrixStandaloneCSS() string {
-	return `<style>
-:root {
-  --bg: #f4f6f9;
-  --paper: #ffffff;
-  --ink: #111827;
-  --muted: #667085;
-  --line: #d9dee7;
-  --line-soft: #edf0f4;
-  --pgdg: rgb(91, 156, 213);
-  --pigsty: rgb(96, 190, 89);
-  --na: rgb(108, 108, 108);
-  --missing: rgb(204, 70, 55);
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-a { color: inherit; text-decoration: none; }
-a:hover { text-decoration: underline; }
-.mx-page {
-  container-type: inline-size;
-  --pkg-col: clamp(142px, 12cqw, 184px);
-  --cell-size: max(7px, calc((100cqw - var(--pkg-col)) / var(--mx-columns)));
-  width: 100%;
-  padding: 24px 32px 48px;
-}
-.mx-hero {
-  margin-bottom: 16px;
-}
-h1 {
-  margin: 0;
-  font-size: clamp(40px, 4.8vw, 64px);
-  line-height: 1;
-  letter-spacing: 0;
-}
-.mx-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  margin-bottom: 14px;
-}
-.mx-tabs {
-  display: inline-flex;
-  flex: 0 0 auto;
-  padding: 3px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  background: var(--paper);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, .05);
-}
-.mx-tab {
-  min-width: 72px;
-  border: 0;
-  border-radius: 6px;
-  padding: 8px 11px;
-  background: transparent;
-  color: var(--muted);
-  font: inherit;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0;
-  cursor: pointer;
-}
-.mx-tab.is-active {
-  background: #111827;
-  color: #fff;
-}
-.mx-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin-bottom: 12px;
-}
-.mx-stat {
-  min-height: 78px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 13px 15px;
-  background: var(--paper);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, .04);
-}
-.mx-stat span {
-  display: block;
-  color: var(--muted);
-  font-size: clamp(11px, 1.1cqw, 14px);
-  font-weight: 700;
-  line-height: 1.2;
-}
-.mx-stat strong {
-  display: block;
-  margin-top: 8px;
-  font-size: clamp(30px, 3.2cqw, 44px);
-  line-height: 1;
-  letter-spacing: 0;
-}
-.mx-legend {
-  display: flex;
-  flex-wrap: wrap;
-  flex: 1 1 auto;
-  gap: 8px;
-  align-items: center;
-}
-.mx-legend-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  min-height: 25px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 5px 8px;
-  background: var(--paper);
-  font-size: 12px;
-  line-height: 1;
-}
-.mx-legend-item em {
-  color: var(--muted);
-  font-style: normal;
-}
-body[data-view="pgdg"] .mx-legend-item:not([data-code="B"]) { display: none; }
-.mx-matrix {
-  width: 100%;
-  overflow: visible;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--paper);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
-}
-.mx-matrix table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-.mx-col-pkg { width: var(--pkg-col); }
-.mx-col-cell { width: var(--cell-size); }
-.mx-matrix th,
-.mx-matrix td {
-  border-right: 1px solid var(--line-soft);
-  border-bottom: 1px solid var(--line-soft);
-  padding: 0;
-  text-align: center;
-  vertical-align: middle;
-}
-.mx-matrix thead th {
-  position: sticky;
-  top: 0;
-  z-index: 4;
-  background: #f1f3f7;
-}
-.mx-matrix thead tr:nth-child(2) th {
-  top: 24px;
-}
-.mx-corner,
-.mx-pkg {
-  position: sticky;
-  left: 0;
-  z-index: 5;
-  width: var(--pkg-col);
-  min-width: var(--pkg-col);
-  max-width: var(--pkg-col);
-  background: #fff !important;
-  text-align: left !important;
-}
-.mx-corner {
-  z-index: 8 !important;
-  height: 40px;
-  padding-left: 8px !important;
-  background: #f1f3f7 !important;
-  font-size: 11px;
-}
-.mx-os {
-  height: 24px;
-  color: #344054;
-  font-size: clamp(8px, calc(var(--cell-size) * .76), 11px);
-  font-weight: 800;
-}
-.mx-pg {
-  width: var(--cell-size);
-  min-width: var(--cell-size);
-  max-width: var(--cell-size);
-  height: 16px;
-  color: #667085;
-  font-size: clamp(6px, calc(var(--cell-size) * .54), 9px);
-  font-weight: 700;
-  line-height: 1;
-}
-.mx-pkg {
-  height: var(--cell-size);
-  padding: 0 8px !important;
-  font-size: clamp(8px, calc(var(--cell-size) * .72), 11px);
-  line-height: var(--cell-size);
-  font-weight: 700;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.mx-cell {
-  width: var(--cell-size);
-  min-width: var(--cell-size);
-  max-width: var(--cell-size);
-  height: var(--cell-size);
-  line-height: 0;
-}
-.mx-group-start {
-  border-left: 2px solid #c3cad6 !important;
-}
-.mx-dot {
-  display: inline-block;
-  width: max(4px, calc(var(--cell-size) - 4px));
-  height: max(4px, calc(var(--cell-size) - 4px));
-  margin: auto;
-  border-radius: 2px;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
-  vertical-align: middle;
-}
-.gm-pgdg { background: var(--pgdg); }
-.gm-pigsty { background: var(--pigsty); }
-.gm-na { background: var(--na); }
-.gm-missing { background: var(--missing); }
-.mx-dimmed { background: rgb(108, 108, 108); }
-body[data-view="pgdg"] .mx-cell .mx-dot {
-  background: #d8dde6;
-  opacity: .24;
-  box-shadow: none;
-}
-body[data-view="pgdg"] .mx-cell[data-pgdg-code="B"] .mx-dot {
-  background: var(--pgdg);
-  opacity: 1;
-  box-shadow: 0 0 0 1px rgba(91,156,213,.30), 0 0 8px rgba(91,156,213,.20);
-}
-@media (max-width: 900px) {
-  .mx-page {
-    --pkg-col: 126px;
-    padding: 18px 12px 32px;
-  }
-  .mx-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .mx-toolbar { align-items: stretch; flex-direction: column; }
-  .mx-tabs { width: max-content; }
-}
-@media print {
-  body { background: #fff; }
-  .mx-page { padding: 16px; }
-  .mx-tabs { display: none; }
-  .mx-matrix { box-shadow: none; }
-}
-</style>
-`
+	return "<style>\n" + matrixStandaloneCSS + "</style>\n"
 }
 
 func globalMatrixStandaloneScript() string {
-	return `<script>
-const tabs = document.querySelectorAll(".mx-tab");
-const legendCounts = document.querySelectorAll(".mx-legend-item em[data-full-count]");
-function applyMatrixMode(mode) {
-  document.body.dataset.view = mode;
-  for (const count of legendCounts) {
-    count.textContent = mode === "pgdg" ? count.dataset.pgdgCount : count.dataset.fullCount;
-  }
-}
-for (const tab of tabs) {
-  tab.addEventListener("click", () => {
-    applyMatrixMode(tab.dataset.mode);
-    for (const item of tabs) {
-      const active = item === tab;
-      item.classList.toggle("is-active", active);
-      item.setAttribute("aria-selected", active ? "true" : "false");
-    }
-  });
-}
-applyMatrixMode(document.body.dataset.view || "pgdg");
-</script>`
+	return "<script>\n" + strings.TrimRight(matrixStandaloneJS, "\n") + "\n</script>"
 }
