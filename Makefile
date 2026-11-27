@@ -1,78 +1,33 @@
-THEME_DIR ?= ../oink
-#==============================================================#
-# File      :   Makefile
-# Ctime     :   2024-10-30
-# Mtime     :   2025-07-05
-# Desc      :   Makefile shortcuts
-# Path      :   Makefile
-# Copyright (C) 2019-2025 Ruohang Feng
-#==============================================================#
-VERSION=v1.7.3
-default: v dev
+VERSION ?= v1.8.0
+COMMIT  := $(shell git rev-parse --short HEAD 2>/dev/null || echo unknown)
+LD_FLAGS := -s -w -X pgext/cmd.Version=$(VERSION) -X pgext/cmd.Commit=$(COMMIT)
+PGURL   ?= postgres:///data
 
-PGURL="postgres:///data"
+.DEFAULT_GOAL := build
+.PHONY: build b dev serve s gen check check-stubs d da dump load dumps loads dd d2 dump2 load2 gr arm amd 2j rs
 
-# run hugo dev server (1313)
-dev:
-	GOWORK=off HUGO_MODULE_WORKSPACE=off HUGO_MODULE_REPLACEMENTS='github.com/pgsty/oink -> $(abspath $(THEME_DIR))' hugo serve
+b: build
+build:
+	go build -ldflags "$(LD_FLAGS)" -o pgext .
 
-#==============================================================#
-# Theme (OINK)
-#==============================================================#
-# The site renders with the OINK Hugo module pinned in go.mod. hugo.yaml
-# bypasses the retained legacy _vendor/ snapshot. The theme has no Go
-# packages, so run `make theme` after `go mod tidy` removes its dependency.
-t: theme
-theme:
-	hugo mod get -u github.com/pgsty/oink
-	hugo --gc --printPathWarnings
+dev serve:
+	go run . serve
+s: serve
 
-# strict build: any theme or content warning fails the build
+gen:
+	go run . gen site
+
 check: check-stubs
-	hugo --gc --minify --printPathWarnings
+	go vet ./ ./cmd/... ./cli/... ./server/... ./db/...
+	go test -count=1 ./cmd/... ./cli/... ./server/... ./db/...
+	node --test server/*_test.mjs
+	python3 -m unittest -v bin/test_changelog.py bin/test_rebuild_manifest.py
 
 check-stubs:
 	go run . gen lint
 
-.PHONY: check-stubs
-
-# quick release: build linux/amd64, ship to jp, restart service
+# Build, upload and restart the Go daemon on jp.
 d: amd 2j rs
-
-# building (SSG) - new optimized version
-b: build
-build:
-	hugo build
-
-# building with legacy MDX files
-build-mdx: gen-mdx
-	TURBO_CONCURRENCY=25 npm run build
-
-# open browser to view the app
-v: view
-view:
-	open 'http://localhost:1313'
-
-# remove the build output directory
-c: clean
-clean:
-	rm -rf out
-
-# run pnpm install
-i: install
-install:
-	pnpm install
-
-# update npm dependencies to the latest version
-u: update
-update:
-	pnpm update
-
-
-# serve wiht
-s: serve
-serve:
-	cd out && python3 -m http.server 3001
 
 da: dump dd d2
 # dump extension data to data dir
@@ -120,27 +75,10 @@ load2:
 gr:
 	goreleaser release --clean --skip=publish
 
-# load extension data from data dir
-#load:
-#	psql $(PGURL) -c "TRUNCATE ext.extension; COPY ext.extension FROM '/Users/vonng/pgsty/extension/data/extension.csv' CSV HEADER;"
-
-# generate extension data in JSON format (optimized)
-gen-ext:
-	@echo "Generating extension JSON data..."
-	@source ~/.venv/bin/activate && python bin/gen-ext-json.py
-	@echo "Extension JSON data generated in data/extensions/"
-
-# generate extension MDX files (legacy)
-gen-mdx:
-	@echo "Generating extension MDX files..."
-	@source ~/.venv/bin/activate && python bin/gen-ext.py
-	@echo "Extension MDX files generated in content/docs/ext/"
-
 arm:
-	CGO_ENABLED=0 GOOS=linux  GOARCH=arm64 go build -ldflags "$(LD_FLAGS)" -o pgext
-	upx pgext
+	CGO_ENABLED=0 GOOS=linux  GOARCH=arm64 go build -ldflags "$(LD_FLAGS)" -o pgext .
 amd:
-	CGO_ENABLED=0 GOOS=linux  GOARCH=amd64 go build -ldflags "-s -w" -o pgext
+	CGO_ENABLED=0 GOOS=linux  GOARCH=amd64 go build -ldflags "$(LD_FLAGS)" -o pgext .
 
 # ship binary to jp (atomic swap avoids ETXTBSY on the running daemon)
 2j:
@@ -150,6 +88,3 @@ amd:
 # restart pgext daemon on jp
 rs:
 	ssh jp 'systemctl restart pgext && systemctl is-active pgext'
-
-# inventory
-.PHONY: default run gen dump save load gen-json gen-mdx build-mdx arm amd 2j rs d dev theme check
