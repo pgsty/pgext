@@ -2,52 +2,37 @@
 
 Sources:
 
-- [CHANGELOG.md](https://api.pgxn.org/src/chdb/chdb-0.1.3/CHANGELOG.md)
-- [doc/chdb.md](https://api.pgxn.org/src/chdb/chdb-0.1.3/doc/chdb.md)
+- [doc/chdb.md](https://api.pgxn.org/src/chdb/chdb-0.1.4/doc/chdb.md)
+- [doc/chdb_hook.md](https://api.pgxn.org/src/chdb/chdb-0.1.4/doc/chdb_hook.md)
+- [chdb.control](https://api.pgxn.org/src/chdb/chdb-0.1.4/chdb.control)
+- [sql/chdb.sql](https://api.pgxn.org/src/chdb/chdb-0.1.4/sql/chdb.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/chdb/chdb-0.1.4/CHANGELOG.md)
+- [LICENSE.md](https://api.pgxn.org/src/chdb/chdb-0.1.4/LICENSE.md)
 
-- [PGXN 0.1.2 README](https://pgxn.org/dist/chdb/0.1.2/README.html)
-- [chdb 0.1 documentation](https://pgxn.org/dist/chdb/0.1.2/doc/chdb.html)
-- [chdb control file](https://api.pgxn.org/src/chdb/chdb-0.1.2/chdb.control)
-- [Apache 2.0 license](https://api.pgxn.org/src/chdb/chdb-0.1.2/LICENSE.md)
-- [0.1.2 changelog](https://api.pgxn.org/src/chdb/chdb-0.1.2/CHANGELOG.md)
+`chdb` runs chDB queries in an isolated helper process. Distribution 0.1.4 retains SQL/control version 0.1. It supports PostgreSQL 15 and later on Linux or macOS, using the supplied helper and a compatible libchdb.
 
-`chdb` executes chDB queries from PostgreSQL through an isolated helper process. Use it for occasional ClickHouse-format analytics or reads from chDB table functions when the returned row shape can be declared explicitly; it is not a persistent embedded ClickHouse database.
+### Query Workflow
 
-### Core Workflow
+A superuser installs this untrusted, relocatable extension; shared preload is not required:
 
 ```sql
 CREATE EXTENSION chdb;
-
 SELECT *
 FROM chdb_query('SELECT number, number * number FROM numbers(5)')
 AS result(number bigint, square bigint);
-```
-
-`chdb_query(text)` returns `record`, so every call needs an `AS` column definition list matching the chDB result. No role receives `EXECUTE` by default; an administrator must grant the function deliberately.
-
-```sql
-GRANT EXECUTE ON FUNCTION chdb_query(text) TO analytics_role;
 SELECT pgchdb_version();
 ```
 
-### Resource Controls
+`chdb_query(text)` returns records and requires an explicit column definition matching the query result. Ordinary roles receive no execution permission by default: grant `EXECUTE` on `chdb_query(text)` only to approved, existing roles. Each call creates and removes a temporary chDB database, so objects created by one call do not persist to the next.
 
-- `chdb.max_memory` maps to chDB's maximum memory setting; `0` means unlimited.
-- `chdb.max_threads` limits query-processing threads.
-- `chdb.max_parsing_threads` limits parallel parsing for supported input formats.
+### Resource and Credential Settings
 
-These settings require superuser privileges. Set finite values before exposing `chdb_query(text)` to workloads that can issue large scans, because an unconstrained helper can compete with PostgreSQL for memory, CPU, disk, and network bandwidth.
+Superuser settings `chdb.max_memory`, `chdb.max_threads` and `chdb.max_parsing_threads` control helper resource usage. The memory default is now 4 GB; `0` removes that limit. Both thread settings default to `0`, allowing chDB to choose, so set finite limits for large workloads.
 
-### Architecture and Boundaries
+Version 0.1.4 changes access to host cloud credentials. `chdb.host_credentials_roles` defaults to an empty list. Only members of the existing PostgreSQL roles listed by a superuser may use host AWS credentials; other callers make anonymous requests when they supply no keys. This setting does not grant execution permission on the query function. Listed members inherit the access available to the host credentials.
 
-Each call starts a helper-backed, temporary chDB database and removes it when the query completes. Objects created by one `chdb_query(text)` call are not visible to the next. A helper crash fails the initiating backend without sharing PostgreSQL memory, but it can still consume host resources and reach data sources allowed by chDB.
+### Data and Upgrade Boundaries
 
-Version 0.1.2 requires PostgreSQL 15 or newer and libchdb 26.7.0 or newer on Linux or macOS. The control file is superuser-only, untrusted, relocatable, and exposes extension version `0.1` while the library/distribution version is `0.1.2`. Review remote credentials and URLs carefully: query text can read network or local sources supported by chDB, and results cross an explicit type-conversion boundary into PostgreSQL.
+Queries can reach data sources accessible to chDB. Review endpoint access, explicit credentials and result types. Complex arrays, maps, nested values and encoding conversions require matching PostgreSQL types; use representative round-trip checks. The helper isolates its memory from PostgreSQL, but still consumes host CPU, memory, disk and network resources.
 
-### Version 0.1.2
-
-This is a binary-only update: the `chdb` control version remains `0.1`, with no extension SQL upgrade required. New mappings cover Tuple, Map, unflattened Nested and composite types, plus additional LowCardinality and parameterized JSON conversions. Arrays and composites have different shapes; declare matching destination types and test representative values.
-
-### Binary Release 0.1.3
-
-Distribution 0.1.3 preserves declared time/timestamp precision, applies the PostgreSQL session `TimeZone` during COPY FROM and preserves Azure SAS tokens across inference/loading. It is a binary-only update: the `chdb` SQL/control version stays 0.1 and needs no ALTER EXTENSION upgrade. The released `chdb_hook` module remains headless.
+The library reports its full version through `pgchdb_version()`. Existing SQL version 0.1 needs no SQL upgrade for the 0.1.4 library update. Install matching library/helper files and use fresh sessions to load the new binaries. The release also adds an optional extension wrapper for `chdb_hook`, documented separately.

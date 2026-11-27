@@ -2,14 +2,14 @@
 
 Sources:
 
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/CHANGELOG.md)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.2/CHANGELOG.md)
 
-- [README.md](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/README.md)
-- [pg_achievements.control](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/pg_achievements.control)
-- [sql/pg_achievements--1.2.sql](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/sql/pg_achievements--1.2.sql)
-- [LICENSE](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/LICENSE)
+- [README.md](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.2/README.md)
+- [pg_achievements.control](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.2/pg_achievements.control)
+- [sql/pg_achievements--1.2.2.sql](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.2/sql/pg_achievements--1.2.2.sql)
+- [LICENSE](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.2/LICENSE)
 
-`pg_achievements` awards achievements from database activity and displays notices in the originating session. Release 1.2.0 installs SQL version 1.2. It requires PostgreSQL 16–19 on Linux, a superuser installer, and cluster-wide preload; the fixed `achievements` schema lives in one configured database.
+`pg_achievements` awards achievements from database activity and displays notices in the originating session. Release 1.2.2 installs SQL version 1.2.2. It requires PostgreSQL 14–19 on Linux, a superuser installer, and cluster-wide preload; the fixed `achievements` schema lives in one configured database.
 
 ### Enable and Inspect
 
@@ -55,4 +55,10 @@ Parse-time features of prepared statements count only when analyzed, and client 
 
 Version 1.2 sends new awards through NOTIFY on `pg_achievements.notify_channel`, whose default is `achievements`; an empty channel disables it. Opted-out roles are not announced. `achievements.rarity` reports how many players hold each award. Version 1.1 consolidated platinum into one collection trophy, added counters and awards, and repaired counter/award restoration races.
 
-Install matching files, restart PostgreSQL, then run `ALTER EXTENSION pg_achievements UPDATE TO '1.2';`. The update preserves counters and awards. Custom platinum awards from 1.0 survive, while new custom platinum definitions are rejected.
+Install matching files, restart PostgreSQL, then run `ALTER EXTENSION pg_achievements UPDATE TO '1.2.2';`. The update preserves counters and awards. Custom platinum awards from 1.0 survive, while new custom platinum definitions are rejected.
+
+### Version 1.2.2
+
+Install the matching library, restart PostgreSQL and run the SQL upgrade above. PostgreSQL 14 and 15 are now supported. On 14, the unavailable `merge` counter is hidden from progress, catalog and rarity views; it is excluded from the collection trophy and cannot be used by `achievements.define()`. It becomes available after upgrading PostgreSQL to 15 or later.
+
+The earlier 1.2.1 library fixes are included: every execution of an extended-protocol prepared statement counts when query IDs are enabled. Malformed statements, custom-award text, role renames and worker recovery no longer trigger the documented tracking failures. Attempt counters still count at parse analysis; `compute_query_id = off` limits prepared-statement tracking across transactions.

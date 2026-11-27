@@ -2,6 +2,10 @@
 
 Sources:
 
+- [Official source](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.2/Changes)
+- [Official source](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.2/LICENSE)
+- [Official source](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.2/pg_integrity_checksums.control)
+
 - [Current version source](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.1/README.md)
 - [Current version source](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.1/pg_integrity_checksums.control)
 - [Current version source](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.1/Changes)
@@ -25,7 +29,7 @@ Sources:
 - [Migration guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/MIGRATION.md)
 - [Upgrade and baseline guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/docs/installation.md)
 
-`pg_integrity_checksums` computes physical and logical checksums for PostgreSQL pages, cells, tuples, tables, indexes and databases. This C extension supports PostgreSQL 12–19 upstream; the catalog's Pigsty packages target PostgreSQL 14–18. Installation and database-wide checks require a superuser.
+`pg_integrity_checksums` computes physical and logical checksums for PostgreSQL pages, cells, tuples, tables, indexes and databases. This C extension supports PostgreSQL 12–19 upstream. Pigsty packages target PostgreSQL 15–19. Installation and database-wide checks require a superuser.
 
 ### Install and migrate
 
@@ -104,3 +108,9 @@ When `include_system = false`, database logical and physical checksums now exclu
 ### 2.9.1 Scan Changes
 
 On PostgreSQL 17+, table, index, bucket and database scans use read streams; PostgreSQL 18 can use asynchronous I/O. Parallel workers process larger ranges. Version 2.9.1 does not change checksum values. Install the matching library and apply `ALTER EXTENSION pg_integrity_checksums UPDATE TO '2.9.1'`; the older 2.9.0 information_schema exclusion still requires replacing affected non-system database baselines.
+
+### Version 2.9.2 and Checksum Baselines
+
+In databases using neither UTF8 nor SQL_ASCII, logical checksums involving XML can change when the old baseline was computed with client encoding equal to server encoding. Version 2.9.2 removes that session-dependent XML serialization. UTF8 and SQL_ASCII databases are unaffected by this fix.
+
+Physical checksums now include BRIN range-map contents and relevant legacy index-page data previously treated as unused space. Recapture physical baselines for BRIN indexes and indexes upgraded from PostgreSQL 10 or earlier, including database-level physical baselines containing them. This physical fix does not change logical checksums. Install matching files, update the extension and replace sessions loading the old library. PostgreSQL 19 is supported. Version 2.9.2 is distributed under the PostgreSQL License; earlier releases retain their original license.

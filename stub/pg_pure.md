@@ -2,14 +2,14 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/README.md)
-- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pure.control)
-- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pureu.control)
-- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pure--0.1.sql)
-- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pureu--0.1.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/README.md)
+- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/pg_pure.control)
+- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/pg_pureu.control)
+- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/pg_pure--0.1.sql)
+- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/pg_pureu--0.1.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/CHANGELOG.md)
 
-`pg_pure` provides the trusted Pure procedural language and SPI database access. Distribution 0.10.0 retains SQL extension version 0.1. Since 0.2.0, trusted functions execute in a libpure safe-mode interpreter; the earlier execution refusal no longer applies.
+`pg_pure` provides the trusted Pure procedural language and SPI database access. Distribution 0.12.0 retains SQL extension version 0.1. Since 0.2.0, trusted functions execute in a libpure safe-mode interpreter; the earlier execution refusal no longer applies.
 
 ### Core Workflow
 
@@ -26,7 +26,7 @@ The extension is trusted and non-relocatable. Ordinary roles with the required d
 
 Scalar values include integer, floating point, numeric, boolean and text. SQL NULL is represented by `sql::null`. Exact `numeric` values use Pure big integers or rationals; use big integers for intermediate arithmetic that can exceed machine range.
 
-`float8[]` maps to a dense Pure double matrix: a one-dimensional array becomes a row vector and a two-dimensional array becomes a matrix. NULL elements and arrays of more than two dimensions are rejected. `sql::query`, `sql::exec`, `sql::notice` and `sql::warning` provide database access and messages; database failures become `sql::error`. Parameterized SPI and set-returning functions are supported; triggers and composite types remain unsupported. Do not interpolate untrusted values into SQL strings.
+`float8[]` maps to a dense Pure double matrix: a one-dimensional array becomes a row vector and a two-dimensional array becomes a matrix. NULL elements and arrays of more than two dimensions are rejected. `sql::query`, `sql::exec`, `sql::notice` and `sql::warning` provide database access and messages; database failures become `sql::error`. Parameterized SPI and set-returning functions are supported; DML triggers are supported from 0.11.0. Do not interpolate untrusted values into SQL strings.
 
 ### Sandbox and Modules
 
@@ -64,3 +64,9 @@ SQL version remains 0.1. Parameterized `sql::query` and `sql::exec` now transpar
 ### Call-Scoped Streaming in 0.10.0
 
 `sql::stream` returns a lazy Pure list backed by an SPI cursor, fetching rows in batches as consumed. It accepts a query or a query with parameters. The stream is valid only inside the function call that opened it; forcing it after the call returns raises `sql::error`. It is not a holdable cursor for later SQL statements. The SQL extension version remains 0.1.
+
+### DML Triggers and Distribution 0.12.0
+
+Distribution 0.12.0 keeps SQL version 0.1. Since 0.11.0, functions returning `trigger` support row and statement DML triggers. Bodies receive `new`, `old` and `tg`; absent rows use `sql::null`. A BEFORE-row trigger returns a record to replace named columns, or `sql::null` to skip the operation. AFTER and statement triggers ignore the return value. Event triggers and procedure transaction control remain unsupported.
+
+Version 0.12.0 fixes a use-after-free while reporting result-conversion errors. Install the matching library and recycle sessions that loaded the old implementation; the unchanged SQL version alone cannot identify the installed distribution.

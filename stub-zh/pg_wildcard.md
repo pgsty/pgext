@@ -2,14 +2,16 @@
 
 来源：
 
-- [Published crate 0.2.1](https://crates.io/crates/pg_wildcard/0.2.1)
-- [Extension README](https://github.com/f1b0-gh/pg_wildcard/blob/14db6f91c988a23ac3f2cd6664986198045743b8/pg_wildcard/README.md)
-- [Control](https://github.com/f1b0-gh/pg_wildcard/blob/14db6f91c988a23ac3f2cd6664986198045743b8/pg_wildcard/pg_wildcard.control)
-- [SQL API](https://github.com/f1b0-gh/pg_wildcard/blob/14db6f91c988a23ac3f2cd6664986198045743b8/docs/sql-api.md)
-- [Foreign data wrapper](https://github.com/f1b0-gh/pg_wildcard/blob/14db6f91c988a23ac3f2cd6664986198045743b8/docs/fdw.md)
-- [Upgrade SQL](https://github.com/f1b0-gh/pg_wildcard/blob/14db6f91c988a23ac3f2cd6664986198045743b8/pg_wildcard/sql/pg_wildcard--0.2.0--0.2.1.sql)
+- [0.2.3](https://crates.io/crates/pg_wildcard/0.2.3)
+- [pg_wildcard/README.md](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/pg_wildcard/README.md)
+- [pg_wildcard/pg_wildcard.control](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/pg_wildcard/pg_wildcard.control)
+- [pg_wildcard/Cargo.toml](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/pg_wildcard/Cargo.toml)
+- [docs/sql-api.md](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/docs/sql-api.md)
+- [docs/fdw.md](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/docs/fdw.md)
+- [docs/operations.md](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/docs/operations.md)
+- [pg_wildcard/sql/pg_wildcard--0.2.2--0.2.3.sql](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/pg_wildcard/sql/pg_wildcard--0.2.2--0.2.3.sql)
 
-`pg_wildcard` 0.2.1 使用通配符和正则表达式搜索遥测字符串，可提取指标并生成 ClickHouse/Antalya 查询，同时提供只读扫描的 `wildcard_fdw`。已发布的 crate 使用 `antalya-rs` 0.1.0；经过验证的服务器主版本是 PostgreSQL 18。声明的 PostgreSQL 14–17 构建特性需要另行验证。
+`pg_wildcard` 0.2.3 使用通配符和正则表达式搜索遥测字符串，可提取指标并生成 ClickHouse/Antalya 查询，同时提供只读扫描的 `wildcard_fdw`。已发布的 crate 使用 `antalya-rs` 0.1.1；经过验证的服务器主版本是 PostgreSQL 18 和 19。声明的 PostgreSQL 14–17 构建特性需要另行验证。
 
 ### 本地字符串搜索
 
@@ -37,10 +39,12 @@ SELECT wc_explain('*/wp-admin/*.php', 'wildcard', 'decoded');
 
 `pg_wildcard.matcher_cache_entries` 与 `pg_wildcard.matcher_cache_kb` 限制每个后端保留的模式缓存，`wc_matcher_cache_stats()` 提供统计。这些限制不是后端总内存上限。
 
-从 0.2.0 升级时，先安装匹配的 0.2.1 库和 SQL 文件，重新连接，再执行：
+从 0.2.0、0.2.1 或 0.2.2 升级时，先安装匹配的 0.2.3 库和 SQL 文件，重新连接，再执行：
 
 ```sql
-ALTER EXTENSION pg_wildcard UPDATE TO '0.2.1';
+ALTER EXTENSION pg_wildcard UPDATE TO '0.2.3';
 ```
 
 该更新保留 SQL 签名并记录新扩展版本。独立库、数据湖命令行工具和远程引擎配置是分别维护的组件。
+
+可选的批处理和分阶段扫描在 FDW 之外运行，执行、准入限制和清理由调用者负责。FDW 不会自动并行执行查询，也未将压缩作为正式 FDW 选项开放。

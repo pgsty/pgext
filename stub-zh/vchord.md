@@ -2,9 +2,9 @@
 
 来源：
 
-- [1.4.0 README](https://github.com/pgsty/vchord/blob/1.4.0/README.md)
-- [1.4.0 release](https://github.com/pgsty/vchord/blob/1.4.0/docs/release-notes/1.4.0.md)
-- [1.4.0 control](https://github.com/pgsty/vchord/blob/1.4.0/vchord.control)
+- [1.5.0 README](https://github.com/pgsty/vchord/blob/1.5.0/README.md)
+- [1.5.0 release](https://github.com/pgsty/vchord/blob/1.5.0/docs/release-notes/1.5.0.md)
+- [1.5.0 control](https://github.com/pgsty/vchord/blob/1.5.0/vchord.control)
 - [安装与升级](https://vchord.pgsty.com/docs/vchord/getting-started/installation/)
 - [分区向量索引](https://vchord.pgsty.com/docs/vchord/usage/indexing/)
 - [图索引与结果顺序](https://vchord.pgsty.com/docs/vchord/usage/graph-index/)
@@ -14,7 +14,7 @@
 - [1.2.0 发布说明](https://vchord.pgsty.com/blog/release/vchord-1.2.0/)
 - [1.2.0 控制文件](https://github.com/pgsty/vchord/blob/1.2.0/vchord.control)
 
-`vchord` 1.2.0 为 PostgreSQL 14–18 提供近似向量检索。它使用 pgvector 的类型，增加分区索引 `vchordrq` 和磁盘图索引 `vchordg`。安装需要 `vector` 扩展、共享预加载和超级用户权限。图索引在文档中仍标为预览功能。
+`vchord` 1.5.0 为 PostgreSQL 15–19 提供近似向量检索。它使用 pgvector 的类型，增加分区索引 `vchordrq` 和磁盘图索引 `vchordg`。安装需要 `vector` 扩展、共享预加载和超级用户权限。图索引在文档中仍标为预览功能。
 
 ### 启用与检索
 
@@ -102,10 +102,10 @@ SELECT vchordrq_evaluate_query_recall(
 
 保持正常的清理任务：`VACUUM` 后图搜索会排除已删除的顶点，索引维护会更新元组数与页数统计。单独执行 `ANALYZE` 不会重建或压实索引。
 
-安装匹配的 1.2.0 库和 SQL 文件，重启 PostgreSQL 加载新库，再由扩展所有者或管理员更新各个数据库：
+安装匹配的 1.5.0 库和 SQL 文件，重启 PostgreSQL 加载新库，再由扩展所有者或管理员更新各个数据库：
 
 ```sql
-ALTER EXTENSION vchord UPDATE TO '1.2.0';
+ALTER EXTENSION vchord UPDATE TO '1.5.0';
 ```
 
 本次发布提供从 0.2.0 到 1.1.1 各版本直接升级的路径，无需重建索引。升级后应重新检查代表性查询的排序：1.2.0 修正了 MaxSim 候选估计、图索引球体过滤、已删除顶点的可见性以及量化边界问题，并提高了默认重排序预算。扩展可重定位，应将安装模式加入搜索路径或使用模式限定的对象名。
@@ -114,6 +114,12 @@ ALTER EXTENSION vchord UPDATE TO '1.2.0';
 
 1.4.0 支持 PostgreSQL 15–19；PostgreSQL 14 必须先升级服务器。安装匹配文件并重启 PostgreSQL，然后在每个数据库执行 `ALTER EXTENSION vchord UPDATE;`。
 
-RQ 过滤键列支持等值、范围和 NULL 条件。`vchordrq.probes` 选择初始列表，`vchordrq.max_probes` 限制后续扩展，默认 -1 允许访问所有列表，并始终保留初始探测。能够扩展的有序扫描会在返回首行前对候选项排序；排序超过 `work_mem` 时可能写入临时文件。降低上限前须测量召回率。
+RQ 过滤键列支持等值、范围和 NULL 条件。`vchordrq.probes` 选择初始列表，`vchordrq.max_probes` 限制后续扩展，默认 -1 允许访问所有列表，并始终保留初始探测。1.5.0 中，带过滤键的有序扫描先流式返回初始探测结果，再按需扩展；不同补充批次之间的距离可能减小。降低上限前须测量召回率。
 
 普通 1.3.0 RQ 索引继续使用格式 1001，包含过滤键的新索引使用格式 1003。退回 1.3.0 二进制前，须在 1.4.0 下移除过滤键索引，并恢复兼容的扩展目录或备份；只降级二进制不足以回退。两种索引的球形范围扫描仍是近似搜索；要求返回全部匹配行时，应确认使用顺序扫描计划。
+
+### 版本 1.5.0 维护
+
+1.5.0 可直接读取 1.4.0 索引，保留其 SQL 对象和磁盘格式。除了图索引查询，也应重新检查带过滤键的 RQ 查询的顺序与召回率；要求严格有序时，显式排序已物化的候选集。球体谓词复核、可空向量扫描、预备查询及预过滤也得到正确性修复。
+
+本版本修复图插入和 VACUUM 连通性。如果旧版 VACUUM 已经移除了整个图区域，应对受影响索引执行 `REINDEX INDEX CONCURRENTLY index_name;`；仅安装新代码无法重建已经丢失的连接。

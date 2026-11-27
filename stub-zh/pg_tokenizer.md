@@ -2,9 +2,10 @@
 
 来源：
 
-- [1.2.0 README](https://github.com/pgsty/pg_tokenizer/blob/v1.2.0/README.md)
-- [1.2.0 release notes](https://github.com/pgsty/pg_tokenizer/blob/v1.2.0/docs/release-notes/1.2.0.md)
-- [1.2.0 control](https://github.com/pgsty/pg_tokenizer/blob/v1.2.0/pg_tokenizer.control)
+- [1.3.0 发行说明](https://github.com/pgsty/pg_tokenizer/blob/v1.3.0/docs/release-notes/1.3.0.md)
+- [1.3.0 README](https://github.com/pgsty/pg_tokenizer/blob/v1.3.0/README.md)
+- [1.2.0 发行说明](https://github.com/pgsty/pg_tokenizer/blob/v1.2.0/docs/release-notes/1.2.0.md)
+- [1.3.0 控制文件](https://github.com/pgsty/pg_tokenizer/blob/v1.3.0/pg_tokenizer.control)
 - [安装、升级、权限与备份](https://vchord.pgsty.com/docs/tokenizer/installation/)
 - [分词与原生全文检索用法](https://vchord.pgsty.com/docs/tokenizer/overview/)
 - [文本分析流水线](https://vchord.pgsty.com/docs/tokenizer/text-analyzer/)
@@ -13,7 +14,7 @@
 - [SQL 与 TOML 参考](https://vchord.pgsty.com/docs/tokenizer/reference/)
 - [1.0.0 控制文件](https://github.com/pgsty/pg_tokenizer/blob/v1.0.0/pg_tokenizer.control)
 
-`pg_tokenizer` 1.0.0 为 PostgreSQL 14–18 提供可配置的文本分析和模型分词，可返回字符串词元、整数词元 ID，或供 GIN/GiST 与兼容 BM25 索引使用的原生 `tsvector`。它没有必需的扩展依赖，要求共享预加载，安装在固定的 `tokenizer_catalog` 模式中。
+在 PostgreSQL 15–19 上，`pg_tokenizer` 1.3.0 可以将文本转换为词元、整数 ID 或原生 `tsvector`，用于 GIN、GiST 和 BM25 索引。安装时需要预加载共享库，SQL 对象位于固定的 `tokenizer_catalog` 模式中。
 
 ### 分析文本与建立索引
 
@@ -116,3 +117,9 @@ Lindera 6 改变了词典的词元 ID。应使用 Lindera 6 重建外部词典�
 Lindera 分词、词元 ID、正则匹配边界和 Unicode 表可能改变输出。切换查询前，应从原文重新生成受影响的词元数组或向量并重建索引。本次 GitHub 二进制内嵌 IPADIC；单独供应的原生包须另查其内容。
 
 预加载名称和普通文件格式保持兼容。启动时会跳过符号链接、特殊文件与无效配置；重启前须将需要的预加载内容移入真实目录和普通文件，并单独备份。定义缓存仍遵循调用者的 SQL 快照。
+
+### 1.3.0 的缓存与升级
+
+主库在同一份已验证定义上重复分词时可以复用缓存。旧快照、物理备库和刚晋升的主库按各自快照读取定义。自定义词表只为新词分配 ID。`analyze_to_tsvector` 和 `tokenize_to_tsvector` 直接构造二进制向量，保留原有的词位排序和位置上限。
+
+从 1.2.0 升级时，在各节点安装匹配的包，重启 PostgreSQL，再在主库的每个目标数据库执行 `ALTER EXTENSION pg_tokenizer UPDATE;`。已有定义、自定义词表 ID、视图和触发器都能保留。Pigsty 的 RPM 和 DEB 使用外置 Lindera 7 格式 v3 词典。

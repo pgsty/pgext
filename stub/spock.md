@@ -5,6 +5,8 @@
 
 Sources:
 
+- [Official source](https://github.com/pgEdge/spock/releases/tag/v5.0.15)
+
 - [Spock v5.0.12 README](https://github.com/pgEdge/spock/blob/v5.0.12/README.md)
 - [Getting started](https://github.com/pgEdge/spock/blob/v5.0.12/docs/getting_started.md)
 - [Configuration reference](https://github.com/pgEdge/spock/blob/v5.0.12/docs/configuring.md)
@@ -122,3 +124,7 @@ An unknown parameter prevents older servers from starting. The allowlist check a
 The 5.0.12 patch has no schema changes. It retries transient apply failures without advancing the replication origin, repairs replay/exception handling and generated-column replication, and validates received tuple metadata. Permanent schema drift still needs repair; a restarting worker is not evidence that replication is healthy. Review replication lag, exception state and subscriptions after upgrading each node.
 
 Version 5.0.11 introduced `spock.use_native_failover_slots`; changing it requires a restart. Its native-slot behavior depends on PostgreSQL 17 or later, and failover setup needs the dedicated upstream runbook. Do not enable it merely because a cluster has a standby.
+
+### Version 5.0.15 Failover Slots
+
+Version 5.0.15 makes no SQL schema changes. It fixes failover-slot copies remaining temporary on an idle primary, prevents advancing a standby slot beyond received WAL, and retries connections needed for consistent snapshot checks. A temporary slot can disappear at promotion, so verify synchronized persistent slots and subscriber continuity before treating failover as ready. Install the matching library and follow the existing node maintenance procedure; monitor slot state and replication after restarting workers.

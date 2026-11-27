@@ -2,6 +2,9 @@
 
 Sources:
 
+- [1.3.0 release notes](https://github.com/pgsty/vchord_bm25/blob/1.3.0/docs/release-notes/1.3.0.md)
+- [1.3.0 control](https://github.com/pgsty/vchord_bm25/blob/1.3.0/vchord_bm25.control)
+
 - [1.2.0 README](https://github.com/pgsty/vchord_bm25/blob/1.2.0/README.md)
 - [1.2.0 release](https://github.com/pgsty/vchord_bm25/blob/1.2.0/docs/release-notes/1.2.0.md)
 - [1.2.0 control](https://github.com/pgsty/vchord_bm25/blob/1.2.0/vchord_bm25.control)
@@ -13,7 +16,7 @@ Sources:
 - [Index maintenance](https://vchord.pgsty.com/docs/bm25/usage/indexing/)
 - [1.0.0 control file](https://github.com/pgsty/vchord_bm25/blob/1.0.0/vchord_bm25.control)
 
-`vchord_bm25` 1.0.0 adds BM25 relevance ranking over native PostgreSQL `tsvector` values on PostgreSQL 14–18. Its `bm25` access method and `bm25_ops` operator class use a new index format. Standard text search needs no tokenizer extension; `pg_tokenizer` 1.0.0 is optional for custom analyzers and multilingual models. Installation requires superuser privileges and shared preloading.
+`vchord_bm25` 1.3.0 adds BM25 relevance ranking over native PostgreSQL `tsvector` values on PostgreSQL 15–19. Its `bm25` access method and `bm25_ops` operator class use format-4 indexes. Standard text search needs no tokenizer extension; `pg_tokenizer` is optional for custom analyzers and multilingual models. Installation requires superuser privileges and shared preloading.
 
 ### Create and Query an Index
 
@@ -75,7 +78,7 @@ SELECT bm25_maintain('documents_bm25');
 
 ### Permissions and Migration
 
-The extension is relocatable; applications need access to the selected installation schema and indexed data. Scoring requires `SELECT` on the indexed table, or column-level access for an ordinary non-partial single-column index. Expression and partial indexes require table-level access. Both scalar scoring and native scans reject queries when row-level security applies to the current role, because scores use global corpus statistics.
+The extension is relocatable; applications need access to the selected installation schema and indexed data. Scoring requires `SELECT` on the indexed table, or column-level access for an ordinary non-partial single-column index. Expression and partial indexes require table-level access. With row-level security, scalar scoring and native scans reject queries by default because scores use whole-index corpus statistics; 1.3.0 adds the explicit opt-in below.
 
 The index supports one indexed column and does not support unlogged tables. The access-method name is database-wide, so another extension defining `bm25` cannot coexist in that database.
 
@@ -86,3 +89,9 @@ Upgrades from 0.3.x are deliberately blocked. Keep the old database and library 
 Version 1.2.0 supports PostgreSQL 15–19. Install matching files, restart PostgreSQL and run `ALTER EXTENSION vchord_bm25 UPDATE;`. Upgrades from 1.0.0 and 1.1.0 retain their SQL APIs and format-4 indexes without routine REINDEX. PostgreSQL 14 requires a server upgrade first; the legacy 0.3.x migration boundary above still applies.
 
 This release fixes error cleanup during prefiltering, planner costs and parallel-build snapshot protection. It also rejects invalid or partitioned indexes in `bm25_maintain`. These fixes do not replace normal vacuuming, access checks or application-level retry handling.
+
+### Version 1.3.0: Shared Corpus Statistics
+
+An index owner can opt into whole-index statistics under row security with the `shared_corpus_stats` index option, which defaults off. This exposes shared corpus information through scores; PostgreSQL still applies row policies before returning rows. Scoring checks corpus privileges on scalar, index and view paths. Do not enable this option when those statistics must remain isolated.
+
+Install matching library and SQL files, restart and run `ALTER EXTENSION vchord_bm25 UPDATE;`. Versions 1.0.0–1.2.0 retain their format-4 indexes. Build sort memory is shared across participating workers, and ranked pagination/statistics and prefiltering are improved. Before reverting the library, reset `shared_corpus_stats` on every index where it was explicitly set, including explicit off values. SQL upgrades are forward-only.

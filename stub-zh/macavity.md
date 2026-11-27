@@ -2,13 +2,13 @@
 
 来源：
 
-- [README.md](https://github.com/CrystallineCore/Macavity/blob/v0.2.0/README.md)
-- [CHANGELOG.md](https://github.com/CrystallineCore/Macavity/blob/v0.2.0/CHANGELOG.md)
-- [macavity.control](https://github.com/CrystallineCore/Macavity/blob/v0.2.0/macavity.control)
-- [sql/macavity--0.2.0.sql](https://github.com/CrystallineCore/Macavity/blob/v0.2.0/sql/macavity--0.2.0.sql)
-- [sql/macavity--0.1.0--0.2.0.sql](https://github.com/CrystallineCore/Macavity/blob/v0.2.0/sql/macavity--0.1.0--0.2.0.sql)
+- [README.md](https://github.com/CrystallineCore/Macavity/blob/v0.2.1/README.md)
+- [CHANGELOG.md](https://github.com/CrystallineCore/Macavity/blob/v0.2.1/CHANGELOG.md)
+- [macavity.control](https://github.com/CrystallineCore/Macavity/blob/v0.2.1/macavity.control)
+- [sql/macavity--0.2.0.sql](https://github.com/CrystallineCore/Macavity/blob/v0.2.1/sql/macavity--0.2.0.sql)
+- [sql/macavity--0.1.0--0.2.0.sql](https://github.com/CrystallineCore/Macavity/blob/v0.2.1/sql/macavity--0.1.0--0.2.0.sql)
 
-`macavity` 0.2.0 为可丢弃的 PostgreSQL 测试集群提供确定性故障注入。上游在 Linux 上测试 PostgreSQL 16–18，尚未验证 PostgreSQL 19+ 及其他平台，Windows 不支持崩溃注入。崩溃动作可能断开所有会话并触发崩溃恢复。
+`macavity` 0.2.1 为可丢弃的 PostgreSQL 测试集群提供确定性故障注入。上游支持 Linux 上的 PostgreSQL 16–19，其他平台尚未验证，Windows 不支持崩溃注入。崩溃动作可能断开所有会话并触发崩溃恢复。
 
 ### 事件用法
 
@@ -28,4 +28,8 @@ SELECT macavity_reset();
 
 注入点为 `executor_start`、`executor_end`、`before_commit` 与 `before_abort`，动作为 `error`、`delay` 与 `crash`。延迟固定一秒，回滚期间不允许注入错误。同一次命中按延迟、崩溃、错误的顺序处理，同类事件按 ID 排序。
 
-创建需要超级用户，无需共享预加载。只有注入点枚举向 `PUBLIC` 开放。使用 `ALTER EXTENSION macavity UPDATE` 升级会以新签名重新创建函数：须恢复显式授权、修改调用方并重新连接旧会话。当前 Pigsty 打包字段仍对应 0.1.0。
+创建需要超级用户，无需共享预加载。只有注入点枚举向 `PUBLIC` 开放。从 0.1.0 使用 `ALTER EXTENSION macavity UPDATE` 升级会以新签名重新创建函数：须恢复显式授权、修改调用方并重新连接旧会话。当前 Pigsty 打包字段仍对应 0.1.0。
+
+### 版本 0.2.1
+
+0.2.0 到 0.2.1 的 SQL 升级脚本为空操作；本版本新增 PostgreSQL 19 兼容性，SQL API 不变。安装匹配的库和 SQL 文件，执行 `ALTER EXTENSION macavity UPDATE TO '0.2.1';`，并在测试前重新连接旧会话。

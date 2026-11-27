@@ -2,6 +2,10 @@
 
 来源：
 
+- [Official source](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.2/Changes)
+- [Official source](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.2/LICENSE)
+- [Official source](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.2/pg_integrity_checksums.control)
+
 - [当前版本资料](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.1/README.md)
 - [当前版本资料](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.1/pg_integrity_checksums.control)
 - [当前版本资料](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.1/Changes)
@@ -25,7 +29,7 @@
 - [迁移指南](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/MIGRATION.md)
 - [Upgrade and baseline guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/docs/installation.md)
 
-`pg_integrity_checksums` 为 PostgreSQL 页面、单元、元组、表、索引和数据库计算物理及逻辑校验和。此 C 扩展的上游支持 PostgreSQL 12–19，目录中的 Pigsty 软件包覆盖 PostgreSQL 14–18。安装和数据库级扫描需要超级用户。
+`pg_integrity_checksums` 为 PostgreSQL 页面、单元、元组、表、索引和数据库计算物理及逻辑校验和。此 C 扩展的上游支持 PostgreSQL 12–19，Pigsty 软件包覆盖 PostgreSQL 15–19。安装和数据库级扫描需要超级用户。
 
 ### 安装与迁移
 
@@ -104,3 +108,9 @@ ALTER EXTENSION pg_integrity_checksums UPDATE TO '2.9.0';
 ### 2.9.1 扫描变化
 
 在 PostgreSQL 17 及以上，表、索引、bucket 和数据库扫描使用 read stream；PostgreSQL 18 可使用异步 I/O，并行 worker 处理的范围也有所扩大。2.9.1 不改变校验和值。安装匹配库并执行 `ALTER EXTENSION pg_integrity_checksums UPDATE TO '2.9.1'`；此前 2.9.0 排除 information_schema 的变更仍要求替换受影响的非系统数据库基线。
+
+### 版本 2.9.2 与校验和基线
+
+对于编码既非 UTF8 也非 SQL_ASCII 的数据库，如果旧基线在客户端编码等于服务器编码的会话中计算，包含 XML 的逻辑校验和可能变化。2.9.2 消除了 XML 序列化对会话编码的依赖；此项修复不影响 UTF8 与 SQL_ASCII 数据库。
+
+物理校验和现在包含此前被误当作空闲空间的 BRIN 范围映射内容及相关旧版索引页数据。应重新采集 BRIN 索引、从 PostgreSQL 10 或更早版本升级的索引，以及包含它们的数据库级物理基线。此项物理校验修复不改变逻辑校验和。安装匹配文件、升级扩展并替换已加载旧库的会话。已支持 PostgreSQL 19。2.9.2 使用 PostgreSQL License，早期版本保留原许可证。

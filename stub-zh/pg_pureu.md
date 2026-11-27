@@ -2,14 +2,14 @@
 
 来源：
 
-- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/README.md)
-- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pure.control)
-- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pureu.control)
-- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pure--0.1.sql)
-- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pureu--0.1.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/README.md)
+- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/pg_pure.control)
+- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/pg_pureu.control)
+- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/pg_pure--0.1.sql)
+- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/pg_pureu--0.1.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/CHANGELOG.md)
 
-`pg_pureu` 在 PostgreSQL 中执行非受信任的 Pure 标量函数，并提供 SPI 数据库访问能力。它属于 `pg_pure` 0.10.0 分发，SQL 版本为 0.1。只有超级用户才能用该语言创建函数，因为 Pure 可以通过 `extern` 调用任意原生函数。
+`pg_pureu` 在 PostgreSQL 中执行非受信任的 Pure 标量函数，并提供 SPI 数据库访问能力。它属于 `pg_pure` 0.12.0 分发，SQL 版本为 0.1。只有超级用户才能用该语言创建函数，因为 Pure 可以通过 `extern` 调用任意原生函数。
 
 ### 核心流程
 
@@ -26,7 +26,7 @@ SELECT pure_factorial(30);
 
 语言安装调用、内联和验证处理函数。支持的 SQL 标量类型包括 smallint/integer/bigint、浮点、numeric、布尔与文本。SQL NULL 表示为 `sql::null`，文本返回值必须是 Pure 字符串。
 
-`sql::query` 和 `sql::exec` 访问数据库，`sql::notice` 与 `sql::warning` 输出消息。数据库错误会成为带有 SQLSTATE 和消息的 `sql::error`，未捕获的异常会转为 SQL 错误。分发版本 0.6.0 支持将不含 NULL 元素的一维、二维 `float8[]` 数组映射为 Pure 双精度矩阵，超过二维会被拒绝。0.6.0 已实现参数化 SPI 和集合返回函数；触发器与复合类型仍未实现。不要把不可信值直接拼进 SQL 字符串。
+`sql::query` 和 `sql::exec` 访问数据库，`sql::notice` 与 `sql::warning` 输出消息。数据库错误会成为带有 SQLSTATE 和消息的 `sql::error`，未捕获的异常会转为 SQL 错误。分发版本 0.6.0 支持将不含 NULL 元素的一维、二维 `float8[]` 数组映射为 Pure 双精度矩阵，超过二维会被拒绝。0.6.0 已实现参数化 SPI 和集合返回函数；0.11.0 起已支持 DML 触发器。不要把不可信值直接拼进 SQL 字符串。
 
 ### 配置与故障边界
 
@@ -50,3 +50,9 @@ SQL 版本仍为 0.1。参数化的 `sql::query` 与 `sql::exec` 现在透明缓
 ### 0.10.0 中限定于调用期的流式读取
 
 `sql::stream` 返回由 SPI 游标支撑的惰性 Pure 列表，随消费按批取行，可接受查询或带参数的查询。流只在创建它的函数调用内有效；调用返回后再求值会抛出 `sql::error`。它不是可供后续 SQL 语句继续读取的持有游标。SQL 扩展版本仍为 0.1。
+
+### DML 触发器与分发版本 0.12.0
+
+分发版本 0.12.0 保留 SQL 版本 0.1。自 0.11.0 起，返回 `trigger` 的函数支持行级与语句级 DML 触发器。函数体可读取 `new`、`old` 和 `tg`；不存在的行表示为 `sql::null`。BEFORE 行级触发器返回记录以替换其中指定的列，或返回 `sql::null` 跳过操作；AFTER 与语句级触发器忽略返回值。事件触发器及过程事务控制仍不支持。
+
+0.12.0 修复了结果类型转换报错路径中的释放后使用问题。安装匹配动态库并回收已加载旧实现的会话；未变化的 SQL 版本本身不能标识实际分发版本。

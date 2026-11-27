@@ -2,11 +2,15 @@
 
 Sources:
 
+- [Official source](https://api.pgxn.org/src/pg_statecharts_dev/pg_statecharts_dev-0.2.0/README.md)
+- [Official source](https://api.pgxn.org/src/pg_statecharts_dev/pg_statecharts_dev-0.2.0/pg_statecharts_dev.control)
+- [Official source](https://api.pgxn.org/src/pg_statecharts_dev/pg_statecharts_dev-0.2.0/sql/upgrade/pg_statecharts_dev--0.1.0--0.2.0.sql)
+
 - [Official source](https://github.com/kronor-io/statecharts/blob/472349e864440c39a30863a0db815050391804c7/pg_statecharts_dev/README.md)
 - [Official source](https://github.com/kronor-io/statecharts/blob/472349e864440c39a30863a0db815050391804c7/pg_statecharts_dev/pg_statecharts_dev.control)
 - [Official source](https://github.com/kronor-io/statecharts/blob/472349e864440c39a30863a0db815050391804c7/pg_statecharts/README.md)
 
-`pg_statecharts_dev` 0.1.0 is the development companion to `pg_statecharts`. It imports SCXML definitions and generates Sqitch migrations. The production state-machine runtime does not need this file-access tooling.
+`pg_statecharts_dev` 0.2.0 is the development companion to `pg_statecharts`. It imports SCXML definitions and generates Sqitch migrations. The production state-machine runtime does not need this file-access tooling.
 
 ### Core Workflow
 
@@ -40,3 +44,7 @@ Create the destination directories before generation and make them accessible to
 Server file reads require `pg_read_server_files`; writes require `pg_write_server_files`. These are broad privileges, not a sandbox restricted to the supplied path. Restrict the extension and roles to a controlled development database. It shares the `fsm` schema, is pure SQL and requires no preload; PostgreSQL 16–18 are the documented test targets.
 
 Use the runtime's current semantic-version helpers in generated migrations. For old migrations that cast to the removed semver type, follow the upstream migration guide; regenerating every historical chart can introduce callback-order failures. Deploy reviewed generated SQL to production without installing this companion there.
+
+### Paired 0.2.0 Upgrade
+
+Keep this companion and `pg_statecharts` on the same release. Install both sets of SQL files, update the runtime first, then run `ALTER EXTENSION pg_statecharts_dev UPDATE;`. The companion's 0.1.0 to 0.2.0 script makes no object changes; its version follows the runtime. Review runtime positional calls before upgrading because the runtime moved the shard argument to the end. A dependency declaration alone does not enforce matching extension versions.

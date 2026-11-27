@@ -2,6 +2,8 @@
 
 来源：
 
+- [Official source](https://github.com/pgEdge/spock/releases/tag/v5.0.15)
+
 - [Spock v5.0.12 README](https://github.com/pgEdge/spock/blob/v5.0.12/README.md)
 - [Getting started](https://github.com/pgEdge/spock/blob/v5.0.12/docs/getting_started.md)
 - [Configuration reference](https://github.com/pgEdge/spock/blob/v5.0.12/docs/configuring.md)
@@ -119,3 +121,7 @@ output_plugin_libraries = 'pgoutput, test_decoding, spock_output'
 5.0.12 补丁没有模式变化。它在不推进复制源位置的情况下重试临时应用错误，修复重放、异常处理和生成列复制，并校验接收到的元组元数据。永久性的模式差异仍须修复；应用进程反复重启不代表复制健康。每个节点升级后，应检查复制延迟、异常状态和订阅。
 
 5.0.11 引入 `spock.use_native_failover_slots`，修改后需要重启；原生复制槽行为依赖 PostgreSQL 17 或更新版本，故障切换配置还须遵循专门的上游操作指南。不能仅因为集群有备库就启用它。
+
+### 版本 5.0.15 的故障转移槽
+
+5.0.15 不修改 SQL 模式。它修复主库空闲时故障转移槽副本一直保持临时状态的问题，防止备库槽位置超过已接收 WAL，并重试一致性快照检查所需的连接。临时槽可能在提升时消失，因此应验证已同步的持久槽及订阅连续性，再判定故障转移就绪。安装匹配动态库并遵循现有节点维护流程，工作进程重启后检查槽状态与复制。

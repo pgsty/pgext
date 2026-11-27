@@ -2,11 +2,11 @@
 
 来源：
 
-- [v4.0.2 发布](https://github.com/pgRouting/pgrouting/releases/tag/v4.0.2)
-- [v4.0.2 README](https://github.com/pgRouting/pgrouting/blob/v4.0.2/README.md)
+- [v4.0.3 发布](https://github.com/pgRouting/pgrouting/releases/tag/v4.0.3)
+- [v4.0.3 README](https://github.com/pgRouting/pgrouting/blob/v4.0.3/README.md)
 - [官方文档](https://docs.pgrouting.org/latest/en/index.html)
 
-pgRouting 4.0.2 扩展 PostGIS/PostgreSQL 地理空间数据库，提供地理空间路径规划和其他网络分析功能。此版本修复了 `pgr_dijkstraVia` 与 `pgr_withPointsVia` 的分配失败问题，并统一了行驶距离相关函数对负距离的处理。
+pgRouting 4.0.3 扩展 PostGIS/PostgreSQL 地理空间数据库，提供地理空间路径规划和其他网络分析功能。此版本修复了正向和反向代价不同时，无向 `pgr_aStar`、`pgr_bdAstar` 与 `pgr_bdDijkstra` 结果中重复节点和边的问题。若此前曾在该条件下物化结果，应重新验证保存的路径及下游行数。
 
 该库包含以下特性：
 
@@ -256,18 +256,18 @@ pgr_TSPeuclidean(Coordinates SQL, [start_id, end_id])
 计算最大流及相关属性：
 
 ```sql
--- 最大流
+-- Maximum flow
 pgr_maxFlow(Edges SQL, source, sink)
 
--- 特定算法
+-- Specific algorithms
 pgr_boykovKolmogorov(Edges SQL, source, sink)
 pgr_edmondsKarp(Edges SQL, source, sink)
 pgr_pushRelabel(Edges SQL, source, sink)
 
--- 边不相交路径
+-- Edge-disjoint paths
 pgr_edgeDisjointPaths(Edges SQL, source, sink)
 
--- 最大基数匹配
+-- Maximum cardinality matching
 pgr_maxCardinalityMatch(Edges SQL, [directed])
 ```
 
@@ -278,7 +278,7 @@ pgr_maxCardinalityMatch(Edges SQL, [directed])
 **Kruskal 算法：**
 
 ```sql
-pgr_kruskal(Edges SQL)         -- 最小生成树
+pgr_kruskal(Edges SQL)         -- minimum spanning tree
 pgr_kruskalBFS(Edges SQL, root_vid, [max_depth])
 pgr_kruskalDFS(Edges SQL, root_vid, [max_depth])
 pgr_kruskalDD(Edges SQL, root_vid, distance)
@@ -287,7 +287,7 @@ pgr_kruskalDD(Edges SQL, root_vid, distance)
 **Prim 算法：**
 
 ```sql
-pgr_prim(Edges SQL)            -- 最小生成树
+pgr_prim(Edges SQL)            -- minimum spanning tree
 pgr_primBFS(Edges SQL, root_vid, [max_depth])
 pgr_primDFS(Edges SQL, root_vid, [max_depth])
 pgr_primDD(Edges SQL, root_vid, distance)
@@ -296,19 +296,19 @@ pgr_primDD(Edges SQL, root_vid, distance)
 ### 图组件
 
 ```sql
--- 连通分量（无向）
+-- Connected components (undirected)
 pgr_connectedComponents(Edges SQL)
 
--- 强连通分量（有向）
+-- Strongly connected components (directed)
 pgr_strongComponents(Edges SQL)
 
--- 双连通分量
+-- Biconnected components
 pgr_biconnectedComponents(Edges SQL)
 
--- 关节点（割点）
+-- Articulation points (cut vertices)
 pgr_articulationPoints(Edges SQL)
 
--- 桥（割边）
+-- Bridges (cut edges)
 pgr_bridges(Edges SQL)
 ```
 
@@ -361,19 +361,19 @@ pgr_contraction(Edges SQL, contraction_order, [options])
 ### 实用函数
 
 ```sql
--- 从边数据中提取顶点
+-- Extract vertices from edge data
 pgr_extractVertices(Edges SQL)
 
--- 查找点附近的边
+-- Find edges near a point
 pgr_findCloseEdges(Edges SQL, point, tolerance, [options])
 
--- 分离交叉几何体
+-- Separate crossing geometries
 pgr_separateCrossing(Edges SQL)
 
--- 分离相切几何体
+-- Separate touching geometries
 pgr_separateTouching(Edges SQL)
 
--- 版本信息
+-- Version info
 pgr_version()
 pgr_full_version()
 ```
@@ -387,17 +387,17 @@ pgr_full_version()
 从空间边中提取顶点并构建拓扑：
 
 ```sql
--- 从边几何体中提取顶点
+-- Extract vertices from edge geometries
 SELECT * INTO vertices
 FROM pgr_extractVertices('SELECT id, geom FROM edges ORDER BY id');
 
--- 设置起始顶点
+-- Set source vertex
 UPDATE edges AS e
 SET source = v.id, x1 = x, y1 = y
 FROM vertices AS v
 WHERE ST_StartPoint(e.geom) = v.geom;
 
--- 设置终止顶点
+-- Set target vertex
 UPDATE edges AS e
 SET target = v.id, x2 = x, y2 = y
 FROM vertices AS v
@@ -448,10 +448,10 @@ SELECT * FROM pgr_dijkstra($$
 用于计算所有顶点对之间的距离：
 
 ```sql
--- Floyd-Warshall（不需要边 ID）
+-- Floyd-Warshall (no edge id required)
 pgr_floydWarshall(Edges SQL, [directed])
 
--- Johnson（不需要边 ID）
+-- Johnson (no edge id required)
 pgr_johnson(Edges SQL, [directed])
 ```
 
@@ -461,3 +461,7 @@ pgr_johnson(Edges SQL, [directed])
 SELECT * FROM pgr_floydWarshall(
   'SELECT id, source, target, cost, reverse_cost FROM edges');
 ```
+
+### 升级至 4.0.3
+
+保持 PostgreSQL、PostGIS 与 pgRouting 库版本兼容。替换服务器文件后，使用可用的 `ALTER EXTENSION pgrouting UPDATE` 路径，并重连仍持有旧库的会话。保留拓扑、代价单位及依赖对象；替换物化结果前，测试有代表性的有向与无向路径。无需共享预加载。

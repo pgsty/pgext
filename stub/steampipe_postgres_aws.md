@@ -2,8 +2,10 @@
 
 Sources:
 
-- [Upstream source](https://github.com/turbot/steampipe-plugin-aws/releases/tag/v1.36.0)
-- [Upstream source](https://github.com/turbot/steampipe-plugin-aws/releases/download/v1.36.0/steampipe_postgres_aws.pg15.darwin_arm64.tar.gz)
+- [CHANGELOG](https://github.com/turbot/steampipe-plugin-aws/blob/v1.37.0/CHANGELOG.md)
+
+- [Upstream source](https://github.com/turbot/steampipe-plugin-aws/releases/tag/v1.37.0)
+- [Upstream source](https://github.com/turbot/steampipe-plugin-aws/releases/download/v1.37.0/steampipe_postgres_aws.pg15.darwin_arm64.tar.gz)
 
 - [Published 0.125.0 package page](https://database.dev/toliver38/steampipe_postgres_aws)
 - [Official AWS plugin documentation](https://hub.steampipe.io/plugins/turbot/aws#postgres-fdw)
@@ -50,4 +52,10 @@ Queries call AWS APIs and can be slower, rate-limited, paginated, eventually con
 
 Prefer an AWS profile, workload role, or other short-lived credential source over static keys in `pg_foreign_server`. Grant only the IAM read permissions needed by the tables you query, and restrict access to server options and imported foreign tables. Foreign scans may incur AWS API activity and related service costs.
 
-The verified official 1.36.0 release includes standalone PostgreSQL AWS artifacts; the inspected PostgreSQL 15 macOS arm64 artifact retains SQL version 1.0. The older database.dev package remains a separate 0.125.0 publication. Match the official artifact to the actual platform and PostgreSQL major; do not infer newer-major support from the plugin tag. SQL extversion alone cannot identify the plugin revision. Review table-definition changes and re-import or recreate foreign tables deliberately, preserving grants and dependent objects. The installer README contains destructive DROP examples, which are unnecessary for a fresh installation and should not be copied over an existing deployment. No shared_preload_libraries setting is required.
+The verified official 1.37.0 release includes standalone PostgreSQL AWS artifacts; the inspected PostgreSQL 15 macOS arm64 artifact retains SQL version 1.0. The older database.dev package remains a separate 0.125.0 publication. Match the official artifact to the actual platform and PostgreSQL major; do not infer newer-major support from the plugin tag. SQL extversion alone cannot identify the plugin revision. Review table-definition changes and re-import or recreate foreign tables deliberately, preserving grants and dependent objects. The installer README contains destructive DROP examples, which are unnecessary for a fresh installation and should not be copied over an existing deployment. No shared_preload_libraries setting is required.
+
+### Changes in 1.37.0
+
+The `aws_identitystore_user` table adds `user_status` and now returns complete columns when filtered by `id`. The `aws_vpc_vpn_connection` options include additional BGP log settings. Review imported definitions before using newly exposed fields.
+
+A default `aws_ec2_describe_attribute` rate limiter reduces throttling from per-row EC2 attribute calls; it does not guarantee unlimited AWS quota. The release also fixes unstable security-group-rule identifiers and SDK failures that could previously hide errors as missing data. Recheck saved inventories and error handling after replacing binaries, while preserving grants and dependent views.

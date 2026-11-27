@@ -2,6 +2,9 @@
 
 Sources:
 
+- [Official source](https://github.com/aiyou178/pg_eviltransform/releases/tag/v0.0.9)
+- [Official source](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.9/pg_eviltransform.control)
+
 - [Upstream source](https://github.com/aiyou178/pg_eviltransform/releases/tag/v0.0.8)
 - [Upstream source](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.8/README.md)
 - [Upstream source](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.8/pg_eviltransform--0.0.7--0.0.8.sql)
@@ -81,3 +84,9 @@ Invalid non-geometry transformation input now raises an SQL error instead of cra
 ```sql
 ALTER EXTENSION pg_eviltransform UPDATE TO '0.0.8';
 ```
+
+### Version 0.0.9
+
+This release requires PostgreSQL 15.20, 16.16, 17.12, 18.7 or 19.0 or later within the corresponding major, for both the server and build headers. Install matching files, reconnect, and run `ALTER EXTENSION pg_eviltransform UPDATE TO '0.0.9';`.
+
+The release fixes cached geometry bounding boxes, parallel-query catalog access and Jenks numerical edge cases. Recompute stored custom-transform results from original geometries, refresh affected materialized views, and rebuild expression indexes using `ST_EvilTransform`; a library upgrade alone does not repair previously stored results. Function OIDs and dependent views are preserved by the upgrade script.

@@ -2,12 +2,12 @@
 
 来源：
 
-- [0.3.3 setup and upgrades](https://github.com/pgsty/pg_mooncake/blob/v0.3.3/README.md)
-- [0.3.3 SQL procedures](https://github.com/pgsty/pg_mooncake/blob/v0.3.3/src/functions.rs)
-- [0.3.3 dependency guard](https://github.com/pgsty/pg_mooncake/blob/v0.3.3/src/sql/bootstrap.sql)
-- [0.3.3 release](https://github.com/pgsty/pg_mooncake/releases/tag/v0.3.3)
+- [0.3.4 setup and upgrades](https://github.com/pgsty/pg_mooncake/blob/v0.3.4/README.md)
+- [0.3.4 SQL procedures](https://github.com/pgsty/pg_mooncake/blob/v0.3.4/src/functions.rs)
+- [0.3.4 dependency guard](https://github.com/pgsty/pg_mooncake/blob/v0.3.4/src/sql/bootstrap.sql)
+- [0.3.4 release](https://github.com/pgsty/pg_mooncake/releases/tag/v0.3.4)
 
-`pg_mooncake` 0.3.3 通过逻辑复制，将 PostgreSQL 表维护为 Arrow 与 Parquet/Iceberg 存储中的只读列存镜像。此 PGSTY 版本支持 PostgreSQL 15–19，严格要求 `pg_duckdb` 1.2.1、DuckDB 2.0.1 与 Mooncake scanner 0.0.5。
+`pg_mooncake` 0.3.4 通过逻辑复制，将 PostgreSQL 表维护为 Arrow 与 Parquet/Iceberg 存储中的只读列存镜像。此 PGSTY 版本支持 PostgreSQL 15–19，接受 `pg_duckdb` 1.2.1 或更高版本，参考构建使用 1.2.2、DuckDB 2.0.1 与 Mooncake scanner 0.0.5。
 
 ### 配置与启用
 
@@ -50,7 +50,7 @@ CALL mooncake.optimize_table('trades_analytics', 'full');
 
 ```sql
 SELECT duckdb.raw_query(format('FORCE INSTALL mooncake FROM %L', current_setting('mooncake.extension_repository')));
-ALTER EXTENSION pg_mooncake UPDATE TO '0.3.3';
+ALTER EXTENSION pg_mooncake UPDATE TO '0.3.4';
 ```
 
 用于备份或迁移前，须为每个镜像重新创建快照。从基于 WAL 的 0.3.0 升级时，先停止源写入，在旧二进制下逐一比较镜像与源并验证快照，再干净停止 PostgreSQL；启动新 worker 前须完整备份存储，并离线保留旧 `_wal`。应遵循 tag 中逐库升级步骤；新快照无法补回已经丢失的旧 WAL。无法验证的镜像应从权威源重建。
@@ -60,3 +60,7 @@ ALTER EXTENSION pg_mooncake UPDATE TO '0.3.3';
 采用物理备份或流复制备库时，应在创建镜像前将 `mooncake.data_directory` 放在 `PGDATA` 外，为每个实例使用私有存储并单独备份。逻辑转储不会保存 Moonlink 数据或复制状态；源连接字符串和元数据文件也须妥善保护。
 
 重命名或删除含镜像的数据库前，应删除镜像并提交，再在 worker 可用时执行 `SELECT mooncake._reconcile_drops()`。初始化会为已有叶分区设置完整副本标识，后续分区变更须另行处理。应监控复制槽延迟与保留 WAL，并在丢弃源数据前验证清理结果。
+
+### 0.3.4 的依赖兼容性
+
+版本检查现在接受 `pg_duckdb` 1.2.1 及更高版本；1.2.1 和 1.2.2 已与 DuckDB 2.0.1、扫描器 0.0.5 配套测试。使用更新依赖时，须验证其 PostgreSQL 接口，并提供针对相应 DuckDB 引擎和平台编译的扫描器 0.0.5。依赖的 SQL 扩展也须升级到与动态库匹配的版本。提供从 0.3.0–0.3.3 直接升级的 SQL 路径；此前的 WAL、快照和扫描器缓存维护要求仍然适用。

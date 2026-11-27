@@ -2,12 +2,12 @@
 
 Sources:
 
-- [0.3.3 setup and upgrades](https://github.com/pgsty/pg_mooncake/blob/v0.3.3/README.md)
-- [0.3.3 SQL procedures](https://github.com/pgsty/pg_mooncake/blob/v0.3.3/src/functions.rs)
-- [0.3.3 dependency guard](https://github.com/pgsty/pg_mooncake/blob/v0.3.3/src/sql/bootstrap.sql)
-- [0.3.3 release](https://github.com/pgsty/pg_mooncake/releases/tag/v0.3.3)
+- [0.3.4 setup and upgrades](https://github.com/pgsty/pg_mooncake/blob/v0.3.4/README.md)
+- [0.3.4 SQL procedures](https://github.com/pgsty/pg_mooncake/blob/v0.3.4/src/functions.rs)
+- [0.3.4 dependency guard](https://github.com/pgsty/pg_mooncake/blob/v0.3.4/src/sql/bootstrap.sql)
+- [0.3.4 release](https://github.com/pgsty/pg_mooncake/releases/tag/v0.3.4)
 
-`pg_mooncake` 0.3.3 maintains read-only columnstore mirrors of PostgreSQL tables through logical replication into Arrow and Parquet/Iceberg storage. This PGSTY release supports PostgreSQL 15–19 and requires exactly `pg_duckdb` 1.2.1, DuckDB 2.0.1 and Mooncake scanner 0.0.5.
+`pg_mooncake` 0.3.4 maintains read-only columnstore mirrors of PostgreSQL tables through logical replication into Arrow and Parquet/Iceberg storage. This PGSTY release supports PostgreSQL 15–19 and accepts `pg_duckdb` 1.2.1 or later. The reference build uses 1.2.2 with DuckDB 2.0.1 and Mooncake scanner 0.0.5.
 
 ### Configure and Enable
 
@@ -50,7 +50,7 @@ Version 0.3.3 fixes snapshots that could acknowledge a source commit before Iceb
 
 ```sql
 SELECT duckdb.raw_query(format('FORCE INSTALL mooncake FROM %L', current_setting('mooncake.extension_repository')));
-ALTER EXTENSION pg_mooncake UPDATE TO '0.3.3';
+ALTER EXTENSION pg_mooncake UPDATE TO '0.3.4';
 ```
 
 Take a fresh snapshot of every mirror before using it for backup or migration. From the WAL-based 0.3.0, first stop source writers, compare every mirror against its source, and verify snapshots under the old binaries. Stop PostgreSQL cleanly and preserve complete storage backups and the old `_wal` offline before starting the new worker. Follow the tagged per-database procedure; a new snapshot cannot recover old WAL already lost. Rebuild unverifiable mirrors from authoritative sources.
@@ -60,3 +60,7 @@ Take a fresh snapshot of every mirror before using it for backup or migration. F
 For physical backups or streaming standbys, set `mooncake.data_directory` outside `PGDATA` before creating mirrors, give each instance private storage and back it up separately. Logical dumps do not preserve Moonlink data or replication state. Protect source connection strings and metadata files.
 
 Before renaming or dropping a database with mirrors, drop its mirrors, commit and run `SELECT mooncake._reconcile_drops()` while the worker is available. Existing leaf partitions receive full replica identity during setup; later partition changes require separate handling. Monitor slot lag and retained WAL, and verify cleanup before discarding source data.
+
+### Dependency Compatibility in 0.3.4
+
+The version guard now accepts `pg_duckdb` 1.2.1 and later; 1.2.1 and 1.2.2 are tested with DuckDB 2.0.1 and scanner 0.0.5. For a newer dependency, verify its PostgreSQL interfaces and provide scanner 0.0.5 built for its DuckDB engine and platform. Update the dependency's SQL extension to match its library. Direct SQL upgrades are provided from 0.3.0–0.3.3; the earlier WAL, snapshot and scanner-cache maintenance requirements still apply.

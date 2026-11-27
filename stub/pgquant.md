@@ -2,6 +2,10 @@
 
 Sources:
 
+- [Official source](https://github.com/pranshu05/pgQuant/blob/v0.7.1/docs/optimization.md)
+- [Official source](https://github.com/pranshu05/pgQuant/blob/v0.7.1/Cargo.toml)
+- [Official source](https://github.com/pranshu05/pgQuant/blob/v0.7.1/pgquant.control)
+
 - [docs/optimization.md](https://github.com/pranshu05/pgQuant/blob/2e9ccbef42a5e121224831b02854005e4736f457/docs/optimization.md)
 - [Cargo.toml](https://github.com/pranshu05/pgQuant/blob/2e9ccbef42a5e121224831b02854005e4736f457/Cargo.toml)
 - [src/lib.rs](https://github.com/pranshu05/pgQuant/blob/2e9ccbef42a5e121224831b02854005e4736f457/src/lib.rs)
@@ -17,7 +21,7 @@ Sources:
 - [docs/risk.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/risk.md)
 - [Portfolio optimization](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/optimization.md)
 
-`pgquant` computes simple/log returns, cumulative and annualized returns, and historical, Gaussian and Student-t VaR/ES. Version 0.5.1 also provides volatility, covariance and factor construction. WML momentum and unconstrained mean-variance optimization are implemented; long-only optimization and Black-Litterman models are implemented.
+`pgquant` computes simple/log returns, cumulative and annualized returns, and historical, Gaussian and Student-t VaR/ES. Version 0.7.1 also provides volatility, covariance and factor construction. WML momentum and unconstrained mean-variance optimization are implemented; long-only optimization and Black-Litterman models are implemented.
 
 ### Core Workflow
 
@@ -62,4 +66,13 @@ SELECT * FROM pgquant_portfolio_sort(
 
 ### Portfolio Optimization in 0.5.1
 
-long-only quadratic programming adds constrained quadratic programming. Black-Litterman functions compute posterior returns/covariance, and 0.5.1 adds Idzorek view-confidence calibration; risk parity remains planned. Supply dimensionally consistent arrays and valid covariance/confidence inputs. These numerical models do not establish the suitability of a portfolio.
+Long-only optimization uses constrained quadratic programming. Black-Litterman functions compute posterior returns/covariance, and 0.5.1 adds Idzorek view-confidence calibration. Risk parity and portfolio risk decomposition in 0.7.1 are described below. Supply dimensionally consistent arrays and valid covariance/confidence inputs. These numerical models do not establish the suitability of a portfolio.
+
+### Risk Parity and Attribution in 0.7.1
+
+`pgquant_risk_parity_optimize` accepts a flattened row-major covariance matrix and returns normalized equal-risk-contribution weights. `pgquant_risk_decomposition` accepts portfolio weights and the covariance matrix and reports portfolio volatility plus marginal, component and percentage risk contributions. Supply dimensionally consistent, valid covariance inputs; mathematical outputs are not investment recommendations.
+
+```sql
+SELECT pgquant_risk_parity_optimize(
+    ARRAY[0.04, 0.006, 0.006, 0.09]::float8[]);
+```

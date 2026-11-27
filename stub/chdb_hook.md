@@ -2,52 +2,44 @@
 
 Sources:
 
-- [CHANGELOG.md](https://api.pgxn.org/src/chdb/chdb-0.1.3/CHANGELOG.md)
-- [doc/chdb_hook.md](https://api.pgxn.org/src/chdb/chdb-0.1.3/doc/chdb_hook.md)
+- [doc/chdb_hook.md](https://api.pgxn.org/src/chdb/chdb-0.1.4/doc/chdb_hook.md)
+- [chdb_hook.control](https://api.pgxn.org/src/chdb/chdb-0.1.4/chdb_hook.control)
+- [sql/chdb_hook.sql](https://api.pgxn.org/src/chdb/chdb-0.1.4/sql/chdb_hook.sql)
+- [Makefile](https://api.pgxn.org/src/chdb/chdb-0.1.4/Makefile)
+- [CHANGELOG.md](https://api.pgxn.org/src/chdb/chdb-0.1.4/CHANGELOG.md)
+- [LICENSE.md](https://api.pgxn.org/src/chdb/chdb-0.1.4/LICENSE.md)
 
-- [PGXN 0.1.2 README](https://pgxn.org/dist/chdb/0.1.2/README.html)
-- [chdb_hook 0.1.2 documentation](https://pgxn.org/dist/chdb/0.1.2/doc/chdb_hook.html)
-- [chdb 0.1.2 distribution metadata](https://api.pgxn.org/src/chdb/chdb-0.1.2/META.json)
-- [Apache 2.0 license](https://api.pgxn.org/src/chdb/chdb-0.1.2/LICENSE.md)
-- [0.1.2 changelog](https://api.pgxn.org/src/chdb/chdb-0.1.2/CHANGELOG.md)
+`chdb_hook` intercepts URL-based `COPY` and extended `CREATE TABLE` commands to move data through chDB. Distribution 0.1.4 adds a control file and SQL version 0.1 with `chdb_hook_version()`. Direct loading remains supported, so creating the extension is optional for the hook workflow.
 
-`chdb_hook` is the headless module shipped by the `chdb` distribution. It intercepts URL-based `COPY` and selected `CREATE TABLE` statements so chDB can read or write local files, HTTP resources, S3, Google Cloud Storage, Azure Blob/ABFS, and HDFS formats. It has no control file and creates no SQL objects.
+### Load and Use
 
-### Session-Scoped Workflow
+A superuser can enable it for one session:
 
 ```sql
 LOAD 'chdb_hook';
-
-CREATE TABLE times (
-    id integer,
-    months integer,
-    days integer
-);
-
+CREATE TABLE times (id integer, months integer, days integer);
 COPY times
 FROM 's3://datasets-documentation/my-test-bucket-768/some_prefix/some_file_1.csv';
 ```
 
-Load the module explicitly for one session, through `session_preload_libraries` for selected roles or databases, or through `shared_preload_libraries` cluster-wide. Only the last form requires a PostgreSQL restart.
+The new optional SQL wrapper is installed with:
 
-### Supported Paths and Privileges
+`CREATE EXTENSION chdb_hook` / `SELECT chdb_hook_version()`
 
-The hook recognizes `file`, `http`, `https`, `s3`, `gs`, `gcs`, `oss`, `az`, `azure`, `abfss`, `abfs`, and `hdfs` URL schemes. It preserves normal relation privileges: `COPY TO` needs `SELECT`, while `COPY FROM` needs `INSERT` and a read-write transaction. Local `file` access additionally needs `pg_read_server_files` or `pg_write_server_files` plus operating-system permissions.
+`CREATE EXTENSION` loads the module only in its current session. Subsequent sessions must use `LOAD` or call `chdb_hook_version()`, unless configured for preload. `session_preload_libraries` can target selected databases or roles. `shared_preload_libraries` enables it cluster-wide and requires a server restart. The wrapper is untrusted and relocatable.
 
-The `structure_from` and `copy_from` table options can infer columns or populate a new table from a URL. Credentials, format, compression, timeouts, wildcards, and explicit structures are passed into the chDB path; keep secrets out of statement logs and catalog-visible table options whenever possible.
+### Sources and Permissions
 
-### Boundaries
+Supported URL schemes include `file`, `http`, `https`, `s3`, `gs`, `gcs`, `oss`, `az`, `azure`, `abfss`, `abfs` and `hdfs`. Normal relation permissions apply: `COPY TO` requires `SELECT`, while `COPY FROM` requires `INSERT` and a read-write transaction. Local files also require `pg_read_server_files` or `pg_write_server_files` plus operating-system permissions. A build can disable local URLs with `NO_FILE_SCHEME`.
 
-Loading `chdb_hook` changes parsing and execution of ordinary PostgreSQL commands for the session. Granting server-file roles also gives access to cloud and HTTP paths through the hook, so combine it only with trusted SQL callers and constrained network egress. The format bridge has documented NULL, array, JSON, geometry, time, Protobuf, Parquet, Arrow, and encoding edge cases; test representative round trips before migration or backup use.
+`structure_from` and `copy_from` table options support schema inference and data loading. Format, structure, compression, timeout and credentials are explicit COPY options. `encoding_check` accepts `fail`, `replace`, `remove` or `truncate`; URL-based `COPY FROM` with `WHERE` is rejected.
 
-Version 0.1.2 depends on the same helper and libchdb 26.7.0 or newer as `chdb`, and supports PostgreSQL 15 or newer on Linux or macOS. A helper failure aborts the initiating operation. Large imports and exports can consume substantial memory, CPU, disk, and network bandwidth, so set chDB resource limits and monitor the host.
+### Host Credentials and Resource Limits
 
-### Version 0.1.2
+`chdb_hook.host_credentials_roles` is a superuser-controlled list of existing roles and defaults empty. Only their members can use host AWS credentials when no explicit keys are supplied. The S3 `role_arn` option can assume an IAM role using those credentials; it requires the same membership and applies only without `access_key`.
 
-This is a binary-only update: the `chdb` control version remains `0.1`, with no extension SQL upgrade required. New mappings cover Tuple, Map, unflattened Nested and composite types, plus additional LowCardinality and parameterized JSON conversions. Arrays and composites have different shapes; declare matching destination types and test representative values.
+`chdb_hook.max_memory` now defaults to 4 GB; `0` permits unlimited usage. `chdb_hook.max_threads` and `chdb_hook.max_parsing_threads` control concurrency. These settings need superuser privileges. Use explicit limits for large imports.
 
-`COPY` gains `encoding_check` with `fail`, `replace`, `remove` and `truncate` policies. URL-based `COPY FROM` with `WHERE` now fails instead of silently ignoring its filter. The build-time `NO_FILE_SCHEME` option can disable local-file URLs, so supported schemes also depend on the installed binary.
+### Maintenance Boundaries
 
-### Binary Release 0.1.3
-
-Distribution 0.1.3 preserves declared time/timestamp precision, applies the PostgreSQL session `TimeZone` during COPY FROM and preserves Azure SAS tokens across inference/loading. It is a binary-only update: the `chdb` SQL/control version stays 0.1 and needs no ALTER EXTENSION upgrade. The released `chdb_hook` module remains headless.
+The module supports PostgreSQL 15 and later on Linux or macOS and needs the matching helper/libchdb setup. Declared timestamp precision and session `TimeZone` are preserved in supported conversions. Verify complex-type and encoding round trips; keep credentials out of SQL logs, especially debugging output. Existing direct-load installations can continue without SQL objects; the version function is available only after installing the new wrapper.

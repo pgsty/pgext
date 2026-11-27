@@ -2,14 +2,14 @@
 
 来源：
 
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/CHANGELOG.md)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.2/CHANGELOG.md)
 
-- [README.md](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/README.md)
-- [pg_achievements.control](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/pg_achievements.control)
-- [sql/pg_achievements--1.2.sql](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/sql/pg_achievements--1.2.sql)
-- [LICENSE](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.0/LICENSE)
+- [README.md](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.2/README.md)
+- [pg_achievements.control](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.2/pg_achievements.control)
+- [sql/pg_achievements--1.2.2.sql](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.2/sql/pg_achievements--1.2.2.sql)
+- [LICENSE](https://api.pgxn.org/src/pg_achievements/pg_achievements-1.2.2/LICENSE)
 
-`pg_achievements` 根据数据库活动授予成就，并在发起操作的会话中显示通知。发行版 1.2.0 安装的 SQL 扩展版本为 1.2。它要求 Linux 上的 PostgreSQL 16–19、超级用户安装权限以及集群预加载；固定的 `achievements` 模式位于指定的一个数据库中。
+`pg_achievements` 根据数据库活动授予成就，并在发起操作的会话中显示通知。发行版 1.2.2 安装的 SQL 扩展版本为 1.2.2。它要求 Linux 上的 PostgreSQL 14–19、超级用户安装权限以及集群预加载；固定的 `achievements` 模式位于指定的一个数据库中。
 
 ### 启用与查看
 
@@ -55,4 +55,10 @@ SET pg_achievements.notice_style = ascii;
 
 1.2 通过 NOTIFY 在 `pg_achievements.notify_channel` 指定的频道发布新成就，默认频道为 `achievements`；将频道设为空可关闭广播。已退出统计的角色不会被广播。`achievements.rarity` 展示每个成就的获奖人数。1.1 将白金级整合为一个集齐成就的奖杯，新增计数器和成就，并修复计数器与获奖记录恢复时的竞争问题。
 
-安装匹配的文件、重启 PostgreSQL 后，执行 `ALTER EXTENSION pg_achievements UPDATE TO '1.2';`。升级保留计数器与获奖记录。1.0 创建的自定义白金成就仍然保留，但不再允许新增自定义白金成就。
+安装匹配的文件、重启 PostgreSQL 后，执行 `ALTER EXTENSION pg_achievements UPDATE TO '1.2.2';`。升级保留计数器与获奖记录。1.0 创建的自定义白金成就仍然保留，但不再允许新增自定义白金成就。
+
+### 版本 1.2.2
+
+安装匹配的动态库、重启 PostgreSQL 后，执行上面的 SQL 升级。新版支持 PostgreSQL 14 和 15。在 14 上，不可用的 `merge` 计数器会从进度、目录及稀有度视图中隐藏，集齐成就奖杯也不要求它，`achievements.define()` 不允许使用该计数器。将 PostgreSQL 升级到 15 或以上后它会恢复可用。
+
+新版包含此前 1.2.1 动态库的修复：启用查询 ID 后，扩展协议预备语句的每次执行都会计数。错误语句、自定义成就文本、角色重命名和工作进程恢复不再引发已记录的跟踪故障。尝试类计数器仍在解析阶段计数；`compute_query_id = off` 会限制跨事务的预备语句跟踪。

@@ -2,6 +2,9 @@
 
 来源：
 
+- [Official source](https://www.paradedb.com/docs/project/changelog/0.27.1.md)
+- [Official source](https://api.pgxn.org/src/pg_search/pg_search-0.27.1/pg_search/pg_search.control)
+
 - [Official source](https://www.paradedb.com/docs/project/changelog/0.27.0.md)
 - [Official source](https://api.pgxn.org/src/pg_search/pg_search-0.27.0/pg_search/pg_search.control)
 - [Official source](https://api.pgxn.org/src/pg_search/pg_search-0.27.0/Cargo.toml)
@@ -38,7 +41,7 @@
 - [查询向量](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [混合搜索概述](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.27.0 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
+`pg_search` 0.27.1 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
 
 ### 安装并构建索引
 
@@ -181,3 +184,9 @@ Join Scan 现在支持在 `INNER` 和 `SEMI`（`IN` / `EXISTS`）连接中对向
 `paradedb.mpp_queue_size` 现表示字节预算，默认为 8MB；`paradedb.mpp_request_timeout` 已删除。`paradedb.vector_cluster_max_probe` 改为绝对工作预算，默认为 100。`paradedb.max_term_set_size` 默认 262144，超限词项集合会报错。部署前须复核已有配置。
 
 新增 `pdb.expand` 在查询时应用同义词规则，`pdb.explain_score` 返回 JSONB 分数解释。L2 和内积向量的模超过约 6.5e18 时会被拒绝，包括 REINDEX 期间；有限值余弦向量仍被接受。上游预编译二进制要求 PostgreSQL 15.20、16.16、17.12 或 18.7，或同主版本内更高的小版本。这些上游要求并不表示目录中的 RPM/DEB 包已经更新。
+
+### 版本 0.27.1
+
+独立的 `paradedb.aggregate()` 函数已移除。升级前，应将依赖它的数据库对象迁移为在索引表的 SELECT 中调用 `pdb.agg()`，并将搜索谓词置于 WHERE。
+
+旧的 `paradedb.*_inlist_pushdown_max_*` 设置改为 `paradedb.hash_join_filter_pushdown`（`auto`、`inlist`、`hash`、`off`）、`paradedb.hash_join_inlist_max_distinct_values` 和 `paradedb.hash_join_inlist_max_size`。本补丁修复聚合参数、FILTER 字段映射以及并行查询或游标中止后的资源清理问题。安装匹配文件，按预加载维护流程重启并升级各数据库的 SQL 扩展。0.27.0 的向量索引重建和备库升级要求仍然适用。

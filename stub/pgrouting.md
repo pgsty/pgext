@@ -2,11 +2,11 @@
 
 Sources:
 
-- [v4.0.2 release](https://github.com/pgRouting/pgrouting/releases/tag/v4.0.2)
-- [v4.0.2 README](https://github.com/pgRouting/pgrouting/blob/v4.0.2/README.md)
+- [v4.0.3 release](https://github.com/pgRouting/pgrouting/releases/tag/v4.0.3)
+- [v4.0.3 README](https://github.com/pgRouting/pgrouting/blob/v4.0.3/README.md)
 - [Official documentation](https://docs.pgrouting.org/latest/en/index.html)
 
-pgRouting 4.0.2 extends the PostGIS/PostgreSQL geospatial database to provide geospatial routing and other network analysis functionality. This release fixes allocation failures in `pgr_dijkstraVia` and `pgr_withPointsVia`, and makes negative-distance handling consistent in the driving-distance families.
+pgRouting 4.0.3 extends the PostGIS/PostgreSQL geospatial database to provide geospatial routing and other network analysis functionality. This release fixes duplicate nodes and edges in undirected `pgr_aStar`, `pgr_bdAstar` and `pgr_bdDijkstra` results when forward and reverse costs differ. Revalidate stored routes and downstream row counts when earlier results were materialized under that condition.
 
 This library contains the following features:
 
@@ -461,3 +461,7 @@ Returns: `(start_vid, end_vid, agg_cost)`
 SELECT * FROM pgr_floydWarshall(
   'SELECT id, source, target, cost, reverse_cost FROM edges');
 ```
+
+### Upgrading to 4.0.3
+
+Keep PostgreSQL, PostGIS and pgRouting libraries compatible. After replacing server files, use the available `ALTER EXTENSION pgrouting UPDATE` path and reconnect sessions holding the old library. Preserve topology, cost units and dependent objects; test representative directed and undirected routes before replacing materialized results. Shared preload is not required.

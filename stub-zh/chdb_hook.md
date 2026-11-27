@@ -2,52 +2,44 @@
 
 来源：
 
-- [CHANGELOG.md](https://api.pgxn.org/src/chdb/chdb-0.1.3/CHANGELOG.md)
-- [doc/chdb_hook.md](https://api.pgxn.org/src/chdb/chdb-0.1.3/doc/chdb_hook.md)
+- [doc/chdb_hook.md](https://api.pgxn.org/src/chdb/chdb-0.1.4/doc/chdb_hook.md)
+- [chdb_hook.control](https://api.pgxn.org/src/chdb/chdb-0.1.4/chdb_hook.control)
+- [sql/chdb_hook.sql](https://api.pgxn.org/src/chdb/chdb-0.1.4/sql/chdb_hook.sql)
+- [Makefile](https://api.pgxn.org/src/chdb/chdb-0.1.4/Makefile)
+- [CHANGELOG.md](https://api.pgxn.org/src/chdb/chdb-0.1.4/CHANGELOG.md)
+- [LICENSE.md](https://api.pgxn.org/src/chdb/chdb-0.1.4/LICENSE.md)
 
-- [PGXN 0.1.2 README](https://pgxn.org/dist/chdb/0.1.2/README.html)
-- [chdb_hook 0.1.2 文档](https://pgxn.org/dist/chdb/0.1.2/doc/chdb_hook.html)
-- [chdb 0.1.2 发行元数据](https://api.pgxn.org/src/chdb/chdb-0.1.2/META.json)
-- [Apache 2.0 许可证](https://api.pgxn.org/src/chdb/chdb-0.1.2/LICENSE.md)
-- [0.1.2 changelog](https://api.pgxn.org/src/chdb/chdb-0.1.2/CHANGELOG.md)
+`chdb_hook` 拦截基于 URL 的 `COPY` 和扩展 `CREATE TABLE` 命令，通过 chDB 搬运数据。发行版 0.1.4 新增控制文件和 SQL 版本 0.1，提供 `chdb_hook_version()`。仍可直接加载模块，因此钩子流程不强制创建扩展。
 
-`chdb_hook` 是 `chdb` 发行包附带的无 SQL 模块。它拦截基于 URL 的 `COPY` 与部分 `CREATE TABLE` 语句，让 chDB 读写本地文件、HTTP 资源、S3、Google Cloud Storage、Azure Blob/ABFS 与 HDFS 格式。它没有控制文件，也不创建 SQL 对象。
+### 加载与使用
 
-### 会话级流程
+超级用户可在单个会话中启用：
 
 ```sql
 LOAD 'chdb_hook';
-
-CREATE TABLE times (
-    id integer,
-    months integer,
-    days integer
-);
-
+CREATE TABLE times (id integer, months integer, days integer);
 COPY times
 FROM 's3://datasets-documentation/my-test-bucket-768/some_prefix/some_file_1.csv';
 ```
 
-可以为单个会话显式加载模块，也可以通过 `session_preload_libraries` 为指定角色或数据库加载，或通过 `shared_preload_libraries` 全局加载。只有最后一种方式要求重启 PostgreSQL。
+新的可选 SQL 包装可按以下方式安装：
 
-### 支持路径与权限
+`CREATE EXTENSION chdb_hook` / `SELECT chdb_hook_version()`
 
-钩子识别 `file`、`http`、`https`、`s3`、`gs`、`gcs`、`oss`、`az`、`azure`、`abfss`、`abfs` 与 `hdfs` URL 方案。它保留普通关系权限：`COPY TO` 需要 `SELECT`，`COPY FROM` 需要 `INSERT` 与读写事务。本地 `file` 访问还需要 `pg_read_server_files` 或 `pg_write_server_files`，并满足操作系统权限。
+`CREATE EXTENSION` 只在执行命令的当前会话加载模块。后续会话仍需使用 `LOAD` 或调用 `chdb_hook_version()`，除非已配置预加载。`session_preload_libraries` 可面向指定数据库或角色，`shared_preload_libraries` 则作用于整个集群并要求重启服务器。SQL 包装不受信任且可重定位。
 
-表选项 `structure_from` 与 `copy_from` 可以从 URL 推断列或填充新表。凭据、格式、压缩、超时、通配符与显式结构都会传入 chDB 路径；应尽量避免让秘密进入语句日志或目录可见的表选项。
+### 数据源与权限
 
-### 边界
+支持的 URL 方案包括 `file`、`http`、`https`、`s3`、`gs`、`gcs`、`oss`、`az`、`azure`、`abfss`、`abfs` 和 `hdfs`。普通关系权限继续生效：`COPY TO` 需要 `SELECT`，`COPY FROM` 需要 `INSERT` 和读写事务。本地文件还需 `pg_read_server_files` 或 `pg_write_server_files` 及操作系统权限。构建时可通过 `NO_FILE_SCHEME` 禁用本地 URL。
 
-加载 `chdb_hook` 会改变当前会话中普通 PostgreSQL 命令的解析与执行。授予服务器文件角色后，也会通过钩子获得云端与 HTTP 路径访问能力，因此只能面向可信 SQL 调用者，并限制网络出站。格式桥接对 NULL、数组、JSON、几何、时间、Protobuf、Parquet、Arrow 与编码存在已记录的边界情况；用于迁移或备份前应测试代表性往返转换。
+表选项 `structure_from` 和 `copy_from` 支持模式推断及数据装载。格式、结构、压缩、超时和凭据通过显式 COPY 选项传入。`encoding_check` 可取 `fail`、`replace`、`remove` 或 `truncate`；基于 URL 的 `COPY FROM` 不允许带 `WHERE`。
 
-0.1.2 与 `chdb` 使用相同的辅助进程及 libchdb 26.7.0 或以上，并支持 Linux 或 macOS 上的 PostgreSQL 15 及以上。辅助进程失败会中止发起的操作。大型导入导出可能消耗大量内存、CPU、磁盘与网络带宽，因此应设置 chDB 资源限制并监控主机。
+### 主机凭据与资源限制
 
-### 0.1.2 版本变化
+`chdb_hook.host_credentials_roles` 由超级用户配置，内容为已有角色列表，默认为空。只有这些角色的成员才能在未提供显式密钥时使用主机 AWS 凭据。S3 的 `role_arn` 选项可用这些凭据代入 IAM 角色，要求同样的角色成员资格，且仅在未提供 `access_key` 时生效。
 
-这是二进制更新，`chdb` 控制版本仍为 `0.1`，无需执行扩展 SQL 升级。新增 Tuple、Map、未展开 Nested 与复合类型的映射，以及更多 LowCardinality 和参数化 JSON 类型转换。数组与复合类型有不同形状，应声明与数据对应的目标列类型并验证代表性值。
+`chdb_hook.max_memory` 默认改为 4 GB，`0` 表示不限额。`chdb_hook.max_threads` 和 `chdb_hook.max_parsing_threads` 控制并发，均需超级用户权限。大型导入应设置明确的资源上限。
 
-`COPY` 新增 `encoding_check` 选项，可取 `fail`、`replace`、`remove` 或 `truncate`。URL 来源的 `COPY FROM` 若带 `WHERE` 现在会报错，避免静默忽略过滤条件。构建时的 `NO_FILE_SCHEME` 可以关闭本地文件 URL 支持；实际可用协议因此取决于所安装的二进制。
+### 维护边界
 
-### 0.1.3 二进制发布
-
-发行版 0.1.3 保留声明的时间及时间戳精度，在 COPY FROM 时应用 PostgreSQL 会话 `TimeZone`，并在推断与装载之间保留 Azure SAS 令牌。这是纯二进制更新，`chdb` 的 SQL/control 版本仍为 0.1，无需执行 ALTER EXTENSION 升级。已发布的 `chdb_hook` 仍为无 SQL 对象模块。
+该模块在 Linux 或 macOS 上支持 PostgreSQL 15 及以上，需要匹配的辅助程序及 libchdb。受支持的转换会保留声明的时间戳精度和会话 `TimeZone`。应验证复杂类型及编码的往返转换，并避免凭据进入 SQL 日志，尤其是调试输出。已有直接加载方式可继续不创建 SQL 对象，版本函数则需要安装新的 SQL 包装。

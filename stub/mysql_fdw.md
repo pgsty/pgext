@@ -1,59 +1,39 @@
-
-
-
 ## Usage
 
-> [mysql_fdw: Foreign data wrapper for querying a MySQL server](https://github.com/EnterpriseDB/mysql_fdw)
+Sources:
 
-### Create Server
+- [Official source](https://github.com/EnterpriseDB/mysql_fdw/blob/REL-2_10_0/README.md)
+- [Official source](https://github.com/EnterpriseDB/mysql_fdw/blob/REL-2_10_0/mysql_fdw.control)
+- [Official source](https://github.com/EnterpriseDB/mysql_fdw/blob/REL-2_10_0/mysql_fdw--1.2.sql)
+- [Official source](https://github.com/EnterpriseDB/mysql_fdw/releases/tag/REL-2_10_0)
+
+`mysql_fdw` 2.10.0 exposes MySQL tables through PostgreSQL 14–19. Its SQL/control version is 1.2. The server needs the compatible MySQL client library. Installation requires a superuser, without shared preload.
+
+### Connect and Map Tables
+
+Create a server and a restricted remote account mapping for an existing table:
 
 ```sql
 CREATE EXTENSION mysql_fdw;
-
-CREATE SERVER mysql_server
-  FOREIGN DATA WRAPPER mysql_fdw
+CREATE SERVER mysql_server FOREIGN DATA WRAPPER mysql_fdw
   OPTIONS (host '127.0.0.1', port '3306');
+CREATE USER MAPPING FOR CURRENT_USER SERVER mysql_server
+  OPTIONS (username 'mysql_user', password 'replace_with_remote_password');
+CREATE FOREIGN TABLE warehouse (warehouse_id integer, warehouse_name text)
+  SERVER mysql_server OPTIONS (dbname 'mydb', table_name 'warehouse');
+SELECT * FROM warehouse;
 ```
 
-**Server Options:** `host` (default `127.0.0.1`), `port` (default `3306`), `secure_auth` (default `true`), `init_command`, `use_remote_estimate` (default `false`), `reconnect` (default `false`), `sql_mode` (default `ANSI_QUOTES`), `fetch_size` (default `100`), `character_set`, `truncatable` (default `true`), plus SSL options (`ssl_key`, `ssl_cert`, `ssl_ca`, `ssl_capath`, `ssl_cipher`).
+`dbname` is required; `table_name` defaults to the foreign-table name. The FDW also supports `IMPORT FOREIGN SCHEMA`. Grant server and table access only to intended roles. Protect mapping credentials and use certificate-verified TLS for untrusted networks.
 
-### Create User Mapping
+### Writes and Pushdown
 
-```sql
-CREATE USER MAPPING FOR pguser
-  SERVER mysql_server
-  OPTIONS (username 'mysqluser', password 'mysqlpass');
-```
+The first foreign-table column is used as the row identifier for `UPDATE` and `DELETE`; it must identify one remote row. Version 2.10.0 rejects those operations when that column belongs to a composite key, because older versions could affect multiple rows sharing its value. Match local constraints to remote data. Remote writes have their own transaction/failure boundaries.
 
-### Create Foreign Table
+The FDW can push filters, joins, aggregates, ordering and limits. Check `EXPLAIN` before relying on an index or pushdown. `fetch_size`, `use_remote_estimate` and `reconnect` affect remote access. Ordering optimization trusts local NOT NULL declarations; a nullable remote column can therefore sort differently if the declarations disagree.
 
-```sql
-CREATE FOREIGN TABLE warehouse (
-  warehouse_id int,
-  warehouse_name text,
-  warehouse_created timestamp
-)
-SERVER mysql_server
-OPTIONS (dbname 'mydb', table_name 'warehouse');
-```
+### Upgrade and Security Changes
 
-**Table Options:** `dbname` (required, MySQL database name), `table_name` (defaults to foreign table name), `fetch_size` (overrides server setting), `max_blob_size`, `truncatable` (default `true`).
+2.10.0 fixes remote/local SQL injection, generated-column INSERT handling, repeated-parameter queries and binary/text buffer reads. `init_command`, `mysql_default_file` and SSL path/options are restricted to superusers. Existing foreign servers created by other users with restricted options need a superuser to alter or recreate them.
 
-### CRUD Operations
-
-```sql
-INSERT INTO warehouse VALUES (1, 'UPS', current_date);
-SELECT * FROM warehouse ORDER BY warehouse_id;
-UPDATE warehouse SET warehouse_name = 'NEW_NAME' WHERE warehouse_id = 1;
-DELETE FROM warehouse WHERE warehouse_id = 3;
-```
-
-### Pushdown Features
-
-mysql_fdw optimizes queries through several pushdown mechanisms:
-
-- **WHERE clause** pushdown to minimize data transfer
-- **Column** pushdown to retrieve only requested columns
-- **JOIN** pushdown for joins between foreign tables on the same MySQL server
-- **AGGREGATE** pushdown for `min`, `max`, `sum`, `avg`, `count`
-- **ORDER BY** and **LIMIT/OFFSET** pushdown to reduce network traffic
+`NO_BACKSLASH_ESCAPES` is always added to the remote `sql_mode`. Imported defaults are now string literals; restore expression defaults such as `CURRENT_TIMESTAMP` on the foreign table after import. Install the new library and reconnect existing sessions; SQL version 1.2 does not change. Recheck writable-table keys, defaults, escaping and affected-row counts before returning the connection to applications.

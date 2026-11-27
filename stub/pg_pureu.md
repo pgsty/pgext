@@ -2,14 +2,14 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/README.md)
-- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pure.control)
-- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pureu.control)
-- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pure--0.1.sql)
-- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/pg_pureu--0.1.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.10.0/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/README.md)
+- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/pg_pure.control)
+- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/pg_pureu.control)
+- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/pg_pure--0.1.sql)
+- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/pg_pureu--0.1.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.12.0/CHANGELOG.md)
 
-`pg_pureu` executes untrusted Pure scalar functions inside PostgreSQL and exposes SPI database access. It belongs to distribution `pg_pure` 0.10.0, with SQL version 0.1. Only superusers may create functions in this language: Pure can call arbitrary native functions through `extern`.
+`pg_pureu` executes untrusted Pure scalar functions inside PostgreSQL and exposes SPI database access. It belongs to distribution `pg_pure` 0.12.0, with SQL version 0.1. Only superusers may create functions in this language: Pure can call arbitrary native functions through `extern`.
 
 ### Core Workflow
 
@@ -26,7 +26,7 @@ The extension is non-relocatable. It requires PostgreSQL 17–19, the embeddable
 
 The language installs call, inline and validation handlers. Scalar SQL types include smallint/integer/bigint, floating point, numeric, boolean and text. SQL NULL is represented by `sql::null`; a text result must be a Pure string.
 
-`sql::query` and `sql::exec` access the database; `sql::notice` and `sql::warning` report messages. A database error becomes `sql::error` carrying SQLSTATE and message, and an uncaught exception becomes a SQL error. Distribution 0.6.0 supports dense one- and two-dimensional `float8[]` arrays as Pure double matrices; NULL elements and higher dimensions are rejected. Parameterized SPI and set-returning functions are implemented in 0.6.0; triggers and composites remain outside this release. Do not interpolate untrusted values into SQL strings.
+`sql::query` and `sql::exec` access the database; `sql::notice` and `sql::warning` report messages. A database error becomes `sql::error` carrying SQLSTATE and message, and an uncaught exception becomes a SQL error. Distribution 0.6.0 supports dense one- and two-dimensional `float8[]` arrays as Pure double matrices; NULL elements and higher dimensions are rejected. Parameterized SPI and set-returning functions are implemented in 0.6.0; DML triggers are supported from 0.11.0. Do not interpolate untrusted values into SQL strings.
 
 ### Configuration and Failure Boundaries
 
@@ -50,3 +50,9 @@ SQL version remains 0.1. Parameterized `sql::query` and `sql::exec` now transpar
 ### Call-Scoped Streaming in 0.10.0
 
 `sql::stream` returns a lazy Pure list backed by an SPI cursor, fetching rows in batches as consumed. It accepts a query or a query with parameters. The stream is valid only inside the function call that opened it; forcing it after the call returns raises `sql::error`. It is not a holdable cursor for later SQL statements. The SQL extension version remains 0.1.
+
+### DML Triggers and Distribution 0.12.0
+
+Distribution 0.12.0 keeps SQL version 0.1. Since 0.11.0, functions returning `trigger` support row and statement DML triggers. Bodies receive `new`, `old` and `tg`; absent rows use `sql::null`. A BEFORE-row trigger returns a record to replace named columns, or `sql::null` to skip the operation. AFTER and statement triggers ignore the return value. Event triggers and procedure transaction control remain unsupported.
+
+Version 0.12.0 fixes a use-after-free while reporting result-conversion errors. Install the matching library and recycle sessions that loaded the old implementation; the unchanged SQL version alone cannot identify the installed distribution.

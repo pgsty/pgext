@@ -2,11 +2,15 @@
 
 来源：
 
+- [Official source](https://api.pgxn.org/src/pg_statecharts_dev/pg_statecharts_dev-0.2.0/README.md)
+- [Official source](https://api.pgxn.org/src/pg_statecharts_dev/pg_statecharts_dev-0.2.0/pg_statecharts_dev.control)
+- [Official source](https://api.pgxn.org/src/pg_statecharts_dev/pg_statecharts_dev-0.2.0/sql/upgrade/pg_statecharts_dev--0.1.0--0.2.0.sql)
+
 - [官方资料](https://github.com/kronor-io/statecharts/blob/472349e864440c39a30863a0db815050391804c7/pg_statecharts_dev/README.md)
 - [官方资料](https://github.com/kronor-io/statecharts/blob/472349e864440c39a30863a0db815050391804c7/pg_statecharts_dev/pg_statecharts_dev.control)
 - [官方资料](https://github.com/kronor-io/statecharts/blob/472349e864440c39a30863a0db815050391804c7/pg_statecharts/README.md)
 
-`pg_statecharts_dev` 0.1.0 是 `pg_statecharts` 的开发工具扩展，用于导入 SCXML 定义与生成 Sqitch 迁移。生产状态机运行时不需要这套服务器文件访问工具。
+`pg_statecharts_dev` 0.2.0 是 `pg_statecharts` 的开发工具扩展，用于导入 SCXML 定义与生成 Sqitch 迁移。生产状态机运行时不需要这套服务器文件访问工具。
 
 ### 核心流程
 
@@ -40,3 +44,7 @@ SELECT fsm.gen_statechart_sqitch_migrations(
 读取服务器文件需要 `pg_read_server_files`，写入需要 `pg_write_server_files`。这些是广泛权限，不是仅限于所提供路径的沙箱。应将扩展及相关角色限制在受控的开发数据库中。它共用 `fsm` 模式，为纯 SQL 实现，无需预加载；文档测试覆盖 PostgreSQL 16–18。
 
 生成迁移时使用运行时当前的语义版本辅助函数。旧迁移若仍转换到已移除的 semver 类型，应按上游迁移指南修订；重新生成全部历史状态图可能引入回调依赖顺序错误。生产端部署审查后的 SQL 即可，无需安装本开发工具。
+
+### 配套升级到 0.2.0
+
+本开发扩展应与 `pg_statecharts` 使用相同发行版本。安装两者的 SQL 文件，先升级运行时，再执行 `ALTER EXTENSION pg_statecharts_dev UPDATE;`。开发扩展的 0.1.0 到 0.2.0 脚本不修改对象，版本仅随运行时推进。运行时将分片参数移至末尾，升级前应审查位置参数调用。依赖声明本身并不强制两者版本相同。

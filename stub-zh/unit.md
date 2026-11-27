@@ -1,64 +1,32 @@
-
-
-
 ## 用法
 
-> [unit: PostgreSQL 的 SI 单位数据类型](https://github.com/df7cb/postgresql-unit)
+来源：
 
-`unit` 扩展提供了 SI 单位数据类型，可在 SQL 中直接进行量纲分析和单位换算。
+- [Official source](https://github.com/df7cb/postgresql-unit/blob/7.11/README.md)
+- [Official source](https://github.com/df7cb/postgresql-unit/blob/7.11/unit.control)
+- [Official source](https://github.com/df7cb/postgresql-unit/blob/7.11/Makefile)
+- [Official source](https://github.com/df7cb/postgresql-unit/releases/tag/7.11)
+
+`unit` 7.11 提供具有量纲运算和转换能力的物理量类型。软件包发行版保留 SQL/control 版本 7，依赖 `plpgsql`。它包含编译代码并安装单位定义表，需要管理权限安装，无需共享预加载。
+
+### 物理量与转换
 
 ```sql
 CREATE EXTENSION unit;
-
 SELECT '9.81 m/s^2'::unit;
-SELECT '120 km/h'::unit @ 'm/s' AS velocity;  -- 33.3333333333333 m/s
+SELECT '120 km/h'::unit @ 'm/s';
+SELECT '1 km'::unit @@ 'm';
+SELECT '5 kg'::unit * '9.81 m/s^2'::unit;
 ```
 
-### 基本单位
+`@` 返回以目标单位表示的文本，`@@` 返回双精度数值。加减要求量纲兼容，乘除及整数幂会组合量纲。八个基本维度包含七个 SI 维度及字节。物理量以浮点数保存，并非任意精度十进制运算。
 
-米 (m)、千克 (kg)、秒 (s)、安培 (A)、开尔文 (K)、摩尔 (mol)、坎德拉 (cd)、字节 (B)。
+### 解析与输出
 
-### 运算符
+输入支持分数、时间记法、前缀及 Unicode 指数。7.11 新增数值字面量中的下划线支持，并将内置 GNU 单位定义更新到 3.26。对精确常量或温度偏移有要求时，应验证转换结果。
 
-| 运算符 | 说明 | 示例 |
-|----------|-------------|---------|
-| `+`, `-` | 加/减（需相同量纲） | `'1 m'::unit + '50 cm'::unit` |
-| `*`, `/` | 乘/除 | `'5 kg'::unit * '9.81 m/s^2'::unit` |
-| `^` | 整数次幂 | `'2 m'::unit ^ 3` |
-| `@` | 转换单位（返回 unit） | `'2 MB/min'::unit @ 'GB/d'` |
-| `@@` | 转换单位（返回 double precision） | `'1 km'::unit @@ 'm'` |
+`unit.byte_output_iec` 选择二进制字节前缀，`unit.output_base_units`、`unit.time_output_custom`、`unit.output_superscript` 控制显示。扩展提供数学函数、聚合和 `unitrange`，使用时需保证量纲兼容。
 
-### 函数
+### 维护
 
-数学函数：`sqrt()`、`exp()`、`ln()`、`log2()`、`cbrt()`、`asin()`、`tan()` 等。
-
-聚合函数：`sum(unit)`、`avg(unit)`、`min(unit)`、`max(unit)`、`stddev()`、`variance()`。
-
-### 输入格式
-
-```sql
-SELECT '3|4 m'::unit;            -- 分数：0.75 m
-SELECT '10:05:30 s'::unit;       -- 时间格式：36330 s
-SELECT 'm⁻²'::unit;              -- Unicode 上标
-```
-
-### 单位换算
-
-```sql
-SELECT '2 MB/min'::unit @ 'GB/d';       -- 2.88 GB/d
-SELECT '1 hl'::unit @ '0.5 l';          -- 200 * 0.5 l
-SELECT '100 degC'::unit @ 'degF';        -- 华氏温度转换
-```
-
-### 范围类型
-
-```sql
-SELECT unitrange('earthradius_polar', 'earthradius_equatorial');
-```
-
-### 配置
-
-- `unit.byte_output_iec`：二进制前缀（Ki, Mi, Gi）
-- `unit.output_base_units`：仅显示基本单位
-- `unit.time_output_custom`：使用分/时/日格式化时间
-- `unit.output_superscript`：Unicode 上标指数
+`unit_prefixes` 和 `unit_units` 表可以安装到选定模式，但安装后扩展不可重定位。升级时保留本地自定义单位。安装匹配的库和数据文件，并重连使用旧库的会话；选择可用升级路径前检查当前 SQL 版本。7.11 发行版本身仍使用 SQL 版本 7。

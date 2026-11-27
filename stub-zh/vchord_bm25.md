@@ -2,6 +2,9 @@
 
 来源：
 
+- [1.3.0 发行说明](https://github.com/pgsty/vchord_bm25/blob/1.3.0/docs/release-notes/1.3.0.md)
+- [1.3.0 控制文件](https://github.com/pgsty/vchord_bm25/blob/1.3.0/vchord_bm25.control)
+
 - [1.2.0 README](https://github.com/pgsty/vchord_bm25/blob/1.2.0/README.md)
 - [1.2.0 release](https://github.com/pgsty/vchord_bm25/blob/1.2.0/docs/release-notes/1.2.0.md)
 - [1.2.0 control](https://github.com/pgsty/vchord_bm25/blob/1.2.0/vchord_bm25.control)
@@ -13,7 +16,7 @@
 - [索引维护](https://vchord.pgsty.com/docs/bm25/usage/indexing/)
 - [1.0.0 控制文件](https://github.com/pgsty/vchord_bm25/blob/1.0.0/vchord_bm25.control)
 
-`vchord_bm25` 1.0.0 在 PostgreSQL 14–18 上为原生 `tsvector` 提供 BM25 相关性排序。它的 `bm25` 访问方法和 `bm25_ops` 运算符类使用新的索引格式。标准文本检索无需额外的分词扩展；需要自定义分析器或多语言模型时，可选用 `pg_tokenizer` 1.0.0。安装需要超级用户权限和共享预加载。
+`vchord_bm25` 1.3.0 在 PostgreSQL 15–19 上为原生 `tsvector` 提供 BM25 相关性排序。它的 `bm25` 访问方法和 `bm25_ops` 运算符类沿用格式 4 索引。标准文本检索无需额外的分词扩展；需要自定义分析器或多语言模型时，可选用 `pg_tokenizer`。安装需要超级用户权限和共享预加载。
 
 ### 创建与查询索引
 
@@ -75,7 +78,7 @@ SELECT bm25_maintain('documents_bm25');
 
 ### 权限与迁移
 
-扩展可重定位，应用需要访问所选安装模式和被索引的数据。评分需要被索引表的 `SELECT` 权限；普通的非部分单列索引也接受列级权限，表达式索引和部分索引则要求表级权限。由于评分使用全局语料统计，当行级安全策略作用于当前角色时，标量评分和原生索引扫描都会拒绝查询。
+扩展可重定位，应用需要访问所选安装模式和被索引的数据。评分需要被索引表的 `SELECT` 权限；普通的非部分单列索引也接受列级权限，表达式索引和部分索引则要求表级权限。评分使用整个索引的语料统计，因此行级安全策略作用于当前角色时，默认拒绝标量评分和原生索引扫描；1.3.0 的显式启用方式见下文。
 
 索引只支持一个索引列，不支持不记日志的表。访问方法名称在数据库内唯一，因此不能与另一个定义了 `bm25` 的扩展共存。
 
@@ -86,3 +89,9 @@ SELECT bm25_maintain('documents_bm25');
 1.2.0 支持 PostgreSQL 15–19。安装匹配文件并重启 PostgreSQL，然后执行 `ALTER EXTENSION vchord_bm25 UPDATE;`。从 1.0.0 或 1.1.0 升级可保留 SQL 接口与格式 4 索引，无需例行 REINDEX。PostgreSQL 14 须先升级服务器；前述 0.3.x 迁移边界仍然适用。
 
 本次修复预过滤错误清理、规划器成本和并行构建的快照保护，并在 `bm25_maintain` 中拒绝无效索引或分区索引。这些修复不替代正常 vacuum、权限检查或应用重试处理。
+
+### 版本 1.3.0：共享语料统计
+
+索引所有者可通过默认关闭的 `shared_corpus_stats` 索引选项，显式允许在行级安全策略下使用整个索引的统计信息。分数会反映共享语料信息；PostgreSQL 在返回行之前仍执行行策略。标量、索引和视图评分路径都会检查语料访问权限。需要隔离这些统计信息时，不应启用该选项。
+
+安装匹配动态库和 SQL 文件，重启后执行 `ALTER EXTENSION vchord_bm25 UPDATE;`。1.0.0–1.2.0 的格式 4 索引可继续使用。构建排序内存在参与工作进程之间分摊，排名分页、统计与预过滤也有改进。回退动态库前，须在所有显式设置过的索引上重置 `shared_corpus_stats`，包括显式关闭的情况。SQL 升级路径仅支持向前。

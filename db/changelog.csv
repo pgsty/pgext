@@ -1,4 +1,466 @@
 ds,pkg,old_ver,new_ver,note_en,note_zh
+2026-11-26,jev,0.2.1,0.2.1,"+PG18 on EL8, EL9 and EL10 (both architectures); +PG18 packages",补齐 EL8、EL9、EL10 双架构 PG18 软件包；补齐 PG18 软件包
+2026-11-25,acdat,0.1.1,0.1.1,+PG19,+PG19
+2026-11-25,address_standardizer,3.7.0,3.7.0,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,addressing_dictionary,1.1,1.1,+PG19,+PG19
+2026-11-25,age,1.8.0-1,1.8.0-2,"PG18, bitcode in main; PG18 both arches, PG17 at 1.7.0; RPM 1.8.0-2, DEB 1.8.0",PG18，位码并入主包；PG18 双架构，PG17 为 1.7.0；RPM 1.8.0-2，DEB 1.8.0
+2026-11-25,aggs_for_arrays,1.3.3,1.3.3,+PG19,+PG19
+2026-11-25,aggs_for_vecs,1.4.1,1.4.1,PG19 numeric arithmetic,PG19 numeric 运算
+2026-11-25,argm,1.1.1,1.1.1,+PG19,+PG19
+2026-11-25,asn1oid,1.6-2,1.6-3,"+PG19, bitcode in main",+PG19，位码并入主包
+2026-11-25,aws_s3,0.0.1,0.0.1,+PG19,+PG19
+2026-11-25,block_copy_command,0.1.5-1,0.1.5-4,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,cat_tools,0.4.0,0.4.0,+PG19,+PG19
+2026-11-25,cgal54,5.4.2,5.4.2,EL8 recipe target retired,停用 EL8 配方目标
+2026-11-25,chkpass,1.0,1.0,+PG19,+PG19
+2026-11-25,citus,14.3.0,14.3.0,"PG16–18, checksum changed",PG16–18，同版包摘要变化
+2026-11-25,codesystem,0.2.1,0.2.1,PG19 C11 build,PG19 C11 编译
+2026-11-25,colnames,1.7.1,1.7.1,+PG19,+PG19
+2026-11-25,column_encrypt,4.0,4.0,+PG19,+PG19
+2026-11-25,containerd.io,2.4.2-3,2.4.2-4,,
+2026-11-25,count_distinct,3.0.2,3.0.2,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,credcheck,6.0,6.0,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,cri-dockerd,0.3.14,0.3.26,"x86_64, EL8 update, EL9 added; bookworm, jammy, noble",x86_64，更新 EL8，新增 EL9；bookworm、jammy、noble
+2026-11-25,cron_utils,0.1.0,0.1.0,+PG19,+PG19
+2026-11-25,cryptint,1.0.0,1.0.0,+PG19,+PG19
+2026-11-25,data_historization,1.1.0,1.1.0,+PG19,+PG19
+2026-11-25,datasketches,1.7.0,1.7.0,"+PG19, C++14 build",+PG19，C++14 编译
+2026-11-25,db2fce,0.0.17,0.0.17,"+PG19; PG19 gap fill, arch-independent",+PG19；PG19 补包，架构无关
+2026-11-25,db_migrator,1.0.0,1.0.0,+PG19,+PG19
+2026-11-25,dbt2,0.62.0,0.62.0,"PG17–19 recipe, EL from PGDG; +PG19",PG17–19 配方，EL 由 PGDG 供包；+PG19
+2026-11-25,ddl_historization,1.0.0,1.0.0-2,"+PG19, same Git snapshot; +PG19, sorts below +git snapshot",+PG19，沿用同一 Git 快照；+PG19，版本排序低于旧 +git 包
+2026-11-25,ddsketch,1.0.1,1.0.1,+PG19,+PG19
+2026-11-25,decoder_raw,1.0,1.0.0-1,"+PG19, same decoder snapshot",+PG19，沿用解码插件快照
+2026-11-25,decoderbufs,3.7.0,3.7.1,PG19 plugin registration required,PG19 需登记逻辑解码插件
+2026-11-25,docker-buildx-plugin,0.38.1,0.39.1,,
+2026-11-25,docker-ce,29.9.2,29.9.3,,
+2026-11-25,docker-ce-cli,29.9.2,29.9.3,,
+2026-11-25,docker-ce-rootless-extras,29.9.2,29.9.3,,
+2026-11-25,docker-compose-plugin,5.7.0,5.7.2,,
+2026-11-25,documentdb,1.0,1.2,"PG16–19, PG15 extension only; PG16–19, bundled RUM on PG18+",PG16–19，PG15 仅扩展；PG16–19，PG18+ 内置 RUM
+2026-11-25,duckdb_fdw,2.0.2-1,2.0.2-2,"PG15–19, DuckDB 2.0.1",PG15–19，随 DuckDB 2.0.1 重建
+2026-11-25,edtf_postgres,1.3.2,2.0.0,"PG15–19, date bounds changed",PG15–19，日期边界行为变更
+2026-11-25,emaj,5.0.1,5.0.1,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,encsearch,0.1.1-1,0.1.1-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,etcd_fdw,0.0.1,0.0.1,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,external_file,1.2,1.2,+PG19,+PG19
+2026-11-25,faker,0.5.3,0.5.3,+PG19,+PG19
+2026-11-25,fbsql,0.1.0,0.1.0,PG16–19,PG16–19
+2026-11-25,firebird_fdw,1.4.2,1.4.2,+PG19,+PG19
+2026-11-25,first_last_agg,0.1.4,0.1.4,"+PG19; PG19 gap fill, sorts below snapshot; RPM 0.1.4, DEB 0.1.4-2",+PG19；PG19 补包，版本排序低于旧快照；RPM 0.1.4，DEB 0.1.4-2
+2026-11-25,floatfile,1.3.1,1.3.1,+PG19,+PG19
+2026-11-25,floatvec,1.1.1,1.1.1,+PG19,+PG19
+2026-11-25,fsm_core,1.1.0,1.2.0,"+PG19, requires pg_cron",+PG19，依赖 pg_cron
+2026-11-25,gdal38,3.8.5,3.8.5,EL8 recipe target retired,停用 EL8 配方目标
+2026-11-25,geoip,0.4.0,0.4.0-2,"+PG19, same Git snapshot; +PG19, sorts below +git snapshot",+PG19，沿用同一 Git 快照；+PG19，版本排序低于旧 +git 包
+2026-11-25,graphblas,10.5.2,10.5.3,LAGraph and OneSparse dependency,LAGraph、OneSparse 依赖库
+2026-11-25,haproxy,3.4.7,3.4.8,,
+2026-11-25,hashtypes,0.1.5,0.1.5,PG19 varlena API,PG19 变长数据接口
+2026-11-25,hdfs_fdw,2.3.3,2.3.3,PG19 version check,PG19 版本检查
+2026-11-25,hdr_histogram,1.0.0,1.0.0,+PG19,+PG19
+2026-11-25,hunspell,1.0,1.0,"+PG19, 10 dictionaries",10 种词典 +PG19
+2026-11-25,hydra,1.1.2-1,1.1.2-2,"PG15–16, bitcode in main; PG15–16 columnar rebuild",PG15–16，位码并入主包；PG15–16 重建 columnar
+2026-11-25,icu_ext,1.11.0,1.11.0,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,imgsmlr,1.0,1.0.0-1,"+PG19, same Git snapshot",+PG19，沿用同一 Git 快照
+2026-11-25,index_advisor,0.2.1,0.2.1,+PG19,+PG19
+2026-11-25,is_jsonb_valid,0.1.4,0.1.4,+PG19,+PG19
+2026-11-25,istore,0.1.12,0.1.12,+PG19,+PG19
+2026-11-25,jdbc_fdw,0.5.0,0.5.0,PG19 compat patch,PG19 兼容补丁
+2026-11-25,jev,0.2.1,0.2.1,"PG15–17, +PG19",PG15–17，+PG19
+2026-11-25,jsonschema,0.1.11-1,0.1.11-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,kafgres,0.3.2,0.3.3,"PG15–19, PG19 logical decoding",PG15–19，适配 PG19 逻辑解码
+2026-11-25,kafka_fdw,0.0.3,0.0.3-3,"PG19 tuplestore, same snapshot; PG19 tuplestore, sorts below +git; RPM 0.0.3-3, DEB 0.0.3-2",PG19 tuplestore，沿用同一快照；PG19 tuplestore，排序低于旧 +git 包；RPM 0.0.3-3，DEB 0.0.3-2
+2026-11-25,keepalived,2.4.3-1,2.4.3-3,"EL9.9/10.3, PGDG rev 3",EL9.9/10.3，PGDG 修订 3
+2026-11-25,lagraph,1.2.2,1.2.2,Rebuilt with GraphBLAS 10.5.3,随 GraphBLAS 10.5.3 重建
+2026-11-25,lead,1.0.6-1,1.0.6-2,"PG17–19, PG19 planner hook",PG17–19，适配 PG19 规划器钩子
+2026-11-25,libduckdb,1.5.5,1.5.6,Held for upstream debug symbols,等上游调试符号，暂缓发布
+2026-11-25,libpgfeutils15,15.19,15.20,Update frontend static library,更新前端静态库
+2026-11-25,libpgfeutils16,16.15,16.16,Update frontend static library,更新前端静态库
+2026-11-25,libpgfeutils17,17.11,17.12,Update frontend static library,更新前端静态库
+2026-11-25,libpgfeutils18,18.6,18.7,Update frontend static library,更新前端静态库
+2026-11-25,libx509pq,1.3,1.3,+PG19,+PG19
+2026-11-25,log_fdw,1.5,1.5,+PG19,+PG19
+2026-11-25,logerrors,2.1.5,2.1.6,+PG19,+PG19
+2026-11-25,logical_ddl,0.1.0,0.1.0,PG19 compat patch,PG19 兼容补丁
+2026-11-25,login_hook,1.9,1.9,+PG19,+PG19
+2026-11-25,lolor,1.2.3,1.2.3,Rebuilt for pgEdge 15–18,随 pgEdge 15–18 重建
+2026-11-25,lower_quantile,1.0.3,1.0.3,+PG19,+PG19
+2026-11-25,macavity,0.2.0,0.2.1,PG19 server headers,适配 PG19 服务端头文件
+2026-11-25,md5hash,1.0.1,1.0.1,+PG19,+PG19
+2026-11-25,mimeo,1.5.1,1.5.1,+PG19,+PG19
+2026-11-25,mobilitydb,1.3.1,1.3.2,"+PG19, geometry checks",+PG19，保留几何校验
+2026-11-25,mongo_fdw,5.5.3,5.5.3,"+PG19, libmongoc 2, legacy EJSON",+PG19，libmongoc 2 兼容旧 EJSON
+2026-11-25,multicorn,3.2,3.2,+PG19,+PG19
+2026-11-25,mysqlcompat,0.0.7,0.0.7,"SQL recipe, only resolute PG14–18",SQL 配方，仅 resolute 有 PG14–18 包
+2026-11-25,nginx,1.31.8,1.31.10,Mainline,主线版
+2026-11-25,nginx-module-acme,1.31.8+0.4.1,1.31.10+0.4.2,Matches NGINX build,匹配 NGINX 构建
+2026-11-25,nominatim_fdw,2.3,2.3,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,numeral,1.3-6,1.3-7,"+PG19, bitcode in main",+PG19，位码并入主包
+2026-11-25,oai_fdw,1.16.0,1.16.0,+PG19,+PG19
+2026-11-25,odbc_fdw,0.6.1,0.6.1,+PG19,+PG19
+2026-11-25,omnigres,20250120 / 20250507 / 20251108,20260212,"PG15–18, PG19 deparser pending",PG15–18，PG19 等待反解析器移植
+2026-11-25,omnisketch,1.0.2,1.0.2,PG19 server headers,PG19 服务端头文件
+2026-11-25,one_sparse,1.0.0,1.0.0,"GraphBLAS 10.5.3, LAGraph 1.2.2",GraphBLAS 10.5.3、LAGraph 1.2.2
+2026-11-25,online_advisor,1.0,1.0,"PG15–18, PG19 deferred",PG15–18，PG19 暂缓
+2026-11-25,openhalodb-18,18.6,18.6.1,"Recipe only, aux_mysql 1.9",仅配方，含 aux_mysql 1.9
+2026-11-25,openhalodb-19,,19.0.0,"aux_mysql 2.0 on EL9/10; aux_mysql 2.0, all APT suites",EL9/10，含 aux_mysql 2.0；五个发行版，含 aux_mysql 2.0
+2026-11-25,pagevis,0.1,0.1,+PG19,+PG19
+2026-11-25,parray_gin,1.5.0,1.5.0,+PG19,+PG19
+2026-11-25,passwordcheck_cracklib,3.2.1,3.2.1,+PG19,+PG19
+2026-11-25,passwordpolicy,2.0.6,2.0.6,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pdu,3.0.25.12,3.0.25.12-2,"PG15–18 CLI, same snapshot; PG15–18 CLI, sorts below +git",PG15–18 命令行工具，沿用同一快照；PG15–18 工具，排序低于旧 +git 包
+2026-11-25,percona-telemetry-agent,1.0.3,,Withdrawn,撤包
+2026-11-25,periods,1.2.3,1.2.3,+PG19; PG19 gap fill,+PG19；PG19 补包
+2026-11-25,permuteseq,1.2.2,1.2.2,PG19 tuple headers,PG19 元组头文件
+2026-11-25,pg4ml,2.0,2.0,+PG19,+PG19
+2026-11-25,pg_accumulator,1.2.0,1.2.0,+PG19,+PG19
+2026-11-25,pg_acl,1.0.4,1.0.4,+PG19,+PG19
+2026-11-25,pg_adhoc,19.0,19.0,"PG18–19 tools, PG19 static libs",PG18–19 工具，PG19 静态链接
+2026-11-25,pg_agent_gate,0.4.1,0.4.3,"PG18–19, pgrx 0.20.1",PG18–19，pgrx 0.20.1
+2026-11-25,pg_ai_query,0.1.1,0.1.1,"EL9/10 PG19 build fix; +PG19 on trixie, noble, resolute",修复 EL9/10 的 PG19 构建；+PG19，trixie、noble、resolute
+2026-11-25,pg_anon,3.3.2-1,3.3.2-2,"PG15–19, trust anon for masking; Legacy SQL on PG15–18; RPM 3.3.2-2, DEB 1.3.2",PG15–19，脱敏前信任 anon；旧版 SQL 仅 PG15–18；RPM 3.3.2-2，DEB 1.3.2
+2026-11-25,pg_arraymath,1.1,1.1.0-1,"+PG19, same Git snapshot",+PG19，沿用同一 Git 快照
+2026-11-25,pg_ash,1.5,1.5,"PG19 recipe, PG14–18 at 1.2; PG19 recipe, resolute PG14–18 at 1.2",PG19 仅配方，PG14–18 为 1.2；PG19 仅配方，resolute PG14–18 为 1.2
+2026-11-25,pg_auditor,0.3,0.3.0-1,"+PG19, same Git snapshot",+PG19，沿用同一 Git 快照
+2026-11-25,pg_auth_mon,5.0,5.0,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pg_background,2.0.4,2.0.5,"+PG19, PGDG, pre-PID exits; +PG19, report pre-PID exits",+PG19，PGDG，报告登记 PID 前退出；+PG19，报告登记 PID 前退出
+2026-11-25,pg_base36,1.1.1,1.1.1,+PG19,+PG19
+2026-11-25,pg_base58,0.0.1-2,0.0.1-5,"pgrx 0.20.1; RPM 0.0.1-5, DEB 0.0.1-6",pgrx 0.20.1；RPM 0.0.1-5，DEB 0.0.1-6
+2026-11-25,pg_base62,0.0.1,0.0.1,+PG19,+PG19
+2026-11-25,pg_bestmatch,0.0.2-1,0.0.2-4,"pgrx 0.20.1; RPM 0.0.2-4, DEB 0.0.2-5",pgrx 0.20.1；RPM 0.0.2-4，DEB 0.0.2-5
+2026-11-25,pg_bigm,1.2,1.2,"PG15–19, Nov 18 release, PGDG; PG15–19, Nov 18 release",PG15–19，11 月 18 日版，PGDG；PG15–19，11 月 18 日版
+2026-11-25,pg_bikram_sambat,0.1.0,0.1.0,+PG19,+PG19
+2026-11-25,pg_biscuit,3.1.0,3.1.1,"PG16–19, upstream SQL files",PG16–19，按上游清单安装 SQL
+2026-11-25,pg_bulkload,3.1.23,3.1.23,"PG15–18, PG19 deferred",PG15–18，PG19 暂缓
+2026-11-25,pg_byteamagic,0.2.4,0.2.4,+PG19,+PG19
+2026-11-25,pg_bzip,1.0.0,1.0.0,PG19 varlena headers,PG19 变长属性头文件
+2026-11-25,pg_cardano,1.2.0-1,1.2.0-4,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_cheat_funcs,1.0,1.0,"PG15–18, PG19 deferred",PG15–18，PG19 暂缓
+2026-11-25,pg_checksums,1.4,1.4,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pg_circuit,0.1.0,0.1.0,"PG16–18, checksum changed",PG16–18，同版包摘要变化
+2026-11-25,pg_cjk_parser,0.1.0,0.1.0,"PG15–18, PG19 deferred",PG15–18，PG19 暂缓
+2026-11-25,pg_clickhouse,0.11.1,0.11.1,+PG19,+PG19
+2026-11-25,pg_column_tetris,0.1.0,0.1.0,+PG19,+PG19
+2026-11-25,pg_command_fw,0.1.0-1,0.1.0-4,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_convert,0.1.0-1,0.1.0-4,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_cooldown,0.1,0.1,+PG19,+PG19
+2026-11-25,pg_country,0.0.4,0.0.4,+PG19,+PG19
+2026-11-25,pg_crash,0.3,0.3,+PG19,+PG19
+2026-11-25,pg_csv,1.0.2,1.0.2,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pg_curl,2.5.0,2.5.0,+PG19,+PG19
+2026-11-25,pg_currency,0.0.6,0.0.6-2,"pg_currency, same Git snapshot; pg_currency, sorts below +git",pg_currency 包沿用同一 Git 快照；pg_currency 包，排序低于旧 +git 包
+2026-11-25,pg_datasentinel,1.0,1.0,"PG15–18, PG19 tests failed",PG15–18，PG19 测试失败
+2026-11-25,pg_dbms_errlog,2.4,2.4,+PG19,+PG19
+2026-11-25,pg_dbms_job,2.0,2.0,+PG19,+PG19
+2026-11-25,pg_dbms_lock,2.0,2.0,+PG19,+PG19
+2026-11-25,pg_dbms_metadata,1.0.0,1.1.0,"PG15/18/19, PGDG, enum/overload DDL; +PG19, enum and overload DDL",PG15/18/19，PGDG，枚举与重载 DDL；+PG19，枚举与重载 DDL
+2026-11-25,pg_ddlx,0.31,0.32,"+PG19, omit internal triggers",+PG19，DDL 排除内部触发器
+2026-11-25,pg_describe,1.0.0,1.0.0,PG19 tuplestore API,PG19 tuplestore 接口
+2026-11-25,pg_dirtyread,2.8,2.8,+PG19,+PG19
+2026-11-25,pg_disorder,0.1.0,0.1.0,PG19 compat patch,PG19 兼容补丁
+2026-11-25,pg_dispatch,0.1.5,0.1.5,EL9/10 both arches +PG19; +PG19,EL9/10 双架构 +PG19；+PG19
+2026-11-25,pg_drop_events,0.1.0,0.1.0,+PG19,+PG19
+2026-11-25,pg_duckdb,1.2.0,1.2.2,"DuckDB 2.0.1, SQL from 1.2.1",DuckDB 2.0.1，可从 1.2.1 升级
+2026-11-25,pg_ducklake,1.0.3-1,1.0.3-2,"PG15–18, source build fix",PG15–18，修复源码包构建
+2026-11-25,pg_durable,0.2.9-1,0.2.9-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_duration,1.0.2,1.0.2,PG17–19,PG17–19
+2026-11-25,pg_ecdsa,1.0,1.0,+PG19,+PG19
+2026-11-25,pg_emailaddr,0-3,0-4,"+PG19, bitcode in main; +PG19; RPM 0-4, DEB 0",+PG19，位码并入主包；+PG19；RPM 0-4，DEB 0
+2026-11-25,pg_enigma,0.5.0-1,0.5.0-4,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_envvar,1.0.1,1.0.1,+PG19,+PG19
+2026-11-25,pg_eviltransform,0.0.7,0.0.9,"PG15–19, pgrx 0.20.1",PG15–19，pgrx 0.20.1
+2026-11-25,pg_explain_ui,0.0.2-4,0.0.2-5,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_extra_time,2.1.0,2.1.0,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pg_fact_loader,,2.0.1,"EL9/10 PG15–19 noarch gap fill; PG15–19, arch-independent SQL; RPM 2.0.1, DEB 2.0.1-3",EL9/10 PG15–19，noarch 补包；PG15–19，架构无关 SQL 包；RPM 2.0.1，DEB 2.0.1-3
+2026-11-25,pg_failover_slots,1.2.1,1.2.1,"PG15–18, PG19 failover timed out",PG15–18，PG19 槽切换超时
+2026-11-25,pg_filedump,19.0,19.0,"Both arches, checksum changed",双架构同版本换包
+2026-11-25,pg_financial,1.0.1,1.0.1,+PG19,+PG19
+2026-11-25,pg_fio,1.0,1.0,+PG19,+PG19
+2026-11-25,pg_fkpart,1.7.0,1.7.0,+PG19,+PG19
+2026-11-25,pg_flight_recorder,2.32.1,2.32.1,+PG19,+PG19
+2026-11-25,pg_fsql,1.1.0,1.1.0,+PG19,+PG19
+2026-11-25,pg_fts,1.16.0,1.18.1,Fix broad BM25 Boolean filters,修复大范围 BM25 布尔过滤
+2026-11-25,pg_geohash,1.0-4,1.0-5,"+PG19, bitcode in main; +PG19; RPM 1.0-5, DEB 1.0",+PG19，位码并入主包；+PG19；RPM 1.0-5，DEB 1.0
+2026-11-25,pg_grammar_guard,0.4.9,0.4.9,+PG19,+PG19
+2026-11-25,pg_graphql,1.6.3-1,1.6.3-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_gzip,1.1.1,1.1.1,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pg_h3,4.5.0,4.5.0,PG17–19; +PG19,PG17–19；+PG19
+2026-11-25,pg_hashids,1.3,1.3,+PG19,+PG19
+2026-11-25,pg_hashlib,1.1,1.1,+PG19,+PG19
+2026-11-25,pg_html5_email_address,1.2.3,1.2.3,+PG19,+PG19
+2026-11-25,pg_http,1.7.2,1.7.2,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pg_icu_parser,1.0.0,1.0.0,+PG19,+PG19
+2026-11-25,pg_idkit,0.4.0-1,0.4.0-4,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_improv,0.14.0-1,0.15.0,Upstream PG19 support,上游支持 PG19
+2026-11-25,pg_incremental,1.6.1,1.6.1,PG16–19,PG16–19
+2026-11-25,pg_integrity_checksums,2.2.0,2.9.2,XML and index checksums may change,部分 XML 和索引校验值有变
+2026-11-25,pg_isok,1.4.1,1.4.1,+PG19,+PG19
+2026-11-25,pg_ivm,1.17,1.17,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pg_jieba,2.0.1,2.0.1,+PG19,+PG19
+2026-11-25,pg_jobmon,1.4.1,1.4.1,+PG19,+PG19
+2026-11-25,pg_json_diff,1.0,1.0,+PG19,+PG19
+2026-11-25,pg_jsonschema,0.3.4,0.3.4,"pgrx 0.20.1; RPM 0.3.4, DEB 0.3.4-4",pgrx 0.20.1；RPM 0.3.4，DEB 0.3.4-4
+2026-11-25,pg_kazsearch,2.3.0-1,2.3.0-2,"PG16–19, pgrx 0.20.1",PG16–19，pgrx 0.20.1
+2026-11-25,pg_kpart,1.0,1.0,PG19 planner hook,PG19 规划器钩子
+2026-11-25,pg_kv,0.1.0-1,0.1.0-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_lake,3.6.0,3.7.1,"PG16–19, 8 extensions at SQL 3.7",PG16–19，8 个扩展的 SQL 版本为 3.7
+2026-11-25,pg_later,0.4.0-1,0.4.0-5,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_lease,0.1.0,0.1.0,+PG19,+PG19
+2026-11-25,pg_lexo,0.6.1-1,0.6.1-2,"PG16–19, pgrx 0.20.1",PG16–19，pgrx 0.20.1
+2026-11-25,pg_lion,0.3.0,0.3.0,PG16–19,PG16–19
+2026-11-25,pg_liquid,0.1.7,0.1.7,+PG19,+PG19
+2026-11-25,pg_living_assertions,0.5.10,0.5.10,+PG19,+PG19
+2026-11-25,pg_local_cache,3.1.0,3.1.0,PG19 compat patch,PG19 兼容补丁
+2026-11-25,pg_math,1.1.0,1.1.0,+PG19,+PG19
+2026-11-25,pg_mentat,1.20.0,1.22.0,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_meta,0.4.0,0.4.0,+PG19,+PG19
+2026-11-25,pg_mockable,1.1.0,1.1.0,+PG19,+PG19
+2026-11-25,pg_mon,1.0,1.0,PG15–16 recipe only,仅配方，PG15–16
+2026-11-25,pg_money,0.3.0-1,0.3.0-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_mooncake,0.3.0,0.3.4,"pg_duckdb ≥ 1.2.1, scanner 0.0.5",pg_duckdb ≥ 1.2.1，scanner 0.0.5
+2026-11-25,pg_nanotime,0.3.0,0.3.0,PG19 tuple headers,PG19 元组头文件
+2026-11-25,pg_net,0.20.5 / 0.9.2,0.20.5 / 0.9.2,"+PG19, EL9 0.9.2, EL10 0.20.5; +PG19, jammy 0.9.2, others 0.20.5; RPM 0.20.5 / 0.9.2, DEB 0.20.5 / 0.9.2-2",+PG19，EL9 0.9.2，EL10 0.20.5；+PG19，jammy 0.9.2，其余 0.20.5；RPM 0.20.5 / 0.9.2，DEB 0.20.5 / 0.9.2-2
+2026-11-25,pg_noset,0.3.0,0.3.0,+PG19,+PG19
+2026-11-25,pg_oidc_validator,1.1.0,1.1.0,"PG18–19, jammy C++ toolchain",PG18–19，适配 jammy C++ 工具链
+2026-11-25,pg_oidc_validator_rust,0.1.0-2,0.1.0-3,"PG18–19, pgrx 0.20.1",PG18–19，pgrx 0.20.1
+2026-11-25,pg_opencc,0.1.0,0.1.0,+PG19,+PG19
+2026-11-25,pg_orca,1.0.0,1.1.0,"PG18–19, Xerces and optimizer fixes",PG18–19，修正 Xerces 与优化器
+2026-11-25,pg_orphaned,1.0,1.0.0-1,"+PG19, same Git snapshot",+PG19，沿用同一 Git 快照
+2026-11-25,pg_parquet,0.5.1,0.6.1,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_partman,5.5.0,5.5.1,"+PG19, partition lock waits",+PG19，修复分区锁等待
+2026-11-25,pg_pathcheck,0.9.1,0.9.1,"PG17–18, PGSTY release tag",PG17–18，改用 PGSTY 标识
+2026-11-25,pg_permissions,1.4.1,1.6,"+PG19, PUBLIC privileges",+PG19，权限视图纳入 PUBLIC
+2026-11-25,pg_pinyin,0.0.8,0.0.9,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_plan_filter,1.0.0,1.0.0,PG19 planner hook,PG19 规划器钩子
+2026-11-25,pg_policy,0.1.0,0.1.0,+PG19,+PG19
+2026-11-25,pg_polyline,0.0.1-1,0.0.1-5,"pgrx 0.20.1; RPM 0.0.1-5, DEB 0.0.1-4",pgrx 0.20.1；RPM 0.0.1-5，DEB 0.0.1-4
+2026-11-25,pg_prefix,1.2.11,1.2.11,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pg_prioritize,,1.0.4,"PG19 gap fill, README fix",PG19 补包，修复 README 冲突
+2026-11-25,pg_profile,4.16,4.16,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pg_projection,1.0.0,1.0.0,+PG19,+PG19
+2026-11-25,pg_protobuf,1.0,1.0,+PG19,+PG19
+2026-11-25,pg_qos,1.1.0,1.1.0,PG19 compat patch,PG19 兼容补丁
+2026-11-25,pg_query_rewrite,0.0.5,0.0.5,"PG15–18, PG19 deferred",PG15–18，PG19 暂缓
+2026-11-25,pg_random,2.0.0,2.0.0,+PG19,+PG19
+2026-11-25,pg_rational,0.0.3,0.0.3,+PG19,+PG19
+2026-11-25,pg_readme,0.7.1,0.7.1,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pg_readonly,1.0.6,1.0.6,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pg_redis_pubsub,0.0.1,0.0.1,+PG19,+PG19
+2026-11-25,pg_regresql,2.1.0,2.2.1,"PG15–19, stats restore, PG19 hook",PG15–19，恢复统计，PG19 钩子
+2026-11-25,pg_relation_sql,0.2.2,0.2.2,+PG19,+PG19
+2026-11-25,pg_relusage,1.0.2,1.0.2,+PG19,+PG19
+2026-11-25,pg_render,0.1.3-1,0.1.3-4,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_retry,1.0.0,1.0.0,PG17–19,PG17–19
+2026-11-25,pg_rewrite,2.2,2.2,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pg_roaringbitmap,1.3.0,1.3.0,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pg_roast,1.0,1.0,+PG19,+PG19
+2026-11-25,pg_rrf,0.0.3-1,0.0.3-4,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_rrule,0.3.0,0.3.0,+PG19,+PG19
+2026-11-25,pg_rusage,1.0,1.0,+PG19,+PG19
+2026-11-25,pg_savior,0.1.0,0.1.0,PG19 compat patch,PG19 兼容补丁
+2026-11-25,pg_schedoc,0.0.2,0.0.2-2,"+PG19, same Git snapshot; +PG19, sorts below +git snapshot",+PG19，沿用同一 Git 快照；+PG19，版本排序低于旧 +git 包
+2026-11-25,pg_search,0.26.6,0.27.1,"PG15–18, OpenBLAS",PG15–18，依赖 OpenBLAS
+2026-11-25,pg_semver,0.42.0,0.43.0,"+PG19, PGDG, precheck SemVer",+PG19，PGDG，升级前校验 SemVer
+2026-11-25,pg_session_jwt,0.5.0-1,0.5.0-3,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_similarity,1.0,1.0,"PG19 8-bit types; PG19 gap fill, 8-bit types",PG19 8 位类型；PG19 补包，适配 8 位类型
+2026-11-25,pg_slug_gen,1.0.0,1.0.0,+PG19,+PG19
+2026-11-25,pg_smtp_client,0.2.1-1,0.2.1-4,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_snakeoil,1.4,1.4,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pg_sorted_heap,0.14.0,0.14.0,"PG16–18, PG19 deferred; PG16–18, PGSTY release tag",PG16–18，PG19 暂缓；PG16–18，改用 PGSTY 标识
+2026-11-25,pg_sqlog,1.7,1.7.0-1,"+PG19, same Git snapshot",+PG19，沿用同一 Git 快照
+2026-11-25,pg_stat_backtrace,1.0.0,1.0.0,+PG19,+PG19
+2026-11-25,pg_stat_ch,0.4.0,0.4.2,"PG16–19, static lib debug info",PG16–19，静态库调试信息
+2026-11-25,pg_stat_monitor,2.4.0,2.4.1,"PG18–19 gaps, on-demand plans; +PG19, on-demand plan text",补 PG18–19，按需生成计划文本；+PG19，按需生成计划文本
+2026-11-25,pg_stat_plans,2.1.1,2.1.1,PG16–19,PG16–19
+2026-11-25,pg_stat_tcpinfo,1.1,1.1,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pg_statecharts,0.1.0,0.2.0,"PG16–19, with pg_statecharts_dev",PG16–19，含 pg_statecharts_dev
+2026-11-25,pg_statement_rollback,1.6,1.6,PG19 compat patch,PG19 兼容补丁
+2026-11-25,pg_statkit,1.1.0-1,1.1.0-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_statvfs,1.0,1.0,+PG19,+PG19
+2026-11-25,pg_statviz,1.2.1,1.2.1,"+PG19; +PG19, PGDG",+PG19；+PG19，PGDG
+2026-11-25,pg_stl,1.0.0,1.0.0,PG19 tuple headers,PG19 元组头文件
+2026-11-25,pg_store_plans,1.10,1.10,"PG15–18, PG19 deferred",PG15–18，PG19 暂缓
+2026-11-25,pg_strict,1.0.5-1,1.0.5-4,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_strom,3.5,6.1,"EL9/10 x86_64 PG15–18, PG14 at 3.5",EL9/10 x86_64 PG15–18，PG14 为 3.5
+2026-11-25,pg_summarize,0.0.1-6,0.0.1-7,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_synonym,1.0.0,1.0.0,+PG19,+PG19
+2026-11-25,pg_table_range,0.1.2-1,0.1.2-2,"PG16–19, pgrx 0.20.1",PG16–19，pgrx 0.20.1
+2026-11-25,pg_task,3.0.0,3.0.0,+PG19,+PG19
+2026-11-25,pg_text_semver,1.2.1,1.2.1,+PG19,+PG19
+2026-11-25,pg_textsearch,1.5.1,1.5.1,"PG19 limits headers; PG17–19 gap fill; RPM 1.5.1, DEB 1.6.0",PG19 常量上限头文件；PG17–19 补包；RPM 1.5.1，DEB 1.6.0
+2026-11-25,pg_tiktoken,0.0.1,0.0.1-6,"pgrx 0.20.1, same snapshot; pgrx 0.20.1, sorts below +git; RPM 0.0.1-6, DEB 0.0.1-5",pgrx 0.20.1，沿用同一快照；pgrx 0.20.1，排序低于旧 +git 包；RPM 0.0.1-6，DEB 0.0.1-5
+2026-11-25,pg_tiktoken_c,1.1,1.1,+PG19,+PG19
+2026-11-25,pg_timeit,1.0,1.0,"PG19 recipe, PG12–17 amd64 only",PG19 仅配方，包限 PG12–17 amd64
+2026-11-25,pg_timeseries,0.2.1,0.2.1,+PG19,+PG19
+2026-11-25,pg_tle,1.5.3,1.5.3,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pg_tokenizer,1.1.0,1.3.0,"Faster cache, native tsvector",缓存提速，原生 tsvector
+2026-11-25,pg_tracing,0.1.3,0.1.3,"PG15–18, PG19 deferred",PG15–18，PG19 暂缓
+2026-11-25,pg_track_optimizer,0.9.2,0.9.2,"PG17–18, PG19 deferred; PG17–18, PGSTY release tag",PG17–18，PG19 暂缓；PG17–18，改用 PGSTY 标识
+2026-11-25,pg_tre,4.6.2,4.6.6,Fix missing index matches,修复索引漏查
+2026-11-25,pg_trickle,0.108.3-1,0.108.3-2,"PG18–19, pgrx 0.20.1",PG18–19，pgrx 0.20.1
+2026-11-25,pg_try_cast,1.0.0,1.0.0,PG16–19,PG16–19
+2026-11-25,pg_ttl_index,3.0.0,3.0.0,+PG19,+PG19
+2026-11-25,pg_turbovec,2.15.0,2.16.4,Fix index transactions and recovery,修复索引事务与崩溃恢复
+2026-11-25,pg_typeid,0.4.1-1,0.4.1-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_tzf,0.3.1-1,0.3.1-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_uint128,1.2.0,1.3.0,"+PG19, fix commutators",+PG19，修复运算符交换子
+2026-11-25,pg_upless,0.0.3,0.0.3,+PG19,+PG19
+2026-11-25,pg_uri,1.20251029,1.20251029,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pg_utl_smtp,2.0,2.0,"+PG19, PGDG; +PG19; RPM 2.0, DEB 2.0.0",+PG19，PGDG；+PG19；RPM 2.0，DEB 2.0.0
+2026-11-25,pg_uuid_v8,1.1.0,1.1.0,+PG19,+PG19
+2026-11-25,pg_uuidv7,1.7.0,1.7.0,+PG19,+PG19
+2026-11-25,pg_variables,1.2.5-1,1.2.5-2,"PG15–18, record copy and EL8 fixes; PG15–18, record copy fix",PG15–18，修复记录复制和 EL8 宏；PG15–18，修复记录复制
+2026-11-25,pg_vault,0.3.2,0.3.2,+PG19,+PG19
+2026-11-25,pg_vault_tde,1.7.2,1.7.2,"EL9/10, checksum changed; Separate Debian packaging",EL9/10 同版本换包；拆分 Debian 打包文件
+2026-11-25,pg_vectorize,0.27.1-1,0.27.1-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_vectorsearch,0.1.0,0.2.0,"PG18–19, unversioned library",PG18–19，无版本号库名
+2026-11-25,pg_wait_sampling,1.1.11,1.1.11,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pg_warren,0.8.0-1,0.8.0-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_weighted_statistics,1.0.0,1.0.0,+PG19,+PG19
+2026-11-25,pg_when,0.1.10,0.1.11,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pg_xenophile,0.8.3,0.8.3,+PG19,+PG19
+2026-11-25,pg_xxhash,0.0.1,0.0.1,+PG19,+PG19
+2026-11-25,pg_zstd,1.1.2,1.1.2,+PG19,+PG19
+2026-11-25,pgactive,2.1.9,2.1.10,"+PG19, needs Nov PG fixes",+PG19，需 11 月 PG 安全更新
+2026-11-25,pgaudit,1.6.3 / 1.7.1,1.7.2,"PG14 retired, PGDG on PG16–19",停用 PG14，PG16–19 由 PGDG 供包
+2026-11-25,pgautofailover,2.2,2.2,"PG18, PG19 deferred",PG18，PG19 暂缓
+2026-11-25,pgbouncer_fdw,1.4.0,1.4.0,+PG19,+PG19
+2026-11-25,pgbson,2.2.0,2.2.0,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pgcalendar,1.1.0,1.1.0,EL9/10 both arches +PG19; +PG19,EL9/10 双架构 +PG19；+PG19
+2026-11-25,pgclone,4.4.2,4.10.0,"+PG19, restart PG before SQL update",+PG19，重启 PG 后升级扩展
+2026-11-25,pgcollection,2.1.3,2.1.3,+PG19,+PG19
+2026-11-25,pgcopydb,0.18,0.18,"+PG19, static frontend libs; Isolate clone test, match tools",+PG19，静态前端库；隔离克隆测试，匹配 PG 工具
+2026-11-25,pgcozy,1.0,1.0,+PG19,+PG19
+2026-11-25,pgcryptokey,0.85,0.85,+PG19,+PG19
+2026-11-25,pgdd,0.6.1-1,0.6.1-4,"pgrx 0.20.1; PG15–19, omit bundled DEBs",pgrx 0.20.1；PG15–19，排除源码自带 DEB
+2026-11-25,pgdisablelogerror,1.0,1.0,+PG19,+PG19
+2026-11-25,pgdog,0.1.63,0.1.66,PostgreSQL connection pooler,PostgreSQL 连接池
+2026-11-25,pgedge-15,15.19,15.20-2,"Spock 5.0.15, LLVM JIT",Spock 5.0.15，LLVM JIT
+2026-11-25,pgedge-16,16.15,16.16-2,"Spock 5.0.15, LLVM JIT",Spock 5.0.15，LLVM JIT
+2026-11-25,pgedge-17,17.11,17.12-2,"Spock 5.0.15, LLVM JIT",Spock 5.0.15，LLVM JIT
+2026-11-25,pgedge-18,18.6,18.7-2,"Spock 5.0.15, LLVM JIT",Spock 5.0.15，LLVM JIT
+2026-11-25,pgelog,1.0.2,1.0.2,EL9/10 both arches +PG19; +PG19,EL9/10 双架构 +PG19；+PG19
+2026-11-25,pgexporter_ext,0.2.5,0.2.5,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pgextwlist,1.20,1.20,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pgfaceting,0.2.0,0.2.0,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pgfincore,1.4.0,1.4.0,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pggraph,1.2.1-1,1.2.1-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pghydro,6.6,6.6-3,"+PG19, source tag v.7.1; RPM 6.6-3, DEB 6.6-2",+PG19，源码标签 v.7.1；RPM 6.6-3，DEB 6.6-2
+2026-11-25,pgjq,0.1.0,0.1.0,"PG15–17, PG19 deferred; PG15–18, PG19 deferred",PG15–17，PG19 暂缓；PG15–18，PG19 暂缓
+2026-11-25,pgjwt,0.2.0,0.2.0,+PG19,+PG19
+2026-11-25,pgl_ddl_deploy,2.2.1,2.2.1,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pglinter,2.0.0-1,2.0.0-3,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pglite_fusion,0.0.7,0.0.8,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pglock,1.0.0,1.0.0,EL9/10 both arches +PG19; +PG19,EL9/10 双架构 +PG19；+PG19
+2026-11-25,pglogical_ticker,1.4.1,1.4.1,"PG15–17, +PG19; +PG19, PGDG",PG15–17，+PG19；+PG19，PGDG
+2026-11-25,pgmb,1.0.0,1.0.0,+PG19,+PG19
+2026-11-25,pgmemcache,2.3.0,2.3.0,"PG15/19 recipe, EL from PGDG",PG15/19 配方，EL 由 PGDG 供包
+2026-11-25,pgmemento,0.7.4,0.7.4,+PG19,+PG19
+2026-11-25,pgmeminfo,1.0.1,1.0.1,+PG19,+PG19
+2026-11-25,pgml,2.10.0,2.10.0,"Drop PG14, keep PG15–17",停用 PG14，保留 PG15–17
+2026-11-25,pgmnemo,0.21.0,0.21.0,PG17–19,PG17–19
+2026-11-25,pgmonitor,2.2.0,2.2.0,+PG19,+PG19
+2026-11-25,pgmp,1.0.6,1.0.6,"+PG19; +PG19, PGDG",+PG19；+PG19，PGDG
+2026-11-25,pgmq,1.13.1,1.13.2,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pgmqtt,0.5.1-1,0.5.1-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pgnodemx,2.0.1,2.0.1,PG19 tuplestore API,PG19 tuplestore 接口
+2026-11-25,pgpcre,0.20190509,0.20190509,"EL9 +PG19, PCRE1",EL9 +PG19，PCRE1
+2026-11-25,pgpdf,0.1.0,0.1.0,PG19 Datum pointers,PG19 Datum 指针
+2026-11-25,pgproto,0.5.0,0.5.0,+PG19,+PG19
+2026-11-25,pgq,3.5.2,3.5.2,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pgqr,1.0,1.0,+PG19,+PG19
+2026-11-25,pgrdf,0.6.40-1,0.6.41,Deduplicate triples on reload,重复导入时对三元组去重
+2026-11-25,pgroonga,4.1.0,4.1.0,+PG19,+PG19
+2026-11-25,pgs3,0.1.1-1,0.1.1-2,"PG17–19, pgrx 0.20.1; PG17–19, pgrx toolchain check",PG17–19，pgrx 0.20.1；PG17–19，校验 pgrx 工具链
+2026-11-25,pgsentinel,1.5.2,1.5.2,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pgsmcrypto,0.1.1-1,0.1.1-4,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pgsodium,3.1.11,3.1.11,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pgsparql,1.0,1.0,+PG19,+PG19
+2026-11-25,pgsphere,1.5.2,1.5.2,"+PG19; PG19 gap fill, HEALPix",+PG19；PG19 补包，含 HEALPix
+2026-11-25,pgspider_ext,1.3.0,1.3.0,PG19 compat patch,PG19 兼容补丁
+2026-11-25,pgsql_tweaks,1.1.0,1.1.0,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,pgsqlmock,1.0.1,1.0.1,+PG19,+PG19
+2026-11-25,pgtde-18,18.6,18.7,"Percona 18.7.1, pg_tde 2.2.2",Percona 18.7.1，pg_tde 2.2.2
+2026-11-25,pgtde-18-contrib,18.6,18.7,"pgvector, wal2json, set_user",pgvector、wal2json、set_user
+2026-11-25,pgtde-19,,19.0,"Percona 19.0.1, pg_tde 2.3.0",Percona 19.0.1，pg_tde 2.3.0
+2026-11-25,pgtde-19-contrib,,19.0,"PostGIS 3.7.0, address and TIGER",PostGIS 3.7.0，地址标准化、TIGER
+2026-11-25,pgtelemetry,1.7,1.7,+PG19,+PG19
+2026-11-25,pgtt,4.6,4.6,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pguint,1.20260630,1.20260630,+PG19,+PG19
+2026-11-25,pgunit,7.10,7.10,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pgvector,0.8.7,0.8.7,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,pgvectorscale,0.9.1,0.9.1,"Drop PG14, keep PG15–18",停用 PG14，保留 PG15–18
+2026-11-25,pgwasm,0.1.0-1,0.1.0-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pgx_ulid,0.2.3-1,0.2.3-4,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,pgxicor,0.1.1,0.1.1,PG19 compat patch,PG19 兼容补丁
+2026-11-25,pgzint,0.2.0,0.2.0,"PG15–18 recipe only, trixie/resolute",仅配方，trixie/resolute PG15–18
+2026-11-25,pldebugger,1.10,1.10,PG19 compat patch,PG19 兼容补丁
+2026-11-25,pljs,1.0.5,1.0.5,"PG15–18, PG19 deferred",PG15–18，PG19 暂缓
+2026-11-25,pllua,2.0.12,2.0.12,"PG15–18, PG19 deferred",PG15–18，PG19 暂缓
+2026-11-25,plpgsql_check,2.10.16,2.11.0,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,plpgsql_wrap,1.0,1.0,+PG19,+PG19
+2026-11-25,plphp,2.6,2.6,"EL9/10 +PG19, PHP embed ≥ 8.1; PG19 tuplestore API",EL9/10 +PG19，嵌入 PHP ≥ 8.1；PG19 tuplestore 接口
+2026-11-25,plproxy,2.12.0,2.12.0,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,plprql,18.0.2-1,18.0.2-2,pgrx 0.20.1,pgrx 0.20.1
+2026-11-25,plr,8.4.8.10,8.4.8.11,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,plruby,2.5.0,2.5.0,"PG15–18, PG19 deferred",PG15–18，PG19 暂缓
+2026-11-25,plv8,3.2.5-1,3.2.5-2,"PG15–19, V8 debug symbols",PG15–19，保留 V8 调试符号
+2026-11-25,plx,2.0.1,3.1.0,"PG15–19, Lua and C# dialects",PG15–19，新增 Lua、C# 方言
+2026-11-25,plxslt,0.20140221,0.20140221,+PG19,+PG19
+2026-11-25,pointcloud,1.2.5,1.2.5,"PG19 compat patch; PG19 gap fill, pointcloud_postgis",PG19 兼容补丁；PG19 补包，含 pointcloud_postgis
+2026-11-25,polardb,17.9.1.0,,Retired on EL8–10,EL8–10 下架
+2026-11-25,polardb-17,17.11.1.0,17.12.1.0,PostgreSQL 17.12 kernel,基于 PostgreSQL 17.12
+2026-11-25,postbis,1.0,1.0,+PG19,+PG19
+2026-11-25,postgis_tiger_geocoder,2025.2,2025.2,PG16–19,PG16–19
+2026-11-25,powa,5.3.0,5.3.0,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,preprepare,0.9-2,0.9-3,"+PG19, bitcode in main",+PG19，位码并入主包
+2026-11-25,proj96,9.6.2,9.6.2,EL8 recipe target retired,停用 EL8 配方目标
+2026-11-25,provsql,1.13.1,1.14.0,+PG19 provenance queries,+PG19 溯源查询
+2026-11-25,psql_bm25s,0.4.14,0.4.14,PG19 compat patch,PG19 兼容补丁
+2026-11-25,q3c,2.0.6,2.0.6,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,qdgc,0.1.0,0.1.0,"PG15–19, PGXN SQL release",PG15–19，PGXN 纯 SQL 版
+2026-11-25,quantile,1.1.8,1.1.8,+PG19,+PG19
+2026-11-25,rdf_fdw,3.1.0,3.1.0,+PG19,+PG19
+2026-11-25,rdkit,202609.2,202609.2,PG15–18 cartridge,PG15–18 数据库扩展
+2026-11-25,re2,0.4.1,0.4.1,PG16–19,PG16–19
+2026-11-25,redis,7.2.17,7.2.17,Server and dev checksums changed,服务端与开发包摘要变化
+2026-11-25,redis_fdw,2.0,2.0.0-1,"+PG19, same Git snapshot",+PG19，沿用同一 Git 快照
+2026-11-25,repmgr,5.5.1,5.5.1,PG19 C11 build,PG19 C11 编译
+2026-11-25,rum,1.3.15,1.3.15,"PG19 compat patch; PG19 gap fill, rum_validate test",PG19 兼容补丁；PG19 补包，验证 rum_validate
+2026-11-25,safeupdate,1.7,1.7,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,scws,1.2.3,1.2.3,PGSTY release tag,改用 PGSTY 标识
+2026-11-25,sequential_uuids,1.0.3,1.0.3,+PG19,+PG19
+2026-11-25,session_variable,3.6,3.6,+PG19,+PG19
+2026-11-25,shacrypt,1.1,1.1,+PG19,+PG19
+2026-11-25,smlar,1.0-2,1.0-3,"+PG19, bitcode in main; +PG19; RPM 1.0-3, DEB 1.0",+PG19，位码并入主包；+PG19；RPM 1.0-3，DEB 1.0
+2026-11-25,snowflake,2.6.0,2.6.1,pgEdge 15–18,随 pgEdge 15–18 提供
+2026-11-25,spat,0.1.0a4,0.1.0-a5PGSTY,"PG17, SQL 0.1.0a5, sorts below a4",仅 PG17，SQL 0.1.0a5，排序低于 a4
+2026-11-25,spock,5.0.13,5.0.15,"Bundled with pgEdge 15–18; pgEdge 15–18, PG18 metapackage",随 pgEdge 15–18 提供；随 pgEdge 15–18 提供，PG18 有转接包
+2026-11-25,sqlite_fdw,2.5.0,2.5.0,PG19 compat patch,PG19 兼容补丁
+2026-11-25,sslutils,1.4.1,1.4.2,"PG15–19, SQL and privilege fixes",PG15–19，修复 SQL 与权限
+2026-11-25,stannum,0.1.0-1,0.1.0-2,"PG17–18, pgrx 0.20.1",PG17–18，pgrx 0.20.1
+2026-11-25,storage_engine,2.4.0,2.4.0,+PG19,+PG19
+2026-11-25,supautils,4.0.0,4.0.1,+PG19,+PG19
+2026-11-25,system_stats,4.1,4.1,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,table_log,0.6.4,0.6.4,+PG19,+PG19
+2026-11-25,table_version,1.11.1,1.11.1,"+PG19, noarch scripts; +PG19",+PG19，noarch 脚本包；+PG19
+2026-11-25,temporal_tables,1.2.2,1.2.2,PG19 hash allocator,PG19 哈希表分配器
+2026-11-25,textsearch_intl,1.0.1,1.0.1,+PG19,+PG19
+2026-11-25,timescaledb,2.31.0,2.32.1,"PG16.16+/17.12+/18.7+, PG19 pending",需 PG16.16+/17.12+/18.7+，PG19 暂缓
+2026-11-25,timescaledb_toolkit,1.27.0,1.28.0,"PG16–19, pgrx 0.20.1",PG16–19，pgrx 0.20.1
+2026-11-25,timestamp9,1.4.0,1.4.0,"+PG19, PGDG",+PG19，PGDG
+2026-11-25,toastinfo,1.7,1.7,+PG19,+PG19
+2026-11-25,topn,2.7.1,2.7.1,"+PG19, PGDG; +PG19",+PG19，PGDG；+PG19
+2026-11-25,ulak,0.2.0,0.3.0,"PG19 numeric, EL8 curl fallback; PG19 numeric API",PG19 numeric，EL8 回退 curl 调用；PG19 numeric 接口
+2026-11-25,url_encode,1.2.5,1.2.5,+PG19,+PG19
+2026-11-25,valkey,9.1.3,9.2.0,Coexists with Redis 7.2,可与 Redis 7.2 共存
+2026-11-25,vasco,0.1.0,0.1.0,PG19 tuple headers,PG19 元组头文件
+2026-11-25,vchord,1.3.0,1.5.0,EL8 stays on 1.3.0; Upgrade via 1.4.0,EL8 保留 1.3.0；升级经 1.4.0
+2026-11-25,vchord_bm25,1.1.0,1.3.0,Preserve format-4 indexes,保留格式 4 索引
+2026-11-25,vgram,1.0,1.0,PG19 compat patch,PG19 兼容补丁
+2026-11-25,wal2mongo,1.0.7,1.0.7,PG19 compat patch,PG19 兼容补丁
+2026-11-25,wrappers,0.6.4-1,0.6.4-2,"PG15–19, x86_64 CityHash fix; pgrx 0.20.1",PG15–19，修复 x86_64 CityHash；pgrx 0.20.1
+2026-11-25,zhparser,2.3,2.3,PG19 catcache headers,PG19 系统缓存头文件
 2026-11-10,documentdb,1.0-1PGSTY,1.0-2PGSTY,PG15-18; PostGIS 3.7,PG15-18；PostGIS 3.7
 2026-11-10,login_hook,1.8,1.9,PG14-17 PGDG; PG18 Pigsty,PG14-17 PGDG；PG18 Pigsty
 2026-11-10,mobilitydb,1.3.1-1PGSTY,1.3.1-2PGSTY,PG14-18; PostGIS 3.7,PG14-18；PostGIS 3.7

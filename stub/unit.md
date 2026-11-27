@@ -1,64 +1,32 @@
-
-
-
 ## Usage
 
-> [unit: SI unit data type for PostgreSQL](https://github.com/df7cb/postgresql-unit)
+Sources:
 
-The `unit` extension provides a data type for SI units, enabling dimensional analysis and unit conversion directly in SQL.
+- [Official source](https://github.com/df7cb/postgresql-unit/blob/7.11/README.md)
+- [Official source](https://github.com/df7cb/postgresql-unit/blob/7.11/unit.control)
+- [Official source](https://github.com/df7cb/postgresql-unit/blob/7.11/Makefile)
+- [Official source](https://github.com/df7cb/postgresql-unit/releases/tag/7.11)
+
+`unit` 7.11 provides physical quantities with dimensional arithmetic and conversion. The package release keeps SQL/control version 7 and depends on `plpgsql`. It uses compiled code and installs unit-definition tables; install with administrative privileges. Shared preload is not required.
+
+### Quantities and Conversion
 
 ```sql
 CREATE EXTENSION unit;
-
 SELECT '9.81 m/s^2'::unit;
-SELECT '120 km/h'::unit @ 'm/s' AS velocity;  -- 33.3333333333333 m/s
+SELECT '120 km/h'::unit @ 'm/s';
+SELECT '1 km'::unit @@ 'm';
+SELECT '5 kg'::unit * '9.81 m/s^2'::unit;
 ```
 
-### Base Units
+`@` returns text expressing the quantity in the requested unit; `@@` returns a double-precision magnitude. Addition and subtraction require compatible dimensions. Multiplication, division and integer powers combine dimensions. The eight base dimensions include the seven SI quantities plus bytes. Quantities use floating-point storage, not arbitrary-precision decimal arithmetic.
 
-meter (m), kilogram (kg), second (s), ampere (A), kelvin (K), mole (mol), candela (cd), byte (B).
+### Parsing and Output
 
-### Operators
+Input supports fractions, time notation, prefixes and Unicode exponents. Version 7.11 additionally accepts underscores in numeric literals and updates the bundled GNU unit definitions to 3.26. Validate conversions where exact constants or temperature offsets matter.
 
-| Operator | Description | Example |
-|----------|-------------|---------|
-| `+`, `-` | Add/subtract (same dimensions) | `'1 m'::unit + '50 cm'::unit` |
-| `*`, `/` | Multiply/divide | `'5 kg'::unit * '9.81 m/s^2'::unit` |
-| `^` | Exponentiation by integer | `'2 m'::unit ^ 3` |
-| `@` | Convert to unit (returns unit) | `'2 MB/min'::unit @ 'GB/d'` |
-| `@@` | Convert to unit (returns double precision) | `'1 km'::unit @@ 'm'` |
+`unit.byte_output_iec` selects binary byte prefixes. `unit.output_base_units`, `unit.time_output_custom` and `unit.output_superscript` control display. The extension supplies mathematical functions, aggregates and `unitrange`; use dimensionally compatible values.
 
-### Functions
+### Maintenance
 
-Mathematical: `sqrt()`, `exp()`, `ln()`, `log2()`, `cbrt()`, `asin()`, `tan()`, etc.
-
-Aggregates: `sum(unit)`, `avg(unit)`, `min(unit)`, `max(unit)`, `stddev()`, `variance()`.
-
-### Input Formats
-
-```sql
-SELECT '3|4 m'::unit;            -- fractions: 0.75 m
-SELECT '10:05:30 s'::unit;       -- time format: 36330 s
-SELECT 'm⁻²'::unit;              -- Unicode superscripts
-```
-
-### Unit Conversion
-
-```sql
-SELECT '2 MB/min'::unit @ 'GB/d';       -- 2.88 GB/d
-SELECT '1 hl'::unit @ '0.5 l';          -- 200 * 0.5 l
-SELECT '100 degC'::unit @ 'degF';        -- Fahrenheit conversion
-```
-
-### Range Type
-
-```sql
-SELECT unitrange('earthradius_polar', 'earthradius_equatorial');
-```
-
-### Configuration
-
-- `unit.byte_output_iec`: Binary prefixes (Ki, Mi, Gi)
-- `unit.output_base_units`: Show only base units
-- `unit.time_output_custom`: Format times using minutes/hours/days
-- `unit.output_superscript`: Unicode superscript exponents
+The `unit_prefixes` and `unit_units` tables may be created in a chosen installation schema, but the extension is not relocatable afterwards. Preserve locally customized definitions when upgrading. Install matching library and data files, reconnect sessions using the old library, and check the installed SQL version before choosing an available upgrade path; release 7.11 itself keeps version 7.

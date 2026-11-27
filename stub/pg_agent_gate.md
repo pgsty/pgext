@@ -2,12 +2,12 @@
 
 Sources:
 
-- [README](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.3/README.md)
-- [Control](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.3/pg_agent_gate.control)
-- [CHANGELOG](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.3/CHANGELOG.md)
-- [SQL upgrade](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.3/sql/pg_agent_gate--0.4.1--0.4.3.sql)
+- [README](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.4/README.md)
+- [Control](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.4/pg_agent_gate.control)
+- [CHANGELOG](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.4/CHANGELOG.md)
+- [SQL upgrade](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.4/sql/pg_agent_gate--0.4.1--0.4.3.sql)
 
-`pg_agent_gate` 0.4.3 routes registered agent roles through proposals, checks, dry runs and guarded execution on PostgreSQL 18/19, with optional human approval before commit. The library must be loaded before the first agent statement, through shared preload or a role-level session preload followed by reconnection.
+`pg_agent_gate` 0.4.4 routes registered agent roles through proposals, checks, dry runs and guarded execution on PostgreSQL 18/19, with optional human approval before commit. The library must be loaded before the first agent statement, through shared preload or a role-level session preload followed by reconnection.
 
 ### Core Workflow
 
@@ -48,7 +48,11 @@ Protected context includes role identity, row-security settings, search path and
 After replacing the library, restart or reconnect all processes that preload it, then update each database:
 
 ```sql
-ALTER EXTENSION pg_agent_gate UPDATE TO '0.4.3';
+ALTER EXTENSION pg_agent_gate UPDATE TO '0.4.4';
 ```
 
 The 0.4.1 to 0.4.3 migration changes no schema objects. Older upgrade paths still add budget and approval objects; inspect existing agents' budgets after upgrading. Version 0.4.2 was not released separately. Superusers, the operating system and trusted DBA code remain outside this boundary; an authorized statement can still violate human intent.
+
+### Version 0.4.4
+
+Release 0.4.4 changes the recorded version without changing the 0.4.3 library behavior or SQL objects. Its release review qualifies PostgreSQL 18.7 and 19.0. The protection against later role membership changes requires `shared_preload_libraries`; role-level session preload alone does not enforce that guarantee across other sessions.

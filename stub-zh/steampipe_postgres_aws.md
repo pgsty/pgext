@@ -2,8 +2,10 @@
 
 来源：
 
-- [Upstream source](https://github.com/turbot/steampipe-plugin-aws/releases/tag/v1.36.0)
-- [Upstream source](https://github.com/turbot/steampipe-plugin-aws/releases/download/v1.36.0/steampipe_postgres_aws.pg15.darwin_arm64.tar.gz)
+- [CHANGELOG](https://github.com/turbot/steampipe-plugin-aws/blob/v1.37.0/CHANGELOG.md)
+
+- [Upstream source](https://github.com/turbot/steampipe-plugin-aws/releases/tag/v1.37.0)
+- [Upstream source](https://github.com/turbot/steampipe-plugin-aws/releases/download/v1.37.0/steampipe_postgres_aws.pg15.darwin_arm64.tar.gz)
 
 - [Published 0.125.0 package page](https://database.dev/toliver38/steampipe_postgres_aws)
 - [Official AWS plugin documentation](https://hub.steampipe.io/plugins/turbot/aws#postgres-fdw)
@@ -50,4 +52,10 @@ ORDER BY name;
 
 优先使用 AWS profile、工作负载角色或其他短期凭据来源，不要把静态密钥放入 `pg_foreign_server`。只授予查询目标表所需的 IAM 读取权限，并限制对服务器选项和已导入外部表的访问。外部扫描可能产生 AWS API 活动及相关服务费用。
 
-已验证的官方 1.36.0 发布包含独立 PostgreSQL AWS 制品；检查的 PostgreSQL 15 macOS arm64 制品仍使用 SQL 版本 1.0。旧 database.dev 包仍是独立的 0.125.0 发布。必须按实际平台和 PostgreSQL 大版本选择制品，不能从插件标签推断新大版本支持；仅凭 SQL extversion 也无法确定插件修订。升级时应审查表定义变化，有计划地重新导入或重建外部表，并保留授权与依赖对象。安装说明包含破坏性的 DROP 示例，全新安装并不需要这些操作，不应直接照搬到现有部署。无需设置 shared_preload_libraries。
+已验证的官方 1.37.0 发布包含独立 PostgreSQL AWS 制品；检查的 PostgreSQL 15 macOS arm64 制品仍使用 SQL 版本 1.0。旧 database.dev 包仍是独立的 0.125.0 发布。必须按实际平台和 PostgreSQL 大版本选择制品，不能从插件标签推断新大版本支持；仅凭 SQL extversion 也无法确定插件修订。升级时应审查表定义变化，有计划地重新导入或重建外部表，并保留授权与依赖对象。安装说明包含破坏性的 DROP 示例，全新安装并不需要这些操作，不应直接照搬到现有部署。无需设置 shared_preload_libraries。
+
+### 1.37.0 的变化
+
+`aws_identitystore_user` 表增加 `user_status`，按 `id` 过滤时会返回完整字段。`aws_vpc_vpn_connection` 的选项增加了 BGP 日志设置。使用新字段前需核对已导入的表定义。
+
+默认的 `aws_ec2_describe_attribute` 限流器可减少逐行 EC2 属性调用触发的节流，但不代表 AWS 配额不再受限。本版还修复了安全组规则标识不稳定，以及 SDK 调用失败被表现为数据缺失的问题。替换二进制后应重新核对已保存的资源清单和错误处理，并保留权限及依赖视图。

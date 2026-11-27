@@ -2,6 +2,9 @@
 
 来源：
 
+- [Official source](https://github.com/aiyou178/pg_eviltransform/releases/tag/v0.0.9)
+- [Official source](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.9/pg_eviltransform.control)
+
 - [Upstream source](https://github.com/aiyou178/pg_eviltransform/releases/tag/v0.0.8)
 - [Upstream source](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.8/README.md)
 - [Upstream source](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.8/pg_eviltransform--0.0.7--0.0.8.sql)
@@ -81,3 +84,9 @@ FROM measurements;
 ```sql
 ALTER EXTENSION pg_eviltransform UPDATE TO '0.0.8';
 ```
+
+### 版本 0.0.9
+
+本版本要求服务器和编译头文件均至少为对应主版本的 PostgreSQL 15.20、16.16、17.12、18.7 或 19.0。安装匹配文件，重新连接，并执行 `ALTER EXTENSION pg_eviltransform UPDATE TO '0.0.9';`。
+
+本版本修复几何包围盒缓存、并行查询目录访问及 Jenks 数值边界问题。应从原始几何重新计算已保存的自定义变换结果，刷新相关物化视图，并重建使用 `ST_EvilTransform` 的表达式索引；只升级动态库不会修复已保存结果。升级脚本保留函数 OID 及依赖视图。

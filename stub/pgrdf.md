@@ -2,6 +2,9 @@
 
 Sources:
 
+- [Official source](https://github.com/styk-tv/pgRDF/releases/tag/v0.6.41)
+- [Official source](https://github.com/styk-tv/pgRDF/blob/v0.6.41/pgrdf.control)
+
 - [0.6.40 release](https://github.com/styk-tv/pgRDF/releases/tag/v0.6.40)
 - [pgrdf.control](https://github.com/styk-tv/pgRDF/blob/eefe44a459407c0d391b44baebe8905baaf7f9de/pgrdf.control)
 - [README.md](https://github.com/styk-tv/pgRDF/blob/eefe44a459407c0d391b44baebe8905baaf7f9de/README.md)
@@ -12,7 +15,7 @@ Sources:
 - [guide/06-validation-recipes.md](https://github.com/styk-tv/pgRDF/blob/eefe44a459407c0d391b44baebe8905baaf7f9de/guide/06-validation-recipes.md)
 - [0.6.39 to 0.6.40 upgrade](https://github.com/styk-tv/pgRDF/blob/eefe44a459407c0d391b44baebe8905baaf7f9de/sql/pgrdf--0.6.39--0.6.40.sql)
 
-`pgrdf` 0.6.40 stores RDF graphs in PostgreSQL with Turtle/TriG/N-Quads ingestion, SPARQL queries and updates, SHACL validation, and RDFS/OWL reasoning. Preload `pgrdf` and restart before creating the extension as a superuser.
+`pgrdf` 0.6.41 stores RDF graphs in PostgreSQL with Turtle/TriG/N-Quads ingestion, SPARQL queries and updates, SHACL validation, and RDFS/OWL reasoning. Preload `pgrdf` and restart before creating the extension as a superuser.
 
 ### Core Workflow
 
@@ -37,3 +40,11 @@ The fixed `pgrdf` schema provides `add_graph`, `graph_id`, `parse_turtle`, `load
 ### Ownership Repair in 0.6.40
 
 The 0.6.39 upgrade could leave `_pgrdf_graph_id_seq` owned by the upgrade executor after storage tables had been transferred to another role, preventing new graph creation. Version 0.6.40 aligns that sequence with the owner of `_pgrdf_quads`; granting sequence usage alone is insufficient. `pgrdf.ownership_drift()` reports mismatched storage owners and proposed repair commands. Review them before applying role changes. Upgrade SQL in each database after installing matching binaries; versions 0.6.34–0.6.38 can upgrade directly to 0.6.40.
+
+### Version 0.6.41: Graph Sets and Backups
+
+New graph partitions enforce unique subject/predicate/object triples; repeated ingestion does not add duplicates, and asserted triples take precedence over inferred ones. An in-place upgrade does not rewrite existing graphs containing repeats: it warns about them. Inspect `pgrdf.duplicate_report()` and review `pgrdf.dedup_graph()` before changing existing data.
+
+This release fixes logical dumps omitting the graph registry, default-graph triples and dictionary allocator. Take and restore-test a fresh backup after upgrading. Stored literals containing U+0000 now fail on read; `pgrdf.nul_term_report()` identifies them for repair. Graph owners, owner enforcement and recorded graph acts add administrative controls; inspect privileges rather than assuming previously PUBLIC maintenance functions remain callable.
+
+Install matching binaries, restart for the preloaded library and run `ALTER EXTENSION pgrdf UPDATE;`. PostgreSQL 18 must be 18.7 or later. Older SQL/library mismatch guards and the existing sequence-ownership checks remain relevant.

@@ -2,9 +2,9 @@
 
 Sources:
 
-- [1.4.0 README](https://github.com/pgsty/vchord/blob/1.4.0/README.md)
-- [1.4.0 release](https://github.com/pgsty/vchord/blob/1.4.0/docs/release-notes/1.4.0.md)
-- [1.4.0 control](https://github.com/pgsty/vchord/blob/1.4.0/vchord.control)
+- [1.5.0 README](https://github.com/pgsty/vchord/blob/1.5.0/README.md)
+- [1.5.0 release](https://github.com/pgsty/vchord/blob/1.5.0/docs/release-notes/1.5.0.md)
+- [1.5.0 control](https://github.com/pgsty/vchord/blob/1.5.0/vchord.control)
 - [Installation and upgrades](https://vchord.pgsty.com/docs/vchord/getting-started/installation/)
 - [Partitioned vector indexes](https://vchord.pgsty.com/docs/vchord/usage/indexing/)
 - [Graph indexes and result ordering](https://vchord.pgsty.com/docs/vchord/usage/graph-index/)
@@ -14,7 +14,7 @@ Sources:
 - [1.2.0 release notes](https://vchord.pgsty.com/blog/release/vchord-1.2.0/)
 - [1.2.0 control file](https://github.com/pgsty/vchord/blob/1.2.0/vchord.control)
 
-`vchord` 1.2.0 provides approximate vector search on PostgreSQL 14–18. It uses pgvector's types and adds the partitioned `vchordrq` index and the disk graph `vchordg` index. It requires the `vector` extension, shared preloading, and superuser privileges to install. Graph indexing is documented as a preview feature.
+`vchord` 1.5.0 provides approximate vector search on PostgreSQL 15–19. It uses pgvector's types and adds the partitioned `vchordrq` index and the disk graph `vchordg` index. It requires the `vector` extension, shared preloading, and superuser privileges to install. Graph indexing is documented as a preview feature.
 
 ### Enable and Search
 
@@ -102,10 +102,10 @@ The query must return `ctid`; keep sequential scans enabled for the exact pass. 
 
 Keep normal vacuuming enabled: graph searches exclude deleted vertices after `VACUUM`, and index maintenance updates tuple/page statistics. `ANALYZE` alone does not rebuild or compact the index.
 
-Install matching 1.2.0 library and SQL files, restart PostgreSQL to load the new library, then update each database as the extension owner or an administrator:
+Install matching 1.5.0 library and SQL files, restart PostgreSQL to load the new library, then update each database as the extension owner or an administrator:
 
 ```sql
-ALTER EXTENSION vchord UPDATE TO '1.2.0';
+ALTER EXTENSION vchord UPDATE TO '1.5.0';
 ```
 
 The release provides upgrade paths from 0.2.0 through 1.1.1 without reindexing. Recheck representative rankings after upgrading: 1.2.0 fixes MaxSim candidate estimates, graph sphere filters, deleted-vertex visibility, and quantization edge cases, and raises the default reranking budget. The extension is relocatable; include its chosen schema in the search path or qualify its objects.
@@ -114,6 +114,12 @@ The release provides upgrade paths from 0.2.0 through 1.1.1 without reindexing. 
 
 Version 1.4.0 supports PostgreSQL 15–19. PostgreSQL 14 requires a server upgrade first. Install matching files, restart PostgreSQL and apply `ALTER EXTENSION vchord UPDATE;` in each database.
 
-RQ filter key columns support equality, range and NULL conditions. `vchordrq.probes` selects initial lists; `vchordrq.max_probes` limits subsequent expansion and defaults to -1, allowing all lists. The initial probes are always honored. An ordered scan that can expand sorts eligible candidates before its first result; the sort can spill at `work_mem`. Measure recall before lowering this cap.
+RQ filter key columns support equality, range and NULL conditions. `vchordrq.probes` selects initial lists; `vchordrq.max_probes` limits subsequent expansion and defaults to -1, allowing all lists. The initial probes are always honored. In 1.5.0, ordered keyed scans stream the initial probes and expand on demand; distances can decrease across refill rounds. Measure recall before lowering this cap.
 
 Ordinary 1.3.0 RQ indexes retain format 1001. A new index with filter key columns uses format 1003. Before returning to a 1.3.0 binary, remove keyed indexes under 1.4.0 and restore a compatible extension catalog or backup. A binary downgrade alone is insufficient. Sphere scans through both index methods remain approximate; use a verified sequential plan when every matching row is required.
+
+### Version 1.5.0 Maintenance
+
+Version 1.5.0 reads 1.4.0 indexes in place and retains their SQL objects and on-disk formats. Recheck ordering and recall for keyed RQ queries as well as graph queries; explicitly sort materialized candidates when strict ordering is required. Sphere rechecks, nullable-vector scans, prepared queries and prefiltering receive correctness fixes.
+
+Graph insertion and VACUUM connectivity are repaired. If an older VACUUM already removed an entire graph region, rebuild that affected index with `REINDEX INDEX CONCURRENTLY index_name;`; installing the new code cannot recreate links already lost.

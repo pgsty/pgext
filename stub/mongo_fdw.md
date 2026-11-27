@@ -1,64 +1,40 @@
-
-
-
 ## Usage
 
-Sources: [README](https://github.com/EnterpriseDB/mongo_fdw/blob/REL-5_5_3/README.md), [REL-5_5_3 release](https://github.com/EnterpriseDB/mongo_fdw/releases/tag/REL-5_5_3)
+Sources:
 
-### Create Server
+- [Official source](https://github.com/EnterpriseDB/mongo_fdw/blob/REL-5_6_0/README.md)
+- [Official source](https://github.com/EnterpriseDB/mongo_fdw/blob/REL-5_6_0/mongo_fdw.control)
+- [Official source](https://github.com/EnterpriseDB/mongo_fdw/blob/REL-5_6_0/mongo_fdw--1.1.sql)
+- [Official source](https://github.com/EnterpriseDB/mongo_fdw/releases/tag/REL-5_6_0)
+
+`mongo_fdw` 5.6.0 reads and writes MongoDB collections from PostgreSQL 14–19. Its SQL/control version remains 1.1. Install the matching MongoDB client libraries and create the extension as a superuser; shared preload is unnecessary.
+
+### Map a Collection
+
+For an existing collection, configure an account with the intended remote privileges:
 
 ```sql
 CREATE EXTENSION mongo_fdw;
-
 CREATE SERVER mongo_server FOREIGN DATA WRAPPER mongo_fdw
   OPTIONS (address '127.0.0.1', port '27017');
-```
-
-**Server Options:** `address` (default `127.0.0.1`), `port` (default `27017`), `authentication_database`, `replica_set`, `read_preference` (`primary`, `secondary`, `primaryPreferred`, `secondaryPreferred`, `nearest`), `ssl` (default `false`), `pem_file`, `pem_pwd`, `ca_file`, `ca_dir`, `crl_file`, `weak_cert_validation`, `use_remote_estimate` (default `false`), `enable_join_pushdown` (default `true`), `enable_aggregate_pushdown` (default `true`), `enable_order_by_pushdown` (default `true`).
-
-### Create User Mapping
-
-```sql
-CREATE USER MAPPING FOR pguser SERVER mongo_server
-  OPTIONS (username 'mongouser', password 'mongopass');
-```
-
-### Create Foreign Table
-
-```sql
+CREATE USER MAPPING FOR CURRENT_USER SERVER mongo_server
+  OPTIONS (username 'mongo_user', password 'replace_with_remote_password');
 CREATE FOREIGN TABLE warehouse (
-  _id name,
-  warehouse_id int,
-  warehouse_name text,
-  warehouse_created timestamptz
-)
-SERVER mongo_server
-OPTIONS (database 'mydb', collection 'warehouse');
+  _id name, warehouse_id integer, warehouse_name text
+) SERVER mongo_server OPTIONS (database 'mydb', collection 'warehouse');
+SELECT warehouse_id, warehouse_name FROM warehouse;
 ```
 
-**Important:** The first column must be `_id` of type `name` (MongoDB's object identifier).
+The first foreign-table column must be `_id` of type `name`. Let MongoDB create valid identifiers rather than inventing short ObjectId strings. Column types must match the BSON representation. Use `INSERT`, `UPDATE` and `DELETE` only with the expected remote permissions and identifier mapping; remote writes are not a substitute for a distributed transaction protocol.
 
-**Table Options:** `database` (default `test`), `collection` (defaults to table name), `enable_join_pushdown`, `enable_aggregate_pushdown`, `enable_order_by_pushdown`.
+### Connection and Planning
 
-### CRUD Operations
+Server options include `authentication_database`, `replica_set`, `read_preference` and TLS certificate settings. Restrict user-mapping credentials and verify the remote certificate. The foreign-table options `database` and `collection` select data. This FDW does not implement `IMPORT FOREIGN SCHEMA`.
 
-```sql
-SELECT warehouse_id, warehouse_name FROM warehouse WHERE warehouse_id > 10;
-INSERT INTO warehouse VALUES ('new_id', 100, 'New Warehouse', now());
-UPDATE warehouse SET warehouse_name = 'Updated' WHERE warehouse_id = 100;
-DELETE FROM warehouse WHERE warehouse_id = 100;
-```
+Join, aggregate, ordering and limit pushdown are controlled by the server/table options and session GUCs. `mongo_fdw.log_remote_query` helps diagnose pushed queries. BSON text requires UTF8. Quote nested or uppercase field names; field names starting with a dollar sign or containing one after a dot are unsupported.
 
-### Pushdown Features
+### Changes and Upgrade Checks
 
-mongo_fdw pushes down WHERE clauses, joins between foreign tables on the same server, aggregate functions, ORDER BY, LIMIT, and OFFSET to MongoDB for efficient query execution. Use the `mongo_fdw.enable_join_pushdown`, `mongo_fdw.enable_aggregate_pushdown`, `mongo_fdw.enable_order_by_pushdown`, and `mongo_fdw.log_remote_query` GUCs when diagnosing remote plans.
+5.6.0 fixes URI-option injection and short-identifier out-of-bounds reads. Cursor failures now raise errors rather than silently returning no rows. BSON doubles converted to integer types round to the nearest integer; non-finite and out-of-range input raises an error. Test applications that depended on truncation or hidden errors.
 
-### Version Notes
-
-`mongo_fdw` 5.5.3, released upstream as `REL-5_5_3`, adds PostgreSQL 18 support, updates bundled `mongoc-driver` and `json-c` libraries for MongoDB 8, adds the `mongo_fdw.log_remote_query` debug GUC, and fixes nested-field, WHERE, ORDER BY, and unsafe join-pushdown cases. Upstream dropped PostgreSQL 12 support in this line.
-
-### Notes
-
-- BSON only supports UTF-8; ensure PostgreSQL database uses UTF-8 encoding
-- Column names with uppercase letters or dots (for nested documents) require double-quoting
-- PostgreSQL limits column names to 63 characters by default
+Aggregate pushdown can bypass that integer-input validation: non-finite source values may survive in a remote aggregate. Set `mongo_fdw.enable_aggregate_pushdown` to `false` when local validation is required. Install the new binary and reconnect sessions; the SQL version stays 1.1. Verify row counts, identifiers and query plans against representative remote data after upgrading.

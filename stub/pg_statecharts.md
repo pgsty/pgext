@@ -2,13 +2,17 @@
 
 Sources:
 
+- [Official source](https://api.pgxn.org/src/pg_statecharts/pg_statecharts-0.2.0/README.md)
+- [Official source](https://api.pgxn.org/src/pg_statecharts/pg_statecharts-0.2.0/pg_statecharts.control)
+- [Official source](https://api.pgxn.org/src/pg_statecharts/pg_statecharts-0.2.0/sql/upgrade/pg_statecharts--0.1.1--0.2.0.sql)
+
 - [PGXN 0.1.0 distribution](https://pgxn.org/dist/pg_statecharts/0.1.0/)
 - [Official source](https://github.com/kronor-io/statecharts/blob/472349e864440c39a30863a0db815050391804c7/pg_statecharts/README.md)
 - [Official source](https://github.com/kronor-io/statecharts/blob/472349e864440c39a30863a0db815050391804c7/pg_statecharts/pg_statecharts.control)
 - [Official source](https://github.com/kronor-io/statecharts/blob/472349e864440c39a30863a0db815050391804c7/pg_statecharts/sql/function/start_machine_with_latest_statechart.sql)
 - [Official source](https://github.com/kronor-io/statecharts/blob/472349e864440c39a30863a0db815050391804c7/pg_statecharts/sql/table/state_machine_event.sql)
 
-`pg_statecharts` 0.1.0 runs hierarchical state machines and their events transactionally inside PostgreSQL. This release is pure SQL, tested on PostgreSQL 16–18, and needs no preload or restart.
+`pg_statecharts` 0.2.0 runs hierarchical state machines and their events transactionally inside PostgreSQL. This release is pure SQL, tested on PostgreSQL 16–18, and needs no preload or restart.
 
 ### Core Workflow
 
@@ -22,7 +26,7 @@ CREATE EXTENSION pg_statecharts;
 Deploy a statechart definition through SQL migrations or the development companion before starting a machine. For an already deployed chart named order, this starts its latest version and returns the machine row:
 
 ```sql
-SELECT * FROM fsm.start_machine_with_latest_statechart(1, 'order', '{}');
+SELECT * FROM fsm.start_machine_with_latest_statechart(statechart_name => 'order', initial_data => '{}', shard_id => 1);
 ```
 
 Events are inserted into `fsm.state_machine_event` with the shard, machine identifier, event name and JSON data. Its triggers process the event in the inserting transaction, including entry and exit callbacks. Callers must have the appropriate table and function privileges; chart callbacks are application code that needs its own review.
@@ -36,3 +40,9 @@ Definitions and running machines live in `fsm`. `fsm.to_semver` parses numeric c
 The reviewed 0.1.0 source registers state tables and sequences for database dumps. The event inbox is intentionally omitted to avoid replaying callbacks during restoration. Backups made with 0.0.0 omitted machine state; take a fresh, restore-tested backup after upgrading.
 
 An earlier 0.1.0 installation may predate dump registration, so check the installed catalog instead of trusting its version string. Do not drop a populated extension merely to refresh registration. Legacy Rust or Sqitch migrations require superuser work and the old semver dependency during conversion; follow the migration guide and rehearse on a restored copy. The old 0.0.0 path is no longer independently exercised upstream.
+
+### Version 0.2.0 Call Migration
+
+Install matching SQL files and run `ALTER EXTENSION pg_statecharts UPDATE;`. Most functions now put optional `shard_id` last, defaulting to 1. Use the current named arguments: `shard_id`, `machine_id`, `statechart_id`, `statechart_name`, `event_name` and `state_id`. Deprecated names still resolve in 0.2.0, but are scheduled for removal in 0.3.0.
+
+Audit positional calls before upgrading. In particular, `fsm.create_machine(1, 42)` and `fsm.handle_machine_events(1, 42)` still resolve but now interpret their two bigint arguments in the opposite order. Other changed signatures can break dependent objects or explicit grants; rehearse on a restored database. The release also fixes active-state checks returning states already exited and avoids rereading the event inbox during event handling.

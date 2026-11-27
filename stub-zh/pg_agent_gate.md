@@ -2,12 +2,12 @@
 
 来源：
 
-- [README](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.3/README.md)
-- [Control](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.3/pg_agent_gate.control)
-- [CHANGELOG](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.3/CHANGELOG.md)
-- [SQL upgrade](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.3/sql/pg_agent_gate--0.4.1--0.4.3.sql)
+- [README](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.4/README.md)
+- [Control](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.4/pg_agent_gate.control)
+- [CHANGELOG](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.4/CHANGELOG.md)
+- [SQL upgrade](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.4/sql/pg_agent_gate--0.4.1--0.4.3.sql)
 
-`pg_agent_gate` 0.4.3 在 PostgreSQL 18/19 上通过提议、检查、试运行和受控执行处理已注册 Agent 角色，并可要求提交前经过人工审批。必须在第一条 Agent 语句之前加载动态库，可采用共享预加载，或配置角色会话预加载后重新连接。
+`pg_agent_gate` 0.4.4 在 PostgreSQL 18/19 上通过提议、检查、试运行和受控执行处理已注册 Agent 角色，并可要求提交前经过人工审批。必须在第一条 Agent 语句之前加载动态库，可采用共享预加载，或配置角色会话预加载后重新连接。
 
 ### 核心用法
 
@@ -48,7 +48,11 @@ Agent 角色不能有成员。登记函数会拒绝这样的角色；升级时�
 替换动态库后，重启或重新连接所有预加载它的进程，再逐库升级：
 
 ```sql
-ALTER EXTENSION pg_agent_gate UPDATE TO '0.4.3';
+ALTER EXTENSION pg_agent_gate UPDATE TO '0.4.4';
 ```
 
 0.4.1 至 0.4.3 迁移不改变模式对象。更早版本的升级路径仍会添加预算和审批对象；升级后应检查已有 Agent 的预算。0.4.2 未单独发布。超级用户、操作系统和可信 DBA 代码不在这个保护边界内；获准执行的语句仍可能违背人的意图。
+
+### 0.4.4 版本
+
+0.4.4 更新记录的版本号，不改变 0.4.3 的库行为或 SQL 对象。发行审核明确覆盖 PostgreSQL 18.7 与 19.0。防止后续角色成员关系变更的保护依赖 `shared_preload_libraries`，仅在角色级会话预加载无法在其他会话中提供这一保证。

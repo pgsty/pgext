@@ -2,6 +2,9 @@
 
 Sources:
 
+- [Official source](https://www.paradedb.com/docs/project/changelog/0.27.1.md)
+- [Official source](https://api.pgxn.org/src/pg_search/pg_search-0.27.1/pg_search/pg_search.control)
+
 - [Official source](https://www.paradedb.com/docs/project/changelog/0.27.0.md)
 - [Official source](https://api.pgxn.org/src/pg_search/pg_search-0.27.0/pg_search/pg_search.control)
 - [Official source](https://api.pgxn.org/src/pg_search/pg_search-0.27.0/Cargo.toml)
@@ -38,7 +41,7 @@ Sources:
 - [Query vectors](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [Hybrid-search overview](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.27.0 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
+`pg_search` 0.27.1 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
 
 ### Install and Build an Index
 
@@ -181,3 +184,9 @@ Whole-row bare searches now cover indexed fields rather than implicitly targetin
 `paradedb.mpp_queue_size` is now a byte budget, default 8MB, and `paradedb.mpp_request_timeout` is removed. `paradedb.vector_cluster_max_probe` is an absolute work budget, default 100. `paradedb.max_term_set_size` defaults to 262144; excessive term sets error. Review saved settings before rollout.
 
 New `pdb.expand` synonym rules apply at query time, and `pdb.explain_score` returns a JSONB score explanation. L2 and inner-product vectors above approximately 6.5e18 magnitude are rejected, including during REINDEX; finite cosine vectors remain accepted. Prebuilt upstream binaries require PostgreSQL 15.20, 16.16, 17.12 or 18.7 or later within those majors. These upstream requirements do not imply that the catalog's RPM/DEB packages have already been updated.
+
+### Version 0.27.1
+
+The standalone `paradedb.aggregate()` function is removed. Migrate dependent database objects to `pdb.agg()` in a SELECT over the indexed table, with the search predicate in WHERE, before upgrading.
+
+Replace old `paradedb.*_inlist_pushdown_max_*` settings with `paradedb.hash_join_filter_pushdown` (`auto`, `inlist`, `hash`, `off`), `paradedb.hash_join_inlist_max_distinct_values` and `paradedb.hash_join_inlist_max_size`. The patch fixes aggregate parameters, FILTER field mapping and cleanup after aborted parallel queries or cursors. Install matching files, restart through the normal preload procedure and update each SQL extension. The 0.27.0 vector-index rebuild and standby upgrade requirements still apply.

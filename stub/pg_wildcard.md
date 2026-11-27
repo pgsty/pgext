@@ -2,14 +2,16 @@
 
 Sources:
 
-- [Published crate 0.2.1](https://crates.io/crates/pg_wildcard/0.2.1)
-- [Extension README](https://github.com/f1b0-gh/pg_wildcard/blob/14db6f91c988a23ac3f2cd6664986198045743b8/pg_wildcard/README.md)
-- [Control](https://github.com/f1b0-gh/pg_wildcard/blob/14db6f91c988a23ac3f2cd6664986198045743b8/pg_wildcard/pg_wildcard.control)
-- [SQL API](https://github.com/f1b0-gh/pg_wildcard/blob/14db6f91c988a23ac3f2cd6664986198045743b8/docs/sql-api.md)
-- [Foreign data wrapper](https://github.com/f1b0-gh/pg_wildcard/blob/14db6f91c988a23ac3f2cd6664986198045743b8/docs/fdw.md)
-- [Upgrade SQL](https://github.com/f1b0-gh/pg_wildcard/blob/14db6f91c988a23ac3f2cd6664986198045743b8/pg_wildcard/sql/pg_wildcard--0.2.0--0.2.1.sql)
+- [0.2.3](https://crates.io/crates/pg_wildcard/0.2.3)
+- [pg_wildcard/README.md](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/pg_wildcard/README.md)
+- [pg_wildcard/pg_wildcard.control](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/pg_wildcard/pg_wildcard.control)
+- [pg_wildcard/Cargo.toml](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/pg_wildcard/Cargo.toml)
+- [docs/sql-api.md](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/docs/sql-api.md)
+- [docs/fdw.md](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/docs/fdw.md)
+- [docs/operations.md](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/docs/operations.md)
+- [pg_wildcard/sql/pg_wildcard--0.2.2--0.2.3.sql](https://github.com/f1b0-gh/pg_wildcard/blob/v0.2.3/pg_wildcard/sql/pg_wildcard--0.2.2--0.2.3.sql)
 
-`pg_wildcard` 0.2.1 searches telemetry strings with wildcard and regular-expression predicates, derives indicators and generates ClickHouse/Antalya queries. It also supplies the scan-only `wildcard_fdw`. The published crate uses `antalya-rs` 0.1.0; PostgreSQL 18 is the qualified server major. Declared PostgreSQL 14–17 build features require separate qualification.
+`pg_wildcard` 0.2.3 searches telemetry strings with wildcard and regular-expression predicates, derives indicators and generates ClickHouse/Antalya queries. It also supplies the scan-only `wildcard_fdw`. The published crate uses `antalya-rs` 0.1.1; PostgreSQL 18 and 19 are qualified server majors. Declared PostgreSQL 14–17 build features require separate qualification.
 
 ### Local String Search
 
@@ -37,10 +39,12 @@ The wrapper pushes supported predicates but retains local checks. Joins and aggr
 
 `pg_wildcard.matcher_cache_entries` and `pg_wildcard.matcher_cache_kb` bound retained patterns per backend; `wc_matcher_cache_stats()` reports this cache. These limits do not cap total backend memory.
 
-From 0.2.0, install the matching 0.2.1 library and SQL files, reconnect, then run:
+From 0.2.0, 0.2.1 or 0.2.2, install the matching 0.2.3 library and SQL files, reconnect, then run:
 
 ```sql
-ALTER EXTENSION pg_wildcard UPDATE TO '0.2.1';
+ALTER EXTENSION pg_wildcard UPDATE TO '0.2.3';
 ```
 
 The update preserves SQL signatures and records the new extension version. Standalone library, lake CLI and remote-engine configuration are separate components.
+
+Optional batching and staged sweeps run outside the FDW; callers own execution, admission limits and cleanup. The FDW does not automatically parallelize queries, and compression is not exposed as a production FDW option.

@@ -2,9 +2,10 @@
 
 Sources:
 
-- [1.2.0 README](https://github.com/pgsty/pg_tokenizer/blob/v1.2.0/README.md)
+- [1.3.0 release notes](https://github.com/pgsty/pg_tokenizer/blob/v1.3.0/docs/release-notes/1.3.0.md)
+- [1.3.0 README](https://github.com/pgsty/pg_tokenizer/blob/v1.3.0/README.md)
 - [1.2.0 release notes](https://github.com/pgsty/pg_tokenizer/blob/v1.2.0/docs/release-notes/1.2.0.md)
-- [1.2.0 control](https://github.com/pgsty/pg_tokenizer/blob/v1.2.0/pg_tokenizer.control)
+- [1.3.0 control](https://github.com/pgsty/pg_tokenizer/blob/v1.3.0/pg_tokenizer.control)
 - [Installation, upgrades, permissions, and backups](https://vchord.pgsty.com/docs/tokenizer/installation/)
 - [Tokenizer and native full-text workflows](https://vchord.pgsty.com/docs/tokenizer/overview/)
 - [Text analyzer pipelines](https://vchord.pgsty.com/docs/tokenizer/text-analyzer/)
@@ -13,7 +14,7 @@ Sources:
 - [SQL and TOML reference](https://vchord.pgsty.com/docs/tokenizer/reference/)
 - [1.0.0 control file](https://github.com/pgsty/pg_tokenizer/blob/v1.0.0/pg_tokenizer.control)
 
-`pg_tokenizer` 1.0.0 provides configurable text analysis and model tokenization on PostgreSQL 14–18. It returns string tokens, integer token IDs, or native `tsvector` values for GIN/GiST and compatible BM25 indexes. It has no required extension dependency, needs shared preloading, and installs into the fixed `tokenizer_catalog` schema.
+On PostgreSQL 15–19, `pg_tokenizer` 1.3.0 converts text into tokens, integer IDs or native `tsvector` values for GIN, GiST and BM25 indexes. Installation requires shared preloading. The SQL objects use the fixed `tokenizer_catalog` schema.
 
 ### Analyze and Index Text
 
@@ -116,3 +117,9 @@ Version 1.2.0 supports PostgreSQL 15–19 and upgrades directly from 1.1.0 while
 Lindera segmentation, token IDs, regex boundaries and Unicode tables can change output. Regenerate affected stored token arrays or vectors from source text and rebuild their indexes before switching queries. This release's GitHub binaries embed IPADIC; check the contents of separately supplied native packages.
 
 Preload names and the regular-file format remain compatible. Startup now skips symlinks, special files and invalid configurations. Move intended preload contents into real directories and regular files before restarting; keep their separate backup. Definition caches continue to follow the caller's SQL snapshot.
+
+### Caching and upgrading to 1.3.0
+
+Repeated tokenization on a primary can reuse validated definitions. Older snapshots, physical standbys and newly promoted primaries read the definition visible to their snapshot. Custom vocabularies allocate IDs only for new terms. `analyze_to_tsvector` and `tokenize_to_tsvector` build binary vectors directly and preserve lexeme ordering and position limits.
+
+To upgrade from 1.2.0, install matching packages on every node, restart PostgreSQL, then run `ALTER EXTENSION pg_tokenizer UPDATE;` in each target database on the primary. Existing definitions, custom vocabulary IDs, views and triggers survive the upgrade. Pigsty RPM and DEB packages use external Lindera 7 format v3 dictionaries.
